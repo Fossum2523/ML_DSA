@@ -1,18 +1,19 @@
-def hex_to_bits(hex_string: str) -> str:
-    """
-    將十六進制字串轉換為二進制位元串
-    :param hex_string: 十六進制字串，例如 "6c"
-    :return: 對應的二進制位元串（8位長）
-    """
-    # 將十六進制字串轉換為整數
-    integer_value = int(hex_string, 16)
-    
-    # 將整數轉換為二進制字串，並去掉 '0b' 前綴，補齊到 8 位
-    bit_string = bin(integer_value)[2:].zfill(8)
-    
-    return bit_string
+# Manual calculation of element-wise dot product without using libraries
+a = [[[1, 0, 0], [0, 1, 0], [0, 0, 1]],
+     [[1, 0, 0], [0, 1, 0], [0, 0, 1]],
+     [[1, 0, 0], [0, 1, 0], [0, 0, 1]]]
 
-# 測試範例
-hex_string = "6c"
-bit_result = hex_to_bits(hex_string)
-print("二進制表示:", bit_result)
+b = [[[1, 0, 0], [0, 1, 0], [0, 0, 1]],
+     [[1, 0, 0], [0, 1, 0], [0, 0, 1]],
+     [[1, 0, 0], [0, 1, 0], [0, 0, 1]]]
+
+# Initialize the result
+result = 0
+
+# Loop through each element and calculate element-wise multiplication and summation
+for i in range(3):
+    for j in range(3):
+        for k in range(3):
+            result += a[i][j][k] * b[i][j][k]
+
+print(result)
