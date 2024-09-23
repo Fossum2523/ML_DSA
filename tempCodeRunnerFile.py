@@ -1,2 +1,3 @@
-        c1_tlide = "0000000000000000000000000000000000000000000000000000000000000000"
-        c1_tlide = hex_to_bytes(c1_tlide)
+            # if infinity_norm(c_tilde) >= ML_DSA["gamma_2"] or sum(h) > ML_DSA["omega"]:
+            #     z = None
+            #     h = None    

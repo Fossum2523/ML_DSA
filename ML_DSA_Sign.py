@@ -551,9 +551,20 @@ def LowBits(r):
 
 # 算法 33: MakeHint(z, r)
 def MakeHint(z, r):
-    r1 = HighBits(r)
-    v1 = HighBits(r + z)
-    return r1 != v1
+    bol_list = []
+    r_plus_z = array_plus(r,z)
+    true_num = 0
+    for i in range(ML_DSA["k"]):  #revise
+        d = []
+        r1 = HighBits(r[i])
+        v1 = HighBits(r_plus_z[i])
+        for j in range(256):
+            bol = int(r1[j] != v1[j])
+            if bol == 1:
+                true_num = true_num + 1
+            d.append(bol)
+        bol_list.append(d)
+    return bol_list,true_num
 
 # # 算法 34: UseHint(h, r)
 # def UseHint(h, r):
@@ -663,6 +674,43 @@ def array_plus(A,B):
         d.append(w)
     return d
 
+def mod_pm(w):
+    """
+    計算 w mod± q，將結果限制在 (-q/2, q/2] 範圍內
+    :param w: 元素 w
+    :return: w mod± q 的結果
+    """
+    # 正常的模 q 運算
+    result = w % ML_DSA["q"]
+    
+    # 如果結果超過 q/2，將其調整到 (-q/2, q/2] 範圍
+    if result > ML_DSA["q"] // 2:
+        result -= ML_DSA["q"]
+    
+    return result
+
+def infinity_norm(elements):
+    """
+    計算 w ∈ Z_q 的無窮範數 (Infinity Norm)
+    :param elements: 包含 w 的列表（可以是一維或二維列表）
+    :return: 無窮範數的計算結果
+    """
+    max_norm = 0
+    
+    # 如果是二維列表，則進行展平處理
+    if isinstance(elements[0], list):
+        for row in elements:
+            for w in row:
+                norm = abs(mod_pm(w))
+                max_norm = max(max_norm, norm)
+    else:
+        for w in elements:
+            norm = abs(mod_pm(w))
+            max_norm = max(max_norm, norm)
+    
+    print(max_norm)
+    return max_norm
+
 # 算法 2 ML-DSA.Sign(sk,M)
 def Sign(sk,M):
     # sk_decode(sk)
@@ -699,7 +747,7 @@ def Sign(sk,M):
     h = None
 
     for i in range (1):
-    # while z == None & h == None:
+    # while z == None and h == None:
         y = ExpandMask(p_prime,ka)
         # print(y)
 
@@ -732,9 +780,9 @@ def Sign(sk,M):
         print(len(c1_tlide))
         c2_tlide = c_tilde[32:] #256 -> 2*lamda-256
         c = sample_in_ball(c1_tlide)
-        print(c)
+        # print(c)
         #------------------------------------------
-        # c = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, -1, 0, 1, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, -1, 0, 0, -1, 0, -1, -1, 1, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, -1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, -1, 1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, -1, 0, 0, 0, 0, 0, -1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0, 0, -1, 0]
+        c = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, -1, 0, 1, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, -1, 0, 0, -1, 0, -1, -1, 1, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, -1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, -1, 1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, -1, 0, 0, 0, 0, 0, -1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0, 0, -1, 0]
     
         c_hat = NTT(c)
         # print(c_hat)
@@ -762,9 +810,33 @@ def Sign(sk,M):
         # temp = w - cs2
         r0 = [LowBits(w1i) for w1i in temp]
         # print(r0)
-        # if max(abs(z)) >= (ML_DSA["gamma1"] - ML_DSA["beta"]) or max(abs(LowBits(r0))) >= (ML_DSA["gamma2"] - ML_DSA["beta"]):
 
+        print(z)
+        if infinity_norm(z) >= ML_DSA["gamma_1"] - ML_DSA["beta"] or infinity_norm(r0) >= ML_DSA["gamma_2"] - ML_DSA["beta"]:
+            z = None
+            h = None
+            print(z,h)
+        else:
+            ct0 = NTT_dot_2(t0_hat,c_hat)
+            ct0 = [NTT_inv(cti) for cti in ct0]
+            print(ct0)
 
+            zero_array = [[0]*256] * ML_DSA["k"]
+            # print(zero_array)
+            w_minus_cs2 = array_minus(w,cs2)
+            w_minus_cs2_pluse_ct0 = array_plus(w_minus_cs2,ct0)
+            # print(ct0)
+            minus_ct0 = array_minus(zero_array,ct0)
+            # print(ct0)
+            # print(minus_ct0)
+            h,true_num = MakeHint(minus_ct0, w_minus_cs2_pluse_ct0)
+
+            if infinity_norm(c_tilde) >= ML_DSA["gamma_2"] or true_num > ML_DSA["omega"]:
+                z = None
+                h = None    
+
+    # z_mod = [mod_pm(zi) for zi in z]
+    # Sigma = sigEncode(c_tilde,z_mod,h)
     return 0
 
 

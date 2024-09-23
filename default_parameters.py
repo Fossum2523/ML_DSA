@@ -9,6 +9,7 @@ DEFAULT_PARAMETERS = {
         "k": 4,  # Dimensions of A = (k, l)
         "l": 4,  # Dimensions of A = (k, l)
         "eta": 2,  # Private key range
+        "beta": 78,
         "omega": 80,  # Max number of ones in hint
         "c_tilde_bytes": 32,
     },
@@ -22,6 +23,7 @@ DEFAULT_PARAMETERS = {
         "k": 6,  # Dimensions of A = (k, l)
         "l": 5,  # Dimensions of A = (k, l)
         "eta": 4,  # Private key range
+        "beta": 196,
         "omega": 55,  # Max number of ones in hint
         "c_tilde_bytes": 48,
     },
@@ -35,6 +37,7 @@ DEFAULT_PARAMETERS = {
         "k": 8,  # Dimensions of A = (k, l)
         "l": 7,  # Dimensions of A = (k, l)
         "eta": 2,  # Private key range
+        "beta": 120,
         "omega": 75,  # Max number of ones in hint
         "c_tilde_bytes": 64,
     },
