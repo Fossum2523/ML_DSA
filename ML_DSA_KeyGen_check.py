@@ -427,12 +427,7 @@ def KeyGen():
     # print(tr)
     # print(pk)
     # print(sk)
-    # # # 9. 返回公鑰 pk 和私鑰 sk
     return pk, sk
-
-
-    # return 0
-
 
 # 算法 1 ML-DSA.KeyGen() testing--------------------------------
 a = KeyGen()
