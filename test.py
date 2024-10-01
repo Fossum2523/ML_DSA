@@ -1,10 +1,4 @@
-# Manual calculation of element-wise dot product without using libraries
-a = [[[1, 0, 0], [0, 1, 0], [0, 0, 1]],
-     [[1, 0, 0], [0, 1, 0], [0, 0, 1]],
-     [[1, 0, 0], [0, 1, 0], [0, 0, 1]]]
-
-b = [[[1, 0, 0], [0, 1, 0], [0, 0, 1]],
-     [[1, 0, 0], [0, 1, 0], [0, 0, 1]],
-     [[1, 0, 0], [0, 1, 0], [0, 0, 1]]]
-
-print(a==b)
+bugs = 'roaches'
+count = 13
+area = 'living room'
+print(f'Debugging {bugs=} {count=} {area=}')
