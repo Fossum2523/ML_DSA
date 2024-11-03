@@ -1,2 +1,2 @@
-x_to_bytes(xi)
-    if xi i
+
+q = 7681  # 模數
