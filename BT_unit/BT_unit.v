@@ -21,7 +21,7 @@
 
 
 module BT_unit 
-#(  parameter bit_len = 23)
+#(  parameter bit_len = 14)
 (   
     input   clk,
     input   reset,
@@ -37,17 +37,13 @@ module BT_unit
 reg [1:0] curr_state;
 reg [1:0] next_state;
 
-reg signed [bit_len-1:0] multi;
-
-wire en_BT;
-
-assign en_BT = (en == 1'b1) & (valid == 1'b0);
+reg signed [2*bit_len-1:0] multi;
 
 always @(posedge clk or negedge reset) begin
     if(!reset)begin
         curr_state <= 2'd0;
     end
-    else if(en_BT)begin
+    else begin
         curr_state <= next_state;
     end
 end
@@ -55,7 +51,12 @@ end
 always @(*) begin
     case (curr_state)
         2'd0:begin
-            next_state <= 2'd1;
+            if(en)begin
+                next_state <= 2'd1;
+            end
+            else begin
+                next_state <= 2'd0;
+            end
         end
         2'd1:begin
             next_state <= 2'd2;
@@ -64,7 +65,7 @@ always @(*) begin
             next_state <= 2'd3;
         end
         2'd3:begin
-            next_state <= next_state;
+            next_state <= 2'd0;
         end
         default: 
             next_state <= 2'd0;
@@ -73,25 +74,35 @@ end
 
 always @(posedge clk or negedge reset) begin
     if(!reset)begin
-        A_out <= 23'sd0;
-        B_out <= 23'sd0;
+        A_out <= 14'd0;
+        B_out <= 14'd0;
+        multi <= 46'd0;
         valid <= 1'b0;
     end
-    if(en_BT)begin
+    else begin
         case (curr_state)
             2'd0:begin
-                B_out <= B_in * zeta;
+                A_out <= 14'd0;
+                B_out <= 14'd0;
+                multi <= 46'd0;
+                valid <= 1'b0;
+                multi <= B_in * zeta;
             end
             2'd1:begin
-                B_out <= B_out % 23'd7681;
+                B_out <= multi % 14'd7681;
             end
             2'd2:begin
                 A_out <= A_in + B_out;
                 B_out <= A_in - B_out;
             end
             2'd3:begin
-                A_out <= A_out % 23'd7681;
-                B_out <= B_out % 23'd7681;
+                A_out <= A_out % 14'd7681;
+                if(B_out[13] == 1)begin
+                    B_out <= (B_out + 14'd7681) % 14'd7681;
+                end
+                else begin
+                    B_out <= B_out % 14'd7681;
+                end
                 valid <= 1'b1;
             end
             default: 

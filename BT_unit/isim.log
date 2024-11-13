@@ -1,5 +1,5 @@
 ISim log file
-Running: C:\Users\fossu\Desktop\ML_DSA_Syn\BT_unit\BT_unit_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/fossu/Desktop/ML_DSA_Syn/BT_unit/BT_unit_tb_isim_beh.wdb 
+Running: C:\Users\USER\Desktop\ML_DSA_syn\BT_unit\BT_unit_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/USER/Desktop/ML_DSA_syn/BT_unit/BT_unit_tb_isim_beh.wdb 
 ISim P.20131013 (signature 0x7708f090)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -8,83 +8,6 @@ This is a Lite version of ISim.
 Time resolution is 1 ps
 # onerror resume
 # wave add /
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-WARNING: File "C:/Users/fossu/Desktop/ML_DSA_Syn/BT_unit/BT_unit_tb.v" Line 31.  For instance BT_unit_tb/uut/, width 13 of formal port A_in is not equal to width 23 of actual variable A_in. 
-WARNING: File "C:/Users/fossu/Desktop/ML_DSA_Syn/BT_unit/BT_unit_tb.v" Line 32.  For instance BT_unit_tb/uut/, width 13 of formal port B_in is not equal to width 23 of actual variable B_in. 
-WARNING: File "C:/Users/fossu/Desktop/ML_DSA_Syn/BT_unit/BT_unit_tb.v" Line 33.  For instance BT_unit_tb/uut/, width 13 of formal port zeta is not equal to width 23 of actual variable zeta. 
-WARNING: File "C:/Users/fossu/Desktop/ML_DSA_Syn/BT_unit/BT_unit_tb.v" Line 36.  For instance BT_unit_tb/uut/, width 13 of formal port A_out is not equal to width 23 of actual signal A_out.
-WARNING: File "C:/Users/fossu/Desktop/ML_DSA_Syn/BT_unit/BT_unit_tb.v" Line 37.  For instance BT_unit_tb/uut/, width 13 of formal port B_out is not equal to width 23 of actual signal B_out.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.

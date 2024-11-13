@@ -28,13 +28,13 @@ module BT_unit_tb;
 	reg clk;
 	reg reset;
 	reg en;
-	reg [22:0] A_in;
-	reg [22:0] B_in;
-	reg [22:0] zeta;
+	reg [13:0] A_in;
+	reg [13:0] B_in;
+	reg [13:0] zeta;
 
 	// Outputs
-	wire [22:0] A_out;
-	wire [22:0] B_out;
+	wire [13:0] A_out;
+	wire [13:0] B_out;
 	wire valid;
 
 	// Instantiate the Unit Under Test (UUT)
@@ -65,11 +65,13 @@ module BT_unit_tb;
         
 		// Add stimulus here
 		reset = 1;
-		A_in = 1;
-		B_in = 3;
+		A_in = 2;
+		B_in = 4;
 		zeta = 3383;
-		#10;
+		#5;
 		en = 1;
+		#10;
+		en = 0;
 		
 	end
 
