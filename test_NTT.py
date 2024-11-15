@@ -17,7 +17,7 @@ def NTT(w):
     k = 0
     length = len(w)  # NTT 的長度為 4
 
-    while length >= 2:
+    while length >= 1:
         start = 0
         while start < len(w):
             k = k + 1

@@ -4,7 +4,7 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   18:10:52 12/08/2024
+// Create Date:   18:10:52 22/08/2024
 // Design Name:   NTT
 // Module Name:   C:/Users/USER/Desktop/ML_DSA_syn/NTT/NTT/NTT_tb.v
 // Project Name:  NTT
@@ -27,13 +27,13 @@ module NTT_tb;
 	// Inputs
 	reg clk;
 	reg reset;
-	reg [12:0] in0;
-	reg [12:0] in1;
-	reg [12:0] phi;
+	reg [22:0] in0;
+	reg [22:0] in1;
+	reg [22:0] phi;
 
 	// Outputs
-	wire [12:0] out0;
-	wire [12:0] out1;
+	wire [22:0] out0;
+	wire [22:0] out1;
 
 	// Instantiate the Unit Under Test (UUT)
 	NTT uut (
@@ -50,9 +50,9 @@ module NTT_tb;
 		// Initialize Inputs
 		clk = 0;
 		reset = 1;
-		in0 = 1;
-		in1 = 3;
-		phi = 3383;
+		in0 = 8380415;
+		in1 = 8380416;
+		phi = 4808194;
 
 		// Wait 100 ns for global reset to finish
 		#100;

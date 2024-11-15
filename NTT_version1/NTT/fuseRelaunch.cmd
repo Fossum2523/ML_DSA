@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/fossu/Desktop/NTT/NTT/NTT_tb_isim_beh.exe" -prj "C:/Users/fossu/Desktop/NTT/NTT/NTT_tb_beh.prj" "work.NTT_tb" "work.glbl" 

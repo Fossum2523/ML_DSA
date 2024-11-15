@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/USER/Desktop/ML_DSA_syn/BT_unit/BT_unit_tb_isim_beh.exe" -prj "C:/Users/USER/Desktop/ML_DSA_syn/BT_unit/BT_unit_tb_beh.prj" "work.BT_unit_tb" "work.glbl" 

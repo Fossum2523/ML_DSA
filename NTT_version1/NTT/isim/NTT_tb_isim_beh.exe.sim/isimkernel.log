@@ -1,0 +1,30 @@
+Command line:
+   NTT_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  49777
+
+Thu Nov 14 18:33:47 2024
+
+
+ Elaboration Time: 0.03125 sec
+
+ Current Memory Usage: 5154.75 Meg
+
+ Total Signals          : 46
+ Total Nets             : 311
+ Total Signal Drivers   : 30
+ Total Blocks           : 9
+ Total Primitive Blocks : 4
+ Total Processes        : 44
+ Total Traceable Variables  : 79
+ Total Scalar Nets and Variables : 25069
+Total Line Count : 150
+Total Line Count : 150
+
+ Total Simulation Time: 0.140625 sec
+
+ Current Memory Usage: 4682.9 Meg
+
+Fri Nov 15 00:27:00 2024
+

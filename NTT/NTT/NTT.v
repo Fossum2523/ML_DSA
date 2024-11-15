@@ -1,7 +1,7 @@
-module BT
+module NTT
 #(
-    parameter BIT_LEN = 13,
-    parameter q = 7681
+    parameter BIT_LEN = 23,
+    parameter q = 8380417
 )(
     input clk,
     input reset,
@@ -30,7 +30,7 @@ module BT
     endfunction
 
     // Function for modular multiplication
-    function [BIT_LEN - 1:0] mod_mul;
+    function [BIT_LEN*2 - 1:0] mod_mul;
         input [BIT_LEN - 1:0] a, b;
         begin
             mod_mul = (a * b) % q;
