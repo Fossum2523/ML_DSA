@@ -46,7 +46,7 @@ module NTT_tb;
 	
 	//NTT variable definition
 	reg NTT_en;
-	reg NTT_wen;
+	wire NTT_wen;
 	wire [22:0] NTT_din;
 	wire [22:0] NTT_dout;
 	wire [7:0] NTT_addr;
@@ -102,7 +102,6 @@ module NTT_tb;
 	initial begin
 		//write s1 data to testbench s1_mem
 		#0 
-		NTT_wen = 1'b0;
 		TB_wen = 1'b0;
 		NTT_en = 1'b0;
 		i = 0;
@@ -132,6 +131,11 @@ module NTT_tb;
 
 		@(negedge clk)
 		NTT_en = 1'b1;
+
+		wait(NTT_wen && NTT_addr == 255)begin
+			#(`clk_period*10);
+			$finish;
+		end
 	end
 
 

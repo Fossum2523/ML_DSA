@@ -5,8 +5,5 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="329" delta="unknown" >"C:/Users/fossu/Desktop/NTT/NTT/NTT_tb.v" Line 76: Target &lt;<arg fmt="%s" index="1">NTT_wen</arg>&gt; of concurrent assignment or output port connection should be a net type.
-</msg>
-
 </messages>
 

@@ -82,8 +82,8 @@ def NTT(w):
         start = 0
         # print(f'{length = } -------------------------------')
         while start < 256:
-            k = k + 1
-            zeta = zeta_list[k]
+            
+            zeta = zeta_list[k + 1]
             # start_add_length = start + length
             print(f'{start = }, {start + length = }')
             for j in range(start, start + length):
@@ -110,6 +110,7 @@ def NTT(w):
                 f.write(f"{w_hat[j] = }\n")
                 f.write(f"{w_hat[j + length] = }\n")
                 a = a + 1
+            k = k + 1
             start += 2 * length
         length //= 2
 
@@ -137,6 +138,23 @@ file_path = 'C:/Users/fossu/Desktop/ML_DSA_Syn/a.txt'
 # print(f"資料已寫入 {file_path}")
 
 result = NTT(s1)
-# print(result)  # 輸出結果
+print(result)  # 輸出結果
 
 print(len(zeta_list))
+
+
+def NTT(w):
+    w_hat = np.array(w, dtype=np.int64)
+    k = 0
+    length = 128
+    while length >= 1:
+        start = 0
+        while start < 256:
+            k = k + 1
+            zeta = zeta_list[k +]
+            for j in range(start, start + length):
+                t = (zeta * w_hat[j + length]) % ML_DSA["q"]
+                w_hat[j + length] = (w_hat[j] - t) % ML_DSA["q"]
+                w_hat[j] = (w_hat[j] + t) % ML_DSA["q"]
+            start += 2 * length
+        length //= 2

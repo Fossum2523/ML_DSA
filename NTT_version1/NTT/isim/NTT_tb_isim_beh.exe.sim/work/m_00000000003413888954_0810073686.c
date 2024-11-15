@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/fossu/Desktop/NTT/NTT/BRAM.v";
+static const char *ng0 = "C:/Users/fossu/Desktop/NTT_version1/NTT/BRAM.v";
 
 
 

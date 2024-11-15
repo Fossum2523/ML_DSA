@@ -25,27 +25,27 @@ module NTT#(
 	input reset,
 	input NTT_en,
 	input [BIT_LEN-1:0] NTT_din,
-    output reg NTT_wen,
-	output reg [BIT_LEN-1:0] NTT_dout,
+    output NTT_wen,
+	output [BIT_LEN-1:0] NTT_dout,
 	output [7:0]NTT_addr
     );
 	 
 localparam [3:0]IDLE = 4'd0,
                 OVER = 4'd1,
-                S0 = 4'd2,
-                S1 = 4'd3,
-                S2 = 4'd4,
-                S3 = 4'd5,
-                S4 = 4'd6,
-                S5 = 4'd7,
-                S6 = 4'd8,
-                S7 = 4'd9,
-                S8 = 4'd10,
-                S9 = 4'd11,
-                S10 = 4'd12,
-                S11 = 4'd13,
-                S12 = 4'd14,
-                S13 = 4'd15;
+                S2 = 4'd2,
+                S3 = 4'd3,
+                S4 = 4'd4,
+                S5 = 4'd5,
+                S6 = 4'd6,
+                S7 = 4'd7,
+                S8 = 4'd8,
+                S9 = 4'd9,
+                S10 = 4'd10,
+                S11 = 4'd11,
+                S12 = 4'd12,
+                S13 = 4'd13,
+                S14 = 4'd14,
+                S15 = 4'd15;
 
 //zeta rom 
 reg twiddle_en;
@@ -62,26 +62,26 @@ reg [7:0]j;
 
 reg [7:0]k;
 
-reg [7:0]start;
+reg [8:0]start;
 reg [7:0]length;
 
 wire [7:0]j_plusd_length;
-wire [12:0]fd;
 
 wire [22:0] BT_out0;
 wire [22:0] BT_out1;
 
-reg [22:0] zeta;
+wire [22:0] zeta;
 
-wire [7:0]fs;
 
-assign fd = start + (length << 1);
-assign fs = length >> 1;
-// assign fd = start + 1'b1;
 assign j_plusd_length = j + length;
-assign NTT_addr = curr_state == IDLE ? 8'd0 : j + 1'b1;
+assign NTT_addr =   curr_state == IDLE ? 8'd0 : 
+                    curr_state == S2 ? j + 1'b1 :
+                    curr_state == S9 ? j : 8'd0;
+assign NTT_wen = curr_state == S9 ? 1'b1 : 1'b0;
+// assign NTT_wen = 1'b1;
+assign NTT_dout = w[j];
 assign twiddle_addr = k + 1'b1;
-
+assign zeta = twiddle_do;
 //variable definition end----------------------------
 
 BT uut (
@@ -107,45 +107,37 @@ end
 always @(*) begin
     case(curr_state)
         IDLE:begin
-            if(NTT_en) next_state = S0;
+            if(NTT_en) next_state = S2;
             else next_state = IDLE;
         end
-        S0:begin
-			if(j == 255) next_state = S1;
-            else next_state = S0;
-        end
-        S1:begin    
-            next_state = S2;
-        end
         S2:begin
-            next_state = S3;
+			if(j == 255) next_state = S3;
+            else next_state = S2;
         end
-        S3:begin
-            if(j < start + length) next_state = S3;
-            else next_state = S4;
-            // next_state = S4;
+        S3:begin    
+            if(length >= 1) next_state = S4;
+            else next_state = S9;
         end
         S4:begin
-            if(fd < 256) next_state = S2;
-            else next_state = S5;
-            // next_state = S5;
+            if(start < 256) next_state = S5;
+            else next_state = S8;
         end
-        S5:begin
-            // if(fs >= 1) next_state = S1;
-            // else next_state = S6;
-            next_state = S6;
+        S5:begin 
+            if(j < start + length) next_state = S6;
+            else next_state = S7;
         end
         S6:begin
-            
+            next_state = S5;
         end
         S7:begin
-
+            next_state = S4;
         end
         S8:begin
-
+            next_state = S3;
         end
         S9:begin
-
+            if(j == 255) next_state = S10;
+            else next_state = S9;
         end
         S10:begin
 
@@ -157,6 +149,12 @@ always @(*) begin
 
         end
         S13:begin
+
+        end
+        S14:begin
+
+        end
+        S15:begin
 
         end
         OVER:begin
@@ -178,43 +176,37 @@ always @(posedge clk) begin
             
             twiddle_en <= 1'b0;
         end
-        S0:begin
+        S2:begin
 			w[j] <= NTT_din;
             j <= j + 1'b1;
-
+            
             twiddle_en <= 1'b1;
         end
-        S1:begin
-            start <= 8'd0;
+        S3:begin
+            if(length >= 1)start <= 8'd0;
+            else j <= 8'd0;
+        end
+        S4:begin
+            if(start < 256) j <= start;
+        end
+        S5:begin
             
         end
-        S2:begin
-            k <= k + 1'b1;
-            j <= start;
-            zeta <= twiddle_do;
-        end
-        S3:begin
+        S6:begin
             w[j] <= BT_out0;
             w[j_plusd_length] <= BT_out1;
             j <= j + 1'b1;
         end
-        S4:begin
-            start <= fd;//how to change this to {a,b}
-        end
-        S5:begin
-            length <= fs;
-        end
-        S6:begin
-            
-        end
         S7:begin
-
+            k <= k + 1'b1; //can chage to twiddle_addr
+            start <= start + (length << 1);//how to change this to {a,b}
         end
         S8:begin
-
+            length <= length >> 1;
         end
         S9:begin
-
+            
+            j <= j + 1'b1;
         end
         S10:begin
 
@@ -226,6 +218,12 @@ always @(posedge clk) begin
 
         end
         S13:begin
+
+        end
+        S14:begin
+
+        end
+        S15:begin
 
         end
         OVER:begin

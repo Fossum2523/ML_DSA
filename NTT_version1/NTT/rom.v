@@ -1,6 +1,6 @@
 
 `timescale 1ns / 1ps
-module rom #(parameter WIDTH=23, LENGTH=256, INIT_FILE="C:/Users/fossu/Desktop/NTT/NTT/zetas.txt") (clk,en,addr,do);
+module rom #(parameter WIDTH=23, LENGTH=256, INIT_FILE="C:/Users/fossu/Desktop/NTT_version1/NTT/zetas.txt") (clk,en,addr,do);
     input clk,en;
     input [$clog2(LENGTH)-1:0] addr;
     output [WIDTH-1:0] do;

@@ -21,9 +21,9 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/fossu/Desktop/NTT/NTT/rom.v";
-static int ng1[] = {779384948, 0, 1702125939, 0, 1414803322, 0, 1414803278, 0, 1869623118, 0, 1702062964, 0, 1937059652, 0, 795242355, 0, 1936028275, 0, 1127886677, 0};
-static int ng2[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+static const char *ng0 = "C:/Users/fossu/Desktop/NTT_version1/NTT/rom.v";
+static int ng1[] = {779384948, 0, 1702125939, 0, 1414803322, 0, 1848717134, 0, 1920166255, 0, 1415542373, 0, 1882148436, 0, 1936421999, 0, 1966031973, 0, 1718580083, 0, 1701999407, 0, 976180595, 0, 67, 0};
+static int ng2[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 static int ng3[] = {0, 0};
 static int ng4[] = {1, 0};
 
@@ -109,7 +109,7 @@ LAB9:    xsi_set_current_line(12, ng0);
 
 static void Initial_18_1(char *t0)
 {
-    char t3[80];
+    char t3[104];
     char t12[8];
     char t15[8];
     char t16[8];
@@ -151,7 +151,7 @@ LAB0:    xsi_set_current_line(18, ng0);
 LAB2:    xsi_set_current_line(19, ng0);
     t1 = ((char*)((ng1)));
     t2 = ((char*)((ng2)));
-    xsi_vlog_unsigned_not_equal(t3, 320, t1, 320, t2, 320);
+    xsi_vlog_unsigned_not_equal(t3, 392, t1, 392, t2, 392);
     t4 = (t3 + 4);
     t5 = *((unsigned int *)t4);
     t6 = (~(t5));
@@ -193,7 +193,7 @@ LAB3:    xsi_set_current_line(19, ng0);
 LAB6:    xsi_set_current_line(20, ng0);
     t10 = ((char*)((ng1)));
     t11 = (t0 + 2336);
-    xsi_vlogfile_readmemh(t10, 320, t11, 0, 0, 0, 0);
+    xsi_vlogfile_readmemh(t10, 392, t11, 0, 0, 0, 0);
     goto LAB5;
 
 LAB9:    xsi_set_current_line(23, ng0);
