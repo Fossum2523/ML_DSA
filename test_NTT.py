@@ -17,6 +17,7 @@ import numpy as np
 #     k = 0
 #     length = len(w)  # NTT 的長度為 4
 
+<<<<<<< HEAD
 #     while length >= 2:
 #         start = 0
 #         while start < len(w):
@@ -37,6 +38,28 @@ import numpy as np
 #                 w_hat[j] = (w_hat[j] + t) % q
 #                 print("w_hat[{}] = {}".format(j,(w_hat[j] + t) % q))
 #                 print("--------------------------------------")
+=======
+    while length >= 1:
+        start = 0
+        while start < len(w):
+            k = k + 1
+            zeta = pow(1925, brv(k, len(w)), q)  # 旋轉因子
+            print(zeta)
+            # 蝶形運算
+            for j in range(start, start + length // 2):
+                t = (zeta * w_hat[j + length // 2]) % q
+                print(zeta)
+                print(w_hat[j + length // 2])
+                print("t=",t)
+                print(w_hat[j])
+                w_hat[j + length // 2] = (w_hat[j] - t) % q
+                print("w_hat[{}] = {}".format(j + length // 2,(w_hat[j] - t) % q))
+                print(w_hat[j])
+                print(t)
+                w_hat[j] = (w_hat[j] + t) % q
+                print("w_hat[{}] = {}".format(j,(w_hat[j] + t) % q))
+                print("--------------------------------------")
+>>>>>>> 00c12d32ce52fa42d2b9196cc94894b13d3d6955
 
 #             result = bit_reversed_order(w_hat)
 #             print(result)  # 應該輸出 [1467, 2807, 3471, 7621]
