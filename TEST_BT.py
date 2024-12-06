@@ -150,11 +150,11 @@ def NTT(w):
     while length >= 1:
         start = 0
         while start < 256:
-            k = k + 1
-            zeta = zeta_list[k +]
+            zeta = zeta_list[k + 1]
             for j in range(start, start + length):
                 t = (zeta * w_hat[j + length]) % ML_DSA["q"]
                 w_hat[j + length] = (w_hat[j] - t) % ML_DSA["q"]
                 w_hat[j] = (w_hat[j] + t) % ML_DSA["q"]
             start += 2 * length
+            k = k + 1
         length //= 2
