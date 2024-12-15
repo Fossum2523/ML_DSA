@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/fossu/Desktop/NTT_version1/NTT/NTT_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="NTT_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="17" />
+   <wvobject fp_name="/NTT_tb/NTT1/curr_state" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">curr_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">curr_state[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/NTT1/length" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">length[7:0]</obj_property>
+      <obj_property name="ObjectShortName">length[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/NTT1/start" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">start[8:0]</obj_property>
+      <obj_property name="ObjectShortName">start[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/NTT1/j" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">j[7:0]</obj_property>
+      <obj_property name="ObjectShortName">j[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/NTT1/k" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">k[7:0]</obj_property>
+      <obj_property name="ObjectShortName">k[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/NTT1/j_plusd_length" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">j_plusd_length[7:0]</obj_property>
+      <obj_property name="ObjectShortName">j_plusd_length[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/NTT1/uut/out0" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">out0[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out0[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/NTT1/uut/out1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">out1[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out1[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/s1/wen" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wen</obj_property>
+      <obj_property name="ObjectShortName">wen</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/s1/waddr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">waddr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">waddr[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/s1/din" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">din[22:0]</obj_property>
+      <obj_property name="ObjectShortName">din[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/s1/raddr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">raddr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">raddr[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/s1/dout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dout[22:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/NTT1/NTT_din" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">NTT_din[22:0]</obj_property>
+      <obj_property name="ObjectShortName">NTT_din[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/NTT1/NTT_wen" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">NTT_wen</obj_property>
+      <obj_property name="ObjectShortName">NTT_wen</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/NTT1/NTT_dout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">NTT_dout[22:0]</obj_property>
+      <obj_property name="ObjectShortName">NTT_dout[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/NTT1/NTT_addr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">NTT_addr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">NTT_addr[7:0]</obj_property>
+   </wvobject>
+</wave_config>

@@ -1,3 +1,0 @@
-verilog work "rom.v"
-verilog work "../../ML_DSA_Syn/NTT/BT.v"
-verilog work "NTT.v"

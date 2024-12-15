@@ -40,7 +40,7 @@ def RejNTTPoly(p):
     j = 0
     c = 0
     while j < 256:
-        print("c = ",c)
+        # print("c = ",c)
         a[j] = CoeffFromThreeBytes(H_p[c], H_p[c+1], H_p[c+2])
         c += 3
         if a[j] is not None:
