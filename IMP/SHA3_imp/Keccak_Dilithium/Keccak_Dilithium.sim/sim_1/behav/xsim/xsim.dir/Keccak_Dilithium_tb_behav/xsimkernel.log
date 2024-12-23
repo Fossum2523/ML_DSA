@@ -1,0 +1,7 @@
+Running: xsim.dir/Keccak_Dilithium_tb_behav/xsimk.exe -simmode gui -wdb Keccak_Dilithium_tb_behav.wdb -simrunnum 0 -socket 49857
+Design successfully loaded
+Design Loading Memory Usage: 7476 KB (Peak: 7476 KB)
+Design Loading CPU Usage: 31 ms
+Simulation completed
+Simulation Memory Usage: 8304 KB (Peak: 8304 KB)
+Simulation CPU Usage: 31 ms

@@ -1,0 +1,12 @@
+0.7
+2020.2
+Oct 13 2023
+20:47:58
+C:/Users/fossu/Desktop/SHA3_imp/Keccak_Dilithium/Keccak_Dilithium.sim/sim_1/behav/xsim/glbl.v,1697210495,verilog,,,,glbl,,,,,,,,
+C:/Users/fossu/Desktop/SHA3_imp/Keccak_Dilithium/Keccak_Dilithium.srcs/sim_1/new/Keccak_Dilithium_tb.v,1734858781,verilog,,,,Keccak_Dilithium_tb,,,,,,,,
+C:/Users/fossu/Desktop/SHA3_imp/Keccak_Dilithium/Keccak_Dilithium.srcs/sources_1/imports/Keccak_Dilithium/F_Permutation_Dilithium.v,1734854589,verilog,,C:/Users/fossu/Desktop/SHA3_imp/Keccak_Dilithium/Keccak_Dilithium.srcs/sources_1/imports/Keccak_Dilithium/Keccak_dilithium.v,,F_Permutation_Dilithium,,,,,,,,
+C:/Users/fossu/Desktop/SHA3_imp/Keccak_Dilithium/Keccak_Dilithium.srcs/sources_1/imports/Keccak_Dilithium/Keccak_dilithium.v,1734853474,verilog,,C:/Users/fossu/Desktop/SHA3_imp/Keccak_Dilithium/Keccak_Dilithium.srcs/sources_1/imports/Keccak_Dilithium/Padder_Dilithium.v,,Keccak_Dilithium,,,,,,,,
+C:/Users/fossu/Desktop/SHA3_imp/Keccak_Dilithium/Keccak_Dilithium.srcs/sources_1/imports/Keccak_Dilithium/Padder_Dilithium.v,1734854068,verilog,,C:/Users/fossu/Desktop/SHA3_imp/Keccak_Dilithium/Keccak_Dilithium.srcs/sources_1/imports/Keccak_Dilithium/padder1.v,,Padder_Dilithium,,,,,,,,
+C:/Users/fossu/Desktop/SHA3_imp/Keccak_Dilithium/Keccak_Dilithium.srcs/sources_1/imports/Keccak_Dilithium/padder1.v,1734760971,verilog,,C:/Users/fossu/Desktop/SHA3_imp/Keccak_Dilithium/Keccak_Dilithium.srcs/sources_1/imports/Keccak_Dilithium/rconst.v,,padder1,,,,,,,,
+C:/Users/fossu/Desktop/SHA3_imp/Keccak_Dilithium/Keccak_Dilithium.srcs/sources_1/imports/Keccak_Dilithium/rconst.v,1734329837,verilog,,C:/Users/fossu/Desktop/SHA3_imp/Keccak_Dilithium/Keccak_Dilithium.srcs/sources_1/imports/Keccak_Dilithium/round.v,,rconst,,,,,,,,
+C:/Users/fossu/Desktop/SHA3_imp/Keccak_Dilithium/Keccak_Dilithium.srcs/sources_1/imports/Keccak_Dilithium/round.v,1734539762,verilog,,C:/Users/fossu/Desktop/SHA3_imp/Keccak_Dilithium/Keccak_Dilithium.srcs/sim_1/new/Keccak_Dilithium_tb.v,,round,,,,,,,,

@@ -1,0 +1,57 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Sat Dec 21 14:38:07 2024
+# Process ID: 21948
+# Current directory: C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium_
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11024 C:\Users\fossu\Desktop\SHA3_imp\F_Permutation_Dilithium_\F_Permutation_Dilithium.xpr
+# Log file: C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium_/vivado.log
+# Journal file: C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium_\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium_/F_Permutation_Dilithium.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium_/F_Permutation_Dilithium_tb_behav.wcfg
+source F_Permutation_Dilithium_tb.tcl
+relaunch_sim
+current_wave_config {F_Permutation_Dilithium_tb_behav.wcfg}
+add_wave {{/F_Permutation_Dilithium_tb/uut/i}} 
+restart
+run 10 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+current_wave_config {F_Permutation_Dilithium_tb_behav.wcfg}
+add_wave {{/F_Permutation_Dilithium_tb/uut/update}} {{/F_Permutation_Dilithium_tb/uut/accept}} 
+restart
+run 10 us
+current_wave_config {F_Permutation_Dilithium_tb_behav.wcfg}
+add_wave {{/F_Permutation_Dilithium_tb/uut/calc}} 
+restart
+run 10 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+current_wave_config {F_Permutation_Dilithium_tb_behav.wcfg}
+add_wave {{/F_Permutation_Dilithium_tb/uut/i_sti_buf}} 
+restart
+run 10 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+close_sim
