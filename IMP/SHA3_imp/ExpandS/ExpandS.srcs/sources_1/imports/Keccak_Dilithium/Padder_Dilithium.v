@@ -21,8 +21,8 @@ module Padder_Dilithium(
     reg        [20:0]  i;           /* length of "out" buffer */ // 576/32 = 18, therefore i[17:0] (one-hot encoding)
     reg        [63:0]  v1;          /* to be shifted into register "out" */
     wire       [63:0]  v0;          /* output of module "padder1" */  
-    wire               accept;      /* accept user input? */
-    wire               update;
+    wire               accept,      /* accept user input? */
+                       update;
                        
     parameter   G     = 1'b0,
                 H     = 1'b1; 

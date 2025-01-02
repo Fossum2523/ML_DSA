@@ -334,35 +334,38 @@ def string_to_bits(input_string):
 
 
 ### TEST "Keccak_Dilithium" ###
-#setting str----------------------------
-mode = 0 # G(r = 1344) => 0, H(r = 1088) => 1
-byte_num = 1    # 0(2'b00) => out = 64'h000000000000001f     
-                # 1(2'b01) out = {24'h00001f,in[39:0]};   
-                # 2(2'b10) out = {16'h001f,in[47:0]};         
-verilog_in_64 =  ['1101011111110100101000100011001001100101101111001110110010100101'
-                                                                                 #^
-                                                                                 #|
-                                                                                 #LSB(verilog)
-                 ,'0011010011011100011010100110110110000001110000010100101001100000'
-                 ,'0110100000011101010100001011010111110110101010010101111011111101'
-                 ,'1101001100000010101011000000101110000100100011101000010101110001'
-                 ,'11110000000000000000111110000010000000100000']
-                  #^   ^
-                  #|   |
-                  #|   40bit 
-                  #|
-                  #shake add 1111(verilog)            
-#setting end----------------------------
-cont = 0
-python_in_64x5 = ''
-for i in verilog_in_64:
-    print("verilog_in",cont," = ",i)
-    python_in_64x5 = python_in_64x5 + i[::-1]
-    cont+=1
+# #setting str----------------------------
+# mode = 0 # G(r = 1344) => 0, H(r = 1088) => 1
+# byte_num = 1    # 0(2'b00) => out = 64'h000000000000001f     
+#                 # 1(2'b01) out = {24'h00001f,in[39:0]};   
+#                 # 2(2'b10) out = {16'h001f,in[47:0]};         
+# verilog_in_64 =  ['1101011111110100101000100011001001100101101111001110110010100101'
+#                                                                                  #^
+#                                                                                  #|
+#                                                                                  #LSB(verilog)
+#                  ,'0011010011011100011010100110110110000001110000010100101001100000'
+#                  ,'0110100000011101010100001011010111110110101010010101111011111101'
+#                  ,'1101001100000010101011000000101110000100100011101000010101110001'
+#                  ,'11110000000000000000111110000010000000100000']
+#                   #^   ^
+#                   #|   |
+#                   #|   40bit 
+#                   #|
+#                   #shake add 1111(verilog)            
+# #setting end----------------------------
+# cont = 0
+# python_in_64x5 = ''
+# for i in verilog_in_64:
+#     print("verilog_in",cont,"     = ",i)
+#     python_in_64x5 = python_in_64x5 + i[::-1]
+#     cont+=1
 
-print(python_in_64x5)
-python_KECCAK_out_1344 = KECCAK(256, python_in_64x5, 1344)
-python_KECCAK_out_1344.reverse()
-python_KECCAK_out_1344_string = ''.join(map(str, python_KECCAK_out_1344))
-python_KECCAK_out_1344_string = ''.join(hex(int(python_KECCAK_out_1344_string[i:i+4], 2))[2:].upper() for i in range(0, len(python_KECCAK_out_1344_string), 4))
-print("python_KECCAK_out_1344_string = ",python_KECCAK_out_1344_string) # Verilog available output is 1344 bit (out[1343:0])
+# print(python_in_64x5)
+# python_KECCAK_out_1344 = KECCAK(256, python_in_64x5, 1344)
+# python_KECCAK_out_1344.reverse()
+# python_KECCAK_out_1344_string = ''.join(map(str, python_KECCAK_out_1344))
+# python_KECCAK_out_1344_string = ''.join(hex(int(python_KECCAK_out_1344_string[i:i+4], 2))[2:].upper() for i in range(0, len(python_KECCAK_out_1344_string), 4))
+# print("python_KECCAK_out_1344_string = ",python_KECCAK_out_1344_string) # Verilog available output is 1344 bit (out[1343:0])
+
+
+### TEST "ExpandS" ###
