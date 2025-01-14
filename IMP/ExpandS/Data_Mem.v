@@ -2,32 +2,45 @@ module Data_Mem(
     input clk,
     input reset,
 
-    input  Rho_prime_wen,
-    input  Rho_prime_waddr,
-    input  Rho_prime_din,
-    input  Rho_prime_raddr,
-    output Rho_prime_dout
+    /*---Rho---*/
+    input Rho_en,
+    input  [255:0]Rho_din,
+    output reg [255:0]Rho_dout,
+
+    /*---Rho_prime---*/
+    input Rho_prime_en,
+    input [511:0]Rho_prime_din,
+    output reg [511:0]Rho_prime_dout,
+
+    /*---Kata---*/
+    input Kata_en,
+    input [255:0]Kata_din,
+    output reg [255:0]Kata_dout
     );
 
-// wire Rho_prime_wen;
-// wire Rho_prime_waddr;
-// wire Rho_prime_din;
-// wire Rho_prime_raddr;
-// wire Rho_prime_dout;
 
-BRAM #(.DLEN(64), .HLEN(3)) Mem_Rho_prime(.clk(clk),
-                                          .wen(Rho_prime_wen),
-                                          .waddr(Rho_prime_waddr),
-                                          .din(Rho_prime_din),
-                                          .raddr(Rho_prime_raddr),
-                                          .dout(Rho_prime_dout));
+always @(posedge clk) begin
+    if(reset)
+        Rho_dout <= 256'd0;
+    else if(Rho_en)
+        Rho_dout <= Rho_din;
+end
 
-BRAM #(.DLEN(64), .HLEN(3)) Mem_Rho_prime(.clk(clk),
-                                          .wen(Rho_prime_wen),
-                                          .waddr(Rho_prime_waddr),
-                                          .din(Rho_prime_din),
-                                          .raddr(Rho_prime_raddr),
-                                          .dout(Rho_prime_dout));
+always @(posedge clk) begin
+    if(reset)
+        Rho_prime_dout <= 256'd0;
+    else if(Rho_en)
+        Rho_prime_dout <= Rho_prime_din;
+end
+
+always @(posedge clk) begin
+    if(reset)
+        Kata_dout <= 256'd0;
+    else if(Kata_en)
+        Kata_dout <= Kata_din;
+end
+
+
 
 
 endmodule

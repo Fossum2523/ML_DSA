@@ -131,7 +131,13 @@ def KECCAK_p(S, b, nr):
     w = b // 25
     l = w.bit_length() - 1
     
-    # print(S)
+    # print(type(S))
+    # S_p = ['0']*1600
+    # S_p[0:1600] = S[0:1600]
+    # S_p.reverse()
+    # S_p = ''.join(map(str, S_p))
+    # S_p = ''.join(hex(int(S_p[i:i+4], 2))[2:].upper() for i in range(0, len(S_p), 4))
+    # print('S_p = ',S_p)
     # print("------------------------------------------------------------------------------------")
     A = [[[0 for z in range(w)] for y in range(5)] for x in range(5)]
     for x in range(5):
@@ -149,7 +155,16 @@ def KECCAK_p(S, b, nr):
             for x in range(5):
                 for z in range(64):
                     test[z+x*64+y*320] = A[x][y][z]
-        # print(A)
+        
+        # A_p = [0]*1600
+        # for w in range(5):
+        #     for e in range(5):
+        #         for r in range(64):
+        #             A_p[r+e*64+w*320] = A[e][w][r]
+        # A_p.reverse()
+        # A_p = ''.join(map(str, A_p))
+        # A_p = ''.join(hex(int(A_p[i:i+4], 2))[2:].upper() for i in range(0, len(A_p), 4))
+        # print(A_p)
         # print("------------------------------------------------------------------------------------")
 
     # Convert the state array A back into the output string S'
@@ -169,18 +184,29 @@ def sponge(r, b, N, d):
     P_blocks = [0 for x in range(n)]
     for i in range(n):
             P_blocks[i] = P[i*r:i*r+r]
+            v = P_blocks[i]
+            # v.reverse()
+            # print(v[::-1])
+    # print(P_blocks)
     S = ['0'] * b
+    # S_p = ['0']*1600
     # print(P_blocks)
     for i in range(n):
         m = P_blocks[i] + '0' * c       
         for j in range(b):
             S[j] = str(int(S[j]) ^ int(m[j]))
-        print(S)
+        # print(S)
         S = KECCAK_p(S, 1600, 24)
+        # S_p[0:1600] = S[0:1600]
+        # # print(S)
+        # S_p.reverse()
+        # S_p = ''.join(map(str, S_p))
+        # S_p = ''.join(hex(int(S_p[v:v+4], 2))[2:].upper() for v in range(0, len(S_p), 4))
+        # print(S_p)
 
     Z = S[:r]
     while len(Z) < d:
-        print(len(Z))
+        # print(len(Z))
         S = KECCAK_p(S, 1600, 24)
         Z += S[:r]
 
@@ -222,14 +248,29 @@ def SHA3(M,B,d,SHA_SHAKE):
 
 def SHAKE_128(M,d):
     result = SHA3(M, 256, d,1) 
-    result = BitsToBytes(result) 
+    # result = BitsToBytes(result)
+    result.reverse()
+    result = ''.join(map(str, result))
+    result = ''.join(hex(int(result[i:i+4], 2))[2:].upper() for i in range(0, len(result), 4))
+    # print("result = ",result) # Verilog available output is 1344 bit (out[1343:0]) 
     return result
 
 def SHAKE_256(M,d):
     result = SHA3(M, 512, d,1)  
     result = BitsToBytes(result) 
+    # result.reverse()
+    # result = ''.join(map(str, result))
+    # result = ''.join(hex(int(result[i:i+4], 2))[2:].upper() for i in range(0, len(result), 4))
+    # print("result = ",result) # Verilog available output is 1344 bit (out[1343:0]) 
     return result
 
+def Verilog_trans(a):
+    # a = list(a)
+    a = BytesToBits(a)
+    a.reverse()
+    a = ''.join(map(str, a))
+    a = ''.join(hex(int(a[i:i+4], 2))[2:].upper() for i in range(0, len(a), 4))
+    return a 
 # 算法 6: BitsToBytes(y) 
 def BitsToBytes(y: list) -> bytearray:
     """
@@ -359,7 +400,6 @@ def string_to_bits(input_string):
 #     print("verilog_in",cont,"     = ",i)
 #     python_in_64x5 = python_in_64x5 + i[::-1]
 #     cont+=1
-
 # print(python_in_64x5)
 # python_KECCAK_out_1344 = KECCAK(256, python_in_64x5, 1344)
 # python_KECCAK_out_1344.reverse()
@@ -368,4 +408,153 @@ def string_to_bits(input_string):
 # print("python_KECCAK_out_1344_string = ",python_KECCAK_out_1344_string) # Verilog available output is 1344 bit (out[1343:0])
 
 
-### TEST "ExpandS" ###
+### TEST "Absobing Test(KECCAK)" ###
+# #setting str----------------------------
+# mode = 0 # G(r = 1344) => 0, H(r = 1088) => 1
+# byte_num = 1    # 0(2'b00) => out = 64'h000000000000001f     
+#                 # 1(2'b01) out = {24'h00001f,in[39:0]};   
+#                 # 2(2'b10) out = {16'h001f,in[47:0]};         
+# verilog_in_64 =  ['1111111111111111111111111111111111111111111111111111111111111111'
+#                                                                                  #^
+#                                                                                  #|
+#                                                                                  #LSB(verilog)
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+
+#                  ,'11110000010000000100'
+#                  ]
+#                   #^   ^
+#                   #|   |
+#                   #|   16bit 
+#                   #|
+#                   #shake add 1111(verilog)            
+# #setting end----------------------------
+# cont = 0
+# python_in_64x5 = ''
+# for i in verilog_in_64:
+#     # print("verilog_in",cont,"     = ",i)
+#     python_in_64x5 = python_in_64x5 + i[::-1]
+#     cont+=1
+# python_KECCAK_out_1344 = KECCAK(512, python_in_64x5, 1088)
+# python_KECCAK_out_1344.reverse()
+# python_KECCAK_out_1344_string = ''.join(map(str, python_KECCAK_out_1344))
+# python_KECCAK_out_1344_string = ''.join(hex(int(python_KECCAK_out_1344_string[i:i+4], 2))[2:].upper() for i in range(0, len(python_KECCAK_out_1344_string), 4))
+# print("python_KECCAK_out_1344_string = ",python_KECCAK_out_1344_string) # Verilog available output is 1344 bit (out[1343:0])
+# ### TEST "Absobing Test(SHAKE_256)" ###
+# xi = 'FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF'
+# xi = bytes.fromhex(xi) + bytes.fromhex(xi) + bytes.fromhex(xi) + bytes.fromhex(xi) + bytes.fromhex(xi) + b'\x04\x04'
+# SHAKE_256(xi,1088)
+
+
+
+### TEST "Squeezing Test(KECCAK)" ###
+# #setting str----------------------------
+# mode = 0 # G(r = 1344) => 0, H(r = 1088) => 1
+# byte_num = 1    # 0(2'b00) => out = 64'h000000000000001f     
+#                 # 1(2'b01) out = {24'h00001f,in[39:0]};   
+#                 # 2(2'b10) out = {16'h001f,in[47:0]};         
+# verilog_in_64 =  ['1111111111111111111111111111111111111111111111111111111111111111'
+#                                                                                  #^
+#                                                                                  #|
+#                                                                                  #LSB(verilog)
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+#                  ,'11110000010000000100'
+#                  ]
+#                   #^   ^
+#                   #|   |
+#                   #|   16bit 
+#                   #|
+#                   #shake add 1111(verilog)            
+# #setting end----------------------------
+# cont = 0
+# python_in_64x5 = ''
+# for i in verilog_in_64:
+#     # print("verilog_in",cont,"     = ",i)
+#     python_in_64x5 = python_in_64x5 + i[::-1]
+#     cont+=1
+
+# python_KECCAK_out_1344 = KECCAK(512, python_in_64x5, 2176)
+# python_KECCAK_out_1344.reverse()
+# python_KECCAK_out_1344_string = ''.join(map(str, python_KECCAK_out_1344))
+# python_KECCAK_out_1344_string = ''.join(hex(int(python_KECCAK_out_1344_string[i:i+4], 2))[2:].upper() for i in range(0, len(python_KECCAK_out_1344_string), 4))
+# print("python_KECCAK_out_1344_string = ",python_KECCAK_out_1344_string) # Verilog available output is 1344 bit (out[1343:0])
+# ### TEST "Squeezing Test(SHAKE_256)" ###
+# xi = 'FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF'
+# xi = bytes.fromhex(xi) + b'\x04\x04'
+# SHAKE_256(xi,2176)
+
+
+### TEST "Squeezing Test(KECCAK)" ###
+# #setting str----------------------------
+# mode = 0 # G(r = 1344) => 0, H(r = 1088) => 1
+# byte_num = 1    # 0(2'b00) => out = 64'h000000000000001f     
+#                 # 1(2'b01) out = {24'h00001f,in[39:0]};   
+#                 # 2(2'b10) out = {16'h001f,in[47:0]};         
+# verilog_in_64 =  ['1111111111111111111111111111111111111111111111111111111111111111'
+#                                                                                  #^
+#                                                                                  #|
+#                                                                                  #LSB(verilog)
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
+#                  ,'11110000010000000100'
+#                  ]
+#                   #^   ^
+#                   #|   |
+#                   #|   16bit 
+#                   #|
+#                   #shake add 1111(verilog)            
+# #setting end----------------------------
+# cont = 0
+# python_in_64x5 = ''
+# for i in verilog_in_64:
+#     # print("verilog_in",cont,"     = ",i)
+#     python_in_64x5 = python_in_64x5 + i[::-1]
+#     cont+=1
+
+# python_KECCAK_out_1344 = KECCAK(512, python_in_64x5, 1088)
+# python_KECCAK_out_1344.reverse()
+# python_KECCAK_out_1344_string = ''.join(map(str, python_KECCAK_out_1344))
+# python_KECCAK_out_1344_string = ''.join(hex(int(python_KECCAK_out_1344_string[i:i+4], 2))[2:].upper() for i in range(0, len(python_KECCAK_out_1344_string), 4))
+# print("python_KECCAK_out_1344_string = ",python_KECCAK_out_1344_string) # Verilog available output is 1344 bit (out[1343:0])
+
+
+### TEST "MLDSA FSM" ###
+xi = 'FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF'
+xi = bytes.fromhex(xi) + b'\x04\x04'
+result = SHAKE_256(xi,1088)
+print(Verilog_trans(result))
+Rho_seed = result[0:32]
+Rho_Prime_seed = result[32:96]
+Kata_seed = result[96:128]
+# print(Verilog_trans(Rho_seed))
+# print(Verilog_trans(Rho_Prime_seed))
+# print(Verilog_trans(Kata_seed))
+
+# xi = Rho_Prime_seed + b'\x00' + b'\x00'
+# Sample_S_00 = SHAKE_256(xi,1088)
+# print(Verilog_trans(Sample_S_00))
+    

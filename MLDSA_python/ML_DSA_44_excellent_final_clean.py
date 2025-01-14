@@ -14,7 +14,11 @@ zeta_list = [
 
 
 def ML_DSA_KeyGen():
-    xi = os.urandom(32)
+    # xi = os.urandom(32)
+    # xi = '6CAE2E9C2CF64D2686C31C2118E0F24A47DD46DB85590910AAC9DF4C1B854E44'
+    xi = 'FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF'
+    xi = bytes.fromhex(xi)
+    # print(xi)
     if xi is None:
         return None 
     return KeyGen(xi)
@@ -41,10 +45,16 @@ def KeyGen(xi):
     xi = xi + IntegerToByte(ML_DSA["k"],1) + IntegerToByte(ML_DSA["l"],1)
     print(xi)
     H_xi = SHAKE_256(xi,1024)
-    # print(H_xi)
+    print(H_xi.hex())
     p = H_xi[:32]
     p_prime = H_xi[32:96]
     K = H_xi[96:128]
+    print(p)
+    print(p.hex())
+    print(p_prime)
+    print(p_prime.hex())
+    print(K)
+    print(K.hex())
     A_hat = ExpandA(p)
     s1, s2 = ExpandS(p_prime)
     s1Hat = [NTT(s) for s in s1]
@@ -798,14 +808,14 @@ ctx = hex_to_bytes(ctx)
 # test2 = BitsToInteger(test1)
 # print(test2)
 
-test3 = IntegerToByte(50,2)
-print(test3)
+# test3 = IntegerToByte(50,2)
+# print(test3)
 
 # test4 = BitsToBytes([0,0,1,1,1,1,1,0,0,1])
 # print(test4)
 
-test5 = BytesToBits(b'2\x00')
-print(test5)
+# test5 = BytesToBits(b'2\x00')
+# print(test5)
 
 # b0 = 2
 # b1 = 2
@@ -859,26 +869,26 @@ print(test5)
 # a = CoeffFromThreeBytes(H_p[0], H_p[1], H_p[2])
 # print(a)
 
-def nb(r):
-    r0 = r % (2**13)
-    if(r0//(2**12) == 1 and r0%(2**12) != 0):
-        r1 = r//(2**13) + 1
-    else:
-        r1 = r//(2**13)
+# def nb(r):
+#     r0 = r % (2**13)
+#     if(r0//(2**12) == 1 and r0%(2**12) != 0):
+#         r1 = r//(2**13) + 1
+#     else:
+#         r1 = r//(2**13)
 
-    if r0 > (2 ** (ML_DSA["d"] - 1)):  # 確保 r0 在 -2^(d-1) 到 2^(d-1) 之間
-        r0 -= 2 ** ML_DSA["d"]
-    return r1,r0
+#     if r0 > (2 ** (ML_DSA["d"] - 1)):  # 確保 r0 在 -2^(d-1) 到 2^(d-1) 之間
+#         r0 -= 2 ** ML_DSA["d"]
+#     return r1,r0
 
-for i in range(8380417):
-    a = Power2Round(i)
-    b = nb(i)
-    if a != b:
-        print("error")
-        print(i,a,b)
-        break
-    # else:
-    #     print("correct")
+# for i in range(8380417):
+#     a = Power2Round(i)
+#     b = nb(i)
+#     if a != b:
+#         print("error")
+#         print(i,a,b)
+#         break
+#     # else:
+#     #     print("correct")
 
 # 8380415
 # 011111111101111111111111
@@ -891,3 +901,9 @@ for i in range(8380417):
 
 # 4194303
 
+# test = '6CAE2E9C2CF64D2686C31C2118E0F24A47DD46DB85590910AAC9DF4C1B854E44'
+# print(test)
+# test = bytes.fromhex(test)
+# print(test)
+# test = test.hex()
+# print(test)

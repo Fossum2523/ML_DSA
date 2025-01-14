@@ -191,12 +191,15 @@ def SHA3(B,M,d,SHA_SHAKE):
             S_rev += sb[7-j]
         # in_KECCAK += 
         in_KECCAK += S_rev
-    # print(in_KECCAK)
+    # print("in_KECCAK=",in_KECCAK)
     if(SHA_SHAKE == 0):
         in_KECCAK += '01'
 
     else:
         in_KECCAK += '1111'
+    print("in_KECCAK=",in_KECCAK)
+    print(M)
+    print(d)
     result = KECCAK(M, in_KECCAK, d)  # 輸出4096位的結果
     return result
 
@@ -207,6 +210,8 @@ def SHAKE_128(M,d):
 
 def SHAKE_256(M,d):
     result = SHA3(M, 512, d,1)  
+    print(result)
+    # result.reverse()
     result = BitsToBytes(result) 
     return result
 

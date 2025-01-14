@@ -1,0 +1,89 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Thu Jan  9 11:47:45 2025
+# Process ID: 19504
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/Keccak_Dilithium
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18676 C:\Users\fossu\Desktop\ML_DSA_Syn\IMP\SHA3_imp\Keccak_Dilithium\Keccak_Dilithium.xpr
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/Keccak_Dilithium/vivado.log
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/Keccak_Dilithium\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/Keccak_Dilithium/Keccak_Dilithium.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/Keccak_Dilithium/Keccak_Dilithium_tb_behav.wcfg
+source Keccak_Dilithium_tb.tcl
+run 1 us
+relaunch_sim
+relaunch_sim
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/Keccak_Dilithium/Keccak_Dilithium_tb_behav.wcfg}
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/Keccak_Dilithium/Keccak_Dilithium_tb_behav.wcfg}
+relaunch_sim
+relaunch_sim
+run 1 us
+relaunch_sim
+run 1 us
+relaunch_sim
+run 1 us
+run 1 us
+relaunch_sim
+relaunch_sim
+current_wave_config {Keccak_Dilithium_tb_behav.wcfg}
+add_wave {{/Keccak_Dilithium_tb/in}} {{/Keccak_Dilithium_tb/in_ready}} {{/Keccak_Dilithium_tb/is_last}} {{/Keccak_Dilithium_tb/squeeze}} {{/Keccak_Dilithium_tb/mode}} {{/Keccak_Dilithium_tb/sha_hold}} {{/Keccak_Dilithium_tb/byte_num}} {{/Keccak_Dilithium_tb/buffer_full}} {{/Keccak_Dilithium_tb/buffer_last}} {{/Keccak_Dilithium_tb/out}} {{/Keccak_Dilithium_tb/out_ready}} {{/Keccak_Dilithium_tb/padder_out}} {{/Keccak_Dilithium_tb/padder_out_ready}} 
+current_wave_config {Keccak_Dilithium_tb_behav.wcfg}
+add_wave {{/Keccak_Dilithium_tb/uut/padder_/in}} {{/Keccak_Dilithium_tb/uut/padder_/in_ready}} {{/Keccak_Dilithium_tb/uut/padder_/is_last}} {{/Keccak_Dilithium_tb/uut/padder_/mode}} {{/Keccak_Dilithium_tb/uut/padder_/byte_num}} {{/Keccak_Dilithium_tb/uut/padder_/buffer_full}} {{/Keccak_Dilithium_tb/uut/padder_/i_last}} {{/Keccak_Dilithium_tb/uut/padder_/out}} {{/Keccak_Dilithium_tb/uut/padder_/out_ready}} {{/Keccak_Dilithium_tb/uut/padder_/f_ack}} {{/Keccak_Dilithium_tb/uut/padder_/state}} {{/Keccak_Dilithium_tb/uut/padder_/done}} {{/Keccak_Dilithium_tb/uut/padder_/i}} {{/Keccak_Dilithium_tb/uut/padder_/v1}} {{/Keccak_Dilithium_tb/uut/padder_/v0}} {{/Keccak_Dilithium_tb/uut/padder_/accept}} {{/Keccak_Dilithium_tb/uut/padder_/update}} 
+restart
+run 1 us
+run 1 us
+relaunch_sim
+run 1 us
+current_wave_config {Keccak_Dilithium_tb_behav.wcfg}
+add_wave {{/Keccak_Dilithium_tb/uut/f_permutation_/in}} {{/Keccak_Dilithium_tb/uut/f_permutation_/in_ready}} {{/Keccak_Dilithium_tb/uut/f_permutation_/squeeze}} {{/Keccak_Dilithium_tb/uut/f_permutation_/mode}} {{/Keccak_Dilithium_tb/uut/f_permutation_/sha_hold}} {{/Keccak_Dilithium_tb/uut/f_permutation_/ack}} {{/Keccak_Dilithium_tb/uut/f_permutation_/out}} {{/Keccak_Dilithium_tb/uut/f_permutation_/out_ready}} {{/Keccak_Dilithium_tb/uut/f_permutation_/i}} {{/Keccak_Dilithium_tb/uut/f_permutation_/round_out}} {{/Keccak_Dilithium_tb/uut/f_permutation_/rc}} {{/Keccak_Dilithium_tb/uut/f_permutation_/update}} {{/Keccak_Dilithium_tb/uut/f_permutation_/accept}} {{/Keccak_Dilithium_tb/uut/f_permutation_/calc}} {{/Keccak_Dilithium_tb/uut/f_permutation_/i_sti_buf}} 
+restart
+run 1 us
+run 1 us
+current_wave_config {Keccak_Dilithium_tb_behav.wcfg}
+add_wave {{/Keccak_Dilithium_tb/uut/out}} {{/Keccak_Dilithium_tb/uut/out_ready}} 
+restart
+run 1 us
+run 1 us
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+relaunch_sim
+relaunch_sim
+run 1 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 1 us
+relaunch_sim
+run 1 us
+relaunch_sim
+run 1 us
+run 1 us
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/Keccak_Dilithium/Keccak_Dilithium_tb_behav.wcfg}
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/Keccak_Dilithium/Keccak_Dilithium_tb_behav.wcfg}
+relaunch_sim
+run 1 us
+relaunch_sim
+run 1 us
+relaunch_sim
+run 1 us
+current_wave_config {Keccak_Dilithium_tb_behav.wcfg}
+add_wave {{/Keccak_Dilithium_tb/uut/padder_/padder_done}} 
+relaunch_sim
+run 1 us
+relaunch_sim
+run 1 us
+relaunch_sim
+run 1 us
+relaunch_sim
+run all
+run 1 us
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/Keccak_Dilithium/Keccak_Dilithium_tb_behav.wcfg}
+close_sim

@@ -5,12 +5,12 @@ module Padder_Dilithium(
     input               in_ready,
     input               is_last,
     input               mode,
-    input      [1:0]    byte_num,
+    input      [2:0]    byte_num,
     output              buffer_full, /* to "user" module */
     output              i_last,
     output reg [1343:0] out,         /* to "f_permutation" module */ // need update
     output              out_ready,   /* to "f_permutation" module */
-    input               f_ack        /* from "f_permutation" module */
+    input               f_ack,        /* from "f_permutation" module */
     );
  
                                     /* if "ack" is 1, then current output has been used by "f_permutation" module */
@@ -41,28 +41,31 @@ module Padder_Dilithium(
     padder1 p0 (in, byte_num, v0);
 
 
-    always @ (posedge clk)
-      if (reset)
+    always @ (posedge clk or negedge reset)
+      if (!reset)
         out <= 0;
       else if (update)
-        out <= {v1, out[1343:64]}; // need update
+        if (mode == G)
+          out <= {v1, out[1343:64]}; // need update
+        else 
+          out <= {v1, out[1087:64]}; // need update
 
-    always @ (posedge clk)
-      if (reset)
+    always @ (posedge clk or negedge reset)
+      if (!reset)
         i <= 0;
       else if (f_ack | update)
         i <= {i[19:0], 1'b1} & {21{~ f_ack}}; // need update
 
-    always @ (posedge clk)
-      if (reset)
+    always @ (posedge clk or negedge reset)
+      if (!reset)
         state <= 0;
       else if (is_last)
         state <= 1;
       else
         state <= state;
 
-    always @ (posedge clk)
-      if (reset)
+    always @ (posedge clk or negedge reset)
+      if (!reset)
         done <= 0;
       else if (state & out_ready)
         done <= 1;

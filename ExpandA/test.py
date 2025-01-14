@@ -94,3 +94,4 @@ l = 3  # Dimension l of the matrix
 matrix_A = ExpandA(seed)
 print("Generated matrix A:", matrix_A)
 print(matrix_A.shape)
+

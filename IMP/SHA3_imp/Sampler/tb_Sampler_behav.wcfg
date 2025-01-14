@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_Sampler_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_Sampler" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="16.125000 us"></ZoomEndTime>
+      <Cursor1Time time="3.525000 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="206"></NameColumnWidth>
+      <ValueColumnWidth column_width="92"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="17" />
+   <wvobject fp_name="/tb_Sampler/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_Sampler/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_Sampler/uut/ExpandS_/curr_state" type="array">
+      <obj_property name="ElementShortName">curr_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">curr_state[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_Sampler/sampler_in_ready" type="logic">
+      <obj_property name="ElementShortName">sampler_in_ready</obj_property>
+      <obj_property name="ObjectShortName">sampler_in_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_Sampler/sampler_in" type="array">
+      <obj_property name="ElementShortName">sampler_in[1343:0]</obj_property>
+      <obj_property name="ObjectShortName">sampler_in[1343:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_Sampler/sampler_squeeze" type="logic">
+      <obj_property name="ElementShortName">sampler_squeeze</obj_property>
+      <obj_property name="ObjectShortName">sampler_squeeze</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_Sampler/next_element" type="logic">
+      <obj_property name="ElementShortName">next_element</obj_property>
+      <obj_property name="ObjectShortName">next_element</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_Sampler/z0" type="array">
+      <obj_property name="ElementShortName">z0[22:0]</obj_property>
+      <obj_property name="ObjectShortName">z0[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_Sampler/z1" type="array">
+      <obj_property name="ElementShortName">z1[22:0]</obj_property>
+      <obj_property name="ObjectShortName">z1[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_Sampler/waddr_z0" type="array">
+      <obj_property name="ElementShortName">waddr_z0[9:0]</obj_property>
+      <obj_property name="ObjectShortName">waddr_z0[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_Sampler/waddr_z1" type="array">
+      <obj_property name="ElementShortName">waddr_z1[9:0]</obj_property>
+      <obj_property name="ObjectShortName">waddr_z1[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_Sampler/wen_z" type="logic">
+      <obj_property name="ElementShortName">wen_z</obj_property>
+      <obj_property name="ObjectShortName">wen_z</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_Sampler/SAMPLER_WIDTH" type="array">
+      <obj_property name="ElementShortName">SAMPLER_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">SAMPLER_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_Sampler/uut/ExpandS_/j_plus_num" type="array">
+      <obj_property name="ElementShortName">j_plus_num[1:0]</obj_property>
+      <obj_property name="ObjectShortName">j_plus_num[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_Sampler/uut/ExpandS_/j" type="array">
+      <obj_property name="ElementShortName">j[8:0]</obj_property>
+      <obj_property name="ObjectShortName">j[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_Sampler/uut/ExpandS_/shake_cnt" type="array">
+      <obj_property name="ElementShortName">shake_cnt[7:0]</obj_property>
+      <obj_property name="ObjectShortName">shake_cnt[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_Sampler/uut/ExpandS_/element_choose" type="array">
+      <obj_property name="ElementShortName">element_choose[1:0]</obj_property>
+      <obj_property name="ObjectShortName">element_choose[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>
