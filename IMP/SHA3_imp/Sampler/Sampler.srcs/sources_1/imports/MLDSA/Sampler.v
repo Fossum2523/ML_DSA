@@ -1,6 +1,7 @@
 module Sampler(
     input                   clk,
     input                   reset,
+    input       [1:0]       mode,
     input                   sampler_in_ready,
     input       [1343:0]    sampler_in,
 
@@ -11,27 +12,112 @@ module Sampler(
     /*---S1 Mem---"*/
     output  [22:0]      z0,             // Write data z0 to Mem
     output  [22:0]      z1,             // Write data z1 to Mem
-    output  [9:0]       waddr_z0,       // Write addresses for z0
-    output  [9:0]       waddr_z1,       // Write addresses for z1
-    output              wen_z           // Write enable for z values
+    output  [9:0]       addr_z0,        // Write addresses for z0
+    output  [9:0]       addr_z1,        // Write addresses for z1
+    output              en_z,           // enable for z values
+    output              we_z,           // Write enable for z values
+
+    /*---A Mem---"*/
+    output  [22:0]      A0,             // Write data A0 to Mem
+    output  [22:0]      A1,             // Write data A1 to Mem
+    output  [11:0]      addr_A0,        // Write addresses for A0
+    output  [11:0]      addr_A1,        // Write addresses for A1
+    output              en_A,           // enable for A values
+    output              we_A,           // Write enable for A values
+
+    /*---c Mem---"*/
+    output  [22:0]      ci,             // Write data ci to Mem
+    output  [22:0]      cj,             // Write data cj to Mem
+    output  [7:0]       addr_ci,        // Write addresses for ci
+    output  [7:0]       addr_cj,        // Write addresses for cj
+    output              en_ci,          // enable for ci values
+    output              en_cj,          // enable for cj values
+    output              we_ci,          // Write enable for ci values
+    output              we_cj           // Write enable for cj values
     );
     
     reg              sampler_in_ready_buffer;
     reg  [1343:0]    sampler_in_buffer;
 
+    localparam [1:0] S_mode = 2'd0,
+                     A_mode = 2'd1,
+                     MASK_mode = 2'd2,
+                     SIB_mode = 2'd3;
+
+    wire sampler_in_ready_S;
+    wire sampler_in_ready_A;    
+    wire sampler_in_ready_MASK;    
+    wire sampler_in_ready_SIB;        
+
+    wire sampler_squeeze_S;
+    wire sampler_squeeze_A;
+    wire sampler_squeeze_MASK;
+    wire sampler_squeeze_SIB;
+
+    wire next_element_S;
+    wire next_element_A;
+    wire next_element_MASK;
+    wire next_element_SIB;
+
+
+    assign sampler_in_ready_S       = mode == S_mode    ?  sampler_in_ready_buffer : 1'b0;
+    assign sampler_in_ready_A       = mode == A_mode    ?  sampler_in_ready_buffer : 1'b0;
+    assign sampler_in_ready_MASK    = mode == MASK_mode ?  sampler_in_ready_buffer : 1'b0;
+    assign sampler_in_ready_SIB     = mode == SIB_mode  ?  sampler_in_ready_buffer : 1'b0;
+
+    assign sampler_squeeze = mode == S_mode    ? sampler_squeeze_S    :
+                             mode == A_mode    ? sampler_squeeze_A    :
+                             mode == MASK_mode ? sampler_squeeze_MASK :
+                             mode == SIB_mode  ? sampler_squeeze_SIB  : 1'b0;
+
+    assign next_element = mode == S_mode    ? next_element_S    :
+                          mode == A_mode    ? next_element_A    :
+                          mode == MASK_mode ? next_element_MASK :
+                          mode == SIB_mode  ? next_element_SIB  : 1'b0;
+
     ExpandS ExpandS_(
         .clk(clk),
         .reset(reset),
-        .sampler_in_ready(sampler_in_ready_buffer),
+        .sampler_in_ready(sampler_in_ready_S),
         .sampler_in(sampler_in_buffer),
-        .sampler_squeeze(sampler_squeeze),
-        .next_element(next_element),
+        .sampler_squeeze(sampler_squeeze_S),
+        .next_element(next_element_S),
         .z0(z0),
         .z1(z1),
-        .waddr_z0(waddr_z0),
-        .waddr_z1(waddr_z1),
-        .wen_z(wen_z)
+        .addr_z0(addr_z0),
+        .addr_z1(addr_z1),
+        .we_z(we_z)
     );   
+
+    ExpandA ExpandA_(
+        .clk(clk),
+        .reset(reset),
+        .sampler_in_ready(sampler_in_ready_A),
+        .sampler_in(sampler_in_buffer),
+        .sampler_squeeze(sampler_squeeze_A),
+        .next_element(next_element_A),
+        .A0(A0),
+        .A1(A1),
+        .addr_A0(addr_A0),
+        .addr_A1(addr_A1),
+        .we_A(we_A)
+    );
+
+    SampleInBall SampleInBall_(
+        .clk(clk),
+        .reset(reset),
+        .sampler_in_ready(sampler_in_ready_SIB),
+        .sampler_in(sampler_in_buffer),
+        .sampler_squeeze(sampler_squeeze_SIB),
+        .ci(ci),
+        .cj(cj),
+        .addr_ci(addr_ci),
+        .addr_cj(addr_cj),
+        .en_ci(en_ci),
+        .en_cj(en_cj),
+        .we_ci(we_ci),
+        .we_cj(we_cj)
+    );
 
     always @(posedge clk) begin
         if(reset)
