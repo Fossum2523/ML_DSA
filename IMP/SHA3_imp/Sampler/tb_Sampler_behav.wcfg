@@ -3,105 +3,1428 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="tb_Sampler_behav.wdb" id="1">
+      <db_ref path="Sampler_tb_behav.wdb" id="1">
          <top_modules>
+            <top_module name="Sampler_tb" />
             <top_module name="glbl" />
-            <top_module name="tb_Sampler" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="16.125000 us"></ZoomEndTime>
-      <Cursor1Time time="3.525000 us"></Cursor1Time>
+      <ZoomEndTime time="10.630001 us"></ZoomEndTime>
+      <Cursor1Time time="10.630000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="206"></NameColumnWidth>
-      <ValueColumnWidth column_width="92"></ValueColumnWidth>
+      <NameColumnWidth column_width="207"></NameColumnWidth>
+      <ValueColumnWidth column_width="79"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="17" />
-   <wvobject fp_name="/tb_Sampler/clk" type="logic">
+   <WVObjectSize size="27" />
+   <wvobject fp_name="/Sampler_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_Sampler/reset" type="logic">
+   <wvobject fp_name="/Sampler_tb/reset" type="logic">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_Sampler/uut/ExpandS_/curr_state" type="array">
-      <obj_property name="ElementShortName">curr_state[2:0]</obj_property>
-      <obj_property name="ObjectShortName">curr_state[2:0]</obj_property>
+   <wvobject fp_name="/Sampler_tb/mode" type="array">
+      <obj_property name="ElementShortName">mode[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mode[1:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_Sampler/sampler_in_ready" type="logic">
+   <wvobject fp_name="/Sampler_tb/sampler_in_ready" type="logic">
       <obj_property name="ElementShortName">sampler_in_ready</obj_property>
       <obj_property name="ObjectShortName">sampler_in_ready</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_Sampler/sampler_in" type="array">
+   <wvobject fp_name="/Sampler_tb/sampler_in" type="array">
       <obj_property name="ElementShortName">sampler_in[1343:0]</obj_property>
       <obj_property name="ObjectShortName">sampler_in[1343:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_Sampler/sampler_squeeze" type="logic">
+   <wvobject fp_name="/Sampler_tb/uut/SampleInBall_/sampler_squeeze" type="logic">
       <obj_property name="ElementShortName">sampler_squeeze</obj_property>
       <obj_property name="ObjectShortName">sampler_squeeze</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_Sampler/next_element" type="logic">
-      <obj_property name="ElementShortName">next_element</obj_property>
-      <obj_property name="ObjectShortName">next_element</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_Sampler/z0" type="array">
-      <obj_property name="ElementShortName">z0[22:0]</obj_property>
-      <obj_property name="ObjectShortName">z0[22:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_Sampler/z1" type="array">
-      <obj_property name="ElementShortName">z1[22:0]</obj_property>
-      <obj_property name="ObjectShortName">z1[22:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_Sampler/waddr_z0" type="array">
-      <obj_property name="ElementShortName">waddr_z0[9:0]</obj_property>
-      <obj_property name="ObjectShortName">waddr_z0[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_Sampler/waddr_z1" type="array">
-      <obj_property name="ElementShortName">waddr_z1[9:0]</obj_property>
-      <obj_property name="ObjectShortName">waddr_z1[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_Sampler/wen_z" type="logic">
-      <obj_property name="ElementShortName">wen_z</obj_property>
-      <obj_property name="ObjectShortName">wen_z</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_Sampler/SAMPLER_WIDTH" type="array">
-      <obj_property name="ElementShortName">SAMPLER_WIDTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">SAMPLER_WIDTH[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_Sampler/uut/ExpandS_/j_plus_num" type="array">
-      <obj_property name="ElementShortName">j_plus_num[1:0]</obj_property>
-      <obj_property name="ObjectShortName">j_plus_num[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_Sampler/uut/ExpandS_/j" type="array">
-      <obj_property name="ElementShortName">j[8:0]</obj_property>
-      <obj_property name="ObjectShortName">j[8:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_Sampler/uut/ExpandS_/shake_cnt" type="array">
+   <wvobject fp_name="/Sampler_tb/uut/SampleInBall_/shake_cnt" type="array">
       <obj_property name="ElementShortName">shake_cnt[7:0]</obj_property>
       <obj_property name="ObjectShortName">shake_cnt[7:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_Sampler/uut/ExpandS_/element_choose" type="array">
-      <obj_property name="ElementShortName">element_choose[1:0]</obj_property>
-      <obj_property name="ObjectShortName">element_choose[1:0]</obj_property>
+   <wvobject fp_name="/Sampler_tb/uut/SampleInBall_/load_H" type="logic">
+      <obj_property name="ElementShortName">load_H</obj_property>
+      <obj_property name="ObjectShortName">load_H</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/SampleInBall_/H" type="array">
+      <obj_property name="ElementShortName">H[63:0]</obj_property>
+      <obj_property name="ObjectShortName">H[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/SampleInBall_/ci" type="array">
+      <obj_property name="ElementShortName">ci[22:0]</obj_property>
+      <obj_property name="ObjectShortName">ci[22:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/SampleInBall_/cj" type="array">
+      <obj_property name="ElementShortName">cj[22:0]</obj_property>
+      <obj_property name="ObjectShortName">cj[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/SampleInBall_/j_plus_num" type="logic">
+      <obj_property name="ElementShortName">j_plus_num</obj_property>
+      <obj_property name="ObjectShortName">j_plus_num</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/SampleInBall_/rej" type="logic">
+      <obj_property name="ElementShortName">rej</obj_property>
+      <obj_property name="ObjectShortName">rej</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/SampleInBall_/mux_data_out" type="array">
+      <obj_property name="ElementShortName">mux_data_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">mux_data_out[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/SampleInBall_/done_SIB" type="logic">
+      <obj_property name="ElementShortName">done_SIB</obj_property>
+      <obj_property name="ObjectShortName">done_SIB</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/SampleInBall_/H[0]" type="logic">
+      <obj_property name="ElementShortName">[0]</obj_property>
+      <obj_property name="ObjectShortName">[0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/SampleInBall_/i" type="array">
+      <obj_property name="ElementShortName">i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/DM/c/data_a" type="array">
+      <obj_property name="ElementShortName">data_a[22:0]</obj_property>
+      <obj_property name="ObjectShortName">data_a[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/DM/c/addr_a" type="array">
+      <obj_property name="ElementShortName">addr_a[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_a[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/DM/c/we_a" type="logic">
+      <obj_property name="ElementShortName">we_a</obj_property>
+      <obj_property name="ObjectShortName">we_a</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/DM/c/en_a" type="logic">
+      <obj_property name="ElementShortName">en_a</obj_property>
+      <obj_property name="ObjectShortName">en_a</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/DM/c/q_a" type="array">
+      <obj_property name="ElementShortName">q_a[22:0]</obj_property>
+      <obj_property name="ObjectShortName">q_a[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/DM/c/data_b" type="array">
+      <obj_property name="ElementShortName">data_b[22:0]</obj_property>
+      <obj_property name="ObjectShortName">data_b[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/DM/c/addr_b" type="array">
+      <obj_property name="ElementShortName">addr_b[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_b[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/DM/c/en_b" type="logic">
+      <obj_property name="ElementShortName">en_b</obj_property>
+      <obj_property name="ObjectShortName">en_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/DM/c/we_b" type="logic">
+      <obj_property name="ElementShortName">we_b</obj_property>
+      <obj_property name="ObjectShortName">we_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/DM/c/ram" type="array">
+      <obj_property name="ElementShortName">ram[255:0][22:0]</obj_property>
+      <obj_property name="ObjectShortName">ram[255:0][22:0]</obj_property>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[255]" type="array">
+         <obj_property name="ElementShortName">[255][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[255][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[254]" type="array">
+         <obj_property name="ElementShortName">[254][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[254][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[253]" type="array">
+         <obj_property name="ElementShortName">[253][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[253][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[252]" type="array">
+         <obj_property name="ElementShortName">[252][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[252][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[251]" type="array">
+         <obj_property name="ElementShortName">[251][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[251][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[250]" type="array">
+         <obj_property name="ElementShortName">[250][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[250][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[249]" type="array">
+         <obj_property name="ElementShortName">[249][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[249][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[248]" type="array">
+         <obj_property name="ElementShortName">[248][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[248][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[247]" type="array">
+         <obj_property name="ElementShortName">[247][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[247][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[246]" type="array">
+         <obj_property name="ElementShortName">[246][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[246][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[245]" type="array">
+         <obj_property name="ElementShortName">[245][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[245][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[244]" type="array">
+         <obj_property name="ElementShortName">[244][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[244][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[243]" type="array">
+         <obj_property name="ElementShortName">[243][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[243][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[242]" type="array">
+         <obj_property name="ElementShortName">[242][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[242][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[241]" type="array">
+         <obj_property name="ElementShortName">[241][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[241][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[240]" type="array">
+         <obj_property name="ElementShortName">[240][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[240][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[239]" type="array">
+         <obj_property name="ElementShortName">[239][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[239][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[238]" type="array">
+         <obj_property name="ElementShortName">[238][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[238][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[237]" type="array">
+         <obj_property name="ElementShortName">[237][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[237][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[236]" type="array">
+         <obj_property name="ElementShortName">[236][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[236][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[235]" type="array">
+         <obj_property name="ElementShortName">[235][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[235][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[234]" type="array">
+         <obj_property name="ElementShortName">[234][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[234][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[233]" type="array">
+         <obj_property name="ElementShortName">[233][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[233][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[232]" type="array">
+         <obj_property name="ElementShortName">[232][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[232][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[231]" type="array">
+         <obj_property name="ElementShortName">[231][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[231][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[230]" type="array">
+         <obj_property name="ElementShortName">[230][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[230][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[229]" type="array">
+         <obj_property name="ElementShortName">[229][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[229][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[228]" type="array">
+         <obj_property name="ElementShortName">[228][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[228][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[227]" type="array">
+         <obj_property name="ElementShortName">[227][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[227][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[226]" type="array">
+         <obj_property name="ElementShortName">[226][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[226][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[225]" type="array">
+         <obj_property name="ElementShortName">[225][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[225][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[224]" type="array">
+         <obj_property name="ElementShortName">[224][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[224][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[223]" type="array">
+         <obj_property name="ElementShortName">[223][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[223][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[222]" type="array">
+         <obj_property name="ElementShortName">[222][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[222][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[221]" type="array">
+         <obj_property name="ElementShortName">[221][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[221][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[220]" type="array">
+         <obj_property name="ElementShortName">[220][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[220][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[219]" type="array">
+         <obj_property name="ElementShortName">[219][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[219][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[218]" type="array">
+         <obj_property name="ElementShortName">[218][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[218][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[217]" type="array">
+         <obj_property name="ElementShortName">[217][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[217][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[216]" type="array">
+         <obj_property name="ElementShortName">[216][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[216][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[215]" type="array">
+         <obj_property name="ElementShortName">[215][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[215][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[214]" type="array">
+         <obj_property name="ElementShortName">[214][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[214][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[213]" type="array">
+         <obj_property name="ElementShortName">[213][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[213][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[212]" type="array">
+         <obj_property name="ElementShortName">[212][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[212][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[211]" type="array">
+         <obj_property name="ElementShortName">[211][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[211][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[210]" type="array">
+         <obj_property name="ElementShortName">[210][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[210][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[209]" type="array">
+         <obj_property name="ElementShortName">[209][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[209][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[208]" type="array">
+         <obj_property name="ElementShortName">[208][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[208][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[207]" type="array">
+         <obj_property name="ElementShortName">[207][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[207][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[206]" type="array">
+         <obj_property name="ElementShortName">[206][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[206][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[205]" type="array">
+         <obj_property name="ElementShortName">[205][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[205][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[204]" type="array">
+         <obj_property name="ElementShortName">[204][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[204][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[203]" type="array">
+         <obj_property name="ElementShortName">[203][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[203][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[202]" type="array">
+         <obj_property name="ElementShortName">[202][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[202][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[201]" type="array">
+         <obj_property name="ElementShortName">[201][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[201][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[200]" type="array">
+         <obj_property name="ElementShortName">[200][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[200][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[199]" type="array">
+         <obj_property name="ElementShortName">[199][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[199][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[198]" type="array">
+         <obj_property name="ElementShortName">[198][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[198][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[197]" type="array">
+         <obj_property name="ElementShortName">[197][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[197][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[196]" type="array">
+         <obj_property name="ElementShortName">[196][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[196][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[195]" type="array">
+         <obj_property name="ElementShortName">[195][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[195][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[194]" type="array">
+         <obj_property name="ElementShortName">[194][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[194][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[193]" type="array">
+         <obj_property name="ElementShortName">[193][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[193][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[192]" type="array">
+         <obj_property name="ElementShortName">[192][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[192][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[191]" type="array">
+         <obj_property name="ElementShortName">[191][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[191][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[190]" type="array">
+         <obj_property name="ElementShortName">[190][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[190][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[189]" type="array">
+         <obj_property name="ElementShortName">[189][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[189][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[188]" type="array">
+         <obj_property name="ElementShortName">[188][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[188][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[187]" type="array">
+         <obj_property name="ElementShortName">[187][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[187][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[186]" type="array">
+         <obj_property name="ElementShortName">[186][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[186][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[185]" type="array">
+         <obj_property name="ElementShortName">[185][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[185][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[184]" type="array">
+         <obj_property name="ElementShortName">[184][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[184][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[183]" type="array">
+         <obj_property name="ElementShortName">[183][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[183][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[182]" type="array">
+         <obj_property name="ElementShortName">[182][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[182][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[181]" type="array">
+         <obj_property name="ElementShortName">[181][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[181][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[180]" type="array">
+         <obj_property name="ElementShortName">[180][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[180][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[179]" type="array">
+         <obj_property name="ElementShortName">[179][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[179][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[178]" type="array">
+         <obj_property name="ElementShortName">[178][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[178][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[177]" type="array">
+         <obj_property name="ElementShortName">[177][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[177][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[176]" type="array">
+         <obj_property name="ElementShortName">[176][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[176][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[175]" type="array">
+         <obj_property name="ElementShortName">[175][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[175][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[174]" type="array">
+         <obj_property name="ElementShortName">[174][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[174][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[173]" type="array">
+         <obj_property name="ElementShortName">[173][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[173][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[172]" type="array">
+         <obj_property name="ElementShortName">[172][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[172][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[171]" type="array">
+         <obj_property name="ElementShortName">[171][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[171][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[170]" type="array">
+         <obj_property name="ElementShortName">[170][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[170][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[169]" type="array">
+         <obj_property name="ElementShortName">[169][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[169][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[168]" type="array">
+         <obj_property name="ElementShortName">[168][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[168][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[167]" type="array">
+         <obj_property name="ElementShortName">[167][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[167][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[166]" type="array">
+         <obj_property name="ElementShortName">[166][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[166][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[165]" type="array">
+         <obj_property name="ElementShortName">[165][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[165][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[164]" type="array">
+         <obj_property name="ElementShortName">[164][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[164][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[163]" type="array">
+         <obj_property name="ElementShortName">[163][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[163][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[162]" type="array">
+         <obj_property name="ElementShortName">[162][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[162][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[161]" type="array">
+         <obj_property name="ElementShortName">[161][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[161][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[160]" type="array">
+         <obj_property name="ElementShortName">[160][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[160][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[159]" type="array">
+         <obj_property name="ElementShortName">[159][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[159][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[158]" type="array">
+         <obj_property name="ElementShortName">[158][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[158][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[157]" type="array">
+         <obj_property name="ElementShortName">[157][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[157][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[156]" type="array">
+         <obj_property name="ElementShortName">[156][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[156][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[155]" type="array">
+         <obj_property name="ElementShortName">[155][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[155][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[154]" type="array">
+         <obj_property name="ElementShortName">[154][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[154][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[153]" type="array">
+         <obj_property name="ElementShortName">[153][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[153][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[152]" type="array">
+         <obj_property name="ElementShortName">[152][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[152][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[151]" type="array">
+         <obj_property name="ElementShortName">[151][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[151][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[150]" type="array">
+         <obj_property name="ElementShortName">[150][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[150][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[149]" type="array">
+         <obj_property name="ElementShortName">[149][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[149][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[148]" type="array">
+         <obj_property name="ElementShortName">[148][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[148][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[147]" type="array">
+         <obj_property name="ElementShortName">[147][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[147][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[146]" type="array">
+         <obj_property name="ElementShortName">[146][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[146][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[145]" type="array">
+         <obj_property name="ElementShortName">[145][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[145][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[144]" type="array">
+         <obj_property name="ElementShortName">[144][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[144][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[143]" type="array">
+         <obj_property name="ElementShortName">[143][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[143][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[142]" type="array">
+         <obj_property name="ElementShortName">[142][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[142][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[141]" type="array">
+         <obj_property name="ElementShortName">[141][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[141][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[140]" type="array">
+         <obj_property name="ElementShortName">[140][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[140][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[139]" type="array">
+         <obj_property name="ElementShortName">[139][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[139][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[138]" type="array">
+         <obj_property name="ElementShortName">[138][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[138][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[137]" type="array">
+         <obj_property name="ElementShortName">[137][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[137][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[136]" type="array">
+         <obj_property name="ElementShortName">[136][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[136][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[135]" type="array">
+         <obj_property name="ElementShortName">[135][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[135][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[134]" type="array">
+         <obj_property name="ElementShortName">[134][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[134][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[133]" type="array">
+         <obj_property name="ElementShortName">[133][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[133][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[132]" type="array">
+         <obj_property name="ElementShortName">[132][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[132][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[131]" type="array">
+         <obj_property name="ElementShortName">[131][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[131][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[130]" type="array">
+         <obj_property name="ElementShortName">[130][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[130][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[129]" type="array">
+         <obj_property name="ElementShortName">[129][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[129][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[128]" type="array">
+         <obj_property name="ElementShortName">[128][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[128][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[127]" type="array">
+         <obj_property name="ElementShortName">[127][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[127][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[126]" type="array">
+         <obj_property name="ElementShortName">[126][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[126][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[125]" type="array">
+         <obj_property name="ElementShortName">[125][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[125][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[124]" type="array">
+         <obj_property name="ElementShortName">[124][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[124][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[123]" type="array">
+         <obj_property name="ElementShortName">[123][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[123][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[122]" type="array">
+         <obj_property name="ElementShortName">[122][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[122][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[121]" type="array">
+         <obj_property name="ElementShortName">[121][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[121][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[120]" type="array">
+         <obj_property name="ElementShortName">[120][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[120][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[119]" type="array">
+         <obj_property name="ElementShortName">[119][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[119][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[118]" type="array">
+         <obj_property name="ElementShortName">[118][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[118][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[117]" type="array">
+         <obj_property name="ElementShortName">[117][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[117][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[116]" type="array">
+         <obj_property name="ElementShortName">[116][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[116][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[115]" type="array">
+         <obj_property name="ElementShortName">[115][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[115][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[114]" type="array">
+         <obj_property name="ElementShortName">[114][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[114][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[113]" type="array">
+         <obj_property name="ElementShortName">[113][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[113][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[112]" type="array">
+         <obj_property name="ElementShortName">[112][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[112][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[111]" type="array">
+         <obj_property name="ElementShortName">[111][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[111][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[110]" type="array">
+         <obj_property name="ElementShortName">[110][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[110][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[109]" type="array">
+         <obj_property name="ElementShortName">[109][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[109][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[108]" type="array">
+         <obj_property name="ElementShortName">[108][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[108][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[107]" type="array">
+         <obj_property name="ElementShortName">[107][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[107][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[106]" type="array">
+         <obj_property name="ElementShortName">[106][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[106][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[105]" type="array">
+         <obj_property name="ElementShortName">[105][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[105][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[104]" type="array">
+         <obj_property name="ElementShortName">[104][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[104][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[103]" type="array">
+         <obj_property name="ElementShortName">[103][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[103][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[102]" type="array">
+         <obj_property name="ElementShortName">[102][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[102][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[101]" type="array">
+         <obj_property name="ElementShortName">[101][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[101][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[100]" type="array">
+         <obj_property name="ElementShortName">[100][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[100][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[99]" type="array">
+         <obj_property name="ElementShortName">[99][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[99][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[98]" type="array">
+         <obj_property name="ElementShortName">[98][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[98][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[97]" type="array">
+         <obj_property name="ElementShortName">[97][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[97][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[96]" type="array">
+         <obj_property name="ElementShortName">[96][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[96][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[95]" type="array">
+         <obj_property name="ElementShortName">[95][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[95][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[94]" type="array">
+         <obj_property name="ElementShortName">[94][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[94][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[93]" type="array">
+         <obj_property name="ElementShortName">[93][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[93][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[92]" type="array">
+         <obj_property name="ElementShortName">[92][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[92][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[91]" type="array">
+         <obj_property name="ElementShortName">[91][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[91][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[90]" type="array">
+         <obj_property name="ElementShortName">[90][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[90][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[89]" type="array">
+         <obj_property name="ElementShortName">[89][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[89][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[88]" type="array">
+         <obj_property name="ElementShortName">[88][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[88][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[87]" type="array">
+         <obj_property name="ElementShortName">[87][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[87][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[86]" type="array">
+         <obj_property name="ElementShortName">[86][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[86][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[85]" type="array">
+         <obj_property name="ElementShortName">[85][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[85][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[84]" type="array">
+         <obj_property name="ElementShortName">[84][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[84][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[83]" type="array">
+         <obj_property name="ElementShortName">[83][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[83][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[82]" type="array">
+         <obj_property name="ElementShortName">[82][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[82][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[81]" type="array">
+         <obj_property name="ElementShortName">[81][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[81][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[80]" type="array">
+         <obj_property name="ElementShortName">[80][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[80][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[79]" type="array">
+         <obj_property name="ElementShortName">[79][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[79][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[78]" type="array">
+         <obj_property name="ElementShortName">[78][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[78][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[77]" type="array">
+         <obj_property name="ElementShortName">[77][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[77][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[76]" type="array">
+         <obj_property name="ElementShortName">[76][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[76][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[75]" type="array">
+         <obj_property name="ElementShortName">[75][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[75][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[74]" type="array">
+         <obj_property name="ElementShortName">[74][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[74][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[73]" type="array">
+         <obj_property name="ElementShortName">[73][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[73][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[72]" type="array">
+         <obj_property name="ElementShortName">[72][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[72][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[71]" type="array">
+         <obj_property name="ElementShortName">[71][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[71][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[70]" type="array">
+         <obj_property name="ElementShortName">[70][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[70][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[69]" type="array">
+         <obj_property name="ElementShortName">[69][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[69][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[68]" type="array">
+         <obj_property name="ElementShortName">[68][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[68][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[67]" type="array">
+         <obj_property name="ElementShortName">[67][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[67][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[66]" type="array">
+         <obj_property name="ElementShortName">[66][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[66][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[65]" type="array">
+         <obj_property name="ElementShortName">[65][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[65][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[64]" type="array">
+         <obj_property name="ElementShortName">[64][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[64][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[63]" type="array">
+         <obj_property name="ElementShortName">[63][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[63][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[62]" type="array">
+         <obj_property name="ElementShortName">[62][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[62][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[61]" type="array">
+         <obj_property name="ElementShortName">[61][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[61][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[60]" type="array">
+         <obj_property name="ElementShortName">[60][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[60][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[59]" type="array">
+         <obj_property name="ElementShortName">[59][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[59][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[58]" type="array">
+         <obj_property name="ElementShortName">[58][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[58][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[57]" type="array">
+         <obj_property name="ElementShortName">[57][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[57][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[56]" type="array">
+         <obj_property name="ElementShortName">[56][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[56][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[55]" type="array">
+         <obj_property name="ElementShortName">[55][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[55][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[54]" type="array">
+         <obj_property name="ElementShortName">[54][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[54][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[53]" type="array">
+         <obj_property name="ElementShortName">[53][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[53][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[52]" type="array">
+         <obj_property name="ElementShortName">[52][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[52][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[51]" type="array">
+         <obj_property name="ElementShortName">[51][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[51][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[50]" type="array">
+         <obj_property name="ElementShortName">[50][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[50][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[49]" type="array">
+         <obj_property name="ElementShortName">[49][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[49][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[48]" type="array">
+         <obj_property name="ElementShortName">[48][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[48][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[47]" type="array">
+         <obj_property name="ElementShortName">[47][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[47][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[46]" type="array">
+         <obj_property name="ElementShortName">[46][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[46][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[45]" type="array">
+         <obj_property name="ElementShortName">[45][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[45][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[44]" type="array">
+         <obj_property name="ElementShortName">[44][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[44][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[43]" type="array">
+         <obj_property name="ElementShortName">[43][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[43][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[42]" type="array">
+         <obj_property name="ElementShortName">[42][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[42][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[41]" type="array">
+         <obj_property name="ElementShortName">[41][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[41][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[40]" type="array">
+         <obj_property name="ElementShortName">[40][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[40][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[39]" type="array">
+         <obj_property name="ElementShortName">[39][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[39][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[38]" type="array">
+         <obj_property name="ElementShortName">[38][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[38][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[37]" type="array">
+         <obj_property name="ElementShortName">[37][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[37][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[36]" type="array">
+         <obj_property name="ElementShortName">[36][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[36][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[35]" type="array">
+         <obj_property name="ElementShortName">[35][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[35][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[34]" type="array">
+         <obj_property name="ElementShortName">[34][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[34][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[33]" type="array">
+         <obj_property name="ElementShortName">[33][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[33][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[32]" type="array">
+         <obj_property name="ElementShortName">[32][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[32][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[31]" type="array">
+         <obj_property name="ElementShortName">[31][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[31][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[30]" type="array">
+         <obj_property name="ElementShortName">[30][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[30][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[29]" type="array">
+         <obj_property name="ElementShortName">[29][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[29][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[28]" type="array">
+         <obj_property name="ElementShortName">[28][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[28][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[27]" type="array">
+         <obj_property name="ElementShortName">[27][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[27][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[26]" type="array">
+         <obj_property name="ElementShortName">[26][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[26][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[25]" type="array">
+         <obj_property name="ElementShortName">[25][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[25][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[24]" type="array">
+         <obj_property name="ElementShortName">[24][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[24][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[23]" type="array">
+         <obj_property name="ElementShortName">[23][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[23][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[22]" type="array">
+         <obj_property name="ElementShortName">[22][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[22][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[21]" type="array">
+         <obj_property name="ElementShortName">[21][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[21][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[20]" type="array">
+         <obj_property name="ElementShortName">[20][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[20][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[19]" type="array">
+         <obj_property name="ElementShortName">[19][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[19][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[18]" type="array">
+         <obj_property name="ElementShortName">[18][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[18][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[17]" type="array">
+         <obj_property name="ElementShortName">[17][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[17][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[16]" type="array">
+         <obj_property name="ElementShortName">[16][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[16][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[15]" type="array">
+         <obj_property name="ElementShortName">[15][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[15][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[14]" type="array">
+         <obj_property name="ElementShortName">[14][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[14][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[13]" type="array">
+         <obj_property name="ElementShortName">[13][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[13][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[12]" type="array">
+         <obj_property name="ElementShortName">[12][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[12][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[11]" type="array">
+         <obj_property name="ElementShortName">[11][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[11][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[10]" type="array">
+         <obj_property name="ElementShortName">[10][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[10][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[9]" type="array">
+         <obj_property name="ElementShortName">[9][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[9][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[8]" type="array">
+         <obj_property name="ElementShortName">[8][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[8][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[7]" type="array">
+         <obj_property name="ElementShortName">[7][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[6]" type="array">
+         <obj_property name="ElementShortName">[6][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[5]" type="array">
+         <obj_property name="ElementShortName">[5][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[4]" type="array">
+         <obj_property name="ElementShortName">[4][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[3]" type="array">
+         <obj_property name="ElementShortName">[3][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[2]" type="array">
+         <obj_property name="ElementShortName">[2][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[1]" type="array">
+         <obj_property name="ElementShortName">[1][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sampler_tb/DM/c/ram[0]" type="array">
+         <obj_property name="ElementShortName">[0][22:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][22:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
    </wvobject>
 </wave_config>

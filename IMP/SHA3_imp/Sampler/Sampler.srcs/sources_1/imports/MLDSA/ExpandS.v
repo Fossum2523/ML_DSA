@@ -6,21 +6,21 @@ module ExpandS(
     input               sampler_in_ready,
     input   [1343:0]    sampler_in,
     output              sampler_squeeze,  // Flag for squeezing condition
-    output              next_element,   // Flag for memory full condition
+    output              next_element,     // Flag for memory full condition
 
     /*---S1 Mem---"*/
-    output  [22:0]      z0,             // Write data z0_tmp to Mem
-    output  [22:0]      z1,             // Write data z1_tmp to Mem
-    output  [9:0]       waddr_z0,       // Write addresses for z0_tmp
-    output  [9:0]       waddr_z1,       // Write addresses for z1_tmp
-    output              wen_z           // Write enable for z values
+    output  [22:0]      z0,               // Write data z0_tmp to Mem
+    output  [22:0]      z1,               // Write data z1_tmp to Mem
+    output  [9:0]       addr_z0,          // Write addresses for z0_tmp
+    output  [9:0]       addr_z1,          // Write addresses for z1_tmp
+    output              en_z,             // Write enable for z values
+    output              we_z              // Write enable for z values
     );  
 
     /*---FSM---"*/
     localparam  [2:0]   SAMPLE_WAIT     = 3'd0,
                         SQUEEZE         = 3'd1,
-                        SAMPLE_PROCESS  = 3'd2, 
-                        SAMPLE_OVER     = 3'd3;
+                        SAMPLE_PROCESS  = 3'd2;
 
     // State variables
     reg [2:0]   curr_state;
@@ -71,7 +71,9 @@ module ExpandS(
     assign waddr_z0 = {element_choose, j[7:0]};
     assign waddr_z1 = {element_choose, (j[7:0] + 1'b1)};
 
-    assign wen_z = curr_state == SAMPLE_PROCESS && ~j[8];
+    assign en_z = curr_state == SAMPLE_PROCESS && ~j[8];
+
+    assign we_z = curr_state == SAMPLE_PROCESS && ~j[8];
     
     assign j_plus_num = (j[7:0] == 255 && ~a && ~b) ? 2'd1 : ((~a) + (~b)); // Increment logic
 
@@ -91,7 +93,7 @@ module ExpandS(
             shake_cnt <= 8'd0;
         else if (curr_state == SAMPLE_PROCESS)
             shake_cnt <= shake_cnt == 135 ? 8'd0 : shake_cnt + 1'b1; // Reset or increment
-        else if (curr_state == SAMPLE_WAIT || curr_state == SAMPLE_OVER)
+        else if (curr_state == SAMPLE_WAIT && next_element)
             shake_cnt <= 8'd0;
     end
 
@@ -100,7 +102,7 @@ module ExpandS(
             j <=  9'd0;
         else if ((curr_state == SAMPLE_PROCESS) && (~next_element))
             j <= j + j_plus_num; 
-        else if (curr_state == SAMPLE_WAIT || curr_state == SAMPLE_OVER)
+        else if (curr_state == SAMPLE_WAIT && next_element)
             j <=  9'd0; 
         
     end
@@ -119,17 +121,8 @@ module ExpandS(
                 else next_state = SAMPLE_WAIT;
             end 
             SAMPLE_PROCESS: begin
-                if(sampler_squeeze) next_state = SQUEEZE;
-                else if(next_element && element_choose == 2'd3) next_state = SAMPLE_OVER;
-                else if(next_element) next_state = SAMPLE_WAIT;
+                if(next_element || sampler_squeeze) next_state = SAMPLE_WAIT;
                 else next_state = SAMPLE_PROCESS;
-            end
-            SQUEEZE: begin
-                if(sampler_in_ready) next_state = SAMPLE_PROCESS;
-                else next_state = SQUEEZE;
-            end
-            SAMPLE_OVER: begin
-                next_state = SAMPLE_OVER;
             end
             default: next_state = SAMPLE_WAIT;
         endcase

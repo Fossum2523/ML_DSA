@@ -1,5 +1,4 @@
 //提醒：sel 必須大於 param_n 的可能數量，以便能處理所有選項均不符合的情況，類似於未滿足條件時的 case default。
-`define pos(i)        in[ (i + 1) * 8 - 1 : i * 8]
 module mux_gen#(parameter  param_in = 1344, param_m = 8)
     (input  [param_in - 1 : 0]          in,
      input  [$clog2(param_in/param_m) - 1 : 0]   sel,
@@ -16,7 +15,7 @@ module mux_gen#(parameter  param_in = 1344, param_m = 8)
 
     generate
       for (i = 0; i < param_n; i = i + 1) begin : data_mux_in
-            assign data_in[i] = `pos(i);
+            assign data_in[i] = in[ (i + 1) * param_m - 1 : i * param_m];
         end
     endgenerate
 
@@ -35,4 +34,3 @@ module mux_gen#(parameter  param_in = 1344, param_m = 8)
 
     assign out = data_tmp[param_n - 1];
 endmodule
-`undef pos
