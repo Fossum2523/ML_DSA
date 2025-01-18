@@ -3,13 +3,99 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Thu Jan 16 23:01:37 2025
-# Process ID: 19308
+# Start of session at: Sat Jan 18 13:53:15 2025
+# Process ID: 24924
 # Current directory: C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14260 C:\Users\USER\Desktop\ML_DSA_syn\IMP\SHA3_imp\Sampler\Sampler.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17648 C:\Users\USER\Desktop\ML_DSA_syn\IMP\SHA3_imp\Sampler\Sampler.xpr
 # Log file: C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/vivado.log
 # Journal file: C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler\vivado.jou
 # Running On: LAPTOP-2P71OMBV, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 16, Host memory: 16542 MB
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/tb_Sampler_behav.wcfg
+source Sampler_tb.tcl
+run 5 us
+restart
+run 5 us
+run 5 us
+relaunch_sim
+run 5 us
+save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/tb_Sampler_behav.wcfg}
+relaunch_sim
+relaunch_sim
+run 5 us
+relaunch_sim
+relaunch_sim
+run 5 us
+current_wave_config {tb_Sampler_behav.wcfg}
+add_wave {{/Sampler_tb/uut/ExpandMASK_/mux_in}} 
+relaunch_sim
+relaunch_sim
+run 5 us
+relaunch_sim
+run 5 us
+run 5 us
+relaunch_sim
+run 5 us
+relaunch_sim
+run 5 us
+run 5 us
+relaunch_sim
+run 5 us
+run 5 us
+relaunch_sim
+relaunch_sim
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+relaunch_sim
+run 5 us
+run 5 us
+relaunch_sim
+run 5 us
+run 5 us
+relaunch_sim
+run 5 us
+run 5 us
+relaunch_sim
+relaunch_sim
+run 5 us
+run 5 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 5 us
+run 5 us
+current_wave_config {tb_Sampler_behav.wcfg}
+add_wave {{/Sampler_tb/uut/ExpandMASK_/sampler_in_ready}} {{/Sampler_tb/uut/ExpandMASK_/sampler_in}} {{/Sampler_tb/uut/ExpandMASK_/sampler_squeeze}} {{/Sampler_tb/uut/ExpandMASK_/next_element}} {{/Sampler_tb/uut/ExpandMASK_/y0}} {{/Sampler_tb/uut/ExpandMASK_/y1}} {{/Sampler_tb/uut/ExpandMASK_/addr_y0}} {{/Sampler_tb/uut/ExpandMASK_/addr_y1}} {{/Sampler_tb/uut/ExpandMASK_/en_y}} {{/Sampler_tb/uut/ExpandMASK_/we_y}} {{/Sampler_tb/uut/ExpandMASK_/curr_state}} {{/Sampler_tb/uut/ExpandMASK_/next_state}} {{/Sampler_tb/uut/ExpandMASK_/j}} {{/Sampler_tb/uut/ExpandMASK_/shake_cnt}} {{/Sampler_tb/uut/ExpandMASK_/round_cnt}} {{/Sampler_tb/uut/ExpandMASK_/sampler_temp}} {{/Sampler_tb/uut/ExpandMASK_/j_plus_num}} {{/Sampler_tb/uut/ExpandMASK_/H0}} {{/Sampler_tb/uut/ExpandMASK_/H1}} {{/Sampler_tb/uut/ExpandMASK_/larger_0}} {{/Sampler_tb/uut/ExpandMASK_/larger_1}} {{/Sampler_tb/uut/ExpandMASK_/y_minuend_0}} {{/Sampler_tb/uut/ExpandMASK_/y_minuend_1}} {{/Sampler_tb/uut/ExpandMASK_/y_subtrahend_0}} {{/Sampler_tb/uut/ExpandMASK_/y_subtrahend_1}} {{/Sampler_tb/uut/ExpandMASK_/mux_data_out}} {{/Sampler_tb/uut/ExpandMASK_/mux_in}} 
+current_wave_config {tb_Sampler_behav.wcfg}
+log_wave {/Sampler_tb/DM/y/data_a} {/Sampler_tb/DM/y/data_b} {/Sampler_tb/DM/y/addr_a} {/Sampler_tb/DM/y/addr_b} {/Sampler_tb/DM/y/en_a} {/Sampler_tb/DM/y/en_b} {/Sampler_tb/DM/y/we_a} {/Sampler_tb/DM/y/we_b} {/Sampler_tb/DM/y/q_a} {/Sampler_tb/DM/y/q_b} {/Sampler_tb/DM/y/ram} 
+current_wave_config {tb_Sampler_behav.wcfg}
+add_wave {{/Sampler_tb/DM/y/data_a}} {{/Sampler_tb/DM/y/data_b}} {{/Sampler_tb/DM/y/addr_a}} {{/Sampler_tb/DM/y/addr_b}} {{/Sampler_tb/DM/y/en_a}} {{/Sampler_tb/DM/y/en_b}} {{/Sampler_tb/DM/y/we_a}} {{/Sampler_tb/DM/y/we_b}} {{/Sampler_tb/DM/y/q_a}} {{/Sampler_tb/DM/y/q_b}} {{/Sampler_tb/DM/y/ram}} 
+restart
+run 5 us
+run 5 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+relaunch_sim
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+relaunch_sim
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/tb_Sampler_behav.wcfg}
+close_sim

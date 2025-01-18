@@ -19,8 +19,7 @@ module ExpandA(
 
     /*---FSM---"*/
     localparam  [2:0]   SAMPLE_WAIT     = 3'd0,
-                        SQUEEZE         = 3'd1,
-                        SAMPLE_PROCESS  = 3'd2;
+                        SAMPLE_PROCESS  = 3'd1;
 
     // State variables
     reg [2:0]   curr_state;
@@ -57,6 +56,7 @@ module ExpandA(
     assign addr_A0 = {element_choose, j[7:0]};
     assign addr_A1 = {element_choose, (j[7:0] + 1'b1)};
 
+    assign en_A = curr_state == SAMPLE_PROCESS && ~j[8];
     assign we_A = curr_state == SAMPLE_PROCESS && ~j[8];
     
     assign j_plus_num = (j[7:0] == 255 && ~rej0 && ~rej1) ? 2'd1 : ((~rej0) + (~rej1)); // Increment logic
@@ -77,7 +77,7 @@ module ExpandA(
             shake_cnt <= 8'd0;
         else if (curr_state == SAMPLE_PROCESS)
             shake_cnt <= shake_cnt == 27 ? 8'd0 : shake_cnt + 1'b1; // Reset or increment
-        else if (curr_state == SAMPLE_WAIT && next_element)
+        else if (curr_state == SAMPLE_WAIT)
             shake_cnt <= 8'd0;
     end
 

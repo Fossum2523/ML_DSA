@@ -25,6 +25,14 @@ module Sampler(
     output              en_A,           // enable for A values
     output              we_A,           // Write enable for A values
 
+    /*---y Mem---"*/
+    output  [22:0]      y0,             // Write data z0 to Mem
+    output  [22:0]      y1,             // Write data z1 to Mem
+    output  [7:0]       addr_y0,        // Write addresses for z0
+    output  [7:0]       addr_y1,        // Write addresses for z1
+    output              en_y,           // enable for z values
+    output              we_y,           // Write enable for z values
+
     /*---c Mem---"*/
     output  [22:0]      ci,             // Write data ci to Mem
     output  [22:0]      cj,             // Write data cj to Mem
@@ -103,12 +111,28 @@ module Sampler(
         .we_A(we_A)
     );
 
+    ExpandMASK ExpandMASK_(
+        .clk(clk),
+        .reset(reset),
+        .sampler_in_ready(sampler_in_ready_MASK),
+        .sampler_in(sampler_in),
+        .sampler_squeeze(sampler_squeeze_MASK),
+        .next_element(next_element_MASK),
+        .y0(y0),
+        .y1(y1),
+        .addr_y0(addr_y0),
+        .addr_y1(addr_y1),
+        .en_y(en_y),
+        .we_y(we_y)
+    );
+
     SampleInBall SampleInBall_(
         .clk(clk),
         .reset(reset),
         .sampler_in_ready(sampler_in_ready_SIB),
         .sampler_in(sampler_in_buffer),
         .sampler_squeeze(sampler_squeeze_SIB),
+        .next_element(next_element_SIB),
         .ci(ci),
         .cj(cj),
         .addr_ci(addr_ci),

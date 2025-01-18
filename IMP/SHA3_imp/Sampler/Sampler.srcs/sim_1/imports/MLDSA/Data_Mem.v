@@ -1,5 +1,5 @@
 module Data_Mem
-#(  parameter DLEN = 23, S_HLEN = 10, A_HLEN = 12, C_HLEN = 8)
+#(  parameter DLEN = 23, S_HLEN = 10, A_HLEN = 12, Y_HLEN = 10, C_HLEN = 8)
 (
     input clk,
     input reset,
@@ -7,7 +7,7 @@ module Data_Mem
     /*---Rho---*/
     input Rho_en,
     input Rho_mode,
-    input  [255:0] Rho_din,
+    input [255:0] Rho_din,
     output reg [255:0] Rho_dout,
 
     /*---Rho_prime---*/
@@ -58,6 +58,18 @@ module Data_Mem
     output  [DLEN-1:0]      A_q_a,
     output  [DLEN-1:0]      A_q_b,
 
+    /*---y---*/
+    input   [DLEN-1:0]      y_data_a,
+    input   [DLEN-1:0]      y_data_b,
+    input   [Y_HLEN - 1:0]  y_addr_a,
+    input   [Y_HLEN - 1:0]  y_addr_b,
+    input                   y_en_a,
+    input                   y_en_b,
+    input                   y_we_a,
+    input                   y_we_b,
+    output  [DLEN-1:0]      y_q_a,
+    output  [DLEN-1:0]      y_q_b,
+
     /*---c---*/
     input   [DLEN-1:0]      c_data_a,
     input   [DLEN-1:0]      c_data_b,
@@ -84,7 +96,7 @@ module Data_Mem
     always @(posedge clk or posedge reset) begin
         if (reset)
             Rho_prime_dout <= 512'd0;
-        else if (Rho_prime_en)       
+        else if (Rho_prime_en)          
             Rho_prime_dout <= Rho_prime_mode ? {Rho_prime_dout[63:0], Rho_prime_dout[511:64]} :Rho_prime_din;
     end
 
@@ -95,6 +107,7 @@ module Data_Mem
             Kata_dout <= Kata_mode ? {Kata_dout[63:0], Kata_dout[255:64]}: Kata_din;
     end
 
+    /*---s0---*/
     Dual_Port_Ram_Single_clk #(.DLEN(DLEN), .HLEN(S_HLEN)) s0(
         .clk_a(clk),
         .clk_b(clk),
@@ -110,6 +123,7 @@ module Data_Mem
         .q_b(s0_q_b)
     );
 
+    /*---s1---*/
     Dual_Port_Ram_Single_clk #(.DLEN(DLEN), .HLEN(S_HLEN)) s1(
         .clk_a(clk),
         .clk_b(clk),
@@ -125,6 +139,7 @@ module Data_Mem
         .q_b(s1_q_b)
     );
     
+    /*---A---*/
     Dual_Port_Ram_Single_clk #(.DLEN(DLEN), .HLEN(A_HLEN)) A(
         .clk_a(clk),
         .clk_b(clk),
@@ -140,6 +155,23 @@ module Data_Mem
         .q_b(A_q_b)
     );
 
+    /*---y---*/
+    Dual_Port_Ram_Single_clk #(.DLEN(DLEN), .HLEN(Y_HLEN)) y(
+        .clk_a(clk),
+        .clk_b(clk),
+        .data_a(y_data_a),
+        .data_b(y_data_b),
+        .addr_a(y_addr_a),
+        .addr_b(y_addr_b),
+        .en_a(y_en_a),
+        .en_b(y_en_b),
+        .we_a(y_we_a),
+        .we_b(y_we_b),
+        .q_a(y_q_a),
+        .q_b(y_q_b)
+    );
+
+    /*---c---*/
     Dual_Port_Ram_Single_clk #(.DLEN(DLEN), .HLEN(C_HLEN)) c(
         .clk_a(clk),
         .clk_b(clk),
