@@ -6,6 +6,7 @@ module SampleInBall(
     input                   sampler_in_ready,
     input       [1343:0]    sampler_in,
     output                  sampler_squeeze,    // Flag for squeezing condition
+    output                  next_element,
 
     /*---c Mem---"*/
     output      [22:0]      ci,                 // Write data c to Mem
@@ -15,15 +16,12 @@ module SampleInBall(
     output                  en_ci,              // enable for c values
     output reg              en_cj,              // enable for c values
     output                  we_ci,              // Write enable for c values
-    output reg              we_cj,              // Write enable for c values
-
-    output                  done_SIB
+    output reg              we_cj               // Write enable for c values
     );  
 
     /*---FSM---"*/
     localparam  [2:0]   SAMPLE_WAIT     = 3'd0,
-                        SQUEEZE         = 3'd1,
-                        SAMPLE_PROCESS  = 3'd2;
+                        SAMPLE_PROCESS  = 3'd1;
 
     // State variables
     reg [2:0]    curr_state;
@@ -67,7 +65,7 @@ module SampleInBall(
 
     assign sampler_squeeze = shake_cnt == 8'd135; // Shake condition
 
-    assign done_SIB = j == 0;
+    assign next_element = j == 0;
 
     always @(posedge clk) begin
         if (reset)
@@ -120,7 +118,7 @@ module SampleInBall(
             H = 64'd0;
         else if(sampler_in_ready && ~load_H)
             H = sampler_in[63:0];
-        else if(~rej)//有可能在squeeze的時候誤觸
+        else if((curr_state == SAMPLE_PROCESS) && ~rej)
             H = {1'b0,H[63:1]};
     end
 
@@ -138,7 +136,7 @@ module SampleInBall(
                 else next_state = SAMPLE_WAIT;
             end 
             SAMPLE_PROCESS: begin
-                if(sampler_squeeze || done_SIB) next_state = SAMPLE_WAIT;
+                if(sampler_squeeze || next_element) next_state = SAMPLE_WAIT;
                 else next_state = SAMPLE_PROCESS;
             end
             default: next_state = SAMPLE_WAIT;

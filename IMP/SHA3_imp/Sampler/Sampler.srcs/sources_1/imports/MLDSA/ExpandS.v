@@ -19,8 +19,7 @@ module ExpandS(
 
     /*---FSM---"*/
     localparam  [2:0]   SAMPLE_WAIT     = 3'd0,
-                        SQUEEZE         = 3'd1,
-                        SAMPLE_PROCESS  = 3'd2;
+                        SAMPLE_PROCESS  = 3'd1;
 
     // State variables
     reg [2:0]   curr_state;
@@ -93,7 +92,7 @@ module ExpandS(
             shake_cnt <= 8'd0;
         else if (curr_state == SAMPLE_PROCESS)
             shake_cnt <= shake_cnt == 135 ? 8'd0 : shake_cnt + 1'b1; // Reset or increment
-        else if (curr_state == SAMPLE_WAIT && next_element)
+        else if (curr_state == SAMPLE_WAIT)
             shake_cnt <= 8'd0;
     end
 
