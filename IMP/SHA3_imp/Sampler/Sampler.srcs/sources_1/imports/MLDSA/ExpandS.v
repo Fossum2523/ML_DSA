@@ -11,10 +11,12 @@ module ExpandS(
     /*---S1 Mem---"*/
     output  [22:0]      z0,               // Write data z0_tmp to Mem
     output  [22:0]      z1,               // Write data z1_tmp to Mem
-    output  [9:0]       addr_z0,          // Write addresses for z0_tmp
-    output  [9:0]       addr_z1,          // Write addresses for z1_tmp
-    output              en_z,             // Write enable for z values
-    output              we_z              // Write enable for z values
+    output  [7:0]       addr_z0,          // Write addresses for z0_tmp
+    output  [7:0]       addr_z1,          // Write addresses for z1_tmp
+    output              en_z0,            // Write enable for z0 values
+    output              we_z0,            // Write enable for z0 values
+    output              en_z1,            // Write enable for z1 values
+    output              we_z1             // Write enable for z1 values
     );  
 
     /*---FSM---"*/
@@ -27,7 +29,6 @@ module ExpandS(
     
 
     // Intermediate registers and wires
-    reg [1:0]   element_choose; // For selecting elements
     reg [8:0]   j; // Counter for element addressing
     reg [7:0]   shake_cnt; // Counter for shake operations
 
@@ -67,25 +68,19 @@ module ExpandS(
     assign z0 = z0_tmp[2] ?  {{20{1'b1}}, z0_tmp} + 23'd8380417 : {20'd0, z0_tmp};
     assign z1 = z1_tmp[2] ?  {{20{1'b1}}, z1_tmp} + 23'd8380417 : {20'd0, z1_tmp};
 
-    assign waddr_z0 = {element_choose, j[7:0]};
-    assign waddr_z1 = {element_choose, (j[7:0] + 1'b1)};
+    assign addr_z0 = j[7:0];
+    assign addr_z1 = j[7:0] + 1'b1;
 
-    assign en_z = curr_state == SAMPLE_PROCESS && ~j[8];
-
-    assign we_z = curr_state == SAMPLE_PROCESS && ~j[8];
+    assign en_z0 = curr_state == SAMPLE_PROCESS && (~a | ~b);
+    assign we_z0 = curr_state == SAMPLE_PROCESS && (~a | ~b);
+    assign en_z1 = curr_state == SAMPLE_PROCESS && (~a & ~b);
+    assign we_z1 = curr_state == SAMPLE_PROCESS && (~a & ~b);
     
     assign j_plus_num = (j[7:0] == 255 && ~a && ~b) ? 2'd1 : ((~a) + (~b)); // Increment logic
 
     assign sampler_squeeze = shake_cnt == 8'd135 && ~j[8]; // Shake condition
 
     assign next_element = j[8]; // Memory full condition
-
-    always @(posedge clk) begin
-        if (reset)
-            element_choose <= 2'd0; 
-        else if((curr_state == SAMPLE_PROCESS) && j[8])
-            element_choose <= element_choose + 1'b1;
-    end
 
     always @ (posedge clk) begin
         if (reset)

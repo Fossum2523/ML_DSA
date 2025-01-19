@@ -17,13 +17,21 @@ module Sampler_tb;
     wire                  sampler_squeeze;
     wire                  next_element;
 
+    reg                   s_sel;
     reg  [3:0]            mem_sel;
     wire [22:0]           z0;
     wire [22:0]           z1;
-    wire [9:0]            addr_z0;
-    wire [9:0]            addr_z1;
-    wire                  en_z;
-    wire                  we_z;
+    wire [7:0]            addr_z0;
+    wire [7:0]            addr_z1;
+    wire                  en_z0;
+    wire                  we_z0;
+    wire                  en_z1;
+    wire                  we_z1;
+    wire                  s0_en_z;
+    wire                  s0_we_z;
+    wire                  s1_en_z;
+    wire                  s1_we_z;
+
     
     wire [22:0]           A0;
     wire [22:0]           A1;
@@ -60,7 +68,19 @@ module Sampler_tb;
     wire [DLEN-1:0] c_q_a;
     wire [DLEN-1:0] c_q_b;
 
+    /*enable s0 mem*/
+    assign s0_en_z0 = (~s_sel) & en_z0;
+    assign s0_we_z0 = (~s_sel) & we_z0;
+    assign s0_en_z1 = (~s_sel) & en_z1;
+    assign s0_we_z1 = (~s_sel) & we_z1;
 
+    /*enable s1 mem*/
+    assign s1_en_z0 = s_sel & en_z0;
+    assign s1_we_z0 = s_sel & we_z0;
+    assign s1_en_z1 = s_sel & en_z1;
+    assign s1_we_z1 = s_sel & we_z1;
+
+    // assign en_z = 1'b1;
     // Instantiate the Sampler module
     Sampler uut (
         .clk(clk),
@@ -75,8 +95,10 @@ module Sampler_tb;
         .z1(z1),
         .addr_z0(addr_z0),
         .addr_z1(addr_z1),
-        .en_z(en_z),
-        .we_z(we_z),
+        .en_z0(en_z0),
+        .we_z0(we_z0),
+        .en_z1(en_z1),
+        .we_z1(we_z1),
 
         .A0(A0),
         .A1(A1),
@@ -109,24 +131,24 @@ module Sampler_tb;
         /*---s0---*/
         .s0_data_a(z0),
         .s0_data_b(z1),//
-        .s0_addr_a(addr_z0),
-        .s0_addr_b(addr_z1),
-        .s0_en_a(en_z),
-        .s0_en_b(en_z),
-        .s0_we_a(we_z),
-        .s0_we_b(we_z),
+        .s0_addr_a({mem_sel[1:0],addr_z0}),
+        .s0_addr_b({mem_sel[1:0],addr_z1}),
+        .s0_en_a(s0_en_z0),
+        .s0_en_b(s0_en_z1),
+        .s0_we_a(s0_we_z0),
+        .s0_we_b(s0_we_z1),
         .s0_q_a(s0_q_a),
         .s0_q_b(s0_q_b),
 
         /*---s1---*/
         .s1_data_a(z0),
         .s1_data_b(z1),//
-        .s1_addr_a(addr_z0),
-        .s1_addr_b(addr_z1),
-        .s1_en_a(en_z),
-        .s1_en_b(en_z),
-        .s1_we_a(we_z),
-        .s1_we_b(we_z),
+        .s1_addr_a({mem_sel[1:0],addr_z0}),
+        .s1_addr_b({mem_sel[1:0],addr_z1}),
+        .s1_en_a(s1_en_z0),
+        .s1_en_b(s1_en_z1),
+        .s1_we_a(s1_we_z0),
+        .s1_we_b(s1_we_z1),
         .s1_q_a(s1_q_a),
         .s1_q_b(s1_q_b),
 
@@ -167,6 +189,8 @@ module Sampler_tb;
         .c_q_b(c_q_b)
     );
 
+
+
     // Clock generation
     initial begin
         clk = 0;
@@ -193,39 +217,97 @@ module Sampler_tb;
         end
     endtask
 
-    // Task to S0
-    task S0;
+    // Task to S
+    task S;
         begin
-            
-            //s0_0
-            /***Test Squeeze***/
-            #170; //padder
-            #240; //f_p
             mode = 0;
-            #10 send_input(1344'h0000000000000000000000000000000000000000000000000000000000000000ffffffffffffffffffffffffffffffff20d0baa970640f7410232c5a64d84f854642ff782c849957e7502cb0b9e3acd41c2e6ce9e4a5dc9f3d5eb2339d8c0f34e08a145d5283f326a24c1d6b055c1d0e0a34e522cefc25564a38822716f4c02c55d5f79dce56aa7e0b264321aeaec2b2c7893195347e542e9da95168d4442c7de17c675b5d66a51f);
-            wait(next_element);
-
-            //s0_1
+            /***s1***/
+            s_sel = 0;
+            /*s1_0*/
+            mem_sel = 0;
             #170; //padder
             #240; //f_p
-            #10 send_input(1344'h000000000000000000000000000000000000000000000000000000000000000053bf73fc45a768c77aec54b96d65da20d0baa970640f7410232c5a64d84f854642ff782c849957e7502cb0b9e3acd41c2e6ce9e4a5dc9f3d5eb2339d8c0f34e08a145d5283f326a24c1d6b055c1d0e0a34e522cefc25564a38822716f4c02c55d5f79dce56aa7e0b264321aeaec2b2c7893195347e542e9da95168d4442c7de17c675b5d66a51bdf);
+            #10 send_input(1344'h000000000000000000000000000000000000000000000000000000000000000053BF73FC45A768C77AEC54B96D65DA20D0BAA970640F7410232C5A64D84F854642FF782C849957E7502CB0B9E3ACD41C2E6CE9E4A5DC9F3D5EB2339D8C0F34E08A145D5283F326A24C1D6B055C1D0E0A34E522CEFC25564A38822716F4C02C55D5F79DCE56AA7E0B264321AEAEC2B2C7893195347E542E9DA95168D4442C7DE17C675B5D66A51BDF);
+
             wait(next_element);
 
-            //s0_2
+            /*s1_1*/
+            mem_sel = 1;
             #170; //padder
             #240; //f_p
-            #10 send_input(1344'h000000000000000000000000000000000000000000000000000000000000000053bf73fc45a768c77aec54b96d65da20d0baa970640f7410232c5a64d84f854642ff782c849957e7502cb0b9e3acd41c2e6ce9e4a5dc9f3d5eb2339d8c0f34e08a145d5283f326a24c1d6b055c1d0e0a34e522cefc25564a38822716f4c02c55d5f79dce56aa7e0b264321aeaec2b2c7893195347e542e9da95168d4442c7de17c675b5d66a51bdf);
+            #10 send_input(1344'h0000000000000000000000000000000000000000000000000000000000000000B309152850755750F2E2D78843731B5EB023180B0D89A8D36BD77E0B7D659BABCFD1A34F1E86EEC81B838D39C5299D9303E472FB77E7154282E9D7E431ED93044920D1307C642BFD3A03D6DCFF9FD907F4E2A9C514331B385BD8997CCE3C8511C547EE886CC79FADF2457E466ED2857C8E02CD04320B9744A49F40501C1A2804439D6B07FE06F9F5);
+
             wait(next_element);
 
-            //s0_3
+            /*s1_2*/
+            mem_sel = 2;
             #170; //padder
             #240; //f_p
-            #10 send_input(1344'h000000000000000000000000000000000000000000000000000000000000000053bf73fc45a768c77aec54b96d65da20d0baa970640f7410232c5a64d84f854642ff782c849957e7502cb0b9e3acd41c2e6ce9e4a5dc9f3d5eb2339d8c0f34e08a145d5283f326a24c1d6b055c1d0e0a34e522cefc25564a38822716f4c02c55d5f79dce56aa7e0b264321aeaec2b2c7893195347e542e9da95168d4442c7de17c675b5d66a51bdf);  
+            #10 send_input(1344'h0000000000000000000000000000000000000000000000000000000000000000E0218AA63A8D55E8C73E8806F1F0B46BEB012E869FE38398A897A2BF4F3F45790275F275506A4F9C3F8CB944DE59A8EB12FF1D4637E35D306A485F486C707148FB29EC61733EF9CCAC3C74BD364DF7CA9FE80B418626D2A09EAA7895FCADEA693DDB067241160C4AEA28E6261CAAFD9A9B6D87384E11F919B63BFA7DD30512F6188BD98DC6F556DD);
+
+            wait(sampler_squeeze);
+            #170; //padder
+            #240; //f_p
+            #10 send_input(1344'h00000000000000000000000000000000000000000000000000000000000000006F02D4A7C9A273C80E47BFC53CC4A727AC5B1430A01D89F2863C3F80671B9774604E8EB169A88E7F1A0D75B224CD77D6B32A3D5A32CB28D389EC5329C510F8DD11C38D0C81F0860B4EFAE32E19A6DE306109BC489D098CE05A5C01518221FC2809AC3D820EB47489C7DDFE3DD28A783547588DD8516EA678A3E443DEEAEDA21F249D462C589FD73E);
+
             wait(next_element);
+
+            /*s1_3*/
+            mem_sel = 3;
+            #170; //padder
+            #240; //f_p
+            #10 send_input(1344'h00000000000000000000000000000000000000000000000000000000000000005D912BD7A4B6D1CB506F98CFE6B51BA4AB5B0832CCDB9AE56CE3445981A4EBBC53E4AB79A60619DF990362C81B1591EC9DB689A20515E274D07E3EA83F813C6CABDBDEF882EE1ADBADA4FB4D3E448D5EB73C4453A770D6E7E62AF3A9A006C228C3BC35F57A1547BD6EDE81E0A6343DDE50E0FB91FC0DD8915E2BA4E2668494440EC528F992DB76A2);
+
+            wait(next_element);
+
+            /***s2***/
+            s_sel = 1;
+            /*s2_0*/
+            mem_sel = 4;
+            #170; //padder
+            #240; //f_p
+            #10 send_input(1344'h0000000000000000000000000000000000000000000000000000000000000000DA05061FC0C9553B7B99D19AF38121FA5EC1E40358C639BF0F6796F4ABEEEC0B3C337B4AD46945D9A6CB09F350099D682A2B847AB20B026C90FB6EAF145128CB8BF0FBFD13388344440D338F149305F6B8BAD2163832503012155FA1AF41385FBE7F8B31973FCD380D7DD04B9CE0425518002FB0ECBB27D8A9C3A3588BF0CD0BBF3B618C95525BD2);
+
+            wait(sampler_squeeze);
+            #170; //padder
+            #240; //f_p
+            #10 send_input(1344'h0000000000000000000000000000000000000000000000000000000000000000032BB396C93045A6B3323EDA664D76F18724E72F282ECC710C87670B584D206D3D727AD2C85368DB6C4D47C3A49DC8010994F6FC0B642E0FBCE213FFC5BA32D73167D996D696E94B01AE233A50F102B8FEC4F959C8711F4B16C5F40653880625A6202495097EF18BB93BC679E7C183645504AF812C984D8FCA7067B34CC6EDCF4AC4438DEB66EA17);
+
+            wait(next_element);
+
+            /*s2_1*/
+            mem_sel = 5;
+            #170; //padder
+            #240; //f_p
+            #10 send_input(1344'h0000000000000000000000000000000000000000000000000000000000000000F804D1E61DBC4647A32DE8F3A257ABBBC85B2A0A969AA7C9E084E1E52CDB5FF2DD013D0B236D2B78CF1005101A8F250923418AD1A8E02A9ABA29CBAC33E6AA1DE6FB0ECA23EB07944837AF685128981253235EFEFD49EF3CB03305E9F7AD354D9EE7E5A5CFBB38E79077974ED4EAFB85713EE1E363AE20044793D98CA0BC3E77D029857F195EB882);
+
+            wait(next_element);
+
+            /*s2_2*/
+            mem_sel = 6;
+            #170; //padder
+            #240; //f_p
+            #10 send_input(1344'h0000000000000000000000000000000000000000000000000000000000000000E37BA32B3B992D1D36F9AC78C8DF48E661B3CF9C5B55A4E59536100EA42A29932103BD100904C43381332EC7690C3BDB42E6D4406B63A9421854F621E250F2DC0994BA113373E027E547BD5725044446CD01BB6DB726B3DE33D92AEB1F692450E3F480E00DB9FBA830BCB15FD3C09E1CD61252BE49DF0D0D876080857AF4B12204D47AB0D91A6506);
+
+            wait(next_element);
+
+            /*s2_3*/
+            mem_sel = 7;
+            #170; //padder
+            #240; //f_p
+            #10 send_input(1344'h0000000000000000000000000000000000000000000000000000000000000000F6F1B012D2039B888E69A7381FAE601212446E203ECF5540B827D59E7F84091C048154BB793FC1254C41DC07801449D02F0D2B1F356ABF1C6463136042883FFBD678A6359FC683F87823DA0EA82FA51E52318E2000A01321C81789229A4D1735217BD508059A53DFBF5C52A7138059852123FDE8346CA8DF0CFE654A652E787AEA1F9A0DBA753B04);
+
+            wait(sampler_squeeze);
+            #170; //padder
+            #240; //f_p
+            #10 send_input(1344'h0000000000000000000000000000000000000000000000000000000000000000E0183499AF101AB9F06FF85E97A58AC825A51B95E57A2EE00F3572E836F1FD43CB5906FD18530B004A5591A4244EB22CF536CCFC09F54C847D566898CD67EA8C0A74B090A84B562CC1C0AC53F661523379C7295EF3207742D87715C6A82DA6C54A0126ED544CAB52DBB6FA3752A6C4AB3FBA4DDD0FB9C76AD04498015F23B09144B47D5B421C84B9);
+
+            wait(next_element);
+
         end
     endtask
 
-    // Task to A
+        // Task to A
     task A;
         begin
             //A_0
@@ -466,13 +548,13 @@ module Sampler_tb;
         apply_reset();
 
         // // Test case 0: S0
-        // S0();
+        S();
 
         // // Test case 1: A
         // A();
 
         // // Test case 2: y
-        y();
+        // y();
 
         // // Test case 3: c
         // c();
@@ -483,10 +565,10 @@ module Sampler_tb;
     end
 
     // Monitor outputs during simulation
-    initial begin
-        $monitor($time, " sampler_squeeze=%b, next_element=%b, z0=%h, z1=%h, addr_z0=%d, addr_z1=%d, we_z=%b", 
-            sampler_squeeze, next_element, z0, z1, addr_z0, addr_z1, we_z);
-    end
+    // initial begin
+    //     $monitor($time, " sampler_squeeze=%b, next_element=%b, z0=%h, z1=%h, addr_z0=%d, addr_z1=%d, we_z=%b", 
+    //         sampler_squeeze, next_element, z0, z1, addr_z0, addr_z1, we_z);
+    // end
 
     // always @(posedge clk) begin
     //     if(sampler_squeeze)begin

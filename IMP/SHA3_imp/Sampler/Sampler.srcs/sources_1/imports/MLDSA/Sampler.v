@@ -14,8 +14,10 @@ module Sampler(
     output  [22:0]      z1,             // Write data z1 to Mem
     output  [9:0]       addr_z0,        // Write addresses for z0
     output  [9:0]       addr_z1,        // Write addresses for z1
-    output              en_z,           // enable for z values
-    output              we_z,           // Write enable for z values
+    output              en_z0,           // enable for z values
+    output              we_z0,           // Write enable for z values
+    output              en_z1,           // enable for z values
+    output              we_z1,           // Write enable for z values
 
     /*---A Mem---"*/
     output  [22:0]      A0,             // Write data A0 to Mem
@@ -94,7 +96,10 @@ module Sampler(
         .z1(z1),
         .addr_z0(addr_z0),
         .addr_z1(addr_z1),
-        .we_z(we_z)
+        .en_z0(en_z0),
+        .we_z0(we_z0),
+        .en_z1(en_z1),
+        .we_z1(we_z1)
     );   
 
     ExpandA ExpandA_(
@@ -108,6 +113,7 @@ module Sampler(
         .A1(A1),
         .addr_A0(addr_A0),
         .addr_A1(addr_A1),
+        .en_A(en_A),
         .we_A(we_A)
     );
 
