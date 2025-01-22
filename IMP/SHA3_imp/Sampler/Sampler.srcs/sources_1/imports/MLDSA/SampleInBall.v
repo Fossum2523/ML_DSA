@@ -10,7 +10,7 @@ module SampleInBall(
 
     /*---c Mem---"*/
     output      [22:0]      ci,                 // Write data c to Mem
-    output      [22:0]      cj,                 // Write data c to Mem
+    output      [22:0]      cj,                 // Write data c to Mem  //ci_previous 直接接ci_mem的輸出
     output      [7:0]       addr_ci,            // Write addresses for c
     output reg  [7:0]       addr_cj,            // Write addresses for c
     output                  en_ci,              // enable for c values
@@ -20,12 +20,12 @@ module SampleInBall(
     );  
 
     /*---FSM---"*/
-    localparam  [2:0]   SAMPLE_WAIT     = 3'd0,
-                        SAMPLE_PROCESS  = 3'd1;
+    localparam  SAMPLE_WAIT     = 1'd0,
+                SAMPLE_PROCESS  = 1'd1;
 
     // State variables
-    reg [2:0]    curr_state;
-    reg [2:0]    next_state;
+    reg curr_state;
+    reg next_state;
     
 
     // Intermediate registers and wires
@@ -33,11 +33,15 @@ module SampleInBall(
     reg  [63:0]  H;
     wire [7:0]   mux_data_out;
     wire [7:0]   i;             // Sampler for element addressing
-    reg  [7:0]   j;             // Counter for element addressing
-    wire         j_plus_num;    // Increment value for j
+    // reg  [7:0]   j;             // Counter for element addressing
+    // wire         j_plus_num;    // Increment value for j
     wire         rej;
-    reg  [7:0]   shake_cnt;     // Counter for shake operations
-
+    // reg  [7:0]   shake_cnt;     // Counter for shake operations
+    reg  [7:0]   shake_cnt; // Counter for shake operations
+    reg  [8:0]   j; // Counter for element addressing
+    wire [8:0]   j_next;
+    wire         j_plus_num; // Increment value for j
+    wire         last_C;
 
     mux_gen #( 
         .param_in(1088),
@@ -55,17 +59,20 @@ module SampleInBall(
     assign ci = H[0] ? 23'd8380416 : 23'd1;
 
     assign addr_ci = i;
-    // assign addr_cj = j;
 
     assign en_ci = curr_state == SAMPLE_PROCESS && ~rej;
 
     assign we_ci = curr_state == SAMPLE_PROCESS && ~rej;
     
-    assign j_plus_num = rej ? 1'd0 : 1'b1; // Increment logic
+    assign j_plus_num = ~rej; // Increment logic
+
+    assign j_next = j + j_plus_num;
+
+    assign last_c = j_next[8];
 
     assign sampler_squeeze = shake_cnt == 8'd135; // Shake condition
 
-    assign next_element = j == 0;
+    assign next_element = j[8];
 
     always @(posedge clk) begin
         if (reset)
@@ -102,8 +109,10 @@ module SampleInBall(
     always @ (posedge clk) begin
         if (reset)
             j <=  8'd217;
-        else if ((curr_state == SAMPLE_PROCESS))
-            j <= j + j_plus_num;  
+        else if (next_element)
+            j <=  8'd217;
+        else if (curr_state == SAMPLE_PROCESS)
+            j <= j_next;  
     end
     
     always @(posedge clk) begin
@@ -136,7 +145,7 @@ module SampleInBall(
                 else next_state = SAMPLE_WAIT;
             end 
             SAMPLE_PROCESS: begin
-                if(sampler_squeeze || next_element) next_state = SAMPLE_WAIT;
+                if(last_c || next_element) next_state = SAMPLE_WAIT;
                 else next_state = SAMPLE_PROCESS;
             end
             default: next_state = SAMPLE_WAIT;

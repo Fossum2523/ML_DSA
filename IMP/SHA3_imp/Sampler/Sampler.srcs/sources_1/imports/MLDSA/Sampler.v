@@ -9,25 +9,27 @@ module Sampler(
     output              sampler_squeeze,  // Flag for squeezing condition
     output              next_element,   // Flag for memory full condition
 
-    /*---S1 Mem---"*/
+    /*---S---"*/
     output  [22:0]      z0,             // Write data z0 to Mem
     output  [22:0]      z1,             // Write data z1 to Mem
-    output  [9:0]       addr_z0,        // Write addresses for z0
-    output  [9:0]       addr_z1,        // Write addresses for z1
+    output  [7:0]       addr_z0,        // Write addresses for z0
+    output  [7:0]       addr_z1,        // Write addresses for z1
     output              en_z0,           // enable for z values
     output              we_z0,           // Write enable for z values
     output              en_z1,           // enable for z values
     output              we_z1,           // Write enable for z values
 
-    /*---A Mem---"*/
+    /*---A---"*/
     output  [22:0]      A0,             // Write data A0 to Mem
     output  [22:0]      A1,             // Write data A1 to Mem
-    output  [11:0]      addr_A0,        // Write addresses for A0
-    output  [11:0]      addr_A1,        // Write addresses for A1
-    output              en_A,           // enable for A values
-    output              we_A,           // Write enable for A values
+    output  [7:0]      addr_A0,        // Write addresses for A0
+    output  [7:0]      addr_A1,        // Write addresses for A1
+    output              en_A0,           // enable for A values
+    output              we_A0,           // Write enable for A values
+    output              en_A1,           // enable for A values
+    output              we_A1,           // Write enable for A values
 
-    /*---y Mem---"*/
+    /*---y---"*/
     output  [22:0]      y0,             // Write data z0 to Mem
     output  [22:0]      y1,             // Write data z1 to Mem
     output  [7:0]       addr_y0,        // Write addresses for z0
@@ -35,7 +37,7 @@ module Sampler(
     output              en_y,           // enable for z values
     output              we_y,           // Write enable for z values
 
-    /*---c Mem---"*/
+    /*---c---"*/
     output  [22:0]      ci,             // Write data ci to Mem
     output  [22:0]      cj,             // Write data cj to Mem
     output  [7:0]       addr_ci,        // Write addresses for ci
@@ -113,8 +115,10 @@ module Sampler(
         .A1(A1),
         .addr_A0(addr_A0),
         .addr_A1(addr_A1),
-        .en_A(en_A),
-        .we_A(we_A)
+        .en_A0(en_A0),
+        .we_A0(we_A0),
+        .en_A1(en_A1),
+        .we_A1(we_A1)
     );
 
     ExpandMASK ExpandMASK_(

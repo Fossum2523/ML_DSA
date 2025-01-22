@@ -102,9 +102,14 @@ def ExpandMask(p, mu):
                     file.write(f"#10 send_input(1344'h{'0' * 64}{Verilog_v[1152 - (i + 1) * 272: 1152 - i * 272]});\n")
                     file.write(f"\n")
 
+
         # with open("ExpandMASK_testbench_golden.txt", "a") as file:
-        #     file.write(f"/***y_{r}***/\n")
+        #     file.write(f"/***y_{r}***/\n")wait(next_element);
         s[r] = BitUnpack(v, ML_DSA["gamma_1"] - 1, ML_DSA["gamma_1"],r)
+
+        with open("ExpandMASK_testbench_test_code.txt", "a") as file:
+            file.write(f"wait(next_element);\n")
+            file.write(f"\n")
         print(f"s[{r}] = {s[r]}")
     return s
 

@@ -63,20 +63,35 @@ def RejBoundedPoly(p, r):
     squeeze_cnt = 0
     j = 0  # Coefficient index
     c = 0  # Hash byte index
+    with open("ExpandS_testbench_golden.txt", "a") as file:
+        file.write(f"/***s_{r}***/\n")
+
     with open("ExpandS_testbench_test_code.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
-            file.write(f"#170; //padder\n#240; //f_p\n")
-            file.write(f"#10 send_input(1344'h{'0' * 64}{Verilog_hash[1088 - (squeeze_cnt + 1) * 272: 1088 - squeeze_cnt * 272]});\n")
-            file.write(f"\n")
+        file.write(f"#170; //padder\n#240; //f_p\n")
+        file.write(f"#10 send_input(1344'h{'0' * 64}{Verilog_hash[1088 - (squeeze_cnt + 1) * 272: 1088 - squeeze_cnt * 272]});\n")
+        file.write(f"\n")
     while j < 256:
         # print("c = ",c)
         z = hash_output[c]
         z0 = CoeffFromHalfByte(z % 16)   # Lower nibble
         z1 = CoeffFromHalfByte(z // 16)  # Upper nibble
+        with open("ExpandS_testbench_golden.txt", "a") as file:
+                file.write(f"{hex(z)}\n")
         if z0 is not None:
             a[j] = z0
+            with open("ExpandS_testbench_golden.txt", "a") as file:
+                if(z0 < 0):
+                    file.write(f"s[{j}] = {8380417 + z0}\n")
+                else:
+                    file.write(f"s[{j}] = {z0}\n")
             j += 1
         if z1 is not None and j < 256:
             a[j] = z1
+            with open("ExpandS_testbench_golden.txt", "a") as file:
+                if(z1 < 0):
+                    file.write(f"s[{j}] = {8380417 + z1}\n")
+                else:
+                    file.write(f"s[{j}] = {z1}\n")
             j += 1
         c += 1  # Move to next byte in hash output
         if (c % 136 == 0 and j < 256):
@@ -132,7 +147,7 @@ def ExpandS(p):
         seed = p + r_prime
         with open("ExpandS_testbench_test_code.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
             file.write(f"/*s2_{r}*/\n")
-            file.write(f"mem_sel = {(r + 4)};\n")
+            file.write(f"mem_sel = {(r)};\n")
         s2[r] = RejBoundedPoly(seed, r + ML_DSA["l"])
     return s1, s2
 

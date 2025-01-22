@@ -18,8 +18,8 @@ module ExpandMASK(
     );  
 
     /*---FSM---"*/
-    localparam  [2:0]   SAMPLE_WAIT     = 3'd0,
-                        SAMPLE_PROCESS  = 3'd1;
+    localparam  SAMPLE_WAIT     = 1'd0,
+                SAMPLE_PROCESS  = 1'd1;
 
     /*---round sampler_temp size---"*/
     localparam round_0 = 8;
@@ -33,11 +33,18 @@ module ExpandMASK(
     
 
     // Intermediate registers and wires
-    reg  [8:0]   j;             // Counter for element addressing
-    reg  [7:0]   shake_cnt;     // Counter for shake operations
+    // reg  [8:0]   j;             // Counter for element addressing
+    // reg  [7:0]   shake_cnt;     // Counter for shake operations
+
+    reg  [7:0]  shake_cnt; // Counter for shake operations
+    reg  [8:0]  j; // Counter for element addressing
+    wire [8:0]  j_next;
+    wire [1:0]  j_plus_num; // Increment value for j
+    wire        last_y;
+
     reg  [3:0]   round_cnt;
     reg  [31:0]  sampler_temp;
-    wire [1:0]   j_plus_num;    // Increment value for j
+    // wire [1:0]   j_plus_num;    // Increment value for j
     wire [17:0]  H0;            // Split mux output
     wire [17:0]  H1;            // Split mux output
     wire         larger_0;      // Flags for larger comparisons
@@ -82,13 +89,17 @@ module ExpandMASK(
     assign addr_y0 = j[7:0];
     assign addr_y1 = j[7:0] + 1'b1;
 
-    assign en_y = curr_state == SAMPLE_PROCESS && ~sampler_squeeze && ~j[8];
+    assign en_y = curr_state == SAMPLE_PROCESS && ~j[8];
 
-    assign we_y = curr_state == SAMPLE_PROCESS && ~sampler_squeeze && ~j[8];
+    assign we_y = curr_state == SAMPLE_PROCESS && ~j[8];
     
     assign j_plus_num = 2'd2; // Increment logic
 
-    assign sampler_squeeze = shake_cnt == 5'd30 && ~j[8]; // Shake condition
+    assign j_next = j + j_plus_num;
+
+    assign last_y = j_next[8];
+
+    assign sampler_squeeze = shake_cnt == 5'd29 && ~last_y; // Shake condition
 
     assign next_element = j[8]; // Memory full condition
 
@@ -128,8 +139,8 @@ module ExpandMASK(
             j <=  9'd0;
         else if (next_element)
             j <=  9'd0; 
-        else if (curr_state == SAMPLE_PROCESS && ~sampler_squeeze)
-            j <= j + j_plus_num;   
+        else if (curr_state == SAMPLE_PROCESS)
+            j <= j_next;   
     end
     
     always @ (posedge clk) begin
@@ -146,7 +157,7 @@ module ExpandMASK(
                 else next_state = SAMPLE_WAIT;
             end 
             SAMPLE_PROCESS: begin
-                if(next_element || sampler_squeeze) next_state = SAMPLE_WAIT;
+                if(last_y || sampler_squeeze) next_state = SAMPLE_WAIT;
                 else next_state = SAMPLE_PROCESS;
             end
             default: next_state = SAMPLE_WAIT;

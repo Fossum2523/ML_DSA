@@ -456,6 +456,7 @@ def bytes_to_bits(byte_data: bytes) -> str:
 
 # 算法 23 SampleInBall(ρ) 
 def SampleInBall(p):
+    print(p)
     c = [0] * 256
     s = SHAKE_256(p,1768)
     cnt = 8
@@ -472,13 +473,12 @@ def SampleInBall(p):
             j = s[cnt]
             # print("j = ",j)
             cnt = cnt + 1
-            break
-            print("cnt",cnt)
         # print("------------------------------------------")
         c[i] = c[j]
         c[j] = (-1)**(h[(i + ML_DSA["tau"] - 256)])
     # print(c)
     # print("cnt",cnt)
+    print(c)
     return c 
 
 # 算法 24 RejNTTPoly(ρ) 
@@ -518,6 +518,7 @@ def RejBoundedPoly(p):
  
 # 算法 26 ExpandA(ρ)
 def ExpandA(p):
+    # print(p)
     A = np.zeros((ML_DSA["k"], ML_DSA["l"]), dtype=object)
     for r in range(ML_DSA["k"]):
         for s in range(ML_DSA["l"]):
@@ -527,11 +528,12 @@ def ExpandA(p):
             s_prime = BitsToBytes(s_prime)
             seed = p + s_prime + r_prime
             A[r, s] = RejNTTPoly(seed)
+    # print(A)
     return A
 
 # 算法 27 ExpandS(ρ) 
 def ExpandS(p):
-    print(p)
+    # print(p)
     s1 = [None] * ML_DSA["l"]
     s2 = [None] * ML_DSA["k"]
     for r in range(ML_DSA["l"]):
@@ -547,8 +549,8 @@ def ExpandS(p):
         seed = p + r_prime
         # print(f"seed_{r} = {seed}")
         s2[r] = RejBoundedPoly(seed)
-    print(f"s1 = {s1}")
-    print(f"s2 = {s2}")
+    # print(f"s1 = {s1}")
+    # print(f"s2 = {s2}")
     return s1, s2
 
 # 算法 28 ExpandMask(ρ, µ) 

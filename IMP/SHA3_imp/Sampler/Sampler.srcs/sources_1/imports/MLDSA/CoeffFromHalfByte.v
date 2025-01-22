@@ -63,7 +63,7 @@ module CoeffFromHalfByte(
             2'b00: out = 3'b111; // -1
             2'b01: out = 3'b110; // -2
             2'b11: out = 3'b001; //  1
-            2'b10: out = 3'b000; //  0
+            2'b10: out = 3'b010; //  2
             default: out = 3'b000;
           endcase
         end

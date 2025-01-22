@@ -20,19 +20,20 @@ module ExpandS(
     );  
 
     /*---FSM---"*/
-    localparam  [2:0]   SAMPLE_WAIT     = 3'd0,
-                        SAMPLE_PROCESS  = 3'd1;
+    localparam  SAMPLE_WAIT     = 1'd0,
+                SAMPLE_PROCESS  = 1'd1;
 
     // State variables
-    reg [2:0]   curr_state;
-    reg [2:0]   next_state;
+    reg     curr_state;
+    reg     next_state;
     
 
     // Intermediate registers and wires
-    reg [8:0]   j; // Counter for element addressing
-    reg [7:0]   shake_cnt; // Counter for shake operations
-
+    reg  [7:0]   shake_cnt; // Counter for shake operations
+    reg  [8:0]   j; // Counter for element addressing
+    wire [8:0]  j_next;
     wire [1:0]  j_plus_num; // Increment value for j
+    wire        last_z;
     
     // Outputs from CoeffFromHalfByte instances
     wire [2:0]  CFHB_0_out;
@@ -56,11 +57,11 @@ module ExpandS(
         .out(mux_data_out)
     );
 
-    assign a = mux_data_out[7:4] == 4'd15;
-    assign b = mux_data_out[3:0] == 4'd15;
+    assign a = mux_data_out[3:0] == 4'd15;
+    assign b = mux_data_out[7:4] == 4'd15;
 
-    CoeffFromHalfByte CFHB_0 (.in(mux_data_out[7:4]), .out(CFHB_0_out));
-    CoeffFromHalfByte CFHB_1 (.in(mux_data_out[3:0]), .out(CFHB_1_out));
+    CoeffFromHalfByte CFHB_0 (.in(mux_data_out[3:0]), .out(CFHB_0_out));
+    CoeffFromHalfByte CFHB_1 (.in(mux_data_out[7:4]), .out(CFHB_1_out));
 
     assign z0_tmp = a ? CFHB_1_out : CFHB_0_out;
     assign z1_tmp = CFHB_1_out;
@@ -72,13 +73,17 @@ module ExpandS(
     assign addr_z1 = j[7:0] + 1'b1;
 
     assign en_z0 = curr_state == SAMPLE_PROCESS && (~a | ~b);
-    assign we_z0 = curr_state == SAMPLE_PROCESS && (~a | ~b);
-    assign en_z1 = curr_state == SAMPLE_PROCESS && (~a & ~b);
-    assign we_z1 = curr_state == SAMPLE_PROCESS && (~a & ~b);
+    assign we_z0 = en_z0;
+    assign en_z1 = curr_state == SAMPLE_PROCESS && j != 255 && (~a & ~b);
+    assign we_z1 = en_z1;
     
-    assign j_plus_num = (j[7:0] == 255 && ~a && ~b) ? 2'd1 : ((~a) + (~b)); // Increment logic
+    assign j_plus_num = (~a) + (~b); // Increment logic
 
-    assign sampler_squeeze = shake_cnt == 8'd135 && ~j[8]; // Shake condition
+    assign j_next = j + j_plus_num;
+
+    assign last_z = j_next[8];
+
+    assign sampler_squeeze = shake_cnt == 8'd135 & ~last_z; // Shake condition
 
     assign next_element = j[8]; // Memory full condition
 
@@ -94,11 +99,10 @@ module ExpandS(
     always @ (posedge clk) begin
         if (reset)
             j <=  9'd0;
-        else if ((curr_state == SAMPLE_PROCESS) && (~next_element))
-            j <= j + j_plus_num; 
-        else if (curr_state == SAMPLE_WAIT && next_element)
+        else if (next_element)
             j <=  9'd0; 
-        
+        else if (curr_state == SAMPLE_PROCESS)
+            j <= j_next; 
     end
     
     always @ (posedge clk) begin
@@ -115,7 +119,7 @@ module ExpandS(
                 else next_state = SAMPLE_WAIT;
             end 
             SAMPLE_PROCESS: begin
-                if(next_element || sampler_squeeze) next_state = SAMPLE_WAIT;
+                if(last_z || sampler_squeeze) next_state = SAMPLE_WAIT;
                 else next_state = SAMPLE_PROCESS;
             end
             default: next_state = SAMPLE_WAIT;
