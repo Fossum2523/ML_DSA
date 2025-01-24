@@ -3,10 +3,10 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Tue Jan 21 12:59:44 2025
-# Process ID: 16044
+# Start of session at: Thu Jan 23 01:58:32 2025
+# Process ID: 3644
 # Current directory: C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6064 C:\Users\USER\Desktop\ML_DSA_syn\IMP\SHA3_imp\Sampler\Sampler.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13236 C:\Users\USER\Desktop\ML_DSA_syn\IMP\SHA3_imp\Sampler\Sampler.xpr
 # Log file: C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/vivado.log
 # Journal file: C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler\vivado.jou
 # Running On: LAPTOP-2P71OMBV, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 16, Host memory: 16542 MB
@@ -17,290 +17,20 @@ update_compile_order -fileset sources_1
 launch_simulation
 open_wave_config C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/tb_Sampler_behav.wcfg
 source Sampler_tb.tcl
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-run 5 us
-run 5 us
 run 5 us
 current_wave_config {tb_Sampler_behav.wcfg}
-add_wave {{/Sampler_tb/s1_en_z0}} {{/Sampler_tb/s1_we_z0}} {{/Sampler_tb/s1_en_z1}} {{/Sampler_tb/s1_we_z1}} 
+add_wave {{/Sampler_tb/uut/SampleInBall_/mux_data_out}} 
+current_wave_config {tb_Sampler_behav.wcfg}
+add_wave {{/Sampler_tb/uut/SampleInBall_/i}} 
+current_wave_config {tb_Sampler_behav.wcfg}
+add_wave {{/Sampler_tb/uut/SampleInBall_/j}} 
 restart
 run 5 us
-run 5 us
-run 5 us
-run 5 us
 current_wave_config {tb_Sampler_behav.wcfg}
-add_wave {{/Sampler_tb/uut/ExpandS_/en_z0}} {{/Sampler_tb/uut/ExpandS_/we_z0}} {{/Sampler_tb/uut/ExpandS_/en_z1}} {{/Sampler_tb/uut/ExpandS_/we_z1}} 
+add_wave {{/Sampler_tb/uut/SampleInBall_/H}} 
+current_wave_config {tb_Sampler_behav.wcfg}
+add_wave {{/Sampler_tb/uut/SampleInBall_/rej}} 
 restart
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-run 5 us
-run 5 us
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-current_wave_config {tb_Sampler_behav.wcfg}
-add_wave {{/Sampler_tb/uut/ExpandS_/j_next}} 
-current_wave_config {tb_Sampler_behav.wcfg}
-add_wave {{/Sampler_tb/uut/ExpandS_/lazt_z}} 
-restart
-run 5 us
-run 5 us
-relaunch_sim
-run 5 us
-run 5 us
-current_wave_config {tb_Sampler_behav.wcfg}
-add_wave {{/Sampler_tb/uut/ExpandS_/last_z}} 
-restart
-run 5 us
-relaunch_sim
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-restart
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-current_wave_config {tb_Sampler_behav.wcfg}
-add_wave {{/Sampler_tb/uut/ExpandS_/en_z0}} {{/Sampler_tb/uut/ExpandS_/we_z0}} {{/Sampler_tb/uut/ExpandS_/en_z1}} {{/Sampler_tb/uut/ExpandS_/we_z1}} 
-restart
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-current_wave_config {tb_Sampler_behav.wcfg}
-add_wave {{/Sampler_tb/mem_sel}} 
-current_wave_config {tb_Sampler_behav.wcfg}
-add_wave {{/Sampler_tb/uut/ExpandS_/j}} 
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-current_wave_config {tb_Sampler_behav.wcfg}
-add_wave {{/Sampler_tb/uut/ExpandA_/sampler_in_ready}} {{/Sampler_tb/uut/ExpandA_/sampler_in}} {{/Sampler_tb/uut/ExpandA_/sampler_squeeze}} {{/Sampler_tb/uut/ExpandA_/next_element}} {{/Sampler_tb/uut/ExpandA_/A0}} {{/Sampler_tb/uut/ExpandA_/A1}} {{/Sampler_tb/uut/ExpandA_/addr_A0}} {{/Sampler_tb/uut/ExpandA_/addr_A1}} {{/Sampler_tb/uut/ExpandA_/en_A}} {{/Sampler_tb/uut/ExpandA_/we_A}} {{/Sampler_tb/uut/ExpandA_/curr_state}} {{/Sampler_tb/uut/ExpandA_/next_state}} {{/Sampler_tb/uut/ExpandA_/element_choose}} {{/Sampler_tb/uut/ExpandA_/j}} {{/Sampler_tb/uut/ExpandA_/shake_cnt}} {{/Sampler_tb/uut/ExpandA_/j_plus_num}} {{/Sampler_tb/uut/ExpandA_/rej}} {{/Sampler_tb/uut/ExpandA_/mux_data_out}} {{/Sampler_tb/uut/ExpandA_/rej0}} {{/Sampler_tb/uut/ExpandA_/rej1}} 
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-relaunch_sim
-relaunch_sim
-current_wave_config {tb_Sampler_behav.wcfg}
-add_wave {{/Sampler_tb/uut/ExpandA_/en_A0}} {{/Sampler_tb/uut/ExpandA_/we_A0}} {{/Sampler_tb/uut/ExpandA_/en_A1}} {{/Sampler_tb/uut/ExpandA_/we_A1}} 
-restart
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-current_wave_config {tb_Sampler_behav.wcfg}
-add_wave {{/Sampler_tb/mem_sel}} 
-current_wave_config {tb_Sampler_behav.wcfg}
-add_wave {{/Sampler_tb/mode}} 
-restart
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-current_wave_config {tb_Sampler_behav.wcfg}
-add_wave {{/Sampler_tb/uut/ExpandA_/curr_state}} {{/Sampler_tb/uut/ExpandA_/next_state}} 
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-current_wave_config {tb_Sampler_behav.wcfg}
-add_wave {{/Sampler_tb/DM/A/ram}} 
-current_wave_config {tb_Sampler_behav.wcfg}
-add_wave {{/Sampler_tb/uut/ExpandS_/sampler_in_ready}} {{/Sampler_tb/uut/ExpandS_/sampler_in}} {{/Sampler_tb/uut/ExpandS_/sampler_squeeze}} {{/Sampler_tb/uut/ExpandS_/next_element}} {{/Sampler_tb/uut/ExpandS_/z0}} {{/Sampler_tb/uut/ExpandS_/z1}} {{/Sampler_tb/uut/ExpandS_/addr_z0}} {{/Sampler_tb/uut/ExpandS_/addr_z1}} {{/Sampler_tb/uut/ExpandS_/en_z0}} {{/Sampler_tb/uut/ExpandS_/we_z0}} {{/Sampler_tb/uut/ExpandS_/en_z1}} {{/Sampler_tb/uut/ExpandS_/we_z1}} {{/Sampler_tb/uut/ExpandS_/curr_state}} {{/Sampler_tb/uut/ExpandS_/next_state}} {{/Sampler_tb/uut/ExpandS_/shake_cnt}} {{/Sampler_tb/uut/ExpandS_/j}} {{/Sampler_tb/uut/ExpandS_/j_next}} {{/Sampler_tb/uut/ExpandS_/j_plus_num}} {{/Sampler_tb/uut/ExpandS_/last_z}} {{/Sampler_tb/uut/ExpandS_/CFHB_0_out}} {{/Sampler_tb/uut/ExpandS_/CFHB_1_out}} {{/Sampler_tb/uut/ExpandS_/a}} {{/Sampler_tb/uut/ExpandS_/b}} {{/Sampler_tb/uut/ExpandS_/z0_tmp}} {{/Sampler_tb/uut/ExpandS_/z1_tmp}} 
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-current_wave_config {tb_Sampler_behav.wcfg}
-add_wave {{/Sampler_tb/uut/SampleInBall_/sampler_in_ready}} {{/Sampler_tb/uut/SampleInBall_/sampler_in}} {{/Sampler_tb/uut/SampleInBall_/sampler_squeeze}} {{/Sampler_tb/uut/SampleInBall_/next_element}} {{/Sampler_tb/uut/SampleInBall_/ci}} {{/Sampler_tb/uut/SampleInBall_/cj}} {{/Sampler_tb/uut/SampleInBall_/addr_ci}} {{/Sampler_tb/uut/SampleInBall_/addr_cj}} {{/Sampler_tb/uut/SampleInBall_/en_ci}} {{/Sampler_tb/uut/SampleInBall_/en_cj}} {{/Sampler_tb/uut/SampleInBall_/we_ci}} {{/Sampler_tb/uut/SampleInBall_/we_cj}} {{/Sampler_tb/uut/SampleInBall_/curr_state}} {{/Sampler_tb/uut/SampleInBall_/next_state}} {{/Sampler_tb/uut/SampleInBall_/load_H}} {{/Sampler_tb/uut/SampleInBall_/H}} {{/Sampler_tb/uut/SampleInBall_/mux_data_out}} {{/Sampler_tb/uut/SampleInBall_/i}} {{/Sampler_tb/uut/SampleInBall_/j}} {{/Sampler_tb/uut/SampleInBall_/j_plus_num}} {{/Sampler_tb/uut/SampleInBall_/rej}} {{/Sampler_tb/uut/SampleInBall_/shake_cnt}} 
-restart
-run 5 us
-run 5 us
-relaunch_sim
-run 5 us
-relaunch_sim
-run 5 us
-relaunch_sim
-relaunch_sim
-run 5 us
-relaunch_sim
-run 5 us
-relaunch_sim
-run 5 us
-relaunch_sim
-relaunch_sim
-run 5 us
-relaunch_sim
-run 5 us
-relaunch_sim
-run 5 us
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-run 5 us
-run 5 us
-current_wave_config {tb_Sampler_behav.wcfg}
-add_wave {{/Sampler_tb/uut/ExpandMASK_/sampler_in_ready}} {{/Sampler_tb/uut/ExpandMASK_/sampler_in}} {{/Sampler_tb/uut/ExpandMASK_/sampler_squeeze}} {{/Sampler_tb/uut/ExpandMASK_/next_element}} {{/Sampler_tb/uut/ExpandMASK_/y0}} {{/Sampler_tb/uut/ExpandMASK_/y1}} {{/Sampler_tb/uut/ExpandMASK_/addr_y0}} {{/Sampler_tb/uut/ExpandMASK_/addr_y1}} {{/Sampler_tb/uut/ExpandMASK_/en_y}} {{/Sampler_tb/uut/ExpandMASK_/we_y}} {{/Sampler_tb/uut/ExpandMASK_/curr_state}} {{/Sampler_tb/uut/ExpandMASK_/next_state}} {{/Sampler_tb/uut/ExpandMASK_/j}} {{/Sampler_tb/uut/ExpandMASK_/shake_cnt}} {{/Sampler_tb/uut/ExpandMASK_/round_cnt}} {{/Sampler_tb/uut/ExpandMASK_/sampler_temp}} {{/Sampler_tb/uut/ExpandMASK_/j_plus_num}} {{/Sampler_tb/uut/ExpandMASK_/H0}} {{/Sampler_tb/uut/ExpandMASK_/H1}} {{/Sampler_tb/uut/ExpandMASK_/larger_0}} {{/Sampler_tb/uut/ExpandMASK_/larger_1}} {{/Sampler_tb/uut/ExpandMASK_/y_minuend_0}} {{/Sampler_tb/uut/ExpandMASK_/y_minuend_1}} {{/Sampler_tb/uut/ExpandMASK_/y_subtrahend_0}} {{/Sampler_tb/uut/ExpandMASK_/y_subtrahend_1}} {{/Sampler_tb/uut/ExpandMASK_/mux_data_out}} {{/Sampler_tb/uut/ExpandMASK_/mux_in}} {{/Sampler_tb/uut/ExpandMASK_/SAMPLE_WAIT}} {{/Sampler_tb/uut/ExpandMASK_/SAMPLE_PROCESS}} 
-restart
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-run 5 us
-run 5 us
-run 5 us
 run 5 us
 save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/tb_Sampler_behav.wcfg}
 close_sim

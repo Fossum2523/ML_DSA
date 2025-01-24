@@ -1,0 +1,51 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Thu Jan 16 23:01:37 2025
+# Process ID: 19308
+# Current directory: C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14260 C:\Users\USER\Desktop\ML_DSA_syn\IMP\SHA3_imp\Sampler\Sampler.xpr
+# Log file: C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/vivado.log
+# Journal file: C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler\vivado.jou
+# Running On: LAPTOP-2P71OMBV, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 16, Host memory: 16542 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+launch_simulation
+add_files -norecurse -scan_for_includes C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandMASK.v
+launch_simulation
+launch_simulation
+launch_simulation
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/tb_Sampler_behav.wcfg
+source Sampler_tb.tcl
+run 5 us
+run 5 us
+current_wave_config {tb_Sampler_behav.wcfg}
+add_wave {{/Sampler_tb/uut/ExpandMASK_/sampler_in_ready}} {{/Sampler_tb/uut/ExpandMASK_/sampler_in}} {{/Sampler_tb/uut/ExpandMASK_/sampler_squeeze}} {{/Sampler_tb/uut/ExpandMASK_/next_element}} {{/Sampler_tb/uut/ExpandMASK_/w0}} {{/Sampler_tb/uut/ExpandMASK_/w1}} {{/Sampler_tb/uut/ExpandMASK_/addr_w0}} {{/Sampler_tb/uut/ExpandMASK_/addr_w1}} {{/Sampler_tb/uut/ExpandMASK_/en_w}} {{/Sampler_tb/uut/ExpandMASK_/we_w}} {{/Sampler_tb/uut/ExpandMASK_/curr_state}} {{/Sampler_tb/uut/ExpandMASK_/next_state}} {{/Sampler_tb/uut/ExpandMASK_/j}} {{/Sampler_tb/uut/ExpandMASK_/shake_cnt}} {{/Sampler_tb/uut/ExpandMASK_/round_cnt}} {{/Sampler_tb/uut/ExpandMASK_/sampler_temp}} {{/Sampler_tb/uut/ExpandMASK_/j_plus_num}} {{/Sampler_tb/uut/ExpandMASK_/H0}} {{/Sampler_tb/uut/ExpandMASK_/H1}} {{/Sampler_tb/uut/ExpandMASK_/larger_0}} {{/Sampler_tb/uut/ExpandMASK_/larger_1}} {{/Sampler_tb/uut/ExpandMASK_/w_minuend_0}} {{/Sampler_tb/uut/ExpandMASK_/w_minuend_1}} {{/Sampler_tb/uut/ExpandMASK_/w_subtrahend_0}} {{/Sampler_tb/uut/ExpandMASK_/w_subtrahend_1}} {{/Sampler_tb/uut/ExpandMASK_/mux_data_out}} {{/Sampler_tb/uut/ExpandMASK_/mux_in}} {{/Sampler_tb/uut/ExpandMASK_/waddr_w0}} {{/Sampler_tb/uut/ExpandMASK_/waddr_w1}} 
+restart
+run 5 us
+run 5 us
+save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/tb_Sampler_behav.wcfg}
+save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/tb_Sampler_behav.wcfg}
+relaunch_sim
+run 5 us
+run 5 us
+relaunch_sim
+run 5 us
+run 5 us
+relaunch_sim
+run 5 us
+run 5 us
+run 5 us
+relaunch_sim
+relaunch_sim
+update_compile_order -fileset sim_1
+relaunch_sim
+update_compile_order -fileset sim_1
+relaunch_sim
+run 5 us
+run 5 us

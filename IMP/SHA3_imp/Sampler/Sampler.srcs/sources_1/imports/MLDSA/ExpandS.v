@@ -24,13 +24,13 @@ module ExpandS(
                 SAMPLE_PROCESS  = 1'd1;
 
     // State variables
-    reg     curr_state;
-    reg     next_state;
+    reg         curr_state;
+    reg         next_state;
     
 
     // Intermediate registers and wires
-    reg  [7:0]   shake_cnt; // Counter for shake operations
-    reg  [8:0]   j; // Counter for element addressing
+    reg  [7:0]  shake_cnt;  // Counter for shake operations
+    reg  [8:0]  j;          // Counter for element addressing
     wire [8:0]  j_next;
     wire [1:0]  j_plus_num; // Increment value for j
     wire        last_z;
@@ -40,8 +40,8 @@ module ExpandS(
     wire [2:0]  CFHB_1_out;
 
     // Intermediate data wires
-    wire        a; // Comparison flags
-    wire        b; // Comparison flags
+    wire        a;          // Comparison flags
+    wire        b;          // Comparison flags
 
     wire [2:0]  z0_tmp;
     wire [2:0]  z1_tmp;
@@ -66,8 +66,8 @@ module ExpandS(
     assign z0_tmp = a ? CFHB_1_out : CFHB_0_out;
     assign z1_tmp = CFHB_1_out;
 
-    assign z0 = z0_tmp[2] ?  {{20{1'b1}}, z0_tmp} + 23'd8380417 : {20'd0, z0_tmp};
-    assign z1 = z1_tmp[2] ?  {{20{1'b1}}, z1_tmp} + 23'd8380417 : {20'd0, z1_tmp};
+    assign z0 = z0_tmp[2] ?  {{20{1'b1}}, z0_tmp} + 23'd8380417 : {20'd0, z0_tmp}; //Width_Expansion 
+    assign z1 = z1_tmp[2] ?  {{20{1'b1}}, z1_tmp} + 23'd8380417 : {20'd0, z1_tmp}; //Width_Expansion
 
     assign addr_z0 = j[7:0];
     assign addr_z1 = j[7:0] + 1'b1;
