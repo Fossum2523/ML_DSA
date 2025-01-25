@@ -1,0 +1,550 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Mon Dec 16 13:36:09 2024
+# Process ID: 9176
+# Current directory: C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5844 C:\Users\fossu\Desktop\SHA3_imp\F_Permutation_Dilithium\F_Permutation_Dilithium.xpr
+# Log file: C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/vivado.log
+# Journal file: C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.xpr
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.6 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kc705/1.6/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu1500/1.2/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc707/1.4/board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc709:part0:1.8 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc709/1.8/board.xml as part xc7vx690tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.6/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.7/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu110/1.4/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.0/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.3 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.3/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.4/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu129/production/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.3 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu1525/1.3/board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.1/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_mpsoc:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_mpsoc/1.0/board.xml as part xczu19eg-ffvd1760-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_rfsoc:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_rfsoc/1.0/board.xml as part xczu21dr-ffvd1156-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.1/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.1/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc706/1.4/board.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.3 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.3/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.4/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.2/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.3 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.3/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.4/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1275:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1275/1.0/board.xml as part xczu29dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1285:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1285/1.0/board.xml as part xczu39dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208/production/2.0/board.xml as part xczu48dr-fsvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216/production/2.0/board.xml as part xczu49dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2023.2/data/ip'.
+open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:32 . Memory (MB): peak = 1469.945 ; gain = 370.605
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'F_Permutation_Dilithium_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'F_Permutation_Dilithium_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj F_Permutation_Dilithium_tb_vlog.prj"
+ECHO 已關閉。
+ECHO 已關閉。
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation_Dilithium
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rconst
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_A
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_B
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sim_1/imports/SHA3_imp/F_Permutation_Dilithium_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation_Dilithium_tb
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1507.426 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot F_Permutation_Dilithium_tb_behav xil_defaultlib.F_Permutation_Dilithium_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 已關閉。
+ECHO 已關閉。
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot F_Permutation_Dilithium_tb_behav xil_defaultlib.F_Permutation_Dilithium_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index 15994 into 'out' is out of bounds [C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v:106]
+WARNING: [VRFC 10-3705] select index -1 into 'in' is out of bounds [C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v:42]
+WARNING: [VRFC 10-3705] select index -1 into 'out' is out of bounds [C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v:127]
+WARNING: [VRFC 10-3705] select index -1 into 'in' is out of bounds [C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v:40]
+WARNING: [VRFC 10-3705] select index -1 into 'out' is out of bounds [C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v:84]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" Line 20. Module F_Permutation_Dilithium doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" Line 18. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" Line 26. Module round_A doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" Line 25. Module round_B doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" Line 20. Module F_Permutation_Dilithium doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" Line 18. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" Line 26. Module round_A doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" Line 25. Module round_B doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.rconst
+Compiling module xil_defaultlib.round_A
+Compiling module xil_defaultlib.round_B
+Compiling module xil_defaultlib.F_Permutation_Dilithium
+Compiling module xil_defaultlib.F_Permutation_Dilithium_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot F_Permutation_Dilithium_tb_behav
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 1507.426 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '12' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "F_Permutation_Dilithium_tb_behav -key {Behavioral:sim_1:Functional:F_Permutation_Dilithium_tb} -tclbatch {F_Permutation_Dilithium_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source F_Permutation_Dilithium_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'F_Permutation_Dilithium_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:21 . Memory (MB): peak = 1562.926 ; gain = 55.500
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'F_Permutation_Dilithium_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'F_Permutation_Dilithium_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj F_Permutation_Dilithium_tb_vlog.prj"
+ECHO 已關閉。
+ECHO 已關閉。
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation_Dilithium
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rconst
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_A
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_B
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sim_1/imports/SHA3_imp/F_Permutation_Dilithium_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation_Dilithium_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'F_Permutation_Dilithium_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot F_Permutation_Dilithium_tb_behav xil_defaultlib.F_Permutation_Dilithium_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 已關閉。
+ECHO 已關閉。
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot F_Permutation_Dilithium_tb_behav xil_defaultlib.F_Permutation_Dilithium_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index -1 into 'in' is out of bounds [C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v:42]
+WARNING: [VRFC 10-3705] select index -1 into 'out' is out of bounds [C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v:127]
+WARNING: [VRFC 10-3705] select index -1 into 'in' is out of bounds [C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v:40]
+WARNING: [VRFC 10-3705] select index -1 into 'out' is out of bounds [C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v:84]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" Line 20. Module F_Permutation_Dilithium doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" Line 18. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" Line 26. Module round_A doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" Line 25. Module round_B doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" Line 20. Module F_Permutation_Dilithium doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" Line 18. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" Line 26. Module round_A doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" Line 25. Module round_B doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.rconst
+Compiling module xil_defaultlib.round_A
+Compiling module xil_defaultlib.round_B
+Compiling module xil_defaultlib.F_Permutation_Dilithium
+Compiling module xil_defaultlib.F_Permutation_Dilithium_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot F_Permutation_Dilithium_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+Time resolution is 1 ps
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1595.898 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'F_Permutation_Dilithium_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj F_Permutation_Dilithium_tb_vlog.prj"
+ECHO 已關閉。
+ECHO 已關閉。
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation_Dilithium
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rconst
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_A
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_B
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sim_1/imports/SHA3_imp/F_Permutation_Dilithium_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation_Dilithium_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'F_Permutation_Dilithium_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot F_Permutation_Dilithium_tb_behav xil_defaultlib.F_Permutation_Dilithium_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 已關閉。
+ECHO 已關閉。
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot F_Permutation_Dilithium_tb_behav xil_defaultlib.F_Permutation_Dilithium_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index -1 into 'in' is out of bounds [C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v:42]
+WARNING: [VRFC 10-3705] select index -1 into 'out' is out of bounds [C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v:127]
+WARNING: [VRFC 10-3705] select index -1 into 'in' is out of bounds [C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v:40]
+WARNING: [VRFC 10-3705] select index -1 into 'out' is out of bounds [C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v:84]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" Line 20. Module F_Permutation_Dilithium doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" Line 18. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" Line 26. Module round_A doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" Line 25. Module round_B doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" Line 20. Module F_Permutation_Dilithium doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" Line 18. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" Line 26. Module round_A doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" Line 25. Module round_B doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.rconst
+Compiling module xil_defaultlib.round_A
+Compiling module xil_defaultlib.round_B
+Compiling module xil_defaultlib.F_Permutation_Dilithium
+Compiling module xil_defaultlib.F_Permutation_Dilithium_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot F_Permutation_Dilithium_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+Time resolution is 1 ps
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 1600.348 ; gain = 0.000
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/F_Permutation_Dilithium_tb/uut/sel}} 
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/F_Permutation_Dilithium_tb/uut/update}} {{/F_Permutation_Dilithium_tb/uut/accept}} 
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 10 us
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'F_Permutation_Dilithium_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj F_Permutation_Dilithium_tb_vlog.prj"
+ECHO 已關閉。
+ECHO 已關閉。
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation_Dilithium
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rconst
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_A
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_B
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sim_1/imports/SHA3_imp/F_Permutation_Dilithium_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation_Dilithium_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'F_Permutation_Dilithium_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot F_Permutation_Dilithium_tb_behav xil_defaultlib.F_Permutation_Dilithium_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 已關閉。
+ECHO 已關閉。
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot F_Permutation_Dilithium_tb_behav xil_defaultlib.F_Permutation_Dilithium_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3705] select index -1 into 'in' is out of bounds [C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v:42]
+WARNING: [VRFC 10-3705] select index -1 into 'out' is out of bounds [C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v:127]
+WARNING: [VRFC 10-3705] select index -1 into 'in' is out of bounds [C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v:40]
+WARNING: [VRFC 10-3705] select index -1 into 'out' is out of bounds [C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v:84]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" Line 20. Module F_Permutation_Dilithium doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" Line 18. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" Line 26. Module round_A doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" Line 25. Module round_B doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" Line 20. Module F_Permutation_Dilithium doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" Line 18. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" Line 26. Module round_A doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" Line 25. Module round_B doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.rconst
+Compiling module xil_defaultlib.round_A
+Compiling module xil_defaultlib.round_B
+Compiling module xil_defaultlib.F_Permutation_Dilithium
+Compiling module xil_defaultlib.F_Permutation_Dilithium_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot F_Permutation_Dilithium_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+Time resolution is 1 ps
+out: zzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 2652.016 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'F_Permutation_Dilithium_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj F_Permutation_Dilithium_tb_vlog.prj"
+ECHO 已關閉。
+ECHO 已關閉。
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation_Dilithium
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rconst
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_A
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_B
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sim_1/imports/SHA3_imp/F_Permutation_Dilithium_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation_Dilithium_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'F_Permutation_Dilithium_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot F_Permutation_Dilithium_tb_behav xil_defaultlib.F_Permutation_Dilithium_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 已關閉。
+ECHO 已關閉。
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot F_Permutation_Dilithium_tb_behav xil_defaultlib.F_Permutation_Dilithium_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" Line 20. Module F_Permutation_Dilithium doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" Line 18. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" Line 26. Module round_A doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" Line 25. Module round_B doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" Line 20. Module F_Permutation_Dilithium doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" Line 18. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" Line 26. Module round_A doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" Line 25. Module round_B doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.rconst
+Compiling module xil_defaultlib.round_A
+Compiling module xil_defaultlib.round_B
+Compiling module xil_defaultlib.F_Permutation_Dilithium
+Compiling module xil_defaultlib.F_Permutation_Dilithium_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot F_Permutation_Dilithium_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+Time resolution is 1 ps
+out: 12205fb78ae387af9a8e563f8ddd87f714a415ce740063b39e1f7c9844e3c529f99d68b4fb59d25e1c9ff7b575553ec08c96b53fa9bd76b9c0bc701b884697ef9ac4d7716c24c2b7ab075fd9c014541b23765d6c276fd4b5e43cae377d43f0a0dedb874bedcc81be5dbdbfcf959974c5d836efd69ecd43e0a37d3c2098d8928c4f4e0206322e9c6a66517d5eacb795ccb117bd381724f3d83ef17a51367317aee6df47df1c2730b88f60cd8872e804fd3421ef92272a7456279dcc309fcf87896e1fd93914259fc9.
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 2664.426 ; gain = 0.000
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/F_Permutation_Dilithium_tb/uut/roundA_/a}} 
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 10 us
+out: 12205fb78ae387af9a8e563f8ddd87f714a415ce740063b39e1f7c9844e3c529f99d68b4fb59d25e1c9ff7b575553ec08c96b53fa9bd76b9c0bc701b884697ef9ac4d7716c24c2b7ab075fd9c014541b23765d6c276fd4b5e43cae377d43f0a0dedb874bedcc81be5dbdbfcf959974c5d836efd69ecd43e0a37d3c2098d8928c4f4e0206322e9c6a66517d5eacb795ccb117bd381724f3d83ef17a51367317aee6df47df1c2730b88f60cd8872e804fd3421ef92272a7456279dcc309fcf87896e1fd93914259fc9.
+out: 39e90dbe121016e0a82e4550e2e5d9f958346a70a77138516f905f295e413fb985e895ac41d936b2abd0e12faa1a9401543a4dd96e92c4db7b06785a2e07c875ba2b93fad37786424f248aa4f4d8464f5a8d28622bac5da63c2b5aa94677eea2bad63cde6c12ae68e58887461f31ddef50d62c7829116aa9ccdb2d0b91762c60107457a2f2953f15ce87a6b11610010fe18aaf145aef5ee2d9f462553a728c22d51fcafaf9e2648c52df7595b5d6103a915af67bc152b86bbf9f6b61de9a0d5ac80576527c27a939.
+out: 524c529118188582b982f257ff215620e7c9f19f58451bf360d2552a885b7058ba6227a91f64187cdff55436569e414ae552986be2009640f89c6a5c38e2479970d5b67e7e1770c725c3946e6836f2ede1937d3905119dc284f1f1d6ba9e439caed1c40e7ae507ea77e7c67dedf4f7e00ae66a4423dc2125b0f5af20fb706de169e3b44a18d70a814b744aff218988a3f8d9c9061afb2efb0461b9fa4b93c177831d7dbff741ae39667317e5396b34cbe9cf287eac70bb0aba9fca3c6e71baa0c60ddbf3fbc8edd1.
+out: 7deca85fc8026c48b191558373658ec04923455af6e66fe12017c89d8fc74b0ddf8d88448a225161d13483bdd32ec722f7cd2b0ac347b7f5aa598429270836dcec3d97efbfa5f8ac7c456500686004c84816be662923b810ed3e686ca4b84bcf80464a4d41214dac428230f45a3ec946542cab9ab50cb9e1279d54360350790e048785b6540b2078ec880129b8ca856e7d96f1ff577a04f1d70b6543bc8abb7a93408679664d1cb273ec52b6b5e0e62cd73088ab5042b0a18c4925ac89e27e16eb0feaf3b8c787ef.
+out: e0cebbdaefbeba13cd4ffd025c07c50180a6da2049e84f474f686946192219682e68f1e440af38c03b91171220fbca9658fb6fb5b701909ff4d187c68d136f6b16c4931a0dc2560732ee25094ebfe413a736f18bb0e7b72fc425d0d1df67ac2e14ddf34835c8d100bfd5873e1db1eb7b57d632c4c685ec603260bcd8762322d6e913e7dd140e71abe1e69c0128d4a33b14ee9a39c67b8189ce400c7be4baaa580201adebe5408c66ffd20b0958b609d3bcab4474f0a551074e99a2a6d8a7fff82e10ad00575912a6.
+out: 5074a5968668032b67a280857a668295295e4b229bb26c8dfa6a67ed9a634492c7aff7cbc1e3ed7f1ac3692ccf6537d3d27e65dd0c40f60c7a96357373b31b35074573076fe97a63231847d52d7a95ef9fb48112331fedf55a858864415b69b99abd394edac9ba956dae43a47b4b2e563cec9e05019e7cb3b861589a1e1200242d0745c4cc92af7fb29d9d7315d73b29dd54d4528308e62711cc14c5d0b054026735070c77ef1344bae2823fa8f852796493923c79486a3fa4100cf9b1e2ede8a0cd9e25874eb90a.
+out: 3eb352e6f8df46440602f096f274ec732954826c16bba38bdfae029b09aefb26fbfff52b76b725ecb55c173ee664e129654e1455c39749e73318c276d6f13517453f8343d189625262061c5e454c3d429c4dc4962f91cb6d1496ea40c24fd18c6d321963030d9652e6a15468f85824e495c4d729be646d2e7dbdf9c604e9942b74a48e10599007b9b8bfaaa3e6899f188566746b8d03a3684e88e49b664333fb04293ca89a3454a0099ea38e8dbb3938598c823ac3a1d528c08164273f730dd62329d55207eb415a.
+out: 2564e5fd4af480711cdf9cca1f3894863b72f7d2108d15aec877b6b08a0971032e765ff4f95f91958fe64de288c8a1f56635231d5b97b06d253e054efbe74d03bb7ba43855de04f06b7f3c4aa2f628e265841f278819a1a3974b7cf904fd804c89d9a852d091b79d09ac3a589f596f7fe8e47cd0666bfab4ca32e83c654b1b8ad3439113d19bebb7d7de03e10627bc062f4fe84a32569faa551c8c0f28effc4f88a482145cfecc73222bb760a51dc8337b1a7e5e4b079d0bf143c8e89e2ae0c657e202dba14b96fe.
+out: a5d5aea7416121f4d806a3985ec8e764607aca7aab801f0796fc9db163809cd548be459f445fb9db2d9136a96a384764ad7a937748bfc96810707f0c0b4223eefb9c56b29d4daa81a0611a8a92da9f2e9a1b976a238e5903e01de7459e463a1777e66c261af8c770d5404f26cdafa0574b104b4c0fcfeecf5c57d2d7ebbbc0b520b15aba430bd5641810423b153ab3c5bcd4e7311ee328b14b20632bfac37f008975c4afd6c4503d2870133dc4356b8476be26d2e65f650d5a98fdfc8c878d90ce88fcfc5c6a1399.
+out: 73c642a80b7b98f6f504ced2939f1c384a3a86df80b649431c3478fa941146737653855a8c399970953f9865de01de3fe81446908d9a700c55a034ae76f46d016dd0a9d11fe73773ce32e326646b83378b01db12941508e560e5584de9fc861c6e9700843a6e080a01ff8589c2085aadba38d41e96d494f33f6ed21723449682dfe46bc0d46ca0503fcf45cbc10039647eca61fee0392746d663aa41f8c17242f16ed6e6d66f219edad996b2f271a688b861e5a382e9215f85847f5f68d5cd243e56b78f031670a2.
+out: d402dc786d6fbe91da04bc2ecc4cb417e566ee94b964bc693cf763d851285e878111c0c3a26c373099e4933aa0b64190c8ac867c91dbfa283b249d5e0c2641b0adb4228e3f087eabe9fd06d602345ede5de49cf1e539714239eaca360255ea61aa0125e63f8a0287be13ec38c769f9d9f9551523aee93f38b72ccd78550499b5a2816b8b6834017b78525e1d46d19d036d6a48599f960d51a1499f9c13d863c7815bf71d25a23b7a9980974794fbd2c75e73f6a18b7b2a3239e79c11bf85d4169fc4d06ead39d955.
+out: 7299f7c73f6b3965cb6fcdfb21188d0dda4ded5b62d8a13e54b8d2e23c8bbc0fd406ea6f7a137778ac2baa29cb0992e5a4a1062ceab337b6593ea1a44625b4523516fd6208ca797184b9f8743de28681960e23af56a516af42cbd345ae79661f3a1d821ad22422fe8c59557798de949c484d756467f55bdece23915f89143532efffc07c6b3c0fb73bf8d00dd69ebab2e5a0fbe02b2cec72fe9be65634979acb5fb3141ceea275274835dd7535892f17926e38ecb5f410b4a59f5ea620ce57cc20227d5879047d91.
+out: ea5d429aee4aede0addb272275498b809df440bf8e4ccd8e44cf2c74429cc4f9df659449efff608bbc218061cd851a9204852af24a2be683e8d287fe98c8fec3beda0956e2593177994f5e3687c9b60756c3e5c134f4ad0e83a9ae5f3569d66c1735d1617414dce85f825b8fd5607aafdb60fbfc740a66fddd632d4fc9ab413c6c8fb504f8fb00e348e6aba3fa163cd463de199fbdda2038d7ccc15bb80eb2008277ca297a6c083eb2e21b0c21f53d25311baccf05e883dd3133559c67c18674e151144035eb4591.
+out: b663f9cb018cbd7bf4c2043d27f14687651ac6b06c6d037307c8d8af776600852ef5fd2097bad7857720317628facc66455f6e714bca1036e96b5a07bf703854aa75f7b13fd4641dac98002dcf6d443e99f258ee50df132359d9fc0513619f87087f1fe6ad31d048bec304beba0ab2e627b6aada5e884afd8cb1b66fba1dadc9c0a1aa4ec524faf3eb96a7087e313a9b74e691d7b42114d7a91172096a9b9d9afa3243824284f8af40db3b5ef33125a253ad59bc8a0595f322eebb55ff7478444fdcefa5e9fe5cce.
+out: c63e1958dfcb7488fff7a7325094a1658ca6a3fb4dcfc7882c39deb86ecb7c88cbf968e55d865f6aaed3783cfbb21c75d2f8ead6c7c1e241202b84854972696f23adfcb59f140fc8737cccb015db434a0744cf75e93523e49365dc4c14bc579fa4b0da5897c4e7d85e88950f2038a0786ebc9d1b858333ade0c73a9740860f5b74ab6495a24256737c57bc641c9edbb406222499f80e9fa5bd25be7a595ced74474516c072ba518244d304cd8aca7b216d768ed9f21132d877542dd15c5b660b7742af724b0a9a86.
+out: 071b142556b3b9d1f69146cb49f59e5169892c0be6b9b8af449e80c8ea037e9f7fefa3885b292a85889ac6d178de343e9483e1291594734b4288bb7e2b2e290d2a8b4085686cc0d1a71e47117ad8abb8b03bdc0ad5a76c95323e9aa95b13fa06410de4f79ad025216828fc09ab8f99924e13a176d5a6de2681112210a3a8bc825d5d199852e74c4d2c63a2df2ad36f32a281634e5202f92efb19b487cd17a6b905d33226834d7f18cdc4718ed5a392815f7cfbdba13c3d92c4fab0d9e8990950eed9070cbd57e7a0.
+out: 0eba6f16dac6cfab9a8f86ccc1fef17a586f59628db2608102ad3b13735a9dbaa2750428cf7fc29fa9250d089047d5a7dcfb5a5fe3784ca0925a0ded0e15a88bad457b8ea9690d8694fbfd583bcdd39318b59cb41b575978a0a41d438867b020f40d6aa9cc710a0b92cb881cfca60c95938d2d08bc95acd85a76f65308c56159238212a643b7cf88ea399336b2b31e93b0a171cd53d69178b10d06f6aab66ace6a5ce5a9e7ae1c4bb73cd74b51a5cd61a8041c3ae31feeb4da06ce2d36b4bc37b1f76f7aebbc25fd.
+out: 97e31fba03334925c7fd4ccf900f801d53191b369b4b4d2212f71893e0497e660feb9a8624e9d66f72ef4447ee86e2576bb23dc7341e94666c6a40ddaf00829ef7410ac12bd66eea4139d75b20d3e864986d32ba54879e144039b2c47c209e64e599cc452efd6cdcc4761c98c8e3194323cd9ed83d82c514f4ab58b7a4b97b5e7b42e368351cd1997183c78fb528a2c80627077c4d08ba7076a34695fcb865334dcecd6b78cf7bd65dc6f3b1725e740f7557800096ba5962c5270aae7f24a5f51c52859d3c025387.
+out: 246eade047879dcbecdb4762fd57f62d9b47d18d23ff0fd23edbb8f79e8e31a29dd83a6dafbf122635a9e564ea52c94cbef8a929327ceb8b9f37fbf47f7762082fff02215392db172f7fe4d703eb289f52bbe98a405abd91d5359a5fcdc65f02567ae3e8bccd45d56b5bdb8877691eb14e52e23d4b8858f525fa23a20c17a33ca98f22ab32885bc45ca5cf24a023c0ea7c605b56ad9860f2fb0e69964653f5931d54d2a5e339a9ac40da8f79afc3a3f3cb83867ebeaad27f436187cd00006cc65919b4ca495efb6d.
+out: 7891f8f88e27b002aa6d5b75738a9c9268e46c9dfb5bd5401d29e6cb56b3ebe4649a1cb726ed8a24055346b957519d77c8b38bbf1c6bb78169da8e63bfd63b1303ec76342784b7e3995f4eebd47132f436a3964fe5a05ccf9c6ef8326511e85c18df2f71934f98beeb52b75b11f6e92fb6c9bbd00d6fd1a0481994d88ee742bf7e4eec2362fd86abc378bf12754f4a9d75e013cba81d9501142d7f72bd667dd616625c43563b6a3e87b31c8f4a7213ef1fbc433d5f9e845d951e20de50253b2a234b43e8ce0ee7a7.
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'F_Permutation_Dilithium_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj F_Permutation_Dilithium_tb_vlog.prj"
+ECHO 已關閉。
+ECHO 已關閉。
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation_Dilithium
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rconst
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_A
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_B
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sim_1/imports/SHA3_imp/F_Permutation_Dilithium_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation_Dilithium_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'F_Permutation_Dilithium_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot F_Permutation_Dilithium_tb_behav xil_defaultlib.F_Permutation_Dilithium_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 已關閉。
+ECHO 已關閉。
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot F_Permutation_Dilithium_tb_behav xil_defaultlib.F_Permutation_Dilithium_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" Line 20. Module F_Permutation_Dilithium doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" Line 18. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" Line 26. Module round_A doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" Line 25. Module round_B doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" Line 20. Module F_Permutation_Dilithium doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" Line 18. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" Line 26. Module round_A doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" Line 25. Module round_B doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.rconst
+Compiling module xil_defaultlib.round_A
+Compiling module xil_defaultlib.round_B
+Compiling module xil_defaultlib.F_Permutation_Dilithium
+Compiling module xil_defaultlib.F_Permutation_Dilithium_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot F_Permutation_Dilithium_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+Time resolution is 1 ps
+out: 3a57e5f8d46e870ac77535c8d40d08799670ec34d262d04904cdc2f38963bbdc4965bed9f7aeed8a254aa9b2abc9df886f6380fd372be78526647f4427b96f76e75be75d3578ae27bd67477ddf23fd59573f9e4abf69641b2bae16bc6a974fbfa78e47e9be57fc49c942b7307412c7a799a5f72cad108590d420a71143ce51fbe3abe6206ee758b7eab82226848a672f3414b45bfae7542cf535283ad118cf63a16188b09bfa9ac753f7212295b47fcdbdcb576486eebf7273e8ef497930e94a1a069966e58bf3c0.
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 2664.426 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Dec 16 23:30:19 2024...

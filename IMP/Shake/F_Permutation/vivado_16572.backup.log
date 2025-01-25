@@ -1,0 +1,532 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Wed Dec 18 22:33:47 2024
+# Process ID: 16572
+# Current directory: C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13376 C:\Users\fossu\Desktop\SHA3_imp\F_Permutation_Dilithium\F_Permutation_Dilithium.xpr
+# Log file: C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/vivado.log
+# Journal file: C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.xpr
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.6 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kc705/1.6/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu1500/1.2/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc707/1.4/board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc709:part0:1.8 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc709/1.8/board.xml as part xc7vx690tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.6/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.7/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu110/1.4/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.0/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.3 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.3/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.4/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu129/production/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.3 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu1525/1.3/board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.1/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_mpsoc:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_mpsoc/1.0/board.xml as part xczu19eg-ffvd1760-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_rfsoc:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_rfsoc/1.0/board.xml as part xczu21dr-ffvd1156-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.1/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.1/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc706/1.4/board.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.3 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.3/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.4/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.2/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.3 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.3/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.4/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1275:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1275/1.0/board.xml as part xczu29dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1285:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1285/1.0/board.xml as part xczu39dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208/production/2.0/board.xml as part xczu48dr-fsvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216/production/2.0/board.xml as part xczu49dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2023.2/data/ip'.
+open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:34 . Memory (MB): peak = 1448.941 ; gain = 352.508
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'F_Permutation_Dilithium_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'F_Permutation_Dilithium_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj F_Permutation_Dilithium_tb_vlog.prj"
+ECHO 已關閉。
+ECHO 已關閉。
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation_Dilithium
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rconst
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_A
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_B
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sim_1/imports/SHA3_imp/F_Permutation_Dilithium_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation_Dilithium_tb
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1474.688 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '6' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot F_Permutation_Dilithium_tb_behav xil_defaultlib.F_Permutation_Dilithium_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 已關閉。
+ECHO 已關閉。
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot F_Permutation_Dilithium_tb_behav xil_defaultlib.F_Permutation_Dilithium_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" Line 20. Module F_Permutation_Dilithium doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" Line 18. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" Line 26. Module round_A doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" Line 25. Module round_B doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" Line 20. Module F_Permutation_Dilithium doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" Line 18. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" Line 26. Module round_A doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" Line 25. Module round_B doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.rconst
+Compiling module xil_defaultlib.round_A
+Compiling module xil_defaultlib.round_B
+Compiling module xil_defaultlib.F_Permutation_Dilithium
+Compiling module xil_defaultlib.F_Permutation_Dilithium_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot F_Permutation_Dilithium_tb_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 1474.688 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '11' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "F_Permutation_Dilithium_tb_behav -key {Behavioral:sim_1:Functional:F_Permutation_Dilithium_tb} -tclbatch {F_Permutation_Dilithium_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source F_Permutation_Dilithium_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+out: 3a57e5f8d46e870ac77535c8d40d08799670ec34d262d04904cdc2f38963bbdc4965bed9f7aeed8a254aa9b2abc9df886f6380fd372be78526647f4427b96f76e75be75d3578ae27bd67477ddf23fd59573f9e4abf69641b2bae16bc6a974fbfa78e47e9be57fc49c942b7307412c7a799a5f72cad108590d420a71143ce51fbe3abe6206ee758b7eab82226848a672f3414b45bfae7542cf535283ad118cf63a16188b09bfa9ac753f7212295b47fcdbdcb576486eebf7273e8ef497930e94a1a069966e58bf3c0.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'F_Permutation_Dilithium_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:22 . Memory (MB): peak = 1548.988 ; gain = 74.301
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/F_Permutation_Dilithium_tb/uut/roundA_/a}} 
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 10 us
+out: 3a57e5f8d46e870ac77535c8d40d08799670ec34d262d04904cdc2f38963bbdc4965bed9f7aeed8a254aa9b2abc9df886f6380fd372be78526647f4427b96f76e75be75d3578ae27bd67477ddf23fd59573f9e4abf69641b2bae16bc6a974fbfa78e47e9be57fc49c942b7307412c7a799a5f72cad108590d420a71143ce51fbe3abe6206ee758b7eab82226848a672f3414b45bfae7542cf535283ad118cf63a16188b09bfa9ac753f7212295b47fcdbdcb576486eebf7273e8ef497930e94a1a069966e58bf3c0.
+out: bd18247731aa46ea2ea779abd78e6568f8849f662e1707c0b886d7ae214195a4b26783ee5098484b52343ffb537f2a5fc747566d94ec52b40d5b4f55c5d26012b3986a01c672f772ff260b91acd9c45dcdf96ca7670ddee7e43464eb7856a1cffb75737ddb4f1e7bfdadf9fc71d58cb8e9e9993f0d08b8bf42e1987c4d0a5ae9d4e515494386b4ee2412580f6fce23718c119766d22474fcf6892fb1664d0386aa5a037c5b923fcd634d25fe547c7d9eb7c84ba1b955299acbcbd78a42c9509b07ba7b2ac6233f8d.
+out: fb0b7f6e3a28617f80fa531d0717a6629ef92336bc3d3266f198f17f0810450451185e05e18acfcfaa3e7fa700ba5633d124930e686908132275d04adecc888996b8aabc23216d8a1d76da551729d1684641d1673f00c236aa0b11bdd01ebc39dfb6c394175964443027596aa847698145b368dce029b52a6425d719ee52688cb3d505d2033431ca69eddc8961655ceddc17ee57ac70e8bfd6bf7c1b0e571abd6fb151d06a4c30f25f651549849d0c5bdbdea6d545646df792188ae290aacbe91f468d3cf0ca44bb.
+out: 6bbe497024e04c48fc31e51ca361fa6c27411c205df0f6fb9840388ac7aa926e618beaa49959a1f1eae99babfc23ea4ed1d21050bfb529786d8006453c511d19a873170a8910b00f26dbb6253855f8c236cb7f8cd2ea99ae4dc7b33f81f6bad041150b59b3cd63dd04cb8328c9c955b2deef9217b3f0fd8f4c25bf58d212ad8c2da51b1e6e267886fc24d43244eb03f4dd0aaae364dc25955b71fa81ab21fea0bf6d92280cb3095c7f7dc5e2b45f7cd4fbc3a4e36c912d87aabf242f4d37256588bfb5052c96c26b.
+out: f2105f7f4c8b84a0cb2512b56d53b66d49a6e08bbceea21399325334f93bd8d3443ca99b6f84085fd085eaa16071f5569b184d5d3aa8d45793d9d04cbfa7c6b0646db65acedf29017fc1f0168f4222ff692103284910846753d5c78664e54fa873933208eb3490b608a84d5eb07311d688c99cebc9ad95f9960be58562808fa2bc5e55ebb84102b7cc03be266b343763352c0b90fde26f7aeb8f45f84df32c81c759ac8c4b5c7e1fe93d1cfd67ffa80544a085487b7943e51699f0f44829931bd9050ec7dc513b99.
+out: cb8ba9b8505ed1308cb6c7150ca1f4b5c0d23beccc622d1641a5f8fe66b186b8fc6a2064356a582176b619d049076bc34b34db10451c102255645a2ba8fe05a6d1631894cef5180d3a141e1c6f5ae19a5095d37c39e0e931d30bb8242571969ffe4d1cea1fdd55e4a49734b715a8e449507a0923703b69e4694e6fa952ecb6f586abe56fbdc4717b468de4b222a6be9052fff6bc319ccebd41f305326e636b1ec96872fa6fa70e12968bf50045ba16c3a66ae6e8311b24d66b532cc7abaf0cab775892bb4c970b8e.
+out: 9e7c435604ab9d4ffc267830c573f398d86d2b00683e220e5606951569821236cc4dbb8fc4c08a8ee23d1773c3a14a2cc658e48750f31be9b64969d94ad7d29fca67169efcde3555e56d39cf4c100668ab899a6afea0216c48d9a351517c9c3248d386569073817f55368b8e950ee1f32322927f54942ead5b64671089322ac188b2b027c9d2f0aa1e963a21a7ab937cb22a396a69eaf3c8ea0c5ff2203ff207c3d930072d337c0470514464bc9f602d40d225ad60b1f289e3d1d45955437e913806fa2ace55e2b4.
+out: 587afc6056b33425f3dd11633711828b3371b75e834a38448ed744b859e89e5ccb6f97c14f3062c7d78e78307da45ddc3fe1247ca358f6ecc77b820fddda84145b0abd81a698fb831839a0fad083b48453069a6280c6f1435830a3f8a5db1e1e96df78bc0c104031162b2fe49eb5cb93e283331239df9e37cd62bb2785d2f28e8bf6deb6c22484dbf85b2c71ba6e8a757a07ca439ffa7cff5497aeae1ff13026b584e066859befbc7ad82655bf8e797647ac72ac3346e1d577b38637773c59678d6decaee756f750.
+out: dfa2aeda1671590c988514d639532646aa3e7048ee2f037902c182defe4d825d97f3cff8f4134b1640b080ed667a8d8ae82612e6a51e791483639a2709fd6758319fea03a056529d0f9b6085198a8d100325b3ebc8002d8a025169a89577bfebea8483680c8c22f74dd8f35066df39ce3c7882d350b571e07fa886b9788542bbb797f88c1139ecc3fceff7b88b3b44ff507518df5e5de2ad10bd3dab7b6ac2fb9b0f053e2fdcf3c64fd7ca0ebad0d0d3e18676b350df951c60407a86ebf39d5f53aa7c49dd01d734.
+out: ea151869ef3ae514c84b7cc8305b717e3fafb85b16200ec55738d15ad2251a1a356fde957e1f0eced03c1900c4003ab5f92fb6f6e429a77fa0b4ec02a0845562d449fbd6010dd0a01f2a4164cf55286b1eb87c69a10ec071dc35c7cea8654f780d3b50de43f450c607927e1c4d98b43a013640b85b04190b6de1e2f2d17bc128bc5aa5bab0df5f024c08440dd6cb7402cd0976e86cd1809e28d88525c65100474a75bbf6df300b8113be26f4d0e8d3a1bdaa93c9f2034b664a1aba1197097ce00bdfd02055ee55bf.
+out: 68af36f3efa2848e3fdd2c65dfb81034c1db3a4abc3d3439de691979206bdd793fb479f8206fba8355c12e970498acad2d75e345faa8126e533f4bb4b9fdcd02478d9985574e54b1ccb17c0c76388516d5ff959bd82d831cefbcef7b356e9498dcc9088bd8bf1d1dba8cd212aec800776ab5ba8437599d192c696158c31ab817916c9045fede9bfacd4e2472d3533ead8c2b497c2e79f2352fcac722956ea6626a6efe7803180f83910f2a3fd5b04bda907ff4101153a1668324c4e83b8f35edc71074e834c9eb71.
+out: 78ac215d95bddef096930a9399f72fabc4da5cb82ef3937dae7651b7d126ac48f3cefac628e08b9cfbd77f9889d702e295b9b4bfba2a29ce06fe38922fdb35310be8aaeeda875886843798e462c77a5349a7b63f449c1e73f8697f5464fbcb4a34cff9a036d0cc701f178a2df937819c6cc1af90b9d9c6e014964408ae6356cea0a6d84f710b2b1516e20568bc2e6b4596d77776a9ed820e951e269e696a6827f2f5a46320884b0257377a01e6cb5d9f4554a88fc904111d2563229f7a49d21d8924d9549eedf693.
+out: 97f1ccc57d4e200c77551195c646d6c68f01de6bbb6b7cd80561e3f50caa6fb94cf7130f990035b51070c1c230ce0a4396a59efac34acc93753e859d1a63c9193b5a4038347cd4f17177c2d2c0cfc83d3fbd283faa492aa5d489addee1a4f0b4db6db6413688bedb0ce600c6d2185f36f117e2c17936dfbf62a6b2b6e370415006642e81f6ae6403ebca0c5ef106b27426158b0da0f2c1671c66fee756d6d634ea541a64238b54a0fb3a189d49d5a6415868ac6ea9da32ec441610c0d9d3808605f61ea2563da4a8.
+out: 46ff366730ec38f32eb5902c99b85fbde623d44a7ab0321d17a8054cc8ea597bf7d10e2aa58f5d0b70df592c72e66d0fc3138215e122d16c8e72b2385e284f490e7f40cec57fb0fd7ed84b6afd52adfbf0478709d0e313e1de869ae9c7241443ebeb41cfc04d5a14eca145a2d3372032e74344a2566f09e79916675d2edd1b33ef44848f7ce95340bb27b2659bd9d9ed07ece2889036005d06cacbbd0038ccb08471ba2b5289a95e0f5398091e1ea69e2c70d0233e1458d716cd466bc199be8dca52c7cafda37e2f.
+out: 4ccdb058c14e54dfa09ef89aad0044a0690a4f779c6ef6dd05f1ee5843e9330f07a3167123d1e1750c100b05611626aece44a36e7825a170bffb4d2687962d839e9a455280d34a67f463cefd50fe99e9962e18ac373ba867f7bcf1f767e8ddf26a7067d2edcf777978a12d6bae2194cc4a94ec9761b29b3ba4c05e603c4ed8b0830a9c2b72a1e1967b1a62f4845f53dc31fe2d4112c5b3b23c59af33addb9bc4162615944b3bdf301ae675c3684cbcb86ddf7311582f314cb143aec8d89516470e58172e623edda8.
+out: 50ebf7a2f6c128f9025039502d91e0bd1611415e31409a92a626bf3c0f136f71c0bd86392d6093541de55da0186c6a9efff4cf8cd21de22712c68cfdc146ad46faa7f570191752137f87864c9e5683422fb26b37c6f405fb59ceb62f46584dbad0a7d5b42c1727a36ac27995dbc7ff7fa80840f185afcf4d9439044bf3636b5eb43c2d4d5404bffc1a63f307f1be27afd5a031af5abb728c517c164918fd53f06f3a8d2ca85ff83bb87a475369fe0702a0ce18a79713db50f793cc2d2904d573b29d479779493230.
+out: b862b1d5bf2c27332a9f4ac04a1294598ed6fc31bb6af57768c6620abd64509952087f0594afd82e8408f6ddfe041b22ff56a5a26ea4b4fdec396f497fcd768c7c6745da07ce9e303d96b6f507b19f4ced154bbd66fdba717a786e3d8282485490f42f1488b51efa2fa5baaf2a2c9aaab945a018a959f4a8dbf37d1f397b5ba72ea814366e5cc586b7e9eb91fc3105c434afe2abf003703dfd7d8b6042e47299a28914d97f51ebbd94dbd9f67be5360832e332d6b43e0fbb83e74744b6612b17b391f8789c57f669.
+out: e8fcb4798a0c7389bfe51c295a33085acd33095d9f4f650d4aa367037919850b0c52823346d6c667ea4fa53646c90a52556f7700fea355ac82d7e4cce2c588654f0fda4bae2988c94ceea81fe8dd8a3c40d7b8a3b371911ff915aeec17012d6043234225038ac14c7698cd97ffe0c5d8e78df49960a32604b2f3a4ebf179c3df5abcbf0fff3151c87ceeffce0a2c5bdd72c592cd86bdbd960d0cbbfdfaf59b2fac2edb16c4f1ea4c7e75d4a709697609534e9abde5858402a7821326af1d34372ea0843a2a8e3842.
+out: a7d84e5c27e9dfc110c5e38d325d6fce94cbcbe31901ef4fd005ff756438c024044c7100736bf40cb6bb2fb08ee04d06288b5ba26a267de8dd07b2392c7d9ac1b75f4b9594852414a9557f47a3e96d9c704fd3207e1fab92067dac415c0e06c6335f6a301007fa8b0b4df1791b979a6a051bb1220a19568cc4146d47c23b524955f23e4fe4c01c25ad72dbe4ce645e6db934fc7702b083cc14f94f3d5282500f69f7efeb4572a8f4f15dee24e96f204ef26d886b0db10ffe31ab005767137d9b7f11f8f73dd3ae3b.
+out: ab2349ec76b2bc851fdd67e2ca41b62e403723e11ef8e3bffe966be358a0d50be8c614d12a3de9ea1d03d28c4ead8db1cfe63691aa46302f943a1e95310ebb907536f59551a183a531bd2135cb41114fd8e276fc009df8cfeee06663fc649c45d3c06a1db5f31d7f936926e953a5f405dfc20942ebd85eb239d71a61094e5c209beee1dc251ad172331d58ad6c7fe30c8641e21d5b4168fc9cdfb4bb695125d78fb2c97e7f2b59b0463c83c2fdeaeb00be6251dbb84a700fb7e544db42153115130e28ccf546d4d5.
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'F_Permutation_Dilithium_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'F_Permutation_Dilithium_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj F_Permutation_Dilithium_tb_vlog.prj"
+ECHO 已關閉。
+ECHO 已關閉。
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation_Dilithium
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rconst
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_A
+ERROR: [VRFC 10-4982] syntax error near 'wire' [C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v:15]
+ERROR: [VRFC 10-8549] Verilog 2000 keyword 'wire' used in incorrect context [C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v:15]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+update_compile_order -fileset sources_1
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'F_Permutation_Dilithium_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj F_Permutation_Dilithium_tb_vlog.prj"
+ECHO 已關閉。
+ECHO 已關閉。
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation_Dilithium
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rconst
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_A
+ERROR: [VRFC 10-4982] syntax error near 'wire' [C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v:15]
+ERROR: [VRFC 10-8549] Verilog 2000 keyword 'wire' used in incorrect context [C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v:15]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+save_wave_config {C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium_tb_behav.wcfg}
+add_files -fileset sim_1 -norecurse C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium_tb_behav.wcfg
+set_property xsim.view C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium_tb_behav.wcfg [get_filesets sim_1]
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'F_Permutation_Dilithium_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'F_Permutation_Dilithium_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj F_Permutation_Dilithium_tb_vlog.prj"
+ECHO 已關閉。
+ECHO 已關閉。
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation_Dilithium
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rconst
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_A
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_B
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sim_1/imports/SHA3_imp/F_Permutation_Dilithium_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation_Dilithium_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot F_Permutation_Dilithium_tb_behav xil_defaultlib.F_Permutation_Dilithium_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 已關閉。
+ECHO 已關閉。
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot F_Permutation_Dilithium_tb_behav xil_defaultlib.F_Permutation_Dilithium_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" Line 20. Module F_Permutation_Dilithium doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" Line 18. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" Line 10. Module round_A doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" Line 25. Module round_B doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" Line 20. Module F_Permutation_Dilithium doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" Line 18. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" Line 10. Module round_A doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" Line 25. Module round_B doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.rconst
+Compiling module xil_defaultlib.round_A
+Compiling module xil_defaultlib.round_B
+Compiling module xil_defaultlib.F_Permutation_Dilithium
+Compiling module xil_defaultlib.F_Permutation_Dilithium_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot F_Permutation_Dilithium_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "F_Permutation_Dilithium_tb_behav -key {Behavioral:sim_1:Functional:F_Permutation_Dilithium_tb} -tclbatch {F_Permutation_Dilithium_tb.tcl} -view {C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium_tb_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium_tb_behav.wcfg
+source F_Permutation_Dilithium_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+out: 3a57e5f8d46e870ac77535c8d40d08799670ec34d262d04904cdc2f38963bbdc4965bed9f7aeed8a254aa9b2abc9df886f6380fd372be78526647f4427b96f76e75be75d3578ae27bd67477ddf23fd59573f9e4abf69641b2bae16bc6a974fbfa78e47e9be57fc49c942b7307412c7a799a5f72cad108590d420a71143ce51fbe3abe6206ee758b7eab82226848a672f3414b45bfae7542cf535283ad118cf63a16188b09bfa9ac753f7212295b47fcdbdcb576486eebf7273e8ef497930e94a1a069966e58bf3c0.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'F_Permutation_Dilithium_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1660.992 ; gain = 24.730
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 10 us
+out: 3a57e5f8d46e870ac77535c8d40d08799670ec34d262d04904cdc2f38963bbdc4965bed9f7aeed8a254aa9b2abc9df886f6380fd372be78526647f4427b96f76e75be75d3578ae27bd67477ddf23fd59573f9e4abf69641b2bae16bc6a974fbfa78e47e9be57fc49c942b7307412c7a799a5f72cad108590d420a71143ce51fbe3abe6206ee758b7eab82226848a672f3414b45bfae7542cf535283ad118cf63a16188b09bfa9ac753f7212295b47fcdbdcb576486eebf7273e8ef497930e94a1a069966e58bf3c0.
+out: bd18247731aa46ea2ea779abd78e6568f8849f662e1707c0b886d7ae214195a4b26783ee5098484b52343ffb537f2a5fc747566d94ec52b40d5b4f55c5d26012b3986a01c672f772ff260b91acd9c45dcdf96ca7670ddee7e43464eb7856a1cffb75737ddb4f1e7bfdadf9fc71d58cb8e9e9993f0d08b8bf42e1987c4d0a5ae9d4e515494386b4ee2412580f6fce23718c119766d22474fcf6892fb1664d0386aa5a037c5b923fcd634d25fe547c7d9eb7c84ba1b955299acbcbd78a42c9509b07ba7b2ac6233f8d.
+out: fb0b7f6e3a28617f80fa531d0717a6629ef92336bc3d3266f198f17f0810450451185e05e18acfcfaa3e7fa700ba5633d124930e686908132275d04adecc888996b8aabc23216d8a1d76da551729d1684641d1673f00c236aa0b11bdd01ebc39dfb6c394175964443027596aa847698145b368dce029b52a6425d719ee52688cb3d505d2033431ca69eddc8961655ceddc17ee57ac70e8bfd6bf7c1b0e571abd6fb151d06a4c30f25f651549849d0c5bdbdea6d545646df792188ae290aacbe91f468d3cf0ca44bb.
+out: 6bbe497024e04c48fc31e51ca361fa6c27411c205df0f6fb9840388ac7aa926e618beaa49959a1f1eae99babfc23ea4ed1d21050bfb529786d8006453c511d19a873170a8910b00f26dbb6253855f8c236cb7f8cd2ea99ae4dc7b33f81f6bad041150b59b3cd63dd04cb8328c9c955b2deef9217b3f0fd8f4c25bf58d212ad8c2da51b1e6e267886fc24d43244eb03f4dd0aaae364dc25955b71fa81ab21fea0bf6d92280cb3095c7f7dc5e2b45f7cd4fbc3a4e36c912d87aabf242f4d37256588bfb5052c96c26b.
+out: f2105f7f4c8b84a0cb2512b56d53b66d49a6e08bbceea21399325334f93bd8d3443ca99b6f84085fd085eaa16071f5569b184d5d3aa8d45793d9d04cbfa7c6b0646db65acedf29017fc1f0168f4222ff692103284910846753d5c78664e54fa873933208eb3490b608a84d5eb07311d688c99cebc9ad95f9960be58562808fa2bc5e55ebb84102b7cc03be266b343763352c0b90fde26f7aeb8f45f84df32c81c759ac8c4b5c7e1fe93d1cfd67ffa80544a085487b7943e51699f0f44829931bd9050ec7dc513b99.
+out: cb8ba9b8505ed1308cb6c7150ca1f4b5c0d23beccc622d1641a5f8fe66b186b8fc6a2064356a582176b619d049076bc34b34db10451c102255645a2ba8fe05a6d1631894cef5180d3a141e1c6f5ae19a5095d37c39e0e931d30bb8242571969ffe4d1cea1fdd55e4a49734b715a8e449507a0923703b69e4694e6fa952ecb6f586abe56fbdc4717b468de4b222a6be9052fff6bc319ccebd41f305326e636b1ec96872fa6fa70e12968bf50045ba16c3a66ae6e8311b24d66b532cc7abaf0cab775892bb4c970b8e.
+out: 9e7c435604ab9d4ffc267830c573f398d86d2b00683e220e5606951569821236cc4dbb8fc4c08a8ee23d1773c3a14a2cc658e48750f31be9b64969d94ad7d29fca67169efcde3555e56d39cf4c100668ab899a6afea0216c48d9a351517c9c3248d386569073817f55368b8e950ee1f32322927f54942ead5b64671089322ac188b2b027c9d2f0aa1e963a21a7ab937cb22a396a69eaf3c8ea0c5ff2203ff207c3d930072d337c0470514464bc9f602d40d225ad60b1f289e3d1d45955437e913806fa2ace55e2b4.
+out: 587afc6056b33425f3dd11633711828b3371b75e834a38448ed744b859e89e5ccb6f97c14f3062c7d78e78307da45ddc3fe1247ca358f6ecc77b820fddda84145b0abd81a698fb831839a0fad083b48453069a6280c6f1435830a3f8a5db1e1e96df78bc0c104031162b2fe49eb5cb93e283331239df9e37cd62bb2785d2f28e8bf6deb6c22484dbf85b2c71ba6e8a757a07ca439ffa7cff5497aeae1ff13026b584e066859befbc7ad82655bf8e797647ac72ac3346e1d577b38637773c59678d6decaee756f750.
+out: dfa2aeda1671590c988514d639532646aa3e7048ee2f037902c182defe4d825d97f3cff8f4134b1640b080ed667a8d8ae82612e6a51e791483639a2709fd6758319fea03a056529d0f9b6085198a8d100325b3ebc8002d8a025169a89577bfebea8483680c8c22f74dd8f35066df39ce3c7882d350b571e07fa886b9788542bbb797f88c1139ecc3fceff7b88b3b44ff507518df5e5de2ad10bd3dab7b6ac2fb9b0f053e2fdcf3c64fd7ca0ebad0d0d3e18676b350df951c60407a86ebf39d5f53aa7c49dd01d734.
+out: ea151869ef3ae514c84b7cc8305b717e3fafb85b16200ec55738d15ad2251a1a356fde957e1f0eced03c1900c4003ab5f92fb6f6e429a77fa0b4ec02a0845562d449fbd6010dd0a01f2a4164cf55286b1eb87c69a10ec071dc35c7cea8654f780d3b50de43f450c607927e1c4d98b43a013640b85b04190b6de1e2f2d17bc128bc5aa5bab0df5f024c08440dd6cb7402cd0976e86cd1809e28d88525c65100474a75bbf6df300b8113be26f4d0e8d3a1bdaa93c9f2034b664a1aba1197097ce00bdfd02055ee55bf.
+out: 68af36f3efa2848e3fdd2c65dfb81034c1db3a4abc3d3439de691979206bdd793fb479f8206fba8355c12e970498acad2d75e345faa8126e533f4bb4b9fdcd02478d9985574e54b1ccb17c0c76388516d5ff959bd82d831cefbcef7b356e9498dcc9088bd8bf1d1dba8cd212aec800776ab5ba8437599d192c696158c31ab817916c9045fede9bfacd4e2472d3533ead8c2b497c2e79f2352fcac722956ea6626a6efe7803180f83910f2a3fd5b04bda907ff4101153a1668324c4e83b8f35edc71074e834c9eb71.
+out: 78ac215d95bddef096930a9399f72fabc4da5cb82ef3937dae7651b7d126ac48f3cefac628e08b9cfbd77f9889d702e295b9b4bfba2a29ce06fe38922fdb35310be8aaeeda875886843798e462c77a5349a7b63f449c1e73f8697f5464fbcb4a34cff9a036d0cc701f178a2df937819c6cc1af90b9d9c6e014964408ae6356cea0a6d84f710b2b1516e20568bc2e6b4596d77776a9ed820e951e269e696a6827f2f5a46320884b0257377a01e6cb5d9f4554a88fc904111d2563229f7a49d21d8924d9549eedf693.
+out: 97f1ccc57d4e200c77551195c646d6c68f01de6bbb6b7cd80561e3f50caa6fb94cf7130f990035b51070c1c230ce0a4396a59efac34acc93753e859d1a63c9193b5a4038347cd4f17177c2d2c0cfc83d3fbd283faa492aa5d489addee1a4f0b4db6db6413688bedb0ce600c6d2185f36f117e2c17936dfbf62a6b2b6e370415006642e81f6ae6403ebca0c5ef106b27426158b0da0f2c1671c66fee756d6d634ea541a64238b54a0fb3a189d49d5a6415868ac6ea9da32ec441610c0d9d3808605f61ea2563da4a8.
+out: 46ff366730ec38f32eb5902c99b85fbde623d44a7ab0321d17a8054cc8ea597bf7d10e2aa58f5d0b70df592c72e66d0fc3138215e122d16c8e72b2385e284f490e7f40cec57fb0fd7ed84b6afd52adfbf0478709d0e313e1de869ae9c7241443ebeb41cfc04d5a14eca145a2d3372032e74344a2566f09e79916675d2edd1b33ef44848f7ce95340bb27b2659bd9d9ed07ece2889036005d06cacbbd0038ccb08471ba2b5289a95e0f5398091e1ea69e2c70d0233e1458d716cd466bc199be8dca52c7cafda37e2f.
+out: 4ccdb058c14e54dfa09ef89aad0044a0690a4f779c6ef6dd05f1ee5843e9330f07a3167123d1e1750c100b05611626aece44a36e7825a170bffb4d2687962d839e9a455280d34a67f463cefd50fe99e9962e18ac373ba867f7bcf1f767e8ddf26a7067d2edcf777978a12d6bae2194cc4a94ec9761b29b3ba4c05e603c4ed8b0830a9c2b72a1e1967b1a62f4845f53dc31fe2d4112c5b3b23c59af33addb9bc4162615944b3bdf301ae675c3684cbcb86ddf7311582f314cb143aec8d89516470e58172e623edda8.
+out: 50ebf7a2f6c128f9025039502d91e0bd1611415e31409a92a626bf3c0f136f71c0bd86392d6093541de55da0186c6a9efff4cf8cd21de22712c68cfdc146ad46faa7f570191752137f87864c9e5683422fb26b37c6f405fb59ceb62f46584dbad0a7d5b42c1727a36ac27995dbc7ff7fa80840f185afcf4d9439044bf3636b5eb43c2d4d5404bffc1a63f307f1be27afd5a031af5abb728c517c164918fd53f06f3a8d2ca85ff83bb87a475369fe0702a0ce18a79713db50f793cc2d2904d573b29d479779493230.
+out: b862b1d5bf2c27332a9f4ac04a1294598ed6fc31bb6af57768c6620abd64509952087f0594afd82e8408f6ddfe041b22ff56a5a26ea4b4fdec396f497fcd768c7c6745da07ce9e303d96b6f507b19f4ced154bbd66fdba717a786e3d8282485490f42f1488b51efa2fa5baaf2a2c9aaab945a018a959f4a8dbf37d1f397b5ba72ea814366e5cc586b7e9eb91fc3105c434afe2abf003703dfd7d8b6042e47299a28914d97f51ebbd94dbd9f67be5360832e332d6b43e0fbb83e74744b6612b17b391f8789c57f669.
+out: e8fcb4798a0c7389bfe51c295a33085acd33095d9f4f650d4aa367037919850b0c52823346d6c667ea4fa53646c90a52556f7700fea355ac82d7e4cce2c588654f0fda4bae2988c94ceea81fe8dd8a3c40d7b8a3b371911ff915aeec17012d6043234225038ac14c7698cd97ffe0c5d8e78df49960a32604b2f3a4ebf179c3df5abcbf0fff3151c87ceeffce0a2c5bdd72c592cd86bdbd960d0cbbfdfaf59b2fac2edb16c4f1ea4c7e75d4a709697609534e9abde5858402a7821326af1d34372ea0843a2a8e3842.
+out: a7d84e5c27e9dfc110c5e38d325d6fce94cbcbe31901ef4fd005ff756438c024044c7100736bf40cb6bb2fb08ee04d06288b5ba26a267de8dd07b2392c7d9ac1b75f4b9594852414a9557f47a3e96d9c704fd3207e1fab92067dac415c0e06c6335f6a301007fa8b0b4df1791b979a6a051bb1220a19568cc4146d47c23b524955f23e4fe4c01c25ad72dbe4ce645e6db934fc7702b083cc14f94f3d5282500f69f7efeb4572a8f4f15dee24e96f204ef26d886b0db10ffe31ab005767137d9b7f11f8f73dd3ae3b.
+out: ab2349ec76b2bc851fdd67e2ca41b62e403723e11ef8e3bffe966be358a0d50be8c614d12a3de9ea1d03d28c4ead8db1cfe63691aa46302f943a1e95310ebb907536f59551a183a531bd2135cb41114fd8e276fc009df8cfeee06663fc649c45d3c06a1db5f31d7f936926e953a5f405dfc20942ebd85eb239d71a61094e5c209beee1dc251ad172331d58ad6c7fe30c8641e21d5b4168fc9cdfb4bb695125d78fb2c97e7f2b59b0463c83c2fdeaeb00be6251dbb84a700fb7e544db42153115130e28ccf546d4d5.
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'F_Permutation_Dilithium_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj F_Permutation_Dilithium_tb_vlog.prj"
+ECHO 已關閉。
+ECHO 已關閉。
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation_Dilithium
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rconst
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_A
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_B
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sim_1/imports/SHA3_imp/F_Permutation_Dilithium_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation_Dilithium_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'F_Permutation_Dilithium_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot F_Permutation_Dilithium_tb_behav xil_defaultlib.F_Permutation_Dilithium_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 已關閉。
+ECHO 已關閉。
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot F_Permutation_Dilithium_tb_behav xil_defaultlib.F_Permutation_Dilithium_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" Line 20. Module F_Permutation_Dilithium doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" Line 18. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" Line 10. Module round_A doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" Line 25. Module round_B doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" Line 20. Module F_Permutation_Dilithium doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" Line 18. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" Line 10. Module round_A doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" Line 25. Module round_B doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.rconst
+Compiling module xil_defaultlib.round_A
+Compiling module xil_defaultlib.round_B
+Compiling module xil_defaultlib.F_Permutation_Dilithium
+Compiling module xil_defaultlib.F_Permutation_Dilithium_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot F_Permutation_Dilithium_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+Time resolution is 1 ps
+out: 3a57e5f8d46e870ac77535c8d40d08799670ec34d262d04904cdc2f38963bbdc4965bed9f7aeed8a254aa9b2abc9df886f6380fd372be78526647f4427b96f76e75be75d3578ae27bd67477ddf23fd59573f9e4abf69641b2bae16bc6a974fbfa78e47e9be57fc49c942b7307412c7a799a5f72cad108590d420a71143ce51fbe3abe6206ee758b7eab82226848a672f3414b45bfae7542cf535283ad118cf63a16188b09bfa9ac753f7212295b47fcdbdcb576486eebf7273e8ef497930e94a1a069966e58bf3c0.
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 1660.992 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'F_Permutation_Dilithium_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj F_Permutation_Dilithium_tb_vlog.prj"
+ECHO 已關閉。
+ECHO 已關閉。
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation_Dilithium
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rconst
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_A
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_B
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sim_1/imports/SHA3_imp/F_Permutation_Dilithium_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation_Dilithium_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'F_Permutation_Dilithium_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot F_Permutation_Dilithium_tb_behav xil_defaultlib.F_Permutation_Dilithium_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 已關閉。
+ECHO 已關閉。
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot F_Permutation_Dilithium_tb_behav xil_defaultlib.F_Permutation_Dilithium_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" Line 20. Module F_Permutation_Dilithium doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" Line 18. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" Line 10. Module round_A doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" Line 25. Module round_B doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v" Line 20. Module F_Permutation_Dilithium doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v" Line 18. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v" Line 10. Module round_A doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v" Line 25. Module round_B doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.rconst
+Compiling module xil_defaultlib.round_A
+Compiling module xil_defaultlib.round_B
+Compiling module xil_defaultlib.F_Permutation_Dilithium
+Compiling module xil_defaultlib.F_Permutation_Dilithium_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot F_Permutation_Dilithium_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+Time resolution is 1 ps
+out: 3a57e5f8d46e870ac77535c8d40d08799670ec34d262d04904cdc2f38963bbdc4965bed9f7aeed8a254aa9b2abc9df886f6380fd372be78526647f4427b96f76e75be75d3578ae27bd67477ddf23fd59573f9e4abf69641b2bae16bc6a974fbfa78e47e9be57fc49c942b7307412c7a799a5f72cad108590d420a71143ce51fbe3abe6206ee758b7eab82226848a672f3414b45bfae7542cf535283ad118cf63a16188b09bfa9ac753f7212295b47fcdbdcb576486eebf7273e8ef497930e94a1a069966e58bf3c0.
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1660.992 ; gain = 0.000
+current_wave_config {F_Permutation_Dilithium_tb_behav.wcfg}
+F_Permutation_Dilithium_tb_behav.wcfg
+add_wave {{/F_Permutation_Dilithium_tb/uut/i}} 
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 10 us
+out: 3a57e5f8d46e870ac77535c8d40d08799670ec34d262d04904cdc2f38963bbdc4965bed9f7aeed8a254aa9b2abc9df886f6380fd372be78526647f4427b96f76e75be75d3578ae27bd67477ddf23fd59573f9e4abf69641b2bae16bc6a974fbfa78e47e9be57fc49c942b7307412c7a799a5f72cad108590d420a71143ce51fbe3abe6206ee758b7eab82226848a672f3414b45bfae7542cf535283ad118cf63a16188b09bfa9ac753f7212295b47fcdbdcb576486eebf7273e8ef497930e94a1a069966e58bf3c0.
+out: bd18247731aa46ea2ea779abd78e6568f8849f662e1707c0b886d7ae214195a4b26783ee5098484b52343ffb537f2a5fc747566d94ec52b40d5b4f55c5d26012b3986a01c672f772ff260b91acd9c45dcdf96ca7670ddee7e43464eb7856a1cffb75737ddb4f1e7bfdadf9fc71d58cb8e9e9993f0d08b8bf42e1987c4d0a5ae9d4e515494386b4ee2412580f6fce23718c119766d22474fcf6892fb1664d0386aa5a037c5b923fcd634d25fe547c7d9eb7c84ba1b955299acbcbd78a42c9509b07ba7b2ac6233f8d.
+out: fb0b7f6e3a28617f80fa531d0717a6629ef92336bc3d3266f198f17f0810450451185e05e18acfcfaa3e7fa700ba5633d124930e686908132275d04adecc888996b8aabc23216d8a1d76da551729d1684641d1673f00c236aa0b11bdd01ebc39dfb6c394175964443027596aa847698145b368dce029b52a6425d719ee52688cb3d505d2033431ca69eddc8961655ceddc17ee57ac70e8bfd6bf7c1b0e571abd6fb151d06a4c30f25f651549849d0c5bdbdea6d545646df792188ae290aacbe91f468d3cf0ca44bb.
+out: 6bbe497024e04c48fc31e51ca361fa6c27411c205df0f6fb9840388ac7aa926e618beaa49959a1f1eae99babfc23ea4ed1d21050bfb529786d8006453c511d19a873170a8910b00f26dbb6253855f8c236cb7f8cd2ea99ae4dc7b33f81f6bad041150b59b3cd63dd04cb8328c9c955b2deef9217b3f0fd8f4c25bf58d212ad8c2da51b1e6e267886fc24d43244eb03f4dd0aaae364dc25955b71fa81ab21fea0bf6d92280cb3095c7f7dc5e2b45f7cd4fbc3a4e36c912d87aabf242f4d37256588bfb5052c96c26b.
+out: f2105f7f4c8b84a0cb2512b56d53b66d49a6e08bbceea21399325334f93bd8d3443ca99b6f84085fd085eaa16071f5569b184d5d3aa8d45793d9d04cbfa7c6b0646db65acedf29017fc1f0168f4222ff692103284910846753d5c78664e54fa873933208eb3490b608a84d5eb07311d688c99cebc9ad95f9960be58562808fa2bc5e55ebb84102b7cc03be266b343763352c0b90fde26f7aeb8f45f84df32c81c759ac8c4b5c7e1fe93d1cfd67ffa80544a085487b7943e51699f0f44829931bd9050ec7dc513b99.
+out: cb8ba9b8505ed1308cb6c7150ca1f4b5c0d23beccc622d1641a5f8fe66b186b8fc6a2064356a582176b619d049076bc34b34db10451c102255645a2ba8fe05a6d1631894cef5180d3a141e1c6f5ae19a5095d37c39e0e931d30bb8242571969ffe4d1cea1fdd55e4a49734b715a8e449507a0923703b69e4694e6fa952ecb6f586abe56fbdc4717b468de4b222a6be9052fff6bc319ccebd41f305326e636b1ec96872fa6fa70e12968bf50045ba16c3a66ae6e8311b24d66b532cc7abaf0cab775892bb4c970b8e.
+out: 9e7c435604ab9d4ffc267830c573f398d86d2b00683e220e5606951569821236cc4dbb8fc4c08a8ee23d1773c3a14a2cc658e48750f31be9b64969d94ad7d29fca67169efcde3555e56d39cf4c100668ab899a6afea0216c48d9a351517c9c3248d386569073817f55368b8e950ee1f32322927f54942ead5b64671089322ac188b2b027c9d2f0aa1e963a21a7ab937cb22a396a69eaf3c8ea0c5ff2203ff207c3d930072d337c0470514464bc9f602d40d225ad60b1f289e3d1d45955437e913806fa2ace55e2b4.
+out: 587afc6056b33425f3dd11633711828b3371b75e834a38448ed744b859e89e5ccb6f97c14f3062c7d78e78307da45ddc3fe1247ca358f6ecc77b820fddda84145b0abd81a698fb831839a0fad083b48453069a6280c6f1435830a3f8a5db1e1e96df78bc0c104031162b2fe49eb5cb93e283331239df9e37cd62bb2785d2f28e8bf6deb6c22484dbf85b2c71ba6e8a757a07ca439ffa7cff5497aeae1ff13026b584e066859befbc7ad82655bf8e797647ac72ac3346e1d577b38637773c59678d6decaee756f750.
+out: dfa2aeda1671590c988514d639532646aa3e7048ee2f037902c182defe4d825d97f3cff8f4134b1640b080ed667a8d8ae82612e6a51e791483639a2709fd6758319fea03a056529d0f9b6085198a8d100325b3ebc8002d8a025169a89577bfebea8483680c8c22f74dd8f35066df39ce3c7882d350b571e07fa886b9788542bbb797f88c1139ecc3fceff7b88b3b44ff507518df5e5de2ad10bd3dab7b6ac2fb9b0f053e2fdcf3c64fd7ca0ebad0d0d3e18676b350df951c60407a86ebf39d5f53aa7c49dd01d734.
+out: ea151869ef3ae514c84b7cc8305b717e3fafb85b16200ec55738d15ad2251a1a356fde957e1f0eced03c1900c4003ab5f92fb6f6e429a77fa0b4ec02a0845562d449fbd6010dd0a01f2a4164cf55286b1eb87c69a10ec071dc35c7cea8654f780d3b50de43f450c607927e1c4d98b43a013640b85b04190b6de1e2f2d17bc128bc5aa5bab0df5f024c08440dd6cb7402cd0976e86cd1809e28d88525c65100474a75bbf6df300b8113be26f4d0e8d3a1bdaa93c9f2034b664a1aba1197097ce00bdfd02055ee55bf.
+out: 68af36f3efa2848e3fdd2c65dfb81034c1db3a4abc3d3439de691979206bdd793fb479f8206fba8355c12e970498acad2d75e345faa8126e533f4bb4b9fdcd02478d9985574e54b1ccb17c0c76388516d5ff959bd82d831cefbcef7b356e9498dcc9088bd8bf1d1dba8cd212aec800776ab5ba8437599d192c696158c31ab817916c9045fede9bfacd4e2472d3533ead8c2b497c2e79f2352fcac722956ea6626a6efe7803180f83910f2a3fd5b04bda907ff4101153a1668324c4e83b8f35edc71074e834c9eb71.
+out: 78ac215d95bddef096930a9399f72fabc4da5cb82ef3937dae7651b7d126ac48f3cefac628e08b9cfbd77f9889d702e295b9b4bfba2a29ce06fe38922fdb35310be8aaeeda875886843798e462c77a5349a7b63f449c1e73f8697f5464fbcb4a34cff9a036d0cc701f178a2df937819c6cc1af90b9d9c6e014964408ae6356cea0a6d84f710b2b1516e20568bc2e6b4596d77776a9ed820e951e269e696a6827f2f5a46320884b0257377a01e6cb5d9f4554a88fc904111d2563229f7a49d21d8924d9549eedf693.
+out: 97f1ccc57d4e200c77551195c646d6c68f01de6bbb6b7cd80561e3f50caa6fb94cf7130f990035b51070c1c230ce0a4396a59efac34acc93753e859d1a63c9193b5a4038347cd4f17177c2d2c0cfc83d3fbd283faa492aa5d489addee1a4f0b4db6db6413688bedb0ce600c6d2185f36f117e2c17936dfbf62a6b2b6e370415006642e81f6ae6403ebca0c5ef106b27426158b0da0f2c1671c66fee756d6d634ea541a64238b54a0fb3a189d49d5a6415868ac6ea9da32ec441610c0d9d3808605f61ea2563da4a8.
+out: 46ff366730ec38f32eb5902c99b85fbde623d44a7ab0321d17a8054cc8ea597bf7d10e2aa58f5d0b70df592c72e66d0fc3138215e122d16c8e72b2385e284f490e7f40cec57fb0fd7ed84b6afd52adfbf0478709d0e313e1de869ae9c7241443ebeb41cfc04d5a14eca145a2d3372032e74344a2566f09e79916675d2edd1b33ef44848f7ce95340bb27b2659bd9d9ed07ece2889036005d06cacbbd0038ccb08471ba2b5289a95e0f5398091e1ea69e2c70d0233e1458d716cd466bc199be8dca52c7cafda37e2f.
+out: 4ccdb058c14e54dfa09ef89aad0044a0690a4f779c6ef6dd05f1ee5843e9330f07a3167123d1e1750c100b05611626aece44a36e7825a170bffb4d2687962d839e9a455280d34a67f463cefd50fe99e9962e18ac373ba867f7bcf1f767e8ddf26a7067d2edcf777978a12d6bae2194cc4a94ec9761b29b3ba4c05e603c4ed8b0830a9c2b72a1e1967b1a62f4845f53dc31fe2d4112c5b3b23c59af33addb9bc4162615944b3bdf301ae675c3684cbcb86ddf7311582f314cb143aec8d89516470e58172e623edda8.
+out: 50ebf7a2f6c128f9025039502d91e0bd1611415e31409a92a626bf3c0f136f71c0bd86392d6093541de55da0186c6a9efff4cf8cd21de22712c68cfdc146ad46faa7f570191752137f87864c9e5683422fb26b37c6f405fb59ceb62f46584dbad0a7d5b42c1727a36ac27995dbc7ff7fa80840f185afcf4d9439044bf3636b5eb43c2d4d5404bffc1a63f307f1be27afd5a031af5abb728c517c164918fd53f06f3a8d2ca85ff83bb87a475369fe0702a0ce18a79713db50f793cc2d2904d573b29d479779493230.
+out: b862b1d5bf2c27332a9f4ac04a1294598ed6fc31bb6af57768c6620abd64509952087f0594afd82e8408f6ddfe041b22ff56a5a26ea4b4fdec396f497fcd768c7c6745da07ce9e303d96b6f507b19f4ced154bbd66fdba717a786e3d8282485490f42f1488b51efa2fa5baaf2a2c9aaab945a018a959f4a8dbf37d1f397b5ba72ea814366e5cc586b7e9eb91fc3105c434afe2abf003703dfd7d8b6042e47299a28914d97f51ebbd94dbd9f67be5360832e332d6b43e0fbb83e74744b6612b17b391f8789c57f669.
+out: e8fcb4798a0c7389bfe51c295a33085acd33095d9f4f650d4aa367037919850b0c52823346d6c667ea4fa53646c90a52556f7700fea355ac82d7e4cce2c588654f0fda4bae2988c94ceea81fe8dd8a3c40d7b8a3b371911ff915aeec17012d6043234225038ac14c7698cd97ffe0c5d8e78df49960a32604b2f3a4ebf179c3df5abcbf0fff3151c87ceeffce0a2c5bdd72c592cd86bdbd960d0cbbfdfaf59b2fac2edb16c4f1ea4c7e75d4a709697609534e9abde5858402a7821326af1d34372ea0843a2a8e3842.
+out: a7d84e5c27e9dfc110c5e38d325d6fce94cbcbe31901ef4fd005ff756438c024044c7100736bf40cb6bb2fb08ee04d06288b5ba26a267de8dd07b2392c7d9ac1b75f4b9594852414a9557f47a3e96d9c704fd3207e1fab92067dac415c0e06c6335f6a301007fa8b0b4df1791b979a6a051bb1220a19568cc4146d47c23b524955f23e4fe4c01c25ad72dbe4ce645e6db934fc7702b083cc14f94f3d5282500f69f7efeb4572a8f4f15dee24e96f204ef26d886b0db10ffe31ab005767137d9b7f11f8f73dd3ae3b.
+out: ab2349ec76b2bc851fdd67e2ca41b62e403723e11ef8e3bffe966be358a0d50be8c614d12a3de9ea1d03d28c4ead8db1cfe63691aa46302f943a1e95310ebb907536f59551a183a531bd2135cb41114fd8e276fc009df8cfeee06663fc649c45d3c06a1db5f31d7f936926e953a5f405dfc20942ebd85eb239d71a61094e5c209beee1dc251ad172331d58ad6c7fe30c8641e21d5b4168fc9cdfb4bb695125d78fb2c97e7f2b59b0463c83c2fdeaeb00be6251dbb84a700fb7e544db42153115130e28ccf546d4d5.
+current_wave_config {F_Permutation_Dilithium_tb_behav.wcfg}
+F_Permutation_Dilithium_tb_behav.wcfg
+add_wave {{/F_Permutation_Dilithium_tb/uut/i_sti_buf}} 
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 10 us
+out: 3a57e5f8d46e870ac77535c8d40d08799670ec34d262d04904cdc2f38963bbdc4965bed9f7aeed8a254aa9b2abc9df886f6380fd372be78526647f4427b96f76e75be75d3578ae27bd67477ddf23fd59573f9e4abf69641b2bae16bc6a974fbfa78e47e9be57fc49c942b7307412c7a799a5f72cad108590d420a71143ce51fbe3abe6206ee758b7eab82226848a672f3414b45bfae7542cf535283ad118cf63a16188b09bfa9ac753f7212295b47fcdbdcb576486eebf7273e8ef497930e94a1a069966e58bf3c0.
+out: bd18247731aa46ea2ea779abd78e6568f8849f662e1707c0b886d7ae214195a4b26783ee5098484b52343ffb537f2a5fc747566d94ec52b40d5b4f55c5d26012b3986a01c672f772ff260b91acd9c45dcdf96ca7670ddee7e43464eb7856a1cffb75737ddb4f1e7bfdadf9fc71d58cb8e9e9993f0d08b8bf42e1987c4d0a5ae9d4e515494386b4ee2412580f6fce23718c119766d22474fcf6892fb1664d0386aa5a037c5b923fcd634d25fe547c7d9eb7c84ba1b955299acbcbd78a42c9509b07ba7b2ac6233f8d.
+out: fb0b7f6e3a28617f80fa531d0717a6629ef92336bc3d3266f198f17f0810450451185e05e18acfcfaa3e7fa700ba5633d124930e686908132275d04adecc888996b8aabc23216d8a1d76da551729d1684641d1673f00c236aa0b11bdd01ebc39dfb6c394175964443027596aa847698145b368dce029b52a6425d719ee52688cb3d505d2033431ca69eddc8961655ceddc17ee57ac70e8bfd6bf7c1b0e571abd6fb151d06a4c30f25f651549849d0c5bdbdea6d545646df792188ae290aacbe91f468d3cf0ca44bb.
+out: 6bbe497024e04c48fc31e51ca361fa6c27411c205df0f6fb9840388ac7aa926e618beaa49959a1f1eae99babfc23ea4ed1d21050bfb529786d8006453c511d19a873170a8910b00f26dbb6253855f8c236cb7f8cd2ea99ae4dc7b33f81f6bad041150b59b3cd63dd04cb8328c9c955b2deef9217b3f0fd8f4c25bf58d212ad8c2da51b1e6e267886fc24d43244eb03f4dd0aaae364dc25955b71fa81ab21fea0bf6d92280cb3095c7f7dc5e2b45f7cd4fbc3a4e36c912d87aabf242f4d37256588bfb5052c96c26b.
+out: f2105f7f4c8b84a0cb2512b56d53b66d49a6e08bbceea21399325334f93bd8d3443ca99b6f84085fd085eaa16071f5569b184d5d3aa8d45793d9d04cbfa7c6b0646db65acedf29017fc1f0168f4222ff692103284910846753d5c78664e54fa873933208eb3490b608a84d5eb07311d688c99cebc9ad95f9960be58562808fa2bc5e55ebb84102b7cc03be266b343763352c0b90fde26f7aeb8f45f84df32c81c759ac8c4b5c7e1fe93d1cfd67ffa80544a085487b7943e51699f0f44829931bd9050ec7dc513b99.
+out: cb8ba9b8505ed1308cb6c7150ca1f4b5c0d23beccc622d1641a5f8fe66b186b8fc6a2064356a582176b619d049076bc34b34db10451c102255645a2ba8fe05a6d1631894cef5180d3a141e1c6f5ae19a5095d37c39e0e931d30bb8242571969ffe4d1cea1fdd55e4a49734b715a8e449507a0923703b69e4694e6fa952ecb6f586abe56fbdc4717b468de4b222a6be9052fff6bc319ccebd41f305326e636b1ec96872fa6fa70e12968bf50045ba16c3a66ae6e8311b24d66b532cc7abaf0cab775892bb4c970b8e.
+out: 9e7c435604ab9d4ffc267830c573f398d86d2b00683e220e5606951569821236cc4dbb8fc4c08a8ee23d1773c3a14a2cc658e48750f31be9b64969d94ad7d29fca67169efcde3555e56d39cf4c100668ab899a6afea0216c48d9a351517c9c3248d386569073817f55368b8e950ee1f32322927f54942ead5b64671089322ac188b2b027c9d2f0aa1e963a21a7ab937cb22a396a69eaf3c8ea0c5ff2203ff207c3d930072d337c0470514464bc9f602d40d225ad60b1f289e3d1d45955437e913806fa2ace55e2b4.
+out: 587afc6056b33425f3dd11633711828b3371b75e834a38448ed744b859e89e5ccb6f97c14f3062c7d78e78307da45ddc3fe1247ca358f6ecc77b820fddda84145b0abd81a698fb831839a0fad083b48453069a6280c6f1435830a3f8a5db1e1e96df78bc0c104031162b2fe49eb5cb93e283331239df9e37cd62bb2785d2f28e8bf6deb6c22484dbf85b2c71ba6e8a757a07ca439ffa7cff5497aeae1ff13026b584e066859befbc7ad82655bf8e797647ac72ac3346e1d577b38637773c59678d6decaee756f750.
+out: dfa2aeda1671590c988514d639532646aa3e7048ee2f037902c182defe4d825d97f3cff8f4134b1640b080ed667a8d8ae82612e6a51e791483639a2709fd6758319fea03a056529d0f9b6085198a8d100325b3ebc8002d8a025169a89577bfebea8483680c8c22f74dd8f35066df39ce3c7882d350b571e07fa886b9788542bbb797f88c1139ecc3fceff7b88b3b44ff507518df5e5de2ad10bd3dab7b6ac2fb9b0f053e2fdcf3c64fd7ca0ebad0d0d3e18676b350df951c60407a86ebf39d5f53aa7c49dd01d734.
+out: ea151869ef3ae514c84b7cc8305b717e3fafb85b16200ec55738d15ad2251a1a356fde957e1f0eced03c1900c4003ab5f92fb6f6e429a77fa0b4ec02a0845562d449fbd6010dd0a01f2a4164cf55286b1eb87c69a10ec071dc35c7cea8654f780d3b50de43f450c607927e1c4d98b43a013640b85b04190b6de1e2f2d17bc128bc5aa5bab0df5f024c08440dd6cb7402cd0976e86cd1809e28d88525c65100474a75bbf6df300b8113be26f4d0e8d3a1bdaa93c9f2034b664a1aba1197097ce00bdfd02055ee55bf.
+out: 68af36f3efa2848e3fdd2c65dfb81034c1db3a4abc3d3439de691979206bdd793fb479f8206fba8355c12e970498acad2d75e345faa8126e533f4bb4b9fdcd02478d9985574e54b1ccb17c0c76388516d5ff959bd82d831cefbcef7b356e9498dcc9088bd8bf1d1dba8cd212aec800776ab5ba8437599d192c696158c31ab817916c9045fede9bfacd4e2472d3533ead8c2b497c2e79f2352fcac722956ea6626a6efe7803180f83910f2a3fd5b04bda907ff4101153a1668324c4e83b8f35edc71074e834c9eb71.
+out: 78ac215d95bddef096930a9399f72fabc4da5cb82ef3937dae7651b7d126ac48f3cefac628e08b9cfbd77f9889d702e295b9b4bfba2a29ce06fe38922fdb35310be8aaeeda875886843798e462c77a5349a7b63f449c1e73f8697f5464fbcb4a34cff9a036d0cc701f178a2df937819c6cc1af90b9d9c6e014964408ae6356cea0a6d84f710b2b1516e20568bc2e6b4596d77776a9ed820e951e269e696a6827f2f5a46320884b0257377a01e6cb5d9f4554a88fc904111d2563229f7a49d21d8924d9549eedf693.
+out: 97f1ccc57d4e200c77551195c646d6c68f01de6bbb6b7cd80561e3f50caa6fb94cf7130f990035b51070c1c230ce0a4396a59efac34acc93753e859d1a63c9193b5a4038347cd4f17177c2d2c0cfc83d3fbd283faa492aa5d489addee1a4f0b4db6db6413688bedb0ce600c6d2185f36f117e2c17936dfbf62a6b2b6e370415006642e81f6ae6403ebca0c5ef106b27426158b0da0f2c1671c66fee756d6d634ea541a64238b54a0fb3a189d49d5a6415868ac6ea9da32ec441610c0d9d3808605f61ea2563da4a8.
+out: 46ff366730ec38f32eb5902c99b85fbde623d44a7ab0321d17a8054cc8ea597bf7d10e2aa58f5d0b70df592c72e66d0fc3138215e122d16c8e72b2385e284f490e7f40cec57fb0fd7ed84b6afd52adfbf0478709d0e313e1de869ae9c7241443ebeb41cfc04d5a14eca145a2d3372032e74344a2566f09e79916675d2edd1b33ef44848f7ce95340bb27b2659bd9d9ed07ece2889036005d06cacbbd0038ccb08471ba2b5289a95e0f5398091e1ea69e2c70d0233e1458d716cd466bc199be8dca52c7cafda37e2f.
+out: 4ccdb058c14e54dfa09ef89aad0044a0690a4f779c6ef6dd05f1ee5843e9330f07a3167123d1e1750c100b05611626aece44a36e7825a170bffb4d2687962d839e9a455280d34a67f463cefd50fe99e9962e18ac373ba867f7bcf1f767e8ddf26a7067d2edcf777978a12d6bae2194cc4a94ec9761b29b3ba4c05e603c4ed8b0830a9c2b72a1e1967b1a62f4845f53dc31fe2d4112c5b3b23c59af33addb9bc4162615944b3bdf301ae675c3684cbcb86ddf7311582f314cb143aec8d89516470e58172e623edda8.
+out: 50ebf7a2f6c128f9025039502d91e0bd1611415e31409a92a626bf3c0f136f71c0bd86392d6093541de55da0186c6a9efff4cf8cd21de22712c68cfdc146ad46faa7f570191752137f87864c9e5683422fb26b37c6f405fb59ceb62f46584dbad0a7d5b42c1727a36ac27995dbc7ff7fa80840f185afcf4d9439044bf3636b5eb43c2d4d5404bffc1a63f307f1be27afd5a031af5abb728c517c164918fd53f06f3a8d2ca85ff83bb87a475369fe0702a0ce18a79713db50f793cc2d2904d573b29d479779493230.
+out: b862b1d5bf2c27332a9f4ac04a1294598ed6fc31bb6af57768c6620abd64509952087f0594afd82e8408f6ddfe041b22ff56a5a26ea4b4fdec396f497fcd768c7c6745da07ce9e303d96b6f507b19f4ced154bbd66fdba717a786e3d8282485490f42f1488b51efa2fa5baaf2a2c9aaab945a018a959f4a8dbf37d1f397b5ba72ea814366e5cc586b7e9eb91fc3105c434afe2abf003703dfd7d8b6042e47299a28914d97f51ebbd94dbd9f67be5360832e332d6b43e0fbb83e74744b6612b17b391f8789c57f669.
+out: e8fcb4798a0c7389bfe51c295a33085acd33095d9f4f650d4aa367037919850b0c52823346d6c667ea4fa53646c90a52556f7700fea355ac82d7e4cce2c588654f0fda4bae2988c94ceea81fe8dd8a3c40d7b8a3b371911ff915aeec17012d6043234225038ac14c7698cd97ffe0c5d8e78df49960a32604b2f3a4ebf179c3df5abcbf0fff3151c87ceeffce0a2c5bdd72c592cd86bdbd960d0cbbfdfaf59b2fac2edb16c4f1ea4c7e75d4a709697609534e9abde5858402a7821326af1d34372ea0843a2a8e3842.
+out: a7d84e5c27e9dfc110c5e38d325d6fce94cbcbe31901ef4fd005ff756438c024044c7100736bf40cb6bb2fb08ee04d06288b5ba26a267de8dd07b2392c7d9ac1b75f4b9594852414a9557f47a3e96d9c704fd3207e1fab92067dac415c0e06c6335f6a301007fa8b0b4df1791b979a6a051bb1220a19568cc4146d47c23b524955f23e4fe4c01c25ad72dbe4ce645e6db934fc7702b083cc14f94f3d5282500f69f7efeb4572a8f4f15dee24e96f204ef26d886b0db10ffe31ab005767137d9b7f11f8f73dd3ae3b.
+out: ab2349ec76b2bc851fdd67e2ca41b62e403723e11ef8e3bffe966be358a0d50be8c614d12a3de9ea1d03d28c4ead8db1cfe63691aa46302f943a1e95310ebb907536f59551a183a531bd2135cb41114fd8e276fc009df8cfeee06663fc649c45d3c06a1db5f31d7f936926e953a5f405dfc20942ebd85eb239d71a61094e5c209beee1dc251ad172331d58ad6c7fe30c8641e21d5b4168fc9cdfb4bb695125d78fb2c97e7f2b59b0463c83c2fdeaeb00be6251dbb84a700fb7e544db42153115130e28ccf546d4d5.
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 18 23:55:11 2024...

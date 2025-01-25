@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Sampler_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="Sampler_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="16,036.500 ns"></ZoomStartTime>
+      <ZoomEndTime time="16,584.001 ns"></ZoomEndTime>
+      <Cursor1Time time="16,315.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="134"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="26" />
+   <wvobject fp_name="/Sampler_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/mode" type="array">
+      <obj_property name="ElementShortName">mode[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mode[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandA_/sampler_in_ready" type="logic">
+      <obj_property name="ElementShortName">sampler_in_ready</obj_property>
+      <obj_property name="ObjectShortName">sampler_in_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandA_/sampler_in" type="array">
+      <obj_property name="ElementShortName">sampler_in[1343:0]</obj_property>
+      <obj_property name="ObjectShortName">sampler_in[1343:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandA_/sampler_squeeze" type="logic">
+      <obj_property name="ElementShortName">sampler_squeeze</obj_property>
+      <obj_property name="ObjectShortName">sampler_squeeze</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandA_/next_element" type="logic">
+      <obj_property name="ElementShortName">next_element</obj_property>
+      <obj_property name="ObjectShortName">next_element</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandA_/A0" type="array">
+      <obj_property name="ElementShortName">A0[22:0]</obj_property>
+      <obj_property name="ObjectShortName">A0[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandA_/A1" type="array">
+      <obj_property name="ElementShortName">A1[22:0]</obj_property>
+      <obj_property name="ObjectShortName">A1[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandA_/addr_A0" type="array">
+      <obj_property name="ElementShortName">addr_A0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_A0[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandA_/addr_A1" type="array">
+      <obj_property name="ElementShortName">addr_A1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_A1[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandA_/en_A0" type="logic">
+      <obj_property name="ElementShortName">en_A0</obj_property>
+      <obj_property name="ObjectShortName">en_A0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandA_/we_A0" type="logic">
+      <obj_property name="ElementShortName">we_A0</obj_property>
+      <obj_property name="ObjectShortName">we_A0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandA_/en_A1" type="logic">
+      <obj_property name="ElementShortName">en_A1</obj_property>
+      <obj_property name="ObjectShortName">en_A1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandA_/we_A1" type="logic">
+      <obj_property name="ElementShortName">we_A1</obj_property>
+      <obj_property name="ObjectShortName">we_A1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandA_/curr_state" type="logic">
+      <obj_property name="ElementShortName">curr_state</obj_property>
+      <obj_property name="ObjectShortName">curr_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandA_/next_state" type="logic">
+      <obj_property name="ElementShortName">next_state</obj_property>
+      <obj_property name="ObjectShortName">next_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandA_/shake_cnt" type="array">
+      <obj_property name="ElementShortName">shake_cnt[7:0]</obj_property>
+      <obj_property name="ObjectShortName">shake_cnt[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandA_/j" type="array">
+      <obj_property name="ElementShortName">j[8:0]</obj_property>
+      <obj_property name="ObjectShortName">j[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandA_/j_next" type="array">
+      <obj_property name="ElementShortName">j_next[8:0]</obj_property>
+      <obj_property name="ObjectShortName">j_next[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandA_/j_plus_num" type="array">
+      <obj_property name="ElementShortName">j_plus_num[1:0]</obj_property>
+      <obj_property name="ObjectShortName">j_plus_num[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandA_/last_A" type="logic">
+      <obj_property name="ElementShortName">last_A</obj_property>
+      <obj_property name="ObjectShortName">last_A</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandA_/mux_data_out" type="array">
+      <obj_property name="ElementShortName">mux_data_out[47:0]</obj_property>
+      <obj_property name="ObjectShortName">mux_data_out[47:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandA_/rej0" type="logic">
+      <obj_property name="ElementShortName">rej0</obj_property>
+      <obj_property name="ObjectShortName">rej0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandA_/rej1" type="logic">
+      <obj_property name="ElementShortName">rej1</obj_property>
+      <obj_property name="ObjectShortName">rej1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/mem_sel" type="array">
+      <obj_property name="ElementShortName">mem_sel[3:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_sel[3:0]</obj_property>
+   </wvobject>
+</wave_config>

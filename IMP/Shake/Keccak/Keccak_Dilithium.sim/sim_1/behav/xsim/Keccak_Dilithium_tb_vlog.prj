@@ -1,0 +1,15 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../Keccak_Dilithium.srcs/sources_1/imports/Keccak_Dilithium/F_Permutation_Dilithium.v" \
+"../../../../Keccak_Dilithium.srcs/sources_1/imports/Keccak_Dilithium/Keccak_dilithium.v" \
+"../../../../Keccak_Dilithium.srcs/sources_1/imports/Keccak_Dilithium/Padder_Dilithium.v" \
+"../../../../Keccak_Dilithium.srcs/sources_1/imports/Keccak_Dilithium/padder1.v" \
+"../../../../Keccak_Dilithium.srcs/sources_1/imports/Keccak_Dilithium/rconst.v" \
+"../../../../Keccak_Dilithium.srcs/sources_1/imports/Keccak_Dilithium/round.v" \
+"../../../../Keccak_Dilithium.srcs/sim_1/new/Keccak_Dilithium_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

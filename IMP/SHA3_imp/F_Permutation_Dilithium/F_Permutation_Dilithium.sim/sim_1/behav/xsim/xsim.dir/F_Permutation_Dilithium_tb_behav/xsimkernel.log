@@ -1,7 +1,0 @@
-Running: xsim.dir/F_Permutation_Dilithium_tb_behav/xsimk.exe -simmode gui -wdb F_Permutation_Dilithium_tb_behav.wdb -simrunnum 0 -socket 60747
-Design successfully loaded
-Design Loading Memory Usage: 7520 KB (Peak: 7520 KB)
-Design Loading CPU Usage: 15 ms
-Simulation completed
-Simulation Memory Usage: 16328 KB (Peak: 16328 KB)
-Simulation CPU Usage: 343 ms

@@ -1,0 +1,11 @@
+0.7
+2020.2
+Oct 13 2023
+20:47:58
+C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v,1734535128,verilog,,C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v,,round_A,,,,,,,,
+C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v,1734330741,verilog,,C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sim_1/imports/SHA3_imp/F_Permutation_Dilithium_tb.v,,round_B,,,,,,,,
+C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium_/F_Permutation_Dilithium.sim/sim_1/behav/xsim/glbl.v,1697210495,verilog,,,,glbl,,,,,,,,
+C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium_/F_Permutation_Dilithium.srcs/sim_1/imports/SHA3_imp/F_Permutation_Dilithium_tb.v,1734766120,verilog,,,,F_Permutation_Dilithium_tb,,,,,,,,
+C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium_/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_ALL_IN_Fossum/round.v,1734539762,verilog,,C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium_/F_Permutation_Dilithium.srcs/sim_1/imports/SHA3_imp/F_Permutation_Dilithium_tb.v,,round,,,,,,,,
+C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium_/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/F_Permutation_Dilithium.v,1734766051,verilog,,C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium_/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v,,F_Permutation_Dilithium,,,,,,,,
+C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium_/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/rconst.v,1734329837,verilog,,C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium_/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_ALL_IN_Fossum/round.v,,rconst,,,,,,,,

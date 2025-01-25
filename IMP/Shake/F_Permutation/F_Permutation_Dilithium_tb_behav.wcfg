@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="F_Permutation_Dilithium_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="F_Permutation_Dilithium_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="589.259 ns"></ZoomStartTime>
+      <ZoomEndTime time="623.710 ns"></ZoomEndTime>
+      <Cursor1Time time="595.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="132"></NameColumnWidth>
+      <ValueColumnWidth column_width="210"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="11" />
+   <wvobject fp_name="/F_Permutation_Dilithium_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/F_Permutation_Dilithium_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/F_Permutation_Dilithium_tb/in" type="array">
+      <obj_property name="ElementShortName">in[1343:0]</obj_property>
+      <obj_property name="ObjectShortName">in[1343:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/F_Permutation_Dilithium_tb/in_ready" type="logic">
+      <obj_property name="ElementShortName">in_ready</obj_property>
+      <obj_property name="ObjectShortName">in_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/F_Permutation_Dilithium_tb/squeeze" type="logic">
+      <obj_property name="ElementShortName">squeeze</obj_property>
+      <obj_property name="ObjectShortName">squeeze</obj_property>
+   </wvobject>
+   <wvobject fp_name="/F_Permutation_Dilithium_tb/mode" type="array">
+      <obj_property name="ElementShortName">mode[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mode[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/F_Permutation_Dilithium_tb/sha_hold" type="logic">
+      <obj_property name="ElementShortName">sha_hold</obj_property>
+      <obj_property name="ObjectShortName">sha_hold</obj_property>
+   </wvobject>
+   <wvobject fp_name="/F_Permutation_Dilithium_tb/ack" type="logic">
+      <obj_property name="ElementShortName">ack</obj_property>
+      <obj_property name="ObjectShortName">ack</obj_property>
+   </wvobject>
+   <wvobject fp_name="/F_Permutation_Dilithium_tb/out" type="array">
+      <obj_property name="ElementShortName">out[1599:0]</obj_property>
+      <obj_property name="ObjectShortName">out[1599:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/F_Permutation_Dilithium_tb/out_ready" type="logic">
+      <obj_property name="ElementShortName">out_ready</obj_property>
+      <obj_property name="ObjectShortName">out_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/F_Permutation_Dilithium_tb/uut/roundA_/a" type="array">
+      <obj_property name="ElementShortName">a[4:0][4:0][63:0]</obj_property>
+      <obj_property name="ObjectShortName">a[4:0][4:0][63:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/F_Permutation_Dilithium_tb/uut/roundA_/a[4]" type="array">
+         <obj_property name="ElementShortName">[4][4:0][63:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][4:0][63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/F_Permutation_Dilithium_tb/uut/roundA_/a[3]" type="array">
+         <obj_property name="ElementShortName">[3][4:0][63:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][4:0][63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/F_Permutation_Dilithium_tb/uut/roundA_/a[2]" type="array">
+         <obj_property name="ElementShortName">[2][4:0][63:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][4:0][63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/F_Permutation_Dilithium_tb/uut/roundA_/a[1]" type="array">
+         <obj_property name="ElementShortName">[1][4:0][63:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][4:0][63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/F_Permutation_Dilithium_tb/uut/roundA_/a[0]" type="array">
+         <obj_property name="ElementShortName">[0][4:0][63:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][4:0][63:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

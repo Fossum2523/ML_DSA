@@ -1,0 +1,34 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Mon Jan  6 23:23:58 2025
+# Process ID: 14340
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/Keccak_Dilithium
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11808 C:\Users\fossu\Desktop\ML_DSA_Syn\IMP\SHA3_imp\Keccak_Dilithium\Keccak_Dilithium.xpr
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/Keccak_Dilithium/vivado.log
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/Keccak_Dilithium\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/Keccak_Dilithium/Keccak_Dilithium.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/Keccak_Dilithium/Keccak_Dilithium_tb_behav.wcfg
+source Keccak_Dilithium_tb.tcl
+run 1 us
+relaunch_sim
+run 1 us
+relaunch_sim
+current_wave_config {Keccak_Dilithium_tb_behav.wcfg}
+add_wave {{/Keccak_Dilithium_tb/uut/padder_/i_last}} 
+restart
+run 1 us
+run 1 us
+current_wave_config {Keccak_Dilithium_tb_behav.wcfg}
+add_wave {{/Keccak_Dilithium_tb/uut/padder_/i}} 
+current_wave_config {Keccak_Dilithium_tb_behav.wcfg}
+add_wave {{/Keccak_Dilithium_tb/uut/f_permutation_/i}} 
+relaunch_sim
+close_sim
