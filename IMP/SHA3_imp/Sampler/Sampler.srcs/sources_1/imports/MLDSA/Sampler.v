@@ -39,7 +39,6 @@ module Sampler(
 
     /*---c---"*/
     output  [22:0]      ci,             // Write data ci to Mem
-    output  [22:0]      cj,             // Write data cj to Mem
     output  [7:0]       addr_ci,        // Write addresses for ci
     output  [7:0]       addr_cj,        // Write addresses for cj
     output              en_ci,          // enable for ci values
@@ -144,7 +143,6 @@ module Sampler(
         .sampler_squeeze(sampler_squeeze_SIB),
         .next_element(next_element_SIB),
         .ci(ci),
-        .cj(cj),
         .addr_ci(addr_ci),
         .addr_cj(addr_cj),
         .en_ci(en_ci),

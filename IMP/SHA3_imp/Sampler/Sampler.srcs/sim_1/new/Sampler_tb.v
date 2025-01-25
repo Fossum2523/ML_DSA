@@ -51,7 +51,6 @@ module Sampler_tb;
 
     // c signals
     wire [22:0]           ci;
-    wire [22:0]           cj;
     wire [7:0]            addr_ci;
     wire [7:0]            addr_cj;
     wire                  en_ci;
@@ -128,7 +127,6 @@ module Sampler_tb;
         .we_y(we_y),
 
         .ci(ci),
-        .cj(cj),
         .addr_ci(addr_ci),
         .addr_cj(addr_cj),
         .en_ci(en_ci),
@@ -918,16 +916,16 @@ module Sampler_tb;
         apply_reset();
 
         // // Test case 0: S0
-//         S();
+//        S();
 
         // // Test case 1: A
-//         A();
+         A();
 
         // // Test case 2: y
 //        y();
 
         // // Test case 3: c
-         c();
+        //  c();
 
 
         // Finish simulation

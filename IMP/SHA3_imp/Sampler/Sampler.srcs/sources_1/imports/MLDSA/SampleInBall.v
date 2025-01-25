@@ -10,7 +10,6 @@ module SampleInBall(
 
     /*---c Mem---"*/
     output      [22:0]      ci,                 // Write data c to Mem
-    output      [22:0]      cj,                 // Write data c to Mem  //ci_previous 直接接ci_mem的輸出
     output      [7:0]       addr_ci,            // Write addresses for c
     output reg  [7:0]       addr_cj,            // Write addresses for c
     output                  en_ci,              // enable for c values

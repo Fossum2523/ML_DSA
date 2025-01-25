@@ -35,8 +35,9 @@ module ExpandA(
     wire [1:0]   j_plus_num; // Increment value for j
     wire         last_A;
 
-
-    wire [47:0] mux_data_out;
+    wire         rej0;
+    wire         rej1;
+    wire [47:0]  mux_data_out;
 
     mux_gen #(
         .param_in(1344),
@@ -47,11 +48,12 @@ module ExpandA(
         .out(mux_data_out)
     );
 
-    assign A0 = mux_data_out[23 - 1:0];
-    assign A1 = mux_data_out[47 - 1:24];
+    assign rej0 = mux_data_out[23 - 1:0] >= 8380417;
+    assign rej1 = mux_data_out[47 - 1:24] >= 8380417;
 
-    assign rej0 = A0 >= 8380417;
-    assign rej1 = A1 >= 8380417;
+    assign A0 = rej0 ? mux_data_out[47 - 1:24] : mux_data_out[23 - 1:0];
+    // assign A0 = 1'b1 ? mux_data_out[47 - 1:24] : mux_data_out[23 - 1:0];
+    assign A1 = mux_data_out[47 - 1:24];
 
     assign addr_A0 = j[7:0];
     assign addr_A1 = j[7:0] + 1'b1;

@@ -1,0 +1,70 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Sat Jan 25 18:00:08 2025
+# Process ID: 17144
+# Current directory: C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent26484 C:\Users\USER\Desktop\ML_DSA_syn\IMP\SHA3_imp\Sampler\Sampler.xpr
+# Log file: C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/vivado.log
+# Journal file: C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler\vivado.jou
+# Running On: LAPTOP-2P71OMBV, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 16, Host memory: 16542 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+launch_simulation
+launch_simulation
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/tb_Sampler_behav.wcfg
+source Sampler_tb.tcl
+run 5 us
+current_wave_config {tb_Sampler_behav.wcfg}
+add_wave {{/Sampler_tb/uut/ExpandA_/sampler_in_ready}} {{/Sampler_tb/uut/ExpandA_/sampler_in}} {{/Sampler_tb/uut/ExpandA_/sampler_squeeze}} {{/Sampler_tb/uut/ExpandA_/next_element}} {{/Sampler_tb/uut/ExpandA_/A0}} {{/Sampler_tb/uut/ExpandA_/A1}} {{/Sampler_tb/uut/ExpandA_/addr_A0}} {{/Sampler_tb/uut/ExpandA_/addr_A1}} {{/Sampler_tb/uut/ExpandA_/en_A0}} {{/Sampler_tb/uut/ExpandA_/we_A0}} {{/Sampler_tb/uut/ExpandA_/en_A1}} {{/Sampler_tb/uut/ExpandA_/we_A1}} {{/Sampler_tb/uut/ExpandA_/curr_state}} {{/Sampler_tb/uut/ExpandA_/next_state}} {{/Sampler_tb/uut/ExpandA_/shake_cnt}} {{/Sampler_tb/uut/ExpandA_/j}} {{/Sampler_tb/uut/ExpandA_/j_next}} {{/Sampler_tb/uut/ExpandA_/j_plus_num}} {{/Sampler_tb/uut/ExpandA_/last_A}} {{/Sampler_tb/uut/ExpandA_/mux_data_out}} {{/Sampler_tb/uut/ExpandA_/rej0}} {{/Sampler_tb/uut/ExpandA_/rej1}} 
+restart
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+current_wave_config {tb_Sampler_behav.wcfg}
+add_wave {{/Sampler_tb/DM/A/ram}} 
+current_wave_config {tb_Sampler_behav.wcfg}
+add_wave {{/Sampler_tb/mem_sel}} 
+restart
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+relaunch_sim
+run 5 us
+relaunch_sim
+run 5 us
+run 5 us
+restart
+run 5 us
+run 5 us
+save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/tb_Sampler_behav.wcfg}
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/tb_Sampler_behav.wcfg
+source Sampler_tb.tcl
+run 5 us
+close_sim

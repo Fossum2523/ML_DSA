@@ -3,10 +3,10 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Wed Jan 22 14:54:09 2025
-# Process ID: 16680
+# Start of session at: Sat Jan 25 18:00:08 2025
+# Process ID: 17144
 # Current directory: C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent26508 C:\Users\USER\Desktop\ML_DSA_syn\IMP\SHA3_imp\Sampler\Sampler.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent26484 C:\Users\USER\Desktop\ML_DSA_syn\IMP\SHA3_imp\Sampler\Sampler.xpr
 # Log file: C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/vivado.log
 # Journal file: C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler\vivado.jou
 # Running On: LAPTOP-2P71OMBV, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 16, Host memory: 16542 MB
@@ -75,27 +75,123 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.2/data/ip'.
-open_project: Time (s): cpu = 00:00:22 ; elapsed = 00:00:11 . Memory (MB): peak = 1502.441 ; gain = 398.520
+open_project: Time (s): cpu = 00:00:24 ; elapsed = 00:00:11 . Memory (MB): peak = 1513.801 ; gain = 224.312
 update_compile_order -fileset sources_1
-launch_runs synth_1 -jobs 8
-WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
-[Wed Jan 22 14:54:48 2025] Launched synth_1...
-Run output will be captured here: C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.runs/synth_1/runme.log
-open_run synth_1 -name synth_1
-Design is defaulting to impl run constrset: constrs_1
-Design is defaulting to synth run part: xc7k70tfbv676-1
-INFO: [Device 21-403] Loading part xc7k70tfbv676-1
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.107 . Memory (MB): peak = 1906.012 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 736 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Project 1-479] Netlist was created with Vivado 2023.2
-INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1983.758 ; gain = 0.000
-INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
-
-open_run: Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 2154.156 ; gain = 604.441
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'Sampler_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'Sampler_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Sampler_tb_vlog.prj"
+ECHO 已關閉。
+ECHO 已關閉。
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CoeffFromHalfByte
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Data_Mem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_Mem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Dual_Port_Ram_Single_clk
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandA.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ExpandA
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandMASK.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ExpandMASK
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ExpandS
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/SampleInBall.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SampleInBall
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/Sampler.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Sampler
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Sampler_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Sampler_tb_behav xil_defaultlib.Sampler_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 已關閉。
+ECHO 已關閉。
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Sampler_tb_behav xil_defaultlib.Sampler_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-3180] cannot find port 'cj' on this module [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/Sampler.v:147]
+ERROR: [VRFC 10-8530] module 'Dual_Port_Ram_Single_clk(HLEN=12)' is ignored due to previous errors [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v:1]
+ERROR: [VRFC 10-8530] module 'mux_gen(param_in=1088)' is ignored due to previous errors [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v:2]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 1546.242 ; gain = 0.000
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'Sampler_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'Sampler_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Sampler_tb_vlog.prj"
+ECHO 已關閉。
+ECHO 已關閉。
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CoeffFromHalfByte
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Data_Mem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_Mem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Dual_Port_Ram_Single_clk
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandA.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ExpandA
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandMASK.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ExpandMASK
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ExpandS
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/SampleInBall.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SampleInBall
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/Sampler.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Sampler
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Sampler_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Sampler_tb_behav xil_defaultlib.Sampler_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 已關閉。
+ECHO 已關閉。
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Sampler_tb_behav xil_defaultlib.Sampler_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-3180] cannot find port 'cj' on this module [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/Sampler.v:147]
+ERROR: [VRFC 10-8530] module 'Dual_Port_Ram_Single_clk(HLEN=12)' is ignored due to previous errors [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v:1]
+ERROR: [VRFC 10-8530] module 'mux_gen(param_in=1088)' is ignored due to previous errors [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v:2]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
 launch_simulation
 Command: launch_simulation 
 INFO: [Vivado 12-12493] Simulation top is 'Sampler_tb'
@@ -146,8 +242,8 @@ Starting static elaboration
 Pass Through NonSizing Optimizer
 WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 5 for port 'sel' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandA.v:46]
 WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 5 for port 'sel' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandMASK.v:70]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_a' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:189]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_b' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:190]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_a' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:187]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_b' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:188]
 Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/Sampler.v" Line 1. Module Sampler doesn't have a timescale but at least one module in design has a timescale.
@@ -202,8 +298,8 @@ Compiling module xil_defaultlib.Data_Mem
 Compiling module xil_defaultlib.Sampler_tb
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot Sampler_tb_behav
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 2985.438 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '11' seconds
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 1546.242 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '10' seconds
 INFO: [USF-XSim-4] XSim::Simulate design
 INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim'
 INFO: [USF-XSim-98] *** Running xsim
@@ -224,22 +320,48 @@ source Sampler_tb.tcl
 # run 1000ns
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'Sampler_tb_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:18 . Memory (MB): peak = 2985.438 ; gain = 0.000
-run 5 us
-run 5 us
-run 5 us
-$finish called at time : 13765 ns : File "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v" Line 934
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:15 . Memory (MB): peak = 1579.062 ; gain = 32.820
 run 5 us
 current_wave_config {tb_Sampler_behav.wcfg}
 tb_Sampler_behav.wcfg
-add_wave {{/Sampler_tb/uut/ExpandS_/clk}} {{/Sampler_tb/uut/ExpandS_/reset}} {{/Sampler_tb/uut/ExpandS_/sampler_in_ready}} {{/Sampler_tb/uut/ExpandS_/sampler_in}} {{/Sampler_tb/uut/ExpandS_/sampler_squeeze}} {{/Sampler_tb/uut/ExpandS_/next_element}} {{/Sampler_tb/uut/ExpandS_/z0}} {{/Sampler_tb/uut/ExpandS_/z1}} {{/Sampler_tb/uut/ExpandS_/addr_z0}} {{/Sampler_tb/uut/ExpandS_/addr_z1}} {{/Sampler_tb/uut/ExpandS_/en_z0}} {{/Sampler_tb/uut/ExpandS_/we_z0}} {{/Sampler_tb/uut/ExpandS_/en_z1}} {{/Sampler_tb/uut/ExpandS_/we_z1}} 
+add_wave {{/Sampler_tb/uut/ExpandA_/sampler_in_ready}} {{/Sampler_tb/uut/ExpandA_/sampler_in}} {{/Sampler_tb/uut/ExpandA_/sampler_squeeze}} {{/Sampler_tb/uut/ExpandA_/next_element}} {{/Sampler_tb/uut/ExpandA_/A0}} {{/Sampler_tb/uut/ExpandA_/A1}} {{/Sampler_tb/uut/ExpandA_/addr_A0}} {{/Sampler_tb/uut/ExpandA_/addr_A1}} {{/Sampler_tb/uut/ExpandA_/en_A0}} {{/Sampler_tb/uut/ExpandA_/we_A0}} {{/Sampler_tb/uut/ExpandA_/en_A1}} {{/Sampler_tb/uut/ExpandA_/we_A1}} {{/Sampler_tb/uut/ExpandA_/curr_state}} {{/Sampler_tb/uut/ExpandA_/next_state}} {{/Sampler_tb/uut/ExpandA_/shake_cnt}} {{/Sampler_tb/uut/ExpandA_/j}} {{/Sampler_tb/uut/ExpandA_/j_next}} {{/Sampler_tb/uut/ExpandA_/j_plus_num}} {{/Sampler_tb/uut/ExpandA_/last_A}} {{/Sampler_tb/uut/ExpandA_/mux_data_out}} {{/Sampler_tb/uut/ExpandA_/rej0}} {{/Sampler_tb/uut/ExpandA_/rej1}} 
 restart
 INFO: [Wavedata 42-604] Simulation restarted
 run 5 us
 run 5 us
 run 5 us
-$finish called at time : 13765 ns : File "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v" Line 934
 run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+$finish called at time : 54485 ns : File "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v" Line 932
+run 5 us
+current_wave_config {tb_Sampler_behav.wcfg}
+tb_Sampler_behav.wcfg
+add_wave {{/Sampler_tb/DM/A/ram}} 
+WARNING: [Wavedata 42-489] Can't add object "/Sampler_tb/DM/A/ram" to the wave window because it has 94208 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+INFO: [Wavedata 42-43] There are no traceable objects to add.
+current_wave_config {tb_Sampler_behav.wcfg}
+tb_Sampler_behav.wcfg
+add_wave {{/Sampler_tb/mem_sel}} 
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+$finish called at time : 54485 ns : File "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v" Line 932
 run 5 us
 relaunch_sim
 Command: launch_simulation -step compile -simset sim_1 -mode behavioral
@@ -296,8 +418,8 @@ Starting static elaboration
 Pass Through NonSizing Optimizer
 WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 5 for port 'sel' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandA.v:46]
 WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 5 for port 'sel' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandMASK.v:70]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_a' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:189]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_b' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:190]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_a' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:187]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_b' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:188]
 Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/Sampler.v" Line 1. Module Sampler doesn't have a timescale but at least one module in design has a timescale.
@@ -352,171 +474,13 @@ Compiling module xil_defaultlib.Data_Mem
 Compiling module xil_defaultlib.Sampler_tb
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot Sampler_tb_behav
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 2985.438 ; gain = 0.000
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 1676.551 ; gain = 0.000
 INFO: [USF-XSim-69] 'elaborate' step finished in '9' seconds
-launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 2985.438 ; gain = 0.000
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 1676.551 ; gain = 0.000
 Time resolution is 1 ps
-relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:14 . Memory (MB): peak = 2985.438 ; gain = 0.000
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:14 . Memory (MB): peak = 1676.551 ; gain = 0.000
 run 5 us
-run 5 us
-run 5 us
-$finish called at time : 15805 ns : File "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v" Line 934
-run 5 us
-current_wave_config {tb_Sampler_behav.wcfg}
-tb_Sampler_behav.wcfg
-add_wave {{/Sampler_tb/s_sel}} 
-restart
-INFO: [Wavedata 42-604] Simulation restarted
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-$finish called at time : 15805 ns : File "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v" Line 934
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-relaunch_sim
-Command: launch_simulation -step compile -simset sim_1 -mode behavioral
-INFO: [Vivado 12-12493] Simulation top is 'Sampler_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj Sampler_tb_vlog.prj"
-ECHO 已關閉。
-ECHO 已關閉。
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module CoeffFromHalfByte
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Data_Mem.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Data_Mem
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Dual_Port_Ram_Single_clk
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandA.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ExpandA
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandMASK.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ExpandMASK
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandS.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ExpandS
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/SampleInBall.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module SampleInBall
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/Sampler.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Sampler
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mux_gen
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Sampler_tb
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
-INFO: [Vivado 12-12493] Simulation top is 'Sampler_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Sampler_tb_behav xil_defaultlib.Sampler_tb xil_defaultlib.glbl -log elaborate.log"
-ECHO 已關閉。
-ECHO 已關閉。
-Vivado Simulator v2023.2
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Sampler_tb_behav xil_defaultlib.Sampler_tb xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 5 for port 'sel' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandA.v:46]
-WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 5 for port 'sel' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandMASK.v:70]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_a' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:189]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_b' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:190]
-Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/Sampler.v" Line 1. Module Sampler doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandS.v" Line 1. Module ExpandS doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1088) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" Line 1. Module CoeffFromHalfByte doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" Line 1. Module CoeffFromHalfByte doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandA.v" Line 1. Module ExpandA doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_m=48) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandMASK.v" Line 1. Module ExpandMASK doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1080,param_m=36) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/SampleInBall.v" Line 1. Module SampleInBall doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1088) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Data_Mem.v" Line 1. Module Data_Mem doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk(HLEN=12) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk(HLEN=8) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/Sampler.v" Line 1. Module Sampler doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandS.v" Line 1. Module ExpandS doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1088) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" Line 1. Module CoeffFromHalfByte doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" Line 1. Module CoeffFromHalfByte doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandA.v" Line 1. Module ExpandA doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_m=48) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandMASK.v" Line 1. Module ExpandMASK doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1080,param_m=36) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/SampleInBall.v" Line 1. Module SampleInBall doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1088) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Data_Mem.v" Line 1. Module Data_Mem doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk(HLEN=12) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk(HLEN=8) doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.mux_gen(param_in=1088)
-Compiling module xil_defaultlib.CoeffFromHalfByte
-Compiling module xil_defaultlib.ExpandS
-Compiling module xil_defaultlib.mux_gen(param_m=48)
-Compiling module xil_defaultlib.ExpandA
-Compiling module xil_defaultlib.mux_gen(param_in=1080,param_m=36...
-Compiling module xil_defaultlib.ExpandMASK
-Compiling module xil_defaultlib.SampleInBall
-Compiling module xil_defaultlib.Sampler
-Compiling module xil_defaultlib.Dual_Port_Ram_Single_clk
-Compiling module xil_defaultlib.Dual_Port_Ram_Single_clk(HLEN=12...
-Compiling module xil_defaultlib.Dual_Port_Ram_Single_clk(HLEN=8)
-Compiling module xil_defaultlib.Data_Mem
-Compiling module xil_defaultlib.Sampler_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot Sampler_tb_behav
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 2985.438 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '9' seconds
-launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 2985.438 ; gain = 0.000
-Time resolution is 1 ps
-relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:13 . Memory (MB): peak = 2985.438 ; gain = 0.000
-current_wave_config {tb_Sampler_behav.wcfg}
-tb_Sampler_behav.wcfg
-add_wave {{/Sampler_tb/uut/ExpandA_/sampler_in_ready}} {{/Sampler_tb/uut/ExpandA_/sampler_in}} {{/Sampler_tb/uut/ExpandA_/sampler_squeeze}} {{/Sampler_tb/uut/ExpandA_/next_element}} {{/Sampler_tb/uut/ExpandA_/A0}} {{/Sampler_tb/uut/ExpandA_/A1}} {{/Sampler_tb/uut/ExpandA_/addr_A0}} {{/Sampler_tb/uut/ExpandA_/addr_A1}} {{/Sampler_tb/uut/ExpandA_/en_A0}} {{/Sampler_tb/uut/ExpandA_/we_A0}} {{/Sampler_tb/uut/ExpandA_/en_A1}} {{/Sampler_tb/uut/ExpandA_/we_A1}} 
-restart
-INFO: [Wavedata 42-604] Simulation restarted
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-$finish called at time : 54485 ns : File "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v" Line 934
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
+run: Time (s): cpu = 00:00:15 ; elapsed = 00:00:13 . Memory (MB): peak = 1676.551 ; gain = 0.000
 relaunch_sim
 Command: launch_simulation -step compile -simset sim_1 -mode behavioral
 INFO: [Vivado 12-12493] Simulation top is 'Sampler_tb'
@@ -568,8 +532,8 @@ Starting static elaboration
 Pass Through NonSizing Optimizer
 WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 5 for port 'sel' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandA.v:46]
 WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 5 for port 'sel' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandMASK.v:70]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_a' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:189]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_b' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:190]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_a' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:187]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_b' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:188]
 Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/Sampler.v" Line 1. Module Sampler doesn't have a timescale but at least one module in design has a timescale.
@@ -624,140 +588,18 @@ Compiling module xil_defaultlib.Data_Mem
 Compiling module xil_defaultlib.Sampler_tb
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot Sampler_tb_behav
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 2985.438 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '9' seconds
-launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 2985.438 ; gain = 0.000
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 1676.551 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '10' seconds
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 1676.551 ; gain = 0.000
 Time resolution is 1 ps
-relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:13 . Memory (MB): peak = 2985.438 ; gain = 0.000
-current_wave_config {tb_Sampler_behav.wcfg}
-tb_Sampler_behav.wcfg
-add_wave {{/Sampler_tb/uut/ExpandMASK_/sampler_in_ready}} {{/Sampler_tb/uut/ExpandMASK_/sampler_in}} {{/Sampler_tb/uut/ExpandMASK_/sampler_squeeze}} {{/Sampler_tb/uut/ExpandMASK_/next_element}} {{/Sampler_tb/uut/ExpandMASK_/y0}} {{/Sampler_tb/uut/ExpandMASK_/y1}} {{/Sampler_tb/uut/ExpandMASK_/addr_y0}} {{/Sampler_tb/uut/ExpandMASK_/addr_y1}} {{/Sampler_tb/uut/ExpandMASK_/en_y}} {{/Sampler_tb/uut/ExpandMASK_/we_y}} 
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:13 . Memory (MB): peak = 1676.551 ; gain = 0.000
+run 5 us
+run: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1676.551 ; gain = 0.000
+run 5 us
 restart
 INFO: [Wavedata 42-604] Simulation restarted
 run 5 us
-run 5 us
-run 5 us
-$finish called at time : 13765 ns : File "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v" Line 934
-run 5 us
-relaunch_sim
-Command: launch_simulation -step compile -simset sim_1 -mode behavioral
-INFO: [Vivado 12-12493] Simulation top is 'Sampler_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj Sampler_tb_vlog.prj"
-ECHO 已關閉。
-ECHO 已關閉。
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module CoeffFromHalfByte
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Data_Mem.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Data_Mem
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Dual_Port_Ram_Single_clk
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandA.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ExpandA
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandMASK.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ExpandMASK
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandS.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ExpandS
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/SampleInBall.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module SampleInBall
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/Sampler.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Sampler
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mux_gen
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Sampler_tb
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
-INFO: [Vivado 12-12493] Simulation top is 'Sampler_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Sampler_tb_behav xil_defaultlib.Sampler_tb xil_defaultlib.glbl -log elaborate.log"
-ECHO 已關閉。
-ECHO 已關閉。
-Vivado Simulator v2023.2
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Sampler_tb_behav xil_defaultlib.Sampler_tb xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 5 for port 'sel' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandA.v:46]
-WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 5 for port 'sel' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandMASK.v:70]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_a' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:189]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_b' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:190]
-Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/Sampler.v" Line 1. Module Sampler doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandS.v" Line 1. Module ExpandS doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1088) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" Line 1. Module CoeffFromHalfByte doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" Line 1. Module CoeffFromHalfByte doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandA.v" Line 1. Module ExpandA doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_m=48) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandMASK.v" Line 1. Module ExpandMASK doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1080,param_m=36) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/SampleInBall.v" Line 1. Module SampleInBall doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1088) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Data_Mem.v" Line 1. Module Data_Mem doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk(HLEN=12) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk(HLEN=8) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/Sampler.v" Line 1. Module Sampler doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandS.v" Line 1. Module ExpandS doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1088) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" Line 1. Module CoeffFromHalfByte doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" Line 1. Module CoeffFromHalfByte doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandA.v" Line 1. Module ExpandA doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_m=48) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandMASK.v" Line 1. Module ExpandMASK doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1080,param_m=36) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/SampleInBall.v" Line 1. Module SampleInBall doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1088) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Data_Mem.v" Line 1. Module Data_Mem doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk(HLEN=12) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk(HLEN=8) doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.mux_gen(param_in=1088)
-Compiling module xil_defaultlib.CoeffFromHalfByte
-Compiling module xil_defaultlib.ExpandS
-Compiling module xil_defaultlib.mux_gen(param_m=48)
-Compiling module xil_defaultlib.ExpandA
-Compiling module xil_defaultlib.mux_gen(param_in=1080,param_m=36...
-Compiling module xil_defaultlib.ExpandMASK
-Compiling module xil_defaultlib.SampleInBall
-Compiling module xil_defaultlib.Sampler
-Compiling module xil_defaultlib.Dual_Port_Ram_Single_clk
-Compiling module xil_defaultlib.Dual_Port_Ram_Single_clk(HLEN=12...
-Compiling module xil_defaultlib.Dual_Port_Ram_Single_clk(HLEN=8)
-Compiling module xil_defaultlib.Data_Mem
-Compiling module xil_defaultlib.Sampler_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot Sampler_tb_behav
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 2985.438 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '9' seconds
-launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 2985.438 ; gain = 0.000
-Time resolution is 1 ps
-relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:14 . Memory (MB): peak = 2985.438 ; gain = 0.000
-current_wave_config {tb_Sampler_behav.wcfg}
-tb_Sampler_behav.wcfg
-add_wave {{/Sampler_tb/uut/SampleInBall_/sampler_in_ready}} {{/Sampler_tb/uut/SampleInBall_/sampler_in}} {{/Sampler_tb/uut/SampleInBall_/sampler_squeeze}} {{/Sampler_tb/uut/SampleInBall_/next_element}} {{/Sampler_tb/uut/SampleInBall_/ci}} {{/Sampler_tb/uut/SampleInBall_/cj}} {{/Sampler_tb/uut/SampleInBall_/addr_ci}} {{/Sampler_tb/uut/SampleInBall_/addr_cj}} {{/Sampler_tb/uut/SampleInBall_/en_ci}} {{/Sampler_tb/uut/SampleInBall_/en_cj}} {{/Sampler_tb/uut/SampleInBall_/we_ci}} {{/Sampler_tb/uut/SampleInBall_/we_cj}} 
-restart
-INFO: [Wavedata 42-604] Simulation restarted
-run 5 us
-$finish called at time : 1055 ns : File "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v" Line 934
+run: Time (s): cpu = 00:00:35 ; elapsed = 00:00:32 . Memory (MB): peak = 1676.551 ; gain = 0.000
 run 5 us
 save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/tb_Sampler_behav.wcfg}
 close_sim
@@ -774,9 +616,71 @@ INFO: [USF-XSim-97] Finding global include files...
 INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
 INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim'
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\USER\Desktop\ML_DSA_syn\IMP\SHA3_imp\Sampler\Sampler.srcs\sim_1\new\Sampler_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\USER\Desktop\ML_DSA_syn\IMP\SHA3_imp\Sampler\Sampler.srcs\sources_1\imports\MLDSA\ExpandA.v:]
 "xvlog --incr --relax -prj Sampler_tb_vlog.prj"
 ECHO 已關閉。
 ECHO 已關閉。
+ERROR: [Common 17-180] Spawn failed: No error
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CoeffFromHalfByte
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Data_Mem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_Mem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Dual_Port_Ram_Single_clk
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandA.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ExpandA
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandMASK.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ExpandMASK
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ExpandS
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/SampleInBall.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SampleInBall
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/Sampler.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Sampler
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Sampler_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+ERROR: [USF-XSim-62] 'compile' step failed with error(s) while executing 'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim/compile.bat' script. Please check that the file has the correct 'read/write/execute' permissions and the Tcl console output for any other possible errors or warnings.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'Sampler_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'Sampler_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Sampler_tb_vlog.prj"
+ECHO 已關閉。
+ECHO 已關閉。
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CoeffFromHalfByte
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Data_Mem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_Mem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Dual_Port_Ram_Single_clk
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandA.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ExpandA
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandMASK.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ExpandMASK
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ExpandS
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/SampleInBall.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SampleInBall
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/Sampler.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Sampler
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Sampler_tb
 INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim'
@@ -792,11 +696,64 @@ Starting static elaboration
 Pass Through NonSizing Optimizer
 WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 5 for port 'sel' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandA.v:46]
 WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 5 for port 'sel' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandMASK.v:70]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_a' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:189]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_b' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:190]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_a' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:187]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_b' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:188]
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
-INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/Sampler.v" Line 1. Module Sampler doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandS.v" Line 1. Module ExpandS doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1088) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" Line 1. Module CoeffFromHalfByte doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" Line 1. Module CoeffFromHalfByte doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandA.v" Line 1. Module ExpandA doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_m=48) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandMASK.v" Line 1. Module ExpandMASK doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1080,param_m=36) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/SampleInBall.v" Line 1. Module SampleInBall doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1088) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Data_Mem.v" Line 1. Module Data_Mem doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk(HLEN=12) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk(HLEN=8) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/Sampler.v" Line 1. Module Sampler doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandS.v" Line 1. Module ExpandS doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1088) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" Line 1. Module CoeffFromHalfByte doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" Line 1. Module CoeffFromHalfByte doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandA.v" Line 1. Module ExpandA doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_m=48) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandMASK.v" Line 1. Module ExpandMASK doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1080,param_m=36) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/SampleInBall.v" Line 1. Module SampleInBall doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1088) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Data_Mem.v" Line 1. Module Data_Mem doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk(HLEN=12) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk(HLEN=8) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.mux_gen(param_in=1088)
+Compiling module xil_defaultlib.CoeffFromHalfByte
+Compiling module xil_defaultlib.ExpandS
+Compiling module xil_defaultlib.mux_gen(param_m=48)
+Compiling module xil_defaultlib.ExpandA
+Compiling module xil_defaultlib.mux_gen(param_in=1080,param_m=36...
+Compiling module xil_defaultlib.ExpandMASK
+Compiling module xil_defaultlib.SampleInBall
+Compiling module xil_defaultlib.Sampler
+Compiling module xil_defaultlib.Dual_Port_Ram_Single_clk
+Compiling module xil_defaultlib.Dual_Port_Ram_Single_clk(HLEN=12...
+Compiling module xil_defaultlib.Dual_Port_Ram_Single_clk(HLEN=8)
+Compiling module xil_defaultlib.Data_Mem
+Compiling module xil_defaultlib.Sampler_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Sampler_tb_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 1676.551 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '9' seconds
 INFO: [USF-XSim-4] XSim::Simulate design
 INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.sim/sim_1/behav/xsim'
 INFO: [USF-XSim-98] *** Running xsim
@@ -817,16 +774,10 @@ source Sampler_tb.tcl
 # run 1000ns
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'Sampler_tb_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 2985.438 ; gain = 0.000
-current_wave_config {tb_Sampler_behav.wcfg}
-tb_Sampler_behav.wcfg
-add_wave {{/Sampler_tb/DM/c/data_a}} {{/Sampler_tb/DM/c/data_b}} {{/Sampler_tb/DM/c/addr_a}} {{/Sampler_tb/DM/c/addr_b}} {{/Sampler_tb/DM/c/en_a}} {{/Sampler_tb/DM/c/en_b}} {{/Sampler_tb/DM/c/we_a}} {{/Sampler_tb/DM/c/we_b}} {{/Sampler_tb/DM/c/q_a}} {{/Sampler_tb/DM/c/q_b}} 
-restart
-INFO: [Wavedata 42-604] Simulation restarted
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:13 . Memory (MB): peak = 1676.551 ; gain = 0.000
 run 5 us
-$finish called at time : 1055 ns : File "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v" Line 934
-save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/tb_Sampler_behav.wcfg}
+run: Time (s): cpu = 00:00:22 ; elapsed = 00:00:20 . Memory (MB): peak = 1676.551 ; gain = 0.000
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
 exit
-INFO: [Common 17-206] Exiting Vivado at Thu Jan 23 01:52:07 2025...
+INFO: [Common 17-206] Exiting Vivado at Sat Jan 25 18:52:48 2025...
