@@ -55,37 +55,6 @@ def Verilog_trans(a):
     a = ''.join(hex(int(a[i:i+4], 2))[2:].upper() for i in range(0, len(a), 4))
     return a 
 
-# 算法 26 ExpandA(ρ)
-def ExpandA(p):
-    if os.path.exists("ExpandA_testbench_test_code.txt"):
-        os.remove("ExpandA_testbench_test_code.txt")
-
-    if os.path.exists("ExpandA_testbench_golden.txt"):
-        os.remove("ExpandA_testbench_golden.txt")
-
-    A = np.zeros((ML_DSA["k"], ML_DSA["l"]), dtype=object)
-
-    with open("ExpandA_testbench_test_code.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
-        file.write(f"mode = 1;\n")
-
-    for r in range(ML_DSA["k"]):
-        for s in range(ML_DSA["l"]):
-            r_prime = IntegerToBits(r, 8)
-            r_prime = BitsToBytes(r_prime)
-            s_prime = IntegerToBits(s, 8)
-            s_prime = BitsToBytes(s_prime)
-            seed = p + s_prime + r_prime
-
-            with open("ExpandA_testbench_golden.txt", "a") as file:
-                file.write(f"/***A_{r}_{s}***/\n")
-
-            with open("ExpandA_testbench_test_code.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
-                file.write(f"/***A_{r}_{s}***/\n")
-                file.write(f"mem_sel = {r*4 + s};\n")
-
-            A[r, s] = RejNTTPoly(seed,r,s)
-    return A
-
 # 算法 24 RejNTTPoly(ρ) 
 def RejNTTPoly(p,r,s):
     a = [None] * 256  # Initialize polynomial coefficients
@@ -129,7 +98,38 @@ def CoeffFromThreeBytes(b0, b1, b2):
         return z
     else:
         return None
-    
+
+# 算法 26 ExpandA(ρ)
+def ExpandA(p):
+    if os.path.exists("ExpandA_testbench_test_code.txt"):
+        os.remove("ExpandA_testbench_test_code.txt")
+
+    if os.path.exists("ExpandA_testbench_golden.txt"):
+        os.remove("ExpandA_testbench_golden.txt")
+
+    A = np.zeros((ML_DSA["k"], ML_DSA["l"]), dtype=object)
+
+    with open("ExpandA_testbench_test_code.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"mode = 1;\n")
+
+    for r in range(ML_DSA["k"]):
+        for s in range(ML_DSA["l"]):
+            r_prime = IntegerToBits(r, 8)
+            r_prime = BitsToBytes(r_prime)
+            s_prime = IntegerToBits(s, 8)
+            s_prime = BitsToBytes(s_prime)
+            seed = p + s_prime + r_prime
+
+            with open("ExpandA_testbench_golden.txt", "a") as file:
+                file.write(f"/***A_{r}_{s}***/\n")
+
+            with open("ExpandA_testbench_test_code.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+                file.write(f"/***A_{r}_{s}***/\n")
+                file.write(f"mem_sel = {r*4 + s};\n")
+
+            A[r, s] = RejNTTPoly(seed,r,s)
+    return A
+  
 p =  bytearray(b'4\x04\xfdk\xb5\xacr\xde%\x0cb\x12\xa3\x93/L\x9e\xa2\x0e\xec2\xc6$\x07\x9er3k\x19\x9b\x86 ')
 
 A = ExpandA(p)
