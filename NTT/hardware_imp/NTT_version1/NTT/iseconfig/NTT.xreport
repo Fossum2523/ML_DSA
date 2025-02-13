@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2024-11-18T21:30:14</DateModified>
+  <DateModified>2025-02-06T17:29:07</DateModified>
   <ModuleName>NTT</ModuleName>
   <SummaryTimeStamp>2024-11-13T18:21:00</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/fossu/Desktop/NTT_version1/NTT/iseconfig/NTT.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/fossu/Desktop/NTT_version1/NTT\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/USER/Desktop/ML_DSA_syn/NTT/hardware_imp/NTT_version1/NTT/iseconfig/NTT.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/USER/Desktop/ML_DSA_syn/NTT/hardware_imp/NTT_version1/NTT\</ImplementationReportsDirectory>
   <DateInitialized>2024-11-13T18:10:52</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

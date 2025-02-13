@@ -1,0 +1,7 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"tb_Modular_Reduction_time_synth.v" \
+"../../../../../Modular_Reduction.srcs/sim_1/new/Modular_Reduction_tb.v" \
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,8 @@
+Time resolution is 1 ps
+                   0 in=000000000000, out=000000
+                  20 in=3fffffffffff, out=00bff8
+                  30 in=0000075bcd15, out=5d8d07
+                  40 in=0000007fe000, out=7fe000
+                  50 in=00003ade68b1, out=6d083c
+                  60 in=268313804f08, out=60b59c
+$finish called at time : 120 ns : File "C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/Modular_Reduction/Modular_Reduction.srcs/sim_1/new/Modular_Reduction_tb.v" Line 45

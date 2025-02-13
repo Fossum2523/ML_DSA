@@ -1,0 +1,4 @@
+Time resolution is 1 ps
+                   0 in_ready=0, NTT_in_u=      0, NTT_in_d=      0, NTT_out_u=      z, NTT_out_d=      z, NTT_addr=  z
+                 221 in_ready=1, NTT_in_u=      0, NTT_in_d=      0, NTT_out_u=      z, NTT_out_d=      z, NTT_addr=  z
+                 231 in_ready=0, NTT_in_u=      0, NTT_in_d=      0, NTT_out_u=      z, NTT_out_d=      z, NTT_addr=  z

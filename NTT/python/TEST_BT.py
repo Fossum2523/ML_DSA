@@ -1,160 +1,83 @@
-from default_parameters import ML_DSA_44, ML_DSA_65, ML_DSA_87
-import os
-import hashlib
-from SHA_3 import SHAKE_128,SHAKE_256,sponge
-import numpy as np
-
-# q = 7681  # 模數
-
-# # 位反轉函數
-# def brv(k, n=4):
-#     bits = bin(k)[2:].zfill(n.bit_length() - 1)
-#     return int(bits[::-1], 2)
-
-# # NTT 演算法
-# def NTT(w):
-#     w_hat = np.array(w, dtype=np.int64)  # 將輸入轉為 numpy 陣列
-#     k = 0
-#     length = len(w)  # NTT 的長度為 4
-
-#     while length >= 2:
-#         start = 0
-#         while start < len(w):
-#             k = k + 1
-#             zeta = pow(1925, brv(k, len(w)), q)  # 旋轉因子
-#             print(zeta)
-#             # 蝶形運算
-#             for j in range(start, start + length // 2):
-#                 t = (zeta * w_hat[j + length // 2]) % q
-#                 print(zeta)
-#                 print(w_hat[j + length // 2])
-#                 print("t=",t)
-#                 print(w_hat[j])
-#                 w_hat[j + length // 2] = (w_hat[j] - t) % q
-#                 print("w_hat[{}] = {}".format(j + length // 2,(w_hat[j] - t) % q))
-#                 print(w_hat[j])
-#                 print(t)
-#                 w_hat[j] = (w_hat[j] + t) % q
-#                 print("w_hat[{}] = {}".format(j,(w_hat[j] + t) % q))
-#                 print("--------------------------------------")
-
-#             result = bit_reversed_order(w_hat)
-#             print(result)  # 應該輸出 [1467, 2807, 3471, 7621]
-#             start += length  # 移動到下一個區段
-
-#         length //= 2  # 每次迭代區段長度減半
-
+def decimal_to_binary_array(decimal_number, length=10):
+    # 轉換為二進制字串，去掉 '0b' 前綴
+    binary_str = bin(decimal_number)[2:]
     
-#     return w_hat
+    # 如果二進制數字位數不足，則在左邊補 0
+    binary_str = binary_str.zfill(length)
+    
+    # 如果二進制數字位數超過指定長度，則截斷
+    if len(binary_str) > length:
+        binary_str = binary_str[-length:]
+    
+    # 將二進制字串反轉，確保最低位對應陣列的最低位
+    binary_str = binary_str[::-1]
+    
+    # 將二進制字串轉換為列表，並返回
+    return [int(bit) for bit in binary_str]
 
-# def bit_reversed_order(arr):
-#     n = len(arr)
-#     result = [0] * n
-#     for i in range(n):
-#         rev_i = brv(i, n)  # 取得位反轉索引
-#         result[rev_i] = arr[i]
-#     return result
+def binary_array_to_decimal(binary_array):
+    # 將二進制數組反轉，使其符合小端格式
+    binary_array.reverse()
+    # 將反轉後的二進制數組轉換為字符串
+    binary_str = ''.join(map(str, binary_array))
+    # 將二進制字符串轉換為十進制數字
+    decimal_value = int(binary_str, 2)
+    return decimal_value
 
-# # 測試範例
-# w = [1, 2, 3, 4]  # 輸入係數
-# result = NTT(w)
-# print(result)  # 輸出結果
-# result = bit_reversed_order(result)
-# print(result)  # 應該輸出 [1467, 2807, 3471, 7621]
+def moular_reduction(s):
+    #---------------------------------------------------------level 1 start
+    a = s[43:(45 + 1)] + [0,0,0,0,0,0,0,0]
+    a = binary_array_to_decimal(a)
+    b = s[33:(42 + 1)] + [0]
+    b = binary_array_to_decimal(b)
+    c = s[23:(32 + 1)] + [0]
+    c = binary_array_to_decimal(c)
+    x = a + b + c
 
-ML_DSA = ML_DSA_44
+    a = binary_array_to_decimal(s[43:(45 + 1)])
+    b = binary_array_to_decimal(s[33:(45 + 1)])
+    c = binary_array_to_decimal(s[23:(45 + 1)])
+    y = a + b + c
+    z = s[0:(22 + 1)]
+    y = decimal_to_binary_array(y, 24)
+    x = decimal_to_binary_array(x, 12)
 
-q_minus_bit_len = (ML_DSA["q"]-1).bit_length()
-t1_coff_square = q_minus_bit_len - ML_DSA["d"]
-t1_coff_max = (2**t1_coff_square) - 1
-zeta_list = [
-0, 4808194, 3765607, 3761513, 5178923, 5496691, 5234739, 5178987, 7778734, 3542485, 2682288, 2129892, 3764867, 7375178, 557458, 7159240, 5010068, 4317364, 2663378, 6705802, 4855975, 7946292, 676590, 7044481, 5152541, 1714295, 2453983, 1460718, 7737789, 4795319, 2815639, 2283733, 3602218, 3182878, 2740543, 4793971, 5269599, 2101410, 3704823, 1159875, 394148, 928749, 1095468, 4874037, 2071829, 4361428, 3241972, 2156050, 3415069, 1759347, 7562881, 4805951, 3756790, 6444618, 6663429, 4430364, 5483103, 3192354, 556856, 3870317, 2917338, 1853806, 3345963, 1858416, 3073009, 1277625, 5744944, 3852015, 4183372, 5157610, 5258977, 8106357, 2508980, 2028118, 1937570, 4564692, 2811291, 5396636, 7270901, 4158088, 1528066, 482649, 1148858, 5418153, 7814814, 169688, 2462444, 5046034, 4213992, 4892034, 1987814, 5183169, 1736313, 235407, 5130263, 3258457, 5801164, 1787943, 5989328, 6125690, 3482206, 4197502, 7080401, 6018354, 7062739, 2461387, 3035980, 621164, 3901472, 7153756, 2925816, 3374250, 1356448, 5604662, 2683270, 5601629, 4912752, 2312838, 7727142, 7921254, 348812, 8052569, 1011223, 6026202, 4561790, 6458164, 6143691, 1744507, 1753, 6444997, 5720892, 6924527, 2660408, 6600190, 8321269, 2772600, 1182243, 87208, 636927, 4415111, 4423672, 6084020, 5095502, 4663471, 8352605, 822541, 1009365, 5926272, 6400920, 1596822, 4423473, 4620952, 6695264, 4969849, 2678278, 4611469, 4829411, 635956, 8129971, 5925040, 4234153, 6607829, 2192938, 6653329, 2387513, 4768667, 8111961, 5199961, 3747250, 2296099, 1239911, 4541938, 3195676, 2642980, 1254190, 8368000, 2998219, 141835, 8291116, 2513018, 7025525, 613238, 7070156, 6161950, 7921677, 6458423, 4040196, 4908348, 2039144, 6500539, 7561656, 6201452, 6757063, 2105286, 6006015, 6346610, 586241, 7200804, 527981, 5637006, 6903432, 1994046, 2491325, 6987258, 507927, 7192532, 7655613, 6545891, 5346675, 8041997, 2647994, 3009748, 5767564, 4148469, 749577, 4357667, 3980599, 2569011, 6764887, 1723229, 1665318, 2028038, 1163598, 5011144, 3994671, 8368538, 7009900, 3020393, 3363542, 214880, 545376, 7609976, 3105558, 7277073, 508145, 7826699, 860144, 3430436, 140244, 6866265, 6195333, 3123762, 2358373, 6187330, 5365997, 6663603, 2926054, 7987710, 8077412, 3531229, 4405932, 4606686, 1900052, 7598542, 1054478, 7648983]
+    #---------------------------------------------------------level 1 end
 
+    #---------------------------------------------------------level 2 start
+    d  = binary_array_to_decimal(x[10:(11 + 1)]) + binary_array_to_decimal(x[0:(9 + 1)])
+    e =  binary_array_to_decimal(z[0:(22 + 1)])  - binary_array_to_decimal(y[0:(23 + 1)]) - binary_array_to_decimal(x[10:(11 + 1)])
+    if(e<0):
+        e = (2**24-1) + e + 1
 
-# NTT
-def NTT(w):
-    w_hat = np.array(w, dtype=np.int64)
-    k = 0
-    length = 128
-    a = 0
-    f = open(file_path, 'w')
-    while length >= 1:
-        start = 0
-        # print(f'{length = } -------------------------------')
-        while start < 256:
-            
-            zeta = zeta_list[k + 1]
-            # start_add_length = start + length
-            print(f'{start = }, {start + length = }')
-            for j in range(start, start + length):
-                print(f'{k = }')
+    d = decimal_to_binary_array(d,11)
+    e = decimal_to_binary_array(e,24)
+    #---------------------------------------------------------level 2 end
 
-                t = (zeta * w_hat[j + length]) % ML_DSA["q"]
+    #---------------------------------------------------------level 3 start
+    d = [0,0,0,0,0,0,0,0,0,0,0,0,0] + d
+    f = binary_array_to_decimal(d) + binary_array_to_decimal(e)
+    f = decimal_to_binary_array(f,24)
+    #---------------------------------------------------------level 3 end
 
-                f.write(f"{j = }\n")
-                f.write(f"{length = }\n")
+    #---------------------------------------------------------level 4 start
+    if f[23] == 1:
+        Adjust = 8380417
+    else :
+        Adjust = 8396798
 
-                f.write(f"{zeta = }\n")
-                f.write(f"{t = }\n")
-                f.write(f"{w_hat[j] = }\n")
-                f.write(f"{w_hat[j + length] = }\n")
-                
-                w_hat[j + length] = (w_hat[j] - t) % ML_DSA["q"]
-                w_hat[j] = (w_hat[j] + t) % ML_DSA["q"]
-                
-                print(f'{w_hat[j] = }')
-                print(f'{w_hat[j + length] = }')
-                
+    f = binary_array_to_decimal(f)
+    g = f + Adjust
+    # print(g)
+    g = decimal_to_binary_array(g,24)
+    # print(g)
+    #---------------------------------------------------------level 4 end
 
+    #---------------------------------------------------------level 5 start
+    if g[23] == 1:
+        result = f
+    else :
+        result = binary_array_to_decimal(g)
 
-                f.write(f"{w_hat[j] = }\n")
-                f.write(f"{w_hat[j + length] = }\n")
-                a = a + 1
-            k = k + 1
-            start += 2 * length
-        length //= 2
-
-    # print(f'{k = }')
-    # print(f'{start = }')
-    # print(f'{length = }')
-    # print(f'{a = }')
-    return w_hat
-
-
-s1 = [-2, -1, 1, 2, -2, -1, 2, 2, -1, 1, 1, 0, -2, 2, 0, 2, -2, 0, 2, 2, -1, 2, -1, 2, 0, -2, -2, 0, 0, -2, 2, -2, 2, -2, 1, 1, -2, 0, -2, -1, 0, 1, 0, 2, -2, -2, 2, -1, -2, 1, -2, 0, 0, 0, 2, 0, -1, 1, 0, -2, -1, 0, -2, 2, -1, -2, 1, 2, 2, 2, 1, -1, 0, 2, 2, 0, 2, -1, -1, -2, 2, 2, -1, 2, -2, -1, -2, -1, -1, -2, -2, 1, -2, 2, -1, 0, -2, 1, 2, 2, 2, -1, 1, 2, -1, -2, -2, 1, 0, 2, -2, 2, -1, -1, -2, 0, 0, 1, -1, 0, 2, -2, -1, 2, 2, -1, -2, 0, -1, 1, -1, -2, 1, 2, 1, 0, 2, 2, -2, -2, 2, 2, -2, 2, 2, 1, 2, 0, 1, -1, 0, 1, 2, 0, -2, -1, -2, 2, 0, 1, 0, 0, 2, 2, 1, -1, 0, 1, -2, -2, -2, 0, 1, -1, 1, -1, 0, -2, -2, -2, 0, -2, -2, -1, 2, -2, -2, -1, 1, 0, 2, 1, -2, 1, 2, 0, 0, -2, 1, 1, 1, -1, 0, 0, 2, -2, 1, -1, 1, -2, 1, 1, 2, 0, 2, 1, 2, 2, 2, 2, 0, 2, 0, -2, 0, -1, -1, 1, 1, 1, -1, -1, -2, 1, 1, -1, 0, 2, 1, -1, -2, -2, -1, -2, -1, -2, 2, 1, -2, -2, 0, 0, 1, -2, 1, -2]
-
-for i in range(256):
-    s1[i] = s1[i] % ML_DSA["q"]
-
-print(s1)
-# 指定輸出檔案路徑
-file_path = 'C:/Users/fossu/Desktop/ML_DSA_Syn/a.txt'
-
-# # 將陣列寫入檔案
-# with open(file_path, 'w') as f:
-#     for item in s1:
-#         f.write(f"{hex(item)[2:]}\n")
-
-# print(f"資料已寫入 {file_path}")
-
-result = NTT(s1)
-print(result)  # 輸出結果
-
-print(len(zeta_list))
-
-
-def NTT(w):
-    w_hat = np.array(w, dtype=np.int64)
-    k = 0
-    length = 128
-    while length >= 1:
-        start = 0
-        while start < 256:
-            zeta = zeta_list[k + 1]
-            for j in range(start, start + length):
-                t = (zeta * w_hat[j + length]) % ML_DSA["q"]
-                w_hat[j + length] = (w_hat[j] - t) % ML_DSA["q"]
-                w_hat[j] = (w_hat[j] + t) % ML_DSA["q"]
-            start += 2 * length
-            k = k + 1
-        length //= 2
+    return result
+    #---------------------------------------------------------level 5 end

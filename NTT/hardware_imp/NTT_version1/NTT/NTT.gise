@@ -58,11 +58,10 @@
     <transform xil_pn:end_ts="1731645186" xil_pn:in_ck="-2709133336457713618" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1731645186">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="../../ML_DSA_Syn/NTT/BT.v"/>
-      <outfile xil_pn:name="BRAM.v"/>
-      <outfile xil_pn:name="NTT.v"/>
-      <outfile xil_pn:name="NTT_tb.v"/>
-      <outfile xil_pn:name="rom.v"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1731642816" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-1960006273707268606" xil_pn:start_ts="1731642816">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -80,39 +79,35 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="../../ML_DSA_Syn/NTT/BT.v"/>
-      <outfile xil_pn:name="BRAM.v"/>
-      <outfile xil_pn:name="NTT.v"/>
-      <outfile xil_pn:name="NTT_tb.v"/>
-      <outfile xil_pn:name="rom.v"/>
-    </transform>
-    <transform xil_pn:end_ts="1731645094" xil_pn:in_ck="-2709133336457713618" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="3744569821661001196" xil_pn:start_ts="1731645092">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="NTT_tb_beh.prj"/>
-      <outfile xil_pn:name="NTT_tb_isim_beh.exe"/>
-      <outfile xil_pn:name="fuse.log"/>
-      <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="xilinxsim.ini"/>
+      <status xil_pn:value="OutputRemoved"/>
+    </transform>
+    <transform xil_pn:end_ts="1731645094" xil_pn:in_ck="-2709133336457713618" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="3744569821661001196" xil_pn:start_ts="1731645092">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1731645094" xil_pn:in_ck="8865965690562945904" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-4058719489350732017" xil_pn:start_ts="1731645094">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="NTT_tb_isim_beh.wdb"/>
-      <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1731493252" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1731493252">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -149,15 +144,9 @@
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="NTT.lso"/>
-      <outfile xil_pn:name="NTT.prj"/>
-      <outfile xil_pn:name="NTT.syr"/>
-      <outfile xil_pn:name="NTT.xst"/>
-      <outfile xil_pn:name="NTT_xst.xrpt"/>
-      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
-      <outfile xil_pn:name="webtalk_pn.xml"/>
-      <outfile xil_pn:name="xst"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1731493260" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="3734212952569656" xil_pn:start_ts="1731493260">
       <status xil_pn:value="SuccessfullyRun"/>

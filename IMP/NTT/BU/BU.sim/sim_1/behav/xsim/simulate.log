@@ -1,0 +1,7 @@
+Time resolution is 1 ps
+                   0 in0=      0, in1=      0, phi=      1, out0=      0, out1=      0
+                  20 in0=8380416, in1=8380416, phi=8380416, out0=      0, out1=8380415
+                  30 in0=4190208, in1=4190208, phi=4190208, out0=2095104, out1=6285312
+                  40 in0=1234567, in1=7654321, phi=5000000, out0=1683137, out1= 785997
+                  50 in0=      1, in1=8380416, phi=      2, out0=8380416, out1=      3
+$finish called at time : 110 ns : File "C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/BU/BU.srcs/sim_1/new/BU_tb.v" Line 53

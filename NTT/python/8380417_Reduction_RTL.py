@@ -24,73 +24,75 @@ def binary_array_to_decimal(binary_array):
     decimal_value = int(binary_str, 2)
     return decimal_value
 
+def moular_reduction(s):
+    #---------------------------------------------------------level 1 start
+    a = s[43:(45 + 1)] + [0,0,0,0,0,0,0,0]
+    a = binary_array_to_decimal(a)
+    b = s[33:(42 + 1)] + [0]
+    b = binary_array_to_decimal(b)
+    c = s[23:(32 + 1)] + [0]
+    c = binary_array_to_decimal(c)
+    x = a + b + c
+
+    a = binary_array_to_decimal(s[43:(45 + 1)])
+    b = binary_array_to_decimal(s[33:(45 + 1)])
+    c = binary_array_to_decimal(s[23:(45 + 1)])
+    y = a + b + c
+    z = s[0:(22 + 1)]
+    y = decimal_to_binary_array(y, 24)
+    x = decimal_to_binary_array(x, 12)
+
+    #---------------------------------------------------------level 1 end
+
+    #---------------------------------------------------------level 2 start
+    d  = binary_array_to_decimal(x[10:(11 + 1)]) + binary_array_to_decimal(x[0:(9 + 1)])
+    e =  binary_array_to_decimal(z[0:(22 + 1)])  - binary_array_to_decimal(y[0:(23 + 1)]) - binary_array_to_decimal(x[10:(11 + 1)])
+    if(e<0):
+        e = (2**24-1) + e + 1
+
+    d = decimal_to_binary_array(d,11)
+    e = decimal_to_binary_array(e,24)
+    #---------------------------------------------------------level 2 end
+
+    #---------------------------------------------------------level 3 start
+    d = [0,0,0,0,0,0,0,0,0,0,0,0,0] + d
+    f = binary_array_to_decimal(d) + binary_array_to_decimal(e)
+    f = decimal_to_binary_array(f,24)
+    #---------------------------------------------------------level 3 end
+
+    #---------------------------------------------------------level 4 start
+    if f[23] == 1:
+        Adjust = 8380417
+    else :
+        Adjust = 8396799
+
+    f = binary_array_to_decimal(f)
+    g = f + Adjust
+    # print(g)
+    g = decimal_to_binary_array(g,24)
+    # print(g)
+    #---------------------------------------------------------level 4 end
+
+    #---------------------------------------------------------level 5 start
+    if g[23] == 1:
+        result = f
+    else :
+        result = binary_array_to_decimal(g)
+
+    return result
+    #---------------------------------------------------------level 5 end
 
 
-decimal_number = 70368744177663
-s = decimal_to_binary_array(decimal_number, 46)
-# print(s)  
+# decimal_number = 70368744177663
+# s = decimal_to_binary_array(decimal_number, 46)
+# out = moular_reduction(s)
 
+# for i in range(8380417,8380417*2):
+#     s = decimal_to_binary_array(i, 46)
+#     out1 = moular_reduction(s)
+#     out2 = i % 8380417
+#     if(out1 != out2):
+#         print(i, out1, out2)
 
-#---------------------------------------------------------level 1 start
-a = s[43:(45 + 1)] + [0,0,0,0,0,0,0,0]
-a = binary_array_to_decimal(a)
-b = s[33:(42 + 1)] + [0]
-b = binary_array_to_decimal(b)
-c = s[23:(32 + 1)] + [0]
-c = binary_array_to_decimal(c)
-x = a + b + c
-# print(x)
-a = binary_array_to_decimal(s[43:(45 + 1)])
-b = binary_array_to_decimal(s[33:(45 + 1)])
-c = binary_array_to_decimal(s[23:(45 + 1)])
-y = a + b + c
-# print(y)
-z = s[0:(22 + 1)]
-# print(z)
-y = decimal_to_binary_array(y, 24)
-x = decimal_to_binary_array(x, 12)
-#---------------------------------------------------------level 1 end
-
-#---------------------------------------------------------level 2 start
-d  = binary_array_to_decimal(x[10:(11 + 1)]) + binary_array_to_decimal(x[0:(9 + 1)])
-e =  binary_array_to_decimal(z[0:(22 + 1)])  - binary_array_to_decimal(y[0:(23 + 1)]) - binary_array_to_decimal(x[10:(11 + 1)])
-# print(d)
-print(e)
-if(e<0):
-    e = (2**24-1) + e + 1
-
-print(e)
-d = decimal_to_binary_array(d,11)
-e = decimal_to_binary_array(e,24)
-# print(d)
-# print(e)
-#---------------------------------------------------------level 2 end
-
-#---------------------------------------------------------level 3 start
-d = [0,0,0,0,0,0,0,0,0,0,0,0,0] + d
-f = binary_array_to_decimal(d) + binary_array_to_decimal(e)
-# print(f)
-f = decimal_to_binary_array(f,24)
-#---------------------------------------------------------level 3 end
-
-#---------------------------------------------------------level 4 start
-if f[23] == 1:
-    Adjust = 8380417
-else :
-    Adjust = 8396798
-
-f = binary_array_to_decimal(f)
-g = f + Adjust
-# print(g)
-g = decimal_to_binary_array(g,24)
-# print(g)
-#---------------------------------------------------------level 4 end
-
-# #---------------------------------------------------------level 5 start
-if g[23] == 1:
-    result = f
-else :
-    result = binary_array_to_decimal(g)
-
-print(result)
-# #---------------------------------------------------------level 5 end
+print(123456789 % 8380417)
+print(987654321 % 8380417)

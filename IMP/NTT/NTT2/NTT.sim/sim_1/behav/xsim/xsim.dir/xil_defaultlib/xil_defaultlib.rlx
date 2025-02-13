@@ -1,0 +1,18 @@
+0.7
+2020.2
+Oct 13 2023
+20:47:58
+C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.sim/sim_1/behav/xsim/glbl.v,1697210495,verilog,,,,glbl,,,,,,,,
+C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v,1738922260,verilog,,C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/Modular_Reduction.v,,Dual_Port_Ram_Single_clk,,,,,,,,
+C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/NTT/BRAM.v,1738932595,verilog,,C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/BU.v,,BRAM,,,,,,,,
+C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/NTT/NTT_tb.v,1739352680,verilog,,,,NTT_tb,,,,,,,,
+C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/BU.v,1739364162,verilog,,C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/CONTR.v,,BU,,,,,,,,
+C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/CONTR.v,1739296144,verilog,,C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v,,CONTR,,,,,,,,
+C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/MDCU.v,1738934193,verilog,,C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/Modular_Reduction.v,,MDCU,,,,,,,,
+C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/Modular_Reduction.v,1739372920,verilog,,C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/NTT.v,,Modular_Reduction,,,,,,,,
+C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/NTT.v,1739374651,verilog,,C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/RU.v,,NTT,,,,,,,,
+C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/RU.v,1739293472,verilog,,C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_add.v,,RU,,,,,,,,
+C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_add.v,1739434141,verilog,,C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_mul.v,,mod_add,,,,,,,,
+C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_mul.v,1739113719,verilog,,C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_sub.v,,mod_mul,,,,,,,,
+C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_sub.v,1738834806,verilog,,C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v,,mod_sub,,,,,,,,
+C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v,1738934824,verilog,,C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/NTT/NTT_tb.v,,rom,,,,,,,,

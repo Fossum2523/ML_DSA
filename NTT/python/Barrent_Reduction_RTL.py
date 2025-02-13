@@ -27,48 +27,35 @@ def binary_array_to_decimal(binary_array):
 
 
 # 範例使用
-decimal_number = 70368744177663
-s = decimal_to_binary_array(decimal_number, 46)
-# print(s)  # 輸出：[0, 0, 0, 0, 0, 0, 0, 0, 1, 0]
+def Barrent_Reduction(s):
+    a = binary_array_to_decimal(s[43:(45 + 1)])
+    b = binary_array_to_decimal(s[33:(42 + 1)])
+    c = binary_array_to_decimal(s[23:(32 + 1)])
+    x = a + b + c
+    # print(s[43:(45 + 1)])
+    # print(s[33:(42 + 1)])
+    # print(s[23:(32 + 1)])
+    # print(a)
+    # print(b)
+    # print(c)
+    # print(x)
+    a = binary_array_to_decimal(s[43:(45 + 1)])
+    b = binary_array_to_decimal(s[33:(45 + 1)])
+    c = binary_array_to_decimal(s[23:(45 + 1)])
+    y = a + b + c
+    z = binary_array_to_decimal(s[0:(22 + 1)])
+    x = decimal_to_binary_array(x, 12)                         
+    result = (2**13) * (binary_array_to_decimal(x[10:(11 + 1)]) + binary_array_to_decimal(x[0:(9 + 1)])) - (y + binary_array_to_decimal(x[10:(11 + 1)])) + z
+    return result 
 
-a = binary_array_to_decimal(s[43:(45 + 1)])
-b = binary_array_to_decimal(s[33:(42 + 1)])
-c = binary_array_to_decimal(s[23:(32 + 1)])
-x = a + b + c
+for i in range(8380417,8380418*2):
+    s = decimal_to_binary_array(i, 46)
+    out1 = Barrent_Reduction(s)
+    out2 = i % 8380417
+    if(out1 != out2):
+        print(i, out1, out2)
 
-# print(s[43:(45 + 1)])
-# print(s[33:(42 + 1)])
-# print(s[23:(32 + 1)])
-# print(a)
-# print(b)
-# print(c)
-# print(x)
-
-
-# print(x)
-
-
-a = binary_array_to_decimal(s[43:(45 + 1)])
-b = binary_array_to_decimal(s[33:(45 + 1)])
-c = binary_array_to_decimal(s[23:(45 + 1)])
-y = a + b + c
-
-# y = decimal_to_binary_array(y, 24)
-# print(y)
-
-z = binary_array_to_decimal(s[0:(22 + 1)])
-
-result1 = ((2**13) * x) - y + z
-
-print(result1)
-
-x = decimal_to_binary_array(x, 12)
-
-# TEST1 =  z - (y + binary_array_to_decimal(x[10:(11 + 1)]))
-# print(TEST1)
-# TEST2 = (binary_array_to_decimal(x[10:(11 + 1)]) + binary_array_to_decimal(x[0:(9 + 1)]))
-# print(TEST2)
-                                
-result2 = (2**13) * (binary_array_to_decimal(x[10:(11 + 1)]) + binary_array_to_decimal(x[0:(9 + 1)])) - (y + binary_array_to_decimal(x[10:(11 + 1)])) + z
-
-print(result2)
+# decimal_number = 70368744177663
+# s = decimal_to_binary_array(decimal_number, 46)
+# print(Barrent_Reduction(s))
+# print(decimal_number % 8380417)

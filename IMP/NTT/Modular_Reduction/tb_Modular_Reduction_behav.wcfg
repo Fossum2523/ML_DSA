@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_Modular_Reduction_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_Modular_Reduction" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="120.001 ns"></ZoomEndTime>
+      <Cursor1Time time="120.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="224"></NameColumnWidth>
+      <ValueColumnWidth column_width="121"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="6" />
+   <wvobject fp_name="/tb_Modular_Reduction/in" type="array">
+      <obj_property name="ElementShortName">in[45:0]</obj_property>
+      <obj_property name="ObjectShortName">in[45:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_Modular_Reduction/out" type="array">
+      <obj_property name="ElementShortName">out[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_Modular_Reduction/uut/adjust" type="array">
+      <obj_property name="ElementShortName">adjust[23:0]</obj_property>
+      <obj_property name="ObjectShortName">adjust[23:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_Modular_Reduction/uut/adder_3" type="array">
+      <obj_property name="ElementShortName">adder_3[26:0]</obj_property>
+      <obj_property name="ObjectShortName">adder_3[26:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="vbus78" type="vbus">
+      <obj_property name="label">TEST</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_Modular_Reduction/uut/adder_3[26]" type="logic">
+         <obj_property name="ElementShortName">[26]</obj_property>
+         <obj_property name="ObjectShortName">[26]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/tb_Modular_Reduction/uut/adder_4" type="array">
+      <obj_property name="ElementShortName">adder_4[23:0]</obj_property>
+      <obj_property name="ObjectShortName">adder_4[23:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

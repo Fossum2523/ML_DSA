@@ -26,7 +26,7 @@ def binary_array_to_decimal(binary_array):
 
 
 
-decimal_number = 70368744177663
+decimal_number = 42344409747208
 s = decimal_to_binary_array(decimal_number, 46)
 # print(s)  
 

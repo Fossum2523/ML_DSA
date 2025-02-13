@@ -1,0 +1,57 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Fri Feb  7 22:34:15 2025
+# Process ID: 23048
+# Current directory: C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/Modular_Reduction
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4012 C:\Users\USER\Desktop\ML_DSA_syn\IMP\NTT\Modular_Reduction\Modular_Reduction.xpr
+# Log file: C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/Modular_Reduction/vivado.log
+# Journal file: C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/Modular_Reduction\vivado.jou
+# Running On: LAPTOP-2P71OMBV, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 16, Host memory: 16542 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/Modular_Reduction/Modular_Reduction.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source tb_Modular_Reduction.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+current_wave_config {Untitled 1}
+add_wave {{/tb_Modular_Reduction/uut/adjust}} 
+restart
+run 10 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+current_wave_config {Untitled 1}
+add_wave {{/tb_Modular_Reduction/uut/adder_3}} 
+restart
+run 10 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+current_wave_config {Untitled 1}
+add_wave {{/tb_Modular_Reduction/uut/adder_4}} 
+restart
+run 10 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/Modular_Reduction/tb_Modular_Reduction_behav.wcfg}
+add_files -fileset sim_1 -norecurse C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/Modular_Reduction/tb_Modular_Reduction_behav.wcfg
+set_property xsim.view C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/Modular_Reduction/tb_Modular_Reduction_behav.wcfg [get_filesets sim_1]
+close_sim
