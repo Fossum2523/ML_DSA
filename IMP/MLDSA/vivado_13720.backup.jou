@@ -1,0 +1,56 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Thu Feb 20 22:11:44 2025
+# Process ID: 13720
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11280 C:\Users\fossu\Desktop\ML_DSA_Syn\IMP\MLDSA\MLDSA.xpr
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/vivado.log
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA_tb_behav.wcfg
+source MLDSA_tb.tcl
+run 10 us
+current_wave_config {MLDSA_tb_behav.wcfg}
+add_wave {{/MLDSA_tb/uut/clk}} {{/MLDSA_tb/uut/reset}} 
+current_wave_config {MLDSA_tb_behav.wcfg}
+add_wave {{/MLDSA_tb/uut/start}} 
+restart
+run 10 us
+current_wave_config {MLDSA_tb_behav.wcfg}
+add_wave {{/MLDSA_tb/uut/controller_inst/start}} {{/MLDSA_tb/uut/controller_inst/data_in_ready}} 
+restart
+run 10 us
+current_wave_config {MLDSA_tb_behav.wcfg}
+add_wave {{/MLDSA_tb/uut/data_in}} 
+current_wave_config {MLDSA_tb_behav.wcfg}
+add_wave {{/MLDSA_tb/uut/main_mode}} 
+restart
+run 10 us
+current_wave_config {MLDSA_tb_behav.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/KK/in}} {{/MLDSA_tb/uut/data_path_inst/KK/in_ready}} {{/MLDSA_tb/uut/data_path_inst/KK/is_last}} {{/MLDSA_tb/uut/data_path_inst/KK/squeeze}} {{/MLDSA_tb/uut/data_path_inst/KK/mode}} {{/MLDSA_tb/uut/data_path_inst/KK/sha_hold}} {{/MLDSA_tb/uut/data_path_inst/KK/byte_num}} {{/MLDSA_tb/uut/data_path_inst/KK/out}} {{/MLDSA_tb/uut/data_path_inst/KK/out_ready}} 
+restart
+run 10 us
+run 10 us
+current_wave_config {MLDSA_tb_behav.wcfg}
+add_wave {{/MLDSA_tb/uut/controller_inst/curr_state}} 
+run 10 us
+current_wave_config {MLDSA_tb_behav.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/Rho_din}} {{/MLDSA_tb/uut/data_path_inst/DM/Rho_dout}} {{/MLDSA_tb/uut/data_path_inst/DM/Rho_prime_en}} {{/MLDSA_tb/uut/data_path_inst/DM/Rho_prime_mode}} {{/MLDSA_tb/uut/data_path_inst/DM/Rho_prime_din}} {{/MLDSA_tb/uut/data_path_inst/DM/Rho_prime_dout}} 
+restart
+run 10 us
+run 10 us
+current_wave_config {MLDSA_tb_behav.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/Kata_din}} {{/MLDSA_tb/uut/data_path_inst/DM/Kata_dout}} 
+restart
+run 10 us
+run 10 us
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA_tb_behav.wcfg}
+close_sim

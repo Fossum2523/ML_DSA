@@ -1,0 +1,7 @@
+Running: xsim.dir/NTT_tb_time_impl/xsimk.exe -simmode gui -wdb NTT_tb_time_impl.wdb -simrunnum 0 -socket 62248
+Design successfully loaded
+Design Loading Memory Usage: 86320 KB (Peak: 86320 KB)
+Design Loading CPU Usage: 171 ms
+Simulation completed
+Simulation Memory Usage: 188108 KB (Peak: 188108 KB)
+Simulation CPU Usage: 23858 ms

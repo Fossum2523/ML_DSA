@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="NTT_tb_func_impl.wdb" id="1">
+         <top_modules>
+            <top_module name="NTT_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="1,484.275 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,519.226 ns"></ZoomEndTime>
+      <Cursor1Time time="1,490.100 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="224"></NameColumnWidth>
+      <ValueColumnWidth column_width="108"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="28" />
+   <wvobject fp_name="/NTT_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/in_ready" type="logic">
+      <obj_property name="ElementShortName">in_ready</obj_property>
+      <obj_property name="ObjectShortName">in_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/NTT_in_u" type="array">
+      <obj_property name="ElementShortName">NTT_in_u[22:0]</obj_property>
+      <obj_property name="ObjectShortName">NTT_in_u[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/NTT_in_d" type="array">
+      <obj_property name="ElementShortName">NTT_in_d[22:0]</obj_property>
+      <obj_property name="ObjectShortName">NTT_in_d[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/out_ready" type="logic">
+      <obj_property name="ElementShortName">out_ready</obj_property>
+      <obj_property name="ObjectShortName">out_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/NTT_out_u" type="array">
+      <obj_property name="ElementShortName">NTT_out_u[22:0]</obj_property>
+      <obj_property name="ObjectShortName">NTT_out_u[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/NTT_out_d" type="array">
+      <obj_property name="ElementShortName">NTT_out_d[22:0]</obj_property>
+      <obj_property name="ObjectShortName">NTT_out_d[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/NTT_addr_u" type="array">
+      <obj_property name="ElementShortName">NTT_addr_u[7:0]</obj_property>
+      <obj_property name="ObjectShortName">NTT_addr_u[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/NTT_addr_d" type="array">
+      <obj_property name="ElementShortName">NTT_addr_d[7:0]</obj_property>
+      <obj_property name="ObjectShortName">NTT_addr_d[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/s1_data_a" type="array">
+      <obj_property name="ElementShortName">s1_data_a[22:0]</obj_property>
+      <obj_property name="ObjectShortName">s1_data_a[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/s1_data_b" type="array">
+      <obj_property name="ElementShortName">s1_data_b[22:0]</obj_property>
+      <obj_property name="ObjectShortName">s1_data_b[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/s1_addr_a" type="array">
+      <obj_property name="ElementShortName">s1_addr_a[9:0]</obj_property>
+      <obj_property name="ObjectShortName">s1_addr_a[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/s1_addr_b" type="array">
+      <obj_property name="ElementShortName">s1_addr_b[9:0]</obj_property>
+      <obj_property name="ObjectShortName">s1_addr_b[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/s1_en_a" type="logic">
+      <obj_property name="ElementShortName">s1_en_a</obj_property>
+      <obj_property name="ObjectShortName">s1_en_a</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/s1_en_b" type="logic">
+      <obj_property name="ElementShortName">s1_en_b</obj_property>
+      <obj_property name="ObjectShortName">s1_en_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/s1_we_a" type="logic">
+      <obj_property name="ElementShortName">s1_we_a</obj_property>
+      <obj_property name="ObjectShortName">s1_we_a</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/s1_we_b" type="logic">
+      <obj_property name="ElementShortName">s1_we_b</obj_property>
+      <obj_property name="ObjectShortName">s1_we_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/s1_q_a" type="array">
+      <obj_property name="ElementShortName">s1_q_a[22:0]</obj_property>
+      <obj_property name="ObjectShortName">s1_q_a[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/s1_q_b" type="array">
+      <obj_property name="ElementShortName">s1_q_b[22:0]</obj_property>
+      <obj_property name="ObjectShortName">s1_q_b[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/zeta_en" type="logic">
+      <obj_property name="ElementShortName">zeta_en</obj_property>
+      <obj_property name="ObjectShortName">zeta_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/zeta_addr_0" type="logic">
+      <obj_property name="ElementShortName">zeta_addr_0</obj_property>
+      <obj_property name="ObjectShortName">zeta_addr_0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/zeta_do_0" type="array">
+      <obj_property name="ElementShortName">zeta_do_0[22:0]</obj_property>
+      <obj_property name="ObjectShortName">zeta_do_0[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/BIT_LEN" type="array">
+      <obj_property name="ElementShortName">BIT_LEN[31:0]</obj_property>
+      <obj_property name="ObjectShortName">BIT_LEN[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/DLEN" type="array">
+      <obj_property name="ElementShortName">DLEN[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DLEN[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/HLEN" type="array">
+      <obj_property name="ElementShortName">HLEN[31:0]</obj_property>
+      <obj_property name="ObjectShortName">HLEN[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/CLK_PERIOD" type="array">
+      <obj_property name="ElementShortName">CLK_PERIOD[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CLK_PERIOD[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

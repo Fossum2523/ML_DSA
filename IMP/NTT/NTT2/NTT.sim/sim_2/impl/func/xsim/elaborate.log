@@ -1,0 +1,105 @@
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L secureip --snapshot NTT_tb_func_impl xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.CARRY4
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1
+Compiling module unisims_ver.LUT6
+Compiling module unisims_ver.LUT5
+Compiling module unisims_ver.x_lut3_mux8
+Compiling module unisims_ver.LUT3
+Compiling module xil_defaultlib.mod_add_38
+Compiling module unisims_ver.LUT4
+Compiling module unisims_ver.x_lut2_mux4
+Compiling module unisims_ver.LUT2
+Compiling module xil_defaultlib.Modular_Reduction_41
+Compiling module unisims_ver.DSP48E1(ACASCREG=0,ALUMODEREG=0,...
+Compiling module xil_defaultlib.mod_mul_39
+Compiling module xil_defaultlib.mod_sub_40
+Compiling module xil_defaultlib.BU
+Compiling module xil_defaultlib.mod_add_34
+Compiling module xil_defaultlib.Modular_Reduction_37
+Compiling module xil_defaultlib.mod_mul_35
+Compiling module xil_defaultlib.mod_sub_36
+Compiling module xil_defaultlib.BU_0
+Compiling module xil_defaultlib.mod_add_30
+Compiling module xil_defaultlib.Modular_Reduction_33
+Compiling module xil_defaultlib.mod_mul_31
+Compiling module xil_defaultlib.mod_sub_32
+Compiling module xil_defaultlib.BU_1
+Compiling module xil_defaultlib.mod_add_26
+Compiling module xil_defaultlib.Modular_Reduction_29
+Compiling module unisims_ver.DSP48E1(ACASCREG=0,ALUMODEREG=0,...
+Compiling module xil_defaultlib.mod_mul_27
+Compiling module xil_defaultlib.mod_sub_28
+Compiling module xil_defaultlib.BU_2
+Compiling module xil_defaultlib.mod_add_22
+Compiling module xil_defaultlib.Modular_Reduction_25
+Compiling module xil_defaultlib.mod_mul_23
+Compiling module xil_defaultlib.mod_sub_24
+Compiling module xil_defaultlib.BU_3
+Compiling module xil_defaultlib.mod_add_18
+Compiling module xil_defaultlib.Modular_Reduction_21
+Compiling module xil_defaultlib.mod_mul_19
+Compiling module xil_defaultlib.mod_sub_20
+Compiling module xil_defaultlib.BU_4
+Compiling module xil_defaultlib.mod_add_14
+Compiling module xil_defaultlib.Modular_Reduction_17
+Compiling module xil_defaultlib.mod_mul_15
+Compiling module xil_defaultlib.mod_sub_16
+Compiling module xil_defaultlib.BU_5
+Compiling module xil_defaultlib.mod_add
+Compiling module xil_defaultlib.Modular_Reduction
+Compiling module xil_defaultlib.mod_mul
+Compiling module xil_defaultlib.mod_sub
+Compiling module xil_defaultlib.BU_6
+Compiling module unisims_ver.FDCE_default
+Compiling module unisims_ver.FDPE_default
+Compiling module xil_defaultlib.CONTR
+Compiling module xil_defaultlib.CONTR__parameterized0
+Compiling module xil_defaultlib.CONTR__parameterized1
+Compiling module xil_defaultlib.CONTR__parameterized2
+Compiling module xil_defaultlib.CONTR__parameterized3
+Compiling module unisims_ver.MUXF7
+Compiling module xil_defaultlib.CONTR__parameterized4
+Compiling module xil_defaultlib.CONTR__parameterized5
+Compiling module unisims_ver.OBUF
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.RAM64X1S
+Compiling module xil_defaultlib.BRAM
+Compiling module xil_defaultlib.BRAM_13
+Compiling module xil_defaultlib.RU
+Compiling module unisims_ver.RAM32X1S
+Compiling module xil_defaultlib.BRAM__parameterized0
+Compiling module xil_defaultlib.BRAM__parameterized0_12
+Compiling module xil_defaultlib.RU__parameterized0
+Compiling module xil_defaultlib.BRAM__parameterized1
+Compiling module xil_defaultlib.BRAM__parameterized1_11
+Compiling module xil_defaultlib.RU__parameterized1
+Compiling module xil_defaultlib.BRAM__parameterized2
+Compiling module xil_defaultlib.BRAM__parameterized2_10
+Compiling module xil_defaultlib.RU__parameterized2
+Compiling module xil_defaultlib.BRAM__parameterized3
+Compiling module xil_defaultlib.BRAM__parameterized3_9
+Compiling module xil_defaultlib.RU__parameterized3
+Compiling module xil_defaultlib.BRAM__parameterized4
+Compiling module xil_defaultlib.BRAM__parameterized4_8
+Compiling module xil_defaultlib.RU__parameterized4
+Compiling module unisims_ver.FDRE_default
+Compiling module xil_defaultlib.BRAM__parameterized5
+Compiling module xil_defaultlib.BRAM__parameterized5_7
+Compiling module xil_defaultlib.RU__parameterized5
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.NTT
+Compiling module xil_defaultlib.Dual_Port_Ram_Single_clk(INIT_FI...
+Compiling module xil_defaultlib.NTT_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot NTT_tb_func_impl

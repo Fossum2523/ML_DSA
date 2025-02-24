@@ -10,7 +10,7 @@
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/MLDSA/CoeffFromHalfByte.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../test/MLDSA/CoeffFromHalfByte.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/CoeffFromHalfByte.v"/>
         <Attr Name="ImportTime" Val="1736000007"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -19,7 +19,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/MLDSA/Controller.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../test/MLDSA/Controller.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/Controller.v"/>
         <Attr Name="ImportTime" Val="1736003916"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -28,7 +28,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/MLDSA/Data_Mem.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../test/MLDSA/Data_Mem.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/Data_Mem.v"/>
         <Attr Name="ImportTime" Val="1736001445"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -37,7 +37,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/MLDSA/Data_Path.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../test/MLDSA/Data_Path.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/Data_Path.v"/>
         <Attr Name="ImportTime" Val="1736003262"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -53,7 +53,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/MLDSA/ExpandS.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../test/MLDSA/ExpandS.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/ExpandS.v"/>
         <Attr Name="ImportTime" Val="1736000383"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -62,7 +62,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/MLDSA/F_Permutation_Dilithium.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../test/MLDSA/F_Permutation_Dilithium.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/F_Permutation_Dilithium.v"/>
         <Attr Name="ImportTime" Val="1734854589"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -71,7 +71,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/MLDSA/Keccak_dilithium.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../test/MLDSA/Keccak_dilithium.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/Keccak_dilithium.v"/>
         <Attr Name="ImportTime" Val="1734853474"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -87,7 +87,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/MLDSA/rconst.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../test/MLDSA/rconst.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/rconst.v"/>
         <Attr Name="ImportTime" Val="1734329837"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -96,7 +96,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/MLDSA/round.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../test/MLDSA/round.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/round.v"/>
         <Attr Name="ImportTime" Val="1734539762"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -105,7 +105,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/MLDSA/MLDSA.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../test/MLDSA/MLDSA.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/MLDSA.v"/>
         <Attr Name="ImportTime" Val="1736003295"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -115,7 +115,7 @@
     <File Path="$PSRCDIR/sources_1/imports/MLDSA/BRAM.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../test/MLDSA/BRAM.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/BRAM.v"/>
         <Attr Name="ImportTime" Val="1735820145"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -125,7 +125,7 @@
     <File Path="$PSRCDIR/sources_1/imports/MLDSA/padder1.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../test/MLDSA/padder1.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/padder1.v"/>
         <Attr Name="ImportTime" Val="1734760971"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -135,7 +135,7 @@
     <File Path="$PSRCDIR/sources_1/imports/MLDSA/Padder_Dilithium.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../test/MLDSA/Padder_Dilithium.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/Padder_Dilithium.v"/>
         <Attr Name="ImportTime" Val="1734854068"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

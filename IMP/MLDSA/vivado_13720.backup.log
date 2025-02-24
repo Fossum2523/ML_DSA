@@ -1,0 +1,306 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Thu Feb 20 22:11:44 2025
+# Process ID: 13720
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11280 C:\Users\fossu\Desktop\ML_DSA_Syn\IMP\MLDSA\MLDSA.xpr
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/vivado.log
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.xpr
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.6 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kc705/1.6/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+INFO: [Project 1-313] Project file moved from 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA' since last save.
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu1500/1.2/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc707/1.4/board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc709:part0:1.8 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc709/1.8/board.xml as part xc7vx690tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.6/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.7/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu110/1.4/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.0/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.3 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.3/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.4/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu129/production/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.3 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu1525/1.3/board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.1/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_mpsoc:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_mpsoc/1.0/board.xml as part xczu19eg-ffvd1760-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_rfsoc:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_rfsoc/1.0/board.xml as part xczu21dr-ffvd1156-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.1/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.1/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc706/1.4/board.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.3 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.3/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.4/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.2/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.3 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.3/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.4/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1275:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1275/1.0/board.xml as part xczu29dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1285:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1285/1.0/board.xml as part xczu39dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208/production/2.0/board.xml as part xczu48dr-fsvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216/production/2.0/board.xml as part xczu49dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.gen/sources_1'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/F_Permutation_Dilithium.v', nor could it be found using path 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/F_Permutation_Dilithium.v'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Keccak_dilithium.v', nor could it be found using path 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Keccak_dilithium.v'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Padder_Dilithium.v', nor could it be found using path 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Padder_Dilithium.v'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/模板/mux_generate.v', nor could it be found using path 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.srcs/sources_1/imports/模板/mux_generate.v'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2023.2/data/ip'.
+open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:10 . Memory (MB): peak = 1470.082 ; gain = 123.480
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'MLDSA_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'MLDSA_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj MLDSA_tb_vlog.prj"
+ECHO 已關閉。
+ECHO 已關閉。
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CoeffFromHalfByte
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Mem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_Mem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_Path
+WARNING: [VRFC 10-9336] redeclaration of ANSI port 'next_element' is not allowed [C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:71]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Dual_Port_Ram_Single_clk
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/ExpandS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ExpandS
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/F_Permutation.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Keccak.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Keccak
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/MLDSA.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MLDSA
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Padder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Padder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Sampler.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Sampler
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/mux_generate.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/padder1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module padder1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/rconst.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rconst
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/round.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sim_1/imports/MLDSA/MLDSA_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MLDSA_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot MLDSA_tb_behav xil_defaultlib.MLDSA_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 已關閉。
+ECHO 已關閉。
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot MLDSA_tb_behav xil_defaultlib.MLDSA_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3129] assignment to input 'main_mode' [C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/MLDSA.v:54]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/MLDSA.v" Line 1. Module MLDSA doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Controller.v" Line 3. Module Controller doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v" Line 1. Module Data_Path doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Keccak.v" Line 1. Module Keccak doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Padder.v" Line 1. Module Padder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/padder1.v" Line 1. Module padder1 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/F_Permutation.v" Line 1. Module F_Permutation doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/rconst.v" Line 1. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/round.v" Line 10. Module round doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Mem.v" Line 1. Module Data_Mem doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Sampler.v" Line 1. Module Sampler doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/ExpandS.v" Line 1. Module ExpandS doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 3. Module mux_gen(param_in=1088) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" Line 1. Module CoeffFromHalfByte doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" Line 1. Module CoeffFromHalfByte doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/MLDSA.v" Line 1. Module MLDSA doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Controller.v" Line 3. Module Controller doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v" Line 1. Module Data_Path doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Keccak.v" Line 1. Module Keccak doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Padder.v" Line 1. Module Padder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/padder1.v" Line 1. Module padder1 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/F_Permutation.v" Line 1. Module F_Permutation doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/rconst.v" Line 1. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/round.v" Line 10. Module round doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Mem.v" Line 1. Module Data_Mem doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Sampler.v" Line 1. Module Sampler doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/ExpandS.v" Line 1. Module ExpandS doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 3. Module mux_gen(param_in=1088) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" Line 1. Module CoeffFromHalfByte doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" Line 1. Module CoeffFromHalfByte doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.padder1
+Compiling module xil_defaultlib.Padder
+Compiling module xil_defaultlib.rconst
+Compiling module xil_defaultlib.round
+Compiling module xil_defaultlib.F_Permutation
+Compiling module xil_defaultlib.Keccak
+Compiling module xil_defaultlib.Dual_Port_Ram_Single_clk
+Compiling module xil_defaultlib.Data_Mem
+Compiling module xil_defaultlib.mux_gen(param_in=1088)
+Compiling module xil_defaultlib.CoeffFromHalfByte
+Compiling module xil_defaultlib.ExpandS
+Compiling module xil_defaultlib.Sampler
+Compiling module xil_defaultlib.Data_Path
+Compiling module xil_defaultlib.MLDSA
+Compiling module xil_defaultlib.MLDSA_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot MLDSA_tb_behav
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 1509.363 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "MLDSA_tb_behav -key {Behavioral:sim_1:Functional:MLDSA_tb} -tclbatch {MLDSA_tb.tcl} -view {C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA_tb_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA_tb_behav.wcfg
+source MLDSA_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+padder_out: 000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001f0404ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff.
+$stop called at time : 361 ns : File "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sim_1/imports/MLDSA/MLDSA_tb.v" Line 81
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'MLDSA_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 1588.367 ; gain = 79.004
+run 10 us
+fout: 2f587e31480709f8f4b33bfa685b6ba6451dddd6c78aca30eec07dd2a4d7d9ed838f748707fcda3ab36f459650f3d76dc28b89956f813eb5ce450e97106526b6acc0939dfaae297e681f5698cb063b05315b2b374af88efd9c089fe793fc67e2420b4dd30138f14fa4970fd23a3bb9400920bce83750376e81f8ababf200c27668aa7ae7d3f52fddccf36c0e578001f3667b89b30401f98fbb5b52697c268809d4ac993d6fa5d4eb20869b196b33729e0724c632ec0ea29e4c2f93a312620c25de72acb56bfd0434.
+sha_out: 0000000000000000000000000000000000000000000000000000000000000000acc0939dfaae297e681f5698cb063b05315b2b374af88efd9c089fe793fc67e2420b4dd30138f14fa4970fd23a3bb9400920bce83750376e81f8ababf200c27668aa7ae7d3f52fddccf36c0e578001f3667b89b30401f98fbb5b52697c268809d4ac993d6fa5d4eb20869b196b33729e0724c632ec0ea29e4c2f93a312620c25de72acb56bfd0434.
+current_wave_config {MLDSA_tb_behav.wcfg}
+MLDSA_tb_behav.wcfg
+add_wave {{/MLDSA_tb/uut/clk}} {{/MLDSA_tb/uut/reset}} 
+current_wave_config {MLDSA_tb_behav.wcfg}
+MLDSA_tb_behav.wcfg
+add_wave {{/MLDSA_tb/uut/start}} 
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 10 us
+padder_out: 000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001f0404ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff.
+$stop called at time : 361 ns : File "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sim_1/imports/MLDSA/MLDSA_tb.v" Line 81
+current_wave_config {MLDSA_tb_behav.wcfg}
+MLDSA_tb_behav.wcfg
+add_wave {{/MLDSA_tb/uut/controller_inst/start}} {{/MLDSA_tb/uut/controller_inst/data_in_ready}} 
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 10 us
+padder_out: 000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001f0404ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff.
+$stop called at time : 361 ns : File "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sim_1/imports/MLDSA/MLDSA_tb.v" Line 81
+current_wave_config {MLDSA_tb_behav.wcfg}
+MLDSA_tb_behav.wcfg
+add_wave {{/MLDSA_tb/uut/data_in}} 
+current_wave_config {MLDSA_tb_behav.wcfg}
+MLDSA_tb_behav.wcfg
+add_wave {{/MLDSA_tb/uut/main_mode}} 
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 10 us
+padder_out: 000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001f0404ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff.
+$stop called at time : 361 ns : File "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sim_1/imports/MLDSA/MLDSA_tb.v" Line 81
+current_wave_config {MLDSA_tb_behav.wcfg}
+MLDSA_tb_behav.wcfg
+add_wave {{/MLDSA_tb/uut/data_path_inst/KK/in}} {{/MLDSA_tb/uut/data_path_inst/KK/in_ready}} {{/MLDSA_tb/uut/data_path_inst/KK/is_last}} {{/MLDSA_tb/uut/data_path_inst/KK/squeeze}} {{/MLDSA_tb/uut/data_path_inst/KK/mode}} {{/MLDSA_tb/uut/data_path_inst/KK/sha_hold}} {{/MLDSA_tb/uut/data_path_inst/KK/byte_num}} {{/MLDSA_tb/uut/data_path_inst/KK/out}} {{/MLDSA_tb/uut/data_path_inst/KK/out_ready}} 
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 10 us
+padder_out: 000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001f0404ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff.
+$stop called at time : 361 ns : File "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sim_1/imports/MLDSA/MLDSA_tb.v" Line 81
+run 10 us
+fout: 2f587e31480709f8f4b33bfa685b6ba6451dddd6c78aca30eec07dd2a4d7d9ed838f748707fcda3ab36f459650f3d76dc28b89956f813eb5ce450e97106526b6acc0939dfaae297e681f5698cb063b05315b2b374af88efd9c089fe793fc67e2420b4dd30138f14fa4970fd23a3bb9400920bce83750376e81f8ababf200c27668aa7ae7d3f52fddccf36c0e578001f3667b89b30401f98fbb5b52697c268809d4ac993d6fa5d4eb20869b196b33729e0724c632ec0ea29e4c2f93a312620c25de72acb56bfd0434.
+sha_out: 0000000000000000000000000000000000000000000000000000000000000000acc0939dfaae297e681f5698cb063b05315b2b374af88efd9c089fe793fc67e2420b4dd30138f14fa4970fd23a3bb9400920bce83750376e81f8ababf200c27668aa7ae7d3f52fddccf36c0e578001f3667b89b30401f98fbb5b52697c268809d4ac993d6fa5d4eb20869b196b33729e0724c632ec0ea29e4c2f93a312620c25de72acb56bfd0434.
+current_wave_config {MLDSA_tb_behav.wcfg}
+MLDSA_tb_behav.wcfg
+add_wave {{/MLDSA_tb/uut/controller_inst/curr_state}} 
+run 10 us
+current_wave_config {MLDSA_tb_behav.wcfg}
+MLDSA_tb_behav.wcfg
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/Rho_din}} {{/MLDSA_tb/uut/data_path_inst/DM/Rho_dout}} {{/MLDSA_tb/uut/data_path_inst/DM/Rho_prime_en}} {{/MLDSA_tb/uut/data_path_inst/DM/Rho_prime_mode}} {{/MLDSA_tb/uut/data_path_inst/DM/Rho_prime_din}} {{/MLDSA_tb/uut/data_path_inst/DM/Rho_prime_dout}} 
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 10 us
+padder_out: 000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001f0404ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff.
+$stop called at time : 361 ns : File "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sim_1/imports/MLDSA/MLDSA_tb.v" Line 81
+run 10 us
+fout: 2f587e31480709f8f4b33bfa685b6ba6451dddd6c78aca30eec07dd2a4d7d9ed838f748707fcda3ab36f459650f3d76dc28b89956f813eb5ce450e97106526b6acc0939dfaae297e681f5698cb063b05315b2b374af88efd9c089fe793fc67e2420b4dd30138f14fa4970fd23a3bb9400920bce83750376e81f8ababf200c27668aa7ae7d3f52fddccf36c0e578001f3667b89b30401f98fbb5b52697c268809d4ac993d6fa5d4eb20869b196b33729e0724c632ec0ea29e4c2f93a312620c25de72acb56bfd0434.
+sha_out: 0000000000000000000000000000000000000000000000000000000000000000acc0939dfaae297e681f5698cb063b05315b2b374af88efd9c089fe793fc67e2420b4dd30138f14fa4970fd23a3bb9400920bce83750376e81f8ababf200c27668aa7ae7d3f52fddccf36c0e578001f3667b89b30401f98fbb5b52697c268809d4ac993d6fa5d4eb20869b196b33729e0724c632ec0ea29e4c2f93a312620c25de72acb56bfd0434.
+current_wave_config {MLDSA_tb_behav.wcfg}
+MLDSA_tb_behav.wcfg
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/Kata_din}} {{/MLDSA_tb/uut/data_path_inst/DM/Kata_dout}} 
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 10 us
+padder_out: 000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001f0404ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff.
+$stop called at time : 361 ns : File "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sim_1/imports/MLDSA/MLDSA_tb.v" Line 81
+run 10 us
+fout: 2f587e31480709f8f4b33bfa685b6ba6451dddd6c78aca30eec07dd2a4d7d9ed838f748707fcda3ab36f459650f3d76dc28b89956f813eb5ce450e97106526b6acc0939dfaae297e681f5698cb063b05315b2b374af88efd9c089fe793fc67e2420b4dd30138f14fa4970fd23a3bb9400920bce83750376e81f8ababf200c27668aa7ae7d3f52fddccf36c0e578001f3667b89b30401f98fbb5b52697c268809d4ac993d6fa5d4eb20869b196b33729e0724c632ec0ea29e4c2f93a312620c25de72acb56bfd0434.
+sha_out: 0000000000000000000000000000000000000000000000000000000000000000acc0939dfaae297e681f5698cb063b05315b2b374af88efd9c089fe793fc67e2420b4dd30138f14fa4970fd23a3bb9400920bce83750376e81f8ababf200c27668aa7ae7d3f52fddccf36c0e578001f3667b89b30401f98fbb5b52697c268809d4ac993d6fa5d4eb20869b196b33729e0724c632ec0ea29e4c2f93a312620c25de72acb56bfd0434.
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA_tb_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn\IMP\MLDSA\MLDSA.srcs\sim_1\imports\MLDSA\MLDSA_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn\IMP\MLDSA\MLDSA.srcs\sources_1\imports\MLDSA\Data_Path.v:]
+exit
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting Vivado at Fri Feb 21 02:21:03 2025...

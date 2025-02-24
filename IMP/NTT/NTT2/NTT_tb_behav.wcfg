@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="200.600 ns"></ZoomStartTime>
-      <ZoomEndTime time="377.001 ns"></ZoomEndTime>
-      <Cursor1Time time="230.000 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="6.990001 us"></ZoomEndTime>
+      <Cursor1Time time="0.120000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="224"></NameColumnWidth>
-      <ValueColumnWidth column_width="116"></ValueColumnWidth>
+      <ValueColumnWidth column_width="108"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="24" />
+   <WVObjectSize size="27" />
    <wvobject fp_name="/NTT_tb/reset" type="logic">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
@@ -127,6 +127,10 @@
       <obj_property name="ObjectShortName">out_b[22:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
+   <wvobject fp_name="/NTT_tb/uut/out_ready" type="logic">
+      <obj_property name="ElementShortName">out_ready</obj_property>
+      <obj_property name="ObjectShortName">out_ready</obj_property>
+   </wvobject>
    <wvobject fp_name="/NTT_tb/uut/BU_7/a" type="array">
       <obj_property name="ElementShortName">a[22:0]</obj_property>
       <obj_property name="ObjectShortName">a[22:0]</obj_property>
@@ -135,6 +139,16 @@
    <wvobject fp_name="/NTT_tb/uut/BU_7/b" type="array">
       <obj_property name="ElementShortName">b[22:0]</obj_property>
       <obj_property name="ObjectShortName">b[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/NTT_addr_u" type="array">
+      <obj_property name="ElementShortName">NTT_addr_u[7:0]</obj_property>
+      <obj_property name="ObjectShortName">NTT_addr_u[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/NTT_addr_d" type="array">
+      <obj_property name="ElementShortName">NTT_addr_d[7:0]</obj_property>
+      <obj_property name="ObjectShortName">NTT_addr_d[7:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

@@ -38,10 +38,10 @@ module Controller
 
     localparam  [2:0]   IDLE            = 3'd0,
                         SEED_PRODUCE    = 3'd1,
-                        SHA_CLEAR       = 3'd5,
-                        SAMPLE_S        = 3'd2,
-                        REJECTION_S     = 3'd3,
-                        SAMPLE_WAIT     = 3'd4;         
+                        SHA_CLEAR       = 3'd2,
+                        SAMPLE_S        = 3'd3,
+                        REJECTION_S     = 3'd4,
+                        SAMPLE_WAIT     = 3'd5;         
     
     //seed_in_sel
     localparam  [1:0]   RHO         = 2'b00,
@@ -152,7 +152,7 @@ module Controller
             end 
             SEED_PRODUCE: begin
                 if(sha_out_ready)   
-                    next_state = SAMPLE_WAIT;//SHA_CLEAR
+                    next_state = SHA_CLEAR;//SHA_CLEAR
                 else                
                     next_state = SEED_PRODUCE;
             end

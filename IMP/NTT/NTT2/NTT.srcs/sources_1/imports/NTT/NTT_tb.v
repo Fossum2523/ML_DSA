@@ -6,6 +6,7 @@ module NTT_tb;
     parameter BIT_LEN = 23;
 	parameter DLEN = 23;
 	parameter HLEN = 10;
+    parameter CLK_PERIOD = 100; // Clock cycle time in ns (e.g., 10ns for 100MHz)
 
     // Testbench signals
     reg clk;
@@ -16,7 +17,8 @@ module NTT_tb;
     wire               out_ready;
     wire [BIT_LEN-1:0] NTT_out_u;
     wire [BIT_LEN-1:0] NTT_out_d;
-    wire [7:0] NTT_addr;
+    wire [7:0] NTT_addr_u;
+    wire [7:0] NTT_addr_d;
 
 	reg   [DLEN-1:0]      s1_data_a;
     reg   [DLEN-1:0]      s1_data_b;
@@ -30,7 +32,7 @@ module NTT_tb;
     wire  [DLEN-1:0]      s1_q_b;
 
 	reg zeta_en;
-    wire        zeta_addr_0;   //是不是可以改成 parameter
+    wire        zeta_addr_0;   //?��不是?��以改??? parameter
     wire [22:0] zeta_do_0;
 
     integer i;
@@ -39,14 +41,15 @@ module NTT_tb;
     NTT #(.BIT_LEN(BIT_LEN)) uut (
         .clk(clk),
         .reset(reset),
-        .mode(1'b1),
+        .mode(1'b0),
         .in_ready(in_ready),
         .NTT_in_u(s1_q_a),
         .NTT_in_d(s1_q_b),
         .out_ready(out_ready),
         .NTT_out_u(NTT_out_u),
         .NTT_out_d(NTT_out_d),
-        .NTT_addr(NTT_addr)
+        .NTT_addr_u(NTT_addr_u),
+        .NTT_addr_d(NTT_addr_d)
     );
 
     // 	input clk,
@@ -62,7 +65,9 @@ module NTT_tb;
 		.DLEN(23),
     	.HLEN(10),
 		// .INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/NTT/s1_0.txt")
-		.INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/NTT/s1_Hat_0.txt")
+		// .INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/NTT/s1_Hat_0.txt")
+		.INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/NTT/s1_0.txt")
+		// .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/NTT/s1_Hat_0.txt")
 	)s1(
         .clk_a(clk),
         .clk_b(clk),
@@ -81,16 +86,16 @@ module NTT_tb;
     // Clock generation
     initial begin
         clk = 1;
-        forever #5 clk = ~clk;
+        forever #(CLK_PERIOD / 2) clk = ~clk;
     end
 
     // Task to apply reset
     task apply_reset;
         begin
             reset = 1;
-            #20;
+            #(2 * CLK_PERIOD);
             reset = 0;
-            #100;
+            #(10 * CLK_PERIOD);
             reset = 1;
         end
     endtask
@@ -105,18 +110,18 @@ module NTT_tb;
                     in_ready = 1;
                 else
                     in_ready = 0;
-                // s1_addr_a = i;
-                // s1_addr_b = i + 128;
-                s1_addr_a = i * 2;
-                s1_addr_b = i * 2 + 1;
-                #10;
+                s1_addr_a = i;
+                s1_addr_b = i + 128;
+                // s1_addr_a = i * 2;
+                // s1_addr_b = i * 2 + 1;
+                #(CLK_PERIOD);
             end
             s1_en_a = 0;
             s1_en_b = 0;
         end
     endtask
 
-    // Test sequence
+    // Test sequence 
     initial begin
         // Initialize signals
         in_ready = 0;
@@ -133,8 +138,8 @@ module NTT_tb;
         // Apply reset
         apply_reset();
 
-        #100;
-        #1;
+        #(10 * CLK_PERIOD);
+        // #1;
 
         // Send s1 data to NTT
         send_NTT_in();
@@ -145,9 +150,9 @@ module NTT_tb;
     end
 
     // Monitor outputs during simulation
-    initial begin
-        $monitor($time, " in_ready=%b, NTT_in_u=%d, NTT_in_d=%d, NTT_out_u=%d, NTT_out_d=%d, NTT_addr=%d", 
-            in_ready, NTT_in_u, NTT_in_d, NTT_out_u, NTT_out_d, NTT_addr);
-    end
+    // initial begin
+    //     $monitor($time, " in_ready=%b, NTT_in_u=%d, NTT_in_d=%d, NTT_out_u=%d, NTT_out_d=%d, NTT_addr=%d", 
+    //         in_ready, NTT_in_u, NTT_in_d, NTT_out_u, NTT_out_d, NTT_addr);
+    // end
 
 endmodule
