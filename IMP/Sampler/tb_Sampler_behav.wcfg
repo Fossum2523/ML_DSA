@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="16,036.500 ns"></ZoomStartTime>
-      <ZoomEndTime time="16,584.001 ns"></ZoomEndTime>
-      <Cursor1Time time="16,315.000 ns"></Cursor1Time>
+      <ZoomStartTime time="368.333 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,126.334 ns"></ZoomEndTime>
+      <Cursor1Time time="1,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="134"></NameColumnWidth>
-      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+      <NameColumnWidth column_width="194"></NameColumnWidth>
+      <ValueColumnWidth column_width="79"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="26" />
+   <WVObjectSize size="27" />
    <wvobject fp_name="/Sampler_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -131,5 +131,9 @@
    <wvobject fp_name="/Sampler_tb/mem_sel" type="array">
       <obj_property name="ElementShortName">mem_sel[3:0]</obj_property>
       <obj_property name="ObjectShortName">mem_sel[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/sampler_in_ready_buffer" type="logic">
+      <obj_property name="ElementShortName">sampler_in_ready_buffer</obj_property>
+      <obj_property name="ObjectShortName">sampler_in_ready_buffer</obj_property>
    </wvobject>
 </wave_config>

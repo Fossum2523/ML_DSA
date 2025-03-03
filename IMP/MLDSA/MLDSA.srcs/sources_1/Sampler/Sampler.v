@@ -1,9 +1,9 @@
 module Sampler(
-    input                   clk,
-    input                   reset,
-    input       [1:0]       mode,
-    input                   sampler_in_ready,
-    input       [1343:0]    sampler_in,
+    input               clk,
+    input               reset,
+    input  [1:0]        mode,
+    input               sampler_in_ready,
+    input  [1343:0]     sampler_in,
 
     //*---ExpandS---"*/
     output              sampler_squeeze,  // Flag for squeezing condition
@@ -22,8 +22,8 @@ module Sampler(
     /*---A---"*/
     output  [22:0]      A0,             // Write data A0 to Mem
     output  [22:0]      A1,             // Write data A1 to Mem
-    output  [7:0]      addr_A0,        // Write addresses for A0
-    output  [7:0]      addr_A1,        // Write addresses for A1
+    output  [7:0]       addr_A0,        // Write addresses for A0
+    output  [7:0]       addr_A1,        // Write addresses for A1
     output              en_A0,           // enable for A values
     output              we_A0,           // Write enable for A values
     output              en_A1,           // enable for A values

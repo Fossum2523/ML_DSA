@@ -1,65 +1,13 @@
 Vivado Simulator v2023.2
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Sampler_tb_behav xil_defaultlib.Sampler_tb xil_defaultlib.glbl -log elaborate.log 
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Sampler_tb_behav xil_defaultlib.Sampler_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 5 for port 'sel' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandA.v:47]
-WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 5 for port 'sel' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandMASK.v:70]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_a' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:187]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_b' [C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:188]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 5 for port 'sel' [C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandA.v:47]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 5 for port 'sel' [C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandMASK.v:70]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_a' [C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:187]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 23 for port 'y_q_b' [C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Sampler/Sampler.srcs/sim_1/new/Sampler_tb.v:188]
 Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/Sampler.v" Line 1. Module Sampler doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandS.v" Line 1. Module ExpandS doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1088) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" Line 1. Module CoeffFromHalfByte doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" Line 1. Module CoeffFromHalfByte doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandA.v" Line 1. Module ExpandA doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_m=48) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandMASK.v" Line 1. Module ExpandMASK doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1080,param_m=36) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/SampleInBall.v" Line 1. Module SampleInBall doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1088) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Data_Mem.v" Line 1. Module Data_Mem doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk(HLEN=12) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk(HLEN=8) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/Sampler.v" Line 1. Module Sampler doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandS.v" Line 1. Module ExpandS doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1088) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" Line 1. Module CoeffFromHalfByte doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v" Line 1. Module CoeffFromHalfByte doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandA.v" Line 1. Module ExpandA doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_m=48) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/ExpandMASK.v" Line 1. Module ExpandMASK doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1080,param_m=36) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/SampleInBall.v" Line 1. Module SampleInBall doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sources_1/imports/MLDSA/mux_generate.v" Line 2. Module mux_gen(param_in=1088) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Data_Mem.v" Line 1. Module Data_Mem doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk(HLEN=12) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/USER/Desktop/ML_DSA_syn/IMP/SHA3_imp/Sampler/Sampler.srcs/sim_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v" Line 1. Module Dual_Port_Ram_Single_clk(HLEN=8) doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.mux_gen(param_in=1088)
-Compiling module xil_defaultlib.CoeffFromHalfByte
-Compiling module xil_defaultlib.ExpandS
-Compiling module xil_defaultlib.mux_gen(param_m=48)
-Compiling module xil_defaultlib.ExpandA
-Compiling module xil_defaultlib.mux_gen(param_in=1080,param_m=36...
-Compiling module xil_defaultlib.ExpandMASK
-Compiling module xil_defaultlib.SampleInBall
-Compiling module xil_defaultlib.Sampler
-Compiling module xil_defaultlib.Dual_Port_Ram_Single_clk
-Compiling module xil_defaultlib.Dual_Port_Ram_Single_clk(HLEN=12...
-Compiling module xil_defaultlib.Dual_Port_Ram_Single_clk(HLEN=8)
-Compiling module xil_defaultlib.Data_Mem
-Compiling module xil_defaultlib.Sampler_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot Sampler_tb_behav
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

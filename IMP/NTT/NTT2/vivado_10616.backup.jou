@@ -1,0 +1,124 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Thu Feb 20 13:32:58 2025
+# Process ID: 10616
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18448 C:\Users\fossu\Desktop\ML_DSA_Syn\IMP\NTT\NTT2\NTT.xpr
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/vivado.log
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.xpr
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/MDCU.v] -no_script -reset -force -quiet
+remove_files  C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/MDCU.v
+file delete -force C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/MDCU.v
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT_tb_behav.wcfg
+source NTT_tb.tcl
+run 10 us
+close_sim
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top NTT [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+create_fileset -simset sim_2
+set_property SOURCE_SET sources_1 [get_filesets sim_2]
+current_fileset -simset [ get_filesets sim_2 ]
+set_property top NTT_tb [get_filesets sim_2]
+set_property top_lib xil_defaultlib [get_filesets sim_2]
+reset_simulation -simset sim_2 -mode post-implementation -type timing
+launch_simulation -simset [get_filesets sim_2 ] -mode post-implementation -type timing
+source NTT_tb.tcl
+relaunch_sim
+relaunch_sim
+restart
+run 10 us
+current_wave_config {Untitled 1}
+add_wave {{/NTT_tb/uut/out_ready}} 
+current_wave_config {Untitled 1}
+add_wave {{/NTT_tb/uut/reset}} 
+current_wave_config {Untitled 1}
+add_wave {{/NTT_tb/uut/mode}} 
+current_wave_config {Untitled 1}
+add_wave {{/NTT_tb/uut/clk}} 
+current_wave_config {Untitled 1}
+add_wave {{/NTT_tb/uut/NTT_out_d}} 
+current_wave_config {Untitled 1}
+add_wave {{/NTT_tb/uut/NTT_out_u}} 
+current_wave_config {Untitled 1}
+add_wave {{/NTT_tb/uut/NTT_in_d}} 
+current_wave_config {Untitled 1}
+add_wave {{/NTT_tb/uut/NTT_in_u}} 
+restart
+run 10 us
+relaunch_sim
+run 10 us
+close_sim
+reset_simulation -simset sim_2 -mode post-implementation -type functional
+launch_simulation -simset [get_filesets sim_2 ] -mode post-implementation -type functional
+source NTT_tb.tcl
+run 10 us
+relaunch_sim
+run 10 us
+update_compile_order -fileset sources_1
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT_tb_func_impl.wcfg}
+add_files -fileset sim_2 -norecurse C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT_tb_func_impl.wcfg
+set_property xsim.view C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT_tb_func_impl.wcfg [get_filesets sim_2]
+close_sim
+current_fileset -simset [ get_filesets sim_1 ]
+launch_simulation
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT_tb_behav.wcfg
+source NTT_tb.tcl
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+current_wave_config {NTT_tb_behav.wcfg}
+add_wave {{/NTT_tb/uut/RU_1/shift_reg_u}} 
+current_wave_config {NTT_tb_behav.wcfg}
+add_wave {{/NTT_tb/uut/RU_1/shift_reg_d}} 
+restart
+run 10 us
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT_tb_behav.wcfg}
+close_sim
+current_fileset -simset [ get_filesets sim_2 ]
+launch_simulation -simset [get_filesets sim_2 ] -mode post-implementation -type timing
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT_tb_func_impl.wcfg
+source NTT_tb.tcl
+run 10 us
+relaunch_sim
+run 10 us
+close_sim
+check_timing -verbose -name timing_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+refresh_design
+launch_simulation -simset [get_filesets sim_2 ] -mode post-implementation -type timing
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT_tb_func_impl.wcfg
+source NTT_tb.tcl
+run 10 us
+close_sim

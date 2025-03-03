@@ -4,67 +4,60 @@
   <File Type="PA-TCL" Name="NTT.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="NTT_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="NTT_reports.tcl"/>
-  <File Type="OPT-RQA-PB" Name="NTT_rqa_opted.pb"/>
+  <File Type="BITSTR-MSK" Name="NTT.msk"/>
+  <File Type="ROUTE-CLK" Name="NTT_clock_utilization_routed.rpt"/>
+  <File Type="RDI-RDI" Name="NTT.vdi"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="NTT_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="NTT.bit"/>
+  <File Type="BG-DRC" Name="NTT.drc"/>
+  <File Type="BG-BGN" Name="NTT.bgn"/>
+  <File Type="BG-BIN" Name="NTT.bin"/>
+  <File Type="BITSTR-RBT" Name="NTT.rbt"/>
+  <File Type="BITSTR-NKY" Name="NTT.nky"/>
+  <File Type="BITSTR-BMM" Name="NTT_bd.bmm"/>
   <File Type="BITSTR-MMI" Name="NTT.mmi"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="NTT_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="NTT_timing_summary_init.rpt"/>
-  <File Type="OPT-TIMING" Name="NTT_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="NTT_opt.dcp"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="NTT_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-SYSDEF" Name="NTT.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="NTT.ltx"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="OPT-DRC" Name="NTT_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="NTT.hwdef"/>
-  <File Type="PWROPT-DCP" Name="NTT_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="NTT_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="NTT_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="NTT_placed.dcp"/>
   <File Type="PLACE-IO" Name="NTT_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="NTT_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="NTT_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="NTT_utilization_placed.pb"/>
   <File Type="PLACE-CTRL" Name="NTT_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="NTT_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="NTT_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BIN" Name="NTT.bin"/>
-  <File Type="PLACE-TIMING" Name="NTT_timing_summary_placed.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="NTT_power_routed.rpx"/>
-  <File Type="PLACE-RQA-PB" Name="NTT_rqa_placed.pb"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="NTT_postplace_pwropt.dcp"/>
-  <File Type="BITSTR-MSK" Name="NTT.msk"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="NTT_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="NTT_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="NTT_drc_physopted.rpt"/>
-  <File Type="BITSTR-RBT" Name="NTT.rbt"/>
-  <File Type="PHYSOPT-TIMING" Name="NTT_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="NTT_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="NTT_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="NTT_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="NTT_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="NTT_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="NTT_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="NTT_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="NTT_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="NTT_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-RQS-PB" Name="NTT_rqs_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="NTT_power_routed.rpx"/>
   <File Type="ROUTE-STATUS" Name="NTT_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="NTT_route_status.pb"/>
+  <File Type="ROUTE-DCP" Name="NTT_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="NTT_routed_error.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="NTT_routed_bb.dcp"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="NTT_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="NTT_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="NTT_timing_summary_routed.rpx"/>
   <File Type="ROUTE-SIMILARITY" Name="NTT_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="NTT_clock_utilization_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW" Name="NTT_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="NTT_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="NTT_bus_skew_routed.rpx"/>
+  <File Type="OPT-DCP" Name="NTT_opt.dcp"/>
+  <File Type="PLACE-DCP" Name="NTT_placed.dcp"/>
+  <File Type="PWROPT-DCP" Name="NTT_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="NTT_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="NTT_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="NTT_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="NTT_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="NTT_tb_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="NTT_tb_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="NTT_tb_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="NTT_tb_bus_skew_postroute_physopted.rpt"/>
-  <File Type="BG-BIT" Name="NTT.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="NTT_tb_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="NTT_tb_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-NKY" Name="NTT.nky"/>
-  <File Type="BITSTR-BMM" Name="NTT_bd.bmm"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="NTT_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="NTT_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="NTT_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="NTT_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="NTT_bus_skew_postroute_physopted.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="NTT_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="NTT_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="NTT_methodology_drc_routed.rpx"/>
   <File Type="PDI-FILE" Name="NTT.pdi"/>
   <File Type="BOOT-PDI-FILE" Name="NTT_boot.pdi"/>
   <File Type="PL-PDI-FILE" Name="NTT_pld.pdi"/>
@@ -73,13 +66,6 @@
   <File Type="RNPI_FILE" Name="NTT.rnpi"/>
   <File Type="NPI_FILE" Name="NTT.npi"/>
   <File Type="RBD_FILE" Name="NTT.rbd"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="NTT.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="NTT.sysdef"/>
-  <File Type="BG-BGN" Name="NTT.bgn"/>
-  <File Type="BG-DRC" Name="NTT.drc"/>
-  <File Type="RDI-RDI" Name="NTT.vdi"/>
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="ROUTE-RQS" Name="NTT_routed.rqs"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="NTT_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
@@ -254,9 +240,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
@@ -266,5 +250,6 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
+    <Step Id="write_device_image"/>
   </Strategy>
 </GenRun>
