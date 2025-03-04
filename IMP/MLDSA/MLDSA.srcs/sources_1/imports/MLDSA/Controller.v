@@ -168,7 +168,7 @@ module Controller
         i_sti_buf <= (curr_state != next_state);
       end
 
-    always @ (posedge clk) begin
+    always @ (posedge clk or posedge reset) begin
         if (reset)
             curr_state <= IDLE;
         else 
@@ -222,7 +222,10 @@ module Controller
                     next_state = REJECTION_A;
             end
             NTT_S1: begin
-                next_state = NTT_S1;
+                if(NTT_done)
+                    next_state = SAMPLE_WAIT;
+                else
+                    next_state = NTT_S1;
             end
             SAMPLE_WAIT: begin
                 next_state = SAMPLE_WAIT;

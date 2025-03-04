@@ -193,11 +193,11 @@ module Data_Path
     assign Rho_prime_din    = sha_out[767:256];
     assign Kata_din         = sha_out[1023:768];
     //---enable s1 mem
-    assign s1_addr_a = mem_sel ? {index[1:0],NTT_in_u} : {index[1:0],addr_z0};
-    assign s1_addr_b = mem_sel ? {index[1:0],NTT_in_d} : {index[1:0],addr_z1};
-    assign s1_en_z0 = (~index[3]) & en_z0;
+    assign s1_addr_a = mem_sel ? {index[1:0],NTT_in_addr_u} : {index[1:0],addr_z0};
+    assign s1_addr_b = mem_sel ? {index[1:0],NTT_in_addr_d} : {index[1:0],addr_z1};
+    assign s1_en_z0 = (~index[3]) & (en_z0 | NTT_data_en);
     assign s1_we_z0 = (~index[3]) & we_z0;
-    assign s1_en_z1 = (~index[3]) & en_z1;
+    assign s1_en_z1 = (~index[3]) & (en_z1 | NTT_data_en);
     assign s1_we_z1 = (~index[3]) & we_z1;
     //---enable s2 mem
     assign s2_en_z0 = index[3] & en_z0;
@@ -313,6 +313,18 @@ module Data_Path
         .c_we_b(we_cj),
         .c_q_a(c_q_a),
         .c_q_b(c_q_b)
+
+        // /*---t---*/
+        // .t_data_a(t0),
+        // .t_data_b(t1),//
+        // .t_addr_a(addr_t0),
+        // .t_addr_b(addr_t1),
+        // .t_en_a(en_t0),
+        // .t_en_b(en_t1),
+        // .t_we_a(we_t0),
+        // .t_we_b(we_t1),
+        // .t_q_a(t1_q_a),
+        // .t_q_b(t1_q_b)
     );
 
     Sampler Sampler_(

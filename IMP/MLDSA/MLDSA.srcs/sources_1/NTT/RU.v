@@ -73,8 +73,8 @@ module RU#(
     genvar i_u;
     generate
         for (i_u = 0; i_u < depth; i_u = i_u + 1) begin : shift_registers_u
-            always @(posedge clk or negedge reset) begin
-                if (!reset)
+            always @(posedge clk) begin
+                if (reset)
                     shift_reg_u[i_u] <= 0;
                 else if (i_u == 0)
                     shift_reg_u[i_u] <= switch ? shift_reg_d[depth-1] : in_u;
@@ -87,8 +87,8 @@ module RU#(
     genvar i_d;
     generate
         for (i_d = 0; i_d < depth; i_d = i_d + 1) begin : shift_registers_d
-            always @(posedge clk or negedge reset) begin
-                if (!reset)
+            always @(posedge clk) begin
+                if (reset)
                     shift_reg_d[i_d] <= 0;
                 else if (i_d == 0)
                     shift_reg_d[i_d] <= in_d;

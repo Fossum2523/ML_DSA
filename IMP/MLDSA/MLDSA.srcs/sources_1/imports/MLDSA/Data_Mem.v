@@ -1,5 +1,5 @@
 module Data_Mem
-#(  parameter DLEN = 23, S_HLEN = 10, A_HLEN = 12, Y_HLEN = 10, C_HLEN = 8)
+#(  parameter DLEN = 23, S_HLEN = 10, A_HLEN = 12, Y_HLEN = 10, C_HLEN = 8, T_HLEN = 10)
 (
     input clk,
     input reset,
@@ -80,7 +80,19 @@ module Data_Mem
     input                   c_we_a,
     input                   c_we_b,
     output  [DLEN-1:0]      c_q_a,
-    output  [DLEN-1:0]      c_q_b
+    output  [DLEN-1:0]      c_q_b,
+
+    /*---t---*/
+    input   [DLEN-1:0]      t_data_a,
+    input   [DLEN-1:0]      t_data_b,
+    input   [T_HLEN - 1:0]  t_addr_a_t0,
+    input   [T_HLEN - 1:0]  t_addr_b_t1,
+    input                   t_en_a,
+    input                   t_en_b,
+    input                   t_we_a,
+    input                   t_we_b,
+    output  [DLEN-1:0]      t_q_a,
+    output  [DLEN-1:0]      t_q_b
     );
 
     localparam  LOAD_SEED = 1'b0,
