@@ -1,0 +1,17 @@
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_bit_converter_behav xil_defaultlib.tb_bit_converter xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Bit_Converter/Bit_Converter.srcs/sources_1/imports/Power2Round/Bit_Converter.v" Line 1. Module Bit_Converter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Bit_Converter/Bit_Converter.srcs/sources_1/imports/Power2Round/Bit_Converter.v" Line 1. Module Bit_Converter doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Bit_Converter
+Compiling module xil_defaultlib.tb_bit_converter
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_bit_converter_behav

@@ -18,10 +18,14 @@
   <File Type="BITSTR-MMI" Name="NTT.mmi"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="NTT_methodology_drc_routed.rpt"/>
   <File Type="BITSTR-SYSDEF" Name="NTT.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="NTT_methodology_drc_routed.pb"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="NTT.ltx"/>
+  <File Type="BOOT-PDI-FILE" Name="NTT_boot.pdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="NPI_FILE" Name="NTT.npi"/>
   <File Type="OPT-DRC" Name="NTT_drc_opted.rpt"/>
+  <File Type="RBD_FILE" Name="NTT.rbd"/>
   <File Type="OPT-HWDEF" Name="NTT.hwdef"/>
   <File Type="PLACE-IO" Name="NTT_io_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="NTT_utilization_placed.rpt"/>
@@ -55,17 +59,13 @@
   <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="NTT_timing_summary_postroute_physopted.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="NTT_bus_skew_postroute_physopted.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="NTT_bus_skew_postroute_physopted.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="NTT_methodology_drc_routed.pb"/>
   <File Type="ROUTE-DRC-RPX" Name="NTT_drc_routed.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="NTT_methodology_drc_routed.rpx"/>
   <File Type="PDI-FILE" Name="NTT.pdi"/>
-  <File Type="BOOT-PDI-FILE" Name="NTT_boot.pdi"/>
   <File Type="PL-PDI-FILE" Name="NTT_pld.pdi"/>
   <File Type="RCFI_FILE" Name="NTT.rcfi"/>
   <File Type="CFI_FILE" Name="NTT.cfi"/>
   <File Type="RNPI_FILE" Name="NTT.rnpi"/>
-  <File Type="NPI_FILE" Name="NTT.npi"/>
-  <File Type="RBD_FILE" Name="NTT.rbd"/>
   <File Type="ROUTE-RQS" Name="NTT_routed.rqs"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="NTT_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>

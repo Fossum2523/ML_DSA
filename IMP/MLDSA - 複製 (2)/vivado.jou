@@ -1,0 +1,47 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Thu Mar  6 12:13:48 2025
+# Process ID: 14532
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3848 C:\Users\fossu\Desktop\ML_DSA_Syn\IMP\MLDSA\MLDSA.xpr
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/vivado.log
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA_tb_behav.wcfg
+source MLDSA_tb.tcl
+run 100 us
+relaunch_sim
+run 100 us
+relaunch_sim
+run 100 us
+relaunch_sim
+run 100 us
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA_tb_behav.wcfg}
+relaunch_sim
+run 100 us
+relaunch_sim
+run 100 us
+relaunch_sim
+run 100 us
+current_wave_config {MLDSA_tb_behav.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/PWM_/out_a_en}} 
+current_wave_config {MLDSA_tb_behav.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/PWM_/out_b_en}} 
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA_tb_behav.wcfg}
+relaunch_sim
+run 100 us
+current_wave_config {MLDSA_tb_behav.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/PWM_/cnt}} 
+restart
+run 100 us
+run 100 us
+relaunch_sim
+run 100 us

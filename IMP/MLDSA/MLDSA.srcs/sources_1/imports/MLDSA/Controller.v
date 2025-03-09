@@ -1,5 +1,3 @@
-
-
 module Controller
     (   
     input               clk,
@@ -16,12 +14,14 @@ module Controller
     output              sha_squeeze, // when squeeze = 0, output once; otherwise, keep squeezing
     output              sha_mode,
     output              sha_hold,
-    output      [2:0]   sha_byte_num,
+    output  [2:0]       sha_byte_num,
     input               sha_out_ready,
     output              sha_clean,
 
     /*---Data_Mem---*/
     output              mem_sel,
+    output              A_mem_sel,
+    output              t_mem_sel,
     output              Rho_en,
     output              Rho_prime_en,
     output              Kata_en,
@@ -40,7 +40,13 @@ module Controller
     /*---NTT---*/
     output              NTT_mode,
 	output              NTT_in_ready,
-    input               NTT_done
+    output reg [1:0]    NTT_index,
+    input               NTT_done,
+
+    /*---PWM---*/
+    output              PWM_start,
+    output reg [3:0]    PWM_index,
+    input               PWM_done
     );  
 
     //main mode
@@ -66,7 +72,9 @@ module Controller
                         SAMPLE_A     = 4'd5,
                         REJECTION_A  = 4'd6,
                         NTT_S1       = 4'd7,
-                        SAMPLE_WAIT  = 4'd8;         
+                        PWM_AS1      = 4'd8,
+                        INTT_AS1     = 4'd9,
+                        SAMPLE_WAIT  = 4'd10;         
     
     //seed_in_sel
     localparam  [1:0]   RHO       = 2'b00,
@@ -76,6 +84,10 @@ module Controller
     //sha_in_sel
     localparam  [1:0]   OUSIDE  = 2'b00,
                         SAMPLE  = 2'b01;
+
+    //Mem_Data Control
+    localparam          SAMPLER_ADDR = 1'b0,
+                        PWM_ADDR     = 1'b1;
                         
     
     reg [24:0]  i;
@@ -112,9 +124,11 @@ module Controller
 
     /*---Data_Mem---*/
     assign mem_sel        = (curr_state == NTT_S1) ? 1'b1 : 1'b0;
+    assign A_mem_sel      = (curr_state == PWM_AS1) ? PWM_ADDR : SAMPLER_ADDR;
+    assign t_mem_sel      = (curr_state == PWM_AS1) ? PWM_ADDR : SAMPLER_ADDR;
     assign Rho_en         = (curr_state == SEED_PRODUCE) && sha_out_ready   ? 1'b1 :
                             ((curr_state == SAMPLE_A)    && ~i[3])          ? 1'b1 : 1'b0;
-    assign Rho_prime_en   = ((curr_state == SEED_PRODUCE) && sha_out_ready) ? 1'b1 :
+    assign Rho_prime_en   = ((curr_state == SEED_PRODUCE)&& sha_out_ready)  ? 1'b1 :
                             ((curr_state == SAMPLE_S)    && ~i[7])          ? 1'b1 : 1'b0;
     assign Kata_en        = (curr_state == SEED_PRODUCE) && sha_out_ready;
     assign Rho_mode       = (curr_state == SEED_PRODUCE) ? 1'b0 :
@@ -125,15 +139,18 @@ module Controller
 
     /*---Sampler---*/
     assign sampler_mode = (curr_state == SAMPLE_S || curr_state == REJECTION_S) ? S_mode :
-                          (curr_state == SAMPLE_A || curr_state == REJECTION_A) ? A_mode : 2'b0;
+                          (curr_state == SAMPLE_A || curr_state == REJECTION_A) ? A_mode : 2'd0;
     assign index        = (curr_state == SAMPLE_S || curr_state == REJECTION_S) ? s_mem_cnt[2:0] :
                           (curr_state == SAMPLE_A || curr_state == REJECTION_A) ? A_mem_cnt      : 4'd0;
     assign sampler_in_ready = ((curr_state == SAMPLE_S || curr_state == REJECTION_S || curr_state == SAMPLE_A || curr_state == REJECTION_A) && sha_out_ready);
 
     /*---NTT---*/
-    assign NTT_mode     = 1'b0;
-    assign NTT_in_ready = (curr_state == NTT_S1);
+    assign NTT_mode     = (curr_state == NTT_S1) ? 1'b0 :
+                          /*curr_state == INTT_AS1*/1'b1 ;
+    assign NTT_in_ready = (curr_state == NTT_S1) | (curr_state == INTT_AS1);
 
+    /*---PWM---*/
+    assign PWM_start = (curr_state == PWM_AS1);
 
     /*---Sampler---*/
     //---s mem addr control
@@ -168,13 +185,31 @@ module Controller
         i_sti_buf <= (curr_state != next_state);
       end
 
+    /*---NTT---*/
+    always @ (posedge clk) begin 
+        if (reset)                                                                                                                                                   
+            NTT_index <= 2'd0;
+        else if((curr_state == NTT_S1 | curr_state == INTT_AS1) && NTT_done)
+            NTT_index <= NTT_index + 1'b1;
+    end
+
+    /*---PWM---*/
+    always @ (posedge clk) begin 
+        if (reset)                                                                                                                                                   
+            PWM_index <= 4'd0;
+        else if(curr_state == PWM_AS1 && PWM_done)
+            PWM_index <= PWM_index + 1'b1;
+    end
+
+
+    /*---Main---*/
     always @ (posedge clk or posedge reset) begin
         if (reset)
             curr_state <= IDLE;
         else 
             curr_state <= next_state;
     end
- 
+    
     always @(*) begin
         case (curr_state)
             IDLE: begin
@@ -222,10 +257,22 @@ module Controller
                     next_state = REJECTION_A;
             end
             NTT_S1: begin
-                if(NTT_done)
-                    next_state = SAMPLE_WAIT;
+                if(NTT_index == 2'd3 && NTT_done)
+                    next_state = PWM_AS1;
                 else
                     next_state = NTT_S1;
+            end
+            PWM_AS1: begin
+                if(PWM_index == 4'd15 && PWM_done)
+                    next_state = INTT_AS1;
+                else
+                    next_state = PWM_AS1;
+            end
+            INTT_AS1: begin
+                if(NTT_index == 2'd3 && NTT_done)
+                    next_state = SAMPLE_WAIT;
+                else
+                    next_state = INTT_AS1;
             end
             SAMPLE_WAIT: begin
                 next_state = SAMPLE_WAIT;
@@ -233,6 +280,12 @@ module Controller
             default: next_state = IDLE;
         endcase
     end
-
-
 endmodule
+
+
+
+
+
+
+
+

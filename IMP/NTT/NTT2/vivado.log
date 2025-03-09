@@ -3,10 +3,10 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Fri Feb 28 12:30:50 2025
-# Process ID: 9168
+# Start of session at: Tue Mar  4 22:39:18 2025
+# Process ID: 18076
 # Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1060 C:\Users\fossu\Desktop\ML_DSA_Syn\IMP\NTT\NTT2\NTT.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9008 C:\Users\fossu\Desktop\ML_DSA_Syn\IMP\NTT\NTT2\NTT.xpr
 # Log file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/vivado.log
 # Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2\vivado.jou
 # Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
@@ -75,10 +75,71 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2023.2/data/ip'.
-open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:08 . Memory (MB): peak = 1494.777 ; gain = 290.352
-update_compile_order -fileset sources_1
+open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:08 . Memory (MB): peak = 1509.797 ; gain = 252.500
 launch_simulation -simset [get_filesets sim_2 ]
 Command: launch_simulation  -simset sim_2
+INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.sim/sim_2/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_2'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'NTT_tb' in fileset 'sim_2'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_2'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.sim/sim_2/behav/xsim'
+"xvlog --incr --relax -prj NTT_tb_vlog.prj"
+ECHO 已關閉。
+ECHO 已關閉。
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.sim/sim_2/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 已關閉。
+ECHO 已關閉。
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 3 for port 'addr' [C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/NTT.v:349]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 4 for port 'addr' [C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/NTT.v:398]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 5 for port 'addr' [C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/NTT.v:446]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 6 for port 'addr' [C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/NTT.v:494]
+WARNING: [VRFC 10-3091] actual bit length 64 differs from formal bit length 7 for port 'addr' [C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/NTT.v:542]
+WARNING: [VRFC 10-1324] repetition multiplier must be positive [C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/CONTR.v:35]
+WARNING: [VRFC 10-1324] repetition multiplier must be positive [C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/CONTR.v:38]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.sim/sim_2/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "NTT_tb_behav -key {Behavioral:sim_2:Functional:NTT_tb} -tclbatch {NTT_tb.tcl} -view {C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT_tb_func_impl.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT_tb_func_impl.wcfg
+source NTT_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'NTT_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1545.367 ; gain = 35.570
+update_compile_order -fileset sources_1
+run 100 us
+run 100 us
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_2 -mode behavioral
 INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
 WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.sim/sim_2/behav/xsim'
@@ -114,10 +175,12 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn/I
 INFO: [VRFC 10-311] analyzing module rom
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/NTT/NTT_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module NTT_tb
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.sim/sim_2/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
-run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 1495.062 ; gain = 0.000
-INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_2 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.sim/sim_2/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_2'
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.sim/sim_2/behav/xsim'
 "xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log"
@@ -146,7 +209,7 @@ WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_mul.v" Line 1. Module mod_mul doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/Modular_Reduction.v" Line 1. Module Modular_Reduction doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/CONTR.v" Line 1. Module CONTR doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v" Line 1. Module rom(LENGTH=2,INIT_FILE="C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_1.txt") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v" Line 1. Module rom(LENGTH=2,INIT_FILE="C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_1.txt") doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/RU.v" Line 51. Module RU_default doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/BU.v" Line 1. Module BU doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_add.v" Line 1. Module mod_add doesn't have a timescale but at least one module in design has a timescale.
@@ -154,7 +217,7 @@ WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_mul.v" Line 1. Module mod_mul doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/Modular_Reduction.v" Line 1. Module Modular_Reduction doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/CONTR.v" Line 1. Module CONTR(depth=32) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v" Line 1. Module rom(LENGTH=4,INIT_FILE="C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_2.txt") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v" Line 1. Module rom(LENGTH=4,INIT_FILE="C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_2.txt") doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/RU.v" Line 51. Module RU(depth=32) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/BU.v" Line 1. Module BU doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_add.v" Line 1. Module mod_add doesn't have a timescale but at least one module in design has a timescale.
@@ -162,7 +225,7 @@ WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_mul.v" Line 1. Module mod_mul doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/Modular_Reduction.v" Line 1. Module Modular_Reduction doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/CONTR.v" Line 1. Module CONTR(depth=16) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v" Line 1. Module rom(LENGTH=8,INIT_FILE="C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_3.txt") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v" Line 1. Module rom(LENGTH=8,INIT_FILE="C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_3.txt") doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/RU.v" Line 51. Module RU(depth=16) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/BU.v" Line 1. Module BU doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_add.v" Line 1. Module mod_add doesn't have a timescale but at least one module in design has a timescale.
@@ -170,7 +233,7 @@ WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_mul.v" Line 1. Module mod_mul doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/Modular_Reduction.v" Line 1. Module Modular_Reduction doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/CONTR.v" Line 1. Module CONTR(depth=8) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v" Line 1. Module rom(LENGTH=16,INIT_FILE="C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_4.txt") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v" Line 1. Module rom(LENGTH=16,INIT_FILE="C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_4.txt") doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/RU.v" Line 51. Module RU(depth=8) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/BU.v" Line 1. Module BU doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_add.v" Line 1. Module mod_add doesn't have a timescale but at least one module in design has a timescale.
@@ -178,7 +241,7 @@ WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_mul.v" Line 1. Module mod_mul doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/Modular_Reduction.v" Line 1. Module Modular_Reduction doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/CONTR.v" Line 1. Module CONTR(depth=4) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v" Line 1. Module rom(LENGTH=32,INIT_FILE="C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_5.txt") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v" Line 1. Module rom(LENGTH=32,INIT_FILE="C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_5.txt") doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/RU.v" Line 51. Module RU(depth=4) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/BU.v" Line 1. Module BU doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_add.v" Line 1. Module mod_add doesn't have a timescale but at least one module in design has a timescale.
@@ -186,7 +249,7 @@ WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_mul.v" Line 1. Module mod_mul doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/Modular_Reduction.v" Line 1. Module Modular_Reduction doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/CONTR.v" Line 1. Module CONTR(depth=2) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v" Line 1. Module rom(LENGTH=64,INIT_FILE="C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_6.txt") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v" Line 1. Module rom(LENGTH=64,INIT_FILE="C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_6.txt") doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/RU.v" Line 51. Module RU(depth=2) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/BU.v" Line 1. Module BU doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_add.v" Line 1. Module mod_add doesn't have a timescale but at least one module in design has a timescale.
@@ -194,7 +257,7 @@ WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_mul.v" Line 1. Module mod_mul doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/Modular_Reduction.v" Line 1. Module Modular_Reduction doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/CONTR.v" Line 1. Module CONTR(depth=1) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v" Line 1. Module rom(LENGTH=128,INIT_FILE="C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_7.txt") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v" Line 1. Module rom(LENGTH=128,INIT_FILE="C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_7.txt") doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/RU.v" Line 51. Module RU(depth=1) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/BU.v" Line 1. Module BU doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_add.v" Line 1. Module mod_add doesn't have a timescale but at least one module in design has a timescale.
@@ -209,7 +272,7 @@ WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_mul.v" Line 1. Module mod_mul doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/Modular_Reduction.v" Line 1. Module Modular_Reduction doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/CONTR.v" Line 1. Module CONTR doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v" Line 1. Module rom(LENGTH=2,INIT_FILE="C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_1.txt") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v" Line 1. Module rom(LENGTH=2,INIT_FILE="C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_1.txt") doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/RU.v" Line 51. Module RU_default doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/BU.v" Line 1. Module BU doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_add.v" Line 1. Module mod_add doesn't have a timescale but at least one module in design has a timescale.
@@ -217,7 +280,7 @@ WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_mul.v" Line 1. Module mod_mul doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/Modular_Reduction.v" Line 1. Module Modular_Reduction doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/CONTR.v" Line 1. Module CONTR(depth=32) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v" Line 1. Module rom(LENGTH=4,INIT_FILE="C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_2.txt") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v" Line 1. Module rom(LENGTH=4,INIT_FILE="C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_2.txt") doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/RU.v" Line 51. Module RU(depth=32) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/BU.v" Line 1. Module BU doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_add.v" Line 1. Module mod_add doesn't have a timescale but at least one module in design has a timescale.
@@ -225,7 +288,7 @@ WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_mul.v" Line 1. Module mod_mul doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/Modular_Reduction.v" Line 1. Module Modular_Reduction doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/CONTR.v" Line 1. Module CONTR(depth=16) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v" Line 1. Module rom(LENGTH=8,INIT_FILE="C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_3.txt") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v" Line 1. Module rom(LENGTH=8,INIT_FILE="C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_3.txt") doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/RU.v" Line 51. Module RU(depth=16) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/BU.v" Line 1. Module BU doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_add.v" Line 1. Module mod_add doesn't have a timescale but at least one module in design has a timescale.
@@ -233,7 +296,7 @@ WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_mul.v" Line 1. Module mod_mul doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/Modular_Reduction.v" Line 1. Module Modular_Reduction doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/CONTR.v" Line 1. Module CONTR(depth=8) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v" Line 1. Module rom(LENGTH=16,INIT_FILE="C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_4.txt") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/rom.v" Line 1. Module rom(LENGTH=16,INIT_FILE="C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_4.txt") doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/RU.v" Line 51. Module RU(depth=8) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/BU.v" Line 1. Module BU doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/new/mod_add.v" Line 1. Module mod_add doesn't have a timescale but at least one module in design has a timescale.
@@ -273,42 +336,37 @@ Compiling module xil_defaultlib.Dual_Port_Ram_Single_clk(INIT_FI...
 Compiling module xil_defaultlib.NTT_tb
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot NTT_tb_behav
-run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:17 . Memory (MB): peak = 1495.062 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '17' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.sim/sim_2/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "NTT_tb_behav -key {Behavioral:sim_2:Functional:NTT_tb} -tclbatch {NTT_tb.tcl} -view {C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT_tb_func_impl.wcfg} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 1545.367 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '11' seconds
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 1545.367 ; gain = 0.000
 Time resolution is 1 ps
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT_tb_func_impl.wcfg
-source NTT_tb.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'NTT_tb_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:28 . Memory (MB): peak = 1547.367 ; gain = 52.305
-run 10 us
-run 10 us
-run 10 us
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:16 . Memory (MB): peak = 1545.367 ; gain = 0.000
+run 100 us
+current_wave_config {NTT_tb_func_impl.wcfg}
+NTT_tb_func_impl.wcfg
+add_wave {{/NTT_tb/uut/out_u_0}} {{/NTT_tb/uut/out_d_0}} {{/NTT_tb/uut/out_u_1}} {{/NTT_tb/uut/out_d_1}} {{/NTT_tb/uut/out_u_2}} {{/NTT_tb/uut/out_d_2}} {{/NTT_tb/uut/out_u_3}} {{/NTT_tb/uut/out_d_3}} {{/NTT_tb/uut/out_u_4}} {{/NTT_tb/uut/out_d_4}} {{/NTT_tb/uut/out_u_5}} {{/NTT_tb/uut/out_d_5}} {{/NTT_tb/uut/out_u_6}} {{/NTT_tb/uut/out_d_6}} {{/NTT_tb/uut/out_u_7}} {{/NTT_tb/uut/out_d_7}} 
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 100 us
+current_wave_config {NTT_tb_func_impl.wcfg}
+NTT_tb_func_impl.wcfg
+add_wave {{/NTT_tb/uut/RU_1/in_u}} {{/NTT_tb/uut/RU_1/in_d}} {{/NTT_tb/uut/RU_1/out_u}} {{/NTT_tb/uut/RU_1/out_d}} 
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 100 us
+run 100 us
+current_wave_config {NTT_tb_func_impl.wcfg}
+NTT_tb_func_impl.wcfg
+add_wave {{/NTT_tb/uut/RU_1/switch}} 
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 100 us
 relaunch_sim
 Command: launch_simulation -step compile -simset sim_2 -mode behavioral
 INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
 WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.sim/sim_2/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_2'
-INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'NTT_tb' in fileset 'sim_2'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_2'...
 INFO: [USF-XSim-2] XSim::Compile design
 INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.sim/sim_2/behav/xsim'
 "xvlog --incr --relax -prj NTT_tb_vlog.prj"
@@ -343,26 +401,10 @@ Completed static elaboration
 INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
 INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
 Time resolution is 1 ps
-relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1547.367 ; gain = 0.000
-run 10 us
-run 10 us
-current_wave_config {NTT_tb_func_impl.wcfg}
-NTT_tb_func_impl.wcfg
-add_wave {{/NTT_tb/uut/mode}} 
-restart
-INFO: [Wavedata 42-604] Simulation restarted
-run 10 us
-run 10 us
-run 10 us
-current_wave_config {NTT_tb_func_impl.wcfg}
-NTT_tb_func_impl.wcfg
-add_wave {{/NTT_tb/uut/cnt}} 
-restart
-INFO: [Wavedata 42-604] Simulation restarted
-run 10 us
-run 10 us
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1558.504 ; gain = 0.000
+run 100 us
 save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT_tb_func_impl.wcfg}
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
 exit
-INFO: [Common 17-206] Exiting Vivado at Sat Mar  1 02:48:23 2025...
+INFO: [Common 17-206] Exiting Vivado at Wed Mar  5 01:31:59 2025...

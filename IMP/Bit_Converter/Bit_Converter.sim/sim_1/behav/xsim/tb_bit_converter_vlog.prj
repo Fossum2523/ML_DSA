@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../Bit_Converter.srcs/sources_1/imports/Power2Round/Bit_Converter.v" \
+"../../../../Bit_Converter.srcs/sim_1/new/Bit_Converter_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

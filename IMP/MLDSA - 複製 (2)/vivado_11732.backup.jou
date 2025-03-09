@@ -1,0 +1,93 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Wed Mar  5 17:50:50 2025
+# Process ID: 11732
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2712 C:\Users\fossu\Desktop\ML_DSA_Syn\IMP\MLDSA\MLDSA.xpr
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/vivado.log
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.xpr
+update_compile_order -fileset sources_1
+add_files -norecurse -scan_for_includes {C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/Keccak/Keccak.v C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/Keccak/round.v C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/Keccak/rconst.v C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/Keccak/F_Permutation.v C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/Keccak/Padder.v C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/Keccak/padder1.v}
+update_compile_order -fileset sources_1
+add_files -norecurse -scan_for_includes {C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/Data_Mem/Data_Mem.v C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/Data_Mem/Dual_Port_Ram_Single_clk.v}
+export_ip_user_files -of_objects  [get_files C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Mem.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/F_Permutation.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Keccak.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Padder.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/padder1.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/rconst.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/round.v] -no_script -reset -force -quiet
+remove_files  {C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Mem.v C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/F_Permutation.v C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Keccak.v C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Padder.v C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/padder1.v C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/rconst.v C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/round.v}
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA_tb_behav.wcfg
+source MLDSA_tb.tcl
+run 100 us
+add_files -norecurse -scan_for_includes C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA.srcs/sources_1/PWM/PWM.v
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 100 us
+relaunch_sim
+run 100 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 100 us
+current_wave_config {MLDSA_tb_behav.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/PWM_/start}} {{/MLDSA_tb/uut/data_path_inst/PWM_/done}} {{/MLDSA_tb/uut/data_path_inst/PWM_/in_a0}} {{/MLDSA_tb/uut/data_path_inst/PWM_/in_a1}} {{/MLDSA_tb/uut/data_path_inst/PWM_/in_a_en}} {{/MLDSA_tb/uut/data_path_inst/PWM_/in_addr_a}} {{/MLDSA_tb/uut/data_path_inst/PWM_/out_a}} {{/MLDSA_tb/uut/data_path_inst/PWM_/out_addr_a}} {{/MLDSA_tb/uut/data_path_inst/PWM_/in_b0}} {{/MLDSA_tb/uut/data_path_inst/PWM_/in_b1}} {{/MLDSA_tb/uut/data_path_inst/PWM_/in_b_en}} {{/MLDSA_tb/uut/data_path_inst/PWM_/in_addr_b}} {{/MLDSA_tb/uut/data_path_inst/PWM_/out_b}} {{/MLDSA_tb/uut/data_path_inst/PWM_/out_addr_b}} 
+restart
+run 100 us
+run 100 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 100 us
+relaunch_sim
+run 100 us
+current_wave_config {MLDSA_tb_behav.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/t0_q_a}} {{/MLDSA_tb/uut/data_path_inst/t1_q_b}} 
+restart
+run 100 us
+run 100 us
+current_wave_config {MLDSA_tb_behav.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/t_data_a}} {{/MLDSA_tb/uut/data_path_inst/DM/t_data_b}} {{/MLDSA_tb/uut/data_path_inst/DM/t_addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/t_addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/t_en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/t_en_b}} {{/MLDSA_tb/uut/data_path_inst/DM/t_we_a}} {{/MLDSA_tb/uut/data_path_inst/DM/t_we_b}} {{/MLDSA_tb/uut/data_path_inst/DM/t_q_a}} {{/MLDSA_tb/uut/data_path_inst/DM/t_q_b}} 
+restart
+run 100 us
+run 100 us
+relaunch_sim
+run 100 us
+relaunch_sim
+relaunch_sim
+run 100 us
+relaunch_sim
+run 100 us
+relaunch_sim
+relaunch_sim
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+current_wave_config {MLDSA_tb_behav.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/NTT_index}} 
+restart
+run 100 us
+run 100 us
+relaunch_sim
+run 100 us
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/MLDSA/MLDSA_tb_behav.wcfg}
+close_sim

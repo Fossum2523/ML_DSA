@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="14,570.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="15,273.001 ns"></ZoomEndTime>
-      <Cursor1Time time="15,100.000 ns"></Cursor1Time>
+      <ZoomStartTime time="14,814.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="15,167.501 ns"></ZoomEndTime>
+      <Cursor1Time time="14,900.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="224"></NameColumnWidth>
-      <ValueColumnWidth column_width="104"></ValueColumnWidth>
+      <ValueColumnWidth column_width="100"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="30" />
+   <WVObjectSize size="51" />
    <wvobject fp_name="/NTT_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -158,5 +158,117 @@
       <obj_property name="ElementShortName">cnt[7:0]</obj_property>
       <obj_property name="ObjectShortName">cnt[7:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/uut/out_u_0" type="array">
+      <obj_property name="ElementShortName">out_u_0[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out_u_0[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/uut/out_d_0" type="array">
+      <obj_property name="ElementShortName">out_d_0[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out_d_0[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/uut/out_u_1" type="array">
+      <obj_property name="ElementShortName">out_u_1[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out_u_1[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/uut/out_d_1" type="array">
+      <obj_property name="ElementShortName">out_d_1[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out_d_1[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/uut/out_u_2" type="array">
+      <obj_property name="ElementShortName">out_u_2[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out_u_2[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/uut/out_d_2" type="array">
+      <obj_property name="ElementShortName">out_d_2[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out_d_2[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/uut/out_u_3" type="array">
+      <obj_property name="ElementShortName">out_u_3[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out_u_3[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/uut/out_d_3" type="array">
+      <obj_property name="ElementShortName">out_d_3[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out_d_3[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/uut/out_u_4" type="array">
+      <obj_property name="ElementShortName">out_u_4[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out_u_4[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/uut/out_d_4" type="array">
+      <obj_property name="ElementShortName">out_d_4[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out_d_4[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/uut/out_u_5" type="array">
+      <obj_property name="ElementShortName">out_u_5[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out_u_5[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/uut/out_d_5" type="array">
+      <obj_property name="ElementShortName">out_d_5[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out_d_5[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/uut/out_u_6" type="array">
+      <obj_property name="ElementShortName">out_u_6[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out_u_6[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/uut/out_d_6" type="array">
+      <obj_property name="ElementShortName">out_d_6[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out_d_6[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/uut/out_u_7" type="array">
+      <obj_property name="ElementShortName">out_u_7[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out_u_7[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/uut/out_d_7" type="array">
+      <obj_property name="ElementShortName">out_d_7[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out_d_7[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/uut/RU_1/in_u" type="array">
+      <obj_property name="ElementShortName">in_u[22:0]</obj_property>
+      <obj_property name="ObjectShortName">in_u[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/uut/RU_1/in_d" type="array">
+      <obj_property name="ElementShortName">in_d[22:0]</obj_property>
+      <obj_property name="ObjectShortName">in_d[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/uut/RU_1/out_u" type="array">
+      <obj_property name="ElementShortName">out_u[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out_u[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/uut/RU_1/out_d" type="array">
+      <obj_property name="ElementShortName">out_d[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out_d[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/uut/RU_1/switch" type="logic">
+      <obj_property name="ElementShortName">switch</obj_property>
+      <obj_property name="ObjectShortName">switch</obj_property>
    </wvobject>
 </wave_config>

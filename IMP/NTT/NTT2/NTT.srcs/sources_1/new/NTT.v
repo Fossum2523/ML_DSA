@@ -243,7 +243,7 @@ module NTT#(
     rom #(
         .WIDTH(BIT_LEN),
         .LENGTH(128/depth_1),
-        .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_1.txt")
+        .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_1.txt")
     ) MEM_zeta_1(
         .clk(clk), 
         .en(1'b1), 
@@ -293,7 +293,7 @@ module NTT#(
     rom #(
         .WIDTH(BIT_LEN),
         .LENGTH(128/depth_2),
-        .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_2.txt")
+        .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_2.txt")
     ) MEM_zeta_2(
         .clk(clk), 
         .en(1'b1), 
@@ -342,7 +342,7 @@ module NTT#(
     rom #(
         .WIDTH(BIT_LEN),
         .LENGTH(128/depth_3),
-        .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_3.txt")
+        .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_3.txt")
     ) MEM_zeta_3(
         .clk(clk), 
         .en(1'b1), 
@@ -391,7 +391,7 @@ module NTT#(
     rom #(
         .WIDTH(BIT_LEN),
         .LENGTH(128/depth_4),
-        .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_4.txt")
+        .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_4.txt")
     ) MEM_zeta_4(
         .clk(clk), 
         .en(1'b1), 
@@ -439,7 +439,7 @@ module NTT#(
     rom #(
         .WIDTH(BIT_LEN),
         .LENGTH(128/depth_5),
-        .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_5.txt")
+        .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_5.txt")
     ) MEM_zeta_5(
         .clk(clk), 
         .en(1'b1), 
@@ -487,7 +487,7 @@ module NTT#(
     rom #(
         .WIDTH(BIT_LEN),
         .LENGTH(128/depth_6),
-        .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_6.txt")
+        .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_6.txt")
     ) MEM_zeta_6(
         .clk(clk), 
         .en(1'b1), 
@@ -535,7 +535,7 @@ module NTT#(
     rom #(
         .WIDTH(BIT_LEN),
         .LENGTH(128/depth_7),
-        .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_7.txt")
+        .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_7.txt")
     ) MEM_zeta_7(
         .clk(clk), 
         .en(1'b1), 
