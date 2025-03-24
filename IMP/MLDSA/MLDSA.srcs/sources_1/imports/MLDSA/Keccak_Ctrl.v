@@ -3,6 +3,7 @@ module Keccak_Ctrl
     input               clk,
     input               reset,
     input               sha_en,
+    input               next_element,
     output              sha_in_ready, 
     output              sha_is_last,
     output              sha_squeeze, // when squeeze = 0, output once; otherwise, keep squeezing
@@ -15,28 +16,19 @@ module Keccak_Ctrl
     output [1:0]        seed_in_sel
     );  
 
-    reg padder_cnt;//用來計數padder的次數，最後會送一筆last訊號
-                         
-    assign sha_in_ready =  sha_en;                          
-    assign sha_is_last  =          
-    assign sha_squeeze  =  1'b0;//交由其他module來送，可以不用
-    assign sha_mode     =    
-    assign sha_hold     =   
-    assign sha_byte_num = 
-    assign sha_clean    =  
-    assign sha_in_sel   = 
-    assign seed_in_sel  =                       
+    reg     padder_cnt;//用來計數padder的次數，最後會送一筆last訊號
+    reg     state;           
+    assign  sha_in_ready =  sha_en;                          
+    assign  sha_is_last  =         
+    assign  sha_squeeze  =  1'b0;//交由其他module來送，可以不用
+    assign  sha_mode     =    
+    assign  sha_hold     =   
+    assign  sha_byte_num = 
+    assign  sha_clean    =  next_element;
+    assign  sha_in_sel   = 
+    assign  seed_in_sel  =                       
     
-    always @ (posedge clk) begin 
-        if (reset)                                                                                                                                                   
-            padder_cnt <= 25'd0;
-        else if(curr_state != next_state)
-            padder_cnt <= 25'd0;
-        else
-            padder_cnt <= {i[23:0], 1'b1};
-    end
 endmodule
-
 
 
 

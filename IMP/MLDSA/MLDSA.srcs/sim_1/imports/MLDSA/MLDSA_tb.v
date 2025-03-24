@@ -86,7 +86,7 @@ module MLDSA_tb;
     end
     always @(posedge clk ) begin
         if(f_out_ready)$display("fout: %h.", f_out);
-    end
+    end 
     always @(posedge clk ) begin
         if(sha_out_ready)$display("sha_out: %h.", sha_out);
     end
