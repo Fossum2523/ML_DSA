@@ -1,0 +1,199 @@
+1. 確認所有keccak輸入的來源
+2. 用drawio 畫好Keccak 的datapath 
+3. 完成keccak的controller 
+4. 確認所有輸入跟功能如何對接
+5. top_module的64bit輸入要有兩組MLDSA_in_1, MLDSA_in_2
+6. 確認decoder功能，並且當當中的SIPO滿時ready_i要拉低
+7. 還需要撰寫decompose功能
+X 8. 猜測有機會encoder當中GAMMA1的功能是w1 可以去分析一下
+9. w1最大為43, 6 bit
+10. encoder中
+
+-------------------------------------------------------------------------------------
+"""H(𝜉+x04+x04)"""
+
+MLDSA_mode 	-> KeyGen
+Stage		-> 1
+Sha_mode   	-> H
+Data source	-> MLDSA_in_1, seed_gen_index
+
+第一步:由MLDSA_in_1透過4個cycle提取𝜉(tb)至keccak
+第二步:由seed_gen_index送最後一筆資料並發送i_last給keccak使其執行並產生Rho, Rho_prime, Kata
+第四步:keccak執行完後後，透過16個cycle((32+64+32)*8/64=16)將資料分別儲存到Data_Mem的Rho, Rho_prime, Kata當中
+
+Hint:
+x04+x04命名為seed_gen_index
+-------------------------------------------------------------------------------------
+
+
+
+-------------------------------------------------------------------------------------
+"""Gen(s1)"""
+
+MLDSA_mode 	-> KeyGen
+Stage		-> 2
+Sha_mode   	-> H
+Data source	-> Rho_prime MEM, s1_gen_index(Controller)
+
+第一步:由Rho_prime MEM透過8個cycle提取Rho_prime至keccak
+第二步:由Controller紀錄s1_gen_index當作last值
+第三步:發送i_last給keccak使其執行並產生data
+第四步:Sampler會進入S模式進行採樣，產生s1，當data不夠時Sampler會向keccak發送squeeze信號要求更多data
+第五步:s1_gen_index為0-3共會重複執行第一到四步4次採樣s1的資料
+
+Hint:
+1. Keccak搭配Sampler的S實現
+-------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------
+"""Gen(s2)"""
+
+MLDSA_mode 	-> KeyGen
+Stage		-> 3
+Sha_mode   	-> H
+Data source	-> Rho_prime MEM, s2_gen_index(Controller)
+
+第一步:由Rho_prime MEM透過8個cycle提取Rho_prime至keccak
+第二步:由Controller紀錄s2_gen_index當作last值
+第三步:發送i_last給keccak使其執行並產生data
+第四步:Sampler會進入S模式進行採樣，產生s2，當data不夠時Sampler會向keccak發送squeeze信號要求更多data
+第五步:s2_gen_index為4-7共會重複執行第一到四步4次採樣s2的資料
+
+Hint:
+1. Keccak搭配Sampler的S實現
+-------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------
+"""Gen(A)"""
+
+MLDSA_mode 	-> KeyGen
+Stage		-> 4
+Sha_mode   	-> G
+Data source	-> Rho MEM, A_gen_index(Controller)
+
+第一步:由Rho MEM透過4個cycle提取Rho至keccak
+第二步:由Controller紀錄A_gen_index當作last值
+第三步:發送i_last給keccak使其執行並產生data
+第四步:Sampler會進入A模式進行採樣，產生A，當data不夠時Sampler會向keccak發送squeeze信號要求更多data
+第五步:A為0-15共會重複執行第一到四步16次採樣A的資料
+
+Hint:
+1. Keccak搭配Sampler的A實現
+-------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------
+"""H(𝜌 || t1) = tr""
+
+MLDSA_mode 	-> KeyGen
+Stage		-> 7
+Sha_mode   	-> H
+Data source	-> Rho MEM, t1 MEM
+
+第一步:由Rho MEM透過4個cycle提取Rho至keccak
+第二步:由t1 MEM透過160(4*256*10/64=160)個cycle提取t1至keccak
+第三步:最後一筆發送i_last給keccak使其執行並產生data
+第四步:keccak產生tr後，透過8個cycle(64*8/64=8)將u儲存到Data_Mem的tr當中
+
+-------------------------------------------------------------------------------------
+
+
+
+-------------------------------------------------------------------------------------
+"""H(𝑡𝑟 || 𝑀′)"""
+
+mode : H
+
+在做SignGen時由testbench端的Mem儲存sk,rnd,M'
+第一步:由MLDSA_in_1透過8個cycle提取sk Mem(tb)當中tr的部分至keccak
+第二步:由MLDSA_in_1透過n個cycle(長度不固定)提取M'(tb)資料至keccak
+第三步:M'的最後一筆資料發送i_last給keccak使其執行並產生u
+第四步:keccak產生u後，透過8個cycle(512/64=8)將u儲存到Data_Mem的u當中
+
+Hint:
+tr資料以及M'資料都是從Ouside_in進來，只需控制in_ready以及i_last信號即可讓keccak module動作，因此可以歸類在SignGen的Stage 1中
+-------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------
+"""H(𝐾 || 𝑟𝑛𝑑 || u)"""
+
+mode : H
+
+第一步:由MLDSA_in_1透過4個cycle提取sk Mem(tb)當中Kata的部分至keccak
+第二步:由MLDSA_in_1透過4個cycle提取rnd Mem(tb)當中的rnd至keccak
+第三步:透過8個cycle將Data_Mem的u提取至keccak
+第四步:u的最後一筆資料發送i_last給keccak使其執行並產生p''
+第五步:keccak產生p''後，透過8個cycle(512/64=8)將p''儲存到Data_Mem的p''當中
+-------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------
+"""Gen(y)"""
+
+mode : H
+
+第一步:由p'' MEM透過8個cycle提取p''至keccak
+第二步:由Controller紀錄k值，並與回合r相加當作last值
+第三步:發送i_last給keccak使其執行並產生data，共需要產生32*18(一個data)*8=4608 bit
+第四步:Sampler會進入ExpandMask模式進行採樣，產生y[r]，當data不夠時Sampler會向keccak發送squeeze信號要求更多data
+第五步:Sampler會發送squeeze共4次去採樣y[r]，並將採樣資料儲存在y MEM中
+第六步:r為0-3共會重複執行第一到五步4次採樣y的資料
+
+Hint:
+1. Keccak搭配Sampler的ExpandMask實現
+2. k值為SignGen中主要While迴圈的執行次數
+-------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------
+"""H(𝜇 || 𝐰1)"""
+
+mode : H
+
+第一步:由u MEM透過8個cycle提取u至keccak
+第二步:由w MEM透過96(4*256*5/64)個cycle提取w1至keccak，切記要控制keccak的in_ready信號
+第三步:w1最後一筆發送i_last給keccak使其執行並產生c_tilde
+第四步:keccak產生c_tilde後，透過4個cycle(128/4*8/64)將p''儲存到Data_Mem的c_tilde當中
+
+Hint:
+1. Keccak搭配encoder將w轉成6bit的w1並組成64bit資料
+2. 在SignVer也會用到但可以運算完也存在w MEM當中
+-------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------
+"""Gen(c)"""
+
+mode : H
+
+第一步:由c_tilde MEM/Outside透過4個cycle提取c_tilde至keccak
+第二步:c_tile最後一筆同時發送i_last給keccak使其執行並產生data
+第三步:Sampler會進入SampleInBall模式進行採樣，產生c並儲存在c MEM中，當data不夠時Sampler會向keccak發送squeeze信號要求更多data
+
+Hint:
+1. Keccak搭配Sampler的SampleInBall實現
+2. SignGen與SignVer的輸入資料來源不同
+-------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------
+"""H(pk)"""
+
+MLDSA_mode 	-> SignVer
+Stage		-> 4
+Sha_mode   	-> H
+Data source	-> MLDSA_in_1
+
+
+第一步:由MLDSA_in_1透過164個cycle提取pk(tb)至keccak
+第二步:最後一筆發送i_last給keccak使其執行並產生data
+第三步:keccak產生tr後，透過8個cycle(64*8/64=8)將u儲存到Data_Mem的tr當中
+-------------------------------------------------------------------------------------
+
+
+
+
+

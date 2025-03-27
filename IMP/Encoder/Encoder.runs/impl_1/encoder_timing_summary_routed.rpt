@@ -1,0 +1,756 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Wed Mar 19 14:35:30 2025
+| Host         : DESKTOP-5RUADSS running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 10 -report_unconstrained -file encoder_timing_summary_routed.rpt -pb encoder_timing_summary_routed.pb -rpx encoder_timing_summary_routed.rpx -warn_on_violation
+| Design       : encoder
+| Device       : 7k70t-fbv676
+| Speed File   : -1  PRODUCTION 1.12 2017-02-17
+| Design State : Routed
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+  Inter-SLR Compensation                     :  Conservative
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+Rule       Severity          Description                  Violations  
+---------  ----------------  ---------------------------  ----------  
+TIMING-17  Critical Warning  Non-clocked sequential cell  461         
+
+Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (461)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (987)
+5. checking no_input_delay (101)
+6. checking no_output_delay (65)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (461)
+--------------------------
+ There are 461 register/latch pins with no clock driven by root clock pin: clk (HIGH)
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (987)
+--------------------------------------------------
+ There are 987 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (101)
+--------------------------------
+ There are 101 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (65)
+--------------------------------
+ There are 65 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+        inf        0.000                      0                 1052          inf        0.000                      0                 1052           NA           NA                      NA                    NA  
+
+
+There are no user specified timing constraints.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| User Ignored Path Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+
+
+------------------------------------------------------------------------------------------------
+| Unconstrained Path Table
+| ------------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+(none)                                    
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  
+
+Max Delay          1052 Endpoints
+Min Delay          1052 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 encode_mode[2]
+                            (input port)
+  Destination:            PISO_reg[92]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        12.157ns  (logic 1.334ns (10.971%)  route 10.823ns (89.029%))
+  Logic Levels:           9  (IBUF=1 LUT5=1 LUT6=7)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    B25                                               0.000     0.000 f  encode_mode[2] (IN)
+                         net (fo=0)                   0.000     0.000    encode_mode[2]
+    B25                  IBUF (Prop_ibuf_I_O)         0.910     0.910 f  encode_mode_IBUF[2]_inst/O
+                         net (fo=148, routed)         3.860     4.770    encode_mode_IBUF[2]
+    SLICE_X20Y96         LUT6 (Prop_lut6_I0_O)        0.053     4.823 f  buffer_len[0][6]_i_2/O
+                         net (fo=121, routed)         2.300     7.122    ENCODE_LVL[4]
+    SLICE_X12Y98         LUT6 (Prop_lut6_I4_O)        0.053     7.175 r  PISO[252]_i_59/O
+                         net (fo=1, routed)           0.559     7.734    PISO[252]_i_59_n_0
+    SLICE_X12Y97         LUT6 (Prop_lut6_I0_O)        0.053     7.787 r  PISO[252]_i_44/O
+                         net (fo=1, routed)           0.456     8.243    PISO[252]_i_44_n_0
+    SLICE_X12Y97         LUT6 (Prop_lut6_I0_O)        0.053     8.296 r  PISO[252]_i_19/O
+                         net (fo=2, routed)           0.713     9.009    PISO[252]_i_19_n_0
+    SLICE_X11Y100        LUT6 (Prop_lut6_I3_O)        0.053     9.062 r  PISO[252]_i_9/O
+                         net (fo=4, routed)           0.941    10.003    PISO[252]_i_9_n_0
+    SLICE_X4Y103         LUT5 (Prop_lut5_I4_O)        0.053    10.056 r  PISO[252]_i_4/O
+                         net (fo=5, routed)           1.063    11.119    PISO[252]_i_4_n_0
+    SLICE_X4Y111         LUT6 (Prop_lut6_I0_O)        0.053    11.172 r  PISO[220]_i_2/O
+                         net (fo=2, routed)           0.932    12.104    PISO[220]_i_2_n_0
+    SLICE_X3Y114         LUT6 (Prop_lut6_I3_O)        0.053    12.157 r  PISO[92]_i_1/O
+                         net (fo=1, routed)           0.000    12.157    p_1_in[92]
+    SLICE_X3Y114         FDRE                                         r  PISO_reg[92]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 sec_lvl[0]
+                            (input port)
+  Destination:            PISO_reg[83]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        11.996ns  (logic 1.575ns (13.125%)  route 10.421ns (86.875%))
+  Logic Levels:           9  (IBUF=1 LUT5=2 LUT6=6)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    A22                                               0.000     0.000 r  sec_lvl[0] (IN)
+                         net (fo=0)                   0.000     0.000    sec_lvl[0]
+    A22                  IBUF (Prop_ibuf_I_O)         0.895     0.895 r  sec_lvl_IBUF[0]_inst/O
+                         net (fo=101, routed)         2.956     3.851    sec_lvl_IBUF[0]
+    SLICE_X16Y95         LUT6 (Prop_lut6_I5_O)        0.053     3.904 r  buffer_len[0][2]_i_1/O
+                         net (fo=92, routed)          1.785     5.689    ENCODE_LVL[0]
+    SLICE_X6Y98          LUT6 (Prop_lut6_I2_O)        0.053     5.742 r  PISO[243]_i_20/O
+                         net (fo=5, routed)           1.269     7.011    PISO[243]_i_20_n_0
+    SLICE_X20Y100        LUT6 (Prop_lut6_I5_O)        0.053     7.064 r  PISO[243]_i_16/O
+                         net (fo=3, routed)           0.449     7.514    PISO[243]_i_16_n_0
+    SLICE_X22Y98         LUT6 (Prop_lut6_I2_O)        0.053     7.567 r  PISO[255]_i_16/O
+                         net (fo=3, routed)           0.935     8.502    PISO[255]_i_16_n_0
+    SLICE_X21Y104        LUT6 (Prop_lut6_I1_O)        0.053     8.555 r  PISO[251]_i_10/O
+                         net (fo=6, routed)           1.319     9.873    PISO[251]_i_10_n_0
+    SLICE_X16Y106        LUT5 (Prop_lut5_I4_O)        0.066     9.939 r  PISO[243]_i_5/O
+                         net (fo=5, routed)           1.077    11.016    PISO[243]_i_5_n_0
+    SLICE_X16Y114        LUT5 (Prop_lut5_I0_O)        0.181    11.197 r  PISO[211]_i_2/O
+                         net (fo=2, routed)           0.631    11.828    PISO[211]_i_2_n_0
+    SLICE_X14Y116        LUT6 (Prop_lut6_I3_O)        0.168    11.996 r  PISO[83]_i_1/O
+                         net (fo=1, routed)           0.000    11.996    p_1_in[83]
+    SLICE_X14Y116        FDRE                                         r  PISO_reg[83]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 encode_mode[2]
+                            (input port)
+  Destination:            PISO_reg[28]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        11.956ns  (logic 1.465ns (12.252%)  route 10.491ns (87.748%))
+  Logic Levels:           9  (IBUF=1 LUT3=1 LUT5=1 LUT6=6)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    B25                                               0.000     0.000 f  encode_mode[2] (IN)
+                         net (fo=0)                   0.000     0.000    encode_mode[2]
+    B25                  IBUF (Prop_ibuf_I_O)         0.910     0.910 f  encode_mode_IBUF[2]_inst/O
+                         net (fo=148, routed)         3.860     4.770    encode_mode_IBUF[2]
+    SLICE_X20Y96         LUT6 (Prop_lut6_I0_O)        0.053     4.823 f  buffer_len[0][6]_i_2/O
+                         net (fo=121, routed)         2.300     7.122    ENCODE_LVL[4]
+    SLICE_X12Y98         LUT6 (Prop_lut6_I4_O)        0.053     7.175 r  PISO[252]_i_59/O
+                         net (fo=1, routed)           0.559     7.734    PISO[252]_i_59_n_0
+    SLICE_X12Y97         LUT6 (Prop_lut6_I0_O)        0.053     7.787 r  PISO[252]_i_44/O
+                         net (fo=1, routed)           0.456     8.243    PISO[252]_i_44_n_0
+    SLICE_X12Y97         LUT6 (Prop_lut6_I0_O)        0.053     8.296 r  PISO[252]_i_19/O
+                         net (fo=2, routed)           0.713     9.009    PISO[252]_i_19_n_0
+    SLICE_X11Y100        LUT6 (Prop_lut6_I3_O)        0.053     9.062 r  PISO[252]_i_9/O
+                         net (fo=4, routed)           0.941    10.003    PISO[252]_i_9_n_0
+    SLICE_X4Y103         LUT5 (Prop_lut5_I4_O)        0.053    10.056 r  PISO[252]_i_4/O
+                         net (fo=5, routed)           1.101    11.157    PISO[252]_i_4_n_0
+    SLICE_X3Y113         LUT3 (Prop_lut3_I2_O)        0.068    11.225 r  PISO[28]_i_2/O
+                         net (fo=1, routed)           0.561    11.787    PISO[28]_i_2_n_0
+    SLICE_X3Y114         LUT6 (Prop_lut6_I3_O)        0.169    11.956 r  PISO[28]_i_1/O
+                         net (fo=1, routed)           0.000    11.956    p_1_in[28]
+    SLICE_X3Y114         FDRE                                         r  PISO_reg[28]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 encode_mode[2]
+                            (input port)
+  Destination:            PISO_reg[220]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        11.801ns  (logic 1.334ns (11.302%)  route 10.467ns (88.698%))
+  Logic Levels:           9  (IBUF=1 LUT5=2 LUT6=6)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    B25                                               0.000     0.000 f  encode_mode[2] (IN)
+                         net (fo=0)                   0.000     0.000    encode_mode[2]
+    B25                  IBUF (Prop_ibuf_I_O)         0.910     0.910 f  encode_mode_IBUF[2]_inst/O
+                         net (fo=148, routed)         3.860     4.770    encode_mode_IBUF[2]
+    SLICE_X20Y96         LUT6 (Prop_lut6_I0_O)        0.053     4.823 f  buffer_len[0][6]_i_2/O
+                         net (fo=121, routed)         2.300     7.122    ENCODE_LVL[4]
+    SLICE_X12Y98         LUT6 (Prop_lut6_I4_O)        0.053     7.175 r  PISO[252]_i_59/O
+                         net (fo=1, routed)           0.559     7.734    PISO[252]_i_59_n_0
+    SLICE_X12Y97         LUT6 (Prop_lut6_I0_O)        0.053     7.787 r  PISO[252]_i_44/O
+                         net (fo=1, routed)           0.456     8.243    PISO[252]_i_44_n_0
+    SLICE_X12Y97         LUT6 (Prop_lut6_I0_O)        0.053     8.296 r  PISO[252]_i_19/O
+                         net (fo=2, routed)           0.713     9.009    PISO[252]_i_19_n_0
+    SLICE_X11Y100        LUT6 (Prop_lut6_I3_O)        0.053     9.062 r  PISO[252]_i_9/O
+                         net (fo=4, routed)           0.941    10.003    PISO[252]_i_9_n_0
+    SLICE_X4Y103         LUT5 (Prop_lut5_I4_O)        0.053    10.056 r  PISO[252]_i_4/O
+                         net (fo=5, routed)           1.063    11.119    PISO[252]_i_4_n_0
+    SLICE_X4Y111         LUT6 (Prop_lut6_I0_O)        0.053    11.172 r  PISO[220]_i_2/O
+                         net (fo=2, routed)           0.576    11.748    PISO[220]_i_2_n_0
+    SLICE_X3Y113         LUT5 (Prop_lut5_I2_O)        0.053    11.801 r  PISO[220]_i_1/O
+                         net (fo=1, routed)           0.000    11.801    p_1_in[220]
+    SLICE_X3Y113         FDRE                                         r  PISO_reg[220]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 sec_lvl[0]
+                            (input port)
+  Destination:            PISO_reg[147]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        11.771ns  (logic 1.447ns (12.288%)  route 10.325ns (87.712%))
+  Logic Levels:           9  (IBUF=1 LUT4=1 LUT5=1 LUT6=6)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    A22                                               0.000     0.000 r  sec_lvl[0] (IN)
+                         net (fo=0)                   0.000     0.000    sec_lvl[0]
+    A22                  IBUF (Prop_ibuf_I_O)         0.895     0.895 r  sec_lvl_IBUF[0]_inst/O
+                         net (fo=101, routed)         2.956     3.851    sec_lvl_IBUF[0]
+    SLICE_X16Y95         LUT6 (Prop_lut6_I5_O)        0.053     3.904 r  buffer_len[0][2]_i_1/O
+                         net (fo=92, routed)          1.785     5.689    ENCODE_LVL[0]
+    SLICE_X6Y98          LUT6 (Prop_lut6_I2_O)        0.053     5.742 r  PISO[243]_i_20/O
+                         net (fo=5, routed)           1.269     7.011    PISO[243]_i_20_n_0
+    SLICE_X20Y100        LUT6 (Prop_lut6_I5_O)        0.053     7.064 r  PISO[243]_i_16/O
+                         net (fo=3, routed)           0.449     7.514    PISO[243]_i_16_n_0
+    SLICE_X22Y98         LUT6 (Prop_lut6_I2_O)        0.053     7.567 r  PISO[255]_i_16/O
+                         net (fo=3, routed)           0.935     8.502    PISO[255]_i_16_n_0
+    SLICE_X21Y104        LUT6 (Prop_lut6_I1_O)        0.053     8.555 r  PISO[251]_i_10/O
+                         net (fo=6, routed)           1.319     9.873    PISO[251]_i_10_n_0
+    SLICE_X16Y106        LUT5 (Prop_lut5_I4_O)        0.066     9.939 r  PISO[243]_i_5/O
+                         net (fo=5, routed)           1.037    10.977    PISO[243]_i_5_n_0
+    SLICE_X16Y115        LUT4 (Prop_lut4_I0_O)        0.168    11.145 r  PISO[147]_i_3/O
+                         net (fo=1, routed)           0.574    11.718    PISO[147]_i_3_n_0
+    SLICE_X14Y115        LUT6 (Prop_lut6_I2_O)        0.053    11.771 r  PISO[147]_i_1/O
+                         net (fo=1, routed)           0.000    11.771    p_1_in[147]
+    SLICE_X14Y115        FDRE                                         r  PISO_reg[147]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 sec_lvl[0]
+                            (input port)
+  Destination:            PISO_reg[115]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        11.761ns  (logic 1.447ns (12.299%)  route 10.315ns (87.701%))
+  Logic Levels:           9  (IBUF=1 LUT5=2 LUT6=6)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    A22                                               0.000     0.000 r  sec_lvl[0] (IN)
+                         net (fo=0)                   0.000     0.000    sec_lvl[0]
+    A22                  IBUF (Prop_ibuf_I_O)         0.895     0.895 r  sec_lvl_IBUF[0]_inst/O
+                         net (fo=101, routed)         2.956     3.851    sec_lvl_IBUF[0]
+    SLICE_X16Y95         LUT6 (Prop_lut6_I5_O)        0.053     3.904 r  buffer_len[0][2]_i_1/O
+                         net (fo=92, routed)          1.785     5.689    ENCODE_LVL[0]
+    SLICE_X6Y98          LUT6 (Prop_lut6_I2_O)        0.053     5.742 r  PISO[243]_i_20/O
+                         net (fo=5, routed)           1.269     7.011    PISO[243]_i_20_n_0
+    SLICE_X20Y100        LUT6 (Prop_lut6_I5_O)        0.053     7.064 r  PISO[243]_i_16/O
+                         net (fo=3, routed)           0.449     7.514    PISO[243]_i_16_n_0
+    SLICE_X22Y98         LUT6 (Prop_lut6_I2_O)        0.053     7.567 r  PISO[255]_i_16/O
+                         net (fo=3, routed)           0.935     8.502    PISO[255]_i_16_n_0
+    SLICE_X21Y104        LUT6 (Prop_lut6_I1_O)        0.053     8.555 r  PISO[251]_i_10/O
+                         net (fo=6, routed)           1.319     9.873    PISO[251]_i_10_n_0
+    SLICE_X16Y106        LUT5 (Prop_lut5_I4_O)        0.066     9.939 r  PISO[243]_i_5/O
+                         net (fo=5, routed)           1.077    11.016    PISO[243]_i_5_n_0
+    SLICE_X16Y114        LUT5 (Prop_lut5_I0_O)        0.168    11.184 r  PISO[115]_i_2/O
+                         net (fo=1, routed)           0.524    11.708    PISO[115]_i_2_n_0
+    SLICE_X13Y115        LUT6 (Prop_lut6_I3_O)        0.053    11.761 r  PISO[115]_i_1/O
+                         net (fo=1, routed)           0.000    11.761    p_1_in[115]
+    SLICE_X13Y115        FDRE                                         r  PISO_reg[115]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 sec_lvl[0]
+                            (input port)
+  Destination:            PISO_reg[187]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        11.729ns  (logic 1.447ns (12.333%)  route 10.282ns (87.667%))
+  Logic Levels:           9  (IBUF=1 LUT3=1 LUT5=1 LUT6=6)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    A22                                               0.000     0.000 r  sec_lvl[0] (IN)
+                         net (fo=0)                   0.000     0.000    sec_lvl[0]
+    A22                  IBUF (Prop_ibuf_I_O)         0.895     0.895 r  sec_lvl_IBUF[0]_inst/O
+                         net (fo=101, routed)         2.812     3.707    sec_lvl_IBUF[0]
+    SLICE_X16Y95         LUT6 (Prop_lut6_I1_O)        0.053     3.760 r  buffer_len[0][3]_i_1/O
+                         net (fo=89, routed)          1.995     5.755    ENCODE_LVL[1]
+    SLICE_X6Y99          LUT6 (Prop_lut6_I3_O)        0.053     5.808 r  PISO[171]_i_9/O
+                         net (fo=7, routed)           1.416     7.224    PISO[171]_i_9_n_0
+    SLICE_X20Y99         LUT6 (Prop_lut6_I0_O)        0.053     7.277 r  PISO[239]_i_9/O
+                         net (fo=1, routed)           0.421     7.698    PISO[239]_i_9_n_0
+    SLICE_X20Y98         LUT6 (Prop_lut6_I1_O)        0.053     7.751 r  PISO[239]_i_6/O
+                         net (fo=4, routed)           1.101     8.852    stripped[11]
+    SLICE_X16Y105        LUT6 (Prop_lut6_I4_O)        0.053     8.905 r  PISO[171]_i_5/O
+                         net (fo=4, routed)           0.937     9.842    PISO[171]_i_5_n_0
+    SLICE_X16Y109        LUT5 (Prop_lut5_I0_O)        0.066     9.908 r  PISO[251]_i_5/O
+                         net (fo=5, routed)           0.917    10.825    PISO[251]_i_5_n_0
+    SLICE_X10Y113        LUT3 (Prop_lut3_I0_O)        0.168    10.993 r  PISO[251]_i_3/O
+                         net (fo=3, routed)           0.683    11.676    PISO[251]_i_3_n_0
+    SLICE_X10Y114        LUT6 (Prop_lut6_I1_O)        0.053    11.729 r  PISO[187]_i_1/O
+                         net (fo=1, routed)           0.000    11.729    p_1_in[187]
+    SLICE_X10Y114        FDRE                                         r  PISO_reg[187]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 sec_lvl[0]
+                            (input port)
+  Destination:            PISO_reg[211]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        11.718ns  (logic 1.575ns (13.437%)  route 10.143ns (86.563%))
+  Logic Levels:           9  (IBUF=1 LUT5=3 LUT6=5)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    A22                                               0.000     0.000 r  sec_lvl[0] (IN)
+                         net (fo=0)                   0.000     0.000    sec_lvl[0]
+    A22                  IBUF (Prop_ibuf_I_O)         0.895     0.895 r  sec_lvl_IBUF[0]_inst/O
+                         net (fo=101, routed)         2.956     3.851    sec_lvl_IBUF[0]
+    SLICE_X16Y95         LUT6 (Prop_lut6_I5_O)        0.053     3.904 r  buffer_len[0][2]_i_1/O
+                         net (fo=92, routed)          1.785     5.689    ENCODE_LVL[0]
+    SLICE_X6Y98          LUT6 (Prop_lut6_I2_O)        0.053     5.742 r  PISO[243]_i_20/O
+                         net (fo=5, routed)           1.269     7.011    PISO[243]_i_20_n_0
+    SLICE_X20Y100        LUT6 (Prop_lut6_I5_O)        0.053     7.064 r  PISO[243]_i_16/O
+                         net (fo=3, routed)           0.449     7.514    PISO[243]_i_16_n_0
+    SLICE_X22Y98         LUT6 (Prop_lut6_I2_O)        0.053     7.567 r  PISO[255]_i_16/O
+                         net (fo=3, routed)           0.935     8.502    PISO[255]_i_16_n_0
+    SLICE_X21Y104        LUT6 (Prop_lut6_I1_O)        0.053     8.555 r  PISO[251]_i_10/O
+                         net (fo=6, routed)           1.319     9.873    PISO[251]_i_10_n_0
+    SLICE_X16Y106        LUT5 (Prop_lut5_I4_O)        0.066     9.939 r  PISO[243]_i_5/O
+                         net (fo=5, routed)           1.077    11.016    PISO[243]_i_5_n_0
+    SLICE_X16Y114        LUT5 (Prop_lut5_I0_O)        0.181    11.197 r  PISO[211]_i_2/O
+                         net (fo=2, routed)           0.352    11.550    PISO[211]_i_2_n_0
+    SLICE_X14Y115        LUT5 (Prop_lut5_I2_O)        0.168    11.718 r  PISO[211]_i_1/O
+                         net (fo=1, routed)           0.000    11.718    p_1_in[211]
+    SLICE_X14Y115        FDRE                                         r  PISO_reg[211]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 sec_lvl[0]
+                            (input port)
+  Destination:            PISO_reg[59]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        11.714ns  (logic 1.447ns (12.349%)  route 10.267ns (87.651%))
+  Logic Levels:           9  (IBUF=1 LUT3=1 LUT5=1 LUT6=6)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    A22                                               0.000     0.000 r  sec_lvl[0] (IN)
+                         net (fo=0)                   0.000     0.000    sec_lvl[0]
+    A22                  IBUF (Prop_ibuf_I_O)         0.895     0.895 r  sec_lvl_IBUF[0]_inst/O
+                         net (fo=101, routed)         2.812     3.707    sec_lvl_IBUF[0]
+    SLICE_X16Y95         LUT6 (Prop_lut6_I1_O)        0.053     3.760 r  buffer_len[0][3]_i_1/O
+                         net (fo=89, routed)          1.995     5.755    ENCODE_LVL[1]
+    SLICE_X6Y99          LUT6 (Prop_lut6_I3_O)        0.053     5.808 r  PISO[171]_i_9/O
+                         net (fo=7, routed)           1.416     7.224    PISO[171]_i_9_n_0
+    SLICE_X20Y99         LUT6 (Prop_lut6_I0_O)        0.053     7.277 r  PISO[239]_i_9/O
+                         net (fo=1, routed)           0.421     7.698    PISO[239]_i_9_n_0
+    SLICE_X20Y98         LUT6 (Prop_lut6_I1_O)        0.053     7.751 r  PISO[239]_i_6/O
+                         net (fo=4, routed)           1.101     8.852    stripped[11]
+    SLICE_X16Y105        LUT6 (Prop_lut6_I4_O)        0.053     8.905 r  PISO[171]_i_5/O
+                         net (fo=4, routed)           0.937     9.842    PISO[171]_i_5_n_0
+    SLICE_X16Y109        LUT5 (Prop_lut5_I0_O)        0.066     9.908 r  PISO[251]_i_5/O
+                         net (fo=5, routed)           0.917    10.825    PISO[251]_i_5_n_0
+    SLICE_X10Y113        LUT3 (Prop_lut3_I0_O)        0.168    10.993 r  PISO[251]_i_3/O
+                         net (fo=3, routed)           0.668    11.661    PISO[251]_i_3_n_0
+    SLICE_X9Y115         LUT6 (Prop_lut6_I2_O)        0.053    11.714 r  PISO[59]_i_1/O
+                         net (fo=1, routed)           0.000    11.714    p_1_in[59]
+    SLICE_X9Y115         FDRE                                         r  PISO_reg[59]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 sec_lvl[0]
+                            (input port)
+  Destination:            PISO_reg[51]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        11.712ns  (logic 1.447ns (12.351%)  route 10.266ns (87.649%))
+  Logic Levels:           9  (IBUF=1 LUT5=2 LUT6=6)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    A22                                               0.000     0.000 r  sec_lvl[0] (IN)
+                         net (fo=0)                   0.000     0.000    sec_lvl[0]
+    A22                  IBUF (Prop_ibuf_I_O)         0.895     0.895 r  sec_lvl_IBUF[0]_inst/O
+                         net (fo=101, routed)         2.956     3.851    sec_lvl_IBUF[0]
+    SLICE_X16Y95         LUT6 (Prop_lut6_I5_O)        0.053     3.904 r  buffer_len[0][2]_i_1/O
+                         net (fo=92, routed)          1.785     5.689    ENCODE_LVL[0]
+    SLICE_X6Y98          LUT6 (Prop_lut6_I2_O)        0.053     5.742 r  PISO[243]_i_20/O
+                         net (fo=5, routed)           1.269     7.011    PISO[243]_i_20_n_0
+    SLICE_X20Y100        LUT6 (Prop_lut6_I5_O)        0.053     7.064 r  PISO[243]_i_16/O
+                         net (fo=3, routed)           0.449     7.514    PISO[243]_i_16_n_0
+    SLICE_X22Y98         LUT6 (Prop_lut6_I2_O)        0.053     7.567 r  PISO[255]_i_16/O
+                         net (fo=3, routed)           0.935     8.502    PISO[255]_i_16_n_0
+    SLICE_X21Y104        LUT6 (Prop_lut6_I1_O)        0.053     8.555 r  PISO[251]_i_10/O
+                         net (fo=6, routed)           1.319     9.873    PISO[251]_i_10_n_0
+    SLICE_X16Y106        LUT5 (Prop_lut5_I4_O)        0.066     9.939 r  PISO[243]_i_5/O
+                         net (fo=5, routed)           0.837    10.776    PISO[243]_i_5_n_0
+    SLICE_X16Y111        LUT5 (Prop_lut5_I0_O)        0.168    10.944 r  PISO[243]_i_3/O
+                         net (fo=3, routed)           0.715    11.659    PISO[243]_i_3_n_0
+    SLICE_X13Y115        LUT6 (Prop_lut6_I2_O)        0.053    11.712 r  PISO[51]_i_1/O
+                         net (fo=1, routed)           0.000    11.712    p_1_in[51]
+    SLICE_X13Y115        FDRE                                         r  PISO_reg[51]/D
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 PISO_reg[212]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            PISO_reg[148]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.203ns  (logic 0.128ns (63.004%)  route 0.075ns (36.996%))
+  Logic Levels:           2  (FDRE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y109         FDRE                         0.000     0.000 r  PISO_reg[212]/C
+    SLICE_X4Y109         FDRE (Prop_fdre_C_Q)         0.100     0.100 r  PISO_reg[212]/Q
+                         net (fo=3, routed)           0.075     0.175    PISO[212]
+    SLICE_X5Y109         LUT6 (Prop_lut6_I5_O)        0.028     0.203 r  PISO[148]_i_1/O
+                         net (fo=1, routed)           0.000     0.203    p_1_in[148]
+    SLICE_X5Y109         FDRE                                         r  PISO_reg[148]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 PISO_reg[241]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            PISO_reg[177]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.205ns  (logic 0.128ns (62.421%)  route 0.077ns (37.579%))
+  Logic Levels:           2  (FDRE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X3Y109         FDRE                         0.000     0.000 r  PISO_reg[241]/C
+    SLICE_X3Y109         FDRE (Prop_fdre_C_Q)         0.100     0.100 r  PISO_reg[241]/Q
+                         net (fo=3, routed)           0.077     0.177    PISO[241]
+    SLICE_X2Y109         LUT6 (Prop_lut6_I5_O)        0.028     0.205 r  PISO[177]_i_1/O
+                         net (fo=1, routed)           0.000     0.205    p_1_in[177]
+    SLICE_X2Y109         FDRE                                         r  PISO_reg[177]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 PISO_reg[222]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            PISO_reg[158]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.206ns  (logic 0.128ns (62.118%)  route 0.078ns (37.882%))
+  Logic Levels:           2  (FDRE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X11Y114        FDRE                         0.000     0.000 r  PISO_reg[222]/C
+    SLICE_X11Y114        FDRE (Prop_fdre_C_Q)         0.100     0.100 r  PISO_reg[222]/Q
+                         net (fo=3, routed)           0.078     0.178    PISO[222]
+    SLICE_X10Y114        LUT6 (Prop_lut6_I5_O)        0.028     0.206 r  PISO[158]_i_1/O
+                         net (fo=1, routed)           0.000     0.206    p_1_in[158]
+    SLICE_X10Y114        FDRE                                         r  PISO_reg[158]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 buffer_len_reg[0][2]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            buffer_len_reg[1][2]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.207ns  (logic 0.100ns (48.295%)  route 0.107ns (51.705%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X15Y103        FDRE                         0.000     0.000 r  buffer_len_reg[0][2]/C
+    SLICE_X15Y103        FDRE (Prop_fdre_C_Q)         0.100     0.100 r  buffer_len_reg[0][2]/Q
+                         net (fo=1, routed)           0.107     0.207    buffer_len_reg[0][2]
+    SLICE_X15Y105        FDRE                                         r  buffer_len_reg[1][2]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 PISO_reg[159]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            PISO_reg[95]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.210ns  (logic 0.146ns (69.668%)  route 0.064ns (30.332%))
+  Logic Levels:           2  (FDRE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X8Y113         FDRE                         0.000     0.000 r  PISO_reg[159]/C
+    SLICE_X8Y113         FDRE (Prop_fdre_C_Q)         0.118     0.118 r  PISO_reg[159]/Q
+                         net (fo=2, routed)           0.064     0.182    PISO[159]
+    SLICE_X9Y113         LUT6 (Prop_lut6_I5_O)        0.028     0.210 r  PISO[95]_i_1/O
+                         net (fo=1, routed)           0.000     0.210    p_1_in[95]
+    SLICE_X9Y113         FDRE                                         r  PISO_reg[95]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 buffer_len_reg[0][3]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            buffer_len_reg[1][3]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.219ns  (logic 0.118ns (53.934%)  route 0.101ns (46.066%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X14Y103        FDRE                         0.000     0.000 r  buffer_len_reg[0][3]/C
+    SLICE_X14Y103        FDRE (Prop_fdre_C_Q)         0.118     0.118 r  buffer_len_reg[0][3]/Q
+                         net (fo=1, routed)           0.101     0.219    buffer_len_reg[0][3]
+    SLICE_X14Y104        FDRE                                         r  buffer_len_reg[1][3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 PISO_reg[186]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            PISO_reg[122]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.220ns  (logic 0.128ns (58.297%)  route 0.092ns (41.703%))
+  Logic Levels:           2  (FDRE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X9Y114         FDRE                         0.000     0.000 r  PISO_reg[186]/C
+    SLICE_X9Y114         FDRE (Prop_fdre_C_Q)         0.100     0.100 r  PISO_reg[186]/Q
+                         net (fo=2, routed)           0.092     0.192    PISO[186]
+    SLICE_X8Y114         LUT6 (Prop_lut6_I5_O)        0.028     0.220 r  PISO[122]_i_1/O
+                         net (fo=1, routed)           0.000     0.220    p_1_in[122]
+    SLICE_X8Y114         FDRE                                         r  PISO_reg[122]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 PISO_reg[98]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            PISO_reg[34]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.220ns  (logic 0.128ns (58.297%)  route 0.092ns (41.703%))
+  Logic Levels:           2  (FDRE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X19Y111        FDRE                         0.000     0.000 r  PISO_reg[98]/C
+    SLICE_X19Y111        FDRE (Prop_fdre_C_Q)         0.100     0.100 r  PISO_reg[98]/Q
+                         net (fo=2, routed)           0.092     0.192    PISO[98]
+    SLICE_X18Y111        LUT6 (Prop_lut6_I5_O)        0.028     0.220 r  PISO[34]_i_1/O
+                         net (fo=1, routed)           0.000     0.220    p_1_in[34]
+    SLICE_X18Y111        FDRE                                         r  PISO_reg[34]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 PISO_reg[171]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            PISO_reg[107]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.222ns  (logic 0.128ns (57.551%)  route 0.094ns (42.449%))
+  Logic Levels:           2  (FDRE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X19Y115        FDRE                         0.000     0.000 r  PISO_reg[171]/C
+    SLICE_X19Y115        FDRE (Prop_fdre_C_Q)         0.100     0.100 r  PISO_reg[171]/Q
+                         net (fo=2, routed)           0.094     0.194    PISO[171]
+    SLICE_X18Y115        LUT6 (Prop_lut6_I5_O)        0.028     0.222 r  PISO[107]_i_1/O
+                         net (fo=1, routed)           0.000     0.222    p_1_in[107]
+    SLICE_X18Y115        FDRE                                         r  PISO_reg[107]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 PISO_reg[125]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            PISO_reg[61]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.225ns  (logic 0.128ns (56.948%)  route 0.097ns (43.052%))
+  Logic Levels:           2  (FDRE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X5Y112         FDRE                         0.000     0.000 r  PISO_reg[125]/C
+    SLICE_X5Y112         FDRE (Prop_fdre_C_Q)         0.100     0.100 r  PISO_reg[125]/Q
+                         net (fo=2, routed)           0.097     0.197    PISO[125]
+    SLICE_X4Y112         LUT6 (Prop_lut6_I5_O)        0.028     0.225 r  PISO[61]_i_1/O
+                         net (fo=1, routed)           0.000     0.225    p_1_in[61]
+    SLICE_X4Y112         FDRE                                         r  PISO_reg[61]/D
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+

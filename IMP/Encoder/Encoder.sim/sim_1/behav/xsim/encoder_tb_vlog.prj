@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../Encoder.srcs/sources_1/imports/rtl_src/encoder.v" \
+"../../../../Encoder.srcs/sources_1/imports/rtl_src/uncenter_coeff.v" \
+"../../../../Encoder.srcs/sources_1/imports/rtl_src/zero_strip.v" \
+"../../../../Encoder.srcs/sim_1/new/Encoder_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

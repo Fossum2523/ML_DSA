@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="encoder_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="encoder_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="5,131.600 ns"></ZoomStartTime>
+      <ZoomEndTime time="5,165.701 ns"></ZoomEndTime>
+      <Cursor1Time time="5,160.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="155"></NameColumnWidth>
+      <ValueColumnWidth column_width="149"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="37" />
+   <wvobject fp_name="/encoder_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/sec_lvl" type="array">
+      <obj_property name="ElementShortName">sec_lvl[2:0]</obj_property>
+      <obj_property name="ObjectShortName">sec_lvl[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/encode_mode" type="array">
+      <obj_property name="ElementShortName">encode_mode[2:0]</obj_property>
+      <obj_property name="ObjectShortName">encode_mode[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/valid_i" type="logic">
+      <obj_property name="ElementShortName">valid_i</obj_property>
+      <obj_property name="ObjectShortName">valid_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/ready_i" type="logic">
+      <obj_property name="ElementShortName">ready_i</obj_property>
+      <obj_property name="ObjectShortName">ready_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/di" type="array">
+      <obj_property name="ElementShortName">di[45:0]</obj_property>
+      <obj_property name="ObjectShortName">di[45:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="vbus89" type="vbus">
+      <obj_property name="label">s1_2</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/encoder_tb/di[25]" type="logic">
+         <obj_property name="ElementShortName">[25]</obj_property>
+         <obj_property name="ObjectShortName">[25]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/encoder_tb/di[24]" type="logic">
+         <obj_property name="ElementShortName">[24]</obj_property>
+         <obj_property name="ObjectShortName">[24]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/encoder_tb/di[23]" type="logic">
+         <obj_property name="ElementShortName">[23]</obj_property>
+         <obj_property name="ObjectShortName">[23]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="vbus81" type="vbus">
+      <obj_property name="label">s1_0</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/encoder_tb/di[2]" type="logic">
+         <obj_property name="ElementShortName">[2]</obj_property>
+         <obj_property name="ObjectShortName">[2]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/encoder_tb/di[1]" type="logic">
+         <obj_property name="ElementShortName">[1]</obj_property>
+         <obj_property name="ObjectShortName">[1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/encoder_tb/di[0]" type="logic">
+         <obj_property name="ElementShortName">[0]</obj_property>
+         <obj_property name="ObjectShortName">[0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="vbus85" type="vbus">
+      <obj_property name="label">s1_1</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/encoder_tb/di[5]" type="logic">
+         <obj_property name="ElementShortName">[5]</obj_property>
+         <obj_property name="ObjectShortName">[5]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/encoder_tb/di[4]" type="logic">
+         <obj_property name="ElementShortName">[4]</obj_property>
+         <obj_property name="ObjectShortName">[4]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/encoder_tb/di[3]" type="logic">
+         <obj_property name="ElementShortName">[3]</obj_property>
+         <obj_property name="ObjectShortName">[3]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/dout" type="array">
+      <obj_property name="ElementShortName">dout[63:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/valid_o" type="logic">
+      <obj_property name="ElementShortName">valid_o</obj_property>
+      <obj_property name="ObjectShortName">valid_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/ready_o" type="logic">
+      <obj_property name="ElementShortName">ready_o</obj_property>
+      <obj_property name="ObjectShortName">ready_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/OUTPUT_W" type="array">
+      <obj_property name="ElementShortName">OUTPUT_W[31:0]</obj_property>
+      <obj_property name="ObjectShortName">OUTPUT_W[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/COEFF_W" type="array">
+      <obj_property name="ElementShortName">COEFF_W[31:0]</obj_property>
+      <obj_property name="ObjectShortName">COEFF_W[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/MAX_LVL" type="array">
+      <obj_property name="ElementShortName">MAX_LVL[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MAX_LVL[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/W" type="array">
+      <obj_property name="ElementShortName">W[31:0]</obj_property>
+      <obj_property name="ObjectShortName">W[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/uut/\genblk1[0].UNCENTER /di" type="array">
+      <obj_property name="ElementShortName">di[22:0]</obj_property>
+      <obj_property name="ObjectShortName">di[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/uut/\genblk1[0].UNCENTER /dout" type="array">
+      <obj_property name="ElementShortName">dout[22:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[22:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/uut/\genblk1[0].UNCENTER /t0" type="array">
+      <obj_property name="ElementShortName">t0[23:0]</obj_property>
+      <obj_property name="ObjectShortName">t0[23:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/uut/\genblk1[0].UNCENTER /t1" type="array">
+      <obj_property name="ElementShortName">t1[23:0]</obj_property>
+      <obj_property name="ObjectShortName">t1[23:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/uut/\genblk1[1].UNCENTER /di" type="array">
+      <obj_property name="ElementShortName">di[22:0]</obj_property>
+      <obj_property name="ObjectShortName">di[22:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/uut/\genblk1[1].UNCENTER /dout" type="array">
+      <obj_property name="ElementShortName">dout[22:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[22:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/uut/\genblk1[1].UNCENTER /t0" type="array">
+      <obj_property name="ElementShortName">t0[23:0]</obj_property>
+      <obj_property name="ObjectShortName">t0[23:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/uut/\genblk1[1].UNCENTER /t1" type="array">
+      <obj_property name="ElementShortName">t1[23:0]</obj_property>
+      <obj_property name="ObjectShortName">t1[23:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/uut/Z_STRIP/encode_lvl" type="array">
+      <obj_property name="ElementShortName">encode_lvl[4:0]</obj_property>
+      <obj_property name="ObjectShortName">encode_lvl[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/uut/Z_STRIP/di" type="array">
+      <obj_property name="ElementShortName">di[45:0]</obj_property>
+      <obj_property name="ObjectShortName">di[45:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/uut/Z_STRIP/dout" type="array">
+      <obj_property name="ElementShortName">dout[39:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[39:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/uut/valid_buffer" type="array">
+      <obj_property name="ElementShortName">valid_buffer[1:0]</obj_property>
+      <obj_property name="ObjectShortName">valid_buffer[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/uut/PISO" type="array">
+      <obj_property name="ElementShortName">PISO[255:0]</obj_property>
+      <obj_property name="ObjectShortName">PISO[255:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/uut/Z_STRIP/encode_lvl" type="array">
+      <obj_property name="ElementShortName">encode_lvl[4:0]</obj_property>
+      <obj_property name="ObjectShortName">encode_lvl[4:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/uut/Z_STRIP/di" type="array">
+      <obj_property name="ElementShortName">di[45:0]</obj_property>
+      <obj_property name="ObjectShortName">di[45:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/uut/Z_STRIP/dout" type="array">
+      <obj_property name="ElementShortName">dout[39:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[39:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/uut/Z_STRIP/OUTPUT_W" type="array">
+      <obj_property name="ElementShortName">OUTPUT_W[31:0]</obj_property>
+      <obj_property name="ObjectShortName">OUTPUT_W[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/uut/Z_STRIP/COEFF_W" type="array">
+      <obj_property name="ElementShortName">COEFF_W[31:0]</obj_property>
+      <obj_property name="ObjectShortName">COEFF_W[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/uut/Z_STRIP/MAX_LVL" type="array">
+      <obj_property name="ElementShortName">MAX_LVL[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MAX_LVL[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/uut/Z_STRIP/W" type="array">
+      <obj_property name="ElementShortName">W[31:0]</obj_property>
+      <obj_property name="ObjectShortName">W[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+</wave_config>

@@ -1,0 +1,9 @@
+0.7
+2020.2
+Oct 13 2023
+20:47:58
+C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Encoder/Encoder.sim/sim_1/behav/xsim/glbl.v,1697210495,verilog,,,,glbl,,,,,,,,
+C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Encoder/Encoder.srcs/sim_1/new/Encoder_tb.v,1742468462,verilog,,,,encoder_tb,,,,,,,,
+C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Encoder/Encoder.srcs/sources_1/imports/rtl_src/encoder.v,1742459595,verilog,,C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Encoder/Encoder.srcs/sources_1/imports/rtl_src/uncenter_coeff.v,,encoder,,,,,,,,
+C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Encoder/Encoder.srcs/sources_1/imports/rtl_src/uncenter_coeff.v,1742469142,verilog,,C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Encoder/Encoder.srcs/sources_1/imports/rtl_src/zero_strip.v,,uncenter_coeff,,,,,,,,
+C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Encoder/Encoder.srcs/sources_1/imports/rtl_src/zero_strip.v,1742395045,verilog,,C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Encoder/Encoder.srcs/sim_1/new/Encoder_tb.v,,zero_strip,,,,,,,,

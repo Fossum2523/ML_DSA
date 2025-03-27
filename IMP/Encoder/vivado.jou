@@ -1,0 +1,45 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Thu Mar 20 14:19:13 2025
+# Process ID: 17692
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Encoder
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10440 C:\Users\fossu\Desktop\ML_DSA_Syn\IMP\Encoder\Encoder.xpr
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Encoder/vivado.log
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Encoder\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Encoder/Encoder.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Encoder/encoder_tb_behav.wcfg
+source encoder_tb.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 100 us
+relaunch_sim
+relaunch_sim
+run 100 us
+relaunch_sim
+run 100 us
+relaunch_sim
+run 100 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 100 us
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Encoder/encoder_tb_behav.wcfg}
+close_sim
