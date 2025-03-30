@@ -6,8 +6,9 @@ module MLDSA
     input               data_in_ready,
     input   [1:0]       main_mode, // KeyGen, SignGen, SignVer
     //External signals
-    input   [63:0]      data_in,
-    output  [63:0]      data_out,
+    input   [2:0]       MLDSA_byte_num,
+    input   [63:0]      MLDSA_data_in,
+    output  [63:0]      MLDSA_data_out,
 
     //test
     output  [1343:0]    padder_out,
@@ -19,7 +20,11 @@ module MLDSA
     );  
     
     // Controller signals
+
+    wire [8:0]  ctrl_sign;
     /*---Sha---*/
+    wire        sha_en;
+    wire [3:0]  sha_type;
     wire        sha_in_ready;
     wire        sha_is_last;
     wire        sha_squeeze;
@@ -28,6 +33,11 @@ module MLDSA
     wire [2:0]  sha_byte_num;
     // wire                sha_out_ready;
     wire        sha_clean;
+    wire [1:0]  keccak_in_sel;
+    wire [1:0]  mem_sel_1;
+    wire [1:0]  mem_sel_2;
+    wire [1:0]  index_sel;
+    wire        in_seed_sel;
 
     /*---Seed---*/
     wire        Rho_prime_en;
@@ -68,20 +78,16 @@ module MLDSA
         .clk(clk),
         .reset(reset),
 
+        .ctrl_sign(ctrl_sign),
         /*---from outside---*/
         .start(start),
         .data_in_ready(data_in_ready),
         .main_mode(main_mode),
 
-        /*---Keack---*/
-        .sha_in_ready(sha_in_ready),
-        .sha_is_last(sha_is_last),
-        .sha_squeeze(sha_squeeze),
-        .sha_mode(sha_mode),
-        .sha_hold(sha_hold),
-        .sha_byte_num(sha_byte_num),
+        /*---Keccak---*/
+        .sha_en(sha_en),
+        .sha_type(sha_type),
         .sha_out_ready(sha_out_ready),
-        .sha_clean(sha_clean),
 
         /*---Data_Mem---*/
         .mem_sel(mem_sel),
@@ -99,8 +105,6 @@ module MLDSA
         .index(index),
         .sampler_in_ready(sampler_in_ready),
         .next_element(next_element),
-        .sha_in_sel(sha_in_sel),
-        .seed_in_sel(seed_in_sel),
 
         /*---NTT---*/
         .NTT_mode(NTT_mode),
@@ -114,11 +118,35 @@ module MLDSA
         .PWM_done(PWM_done)
     );
 
+    Keccak_Ctrl KKC(   
+        .clk(clk),
+        .reset(reset),
+        .sha_en(sha_en),
+        .sha_type(sha_type),
+        .MLSDA_in_byte_num(MLSDA_in_byte_num),
+        .next_element(next_element),
+        .sha_in_ready(sha_in_ready), 
+        .sha_is_last(sha_is_last),
+        .sha_squeeze(sha_squeeze), // when squeeze = 0, output once; otherwise, keep squeezing
+        .sha_mode(sha_mode),
+        .sha_hold(sha_hold),
+        .sha_byte_num(sha_byte_num),
+        .sha_out_ready(sha_out_ready),//交由主Controller控制，將sha_en拉掉
+        .sha_clean(sha_clean),
+        .keccak_in_sel(keccak_in_sel),
+        .mem_sel_1(mem_sel_1),
+        .mem_sel_2(mem_sel_2),
+        .index_sel(index_sel),
+        .in_seed_sel(in_seed_sel)
+    );  
+
+
     // Instantiate Data_Path
     Data_Path data_path_inst (
         .clk(clk),
         .reset(reset),
         
+        .ctrl_sign(ctrl_sign),
         /*---Keack---*/
         .sha_in_ready(sha_in_ready),
         .sha_is_last(sha_is_last),
@@ -128,6 +156,11 @@ module MLDSA
         .sha_byte_num(sha_byte_num),
         .sha_out_ready(sha_out_ready),
         .sha_clean(sha_clean),
+        .keccak_in_sel(keccak_in_sel),
+        .mem_sel_1(mem_sel_1),
+        .mem_sel_2(mem_sel_2),
+        .index_sel(index_sel),
+        .in_seed_sel(in_seed_sel),
 
         /*---Data_Mem---*/
         .mem_sel(mem_sel),
@@ -145,8 +178,6 @@ module MLDSA
         .index(index),
         .sampler_in_ready(sampler_in_ready),
         .next_element(next_element),
-        .sha_in_sel(sha_in_sel),
-        .seed_in_sel(seed_in_sel),
 
         /*---NTT---*/
         .NTT_mode(NTT_mode),
@@ -160,8 +191,8 @@ module MLDSA
         .PWM_done(PWM_done),
 
         /*---from outside---*/
-        .data_in(data_in),
-        .data_out(data_out),
+        .data_in(MLDSA_data_in),
+        .data_out(MLDSA_data_out),
 
         /*---test (Need to delete)---*/
         .padder_out(padder_out),

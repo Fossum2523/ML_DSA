@@ -13,6 +13,11 @@ module Data_Path
     input   [2:0]   sha_byte_num,
     output          sha_out_ready,
     input           sha_clean,
+    input  [1:0]    keccak_in_sel,
+    input  [1:0]    mem_sel_1,
+    input  [1:0]    mem_sel_2,
+    input  [1:0]    index_sel,
+    input           in_sedd_sel,
 
     /*---Data_Mem---*/
     input           mem_sel,
@@ -30,8 +35,6 @@ module Data_Path
     input   [3:0]   index,
     input           sampler_in_ready,
     output          next_element,
-    input   [1:0]   sha_in_sel,
-    input   [1:0]   seed_in_sel,
 
     /*---NTT---*/
     input           NTT_mode,

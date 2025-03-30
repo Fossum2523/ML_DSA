@@ -8,8 +8,9 @@ module MLDSA_tb;
     reg               start;
     reg               data_in_ready;
     reg   [1:0]       main_mode;
-    reg   [63:0]      data_in;
-    wire  [63:0]      data_out;
+    reg   [2:0]       MLDSA_byte_num;
+    reg   [63:0]      MLDSA_data_in;
+    wire  [63:0]      MLDSA_data_out;
     
     //test
     wire  [1343:0]    padder_out;
@@ -30,8 +31,9 @@ module MLDSA_tb;
         .start(start),
         .data_in_ready(data_in_ready),
         .main_mode(main_mode),
-        .data_in(data_in),
-        .data_out(data_out),
+        .MLDSA_byte_num(MLDSA_byte_num),
+        .MLDSA_data_in(MLDSA_data_in),
+        .MLDSA_data_out(MLDSA_data_out),
         .padder_out(padder_out),
         .padder_out_ready(padder_out_ready),
         .f_out(f_out),
@@ -47,7 +49,8 @@ module MLDSA_tb;
         start = 0;
         data_in_ready = 0;
         main_mode = 2'b00;
-        data_in = 64'h0;
+        MLDSA_byte_num = 3'd0;
+        MLDSA_data_in = 64'h0;
 
         // Apply reset
         #100;
@@ -58,17 +61,17 @@ module MLDSA_tb;
         start = 1;
         data_in_ready = 1;
         //in =  64'b1101011111110100101000100011001001100101101111001110110010100101;
-        data_in = 64'hFFFFFFFFFFFFFFFF;
+        MLDSA_data_in = 64'hFFFFFFFFFFFFFFFF;
         #10;
         start = 0;
         //in =  64'b0011010011011100011010100110110110000001110000010100101001100000;
-        data_in = 64'hFFFFFFFFFFFFFFFF;
+        MLDSA_data_in = 64'hFFFFFFFFFFFFFFFF;
         #10;
         //in =  64'b0110100000011101010100001011010111110110101010010101111011111101;
-        data_in = 64'hFFFFFFFFFFFFFFFF;
+        MLDSA_data_in = 64'hFFFFFFFFFFFFFFFF;
         #10;
         //in =  64'b1101001100000010101011000000101110000100100011101000010101110001;
-        data_in = 64'hFFFFFFFFFFFFFFFF;
+        MLDSA_data_in = 64'hFFFFFFFFFFFFFFFF;
         #10;
         //
         #10;

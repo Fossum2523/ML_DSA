@@ -1,0 +1,37 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../MLDSA.srcs/sources_1/NTT/BU.v" \
+"../../../../MLDSA.srcs/sources_1/NTT/CONTR.v" \
+"../../../../MLDSA.srcs/sources_1/Sampler/CoeffFromHalfByte.v" \
+"../../../../MLDSA.srcs/sources_1/imports/MLDSA/Controller.v" \
+"../../../../MLDSA.srcs/sources_1/Data_Mem/Data_Mem.v" \
+"../../../../MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v" \
+"../../../../MLDSA.srcs/sources_1/Data_Mem/Dual_Port_Ram_Single_clk.v" \
+"../../../../MLDSA.srcs/sources_1/Sampler/ExpandA.v" \
+"../../../../MLDSA.srcs/sources_1/Sampler/ExpandMASK.v" \
+"../../../../MLDSA.srcs/sources_1/Sampler/ExpandS.v" \
+"../../../../MLDSA.srcs/sources_1/Keccak/F_Permutation.v" \
+"../../../../MLDSA.srcs/sources_1/Keccak/Keccak.v" \
+"../../../../MLDSA.srcs/sources_1/imports/MLDSA/MLDSA.v" \
+"../../../../MLDSA.srcs/sources_1/NTT/Modular_Reduction.v" \
+"../../../../MLDSA.srcs/sources_1/NTT/NTT.v" \
+"../../../../MLDSA.srcs/sources_1/PWM/PWM.v" \
+"../../../../MLDSA.srcs/sources_1/Keccak/Padder.v" \
+"../../../../MLDSA.srcs/sources_1/NTT/RU.v" \
+"../../../../MLDSA.srcs/sources_1/Sampler/SampleInBall.v" \
+"../../../../MLDSA.srcs/sources_1/Sampler/Sampler.v" \
+"../../../../MLDSA.srcs/sources_1/NTT/mod_add.v" \
+"../../../../MLDSA.srcs/sources_1/NTT/mod_mul.v" \
+"../../../../MLDSA.srcs/sources_1/NTT/mod_sub.v" \
+"../../../../MLDSA.srcs/sources_1/Sampler/mux_generate.v" \
+"../../../../MLDSA.srcs/sources_1/Keccak/padder1.v" \
+"../../../../MLDSA.srcs/sources_1/Keccak/rconst.v" \
+"../../../../MLDSA.srcs/sources_1/NTT/rom.v" \
+"../../../../MLDSA.srcs/sources_1/Keccak/round.v" \
+"../../../../MLDSA.srcs/sim_1/imports/MLDSA/MLDSA_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
