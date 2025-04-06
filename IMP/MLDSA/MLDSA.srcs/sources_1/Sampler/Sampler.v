@@ -5,13 +5,13 @@ module Sampler(
     input               sampler_in_ready,
     input  [1343:0]     sampler_in,
 
-    //*---ExpandS---"*/
+    /*---ExpandS---*/
     output              sampler_squeeze,  // Flag for squeezing condition
     output              next_element,   // Flag for memory full condition
 
-    /*---S---"*/
-    output  [22:0]      z0,             // Write data z0 to Mem
-    output  [22:0]      z1,             // Write data z1 to Mem
+    /*---S---*/
+    output  [2:0]      z0,             // Write data z0 to Mem
+    output  [2:0]      z1,             // Write data z1 to Mem
     output  [7:0]       addr_z0,        // Write addresses for z0
     output  [7:0]       addr_z1,        // Write addresses for z1
     output              en_z0,           // enable for z values
@@ -19,7 +19,7 @@ module Sampler(
     output              en_z1,           // enable for z values
     output              we_z1,           // Write enable for z values
 
-    /*---A---"*/
+    /*---A---*/
     output  [22:0]      A0,             // Write data A0 to Mem
     output  [22:0]      A1,             // Write data A1 to Mem
     output  [7:0]       addr_A0,        // Write addresses for A0
@@ -29,7 +29,7 @@ module Sampler(
     output              en_A1,           // enable for A values
     output              we_A1,           // Write enable for A values
 
-    /*---y---"*/
+    /*---y---*/
     output  [22:0]      y0,             // Write data z0 to Mem
     output  [22:0]      y1,             // Write data z1 to Mem
     output  [7:0]       addr_y0,        // Write addresses for z0
@@ -37,7 +37,7 @@ module Sampler(
     output              en_y,           // enable for z values
     output              we_y,           // Write enable for z values
 
-    /*---c---"*/
+    /*---c---*/
     output  [22:0]      ci,             // Write data ci to Mem
     output  [7:0]       addr_ci,        // Write addresses for ci
     output  [7:0]       addr_cj,        // Write addresses for cj
@@ -75,7 +75,7 @@ module Sampler(
     assign sampler_in_ready_A       = mode == A_mode    ?  sampler_in_ready_buffer : 1'b0;
     assign sampler_in_ready_MASK    = mode == MASK_mode ?  sampler_in_ready_buffer : 1'b0;
     assign sampler_in_ready_SIB     = mode == SIB_mode  ?  sampler_in_ready_buffer : 1'b0;
-
+                             
     assign sampler_squeeze = mode == S_mode    ? sampler_squeeze_S    :
                              mode == A_mode    ? sampler_squeeze_A    :
                              mode == MASK_mode ? sampler_squeeze_MASK :

@@ -5,19 +5,23 @@ module NTT#(
 	input                reset,
     input                mode,
 	input                in_ready,
+    output               data_en,   //enable data memory
 	input  [BIT_LEN-1:0] NTT_in_u,
 	input  [BIT_LEN-1:0] NTT_in_d,
-    output               done,
+    output [7:0]         NTT_in_addr_u,
+	output [7:0]         NTT_in_addr_d,
     output               out_ready,
 	output [BIT_LEN-1:0] NTT_out_u,
 	output [BIT_LEN-1:0] NTT_out_d,
 	output [7:0]         NTT_addr_u,
+    output               done,
 	output [7:0]         NTT_addr_d
     );
 	 
 
-    localparam  IDLE    = 1'd0,
-                PROCESS = 1'd1;
+    localparam  IDLE         = 2'd0,
+                DATA_TRIGGER = 2'd1,
+                PROCESS      = 2'd2;
 
     localparam  NTT_mode  = 1'b0,
                 INTT_mode = 1'b1;
@@ -30,9 +34,10 @@ module NTT#(
     localparam depth_6 = 2;
     localparam depth_7 = 1;
 
-    reg curr_state;
-    reg next_state;
-    reg [7:0]cnt;
+    reg [1:0] curr_state;
+    reg [1:0] next_state;
+    reg [7:0] cnt;
+    reg [7:0] cnt2;
 
     /*** BU input ***/
     wire [BIT_LEN-1:0]  in_u_0;
@@ -149,6 +154,7 @@ module NTT#(
     wire [7:0] addr_adder_in_1;
     wire [7:0] addr_adder;
 
+    assign data_en = curr_state == DATA_TRIGGER | curr_state == PROCESS;
     assign done = cnt == 255;
     assign NTT_en = curr_state == PROCESS;
     
@@ -168,6 +174,8 @@ module NTT#(
                        : (NTT_en && cnt >= 126 && cnt < 254) ? 1'b1 : 1'b0;
     
     /*** BU input assign***/
+    // assign in_u_0 = cnt > 126 ? 0 : NTT_in_u;
+    // assign in_d_0 = cnt > 126 ? 0 : NTT_in_d;
     assign in_u_0 = mode ? MEM_u_out_1 : NTT_in_u;
     assign in_d_0 = mode ? MEM_d_out_1 : NTT_in_d;
     assign in_u_1 = mode ? MEM_u_out_2 : MEM_u_out_1;
@@ -209,12 +217,15 @@ module NTT#(
 
     assign addr_base = cnt - 8'd127;
     assign addr_leftshigt = addr_base << 1;
-    assign addr_adder_in_0 = mode ? addr_leftshigt : cnt;
+    assign addr_adder_in_0 = mode ? cnt : addr_leftshigt;
     assign addr_adder_in_1 = 8'd1;
     assign addr_adder = addr_adder_in_0 + addr_adder_in_1;
-
-    assign NTT_addr_u = mode ? addr_leftshigt : addr_base;
+ 
+    assign NTT_addr_u = mode ? addr_base : addr_leftshigt;
     assign NTT_addr_d = addr_adder;
+
+    assign NTT_in_addr_u = cnt2;
+    assign NTT_in_addr_d = cnt2 + 8'd128;
     /*** stage 0 ***/
     BU BU_0(
         .mode(mode),
@@ -243,7 +254,7 @@ module NTT#(
     rom #(
         .WIDTH(BIT_LEN),
         .LENGTH(128/depth_1),
-        .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_1.txt")
+        .INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/MEM_zeta/MEM_zeta_1.txt")
     ) MEM_zeta_1(
         .clk(clk), 
         .en(1'b1), 
@@ -293,7 +304,7 @@ module NTT#(
     rom #(
         .WIDTH(BIT_LEN),
         .LENGTH(128/depth_2),
-        .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_2.txt")
+        .INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/MEM_zeta/MEM_zeta_2.txt")
     ) MEM_zeta_2(
         .clk(clk), 
         .en(1'b1), 
@@ -342,7 +353,7 @@ module NTT#(
     rom #(
         .WIDTH(BIT_LEN),
         .LENGTH(128/depth_3),
-        .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_3.txt")
+        .INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/MEM_zeta/MEM_zeta_3.txt")
     ) MEM_zeta_3(
         .clk(clk), 
         .en(1'b1), 
@@ -391,7 +402,7 @@ module NTT#(
     rom #(
         .WIDTH(BIT_LEN),
         .LENGTH(128/depth_4),
-        .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_4.txt")
+        .INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/MEM_zeta/MEM_zeta_4.txt")
     ) MEM_zeta_4(
         .clk(clk), 
         .en(1'b1), 
@@ -439,7 +450,7 @@ module NTT#(
     rom #(
         .WIDTH(BIT_LEN),
         .LENGTH(128/depth_5),
-        .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_5.txt")
+        .INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/MEM_zeta/MEM_zeta_5.txt")
     ) MEM_zeta_5(
         .clk(clk), 
         .en(1'b1), 
@@ -487,7 +498,7 @@ module NTT#(
     rom #(
         .WIDTH(BIT_LEN),
         .LENGTH(128/depth_6),
-        .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_6.txt")
+        .INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/MEM_zeta/MEM_zeta_6.txt")
     ) MEM_zeta_6(
         .clk(clk), 
         .en(1'b1), 
@@ -535,7 +546,7 @@ module NTT#(
     rom #(
         .WIDTH(BIT_LEN),
         .LENGTH(128/depth_7),
-        .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/MEM_zeta/MEM_zeta_7.txt")
+        .INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/MEM_zeta/MEM_zeta_7.txt")
     ) MEM_zeta_7(
         .clk(clk), 
         .en(1'b1), 
@@ -567,8 +578,8 @@ module NTT#(
     );
 
 
-    always @(posedge clk or negedge reset) begin
-        if(!reset)
+    always @(posedge clk) begin
+        if(reset)
             curr_state <= IDLE;
         else 
             curr_state <= next_state;
@@ -578,9 +589,12 @@ module NTT#(
         case(curr_state)
             IDLE:begin
                 if(in_ready) 
-                    next_state = PROCESS;
+                    next_state = DATA_TRIGGER;
                 else 
                     next_state = IDLE;
+            end
+            DATA_TRIGGER:begin
+                next_state = PROCESS;
             end
             PROCESS:begin
                 if(done) 
@@ -592,13 +606,21 @@ module NTT#(
         endcase
     end
 
-    always @(posedge clk or negedge reset) begin
-        if(!reset)
+    always @(posedge clk) begin
+        if(reset)
             cnt <= 8'd0;
         else if(done) 
             cnt <= 8'd0;
         else if(curr_state == PROCESS) 
             cnt <= cnt + 1'b1;
-        
+    end
+
+    always @(posedge clk) begin
+        if(reset)
+            cnt2 <= 8'd0;
+        else if(done) 
+            cnt2 <= 8'd0;
+        else if(curr_state == PROCESS | curr_state == DATA_TRIGGER) 
+            cnt2 <= cnt2 + 1'b1;
     end
 endmodule

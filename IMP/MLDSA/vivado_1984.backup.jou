@@ -1,0 +1,234 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Tue Apr  1 23:14:17 2025
+# Process ID: 1984
+# Current directory: C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13212 C:\Users\USER\Desktop\ML_DSA_syn_new\IMP\MLDSA\MLDSA.xpr
+# Log file: C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/vivado.log
+# Journal file: C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA\vivado.jou
+# Running On: LAPTOP-2P71OMBV, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 16, Host memory: 16542 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav1.wcfg
+source MLDSA_tb.tcl
+run 10 us
+relaunch_sim
+relaunch_sim
+run 10 us
+run 10 us
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/KKC/in_seed_sel}} 
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/KKC/keccak_in_sel}} 
+restart
+run 10 us
+run 10 us
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/KKC/sha_en}} 
+restart
+run 10 us
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/KKC/padder_cnt}} 
+restart
+run 10 us
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/KKC/sha_type}} 
+restart
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 10 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/AG/sha_AG_gen}} 
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/AG/addr_a}} 
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/AG/addr_en}} 
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/AG/done}} 
+restart
+run 10 us
+run 10 us
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/KKC/sha_AG_gen}} 
+restart
+run 10 us
+run 10 us
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/KKC/padder_cnt}} 
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/KKC/sha_en}} 
+restart
+run 10 us
+run 10 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 10 us
+save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav1.wcfg}
+save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav1.wcfg}
+save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav1.wcfg}
+save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav1.wcfg}
+save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav1.wcfg}
+save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav1.wcfg}
+save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav1.wcfg}
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/seed/q_a}} {{/MLDSA_tb/uut/data_path_inst/DM/seed/q_b}} 
+restart
+run 10 us
+run 10 us
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/seed/data_a}} {{/MLDSA_tb/uut/data_path_inst/DM/seed/data_b}} {{/MLDSA_tb/uut/data_path_inst/DM/seed/addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/seed/addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/seed/en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/seed/en_b}} {{/MLDSA_tb/uut/data_path_inst/DM/seed/we_a}} {{/MLDSA_tb/uut/data_path_inst/DM/seed/we_b}} {{/MLDSA_tb/uut/data_path_inst/DM/seed/q_a}} {{/MLDSA_tb/uut/data_path_inst/DM/seed/q_b}} 
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/AG/ctrl_sign}} {{/MLDSA_tb/uut/data_path_inst/AG/sha_AG_gen}} {{/MLDSA_tb/uut/data_path_inst/AG/sha_out_ready}} {{/MLDSA_tb/uut/data_path_inst/AG/addr_en}} {{/MLDSA_tb/uut/data_path_inst/AG/addr_a}} {{/MLDSA_tb/uut/data_path_inst/AG/addr_b}} {{/MLDSA_tb/uut/data_path_inst/AG/done}} {{/MLDSA_tb/uut/data_path_inst/AG/addr_adder}} {{/MLDSA_tb/uut/data_path_inst/AG/last_addr}} {{/MLDSA_tb/uut/data_path_inst/AG/star_addr}} {{/MLDSA_tb/uut/data_path_inst/AG/triger}} {{/MLDSA_tb/uut/data_path_inst/AG/cnt_en}} {{/MLDSA_tb/uut/data_path_inst/AG/cnt}} 
+restart
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+relaunch_sim
+run 10 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+update_compile_order -fileset sources_1
+relaunch_sim
+relaunch_sim
+run 10 us
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/Sampler_/mode}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/sampler_in_ready}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/sampler_in}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/sampler_squeeze}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/next_element}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/z0}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/z1}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/addr_z0}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/addr_z1}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/en_z0}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/we_z0}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/en_z1}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/we_z1}} 
+restart
+run 10 us
+run 10 us
+save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav1.wcfg}
+update_compile_order -fileset sources_1
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 10 us
+update_compile_order -fileset sources_1
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/KKC/sha_clean}} 
+restart
+run 10 us
+run 10 us
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/KKC/next_element}} 
+relaunch_sim
+run 10 us
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/controller_inst/ctrl_sign}} 
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/controller_inst/start}} 
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/controller_inst/data_in_ready}} 
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/controller_inst/curr_state_KeyGen}} 
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/KKC/sha_en}} {{/MLDSA_tb/uut/data_path_inst/KKC/sha_type}} {{/MLDSA_tb/uut/data_path_inst/KKC/MLSDA_in_byte_num}} {{/MLDSA_tb/uut/data_path_inst/KKC/next_element}} {{/MLDSA_tb/uut/data_path_inst/KKC/sha_in_ready}} {{/MLDSA_tb/uut/data_path_inst/KKC/sha_is_last}} {{/MLDSA_tb/uut/data_path_inst/KKC/sha_squeeze}} {{/MLDSA_tb/uut/data_path_inst/KKC/sha_mode}} {{/MLDSA_tb/uut/data_path_inst/KKC/sha_hold}} {{/MLDSA_tb/uut/data_path_inst/KKC/sha_byte_num}} {{/MLDSA_tb/uut/data_path_inst/KKC/sha_out_ready}} {{/MLDSA_tb/uut/data_path_inst/KKC/sha_clean}} {{/MLDSA_tb/uut/data_path_inst/KKC/keccak_in_sel}} {{/MLDSA_tb/uut/data_path_inst/KKC/mem_sel_1}} {{/MLDSA_tb/uut/data_path_inst/KKC/mem_sel_2}} {{/MLDSA_tb/uut/data_path_inst/KKC/index_sel}} {{/MLDSA_tb/uut/data_path_inst/KKC/in_seed_sel}} {{/MLDSA_tb/uut/data_path_inst/KKC/sha_AG_gen}} {{/MLDSA_tb/uut/data_path_inst/KKC/AG_done}} 
+restart
+run 10 us
+run 10 us
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/KK/in}} {{/MLDSA_tb/uut/data_path_inst/KK/out}} 
+restart
+run 10 us
+run 10 us
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/AG/sha_AG_gen}} {{/MLDSA_tb/uut/data_path_inst/AG/sha_out_ready}} {{/MLDSA_tb/uut/data_path_inst/AG/addr_en}} {{/MLDSA_tb/uut/data_path_inst/AG/addr_a}} {{/MLDSA_tb/uut/data_path_inst/AG/addr_b}} {{/MLDSA_tb/uut/data_path_inst/AG/done}} {{/MLDSA_tb/uut/data_path_inst/AG/addr_adder}} {{/MLDSA_tb/uut/data_path_inst/AG/last_addr}} {{/MLDSA_tb/uut/data_path_inst/AG/star_addr}} {{/MLDSA_tb/uut/data_path_inst/AG/triger}} {{/MLDSA_tb/uut/data_path_inst/AG/cnt_en}} {{/MLDSA_tb/uut/data_path_inst/AG/cnt}} 
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/Sampler_/mode}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/sampler_in_ready}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/sampler_in}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/sampler_squeeze}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/next_element}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/z0}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/z1}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/addr_z0}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/addr_z1}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/en_z0}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/we_z0}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/en_z1}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/we_z1}} 
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/seed_data_a}} {{/MLDSA_tb/uut/data_path_inst/DM/seed_data_b}} {{/MLDSA_tb/uut/data_path_inst/DM/seed_addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/seed_addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/seed_en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/seed_en_b}} {{/MLDSA_tb/uut/data_path_inst/DM/seed_we_a}} {{/MLDSA_tb/uut/data_path_inst/DM/seed_we_b}} {{/MLDSA_tb/uut/data_path_inst/DM/seed_q_a}} {{/MLDSA_tb/uut/data_path_inst/DM/seed_q_b}} 
+restart
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/KKC/padder_cnt_clean}} {{/MLDSA_tb/uut/data_path_inst/KKC/padder_cnt}} 
+restart
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/KK/squeeze}} 
+restart
+run 10 us
+run 10 us
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/Sampler_/ExpandS_/sampler_squeeze}} 
+restart
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/Sampler_/sampler_squeeze}} 
+relaunch_sim
+run 10 us
+save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav1.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav1.wcfg
+source MLDSA_tb.tcl
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+close_sim

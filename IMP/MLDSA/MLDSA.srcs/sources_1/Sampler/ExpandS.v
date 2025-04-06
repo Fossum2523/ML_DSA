@@ -9,8 +9,8 @@ module ExpandS(
     output              next_element,     // Flag for memory full condition
 
     /*---S1 Mem---"*/
-    output  [22:0]      z0,               // Write data z0_tmp to Mem
-    output  [22:0]      z1,               // Write data z1_tmp to Mem
+    output  [2:0]       z0,               // Write data z0_tmp to Mem
+    output  [2:0]       z1,               // Write data z1_tmp to Mem
     output  [7:0]       addr_z0,          // Write addresses for z0_tmp
     output  [7:0]       addr_z1,          // Write addresses for z1_tmp
     output              en_z0,            // Write enable for z0 values
@@ -43,8 +43,8 @@ module ExpandS(
     wire        a;          // Comparison flags
     wire        b;          // Comparison flags
 
-    wire [2:0]  z0_tmp;
-    wire [2:0]  z1_tmp;
+    // wire [2:0]  z0_tmp;
+    // wire [2:0]  z1_tmp;
 
     wire [7:0] mux_data_out;
 
@@ -63,11 +63,11 @@ module ExpandS(
     CoeffFromHalfByte CFHB_0 (.in(mux_data_out[3:0]), .out(CFHB_0_out));
     CoeffFromHalfByte CFHB_1 (.in(mux_data_out[7:4]), .out(CFHB_1_out));
 
-    assign z0_tmp = a ? CFHB_1_out : CFHB_0_out;
-    assign z1_tmp = CFHB_1_out;
+    assign z0 = a ? CFHB_1_out : CFHB_0_out;
+    assign z1 = CFHB_1_out;
 
-    assign z0 = z0_tmp[2] ?  {{20{1'b1}}, z0_tmp} + 23'd8380417 : {20'd0, z0_tmp}; //Width_Expansion 
-    assign z1 = z1_tmp[2] ?  {{20{1'b1}}, z1_tmp} + 23'd8380417 : {20'd0, z1_tmp}; //Width_Expansion
+    // assign z0 = z0_tmp[2] ?  {{20{1'b1}}, z0_tmp} + 23'd8380417 : {20'd0, z0_tmp}; //Width_Expansion 
+    // assign z1 = z1_tmp[2] ?  {{20{1'b1}}, z1_tmp} + 23'd8380417 : {20'd0, z1_tmp}; //Width_Expansion
 
     assign addr_z0 = j[7:0];
     assign addr_z1 = j[7:0] + 1'b1;

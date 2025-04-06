@@ -3,36 +3,38 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Fri Feb 28 12:30:50 2025
-# Process ID: 9168
+# Start of session at: Tue Mar  4 22:39:18 2025
+# Process ID: 18076
 # Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1060 C:\Users\fossu\Desktop\ML_DSA_Syn\IMP\NTT\NTT2\NTT.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9008 C:\Users\fossu\Desktop\ML_DSA_Syn\IMP\NTT\NTT2\NTT.xpr
 # Log file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/vivado.log
 # Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2\vivado.jou
 # Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT.xpr
-update_compile_order -fileset sources_1
 launch_simulation -simset [get_filesets sim_2 ]
 open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT_tb_func_impl.wcfg
 source NTT_tb.tcl
-run 10 us
-run 10 us
-run 10 us
+update_compile_order -fileset sources_1
+run 100 us
+run 100 us
 relaunch_sim
-run 10 us
-run 10 us
+run 100 us
 current_wave_config {NTT_tb_func_impl.wcfg}
-add_wave {{/NTT_tb/uut/mode}} 
+add_wave {{/NTT_tb/uut/out_u_0}} {{/NTT_tb/uut/out_d_0}} {{/NTT_tb/uut/out_u_1}} {{/NTT_tb/uut/out_d_1}} {{/NTT_tb/uut/out_u_2}} {{/NTT_tb/uut/out_d_2}} {{/NTT_tb/uut/out_u_3}} {{/NTT_tb/uut/out_d_3}} {{/NTT_tb/uut/out_u_4}} {{/NTT_tb/uut/out_d_4}} {{/NTT_tb/uut/out_u_5}} {{/NTT_tb/uut/out_d_5}} {{/NTT_tb/uut/out_u_6}} {{/NTT_tb/uut/out_d_6}} {{/NTT_tb/uut/out_u_7}} {{/NTT_tb/uut/out_d_7}} 
 restart
-run 10 us
-run 10 us
-run 10 us
+run 100 us
 current_wave_config {NTT_tb_func_impl.wcfg}
-add_wave {{/NTT_tb/uut/cnt}} 
+add_wave {{/NTT_tb/uut/RU_1/in_u}} {{/NTT_tb/uut/RU_1/in_d}} {{/NTT_tb/uut/RU_1/out_u}} {{/NTT_tb/uut/RU_1/out_d}} 
 restart
-run 10 us
-run 10 us
+run 100 us
+run 100 us
+current_wave_config {NTT_tb_func_impl.wcfg}
+add_wave {{/NTT_tb/uut/RU_1/switch}} 
+restart
+run 100 us
+relaunch_sim
+run 100 us
 save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/NTT/NTT2/NTT_tb_func_impl.wcfg}
 close_sim

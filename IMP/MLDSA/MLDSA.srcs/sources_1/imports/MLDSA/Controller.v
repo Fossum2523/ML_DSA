@@ -303,30 +303,49 @@ module Controller
     output              mem_sel,
     output              A_mem_sel,
     output              t_mem_sel,
-    output              Seed_en,
 
     /*---Sampler---*/
-    output [1:0]        sampler_mode,
-    output [3:0]        index,
-    output              sampler_in_ready,
+    output reg [1:0]    sampler_mode,
+    output [3:0]        s1_index,
+    output [3:0]        s2_index,
+    output [3:0]        A_index,
+    output [3:0]        y_index,
+    output reg          sampler_in_ready,
     input               next_element,
     output [1:0]        sha_in_sel,
     output [1:0]        seed_in_sel,
 
     /*---NTT---*/
-    output              NTT_mode,
-	output              NTT_in_ready,
+    output  reg         NTT_mode,
+	output reg          NTT_in_ready,
     output reg [1:0]    NTT_index,
     input               NTT_done,
 
     /*---PWM---*/
     output              PWM_start,
     output reg [3:0]    PWM_index,
-    input               PWM_done
+    input               PWM_done,
 
     /*---Address genetate---*/
-    output [7:0]        addr_a,
-    output [7:0]        addr_b,
+    output reg  [1:0]   AG_addr_adder,
+    output reg  [7:0]   AG_star_addr,
+    output reg  [7:0]   AG_last_addr,
+    output reg          AG_triger,
+    output reg          AG_clean,
+    input               AG_done,
+
+    output reg  [1:0]   AG2_addr_adder,
+    output reg  [7:0]   AG2_star_addr,
+    output reg  [7:0]   AG2_last_addr,
+    output reg          AG2_triger,
+    output reg          AG2_clean,
+    input               AG2_done,
+    
+    /*---Encoder---*/
+    output reg          ENC_valid_i,
+    input               ENC_ready_i,
+    input               ENC_valid_o,
+    output reg          ENC_ready_o
     );  
 
     //main mode
@@ -336,29 +355,36 @@ module Controller
 
     //KeyGen FSM
     localparam  [5:0]   IDLE        = 6'd0,
-                        STAGE_1_a   = 6'd1,        
-                        STAGE_1_b   = 6'd2,        
+                        STAGE_1     = 6'd1,        
+                        STAGE_2     = 6'd2,        
+                        STAGE_3     = 6'd3,        
                         STAGE_T     = 6'd15;        
 
-    reg [3:0]   s_mem_cnt;
+    //Sampler mode
+    localparam [1:0]    S_mode    = 2'd0,
+                        A_mode    = 2'd1,
+                        MASK_mode = 2'd2,
+                        SIB_mode  = 2'd3;
 
-    reg [5:0] curr_state_KeyGen;
-    reg [5:0] curr_state_SignGen;
-    reg [5:0] curr_state_SignVer;
-    reg [5:0] next_state_KeyGen;
-    reg [5:0] next_state_SignGen;
-    reg [5:0] next_state_SignVer;
+    reg  [3:0]   s_mem_cnt;
 
-    assign  ctrl_sign = {main_mode,}
-    /*---Sampler---*/
-    //---s mem addr control
-    always @ (posedge clk) begin 
-        if (reset)                                                                                                                                                   
-            s_mem_cnt <= 4'd0;
-        else if(curr_state_KeyGen == STAGE_1_b)
-            if(next_element)
-                s_mem_cnt <= s_mem_cnt + 1'b1;
-    end
+    wire [5:0] curr_state;
+    reg  [5:0] curr_state_KeyGen;
+    reg  [5:0] curr_state_SignGen;
+    reg  [5:0] curr_state_SignVer;
+    reg  [5:0] next_state_KeyGen;
+    reg  [5:0] next_state_SignGen;
+    reg  [5:0] next_state_SignVer;
+
+    reg        sha_out_ready_tmp;
+
+    reg  keccak_done;
+    reg  keccak_done_tmp;
+    reg  NTT_done_tmp;
+
+
+    assign  curr_state = main_mode == KeyGen ? curr_state_KeyGen : 6'd0;
+    assign  ctrl_sign = {main_mode,curr_state};
 
     /*---KeyGen Main---*/
     always @ (posedge clk or posedge reset) begin
@@ -372,21 +398,27 @@ module Controller
         case (curr_state_KeyGen)
             IDLE: begin
                 if(start)   
-                    next_state_KeyGen = STAGE_1_a;
+                    next_state_KeyGen = STAGE_1;
                 else        
                     next_state_KeyGen = IDLE;
             end
-            STAGE_1_a: begin
-                if(sha_out_ready)   
-                    next_state_KeyGen = STAGE_1_b;
+            STAGE_1: begin
+                if(keccak_done)   
+                    next_state_KeyGen = STAGE_2;
                 else                
-                    next_state_KeyGen = STAGE_1_a;
+                    next_state_KeyGen = STAGE_1;
             end 
-            STAGE_1_b: begin
-                if(sha_out_ready)   
+            STAGE_2: begin
+                if(keccak_done)   
+                    next_state_KeyGen = STAGE_3;
+                else                
+                    next_state_KeyGen = STAGE_2;
+            end
+            STAGE_3: begin
+                if(keccak_done_tmp & NTT_done)   
                     next_state_KeyGen = STAGE_T;
                 else                
-                    next_state_KeyGen = STAGE_1_b;
+                    next_state_KeyGen = STAGE_3;
             end 
             STAGE_T: begin
                 next_state_KeyGen = STAGE_T;
@@ -400,8 +432,14 @@ module Controller
         sha_type = 4'd0;
         if(main_mode == KeyGen)begin
             case (curr_state_KeyGen)
-                STAGE_1_a: begin
+                STAGE_1: begin
                     sha_type = 4'd0;
+                end 
+                STAGE_2: begin
+                    sha_type = 4'd2;
+                end 
+                STAGE_3: begin
+                    sha_type = 4'd3;
                 end 
                 default: sha_type = 4'd0;
             endcase
@@ -413,13 +451,162 @@ module Controller
         sha_en = 1'd0;
         if(main_mode == KeyGen)begin
             case (curr_state_KeyGen)
-                STAGE_1_a: begin
-                    sha_en = 1'd1;
+                STAGE_1,
+                STAGE_2,
+                STAGE_3: begin
+                    sha_en = ~(keccak_done | keccak_done_tmp);
                 end 
                 default: sha_en = 1'd0;
             endcase
         end
     end
+
+    always @(*) begin
+        sampler_in_ready = 1'b0;
+        case (ctrl_sign)
+            {KeyGen,6'd2},
+            {KeyGen,6'd3}:begin
+                sampler_mode = S_mode;
+                if(sha_out_ready)
+                    sampler_in_ready = 1'b1;
+            end
+            default: sampler_in_ready = 1'b0;
+        endcase
+    end
+
+    always @(*) begin
+        NTT_mode = 1'b0;
+        case (ctrl_sign)
+            {KeyGen,6'd3}:begin
+                NTT_mode = 1'b0;
+            end
+            default: NTT_mode = 1'b0;
+        endcase
+    end
+
+    always @(*) begin
+        NTT_in_ready = 1'b0;
+        case (ctrl_sign)
+            {KeyGen,6'd3}:begin
+                NTT_in_ready = 1'b1;
+            end
+            default: NTT_in_ready = 1'b0;
+        endcase
+    end
+    /*---Index---*/ //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    assign s1_index = s_mem_cnt;
+    assign s2_index = s_mem_cnt;
+
+    always @ (posedge clk) begin 
+        if (reset)                                                                                                                                                   
+            s_mem_cnt <= 4'd0;
+        else if((curr_state_KeyGen == STAGE_2 | curr_state_KeyGen == STAGE_3) && next_element)
+            s_mem_cnt <= s_mem_cnt + 1'b1;
+    end
+
+    /*---NTT---*/
+    always @ (posedge clk) begin 
+        if (reset)                                                                                                                                                   
+            NTT_index <= 2'd0;
+        else if(NTT_done)
+            NTT_index <= NTT_index + 1'b1;
+    end
+
+    // always @ (posedge clk) begin 
+    //     if (reset)                                                                                                                                                   
+    //         NTT_in_ready_tmp <= 1'b0;
+    //     else if((curr_state == NTT_S1 | curr_state == INTT_AS1) && NTT_done)
+    //         NTT_index_tmp <= 1'b1;
+    // end
+    /*---Index---*/ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+    /*---stage_done---*/ //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    always @(*) begin
+        keccak_done = 1'b0;
+        case (curr_state_KeyGen)
+            STAGE_1: begin
+                if(AG_done)   
+                    keccak_done = 1'b1;
+            end 
+            STAGE_2: begin
+                if(s1_index == 3 & next_element)   
+                    keccak_done = 1'b1;
+            end
+            STAGE_3: begin
+                if(s2_index == 7 & next_element)   
+                    keccak_done = 1'b1;
+            end 
+            default: keccak_done = 1'b0;
+        endcase
+    end
+
+    always @(posedge clk) begin
+        if(reset)
+            keccak_done_tmp <= 1'b0;
+        else if(next_state_KeyGen != curr_state_KeyGen)
+            keccak_done_tmp <= 1'b0;
+        else if(keccak_done)
+            keccak_done_tmp <= 1'b1;
+    end
+
+    always @(posedge clk) begin
+        if(reset)
+            NTT_done_tmp <= 1'b0;
+        else if(next_state_KeyGen != curr_state_KeyGen)
+            NTT_done_tmp <= 1'b0;
+        else if(NTT_done)
+            NTT_done_tmp <= 1'b1;
+    end
+    /*---stage_done---*/ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+    /*---Address_Generate---*/ //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    always @(*) begin
+        AG_addr_adder  = 2'd0;
+        AG_star_addr   = 8'd0;
+        AG_last_addr   = 8'd255;
+        AG_triger      = 1'b0;
+        AG_clean       = 1'b0;
+        case (curr_state_KeyGen)
+            STAGE_1: begin
+                AG_addr_adder  = 2'd2;
+                AG_star_addr   = 8'd0;
+                AG_last_addr   = 8'd14;
+                AG_triger      = sha_out_ready;
+                AG_clean       = AG_done;
+            end
+            STAGE_2,
+            STAGE_3: begin
+                AG_addr_adder  = 2'd1;
+                AG_star_addr   = 8'd4;
+                AG_last_addr   = 8'd11;
+                AG_triger      = 1'b1;
+                AG_clean       = next_element;
+            end 
+
+        endcase
+    end
+
+    always @(*) begin
+        AG2_addr_adder  = 2'd0;
+        AG2_star_addr   = 8'd0;
+        AG2_last_addr   = 8'd255;
+        AG2_triger      = 1'b0;
+        AG2_clean       = 1'b0;
+        case (curr_state_KeyGen)
+            STAGE_3: begin
+                AG2_addr_adder  = 2'd1;
+                AG2_star_addr   = 8'd0;
+                AG2_last_addr   = 8'd127;
+                AG2_triger      = 1'b1;
+                AG2_clean       = NTT_done;
+            end 
+        endcase
+    end
+    /*---Address_Generate---*/ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
 endmodule
 
 

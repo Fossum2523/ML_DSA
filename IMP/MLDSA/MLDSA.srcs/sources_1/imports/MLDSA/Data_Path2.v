@@ -340,7 +340,7 @@ module Data_Path
 
         /*---s1---*/
         .s1_data_a(z0),
-        .s1_data_b(z1),//
+        .s1_data_b(z1),
         .s1_addr_a(s1_addr_a),
         .s1_addr_b(s1_addr_b),
         .s1_en_a(s1_en_z0),
@@ -352,7 +352,7 @@ module Data_Path
 
         /*---s2---*/
         .s2_data_a(z0),
-        .s2_data_b(z1),//
+        .s2_data_b(z1),
         .s2_addr_a({index[1:0],addr_z0}),
         .s2_addr_b({index[1:0],addr_z1}),
         .s2_en_a(s2_en_z0),

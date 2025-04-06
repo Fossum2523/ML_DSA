@@ -82,6 +82,13 @@ module Controller
             default: next_state_KEYGEN = IDLE;
         endcase
     end
+
+    always @ (posedge clk) begin 
+        if (reset)                                                                                                                                                   
+            s_mem_cnt <= 4'd0;
+        else if(ctrl_sign == {KeyGen,6'd2} && next_element)
+            s_mem_cnt <= s_mem_cnt + 1'b1;
+    end
 endmodule
 
 

@@ -32,7 +32,7 @@ module NTT_tb;
     wire  [DLEN-1:0]      s1_q_b;
 
 	reg zeta_en;
-    wire        zeta_addr_0;   //?��不是?��以改??? parameter
+    wire        zeta_addr_0;   //?��不是?��以改??? parameter
     wire [22:0] zeta_do_0;
 
     integer i;
@@ -66,7 +66,7 @@ module NTT_tb;
     	.HLEN(10),
 		// .INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/NTT/s1_0.txt")
 		// .INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/NTT/s1_Hat_0.txt")
-		.INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/NTT/s1_0.txt")
+		.INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/NTT/s1_0.txt")
 		// .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/NTT/s1_Hat_0.txt")
 	)s1(
         .clk_a(clk),

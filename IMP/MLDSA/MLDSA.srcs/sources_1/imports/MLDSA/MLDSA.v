@@ -23,29 +23,9 @@ module MLDSA
 
     wire [8:0]  ctrl_sign;
     /*---Sha---*/
-    wire        sha_en;
-    wire [3:0]  sha_type;
-    wire        sha_in_ready;
-    wire        sha_is_last;
-    wire        sha_squeeze;
-    wire        sha_mode;
-    wire        sha_hold;
-    wire [2:0]  sha_byte_num;
-    // wire                sha_out_ready;
-    wire        sha_clean;
-    wire [1:0]  keccak_in_sel;
-    wire [1:0]  mem_sel_1;
-    wire [1:0]  mem_sel_2;
-    wire [1:0]  index_sel;
-    wire        in_seed_sel;
-
-    /*---Seed---*/
-    wire        Rho_prime_en;
-    wire        Rho_en;
-    wire        Kata_en;
-    wire        Rho_prime_mode;
-    wire        Rho_mode;
-    wire        Kata_mode;
+    wire          sha_en;
+    wire  [3:0]   sha_type;
+    // wire          sha_out_ready;
 
     /*---Data_MEM---*/
     wire        mem_sel;
@@ -54,7 +34,10 @@ module MLDSA
 
     /*---Sampler---*/
     wire [1:0]  sampler_mode;
-    wire [3:0]  index;
+    wire [3:0]  s1_index;
+    wire [3:0]  s2_index;
+    wire [3:0]  A_index;
+    wire [3:0]  y_index;
     wire        sampler_in_ready;
     wire        next_element;
     wire [1:0]  sha_in_sel;
@@ -70,6 +53,21 @@ module MLDSA
     wire        PWM_start;
     wire [3:0]  PWM_index;
     wire        PWM_done;
+
+    /*---AG---*/
+    wire [1:0] AG_addr_adder;
+    wire [7:0] AG_last_addr;
+    wire [7:0] AG_star_addr;
+    wire AG_triger;
+    wire AG_clean;
+    wire AG_done;
+
+    wire [1:0] AG2_addr_adder;
+    wire [7:0] AG2_last_addr;
+    wire [7:0] AG2_star_addr;
+    wire AG2_triger;
+    wire AG2_clean;
+    wire AG2_done;
 
     
 
@@ -93,16 +91,13 @@ module MLDSA
         .mem_sel(mem_sel),
         .A_mem_sel(A_mem_sel),
         .t_mem_sel(t_mem_sel),
-        .Rho_en(Rho_en),
-        .Rho_prime_en(Rho_prime_en),
-        .Kata_en(Kata_en),
-        .Rho_mode(Rho_mode),
-        .Rho_prime_mode(Rho_prime_mode),
-        .Kata_mode(Kata_mode),
 
         /*---Sampler---*/
         .sampler_mode(sampler_mode),
-        .index(index),
+        .s1_index(s1_index),
+        .s2_index(s2_index),
+        .A_index(A_index),
+        .y_index(y_index),
         .sampler_in_ready(sampler_in_ready),
         .next_element(next_element),
 
@@ -115,30 +110,25 @@ module MLDSA
         /*---PWM---*/
 	    .PWM_start(PWM_start),
         .PWM_index(PWM_index),
-        .PWM_done(PWM_done)
+        .PWM_done(PWM_done),
+        
+         /*---AG---*/
+        .AG_addr_adder(AG_addr_adder),
+        .AG_star_addr(AG_star_addr),
+        .AG_last_addr(AG_last_addr),
+        .AG_triger(AG_triger),
+        .AG_clean(AG_clean),
+        .AG_done(AG_done),
+
+        .AG2_addr_adder(AG2_addr_adder),
+        .AG2_star_addr(AG2_star_addr),
+        .AG2_last_addr(AG2_last_addr),
+        .AG2_triger(AG2_triger),
+        .AG2_clean(AG2_clean),
+        .AG2_done(AG2_done)
     );
 
-    Keccak_Ctrl KKC(   
-        .clk(clk),
-        .reset(reset),
-        .sha_en(sha_en),
-        .sha_type(sha_type),
-        .MLSDA_in_byte_num(MLSDA_in_byte_num),
-        .next_element(next_element),
-        .sha_in_ready(sha_in_ready), 
-        .sha_is_last(sha_is_last),
-        .sha_squeeze(sha_squeeze), // when squeeze = 0, output once; otherwise, keep squeezing
-        .sha_mode(sha_mode),
-        .sha_hold(sha_hold),
-        .sha_byte_num(sha_byte_num),
-        .sha_out_ready(sha_out_ready),//交由主Controller控制，將sha_en拉掉
-        .sha_clean(sha_clean),
-        .keccak_in_sel(keccak_in_sel),
-        .mem_sel_1(mem_sel_1),
-        .mem_sel_2(mem_sel_2),
-        .index_sel(index_sel),
-        .in_seed_sel(in_seed_sel)
-    );  
+    
 
 
     // Instantiate Data_Path
@@ -147,35 +137,38 @@ module MLDSA
         .reset(reset),
         
         .ctrl_sign(ctrl_sign),
-        /*---Keack---*/
-        .sha_in_ready(sha_in_ready),
-        .sha_is_last(sha_is_last),
-        .sha_squeeze(sha_squeeze),
-        .sha_mode(sha_mode),
-        .sha_hold(sha_hold),
-        .sha_byte_num(sha_byte_num),
+
+        /*---Keccak---*/
+        .sha_en(sha_en),
+        .sha_type(sha_type),
         .sha_out_ready(sha_out_ready),
-        .sha_clean(sha_clean),
-        .keccak_in_sel(keccak_in_sel),
-        .mem_sel_1(mem_sel_1),
-        .mem_sel_2(mem_sel_2),
-        .index_sel(index_sel),
-        .in_seed_sel(in_seed_sel),
+
+        // /*---Keack---*/
+        // .sha_in_ready(sha_in_ready),
+        // .sha_is_last(sha_is_last),
+        // .sha_squeeze(sha_squeeze),
+        // .sha_mode(sha_mode),
+        // .sha_hold(sha_hold),
+        // .sha_byte_num(sha_byte_num),
+        // .sha_out_ready(sha_out_ready),
+        // .sha_clean(sha_clean),
+        // .keccak_in_sel(keccak_in_sel),
+        // .mem_sel_1(mem_sel_1),
+        // .mem_sel_2(mem_sel_2),
+        // .index_sel(index_sel),
+        // .in_seed_sel(in_seed_sel),
 
         /*---Data_Mem---*/
         .mem_sel(mem_sel),
         .A_mem_sel(A_mem_sel),
         .t_mem_sel(t_mem_sel),
-        .Rho_en(Rho_en),
-        .Rho_prime_en(Rho_prime_en),
-        .Kata_en(Kata_en),
-        .Rho_mode(Rho_mode),
-        .Rho_prime_mode(Rho_prime_mode),
-        .Kata_mode(Kata_mode),
 
         /*---Sampler---*/
         .sampler_mode(sampler_mode),
-        .index(index),
+        .s1_index(s1_index),
+        .s2_index(s2_index),
+        .A_index(A_index),
+        .y_index(y_index),
         .sampler_in_ready(sampler_in_ready),
         .next_element(next_element),
 
@@ -189,6 +182,21 @@ module MLDSA
 	    .PWM_start(PWM_start),
         .PWM_index(PWM_index),
         .PWM_done(PWM_done),
+
+        /*---AG---*/
+        .AG_addr_adder(AG_addr_adder),
+        .AG_star_addr(AG_star_addr),
+        .AG_last_addr(AG_last_addr),
+        .AG_triger(AG_triger),
+        .AG_clean(AG_clean),
+        .AG_done(AG_done),
+
+        .AG2_addr_adder(AG2_addr_adder),
+        .AG2_star_addr(AG2_star_addr),
+        .AG2_last_addr(AG2_last_addr),
+        .AG2_triger(AG2_triger),
+        .AG2_clean(AG2_clean),
+        .AG2_done(AG2_done),
 
         /*---from outside---*/
         .data_in(MLDSA_data_in),

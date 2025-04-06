@@ -3,25 +3,118 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Sat Mar 29 12:35:56 2025
-# Process ID: 14524
-# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6028 C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP\MLDSA\MLDSA.xpr
-# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/vivado.log
-# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA\vivado.jou
-# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+# Start of session at: Fri Apr  4 01:58:52 2025
+# Process ID: 25404
+# Current directory: C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18196 C:\Users\USER\Desktop\ML_DSA_syn_new\IMP\MLDSA\MLDSA.xpr
+# Log file: C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/vivado.log
+# Journal file: C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA\vivado.jou
+# Running On: LAPTOP-2P71OMBV, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 16, Host memory: 16542 MB
 #-----------------------------------------------------------
 start_gui
-open_project C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.xpr
+open_project C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA.xpr
 update_compile_order -fileset sources_1
 launch_simulation
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA_tb_behav.wcfg
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA_tb_behav1.wcfg
+add_files -norecurse -scan_for_includes C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/Address_generate/Address_generate_2.v
+launch_simulation
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav1.wcfg
 source MLDSA_tb.tcl
 run 10 us
-relaunch_sim
-relaunch_sim
+run 10 us
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/AG2/addr_adder}} {{/MLDSA_tb/uut/data_path_inst/AG2/last_addr}} {{/MLDSA_tb/uut/data_path_inst/AG2/star_addr}} {{/MLDSA_tb/uut/data_path_inst/AG2/triger}} {{/MLDSA_tb/uut/data_path_inst/AG2/clean}} {{/MLDSA_tb/uut/data_path_inst/AG2/addr_en}} {{/MLDSA_tb/uut/data_path_inst/AG2/addr_a}} {{/MLDSA_tb/uut/data_path_inst/AG2/addr_b}} {{/MLDSA_tb/uut/data_path_inst/AG2/data_valid}} {{/MLDSA_tb/uut/data_path_inst/AG2/done}} {{/MLDSA_tb/uut/data_path_inst/AG2/cnt_en}} {{/MLDSA_tb/uut/data_path_inst/AG2/cnt}} 
+restart
+run 10 us
 run 10 us
 update_compile_order -fileset sources_1
 relaunch_sim
+update_compile_order -fileset sources_1
+relaunch_sim
+relaunch_sim
+close_sim
+launch_simulation
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav1.wcfg
+source MLDSA_tb.tcl
+run 10 us
+run 10 us
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/AG2/addr_adder}} {{/MLDSA_tb/uut/data_path_inst/AG2/last_addr}} {{/MLDSA_tb/uut/data_path_inst/AG2/star_addr}} {{/MLDSA_tb/uut/data_path_inst/AG2/triger}} {{/MLDSA_tb/uut/data_path_inst/AG2/clean}} {{/MLDSA_tb/uut/data_path_inst/AG2/addr_en}} {{/MLDSA_tb/uut/data_path_inst/AG2/addr_a}} {{/MLDSA_tb/uut/data_path_inst/AG2/addr_b}} {{/MLDSA_tb/uut/data_path_inst/AG2/data_valid}} {{/MLDSA_tb/uut/data_path_inst/AG2/done}} {{/MLDSA_tb/uut/data_path_inst/AG2/cnt_en}} {{/MLDSA_tb/uut/data_path_inst/AG2/cnt}} 
+restart
+run 10 us
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/NTT_/BU_0/out_a}} {{/MLDSA_tb/uut/data_path_inst/NTT_/BU_0/out_b}} 
+restart
+run 10 us
+run 10 us
+run 10 us
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/s1_data_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s1_data_b}} {{/MLDSA_tb/uut/data_path_inst/DM/s1_addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s1_addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/s1_en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s1_en_b}} {{/MLDSA_tb/uut/data_path_inst/DM/s1_we_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s1_we_b}} {{/MLDSA_tb/uut/data_path_inst/DM/s1_q_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s1_q_b}} 
+restart
+run 10 us
+run 10 us
+run 10 us
+relaunch_sim
+relaunch_sim
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+update_compile_order -fileset sources_1
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 10 us
+current_wave_config {MLDSA_tb_behav1.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/AG/addr_adder}} {{/MLDSA_tb/uut/data_path_inst/AG/last_addr}} {{/MLDSA_tb/uut/data_path_inst/AG/star_addr}} {{/MLDSA_tb/uut/data_path_inst/AG/triger}} {{/MLDSA_tb/uut/data_path_inst/AG/clean}} {{/MLDSA_tb/uut/data_path_inst/AG/addr_en}} {{/MLDSA_tb/uut/data_path_inst/AG/addr_a}} {{/MLDSA_tb/uut/data_path_inst/AG/addr_b}} {{/MLDSA_tb/uut/data_path_inst/AG/data_valid}} {{/MLDSA_tb/uut/data_path_inst/AG/done}} {{/MLDSA_tb/uut/data_path_inst/AG/cnt_en}} {{/MLDSA_tb/uut/data_path_inst/AG/cnt}} 
+restart
+run 10 us
+run 10 us
+relaunch_sim
+relaunch_sim
+run 10 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 10 us
+relaunch_sim
+relaunch_sim
+run 10 us
+run 10 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+relaunch_sim
+relaunch_sim
+run 10 us
+relaunch_sim
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav1.wcfg}
 close_sim

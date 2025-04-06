@@ -1,45 +1,44 @@
 module Data_Mem
-#(  parameter DLEN = 23, SEED_HLEN = 4, S_HLEN = 10, A_HLEN = 12, Y_HLEN = 10, C_HLEN = 8, T_HLEN = 10)
+#(  parameter DLEN = 23, SEED_DLEN = 64, S_DLEN = 3, SEED_HLEN = 4, S_HLEN = 10, A_HLEN = 12, Y_HLEN = 10, C_HLEN = 8, T_HLEN = 10)
 (
     input clk,
     input reset,
 
     /*---Seed---*/
-    input   [64-1:0]        seed_data_a,
-    input   [64-1:0]        seed_data_b,
+    input   [SEED_DLEN-1:0] seed_data_a,
+    input   [SEED_DLEN-1:0] seed_data_b,
     input   [SEED_HLEN-1:0] seed_addr_a,
     input   [SEED_HLEN-1:0] seed_addr_b,
     input                   seed_en_a,
     input                   seed_en_b,
     input                   seed_we_a,
     input                   seed_we_b,
-    output  [64-1:0]        seed_q_a,
-    output  [64-1:0]        seed_q_b,
-
+    output  [SEED_DLEN-1:0] seed_q_a,
+    output  [SEED_DLEN-1:0] seed_q_b,
     
     /*---s1---*/
-    input   [DLEN-1:0]      s1_data_a,
-    input   [DLEN-1:0]      s1_data_b,
+    input   [S_DLEN-1:0]    s1_data_a,
+    input   [S_DLEN-1:0]    s1_data_b,
     input   [S_HLEN-1:0]    s1_addr_a,
     input   [S_HLEN-1:0]    s1_addr_b,
     input                   s1_en_a,
     input                   s1_en_b,
     input                   s1_we_a,
     input                   s1_we_b,
-    output  [DLEN-1:0]      s1_q_a,
-    output  [DLEN-1:0]      s1_q_b,
+    output  [S_DLEN-1:0]    s1_q_a,
+    output  [S_DLEN-1:0]    s1_q_b,
 
     /*---s2---*/
-    input   [DLEN-1:0]      s2_data_a,
-    input   [DLEN-1:0]      s2_data_b,
+    input   [S_DLEN-1:0]    s2_data_a,
+    input   [S_DLEN-1:0]    s2_data_b,
     input   [S_HLEN-1:0]    s2_addr_a,
     input   [S_HLEN-1:0]    s2_addr_b,
     input                   s2_en_a,
     input                   s2_en_b,
     input                   s2_we_a,
     input                   s2_we_b,
-    output  [DLEN-1:0]      s2_q_a,
-    output  [DLEN-1:0]      s2_q_b,
+    output  [S_DLEN-1:0]    s2_q_a,
+    output  [S_DLEN-1:0]    s2_q_b,
 
     /*---A---*/
     input   [DLEN-1:0]      A_data_a,
@@ -87,7 +86,19 @@ module Data_Mem
     input                   t_we_a,
     input                   t_we_b,
     output  [DLEN-1:0]      t_q_a,
-    output  [DLEN-1:0]      t_q_b
+    output  [DLEN-1:0]      t_q_b,
+
+    /*---temp_0---*/
+    input   [DLEN-1:0]      temp_0_data_a,
+    input   [DLEN-1:0]      temp_0_data_b,
+    input   [T_HLEN - 1:0]  temp_0_addr_a,
+    input   [T_HLEN - 1:0]  temp_0_addr_b,
+    input                   temp_0_en_a,
+    input                   temp_0_en_b,
+    input                   temp_0_we_a,
+    input                   temp_0_we_b,
+    output  [DLEN-1:0]      temp_0_q_a,
+    output  [DLEN-1:0]      temp_0_q_b
     );
 
     localparam  LOAD_SEED = 1'b0,
@@ -131,7 +142,7 @@ module Data_Mem
     );
 
     /*---s1---*/
-    Dual_Port_Ram_Single_clk #(.DLEN(DLEN), .HLEN(S_HLEN)) s1(
+    Dual_Port_Ram_Single_clk #(.DLEN(S_DLEN), .HLEN(S_HLEN)) s1(
         .clk_a(clk),
         .clk_b(clk),
         .data_a(s1_data_a),
@@ -147,7 +158,7 @@ module Data_Mem
     );
 
     /*---s2---*/
-    Dual_Port_Ram_Single_clk #(.DLEN(DLEN), .HLEN(S_HLEN)) s2(
+    Dual_Port_Ram_Single_clk #(.DLEN(S_DLEN), .HLEN(S_HLEN)) s2(
         .clk_a(clk),
         .clk_b(clk),
         .data_a(s2_data_a),
@@ -224,5 +235,21 @@ module Data_Mem
         .we_b(t_we_b),
         .q_a(t_q_a),
         .q_b(t_q_b)
+    );
+
+    /*---temp_0---*/
+    Dual_Port_Ram_Single_clk #(.DLEN(DLEN), .HLEN(T_HLEN)) temp_0(
+        .clk_a(clk),
+        .clk_b(clk),
+        .data_a(temp_0_data_a),
+        .data_b(temp_0_data_b),
+        .addr_a(temp_0_addr_a),
+        .addr_b(temp_0_addr_b),
+        .en_a(temp_0_en_a),
+        .en_b(temp_0_en_b),
+        .we_a(temp_0_we_a),
+        .we_b(temp_0_we_b),
+        .q_a(temp_0_q_a),
+        .q_b(temp_0_q_b)
     );
 endmodule

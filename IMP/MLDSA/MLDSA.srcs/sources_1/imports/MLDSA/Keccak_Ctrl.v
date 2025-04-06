@@ -13,12 +13,16 @@ module Keccak_Ctrl
     output              sha_hold,
     output  [2:0]       sha_byte_num,
     input               sha_out_ready,//交由主Controller控制，將sha_en拉掉
-    output              sha_clean,
+    output  reg         sha_clean,
     output  reg [1:0]   keccak_in_sel,
-    output  reg [1:0]   mem_sel_1,
+    output  reg         mem_sel_1,
     output  reg [1:0]   mem_sel_2,
     output  reg [1:0]   index_sel,
-    output  reg         in_seed_sel
+    output  reg         in_seed_sel,
+
+    /*---AG---*/
+    output   reg        sha_AG_gen,
+    input               AG_done
     );  
 
     //Keccak mode
@@ -40,7 +44,7 @@ module Keccak_Ctrl
                 H_tr_M_1    = 4'd11,
                 H_tr_M_2    = 4'd12;
 
-
+    reg             padder_cnt_clean;
     reg     [3:0]   padder_cnt;//用來計數padder的次數，最後會送一筆last訊號
     reg     state;      
     reg     sha_in_ready_tmp;
@@ -49,7 +53,7 @@ module Keccak_Ctrl
     assign  sha_squeeze  =  1'b0;//交由其他module來送，可以不用
     assign  sha_mode     =  sha_type == 4'd1 ? G : H;
     assign  sha_hold     =  1'b0;
-    assign  sha_clean    =  1'b0;                  
+            
    
 
     assign  sha_byte_num = sha_type <= 4'd5  ? 3'b010 :
@@ -59,7 +63,7 @@ module Keccak_Ctrl
     always @(posedge clk) begin
         if(reset)
             padder_cnt <= 4'd0;
-        else if(!sha_en)
+        else if(padder_cnt_clean)
             padder_cnt <= 4'd0;
         else if(sha_en && padder_cnt < 4'd15)
             padder_cnt <= padder_cnt + 1'b1;
@@ -72,6 +76,11 @@ module Keccak_Ctrl
                 if(padder_cnt <= 4)
                     sha_in_ready_tmp = 1'b1;
             end
+            Gen_s1,
+            Gen_s2:begin
+                if(padder_cnt > 1 & padder_cnt <= 10)
+                    sha_in_ready_tmp = 1'b1;
+            end
             default: begin
                 sha_in_ready_tmp = 1'b0;
             end
@@ -79,11 +88,43 @@ module Keccak_Ctrl
     end   
 
     always @(*) begin
+        sha_AG_gen = 1'b0;
+        case (sha_type)
+            Gen_s1,
+            Gen_s2:begin
+                if(padder_cnt <= 4 & ~padder_cnt_clean)
+                    sha_AG_gen = 1'b1;
+            end
+            default: begin
+                sha_AG_gen = 1'b0;
+            end
+        endcase
+    end 
+
+    always @(*) begin
+        sha_clean = 1'b0;
+        case (sha_type)
+            Gen_Seed:begin
+                if(AG_done)
+                    sha_clean = 1'b1;
+            end
+            Gen_s1,
+            Gen_s2:begin
+                if(next_element)
+                    sha_clean = 1'b1;
+            end
+            default: begin
+                sha_clean = 1'b0;
+            end
+        endcase
+    end 
+
+    always @(*) begin
         keccak_in_sel   = 2'd0;
         mem_sel_1       = 2'd0;
         mem_sel_2       = 2'd0;
         index_sel       = 2'd0;
-        in_seed_sel     = 1'd0;
+        in_seed_sel     = 2'd0;
 
         case (sha_type)
             Gen_Seed:begin
@@ -93,12 +134,32 @@ module Keccak_Ctrl
                 else
                     in_seed_sel = 1'd1;
             end
+            Gen_s1:begin
+                if(padder_cnt <= 9)begin
+                    keccak_in_sel = 2'd0;
+                    mem_sel_1     = 1'd0;
+                end
+                else begin
+                    keccak_in_sel = 2'd2;
+                    index_sel     = 2'd1;
+                end
+            end
+            Gen_s2:begin
+                if(padder_cnt <= 9)begin
+                    keccak_in_sel = 2'd0;
+                    mem_sel_1     = 1'd0;
+                end
+                else begin
+                    keccak_in_sel = 2'd2;
+                    index_sel     = 2'd2;
+                end
+            end
             default: begin
                 keccak_in_sel   = 2'd0;
                 mem_sel_1       = 2'd0;
                 mem_sel_2       = 2'd0;
                 index_sel       = 2'd0;
-                in_seed_sel     = 1'd0;
+                in_seed_sel     = 2'd0;
             end
         endcase
     end     
@@ -110,10 +171,32 @@ module Keccak_Ctrl
                 if(padder_cnt == 4)
                     sha_is_last = 1'b1;
             end
+            Gen_s1,
+            Gen_s2:begin
+                if(padder_cnt == 10)
+                    sha_is_last = 1'b1;
+            end
             default: begin
                 sha_is_last = 1'b0;
             end
         endcase
-    end        
+    end    
 
+    always @(*) begin
+        padder_cnt_clean = 1'b0;
+        case (sha_type)
+            Gen_Seed:begin
+                if(AG_done)
+                    padder_cnt_clean = 1'b1;
+            end
+            Gen_s1,
+            Gen_s2:begin
+                if(next_element)
+                    padder_cnt_clean = 1'b1;
+            end
+            default: begin
+                sha_is_last = 1'b0;
+            end
+        endcase
+    end     
 endmodule
