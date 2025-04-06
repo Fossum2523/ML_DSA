@@ -54,22 +54,27 @@ module MLDSA
     wire [3:0]  PWM_index;
     wire        PWM_done;
 
-    /*---AG---*/
-    wire [1:0] AG_addr_adder;
-    wire [7:0] AG_last_addr;
-    wire [7:0] AG_star_addr;
-    wire AG_triger;
-    wire AG_clean;
-    wire AG_done;
+    /*---AG_1---*/
+    wire [1:0]  AG_1_addr_adder;
+    wire [11:0] AG_1_last_addr;
+    wire [11:0] AG_1_star_addr;
+    wire AG_1_triger;
+    wire AG_1_clean;
+    wire AG_1_done;
 
-    wire [1:0] AG2_addr_adder;
-    wire [7:0] AG2_last_addr;
-    wire [7:0] AG2_star_addr;
-    wire AG2_triger;
-    wire AG2_clean;
-    wire AG2_done;
+    wire [1:0]  AG_2_addr_adder;
+    wire [11:0] AG_2_last_addr;
+    wire [11:0] AG_2_star_addr;
+    wire AG_2_triger;
+    wire AG_2_clean;
+    wire AG_2_done;
 
-    
+    wire [1:0]  AG_3_addr_adder;
+    wire [11:0] AG_3_last_addr;
+    wire [11:0] AG_3_star_addr;
+    wire AG_3_triger;
+    wire AG_3_clean;
+    wire AG_3_done;
 
     // Instantiate Controller
     Controller controller_inst (
@@ -112,20 +117,18 @@ module MLDSA
         .PWM_index(PWM_index),
         .PWM_done(PWM_done),
         
-         /*---AG---*/
-        .AG_addr_adder(AG_addr_adder),
-        .AG_star_addr(AG_star_addr),
-        .AG_last_addr(AG_last_addr),
-        .AG_triger(AG_triger),
-        .AG_clean(AG_clean),
-        .AG_done(AG_done),
+         /*---AG_1---*/
+        .AG_1_triger(AG_1_triger),
+        .AG_1_clean(AG_1_clean),
+        .AG_1_done(AG_1_done),
 
-        .AG2_addr_adder(AG2_addr_adder),
-        .AG2_star_addr(AG2_star_addr),
-        .AG2_last_addr(AG2_last_addr),
-        .AG2_triger(AG2_triger),
-        .AG2_clean(AG2_clean),
-        .AG2_done(AG2_done)
+        .AG_2_triger(AG_2_triger),
+        .AG_2_clean(AG_2_clean),
+        .AG_2_done(AG_2_done),
+
+        .AG_3_triger(AG_3_triger),
+        .AG_3_clean(AG_3_clean),
+        .AG_3_done(AG_3_done)
     );
 
     
@@ -183,20 +186,18 @@ module MLDSA
         .PWM_index(PWM_index),
         .PWM_done(PWM_done),
 
-        /*---AG---*/
-        .AG_addr_adder(AG_addr_adder),
-        .AG_star_addr(AG_star_addr),
-        .AG_last_addr(AG_last_addr),
-        .AG_triger(AG_triger),
-        .AG_clean(AG_clean),
-        .AG_done(AG_done),
+        /*---AG_1---*/
+        .AG_1_triger(AG_1_triger),
+        .AG_1_clean(AG_1_clean),
+        .AG_1_done(AG_1_done),
 
-        .AG2_addr_adder(AG2_addr_adder),
-        .AG2_star_addr(AG2_star_addr),
-        .AG2_last_addr(AG2_last_addr),
-        .AG2_triger(AG2_triger),
-        .AG2_clean(AG2_clean),
-        .AG2_done(AG2_done),
+        .AG_2_triger(AG_2_triger),
+        .AG_2_clean(AG_2_clean),
+        .AG_2_done(AG_2_done),
+
+        .AG_3_triger(AG_3_triger),
+        .AG_3_clean(AG_3_clean),
+        .AG_3_done(AG_3_done),
 
         /*---from outside---*/
         .data_in(MLDSA_data_in),

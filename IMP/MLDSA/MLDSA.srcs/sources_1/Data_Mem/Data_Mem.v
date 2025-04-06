@@ -98,7 +98,19 @@ module Data_Mem
     input                   temp_0_we_a,
     input                   temp_0_we_b,
     output  [DLEN-1:0]      temp_0_q_a,
-    output  [DLEN-1:0]      temp_0_q_b
+    output  [DLEN-1:0]      temp_0_q_b,
+
+    /*---s2_pack---*/
+    input   [63:0]          s2_pack_data_a,
+    input   [63:0]          s2_pack_data_b,
+    input   [5:0]           s2_pack_addr_a,
+    input   [5:0]           s2_pack_addr_b,
+    input                   s2_pack_en_a,
+    input                   s2_pack_en_b,
+    input                   s2_pack_we_a,
+    input                   s2_pack_we_b,
+    output  [63:0]          s2_pack_q_a,
+    output  [63:0]          s2_pack_q_b
     );
 
     localparam  LOAD_SEED = 1'b0,
@@ -251,5 +263,21 @@ module Data_Mem
         .we_b(temp_0_we_b),
         .q_a(temp_0_q_a),
         .q_b(temp_0_q_b)
+    );
+
+    /*---s2_pack---*/
+    Dual_Port_Ram_Single_clk #(.DLEN(64), .HLEN(6)) s2_pack(
+        .clk_a(clk),
+        .clk_b(clk),
+        .data_a(s2_pack_data_a),
+        .data_b(s2_pack_data_b),
+        .addr_a(s2_pack_addr_a),
+        .addr_b(s2_pack_addr_b),
+        .en_a(s2_pack_en_a),
+        .en_b(s2_pack_en_b),
+        .we_a(s2_pack_we_a),
+        .we_b(s2_pack_we_b),
+        .q_a(s2_pack_q_a),
+        .q_b(s2_pack_q_b)
     );
 endmodule

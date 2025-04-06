@@ -327,25 +327,22 @@ module Controller
     input               PWM_done,
 
     /*---Address genetate---*/
-    output reg  [1:0]   AG_addr_adder,
-    output reg  [7:0]   AG_star_addr,
-    output reg  [7:0]   AG_last_addr,
-    output reg          AG_triger,
-    output reg          AG_clean,
-    input               AG_done,
+    output reg          AG_1_triger,
+    output reg          AG_1_clean,
+    input               AG_1_done,
 
-    output reg  [1:0]   AG2_addr_adder,
-    output reg  [7:0]   AG2_star_addr,
-    output reg  [7:0]   AG2_last_addr,
-    output reg          AG2_triger,
-    output reg          AG2_clean,
-    input               AG2_done,
+    output reg          AG_2_triger,
+    output reg          AG_2_clean,
+    input               AG_2_done,
     
-    /*---Encoder---*/
-    output reg          ENC_valid_i,
-    input               ENC_ready_i,
-    input               ENC_valid_o,
-    output reg          ENC_ready_o
+    output reg          AG_3_triger,
+    output reg          AG_3_clean,
+    input               AG_3_done
+    // /*---Encoder---*/
+    // output reg          ENC_valid_i,
+    // input               ENC_ready_i,
+    // input               ENC_valid_o,
+    // output reg          ENC_ready_o
     );  
 
     //main mode
@@ -358,6 +355,7 @@ module Controller
                         STAGE_1     = 6'd1,        
                         STAGE_2     = 6'd2,        
                         STAGE_3     = 6'd3,        
+                        STAGE_4     = 6'd4,        
                         STAGE_T     = 6'd15;        
 
     //Sampler mode
@@ -367,6 +365,7 @@ module Controller
                         SIB_mode  = 2'd3;
 
     reg  [3:0]   s_mem_cnt;
+    reg  [3:0]   A_mem_cnt;
 
     wire [5:0] curr_state;
     reg  [5:0] curr_state_KeyGen;
@@ -416,9 +415,15 @@ module Controller
             end
             STAGE_3: begin
                 if(keccak_done_tmp & NTT_done)   
-                    next_state_KeyGen = STAGE_T;
+                    next_state_KeyGen = STAGE_4;
                 else                
                     next_state_KeyGen = STAGE_3;
+            end 
+            STAGE_4: begin
+                // if(keccak_done_tmp & NTT_done)   
+                //     next_state_KeyGen = STAGE_T;
+                // else                
+                    next_state_KeyGen = STAGE_4;
             end 
             STAGE_T: begin
                 next_state_KeyGen = STAGE_T;
@@ -441,6 +446,9 @@ module Controller
                 STAGE_3: begin
                     sha_type = 4'd3;
                 end 
+                STAGE_4: begin
+                    sha_type = 4'd1;
+                end 
                 default: sha_type = 4'd0;
             endcase
         end
@@ -453,7 +461,8 @@ module Controller
             case (curr_state_KeyGen)
                 STAGE_1,
                 STAGE_2,
-                STAGE_3: begin
+                STAGE_3,
+                STAGE_4: begin
                     sha_en = ~(keccak_done | keccak_done_tmp);
                 end 
                 default: sha_en = 1'd0;
@@ -467,6 +476,11 @@ module Controller
             {KeyGen,6'd2},
             {KeyGen,6'd3}:begin
                 sampler_mode = S_mode;
+                if(sha_out_ready)
+                    sampler_in_ready = 1'b1;
+            end
+            {KeyGen,6'd4}:begin
+                sampler_mode = A_mode;
                 if(sha_out_ready)
                     sampler_in_ready = 1'b1;
             end
@@ -496,12 +510,20 @@ module Controller
     /*---Index---*/ //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     assign s1_index = s_mem_cnt;
     assign s2_index = s_mem_cnt;
+    assign A_index  = A_mem_cnt;
 
     always @ (posedge clk) begin 
         if (reset)                                                                                                                                                   
             s_mem_cnt <= 4'd0;
         else if((curr_state_KeyGen == STAGE_2 | curr_state_KeyGen == STAGE_3) && next_element)
             s_mem_cnt <= s_mem_cnt + 1'b1;
+    end
+
+    always @ (posedge clk) begin 
+        if (reset)                                                                                                                                                   
+            A_mem_cnt <= 4'd0;
+        else if(curr_state_KeyGen == STAGE_4 && next_element)
+            A_mem_cnt <= A_mem_cnt + 1'b1;
     end
 
     /*---NTT---*/
@@ -520,13 +542,13 @@ module Controller
     // end
     /*---Index---*/ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-    /*---stage_done---*/ //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    /*---STAGE_done---*/ //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     always @(*) begin
         keccak_done = 1'b0;
         case (curr_state_KeyGen)
             STAGE_1: begin
-                if(AG_done)   
+                if(AG_1_done)   
                     keccak_done = 1'b1;
             end 
             STAGE_2: begin
@@ -535,6 +557,10 @@ module Controller
             end
             STAGE_3: begin
                 if(s2_index == 7 & next_element)   
+                    keccak_done = 1'b1;
+            end 
+            STAGE_4: begin
+                if(A_index == 15 & next_element)   
                     keccak_done = 1'b1;
             end 
             default: keccak_done = 1'b0;
@@ -558,49 +584,57 @@ module Controller
         else if(NTT_done)
             NTT_done_tmp <= 1'b1;
     end
-    /*---stage_done---*/ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    /*---STAGE_done---*/ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
     /*---Address_Generate---*/ //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     always @(*) begin
-        AG_addr_adder  = 2'd0;
-        AG_star_addr   = 8'd0;
-        AG_last_addr   = 8'd255;
-        AG_triger      = 1'b0;
-        AG_clean       = 1'b0;
+        AG_1_triger      = 1'b0;
+        AG_1_clean       = 1'b0;
         case (curr_state_KeyGen)
             STAGE_1: begin
-                AG_addr_adder  = 2'd2;
-                AG_star_addr   = 8'd0;
-                AG_last_addr   = 8'd14;
-                AG_triger      = sha_out_ready;
-                AG_clean       = AG_done;
+                AG_1_triger      = sha_out_ready;
+                AG_1_clean       = AG_1_done;
             end
             STAGE_2,
-            STAGE_3: begin
-                AG_addr_adder  = 2'd1;
-                AG_star_addr   = 8'd4;
-                AG_last_addr   = 8'd11;
-                AG_triger      = 1'b1;
-                AG_clean       = next_element;
+            STAGE_3,
+            STAGE_4: begin
+                AG_1_triger      = ~(keccak_done | keccak_done_tmp);
+                AG_1_clean       = next_element;
             end 
-
+            // STAGE_4: begin
+            //     AG_1_triger      = 1'b1;
+            //     AG_1_clean       = AG_1_done;
+            // end 
         endcase
     end
 
     always @(*) begin
-        AG2_addr_adder  = 2'd0;
-        AG2_star_addr   = 8'd0;
-        AG2_last_addr   = 8'd255;
-        AG2_triger      = 1'b0;
-        AG2_clean       = 1'b0;
+        AG_2_triger      = 1'b0;
+        AG_2_clean       = 1'b0;
         case (curr_state_KeyGen)
             STAGE_3: begin
-                AG2_addr_adder  = 2'd1;
-                AG2_star_addr   = 8'd0;
-                AG2_last_addr   = 8'd127;
-                AG2_triger      = 1'b1;
-                AG2_clean       = NTT_done;
+                AG_2_triger      = 1'b1;
+                AG_2_clean       = NTT_done;
+            end 
+            // STAGE_4: begin
+            //     AG_2_triger      = 1'b1;
+            //     AG_2_clean       = AG_2_done;
+            // end 
+            STAGE_4: begin
+                AG_2_triger      = 1'b1;
+                AG_2_clean       = 1'b0;
+            end 
+        endcase
+    end
+
+    always @(*) begin
+        AG_3_triger      = 1'b0;
+        AG_3_clean       = 1'b0;
+        case (curr_state_KeyGen)
+            STAGE_4: begin
+                AG_3_triger      = 1'b1;
+                AG_3_clean       = 1'b0;
             end 
         endcase
     end

@@ -21,7 +21,7 @@ module Keccak_Ctrl
     output  reg         in_seed_sel,
 
     /*---AG---*/
-    output   reg        sha_AG_gen,
+    // output   reg        sha_AG_gen,
     input               AG_done
     );  
 
@@ -81,25 +81,29 @@ module Keccak_Ctrl
                 if(padder_cnt > 1 & padder_cnt <= 10)
                     sha_in_ready_tmp = 1'b1;
             end
+            Gen_A:begin
+                if(padder_cnt > 1 & padder_cnt <= 6)
+                    sha_in_ready_tmp = 1'b1;
+            end
             default: begin
                 sha_in_ready_tmp = 1'b0;
             end
         endcase
     end   
 
-    always @(*) begin
-        sha_AG_gen = 1'b0;
-        case (sha_type)
-            Gen_s1,
-            Gen_s2:begin
-                if(padder_cnt <= 4 & ~padder_cnt_clean)
-                    sha_AG_gen = 1'b1;
-            end
-            default: begin
-                sha_AG_gen = 1'b0;
-            end
-        endcase
-    end 
+    // always @(*) begin
+    //     sha_AG_gen = 1'b0;
+    //     case (sha_type)
+    //         Gen_s1,
+    //         Gen_s2:begin
+    //             if(padder_cnt <= 4 & ~padder_cnt_clean)
+    //                 sha_AG_gen = 1'b1;
+    //         end
+    //         default: begin
+    //             sha_AG_gen = 1'b0;
+    //         end
+    //     endcase
+    // end 
 
     always @(*) begin
         sha_clean = 1'b0;
@@ -109,7 +113,8 @@ module Keccak_Ctrl
                     sha_clean = 1'b1;
             end
             Gen_s1,
-            Gen_s2:begin
+            Gen_s2,
+            Gen_A:begin
                 if(next_element)
                     sha_clean = 1'b1;
             end
@@ -154,6 +159,16 @@ module Keccak_Ctrl
                     index_sel     = 2'd2;
                 end
             end
+            Gen_A:begin
+                if(padder_cnt <= 5)begin
+                    keccak_in_sel = 2'd0;
+                    mem_sel_1     = 1'd0;
+                end
+                else begin
+                    keccak_in_sel = 2'd2;
+                    index_sel     = 2'd0;
+                end
+            end
             default: begin
                 keccak_in_sel   = 2'd0;
                 mem_sel_1       = 2'd0;
@@ -176,6 +191,10 @@ module Keccak_Ctrl
                 if(padder_cnt == 10)
                     sha_is_last = 1'b1;
             end
+            Gen_A:begin
+                if(padder_cnt == 6)
+                    sha_is_last = 1'b1;
+            end
             default: begin
                 sha_is_last = 1'b0;
             end
@@ -190,7 +209,8 @@ module Keccak_Ctrl
                     padder_cnt_clean = 1'b1;
             end
             Gen_s1,
-            Gen_s2:begin
+            Gen_s2,
+            Gen_A:begin
                 if(next_element)
                     padder_cnt_clean = 1'b1;
             end

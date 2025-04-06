@@ -1,7 +1,6 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
 "../../../../MLDSA.srcs/sources_1/Address_generate/Address_generate.v" \
-"../../../../MLDSA.srcs/sources_1/Address_generate/Address_generate_2.v" \
 "../../../../MLDSA.srcs/sources_1/NTT/BU.v" \
 "../../../../MLDSA.srcs/sources_1/NTT/CONTR.v" \
 "../../../../MLDSA.srcs/sources_1/Sampler/CoeffFromHalfByte.v" \
@@ -22,6 +21,7 @@ verilog xil_defaultlib  \
 "../../../../MLDSA.srcs/sources_1/NTT/RU.v" \
 "../../../../MLDSA.srcs/sources_1/Sampler/SampleInBall.v" \
 "../../../../MLDSA.srcs/sources_1/Sampler/Sampler.v" \
+"../../../../MLDSA.srcs/sources_1/Encoder/encoder.v" \
 "../../../../MLDSA.srcs/sources_1/NTT/mod_add.v" \
 "../../../../MLDSA.srcs/sources_1/NTT/mod_mul.v" \
 "../../../../MLDSA.srcs/sources_1/NTT/mod_sub.v" \
@@ -30,6 +30,8 @@ verilog xil_defaultlib  \
 "../../../../MLDSA.srcs/sources_1/Keccak/rconst.v" \
 "../../../../MLDSA.srcs/sources_1/NTT/rom.v" \
 "../../../../MLDSA.srcs/sources_1/Keccak/round.v" \
+"../../../../MLDSA.srcs/sources_1/Encoder/uncenter_coeff.v" \
+"../../../../MLDSA.srcs/sources_1/Encoder/zero_strip.v" \
 "../../../../MLDSA.srcs/sim_1/imports/MLDSA/MLDSA_tb.v" \
 
 # compile glbl module
