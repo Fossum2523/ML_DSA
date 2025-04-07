@@ -1,0 +1,61 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Mon Apr  7 01:57:53 2025
+# Process ID: 476
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11092 C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP\MLDSA\MLDSA.xpr
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/vivado.log
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA_tb_behav.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA_tb_behav1.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage4.wcfg
+source MLDSA_tb.tcl
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+current_wave_config {KeyGen_Stage4.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/AG_3/addr_adder}} {{/MLDSA_tb/uut/data_path_inst/AG_3/last_addr}} {{/MLDSA_tb/uut/data_path_inst/AG_3/star_addr}} {{/MLDSA_tb/uut/data_path_inst/AG_3/triger}} {{/MLDSA_tb/uut/data_path_inst/AG_3/clean}} {{/MLDSA_tb/uut/data_path_inst/AG_3/addr_en}} {{/MLDSA_tb/uut/data_path_inst/AG_3/addr_a}} {{/MLDSA_tb/uut/data_path_inst/AG_3/addr_b}} {{/MLDSA_tb/uut/data_path_inst/AG_3/data_valid}} {{/MLDSA_tb/uut/data_path_inst/AG_3/done}} 
+current_wave_config {KeyGen_Stage4.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/KK/in}} {{/MLDSA_tb/uut/data_path_inst/KK/in_ready}} {{/MLDSA_tb/uut/data_path_inst/KK/is_last}} {{/MLDSA_tb/uut/data_path_inst/KK/squeeze}} {{/MLDSA_tb/uut/data_path_inst/KK/mode}} {{/MLDSA_tb/uut/data_path_inst/KK/sha_hold}} {{/MLDSA_tb/uut/data_path_inst/KK/byte_num}} {{/MLDSA_tb/uut/data_path_inst/KK/buffer_full}} {{/MLDSA_tb/uut/data_path_inst/KK/buffer_last}} {{/MLDSA_tb/uut/data_path_inst/KK/out}} {{/MLDSA_tb/uut/data_path_inst/KK/out_ready}} 
+current_wave_config {KeyGen_Stage4.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/Sampler_/ExpandA_/sampler_in_ready}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/ExpandA_/sampler_in}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/ExpandA_/sampler_squeeze}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/ExpandA_/next_element}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/ExpandA_/A0}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/ExpandA_/A1}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/ExpandA_/addr_A0}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/ExpandA_/addr_A1}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/ExpandA_/en_A0}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/ExpandA_/we_A0}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/ExpandA_/en_A1}} {{/MLDSA_tb/uut/data_path_inst/Sampler_/ExpandA_/we_A1}} 
+current_wave_config {KeyGen_Stage4.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/A/data_a}} {{/MLDSA_tb/uut/data_path_inst/DM/A/data_b}} {{/MLDSA_tb/uut/data_path_inst/DM/A/addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/A/addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/A/en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/A/en_b}} {{/MLDSA_tb/uut/data_path_inst/DM/A/we_a}} {{/MLDSA_tb/uut/data_path_inst/DM/A/we_b}} {{/MLDSA_tb/uut/data_path_inst/DM/A/q_a}} {{/MLDSA_tb/uut/data_path_inst/DM/A/q_b}} 
+restart
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage4.wcfg}
+current_wave_config {KeyGen_Stage4.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/A_data_a}} {{/MLDSA_tb/uut/data_path_inst/A_data_b}} {{/MLDSA_tb/uut/data_path_inst/A_addr_a}} {{/MLDSA_tb/uut/data_path_inst/A_addr_b}} {{/MLDSA_tb/uut/data_path_inst/A_en_a}} {{/MLDSA_tb/uut/data_path_inst/A_en_b}} {{/MLDSA_tb/uut/data_path_inst/A_we_a}} {{/MLDSA_tb/uut/data_path_inst/A_we_b}} {{/MLDSA_tb/uut/data_path_inst/A_q_a}} {{/MLDSA_tb/uut/data_path_inst/A_q_b}} 
+restart
+run 10 us
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage4.wcfg}
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage4.wcfg}
+close_sim

@@ -17,6 +17,7 @@ verilog xil_defaultlib  \
 "../../../../MLDSA.srcs/sources_1/imports/MLDSA/MLDSA.v" \
 "../../../../MLDSA.srcs/sources_1/NTT/Modular_Reduction.v" \
 "../../../../MLDSA.srcs/sources_1/NTT/NTT.v" \
+"../../../../MLDSA.srcs/sources_1/PWM/PWM.v" \
 "../../../../MLDSA.srcs/sources_1/Keccak/Padder.v" \
 "../../../../MLDSA.srcs/sources_1/NTT/RU.v" \
 "../../../../MLDSA.srcs/sources_1/Sampler/SampleInBall.v" \

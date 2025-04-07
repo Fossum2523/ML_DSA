@@ -337,7 +337,11 @@ module Controller
     
     output reg          AG_3_triger,
     output reg          AG_3_clean,
-    input               AG_3_done
+    input               AG_3_done,
+
+    output reg          AG_4_triger,
+    output reg          AG_4_clean,
+    input               AG_4_done
     // /*---Encoder---*/
     // output reg          ENC_valid_i,
     // input               ENC_ready_i,
@@ -356,6 +360,7 @@ module Controller
                         STAGE_2     = 6'd2,        
                         STAGE_3     = 6'd3,        
                         STAGE_4     = 6'd4,        
+                        STAGE_5     = 6'd5,        
                         STAGE_T     = 6'd15;        
 
     //Sampler mode
@@ -420,10 +425,16 @@ module Controller
                     next_state_KeyGen = STAGE_3;
             end 
             STAGE_4: begin
-                // if(keccak_done_tmp & NTT_done)   
+                if(keccak_done)   
+                    next_state_KeyGen = STAGE_5;
+                else                
+                    next_state_KeyGen = STAGE_4;
+            end 
+            STAGE_5: begin
+                // if(keccak_done)   
                 //     next_state_KeyGen = STAGE_T;
                 // else                
-                    next_state_KeyGen = STAGE_4;
+                    next_state_KeyGen = STAGE_5;
             end 
             STAGE_T: begin
                 next_state_KeyGen = STAGE_T;
@@ -602,10 +613,6 @@ module Controller
                 AG_1_triger      = ~(keccak_done | keccak_done_tmp);
                 AG_1_clean       = next_element;
             end 
-            // STAGE_4: begin
-            //     AG_1_triger      = 1'b1;
-            //     AG_1_clean       = AG_1_done;
-            // end 
         endcase
     end
 
@@ -617,11 +624,11 @@ module Controller
                 AG_2_triger      = 1'b1;
                 AG_2_clean       = NTT_done;
             end 
-            // STAGE_4: begin
-            //     AG_2_triger      = 1'b1;
-            //     AG_2_clean       = AG_2_done;
-            // end 
             STAGE_4: begin
+                AG_2_triger      = 1'b1;
+                AG_2_clean       = keccak_done;
+            end
+            STAGE_5: begin
                 AG_2_triger      = 1'b1;
                 AG_2_clean       = 1'b0;
             end 
@@ -632,9 +639,30 @@ module Controller
         AG_3_triger      = 1'b0;
         AG_3_clean       = 1'b0;
         case (curr_state_KeyGen)
-            STAGE_4: begin
+            STAGE_4: begin // Enocder s1
+                AG_3_triger      = 1'b1;
+                AG_3_clean       = keccak_done;
+            end 
+            STAGE_5: begin
                 AG_3_triger      = 1'b1;
                 AG_3_clean       = 1'b0;
+            end 
+        endcase
+    end
+
+    always @(*) begin
+        AG_4_triger      = 1'b0;
+        AG_4_clean       = 1'b0;
+        case (curr_state_KeyGen)
+            STAGE_4: begin
+                AG_4_triger      = sha_out_ready;
+                // AG_4_clean       = A_index[1:0] == 2'b00 & next_element;
+                AG_4_clean       = next_element;
+            end 
+            STAGE_5: begin
+                AG_4_triger      = 1'b1;
+                // AG_4_clean       = A_index[1:0] == 2'b00 & next_element;
+                AG_4_clean       = 1'b0;
             end 
         endcase
     end

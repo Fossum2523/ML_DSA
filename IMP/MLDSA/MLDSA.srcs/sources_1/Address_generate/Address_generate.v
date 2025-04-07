@@ -8,6 +8,7 @@ module Address_generate
     input  [11:0]       last_addr,
     input  [11:0]       star_addr,
     input               triger,
+    input               pause,
     input               clean,
     output              addr_en,
     output [11:0]       addr_a,
@@ -18,8 +19,10 @@ module Address_generate
 
 
     reg         cnt_en;
-    reg [11:0]   cnt;
+    reg [11:0]  cnt;
+    reg         pause_tmp;
     reg         done_tmp;
+    reg         pause_tmp;
     
     assign  done    = cnt == last_addr | done_tmp;
     assign  addr_en = cnt_en;
@@ -29,7 +32,7 @@ module Address_generate
     always @(posedge clk) begin
         if(reset)
             cnt_en <= 1'b0;
-        else if(done)
+        else if(done | pause)
             cnt_en <= 1'b0;
         else if(triger)
             cnt_en <= 1'b1;
@@ -47,7 +50,7 @@ module Address_generate
             cnt <= 12'd0;
         else if(cnt_en & ~done)
             cnt <= cnt + addr_adder;
-        else if(triger)
+        else if(triger & ~pause_tmp)
             cnt <= star_addr;
     end
 
@@ -58,5 +61,14 @@ module Address_generate
             done_tmp <= 1'b0;
         else if(cnt == last_addr)
             done_tmp <= 1'b1;
+    end
+
+    always @(posedge clk) begin
+        if(reset)
+            pause_tmp <= 1'b0;
+        else if(clean)      
+            pause_tmp <= 1'b0;
+        else if(pause)
+            pause_tmp <= 1'b1;
     end
 endmodule

@@ -53,6 +53,10 @@ module Data_Path
     input           AG_3_triger,
     input           AG_3_clean,
     output          AG_3_done,
+
+    input           AG_4_triger,
+    input           AG_4_clean,
+    output          AG_4_done,
     
     /*---from outside---*/
     input   [63:0]  data_in,
@@ -168,19 +172,30 @@ module Data_Path
     reg            s2_en_b;
     reg            s2_we_a;
     reg            s2_we_b;
-    wire [3-1:0]    s2_q_a;
-    wire [3-1:0]    s2_q_b;
+    wire [3-1:0]   s2_q_a;
+    wire [3-1:0]   s2_q_b;
+    //---s1_pack
+    reg [63:0]       s1_pack_data_a;
+    reg [63:0]       s1_pack_data_b;
+    reg [5:0]        s1_pack_addr_a;
+    reg [5:0]        s1_pack_addr_b;
+    reg              s1_pack_en_a;
+    reg              s1_pack_en_b;
+    reg              s1_pack_we_a;
+    reg              s1_pack_we_b;
+    wire [63:0]      s1_pack_q_a;
+    wire [63:0]      s1_pack_q_b;
     //---s2_pack
-    reg [63:0]  s2_pack_data_a;
-    reg [63:0]  s2_pack_data_b;
-    reg [5:0]   s2_pack_addr_a;
-    reg [5:0]   s2_pack_addr_b;
-    reg            s2_pack_en_a;
-    reg            s2_pack_en_b;
-    reg            s2_pack_we_a;
-    reg            s2_pack_we_b;
-    wire [63:0]    s2_pack_q_a;
-    wire [63:0]    s2_pack_q_b;
+    reg [63:0]       s2_pack_data_a;
+    reg [63:0]       s2_pack_data_b;
+    reg [5:0]        s2_pack_addr_a;
+    reg [5:0]        s2_pack_addr_b;
+    reg              s2_pack_en_a;
+    reg              s2_pack_en_b;
+    reg              s2_pack_we_a;
+    reg              s2_pack_we_b;
+    wire [63:0]      s2_pack_q_a;
+    wire [63:0]      s2_pack_q_b;
     //---A
     reg [DLEN-1:0]   A_data_a;
     reg [DLEN-1:0]   A_data_b;
@@ -192,6 +207,19 @@ module Data_Path
     reg              A_we_b;
     wire [DLEN-1:0]   A_q_a;
     wire [DLEN-1:0]   A_q_b;
+
+    //---t
+    reg [DLEN-1:0]      t_data_a;
+    reg [DLEN-1:0]      t_data_b;
+    reg [T_HLEN - 1:0]  t_addr_a;
+    reg [T_HLEN - 1:0]  t_addr_b;
+    reg                 t_en_a;
+    reg                 t_en_b;
+    reg                 t_we_a;
+    reg                 t_we_b;
+    wire [DLEN-1:0]     t_q_a;
+    wire [DLEN-1:0]     t_q_b;
+
     //---w
     wire [DLEN-1:0] w_q_a;
     wire [DLEN-1:0] w_q_b;
@@ -207,8 +235,8 @@ module Data_Path
     reg                 temp_0_en_b;
     reg                 temp_0_we_a;
     reg                 temp_0_we_b;
-    wire [DLEN-1:0]      temp_0_q_a;
-    wire [DLEN-1:0]      temp_0_q_b;
+    wire [DLEN-1:0]     temp_0_q_a;
+    wire [DLEN-1:0]     temp_0_q_b;
 
 
 
@@ -268,25 +296,18 @@ module Data_Path
     wire [7:0]          NTT_addr_d;
 
     /*---PWM Signal---*/
-    wire [BIT_LEN - 1:0] PWM_in_a0;
-    wire [BIT_LEN - 1:0] PWM_in_a1;
-    wire                 PWM_in_a_en;
-    wire [HLEN - 1:0]    PWM_in_addr_a;
-    wire                 PWM_out_a_en;
+    reg  [BIT_LEN - 1:0] PWM_in_a0;
+    reg  [BIT_LEN - 1:0] PWM_in_a1;
     wire [BIT_LEN - 1:0] PWM_out_a;
-    wire [HLEN - 1:0]    PWM_out_addr_a;
-    wire [BIT_LEN - 1:0] PWM_in_b0;
-    wire [BIT_LEN - 1:0] PWM_in_b1;
-    wire                 PWM_in_b_en;
-    wire [HLEN - 1:0]    PWM_in_addr_b;
-    wire                 PWM_out_b_en;
+    reg  [BIT_LEN - 1:0] PWM_in_b0;
+    reg  [BIT_LEN - 1:0] PWM_in_b1;
     wire [BIT_LEN - 1:0] PWM_out_b;
-    wire [HLEN - 1:0]    PWM_out_addr_b;
 
     //Adress Generate
     reg  [1:0]   AG_1_addr_adder;
     reg  [11:0]  AG_1_last_addr;
     reg  [11:0]  AG_1_star_addr;
+    reg          AG_1_pasue;
     wire         AG_1_addr_en;
     wire [11:0]  AG_1_addr_a;
     wire [11:0]  AG_1_addr_b;
@@ -295,6 +316,7 @@ module Data_Path
     reg  [1:0]   AG_2_addr_adder;
     reg  [11:0]  AG_2_last_addr;
     reg  [11:0]  AG_2_star_addr;
+    reg          AG_2_pasue;
     wire         AG_2_addr_en;
     wire [11:0]  AG_2_addr_a;
     wire [11:0]  AG_2_addr_b;
@@ -303,12 +325,21 @@ module Data_Path
     reg  [1:0]   AG_3_addr_adder;
     reg  [11:0]  AG_3_last_addr;
     reg  [11:0]  AG_3_star_addr;
+    reg          AG_3_pasue;
     wire         AG_3_addr_en;
     wire [11:0]  AG_3_addr_a;
     wire [11:0]  AG_3_addr_b;
     wire         AG_3_data_valid;
 
-    
+    reg  [1:0]   AG_4_addr_adder;
+    reg  [11:0]  AG_4_last_addr;
+    reg  [11:0]  AG_4_star_addr;
+    reg          AG_4_pasue;
+    wire         AG_4_addr_en;
+    wire [11:0]  AG_4_addr_a;
+    wire [11:0]  AG_4_addr_b;
+    wire         AG_4_data_valid;
+
     //Encoder
     reg [2:0] ENC_sec_lvl;
     reg [2:0] ENC_encode_mode;
@@ -474,6 +505,30 @@ module Data_Path
         .temp_0_q_a(temp_0_q_a),
         .temp_0_q_b(temp_0_q_b),
 
+        /*---t---*/
+        .t_data_a(t_data_a),
+        .t_data_b(t_data_b),
+        .t_addr_a(t_addr_a),
+        .t_addr_b(t_addr_b),
+        .t_en_a(t_en_a),
+        .t_en_b(t_en_b),
+        .t_we_a(t_we_a),
+        .t_we_b(t_we_b),
+        .t_q_a(t_q_a),
+        .t_q_b(t_q_b),
+
+        /*---s1_pack---*/
+        .s1_pack_data_a(s1_pack_data_a),
+        .s1_pack_data_b(s1_pack_data_b),
+        .s1_pack_addr_a(s1_pack_addr_a),
+        .s1_pack_addr_b(s1_pack_addr_b),
+        .s1_pack_en_a(s1_pack_en_a),
+        .s1_pack_en_b(s1_pack_en_b),
+        .s1_pack_we_a(s1_pack_we_a),
+        .s1_pack_we_b(s1_pack_we_b),
+        .s1_pack_q_a(s1_pack_q_a),
+        .s1_pack_q_b(s1_pack_q_b),
+
         /*---s2_pack---*/
         .s2_pack_data_a(s2_pack_data_a),
         .s2_pack_data_b(s2_pack_data_b),
@@ -562,6 +617,18 @@ module Data_Path
                 s1_en_a   = AG_2_addr_en;
                 s1_en_b   = AG_2_addr_en;
             end
+            {KeyGen,6'd4}:begin // Enocder s1
+                s1_addr_a = AG_2_addr_a[9:0];
+                s1_addr_b = AG_2_addr_b[9:0];
+                s1_en_a   = AG_2_addr_en;
+                s1_en_b   = AG_2_addr_en;
+            end
+            {KeyGen,6'd5}:begin
+                s1_addr_a = AG_4_addr_a[9:0];
+                s1_addr_b = AG_4_addr_a[9:0] + 1'b1;
+                s1_en_a   = AG_4_addr_en;
+                s1_en_b   = AG_4_addr_en;
+            end
         endcase
     end
 
@@ -586,7 +653,7 @@ module Data_Path
                 s2_we_a   = we_z0;
                 s2_we_b   = we_z1;
             end
-            {KeyGen,6'd4}:begin //Gen_s2
+            {KeyGen,6'd5}:begin //Gen_s2
                 s2_addr_a = AG_2_addr_a[9:0];
                 s2_addr_b = AG_2_addr_b[9:0];
                 s2_en_a   = AG_2_addr_en;
@@ -594,6 +661,27 @@ module Data_Path
             end
         endcase
     end
+
+    //---s1_pack mem
+    always @(*) begin
+        s1_pack_data_a = 3'd0;
+        s1_pack_data_b = 3'd0;
+        s1_pack_addr_a = 10'd0;
+        s1_pack_addr_b = 10'd0;
+        s1_pack_en_a   = 1'd0;
+        s1_pack_en_b   = 1'd0;
+        s1_pack_we_a   = 1'd0;
+        s1_pack_we_b   = 1'd0;
+        case (ctrl_sign)
+            {KeyGen,6'd4}:begin // Enocder s1
+                s1_pack_data_a = ENC_dout;
+                s1_pack_addr_a = AG_3_addr_a;
+                s1_pack_en_a   = ENC_valid_o;
+                s1_pack_we_a   = ENC_valid_o;
+            end
+        endcase
+    end
+
 
     //---s2_pack mem
     always @(*) begin
@@ -606,7 +694,7 @@ module Data_Path
         s2_pack_we_a   = 1'd0;
         s2_pack_we_b   = 1'd0;
         case (ctrl_sign)
-            {KeyGen,6'd4}:begin // Enocder s2
+            {KeyGen,6'd5}:begin // Enocder s2
                 s2_pack_data_a = ENC_dout;
                 s2_pack_addr_a = AG_3_addr_a;
                 s2_pack_en_a   = ENC_valid_o;
@@ -636,6 +724,12 @@ module Data_Path
                 A_we_a   = we_A0;
                 A_we_b   = we_A1;
             end
+            {KeyGen,6'd5}:begin
+                A_addr_a = AG_4_addr_a;
+                A_addr_b = AG_4_addr_a + 1'b1;
+                A_en_a   = AG_4_addr_en;
+                A_en_b   = AG_4_addr_en;
+            end
         endcase
     end
 
@@ -661,7 +755,30 @@ module Data_Path
                 temp_0_we_a   = NTT_out_ready;
                 temp_0_we_b   = NTT_out_ready;
             end
-            default: seed_data_a = 64'd0;
+        endcase
+    end
+
+    //---t mem
+    always @(*) begin
+        t_data_a = 23'd0;
+        t_data_b = 23'd0;
+        t_addr_a = 10'd0;
+        t_addr_b = 10'd0;
+        t_en_a   = 1'd0;
+        t_en_b   = 1'd0;
+        t_we_a   = 1'd0;
+        t_we_b   = 1'd0;
+        case (ctrl_sign)
+            {KeyGen,6'd5}:begin
+                t_data_a = PWM_out_a;
+                t_data_b = PWM_out_b;
+                t_addr_a = AG_4_addr_a[9:0] - 2'd2;
+                t_addr_b = AG_4_addr_a[9:0] - 2'd1;
+                t_en_a   = AG_4_data_valid;
+                t_en_b   = AG_4_data_valid;
+                t_we_a   = AG_4_data_valid;
+                t_we_b   = AG_4_data_valid;
+            end
         endcase
     end
     /*---Data_Mem---*/ //------------------------------------------end
@@ -676,6 +793,7 @@ module Data_Path
         .last_addr(AG_1_last_addr),
         .star_addr(AG_1_star_addr),
         .triger(AG_1_triger),
+        .pause(AG_1_pasue),
         .addr_en(AG_1_addr_en),
         .addr_a(AG_1_addr_a),
         .addr_b(AG_1_addr_b),
@@ -692,6 +810,7 @@ module Data_Path
         .last_addr(AG_2_last_addr),
         .star_addr(AG_2_star_addr),
         .triger(AG_2_triger),
+        .pause(AG_2_pasue),
         .addr_en(AG_2_addr_en),
         .addr_a(AG_2_addr_a),
         .addr_b(AG_2_addr_b),
@@ -708,6 +827,7 @@ module Data_Path
         .last_addr(AG_3_last_addr),
         .star_addr(AG_3_star_addr),
         .triger(AG_3_triger),
+        .pause(AG_3_pasue),
         .addr_en(AG_3_addr_en),
         .addr_a(AG_3_addr_a),
         .addr_b(AG_3_addr_b),
@@ -716,11 +836,30 @@ module Data_Path
         .done(AG_3_done)
     ); 
 
+    Address_generate AG_4
+    (   
+        .clk(clk),
+        .reset(reset),
+        .addr_adder(AG_4_addr_adder),
+        .last_addr(AG_4_last_addr),
+        .star_addr(AG_4_star_addr),
+        .triger(AG_4_triger),
+        .pause(AG_4_pasue),
+        .addr_en(AG_4_addr_en),
+        .addr_a(AG_4_addr_a),
+        .addr_b(AG_4_addr_b),
+        .data_valid(AG_4_data_valid),
+        .clean(AG_4_clean),
+        .done(AG_4_done)
+    ); 
+
+
 
     always @(*) begin
         AG_1_addr_adder  = 2'd0;
         AG_1_star_addr   = 12'd0;
         AG_1_last_addr   = 12'd255;
+        AG_1_pasue       = 1'b0;
         case (ctrl_sign)
             {KeyGen,6'd1}: begin
                 AG_1_addr_adder  = 2'd2;
@@ -749,6 +888,7 @@ module Data_Path
         AG_2_addr_adder  = 2'd0;
         AG_2_star_addr   = 12'd0;
         AG_2_last_addr   = 12'd255;
+        AG_2_pasue       = 1'b0;
         case (ctrl_sign)
             {KeyGen,6'd3}: begin
                 AG_2_addr_adder  = 2'd1;
@@ -756,14 +896,15 @@ module Data_Path
                 AG_2_last_addr   = 12'd127;
             end 
             {KeyGen,6'd4}: begin  //take 3 bits s2 data to encoder and change it to 64bits
-                // AG_2_addr_adder  = {1'b0,ENC_valid_o};
-                // AG_2_star_addr   = 12'd0;
-                // AG_2_last_addr   = 12'd48;
-
                 AG_2_addr_adder  = 2'd2;
                 AG_2_star_addr   = 12'd0;
                 AG_2_last_addr   = 12'd1022;
-            end 
+            end
+            {KeyGen,6'd5}: begin  //take 3 bits s1 data to encoder and change it to 64bits
+                AG_2_addr_adder  = 2'd2;
+                AG_2_star_addr   = 12'd0;
+                AG_2_last_addr   = 12'd1022;
+            end  
         endcase
     end
 
@@ -771,11 +912,32 @@ module Data_Path
         AG_3_addr_adder  = 2'd0;
         AG_3_star_addr   = 12'd0;
         AG_3_last_addr   = 12'd255;
+        AG_3_pasue       = 1'b0;
         case (ctrl_sign)
-            {KeyGen,6'd4}: begin //store 64bits s2 data to mem
+            {KeyGen,6'd4}: begin //store 64bits s1 data to mem
                 AG_3_addr_adder  = {1'b0,ENC_valid_o};
                 AG_3_star_addr   = 12'd0;
                 AG_3_last_addr   = 12'd48;
+            end 
+            {KeyGen,6'd5}: begin //store 64bits s1 data to mem
+                AG_3_addr_adder  = {1'b0,ENC_valid_o};
+                AG_3_star_addr   = 12'd0;
+                AG_3_last_addr   = 12'd48;
+            end 
+        endcase
+    end
+
+    always @(*) begin
+        AG_4_addr_adder  = 2'd0;
+        AG_4_star_addr   = 12'd0;
+        AG_4_last_addr   = 12'd255;
+        AG_4_pasue       = 1'b0;
+        case (ctrl_sign)
+            {KeyGen,6'd5}: begin //store 64bits s2 data to mem
+                AG_4_addr_adder  = 2'd2;
+                AG_4_star_addr   = 12'd0;
+                AG_4_last_addr   = 12'd4094;
+                // AG_4_pasue       = sampler_squeeze;
             end 
         endcase
     end
@@ -888,6 +1050,13 @@ module Data_Path
             {KeyGen,6'd4}:begin
                 ENC_sec_lvl = 3'd2;
                 ENC_encode_mode = 3'd2;
+                ENC_di = {{20'd0,s1_q_b},{20'd0,s1_q_a}};
+                ENC_valid_i = AG_2_data_valid;
+                ENC_ready_o = 1'b1;
+            end
+            {KeyGen,6'd5}:begin
+                ENC_sec_lvl = 3'd2;
+                ENC_encode_mode = 3'd2;
                 ENC_di = {{20'd0,s2_q_b},{20'd0,s2_q_a}};
                 ENC_valid_i = AG_2_data_valid;
                 ENC_ready_o = 1'b1;
@@ -895,4 +1064,30 @@ module Data_Path
         endcase
     end
     /*---Encoder---*/ //------------------------------------------end
+
+    /*---PWM---*/ //------------------------------------------str
+    PWM PWM_(  
+        .in_a0(PWM_in_a0),
+        .in_a1(PWM_in_a1),
+        .out_a(PWM_out_a),
+        .in_b0(PWM_in_b0),
+        .in_b1(PWM_in_b1),
+        .out_b(PWM_out_b)
+    );
+
+    always @(*) begin
+        PWM_in_a0 = 23'd0;
+        PWM_in_a1 = 23'd0;
+        PWM_in_b0 = 23'd0;
+        PWM_in_b1 = 23'd0;
+        case (ctrl_sign)
+            {KeyGen,6'd5}:begin
+                PWM_in_a0 = s1_q_a[2] ?  {{20{1'b1}}, s1_q_a} + 23'd8380417 : {20'd0, s1_q_a};
+                PWM_in_a1 = s1_q_b[2] ?  {{20{1'b1}}, s1_q_b} + 23'd8380417 : {20'd0, s1_q_b};
+                PWM_in_b0 = A_q_a;
+                PWM_in_b1 = A_q_b;
+            end
+        endcase
+    end
+    /*---PWM---*/ //------------------------------------------end
 endmodule

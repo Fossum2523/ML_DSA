@@ -56,6 +56,7 @@ def KeyGen(xi):
     # print(K)
     # print(K.hex())
     A_hat = ExpandA(p)
+    print(A_hat)
     s1, s2 = ExpandS(p_prime)
     s1Hat = [NTT(s) for s in s1]
     s1Hat = np.array(s1Hat)

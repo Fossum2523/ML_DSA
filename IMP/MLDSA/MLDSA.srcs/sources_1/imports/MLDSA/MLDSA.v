@@ -55,26 +55,21 @@ module MLDSA
     wire        PWM_done;
 
     /*---AG_1---*/
-    wire [1:0]  AG_1_addr_adder;
-    wire [11:0] AG_1_last_addr;
-    wire [11:0] AG_1_star_addr;
     wire AG_1_triger;
     wire AG_1_clean;
     wire AG_1_done;
 
-    wire [1:0]  AG_2_addr_adder;
-    wire [11:0] AG_2_last_addr;
-    wire [11:0] AG_2_star_addr;
     wire AG_2_triger;
     wire AG_2_clean;
     wire AG_2_done;
 
-    wire [1:0]  AG_3_addr_adder;
-    wire [11:0] AG_3_last_addr;
-    wire [11:0] AG_3_star_addr;
     wire AG_3_triger;
     wire AG_3_clean;
     wire AG_3_done;
+
+    wire AG_4_triger;
+    wire AG_4_clean;
+    wire AG_4_done;
 
     // Instantiate Controller
     Controller controller_inst (
@@ -128,7 +123,11 @@ module MLDSA
 
         .AG_3_triger(AG_3_triger),
         .AG_3_clean(AG_3_clean),
-        .AG_3_done(AG_3_done)
+        .AG_3_done(AG_3_done),
+
+        .AG_4_triger(AG_4_triger),
+        .AG_4_clean(AG_4_clean),
+        .AG_4_done(AG_4_done)
     );
 
     
@@ -199,6 +198,10 @@ module MLDSA
         .AG_3_clean(AG_3_clean),
         .AG_3_done(AG_3_done),
 
+        .AG_4_triger(AG_4_triger),
+        .AG_4_clean(AG_4_clean),
+        .AG_4_done(AG_4_done),
+        
         /*---from outside---*/
         .data_in(MLDSA_data_in),
         .data_out(MLDSA_data_out),

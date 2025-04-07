@@ -58,9 +58,9 @@ module ExpandA(
     assign addr_A0 = j[7:0];
     assign addr_A1 = j[7:0] + 1'b1;
 
-    assign en_A0 = curr_state == SAMPLE_PROCESS && ~j[8];
+    assign en_A0 = curr_state == SAMPLE_PROCESS && (~rej0 | ~rej1);
     assign we_A0 = en_A0;
-    assign en_A1 = curr_state == SAMPLE_PROCESS && j != 255 && ~j[8];
+    assign en_A1 = curr_state == SAMPLE_PROCESS && j != 255 &&  (~rej0 & ~rej1);
     assign we_A1 = en_A1;
     
     assign j_plus_num = (~rej0) + (~rej1); // Increment logic
