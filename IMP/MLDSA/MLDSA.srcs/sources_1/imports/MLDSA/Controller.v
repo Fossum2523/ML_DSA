@@ -323,7 +323,7 @@ module Controller
 
     /*---PWM---*/
     output              PWM_start,
-    output reg [3:0]    PWM_index,
+    output reg [1:0]    PWM_index,
     input               PWM_done,
 
     /*---Address genetate---*/
@@ -431,9 +431,9 @@ module Controller
                     next_state_KeyGen = STAGE_4;
             end 
             STAGE_5: begin
-                // if(keccak_done)   
-                //     next_state_KeyGen = STAGE_T;
-                // else                
+                if(PWM_index == 2'd3 & AG_4_done)   
+                    next_state_KeyGen = STAGE_T;
+                else                
                     next_state_KeyGen = STAGE_5;
             end 
             STAGE_T: begin
@@ -654,21 +654,29 @@ module Controller
         AG_4_triger      = 1'b0;
         AG_4_clean       = 1'b0;
         case (curr_state_KeyGen)
-            STAGE_4: begin
-                AG_4_triger      = sha_out_ready;
-                // AG_4_clean       = A_index[1:0] == 2'b00 & next_element;
-                AG_4_clean       = next_element;
-            end 
             STAGE_5: begin
                 AG_4_triger      = 1'b1;
                 // AG_4_clean       = A_index[1:0] == 2'b00 & next_element;
-                AG_4_clean       = 1'b0;
+                AG_4_clean       = AG_4_done;
             end 
         endcase
     end
     /*---Address_Generate---*/ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    reg [1:0]PWM_index_tmp;
+    /*PWM*/
+    always @ (posedge clk) begin 
+        if (reset)                                                                                                                                                   
+            PWM_index_tmp <= 2'd0;
+        else if((curr_state_KeyGen == STAGE_5) && AG_4_done)
+            PWM_index_tmp <= PWM_index_tmp + 1'b1;
+    end
 
-
+    always @ (posedge clk) begin 
+        if (reset)                                                                                                                                                   
+            PWM_index <= 2'd0;
+        else
+            PWM_index <= PWM_index_tmp;
+    end
 endmodule
 
 

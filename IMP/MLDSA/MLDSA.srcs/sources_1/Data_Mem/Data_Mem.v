@@ -122,7 +122,19 @@ module Data_Mem
     input                   s2_pack_we_a,
     input                   s2_pack_we_b,
     output  [63:0]          s2_pack_q_a,
-    output  [63:0]          s2_pack_q_b
+    output  [63:0]          s2_pack_q_b,
+
+    /*---PWM_temp---*/
+    input   [DLEN-1:0]      PWM_temp_data_a,
+    input   [DLEN-1:0]      PWM_temp_data_b,
+    input   [T_HLEN - 1:0]  PWM_temp_addr_a,
+    input   [T_HLEN - 1:0]  PWM_temp_addr_b,
+    input                   PWM_temp_en_a,
+    input                   PWM_temp_en_b,
+    input                   PWM_temp_we_a,
+    input                   PWM_temp_we_b,
+    output  [DLEN-1:0]      PWM_temp_q_a,
+    output  [DLEN-1:0]      PWM_temp_q_b
     );
 
     localparam  LOAD_SEED = 1'b0,
@@ -307,5 +319,21 @@ module Data_Mem
         .we_b(s2_pack_we_b),
         .q_a(s2_pack_q_a),
         .q_b(s2_pack_q_b)
+    );
+
+    /*---PWM_temp---*/
+    Dual_Port_Ram_Single_clk #(.DLEN(DLEN), .HLEN(T_HLEN)) PWM_temp(
+        .clk_a(clk),
+        .clk_b(clk),
+        .data_a(PWM_temp_data_a),
+        .data_b(PWM_temp_data_b),
+        .addr_a(PWM_temp_addr_a),
+        .addr_b(PWM_temp_addr_b),
+        .en_a(PWM_temp_en_a),
+        .en_b(PWM_temp_en_b),
+        .we_a(PWM_temp_we_a),
+        .we_b(PWM_temp_we_b),
+        .q_a(PWM_temp_q_a),
+        .q_b(PWM_temp_q_b)
     );
 endmodule

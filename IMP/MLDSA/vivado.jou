@@ -3,421 +3,50 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Mon Apr  7 13:11:30 2025
-# Process ID: 1656
-# Current directory: C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6120 C:\Users\USER\Desktop\ML_DSA_syn_new\IMP\MLDSA\MLDSA.xpr
-# Log file: C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/vivado.log
-# Journal file: C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA\vivado.jou
-# Running On: LAPTOP-2P71OMBV, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 16, Host memory: 16542 MB
+# Start of session at: Wed Apr  9 01:25:03 2025
+# Process ID: 16532
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2948 C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP\MLDSA\MLDSA.xpr
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/vivado.log
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
 #-----------------------------------------------------------
 start_gui
-open_project C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA.xpr
+open_project C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.xpr
 update_compile_order -fileset sources_1
 launch_simulation
-open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav.wcfg
-open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav1.wcfg
-open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/KeyGen_Stage4.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA_tb_behav.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA_tb_behav1.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage4.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage5.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage3.wcfg
 source MLDSA_tb.tcl
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
+run 200 us
 relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-current_wave_config {KeyGen_Stage4.wcfg}
-add_wave {{/MLDSA_tb/uut/data_path_inst/AG_4/addr_adder}} {{/MLDSA_tb/uut/data_path_inst/AG_4/last_addr}} {{/MLDSA_tb/uut/data_path_inst/AG_4/star_addr}} {{/MLDSA_tb/uut/data_path_inst/AG_4/triger}} {{/MLDSA_tb/uut/data_path_inst/AG_4/pause}} {{/MLDSA_tb/uut/data_path_inst/AG_4/clean}} {{/MLDSA_tb/uut/data_path_inst/AG_4/addr_en}} {{/MLDSA_tb/uut/data_path_inst/AG_4/addr_a}} {{/MLDSA_tb/uut/data_path_inst/AG_4/addr_b}} {{/MLDSA_tb/uut/data_path_inst/AG_4/data_valid}} {{/MLDSA_tb/uut/data_path_inst/AG_4/done}} {{/MLDSA_tb/uut/data_path_inst/AG_4/cnt_en}} {{/MLDSA_tb/uut/data_path_inst/AG_4/cnt}} 
+run 200 us
+current_wave_config {KeyGen_Stage5.wcfg}
+add_wave {{/MLDSA_tb/uut/controller_inst/PWM_index_2}} 
 restart
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-open_wave_config {C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav1.wcfg}
-restart
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-current_wave_config {KeyGen_Stage4.wcfg}
-add_wave {{/MLDSA_tb/uut/controller_inst/A_index}} 
-restart
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-update_compile_order -fileset sources_1
+run 200 us
+run 200 us
 relaunch_sim
 relaunch_sim
-update_compile_order -fileset sources_1
+run 200 us
 relaunch_sim
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-current_wave_config {KeyGen_Stage4.wcfg}
-add_wave {{/MLDSA_tb/uut/data_path_inst/s1_data_a}} {{/MLDSA_tb/uut/data_path_inst/s1_data_b}} {{/MLDSA_tb/uut/data_path_inst/s1_addr_a}} {{/MLDSA_tb/uut/data_path_inst/s1_addr_b}} {{/MLDSA_tb/uut/data_path_inst/s1_en_a}} {{/MLDSA_tb/uut/data_path_inst/s1_en_b}} {{/MLDSA_tb/uut/data_path_inst/s1_we_a}} {{/MLDSA_tb/uut/data_path_inst/s1_we_b}} {{/MLDSA_tb/uut/data_path_inst/s1_q_a}} {{/MLDSA_tb/uut/data_path_inst/s1_q_b}} 
-restart
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-current_wave_config {KeyGen_Stage4.wcfg}
-add_wave {{/MLDSA_tb/uut/controller_inst/keccak_done}} 
-current_wave_config {KeyGen_Stage4.wcfg}
-add_wave {{/MLDSA_tb/uut/controller_inst/keccak_done_tmp}} 
-current_wave_config {KeyGen_Stage4.wcfg}
-add_wave {{/MLDSA_tb/uut/controller_inst/AG_3_done}} 
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/KeyGen_Stage4.wcfg}
-save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/KeyGen_Stage4.wcfg}
-run 10 us
-create_wave_config
-current_wave_config {Untitled 1}
-add_wave {{/MLDSA_tb/uut/data_path_inst/clk}} {{/MLDSA_tb/uut/data_path_inst/reset}} 
-current_wave_config {Untitled 1}
-add_wave {{/MLDSA_tb/uut/data_path_inst/ctrl_sign}} 
-relaunch_sim
-current_wave_config {Untitled 1}
-add_wave {{/MLDSA_tb/uut/data_path_inst/AG_2/addr_adder}} {{/MLDSA_tb/uut/data_path_inst/AG_2/last_addr}} {{/MLDSA_tb/uut/data_path_inst/AG_2/star_addr}} {{/MLDSA_tb/uut/data_path_inst/AG_2/triger}} {{/MLDSA_tb/uut/data_path_inst/AG_2/pause}} {{/MLDSA_tb/uut/data_path_inst/AG_2/clean}} {{/MLDSA_tb/uut/data_path_inst/AG_2/addr_en}} {{/MLDSA_tb/uut/data_path_inst/AG_2/addr_a}} {{/MLDSA_tb/uut/data_path_inst/AG_2/addr_b}} {{/MLDSA_tb/uut/data_path_inst/AG_2/data_valid}} {{/MLDSA_tb/uut/data_path_inst/AG_2/done}} {{/MLDSA_tb/uut/data_path_inst/AG_2/cnt_en}} {{/MLDSA_tb/uut/data_path_inst/AG_2/cnt}} 
-current_wave_config {Untitled 1}
-add_wave {{/MLDSA_tb/uut/data_path_inst/DM/s2/data_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s2/data_b}} {{/MLDSA_tb/uut/data_path_inst/DM/s2/addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s2/addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/s2/en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s2/en_b}} {{/MLDSA_tb/uut/data_path_inst/DM/s2/we_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s2/we_b}} {{/MLDSA_tb/uut/data_path_inst/DM/s2/q_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s2/q_b}} 
-restart
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-current_wave_config {Untitled 1}
-add_wave {{/MLDSA_tb/uut/data_path_inst/DM/s2/data_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s2/data_b}} {{/MLDSA_tb/uut/data_path_inst/DM/s2/addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s2/addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/s2/en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s2/en_b}} {{/MLDSA_tb/uut/data_path_inst/DM/s2/we_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s2/we_b}} {{/MLDSA_tb/uut/data_path_inst/DM/s2/q_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s2/q_b}} 
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/KeyGen_Stage5.wcfg}
-add_files -fileset sim_1 -norecurse C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/KeyGen_Stage5.wcfg
-set_property xsim.view {C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav.wcfg C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav1.wcfg C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/KeyGen_Stage4.wcfg C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/KeyGen_Stage5.wcfg} [get_filesets sim_1]
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
+run 200 us
 current_wave_config {KeyGen_Stage5.wcfg}
-add_wave {{/MLDSA_tb/uut/data_path_inst/enc_/sec_lvl}} {{/MLDSA_tb/uut/data_path_inst/enc_/encode_mode}} {{/MLDSA_tb/uut/data_path_inst/enc_/valid_i}} {{/MLDSA_tb/uut/data_path_inst/enc_/ready_i}} {{/MLDSA_tb/uut/data_path_inst/enc_/di}} {{/MLDSA_tb/uut/data_path_inst/enc_/dout}} {{/MLDSA_tb/uut/data_path_inst/enc_/valid_o}} {{/MLDSA_tb/uut/data_path_inst/enc_/ready_o}} 
-current_wave_config {KeyGen_Stage5.wcfg}
-add_wave {{/MLDSA_tb/uut/data_path_inst/DM/s2_pack/data_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s2_pack/data_b}} {{/MLDSA_tb/uut/data_path_inst/DM/s2_pack/addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s2_pack/addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/s2_pack/en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s2_pack/en_b}} {{/MLDSA_tb/uut/data_path_inst/DM/s2_pack/we_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s2_pack/we_b}} {{/MLDSA_tb/uut/data_path_inst/DM/s2_pack/q_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s2_pack/q_b}} 
-restart
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/A_addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/A_addr_b}} 
+relaunch_sim
+run 200 us
 relaunch_sim
 relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-current_wave_config {KeyGen_Stage5.wcfg}
-add_wave {{/MLDSA_tb/uut/data_path_inst/DM/s1/addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s1/q_b}} 
-current_wave_config {KeyGen_Stage5.wcfg}
-add_wave {{/MLDSA_tb/uut/data_path_inst/DM/A/addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/A/addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/A/en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/A/q_a}} {{/MLDSA_tb/uut/data_path_inst/DM/A/q_b}} 
-current_wave_config {KeyGen_Stage5.wcfg}
-add_wave {{/MLDSA_tb/uut/data_path_inst/DM/s1/addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s1/addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/s1/en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s1/en_b}} {{/MLDSA_tb/uut/data_path_inst/DM/s1/q_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s1/q_b}} 
-current_wave_config {KeyGen_Stage5.wcfg}
-add_wave {{/MLDSA_tb/uut/data_path_inst/DM/s1_addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s1_addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/s1_en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s1_en_b}} {{/MLDSA_tb/uut/data_path_inst/DM/s1_q_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s1_q_b}} 
-current_wave_config {KeyGen_Stage5.wcfg}
-add_wave {{/MLDSA_tb/uut/data_path_inst/DM/A_addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/A_q_b}} 
-current_wave_config {KeyGen_Stage5.wcfg}
-add_wave {{/MLDSA_tb/uut/data_path_inst/DM/A_addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/A_addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/A_en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/A_en_b}} {{/MLDSA_tb/uut/data_path_inst/DM/A_we_a}} {{/MLDSA_tb/uut/data_path_inst/DM/A_we_b}} {{/MLDSA_tb/uut/data_path_inst/DM/A_q_a}} {{/MLDSA_tb/uut/data_path_inst/DM/A_q_b}} 
-restart
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-current_wave_config {KeyGen_Stage5.wcfg}
-add_wave {{/MLDSA_tb/uut/data_path_inst/AG_4/addr_adder}} {{/MLDSA_tb/uut/data_path_inst/AG_4/last_addr}} {{/MLDSA_tb/uut/data_path_inst/AG_4/star_addr}} {{/MLDSA_tb/uut/data_path_inst/AG_4/triger}} {{/MLDSA_tb/uut/data_path_inst/AG_4/pause}} {{/MLDSA_tb/uut/data_path_inst/AG_4/clean}} {{/MLDSA_tb/uut/data_path_inst/AG_4/addr_en}} {{/MLDSA_tb/uut/data_path_inst/AG_4/addr_a}} {{/MLDSA_tb/uut/data_path_inst/AG_4/addr_b}} {{/MLDSA_tb/uut/data_path_inst/AG_4/data_valid}} {{/MLDSA_tb/uut/data_path_inst/AG_4/done}} {{/MLDSA_tb/uut/data_path_inst/AG_4/cnt_en}} {{/MLDSA_tb/uut/data_path_inst/AG_4/cnt}} 
-restart
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
+run 200 us
 relaunch_sim
+run 200 us
 relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
+run 200 us
+run 200 us
 relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-relaunch_sim
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/KeyGen_Stage5.wcfg}
-save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/KeyGen_Stage4.wcfg}
-close_sim
-launch_simulation
-update_compile_order -fileset sources_1
-launch_simulation
-open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav.wcfg
-open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA_tb_behav1.wcfg
-open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/KeyGen_Stage4.wcfg
-open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/KeyGen_Stage5.wcfg
-source MLDSA_tb.tcl
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-current_wave_config {KeyGen_Stage5.wcfg}
-add_wave {{/MLDSA_tb/uut/data_path_inst/PWM_/in_a0}} {{/MLDSA_tb/uut/data_path_inst/PWM_/in_a1}} {{/MLDSA_tb/uut/data_path_inst/PWM_/out_a}} {{/MLDSA_tb/uut/data_path_inst/PWM_/in_b0}} {{/MLDSA_tb/uut/data_path_inst/PWM_/in_b1}} {{/MLDSA_tb/uut/data_path_inst/PWM_/out_b}} 
-restart
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-current_wave_config {KeyGen_Stage5.wcfg}
-add_wave {{/MLDSA_tb/uut/data_path_inst/DM/t/data_a}} {{/MLDSA_tb/uut/data_path_inst/DM/t/data_b}} {{/MLDSA_tb/uut/data_path_inst/DM/t/addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/t/addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/t/en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/t/en_b}} {{/MLDSA_tb/uut/data_path_inst/DM/t/we_a}} {{/MLDSA_tb/uut/data_path_inst/DM/t/we_b}} {{/MLDSA_tb/uut/data_path_inst/DM/t/q_a}} {{/MLDSA_tb/uut/data_path_inst/DM/t/q_b}} 
-restart
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-relaunch_sim
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-run 10 us
-save_wave_config {C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/KeyGen_Stage5.wcfg}
+run 200 us
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage5.wcfg}
 close_sim

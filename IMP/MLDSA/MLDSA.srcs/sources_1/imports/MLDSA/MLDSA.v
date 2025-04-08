@@ -51,7 +51,7 @@ module MLDSA
     
     /*---PWM---*/
     wire        PWM_start;
-    wire [3:0]  PWM_index;
+    wire [1:0]  PWM_index;
     wire        PWM_done;
 
     /*---AG_1---*/

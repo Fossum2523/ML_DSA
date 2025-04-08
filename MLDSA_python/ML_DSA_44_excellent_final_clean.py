@@ -56,19 +56,24 @@ def KeyGen(xi):
     # print(K)
     # print(K.hex())
     A_hat = ExpandA(p)
-    print(A_hat)
+    # print(A_hat)
     s1, s2 = ExpandS(p_prime)
     s1Hat = [NTT(s) for s in s1]
+    # print("s1hat=",list(s1Hat))
     s1Hat = np.array(s1Hat)
     A_NTT_s1 = NTT_dot(A_hat,s1Hat)
+    print(A_NTT_s1)
     aHat_mul_s1Hat = [NTT_inv(s) for s in A_NTT_s1]
     t = []
     for i in range(ML_DSA["k"]):
         d = []
         for k in range(256):
             sum = aHat_mul_s1Hat[i][k] + s2[i][k]
+            # sum = aHat_mul_s1Hat[i][k]
             d.append(sum)
         t.append(d)
+
+    print(t)
     t1 = []
     t0 = []
     for ti in range (ML_DSA["k"]):

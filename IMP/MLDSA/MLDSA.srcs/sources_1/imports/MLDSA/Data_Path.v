@@ -38,7 +38,7 @@ module Data_Path
 
     /*---PWM---*/
     input           PWM_start,
-    input [3:0]     PWM_index,
+    input [1:0]     PWM_index,
     output          PWM_done,
 
     /*---AG_1---*/
@@ -117,7 +117,9 @@ module Data_Path
     localparam          SAMPLER_ADDR = 1'b0,
                         PWM_ADDR     = 1'b1;
 
-
+    //PWM mode
+    localparam SCALAR_VECTOR = 1'b0,
+               MATRIX_VECTOR = 1'b1; 
 
     /*---Keack signals---*/
     wire            sha_in_ready;
@@ -237,6 +239,17 @@ module Data_Path
     reg                 temp_0_we_b;
     wire [DLEN-1:0]     temp_0_q_a;
     wire [DLEN-1:0]     temp_0_q_b;
+    //---PWM_temp
+    reg [DLEN-1:0]      PWM_temp_data_a;
+    reg [DLEN-1:0]      PWM_temp_data_b;
+    reg [T_HLEN - 1:0]  PWM_temp_addr_a;
+    reg [T_HLEN - 1:0]  PWM_temp_addr_b;
+    reg                 PWM_temp_en_a;
+    reg                 PWM_temp_en_b;
+    reg                 PWM_temp_we_a;
+    reg                 PWM_temp_we_b;
+    wire [DLEN-1:0]     PWM_temp_q_a;
+    wire [DLEN-1:0]     PWM_temp_q_b;
 
 
 
@@ -283,6 +296,7 @@ module Data_Path
 
     /*---NTT signals---*/
     //---Control
+    wire                NTT_reset;
     wire                NTT_out_ready;
     //---Data
     wire                NTT_data_en;
@@ -296,11 +310,14 @@ module Data_Path
     wire [7:0]          NTT_addr_d;
 
     /*---PWM Signal---*/
+    reg                  PWM_mode;
     reg  [BIT_LEN - 1:0] PWM_in_a0;
     reg  [BIT_LEN - 1:0] PWM_in_a1;
+    reg  [BIT_LEN - 1:0] PWM_in_a2;
     wire [BIT_LEN - 1:0] PWM_out_a;
     reg  [BIT_LEN - 1:0] PWM_in_b0;
     reg  [BIT_LEN - 1:0] PWM_in_b1;
+    reg  [BIT_LEN - 1:0] PWM_in_b2;
     wire [BIT_LEN - 1:0] PWM_out_b;
 
     //Adress Generate
@@ -539,7 +556,19 @@ module Data_Path
         .s2_pack_we_a(s2_pack_we_a),
         .s2_pack_we_b(s2_pack_we_b),
         .s2_pack_q_a(s2_pack_q_a),
-        .s2_pack_q_b(s2_pack_q_b)
+        .s2_pack_q_b(s2_pack_q_b),
+
+        /*---PWM_temp---*/
+        .PWM_temp_data_a(PWM_temp_data_a),
+        .PWM_temp_data_b(PWM_temp_data_b),
+        .PWM_temp_addr_a(PWM_temp_addr_a),
+        .PWM_temp_addr_b(PWM_temp_addr_b),
+        .PWM_temp_en_a(PWM_temp_en_a),
+        .PWM_temp_en_b(PWM_temp_en_b),
+        .PWM_temp_we_a(PWM_temp_we_a),
+        .PWM_temp_we_b(PWM_temp_we_b),
+        .PWM_temp_q_a(PWM_temp_q_a),
+        .PWM_temp_q_b(PWM_temp_q_b)
     );
     
     mux_gen #(
@@ -622,12 +651,6 @@ module Data_Path
                 s1_addr_b = AG_2_addr_b[9:0];
                 s1_en_a   = AG_2_addr_en;
                 s1_en_b   = AG_2_addr_en;
-            end
-            {KeyGen,6'd5}:begin
-                s1_addr_a = AG_4_addr_a[9:0];
-                s1_addr_b = AG_4_addr_a[9:0] + 1'b1;
-                s1_en_a   = AG_4_addr_en;
-                s1_en_b   = AG_4_addr_en;
             end
         endcase
     end
@@ -725,8 +748,8 @@ module Data_Path
                 A_we_b   = we_A1;
             end
             {KeyGen,6'd5}:begin
-                A_addr_a = AG_4_addr_a;
-                A_addr_b = AG_4_addr_a + 1'b1;
+                A_addr_a = {AG_4_addr_a[9:8], PWM_index,AG_4_addr_a[7:0]};
+                A_addr_b = {AG_4_addr_a[9:8], PWM_index,AG_4_addr_a[7:0]} + 1'b1;
                 A_en_a   = AG_4_addr_en;
                 A_en_b   = AG_4_addr_en;
             end
@@ -755,6 +778,12 @@ module Data_Path
                 temp_0_we_a   = NTT_out_ready;
                 temp_0_we_b   = NTT_out_ready;
             end
+            {KeyGen,6'd5}:begin
+                temp_0_addr_a = {PWM_index, AG_4_addr_a[7:0]};
+                temp_0_addr_b = {PWM_index, AG_4_addr_a[7:0]} + 1'b1;
+                temp_0_en_a   = AG_4_addr_en;
+                temp_0_en_b   = AG_4_addr_en;
+            end
         endcase
     end
 
@@ -770,14 +799,54 @@ module Data_Path
         t_we_b   = 1'd0;
         case (ctrl_sign)
             {KeyGen,6'd5}:begin
-                t_data_a = PWM_out_a;
-                t_data_b = PWM_out_b;
-                t_addr_a = AG_4_addr_a[9:0] - 2'd2;
-                t_addr_b = AG_4_addr_a[9:0] - 2'd1;
-                t_en_a   = AG_4_data_valid;
-                t_en_b   = AG_4_data_valid;
-                t_we_a   = AG_4_data_valid;
-                t_we_b   = AG_4_data_valid;
+                if(~PWM_index[0])begin
+                    t_addr_a = AG_4_addr_a;
+                    t_addr_b = AG_4_addr_a + 1'b1;
+                    t_en_a   = AG_4_addr_en;
+                    t_en_b   = AG_4_addr_en;
+                end
+                else begin
+                    t_data_a = PWM_out_a;
+                    t_data_b = PWM_out_b;
+                    t_addr_a = AG_4_addr_a - 2'd2;
+                    t_addr_b = AG_4_addr_a - 2'd1;
+                    t_en_a   = AG_4_data_valid;
+                    t_en_b   = AG_4_data_valid;
+                    t_we_a   = AG_4_data_valid;
+                    t_we_b   = AG_4_data_valid;
+                end
+            end
+        endcase
+    end
+
+    //---PWM_temp mem
+    always @(*) begin
+        PWM_temp_data_a = 23'd0;
+        PWM_temp_data_b = 23'd0;
+        PWM_temp_addr_a = 10'd0;
+        PWM_temp_addr_b = 10'd0;
+        PWM_temp_en_a   = 1'd0;
+        PWM_temp_en_b   = 1'd0;
+        PWM_temp_we_a   = 1'd0;
+        PWM_temp_we_b   = 1'd0;
+        case (ctrl_sign)
+            {KeyGen,6'd5}:begin
+                if(PWM_index[0])begin
+                    PWM_temp_addr_a = AG_4_addr_a;
+                    PWM_temp_addr_b = AG_4_addr_a + 1'b1;
+                    PWM_temp_en_a   = AG_4_addr_en;
+                    PWM_temp_en_b   = AG_4_addr_en;
+                end
+                else begin
+                    PWM_temp_data_a = PWM_out_a;
+                    PWM_temp_data_b = PWM_out_b;
+                    PWM_temp_addr_a = AG_4_addr_a - 2'd2;
+                    PWM_temp_addr_b = AG_4_addr_a - 2'd1;
+                    PWM_temp_en_a   = AG_4_data_valid;
+                    PWM_temp_en_b   = AG_4_data_valid;
+                    PWM_temp_we_a   = AG_4_data_valid;
+                    PWM_temp_we_b   = AG_4_data_valid;
+                end  
             end
         endcase
     end
@@ -936,7 +1005,7 @@ module Data_Path
             {KeyGen,6'd5}: begin //store 64bits s2 data to mem
                 AG_4_addr_adder  = 2'd2;
                 AG_4_star_addr   = 12'd0;
-                AG_4_last_addr   = 12'd4094;
+                AG_4_last_addr   = 12'd1022;
                 // AG_4_pasue       = sampler_squeeze;
             end 
         endcase
@@ -995,9 +1064,11 @@ module Data_Path
     /*---Sampler---*/ //------------------------------------------end
 
     /*---NTT---*/ //------------------------------------------str
+    assign NTT_reset = reset | NTT_done;
+
     NTT #(.BIT_LEN(BIT_LEN)) NTT_(
         .clk(clk),
-        .reset(reset),
+        .reset(NTT_reset),
         .mode(NTT_mode),
         .in_ready(AG_2_addr_en),
         .NTT_in_u(NTT_in_u),
@@ -1067,25 +1138,34 @@ module Data_Path
 
     /*---PWM---*/ //------------------------------------------str
     PWM PWM_(  
-        .in_a0(PWM_in_a0),
-        .in_a1(PWM_in_a1),
+        .mode(PWM_mode),
+        .in_a0(PWM_in_a0),  /*vector data*/
+        .in_a1(PWM_in_a1),  /*vector or matrix data*/
+        .in_a2(PWM_in_a2),  /*origin data*/
         .out_a(PWM_out_a),
-        .in_b0(PWM_in_b0),
-        .in_b1(PWM_in_b1),
+        .in_b0(PWM_in_b0),  /*vector data*/
+        .in_b1(PWM_in_b1),  /*vector or matrix data*/
+        .in_b2(PWM_in_b2),  /*origin data*/
         .out_b(PWM_out_b)
     );
 
     always @(*) begin
+        PWM_mode  = 1'b0;
         PWM_in_a0 = 23'd0;
         PWM_in_a1 = 23'd0;
+        PWM_in_a2 = 23'd0;
         PWM_in_b0 = 23'd0;
         PWM_in_b1 = 23'd0;
+        PWM_in_b2 = 23'd0;
         case (ctrl_sign)
             {KeyGen,6'd5}:begin
-                PWM_in_a0 = s1_q_a[2] ?  {{20{1'b1}}, s1_q_a} + 23'd8380417 : {20'd0, s1_q_a};
-                PWM_in_a1 = s1_q_b[2] ?  {{20{1'b1}}, s1_q_b} + 23'd8380417 : {20'd0, s1_q_b};
-                PWM_in_b0 = A_q_a;
+                PWM_mode  = MATRIX_VECTOR;
+                PWM_in_a0 = temp_0_q_a; //s1
+                PWM_in_a1 = A_q_a; 
+                PWM_in_a2 = PWM_index[0] ? PWM_temp_q_a : t_q_a; 
+                PWM_in_b0 = temp_0_q_b;
                 PWM_in_b1 = A_q_b;
+                PWM_in_b2 = PWM_index[0] ? PWM_temp_q_b : t_q_b; 
             end
         endcase
     end
