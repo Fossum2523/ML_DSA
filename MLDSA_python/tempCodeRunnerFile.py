@@ -1,2 +1,1 @@
-
-    # print(xi)
+A_NTT_s1

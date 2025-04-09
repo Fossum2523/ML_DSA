@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="14,814.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="15,167.501 ns"></ZoomEndTime>
-      <Cursor1Time time="14,900.000 ns"></Cursor1Time>
+      <ZoomStartTime time="33.333333 us"></ZoomStartTime>
+      <ZoomEndTime time="233.333334 us"></ZoomEndTime>
+      <Cursor1Time time="200.000000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="224"></NameColumnWidth>
-      <ValueColumnWidth column_width="100"></ValueColumnWidth>
+      <ValueColumnWidth column_width="96"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="51" />
+   <WVObjectSize size="53" />
    <wvobject fp_name="/NTT_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -32,12 +32,12 @@
       <obj_property name="ElementShortName">in_ready</obj_property>
       <obj_property name="ObjectShortName">in_ready</obj_property>
    </wvobject>
-   <wvobject fp_name="/NTT_tb/NTT_in_u" type="array">
+   <wvobject fp_name="/NTT_tb/uut/NTT_in_u" type="array">
       <obj_property name="ElementShortName">NTT_in_u[22:0]</obj_property>
       <obj_property name="ObjectShortName">NTT_in_u[22:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/NTT_tb/NTT_in_d" type="array">
+   <wvobject fp_name="/NTT_tb/uut/NTT_in_d" type="array">
       <obj_property name="ElementShortName">NTT_in_d[22:0]</obj_property>
       <obj_property name="ObjectShortName">NTT_in_d[22:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
@@ -270,5 +270,15 @@
    <wvobject fp_name="/NTT_tb/uut/RU_1/switch" type="logic">
       <obj_property name="ElementShortName">switch</obj_property>
       <obj_property name="ObjectShortName">switch</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/s1/q_a" type="array">
+      <obj_property name="ElementShortName">q_a[22:0]</obj_property>
+      <obj_property name="ObjectShortName">q_a[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/s1/q_b" type="array">
+      <obj_property name="ElementShortName">q_b[22:0]</obj_property>
+      <obj_property name="ObjectShortName">q_b[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

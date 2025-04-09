@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="83,966.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="85,516.001 ns"></ZoomEndTime>
-      <Cursor1Time time="84,350.000 ns"></Cursor1Time>
+      <ZoomStartTime time="84,345.100 ns"></ZoomStartTime>
+      <ZoomEndTime time="84,423.401 ns"></ZoomEndTime>
+      <Cursor1Time time="84,380.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="191"></NameColumnWidth>
-      <ValueColumnWidth column_width="63"></ValueColumnWidth>
+      <NameColumnWidth column_width="188"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="85" />
+   <WVObjectSize size="98" />
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -494,5 +494,57 @@
       <obj_property name="ElementShortName">cnt[11:0]</obj_property>
       <obj_property name="ObjectShortName">cnt[11:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_3/addr_adder" type="array">
+      <obj_property name="ElementShortName">addr_adder[1:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_adder[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_3/last_addr" type="array">
+      <obj_property name="ElementShortName">last_addr[11:0]</obj_property>
+      <obj_property name="ObjectShortName">last_addr[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_3/star_addr" type="array">
+      <obj_property name="ElementShortName">star_addr[11:0]</obj_property>
+      <obj_property name="ObjectShortName">star_addr[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_3/triger" type="logic">
+      <obj_property name="ElementShortName">triger</obj_property>
+      <obj_property name="ObjectShortName">triger</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_3/pause" type="logic">
+      <obj_property name="ElementShortName">pause</obj_property>
+      <obj_property name="ObjectShortName">pause</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_3/clean" type="logic">
+      <obj_property name="ElementShortName">clean</obj_property>
+      <obj_property name="ObjectShortName">clean</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_3/addr_en" type="logic">
+      <obj_property name="ElementShortName">addr_en</obj_property>
+      <obj_property name="ObjectShortName">addr_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_3/addr_a" type="array">
+      <obj_property name="ElementShortName">addr_a[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_a[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_3/addr_b" type="array">
+      <obj_property name="ElementShortName">addr_b[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_b[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_3/data_valid" type="logic">
+      <obj_property name="ElementShortName">data_valid</obj_property>
+      <obj_property name="ObjectShortName">data_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_3/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_3/cnt_en" type="logic">
+      <obj_property name="ElementShortName">cnt_en</obj_property>
+      <obj_property name="ObjectShortName">cnt_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/controller_inst/PWM_done_tmp" type="logic">
+      <obj_property name="ElementShortName">PWM_done_tmp</obj_property>
+      <obj_property name="ObjectShortName">PWM_done_tmp</obj_property>
    </wvobject>
 </wave_config>

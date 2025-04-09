@@ -784,6 +784,16 @@ module Data_Path
                 temp_0_en_a   = AG_4_addr_en;
                 temp_0_en_b   = AG_4_addr_en;
             end
+            {KeyGen,6'd6}:begin
+                temp_0_data_a = NTT_out_u;
+                temp_0_data_b = NTT_out_d;
+                temp_0_addr_a = {NTT_index,NTT_addr_u};
+                temp_0_addr_b = {NTT_index,NTT_addr_d};
+                temp_0_en_a   = NTT_out_ready;
+                temp_0_en_b   = NTT_out_ready;
+                temp_0_we_a   = NTT_out_ready;
+                temp_0_we_b   = NTT_out_ready;
+            end
         endcase
     end
 
@@ -815,6 +825,12 @@ module Data_Path
                     t_we_a   = AG_4_data_valid;
                     t_we_b   = AG_4_data_valid;
                 end
+            end
+            {KeyGen,6'd6}:begin
+                t_addr_a = {NTT_index, AG_2_addr_a[7:0]};
+                t_addr_b = {NTT_index, AG_2_addr_a[7:0]} + 1'b1;
+                t_en_a   = AG_2_addr_en;
+                t_en_b   = AG_2_addr_en;
             end
         endcase
     end
@@ -969,11 +985,16 @@ module Data_Path
                 AG_2_star_addr   = 12'd0;
                 AG_2_last_addr   = 12'd1022;
             end
-            {KeyGen,6'd5}: begin  //take 3 bits s1 data to encoder and change it to 64bits
+            {KeyGen,6'd5}: begin  
                 AG_2_addr_adder  = 2'd2;
                 AG_2_star_addr   = 12'd0;
                 AG_2_last_addr   = 12'd1022;
             end  
+            {KeyGen,6'd6}: begin  //INTT ^A*^s1
+                AG_2_addr_adder  = 2'd2;
+                AG_2_star_addr   = 12'd0;
+                AG_2_last_addr   = 12'd254;
+            end 
         endcase
     end
 
@@ -988,7 +1009,7 @@ module Data_Path
                 AG_3_star_addr   = 12'd0;
                 AG_3_last_addr   = 12'd48;
             end 
-            {KeyGen,6'd5}: begin //store 64bits s1 data to mem
+            {KeyGen,6'd5}: begin //store 64bits s2 data to mem
                 AG_3_addr_adder  = {1'b0,ENC_valid_o};
                 AG_3_star_addr   = 12'd0;
                 AG_3_last_addr   = 12'd48;
@@ -1002,7 +1023,7 @@ module Data_Path
         AG_4_last_addr   = 12'd255;
         AG_4_pasue       = 1'b0;
         case (ctrl_sign)
-            {KeyGen,6'd5}: begin //store 64bits s2 data to mem
+            {KeyGen,6'd5}: begin  //PWM ^A * ^s1
                 AG_4_addr_adder  = 2'd2;
                 AG_4_star_addr   = 12'd0;
                 AG_4_last_addr   = 12'd1022;
@@ -1070,7 +1091,7 @@ module Data_Path
         .clk(clk),
         .reset(NTT_reset),
         .mode(NTT_mode),
-        .in_ready(AG_2_addr_en),
+        .in_ready(AG_2_addr_en & NTT_in_ready),
         .NTT_in_u(NTT_in_u),
         .NTT_in_d(NTT_in_d),
         .NTT_out_u(NTT_out_u),
@@ -1088,6 +1109,10 @@ module Data_Path
             {KeyGen,6'd3}:begin
                 NTT_in_u = s1_q_a[2] ?  {{20{1'b1}}, s1_q_a} + 23'd8380417 : {20'd0, s1_q_a};
                 NTT_in_d = s1_q_b[2] ?  {{20{1'b1}}, s1_q_b} + 23'd8380417 : {20'd0, s1_q_b}; 
+            end
+            {KeyGen,6'd6}:begin
+                NTT_in_u = t_q_a;
+                NTT_in_d = t_q_b; 
             end
             default: begin
                 NTT_in_u = 23'd0;

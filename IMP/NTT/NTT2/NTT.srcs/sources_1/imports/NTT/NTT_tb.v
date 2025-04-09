@@ -66,7 +66,7 @@ module NTT_tb;
     	.HLEN(10),
 		// .INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/NTT/s1_0.txt")
 		// .INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/NTT/s1_Hat_0.txt")
-		.INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/NTT/s1_0.txt")
+		.INIT_FILE("../../../../NTT.srcs/sources_1/imports/NTT/s1_0.txt")
 		// .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/NTT/s1_Hat_0.txt")
 	)s1(
         .clk_a(clk),
@@ -92,11 +92,11 @@ module NTT_tb;
     // Task to apply reset
     task apply_reset;
         begin
-            reset = 1;
-            #(2 * CLK_PERIOD);
             reset = 0;
-            #(10 * CLK_PERIOD);
+            #(2 * CLK_PERIOD);
             reset = 1;
+            #(10 * CLK_PERIOD);
+            reset = 0;
         end
     endtask
 

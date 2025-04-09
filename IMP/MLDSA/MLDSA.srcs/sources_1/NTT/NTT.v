@@ -37,6 +37,10 @@ module NTT#(
     reg [7:0] cnt2;
 
     /*** BU input ***/
+    wire [BIT_LEN*2-1:0]  inv_rot_o_u;
+    wire [BIT_LEN*2-1:0]  inv_rot_o_d;
+    wire [BIT_LEN-1:0]  INTT_o_u;
+    wire [BIT_LEN-1:0]  INTT_o_d;
     wire [BIT_LEN-1:0]  in_u_0;
     wire [BIT_LEN-1:0]  in_d_0;
     wire [BIT_LEN-1:0]  in_u_1;
@@ -206,8 +210,14 @@ module NTT#(
     assign MEM_u_in_7 = mode ? out_u_7 : out_u_6;
     assign MEM_d_in_7 = mode ? out_d_7 : out_d_6;
 
-    assign NTT_out_u = mode ? out_u_0 : out_u_7;
-    assign NTT_out_d = mode ? out_d_0 : out_d_7;
+    assign inv_rot_o_u = out_u_0 * 23'd8347681;
+    assign inv_rot_o_d = out_d_0 * 23'd8347681;
+
+    Modular_Reduction f1(inv_rot_o_u, INTT_o_u);
+    Modular_Reduction f2(inv_rot_o_d, INTT_o_d);
+
+    assign NTT_out_u = mode ? INTT_o_u : out_u_7;
+    assign NTT_out_d = mode ? INTT_o_d : out_d_7;
 
     assign out_ready = NTT_en && cnt >= 127 && cnt < 255;
 

@@ -5,11 +5,8 @@ module NTT#(
 	input                reset,
     input                mode,
 	input                in_ready,
-    output               data_en,   //enable data memory
 	input  [BIT_LEN-1:0] NTT_in_u,
 	input  [BIT_LEN-1:0] NTT_in_d,
-    output [7:0]         NTT_in_addr_u,
-	output [7:0]         NTT_in_addr_d,
     output               out_ready,
 	output [BIT_LEN-1:0] NTT_out_u,
 	output [BIT_LEN-1:0] NTT_out_d,
@@ -154,7 +151,6 @@ module NTT#(
     wire [7:0] addr_adder_in_1;
     wire [7:0] addr_adder;
 
-    assign data_en = curr_state == DATA_TRIGGER | curr_state == PROCESS;
     assign done = cnt == 255;
     assign NTT_en = curr_state == PROCESS;
     
@@ -223,9 +219,6 @@ module NTT#(
  
     assign NTT_addr_u = mode ? addr_base : addr_leftshigt;
     assign NTT_addr_d = addr_adder;
-
-    assign NTT_in_addr_u = cnt2;
-    assign NTT_in_addr_d = cnt2 + 8'd128;
     /*** stage 0 ***/
     BU BU_0(
         .mode(mode),
@@ -251,10 +244,11 @@ module NTT#(
         .MEM_cnt(MEM_cnt_1)
     );
 
+
     rom #(
         .WIDTH(BIT_LEN),
         .LENGTH(128/depth_1),
-        .INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/MEM_zeta/MEM_zeta_1.txt")
+        .INIT_FILE("../../../../MLDSA.srcs/sources_1/NTT/MEM_zeta/MEM_zeta_1.txt")
     ) MEM_zeta_1(
         .clk(clk), 
         .en(1'b1), 
@@ -304,7 +298,7 @@ module NTT#(
     rom #(
         .WIDTH(BIT_LEN),
         .LENGTH(128/depth_2),
-        .INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/MEM_zeta/MEM_zeta_2.txt")
+        .INIT_FILE("../../../../MLDSA.srcs/sources_1/NTT/MEM_zeta/MEM_zeta_2.txt")
     ) MEM_zeta_2(
         .clk(clk), 
         .en(1'b1), 
@@ -353,7 +347,7 @@ module NTT#(
     rom #(
         .WIDTH(BIT_LEN),
         .LENGTH(128/depth_3),
-        .INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/MEM_zeta/MEM_zeta_3.txt")
+        .INIT_FILE("../../../../MLDSA.srcs/sources_1/NTT/MEM_zeta/MEM_zeta_3.txt")
     ) MEM_zeta_3(
         .clk(clk), 
         .en(1'b1), 
@@ -402,7 +396,7 @@ module NTT#(
     rom #(
         .WIDTH(BIT_LEN),
         .LENGTH(128/depth_4),
-        .INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/MEM_zeta/MEM_zeta_4.txt")
+        .INIT_FILE("../../../../MLDSA.srcs/sources_1/NTT/MEM_zeta/MEM_zeta_4.txt")
     ) MEM_zeta_4(
         .clk(clk), 
         .en(1'b1), 
@@ -450,7 +444,7 @@ module NTT#(
     rom #(
         .WIDTH(BIT_LEN),
         .LENGTH(128/depth_5),
-        .INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/MEM_zeta/MEM_zeta_5.txt")
+        .INIT_FILE("../../../../MLDSA.srcs/sources_1/NTT/MEM_zeta/MEM_zeta_5.txt")
     ) MEM_zeta_5(
         .clk(clk), 
         .en(1'b1), 
@@ -498,7 +492,7 @@ module NTT#(
     rom #(
         .WIDTH(BIT_LEN),
         .LENGTH(128/depth_6),
-        .INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/MEM_zeta/MEM_zeta_6.txt")
+        .INIT_FILE("../../../../MLDSA.srcs/sources_1/NTT/MEM_zeta/MEM_zeta_6.txt")
     ) MEM_zeta_6(
         .clk(clk), 
         .en(1'b1), 
@@ -546,7 +540,7 @@ module NTT#(
     rom #(
         .WIDTH(BIT_LEN),
         .LENGTH(128/depth_7),
-        .INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/MEM_zeta/MEM_zeta_7.txt")
+        .INIT_FILE("../../../../MLDSA.srcs/sources_1/NTT/MEM_zeta/MEM_zeta_7.txt")
     ) MEM_zeta_7(
         .clk(clk), 
         .en(1'b1), 
@@ -589,12 +583,9 @@ module NTT#(
         case(curr_state)
             IDLE:begin
                 if(in_ready) 
-                    next_state = DATA_TRIGGER;
+                    next_state = PROCESS;
                 else 
                     next_state = IDLE;
-            end
-            DATA_TRIGGER:begin
-                next_state = PROCESS;
             end
             PROCESS:begin
                 if(done) 
@@ -615,12 +606,4 @@ module NTT#(
             cnt <= cnt + 1'b1;
     end
 
-    always @(posedge clk) begin
-        if(reset)
-            cnt2 <= 8'd0;
-        else if(done) 
-            cnt2 <= 8'd0;
-        else if(curr_state == PROCESS | curr_state == DATA_TRIGGER) 
-            cnt2 <= cnt2 + 1'b1;
-    end
 endmodule
