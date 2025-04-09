@@ -50,9 +50,7 @@ module MLDSA
     wire        NTT_done;     
     
     /*---PWM---*/
-    wire        PWM_start;
     wire [1:0]  PWM_index;
-    wire        PWM_done;
 
     /*---AG_1---*/
     wire AG_1_triger;
@@ -108,9 +106,7 @@ module MLDSA
         .NTT_done(NTT_done),
         
         /*---PWM---*/
-	    .PWM_start(PWM_start),
         .PWM_index(PWM_index),
-        .PWM_done(PWM_done),
         
          /*---AG_1---*/
         .AG_1_triger(AG_1_triger),
@@ -181,9 +177,7 @@ module MLDSA
         .NTT_done(NTT_done),
 
         /*---PWM---*/
-	    .PWM_start(PWM_start),
         .PWM_index(PWM_index),
-        .PWM_done(PWM_done),
 
         /*---AG_1---*/
         .AG_1_triger(AG_1_triger),

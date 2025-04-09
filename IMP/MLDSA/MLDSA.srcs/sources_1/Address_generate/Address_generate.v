@@ -20,7 +20,6 @@ module Address_generate
 
     reg         cnt_en;
     reg [11:0]  cnt;
-    reg         pause_tmp;
     reg         done_tmp;
     reg         pause_tmp;
     

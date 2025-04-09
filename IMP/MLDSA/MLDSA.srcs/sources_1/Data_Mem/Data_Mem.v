@@ -115,14 +115,26 @@ module Data_Mem
     /*---s2_pack---*/
     input   [63:0]          s2_pack_data_a,
     input   [63:0]          s2_pack_data_b,
-    input   [5:0]           s2_pack_addr_a,
-    input   [5:0]           s2_pack_addr_b,
+    input   [5:0]           s2_pack_addr_a,  //48th data
+    input   [5:0]           s2_pack_addr_b,  //48th data
     input                   s2_pack_en_a,
     input                   s2_pack_en_b,
     input                   s2_pack_we_a,
     input                   s2_pack_we_b,
     output  [63:0]          s2_pack_q_a,
     output  [63:0]          s2_pack_q_b,
+
+    /*---t_pack---*/
+    input   [63:0]          t_pack_data_a,
+    input   [63:0]          t_pack_data_b,
+    input   [7:0]           t_pack_addr_a,  //160th data
+    input   [7:0]           t_pack_addr_b,  //160th data
+    input                   t_pack_en_a,
+    input                   t_pack_en_b,
+    input                   t_pack_we_a,
+    input                   t_pack_we_b,
+    output  [63:0]          t_pack_q_a,
+    output  [63:0]          t_pack_q_b,
 
     /*---PWM_temp---*/
     input   [DLEN-1:0]      PWM_temp_data_a,
@@ -319,6 +331,22 @@ module Data_Mem
         .we_b(s2_pack_we_b),
         .q_a(s2_pack_q_a),
         .q_b(s2_pack_q_b)
+    );
+
+    /*---t_pack---*/
+    Dual_Port_Ram_Single_clk #(.DLEN(64), .HLEN(8)) t_pack(
+        .clk_a(clk),
+        .clk_b(clk),
+        .data_a(t_pack_data_a),
+        .data_b(t_pack_data_b),
+        .addr_a(t_pack_addr_a),
+        .addr_b(t_pack_addr_b),
+        .en_a(t_pack_en_a),
+        .en_b(t_pack_en_b),
+        .we_a(t_pack_we_a),
+        .we_b(t_pack_we_b),
+        .q_a(t_pack_q_a),
+        .q_b(t_pack_q_b)
     );
 
     /*---PWM_temp---*/

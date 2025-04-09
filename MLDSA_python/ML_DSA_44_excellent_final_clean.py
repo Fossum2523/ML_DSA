@@ -58,13 +58,14 @@ def KeyGen(xi):
     A_hat = ExpandA(p)
     # print(A_hat)
     s1, s2 = ExpandS(p_prime)
+    # print(s2)
     s1Hat = [NTT(s) for s in s1]
     # print("s1hat=",list(s1Hat))
     s1Hat = np.array(s1Hat)
     A_NTT_s1 = NTT_dot(A_hat,s1Hat)
-    print(A_NTT_s1)
+    # print(A_NTT_s1)
     aHat_mul_s1Hat = [NTT_inv(s) for s in A_NTT_s1]
-    print(aHat_mul_s1Hat)
+    # print(aHat_mul_s1Hat)
     t = []
     for i in range(ML_DSA["k"]):
         d = []
@@ -74,7 +75,7 @@ def KeyGen(xi):
             d.append(sum)
         t.append(d)
 
-    # print(t)
+    print(t)
     t1 = []
     t0 = []
     for ti in range (ML_DSA["k"]):

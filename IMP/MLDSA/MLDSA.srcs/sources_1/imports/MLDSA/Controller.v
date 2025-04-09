@@ -322,9 +322,9 @@ module Controller
     input               NTT_done,
 
     /*---PWM---*/
-    output              PWM_start,
+    // output              PWM_start,
     output reg [1:0]    PWM_index,
-    input               PWM_done,
+    // input               PWM_done,
 
     /*---Address genetate---*/
     output reg          AG_1_triger,
@@ -362,6 +362,7 @@ module Controller
                         STAGE_4     = 6'd4,        
                         STAGE_5     = 6'd5,        
                         STAGE_6     = 6'd6,        
+                        STAGE_7     = 6'd7,        
                         STAGE_T     = 6'd15;        
 
     //Sampler mode
@@ -386,6 +387,11 @@ module Controller
     reg  keccak_done;
     reg  keccak_done_tmp;
     reg  NTT_done_tmp;
+
+    reg [1:0]PWM_index_tmp;
+    reg [1:0]PWM_end_index;
+    reg PWM_done;
+    reg PWM_done_tmp;
 
 
     assign  curr_state = main_mode == KeyGen ? curr_state_KeyGen : 6'd0;
@@ -439,9 +445,15 @@ module Controller
             end 
             STAGE_6: begin
                 if(NTT_done_tmp)   
-                    next_state_KeyGen = STAGE_T;
+                    next_state_KeyGen = STAGE_7;
                 else                
                     next_state_KeyGen = STAGE_6;
+            end 
+            STAGE_7: begin
+                if(Econder_done_tmp && PWM_done_tmp)   
+                    next_state_KeyGen = STAGE_T;
+                else                
+                    next_state_KeyGen = STAGE_7;
             end 
             STAGE_T: begin
                 next_state_KeyGen = STAGE_T;
@@ -511,20 +523,16 @@ module Controller
         keccak_done = 1'b0;
         case (curr_state_KeyGen)
             STAGE_1: begin
-                if(AG_1_done)   
-                    keccak_done = 1'b1;
+                keccak_done = AG_1_done;
             end 
-            STAGE_2: begin
-                if(s1_index == 3 & next_element)   
-                    keccak_done = 1'b1;
+            STAGE_2: begin 
+                keccak_done = (s1_index == 3 & next_element);
             end
             STAGE_3: begin
-                if(s2_index == 7 & next_element)   
-                    keccak_done = 1'b1;
+                keccak_done = (s2_index == 7 & next_element);
             end 
             STAGE_4: begin
-                if(A_index == 15 & next_element)   
-                    keccak_done = 1'b1;
+                keccak_done = (A_index == 15 & next_element);
             end 
             default: keccak_done = 1'b0;
         endcase
@@ -607,6 +615,36 @@ module Controller
     /*---NTT---*/ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
+    /*---Encoder---*/ //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    reg Econder_done;
+    reg Econder_done_tmp;
+
+    always @(*) begin
+        Econder_done = 1'b0;
+        case (ctrl_sign)
+            {KeyGen,6'd4}:begin
+                Econder_done = AG_2_done;
+            end
+            {KeyGen,6'd5}:begin
+                Econder_done = AG_2_done;
+            end
+            {KeyGen,6'd7}:begin
+                Econder_done = AG_3_done;
+            end
+        endcase
+    end
+
+    always @ (posedge clk) begin 
+        if (reset)                                                                                                                                                   
+            Econder_done_tmp <= 1'b0;
+        else if(next_state_KeyGen != curr_state_KeyGen)
+            Econder_done_tmp <= 1'b0;
+        else if(Econder_done)
+            Econder_done_tmp <= 1'b1;
+    end
+    /*---Encoder---*/ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
     /*---Address_Generate---*/ //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     always @(*) begin
         AG_1_triger      = 1'b0;
@@ -633,17 +671,21 @@ module Controller
                 AG_2_triger      = ~NTT_done_tmp;
                 AG_2_clean       = NTT_done;
             end 
-            STAGE_4: begin  // Enocder s1 RX
-                AG_2_triger      = 1'b1;
+            STAGE_4: begin  // Enocder s1 TX
+                AG_2_triger      = ~Econder_done_tmp;
                 AG_2_clean       = keccak_done;
             end
-            STAGE_5: begin // Enocder s2 RX
-                AG_2_triger      = 1'b1;
+            STAGE_5: begin // Enocder s2 TX
+                AG_2_triger      = ~Econder_done_tmp;
                 AG_2_clean       = AG_4_done;
             end
             STAGE_6: begin //INTT ^A*^s1
                 AG_2_triger      = ~NTT_done_tmp;
                 AG_2_clean       = NTT_done;
+            end
+            STAGE_5: begin // Enocder s2 TX
+                AG_2_triger      = ~Econder_done_tmp;
+                AG_2_clean       = Econder_done;
             end  
         endcase
     end
@@ -652,13 +694,17 @@ module Controller
         AG_3_triger      = 1'b0;
         AG_3_clean       = 1'b0;
         case (curr_state_KeyGen)
-            STAGE_4: begin // Enocder s1 TX
-                AG_3_triger      = 1'b1;
-                AG_3_clean       = keccak_done;
+            STAGE_4: begin // Enocder s1 RX
+                AG_3_triger      = ~Econder_done_tmp;
+                AG_3_clean       = Econder_done;
             end 
-            STAGE_5: begin // Enocder s2 TX
-                AG_3_triger      = 1'b1;
-                AG_3_clean       = AG_4_done;
+            STAGE_5: begin // Enocder s2 RX
+                AG_3_triger      = ~Econder_done_tmp;
+                AG_3_clean       = Econder_done;
+            end 
+            STAGE_7: begin // Enocder t RX
+                AG_3_triger      = ~Econder_done_tmp;
+                AG_3_clean       = Econder_done;
             end 
         endcase
     end
@@ -668,8 +714,11 @@ module Controller
         AG_4_clean       = 1'b0;
         case (curr_state_KeyGen)
             STAGE_5: begin
-                AG_4_triger      = 1'b1;
-                // AG_4_clean       = A_index[1:0] == 2'b00 & next_element;
+                AG_4_triger      = ~PWM_done_tmp;
+                AG_4_clean       = AG_4_done;
+            end 
+            STAGE_7: begin
+                AG_4_triger      = ~PWM_done_tmp;
                 AG_4_clean       = AG_4_done;
             end 
         endcase
@@ -678,13 +727,37 @@ module Controller
 
 
     /*---PWM---*/ //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    reg [1:0]PWM_index_tmp;
-    reg PWM_done_tmp;
-    /*PWM*/
+    always @(*) begin
+        PWM_index_tmp  = 1'b0;
+        case (curr_state_KeyGen)
+            STAGE_5: begin
+                PWM_end_index = 2'd3;
+            end 
+            STAGE_7: begin
+                PWM_end_index = 2'd0;
+            end 
+        endcase
+    end
+
+    always @(*) begin
+        PWM_done = 1'b0;
+        case (curr_state_KeyGen)
+            STAGE_5: begin
+                PWM_done = AG_4_done;
+            end 
+            STAGE_7: begin
+                PWM_done = AG_4_done;
+            end 
+            default: PWM_done = 1'b0;
+        endcase
+    end
+    
     always @ (posedge clk) begin 
         if (reset)                                                                                                                                                   
             PWM_index_tmp <= 2'd0;
-        else if((curr_state_KeyGen == STAGE_5) && AG_4_done)
+        else if(next_state_KeyGen != curr_state_KeyGen)
+            PWM_index_tmp <= 1'b0;
+        else if(PWM_done)
             PWM_index_tmp <= PWM_index_tmp + 1'b1;
     end
 
@@ -700,7 +773,7 @@ module Controller
             PWM_done_tmp <= 1'b0;
         else if(next_state_KeyGen != curr_state_KeyGen)
             PWM_done_tmp <= 1'b0;
-        else if(PWM_index == 3 & AG_4_done)
+        else if(PWM_index == PWM_end_index && PWM_done)
             PWM_done_tmp <= 1'b1;
     end
     /*---PWM---*/ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
