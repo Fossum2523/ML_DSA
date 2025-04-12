@@ -179,7 +179,7 @@ def KECCAK_p(S, b, nr):
 def sponge(r, b, N, d):
     P = N + pad10_star_1(r, len(N))
     n = len(P) // r
-    # print(P)
+    print(P)
     c = b - r
     P_blocks = [0 for x in range(n)]
     for i in range(n):
@@ -203,6 +203,7 @@ def sponge(r, b, N, d):
         # S_p = ''.join(map(str, S_p))
         # S_p = ''.join(hex(int(S_p[v:v+4], 2))[2:].upper() for v in range(0, len(S_p), 4))
         # print(S_p)
+        # print("\n")
 
     Z = S[:r]
     while len(Z) < d:
@@ -508,48 +509,91 @@ def string_to_bits(input_string):
 
 
 ### TEST "Squeezing Test(KECCAK)" ###
-# #setting str----------------------------
-# mode = 0 # G(r = 1344) => 0, H(r = 1088) => 1
-# byte_num = 1    # 0(2'b00) => out = 64'h000000000000001f     
-#                 # 1(2'b01) out = {24'h00001f,in[39:0]};   
-#                 # 2(2'b10) out = {16'h001f,in[47:0]};         
-# verilog_in_64 =  ['1111111111111111111111111111111111111111111111111111111111111111'
-#                                                                                  #^
-#                                                                                  #|
-#                                                                                  #LSB(verilog)
-#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
-#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
-#                  ,'1111111111111111111111111111111111111111111111111111111111111111'
-#                  ,'11110000010000000100'
-#                  ]
-#                   #^   ^
-#                   #|   |
-#                   #|   16bit 
-#                   #|
-#                   #shake add 1111(verilog)            
-# #setting end----------------------------
-# cont = 0
-# python_in_64x5 = ''
-# for i in verilog_in_64:
-#     # print("verilog_in",cont,"     = ",i)
-#     python_in_64x5 = python_in_64x5 + i[::-1]
-#     cont+=1
+#setting str----------------------------
+mode = 0 # G(r = 1344) => 0, H(r = 1088) => 1
+byte_num = 1    # 0(2'b00) => out = 64'h000000000000001f     
+                # 1(2'b01) out = {24'h00001f,in[39:0]};   
+                # 2(2'b10) out = {16'h001f,in[47:0]};         
+verilog_in_64 =  ['1111111111111111111111111111111111111111111111111111111111111111'
+                                                                                 #^
+                                                                                 #|
+                                                                                 #LSB(verilog)
+                 ,'1111111111111111111111111111111111111111111111111111111111111111'
+                 ,'1111111111111111111111111111111111111111111111111111111111111111'
+                 ,'1111111111111111111111111111111111111111111111111111111111111111'
 
-# python_KECCAK_out_1344 = KECCAK(512, python_in_64x5, 1088)
-# python_KECCAK_out_1344.reverse()
-# python_KECCAK_out_1344_string = ''.join(map(str, python_KECCAK_out_1344))
-# python_KECCAK_out_1344_string = ''.join(hex(int(python_KECCAK_out_1344_string[i:i+4], 2))[2:].upper() for i in range(0, len(python_KECCAK_out_1344_string), 4))
-# print("python_KECCAK_out_1344_string = ",python_KECCAK_out_1344_string) # Verilog available output is 1344 bit (out[1343:0])
+                 '1111111111111111111111111111111111111111111111111111111111111111'
+                                                                                 #^
+                                                                                 #|
+                                                                                 #LSB(verilog)
+                 ,'1111111111111111111111111111111111111111111111111111111111111111'
+                 ,'1111111111111111111111111111111111111111111111111111111111111111'
+                 ,'1111111111111111111111111111111111111111111111111111111111111111'
+
+                 '1111111111111111111111111111111111111111111111111111111111111111'
+                                                                                 #^ 
+                                                                                 #|
+                                                                                 #LSB(verilog)
+                 ,'1111111111111111111111111111111111111111111111111111111111111111'
+                 ,'1111111111111111111111111111111111111111111111111111111111111111'
+                 ,'1111111111111111111111111111111111111111111111111111111111111111'
+
+                 ,'1111111111111111111111111111111111111111111111111111111111111111'
+                                                                                 #^ 
+                                                                                 #|
+                                                                                 #LSB(verilog)
+                 ,'1111111111111111111111111111111111111111111111111111111111111111'
+                 ,'1111111111111111111111111111111111111111111111111111111111111111'
+                 ,'1111111111111111111111111111111111111111111111111111111111111111'
+
+                 ,'1111111111111111111111111111111111111111111111111111111111111111'
+                                                                                 #^ 
+                                                                                 #|
+                                                                                 #LSB(verilog)
+                 ,'1111111111111111111111111111111111111111111111111111111111111111'
+                 ,'1111111111111111111111111111111111111111111111111111111111111111'
+                 ,'1111111111111111111111111111111111111111111111111111111111111111'
+
+                 ,'1111111111111111111111111111111111111111111111111111111111111111'
+                                                                                 #^ 
+                                                                                 #|
+                                                                                 #LSB(verilog)
+                 ,'1111111111111111111111111111111111111111111111111111111111111111'
+                 ,'1111111111111111111111111111111111111111111111111111111111111111'
+                 ,'1111111111111111111111111111111111111111111111111111111111111111'
+
+                 ,'11110000010000000100'
+                 ]
+                  #^   ^
+                  #|   |
+                  #|   16bit 
+                  #|
+                  #shake add 1111(verilog)            
+#setting end----------------------------
+cont = 0
+python_in_64x5 = ''
+for i in verilog_in_64:
+    # print("verilog_in",cont,"     = ",i)
+    python_in_64x5 = python_in_64x5 + i[::-1]
+    cont+=1
+
+python_KECCAK_out_1344 = KECCAK(512, python_in_64x5, 1088)
+python_KECCAK_out_1344.reverse()
+python_KECCAK_out_1344_string = ''.join(map(str, python_KECCAK_out_1344))
+python_KECCAK_out_1344_string = ''.join(hex(int(python_KECCAK_out_1344_string[i:i+4], 2))[2:].upper() for i in range(0, len(python_KECCAK_out_1344_string), 4))
+print("python_KECCAK_out_1344_string = ",python_KECCAK_out_1344_string) # Verilog available output is 1344 bit (out[1343:0])
 
 
-### TEST "MLDSA FSM" ###
-xi = 'FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF'
-xi = bytes.fromhex(xi) + b'\x04\x04'
-result = SHAKE_256(xi,1088)
-print(Verilog_trans(result))
-Rho_seed = result[0:32]
-Rho_Prime_seed = result[32:96]
-Kata_seed = result[96:128]
+## TEST "MLDSA FSM" ###
+# xi = 'FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF'
+# print(len(xi))
+# xi = bytes.fromhex(xi) + bytes.fromhex(xi) + bytes.fromhex(xi) + bytes.fromhex(xi) + b'\x04\x04'
+# print(len(xi))
+# result = SHAKE_256(xi,1088)
+# print(Verilog_trans(result))
+# Rho_seed = result[0:32]
+# Rho_Prime_seed = result[32:96]
+# Kata_seed = result[96:128]
 # print(Verilog_trans(Rho_seed))
 # print(Verilog_trans(Rho_Prime_seed))
 # print(Verilog_trans(Kata_seed))
@@ -557,4 +601,3 @@ Kata_seed = result[96:128]
 # xi = Rho_Prime_seed + b'\x00' + b'\x00'
 # Sample_S_00 = SHAKE_256(xi,1088)
 # print(Verilog_trans(Sample_S_00))
-    

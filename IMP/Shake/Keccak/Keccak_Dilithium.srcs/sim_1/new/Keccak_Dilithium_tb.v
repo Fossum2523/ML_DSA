@@ -23,6 +23,8 @@
     wire                  padder_out_ready;
     wire       [1599:0]   f_out;
     wire                  f_out_ready;
+
+    integer i;
     // Instantiate the Unit Under Test (UUT)
     Keccak_Dilithium uut (
         .clk(clk),
@@ -53,6 +55,7 @@
     // Test stimulus
     initial begin
         // Initialize Inputs
+        i = 0;
         reset = 0;
         in = 64'd0;
         in_ready = 0;
@@ -70,7 +73,7 @@
         //padder
         mode = 2'b01; // G mode
         in_ready = 1;
-        byte_num = 3'b001;
+        byte_num = 3'b010;
 
         // //in =  64'b1101011111110100101000100011001001100101101111001110110010100101;
         // in = 64'hFFFFFFFFFFFFFFFF;
@@ -86,33 +89,39 @@
         // #10;  
         // //in =  64'b0000000000000000000000000000000000000000111110000010000000100000;
         // in = 64'h0000000000000404;
-        in = 64'hFFFFFFFFFFFFFFFF;
-        #170; 
-        #10;
-        in = 64'hFFFFFFFFFFFFFFFF;
-        #30;
-        in = 64'hFFFFFFFFFFFFFFFF;
+        while(i<24)begin
+            if(~buffer_full)begin
+                in_ready = 1;
+                in = 64'hFFFFFFFFFFFFFFFF;
+                i = i + 1;  
+            end
+            else begin
+                in_ready = 0;
+            end
+            #10;
+        end
+        in = 64'h0000000000000404;
         is_last = 1;
         #10
         in_ready = 0;
         is_last = 0;
         
-        #1000;
-        reset = 0;
-        #20;
-        reset = 1;
-        in_ready = 1;
-        byte_num = 3'b001;
-        in = 64'hFFFFFFFFFFFFFFFF;
-        #170; 
-        #10;
-        in = 64'hFFFFFFFFFFFFFFFF;
-        #30;
-        in = 64'hFFFFFFFFFFFFFFFF;
-        is_last = 1;
-        #10
-        in_ready = 0;
-        is_last = 0;
+        // #1000;
+        // reset = 0;
+        // #20;
+        // reset = 1;
+        // in_ready = 1;
+        // byte_num = 3'b001;
+        // in = 64'hFFFFFFFFFFFFFFFF;
+        // #170; 
+        // #10;
+        // in = 64'hFFFFFFFFFFFFFFFF;
+        // #30;
+        // in = 64'hFFFFFFFFFFFFFFFF;
+        // is_last = 1;
+        // #10
+        // in_ready = 0;
+        // is_last = 0;
         // squeeze = 1'b1;
         // #10;
         // squeeze = 1'b0;
@@ -120,6 +129,7 @@
         #100;
         $finish;
     end
+    
     always @(posedge clk ) begin
         if(f_out_ready)$display("f_out: %h.", f_out);
     end

@@ -10,7 +10,7 @@ module Padder_Dilithium(
     output              i_last,
     output reg [1343:0] out,         /* to "f_permutation" module */ // need update
     output              out_ready,   /* to "f_permutation" module */
-    input               f_ack,        /* from "f_permutation" module */
+    input               f_ack        /* from "f_permutation" module */
     );
  
                                     /* if "ack" is 1, then current output has been used by "f_permutation" module */
@@ -84,6 +84,7 @@ module Padder_Dilithium(
         else // is_last == 1, but not meet with (posedge clk)
           begin
             v1 = v0;
+            v1[63] = v1[63] | i_last; // need update
           end
       end
 endmodule

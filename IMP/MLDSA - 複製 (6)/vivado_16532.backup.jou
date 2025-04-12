@@ -1,0 +1,52 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Wed Apr  9 01:25:03 2025
+# Process ID: 16532
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2948 C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP\MLDSA\MLDSA.xpr
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/vivado.log
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA_tb_behav.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA_tb_behav1.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage4.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage5.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage3.wcfg
+source MLDSA_tb.tcl
+run 200 us
+relaunch_sim
+run 200 us
+current_wave_config {KeyGen_Stage5.wcfg}
+add_wave {{/MLDSA_tb/uut/controller_inst/PWM_index_2}} 
+restart
+run 200 us
+run 200 us
+relaunch_sim
+relaunch_sim
+run 200 us
+relaunch_sim
+run 200 us
+current_wave_config {KeyGen_Stage5.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/A_addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/A_addr_b}} 
+relaunch_sim
+run 200 us
+relaunch_sim
+relaunch_sim
+run 200 us
+relaunch_sim
+run 200 us
+relaunch_sim
+run 200 us
+run 200 us
+relaunch_sim
+run 200 us
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage5.wcfg}
+close_sim
