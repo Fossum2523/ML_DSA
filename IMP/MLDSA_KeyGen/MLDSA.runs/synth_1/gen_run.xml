@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1736520029">
+  <File Type="PA-TCL" Name="MLDSA.tcl"/>
+  <File Type="REPORTS-TCL" Name="MLDSA_reports.tcl"/>
+  <File Type="RDS-RDS" Name="MLDSA.vds"/>
+  <File Type="RDS-UTIL" Name="MLDSA_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="MLDSA_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="MLDSA.dcp"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/MLDSA/CoeffFromHalfByte.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/CoeffFromHalfByte.v"/>
+        <Attr Name="ImportTime" Val="1736000007"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/MLDSA/Controller.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/Controller.v"/>
+        <Attr Name="ImportTime" Val="1736003916"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/MLDSA/Data_Mem.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/Data_Mem.v"/>
+        <Attr Name="ImportTime" Val="1736001445"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/MLDSA/Data_Path.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/Data_Path.v"/>
+        <Attr Name="ImportTime" Val="1736003262"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/MLDSA/ExpandS.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/ExpandS.v"/>
+        <Attr Name="ImportTime" Val="1736000383"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/MLDSA/F_Permutation_Dilithium.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/F_Permutation_Dilithium.v"/>
+        <Attr Name="ImportTime" Val="1734854589"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/MLDSA/Keccak_dilithium.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/Keccak_dilithium.v"/>
+        <Attr Name="ImportTime" Val="1734853474"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/MLDSA/Sampler.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/MLDSA/rconst.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/rconst.v"/>
+        <Attr Name="ImportTime" Val="1734329837"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/MLDSA/round.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/round.v"/>
+        <Attr Name="ImportTime" Val="1734539762"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/MLDSA/MLDSA.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/MLDSA.v"/>
+        <Attr Name="ImportTime" Val="1736003295"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/MLDSA/BRAM.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/BRAM.v"/>
+        <Attr Name="ImportTime" Val="1735820145"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/MLDSA/padder1.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/padder1.v"/>
+        <Attr Name="ImportTime" Val="1734760971"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/MLDSA/Padder_Dilithium.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/Padder_Dilithium.v"/>
+        <Attr Name="ImportTime" Val="1734854068"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="MLDSA"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

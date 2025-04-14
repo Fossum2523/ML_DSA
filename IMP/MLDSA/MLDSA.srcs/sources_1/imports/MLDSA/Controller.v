@@ -781,10 +781,14 @@ module Controller
                 AG_2_triger      = ~NTT_done_tmp;
                 AG_2_clean       = NTT_done;
             end
-            STAGE_8: begin // Enocder s2 TX
+            STAGE_8: begin // Enocder t0 TX
                 AG_2_triger      = ~Econder_done_tmp;
                 AG_2_clean       = Econder_done;
-            end  
+            end
+            STAGE_T: begin // Enocder t0 TX
+                AG_2_triger      = ~Econder_done_tmp;
+                AG_2_clean       = Econder_done;
+            end
         endcase
     end
 

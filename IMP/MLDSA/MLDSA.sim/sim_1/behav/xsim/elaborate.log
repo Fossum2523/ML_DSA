@@ -5,8 +5,8 @@ Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 3 for port 'MLSDA_in_byte_num' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:457]
-WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 3 for port 'sel' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:710]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 3 for port 'MLSDA_in_byte_num' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:467]
+WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 3 for port 'sel' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:720]
 WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 5 for port 'sel' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/Sampler/ExpandA.v:47]
 WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 5 for port 'sel' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/Sampler/ExpandMASK.v:70]
 WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 3 for port 'addr' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/NTT.v:364]
@@ -15,7 +15,7 @@ WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 5 fo
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 6 for port 'addr' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/NTT.v:509]
 WARNING: [VRFC 10-3091] actual bit length 64 differs from formal bit length 7 for port 'addr' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/NTT.v:557]
 WARNING: [VRFC 10-5021] port 'Rho_en' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/MLDSA.v:142]
-WARNING: [VRFC 10-5021] port 'y_data_a' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:544]
+WARNING: [VRFC 10-5021] port 'y_data_a' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:554]
 WARNING: [VRFC 10-1324] repetition multiplier must be positive [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/CONTR.v:35]
 WARNING: [VRFC 10-1324] repetition multiplier must be positive [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/CONTR.v:38]
 Completed static elaboration
@@ -181,6 +181,7 @@ Compiling module xil_defaultlib.NTT
 Compiling module xil_defaultlib.uncenter_coeff
 Compiling module xil_defaultlib.zero_strip
 Compiling module xil_defaultlib.encoder_default
+Compiling module xil_defaultlib.decoder
 Compiling module xil_defaultlib.PWM
 Compiling module xil_defaultlib.Data_Path
 Compiling module xil_defaultlib.MLDSA

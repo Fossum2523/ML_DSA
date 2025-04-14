@@ -33,6 +33,10 @@ module MLDSA_tb;
     //Input Data
     /*---KeyGen---*/
     reg [63:0] xi_data [0:3];
+    /*---SignGen---*/
+    reg [63:0] sk_data [0:319];
+    reg [63:0] rnd_data [0:3];
+    reg [63:0] M_prime_data [0:6];
 
     //Golden Data
     /*---KeyGen---*/
@@ -40,6 +44,9 @@ module MLDSA_tb;
     reg        sk_check = 0;
     reg [63:0] pk_golden_data [0:163];
     reg [63:0] sk_golden_data [0:319];
+
+    /*---SignGen---*/
+    reg [63:0] signature_golden_data [0:301];
 
     // Instantiate the MLDSA module
     MLDSA uut (
@@ -65,17 +72,38 @@ module MLDSA_tb;
     initial clk = 1;
     always #5 clk = ~clk; // 100 MHz clock
 
+    //Input Data
+    /*---KeyGen---*/
     initial begin
-        $readmemh("../../../../Testbench_Input_File/MLDSA_KeyGen_testbench_test_input_data.txt", xi_data);
+        $readmemh("../../../../Testbench_Input_File/KeyGen/MLDSA_KeyGen_testbench_test_input_data.txt", xi_data);
+    end
+    /*---SignGen---*/
+    initial begin
+        $readmemh("../../../../Testbench_Input_File/SignGen/MLDSA_SignGen_testbench_test_input_data_sk.txt", sk_data);
+    end
+    initial begin
+        $readmemh("../../../../Testbench_Input_File/SignGen/MLDSA_SignGen_testbench_test_input_data_rnd.txt", rnd_data);
+    end
+    initial begin
+        $readmemh("../../../../Testbench_Input_File/SignGen/MLDSA_SignGen_testbench_test_input_data_M_prime.txt", M_prime_data);
     end
 
+
+    //Golden Data
+    /*---KeyGen---*/
     initial begin
-        $readmemh("../../../../Testbench_Golden_File/MLDSA_KeyGen_testbench_test_output_data_pk.txt", pk_golden_data);
+        $readmemh("../../../../Testbench_Golden_File/KeyGen/MLDSA_KeyGen_testbench_test_output_data_pk.txt", pk_golden_data);
     end
     
     initial begin
-        $readmemh("../../../../Testbench_Golden_File/MLDSA_KeyGen_testbench_test_output_data_sk.txt", sk_golden_data);
+        $readmemh("../../../../Testbench_Golden_File/KeyGen/MLDSA_KeyGen_testbench_test_output_data_sk.txt", sk_golden_data);
     end
+    /*---SignGen---*/
+    initial begin
+        $readmemh("../../../../Testbench_Golden_File/SignGen/MLDSA_SignGen_testbench_test_output_data_signature.txt", signature_golden_data);
+    end
+
+    
 
     // Test sequence
     initial begin
@@ -94,6 +122,7 @@ module MLDSA_tb;
         
         /*---------------------------------------KeyGen---------------------------------------*/
         //padder
+        main_mode = 2'b00; //KeyGen
         start = 1;
         #10;
         start = 0;

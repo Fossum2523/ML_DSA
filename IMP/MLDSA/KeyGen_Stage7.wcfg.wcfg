@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="81.230000 us"></ZoomStartTime>
-      <ZoomEndTime time="123.830001 us"></ZoomEndTime>
-      <Cursor1Time time="99.430000 us"></Cursor1Time>
+      <ZoomStartTime time="114.498612 us"></ZoomStartTime>
+      <ZoomEndTime time="255.572637 us"></ZoomEndTime>
+      <Cursor1Time time="161.609571 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="190"></NameColumnWidth>
-      <ValueColumnWidth column_width="68"></ValueColumnWidth>
+      <ValueColumnWidth column_width="64"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="73" />
+   <WVObjectSize size="75" />
    <wave_markers>
       <marker time="94710000" label="" />
       <marker time="99900000" label="" />
@@ -447,5 +447,15 @@
       <obj_property name="ObjectShortName">t1_pack_we_b</obj_property>
       <obj_property name="CustomSignalColor">#00FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/enc_/\genblk1[0].UNCENTER /dout" type="array">
+      <obj_property name="ElementShortName">dout[22:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/enc_/\genblk1[1].UNCENTER /dout" type="array">
+      <obj_property name="ElementShortName">dout[22:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

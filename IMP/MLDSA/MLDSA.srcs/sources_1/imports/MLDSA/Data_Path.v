@@ -419,13 +419,23 @@ module Data_Path
 
     //Encoder
     reg [2:0] ENC_sec_lvl;
-    reg [2:0] ENC_encode_mode;
+    reg [2:0] ENC_mode;
     reg ENC_valid_i;
     reg ENC_ready_o;
     reg [45:0]ENC_di;
     wire ENC_ready_i;
     wire ENC_valid_o;
     wire [63:0]ENC_dout;
+
+    //Decoder
+    reg [2:0] DEC_sec_lvl;
+    reg [2:0] DEC_mode;
+    reg DEC_valid_i;
+    reg DEC_ready_o;
+    reg [63:0]DEC_di;
+    wire DEC_ready_i;
+    wire DEC_valid_o;
+    wire [45:0]DEC_dout;
 
 
     /*---Keccak---*/ //------------------------------------------str
@@ -1061,6 +1071,10 @@ module Data_Path
                 t1_pack_addr_a = AG_1_addr_a[7:0];
                 t1_pack_en_a  =  (main_mem_sel[0]) & AG_1_addr_en;
             end
+            {KeyGen,6'd15}:begin///////////////////////////////////////////////////////////////
+                t1_pack_addr_a = AG_2_addr_a[7:0];
+                t1_pack_en_a  =  AG_2_addr_en;
+            end
         endcase
     end
 
@@ -1347,7 +1361,14 @@ module Data_Path
                 AG_2_addr_adder  = 2'd2;
                 AG_2_star_addr   = 12'd0;
                 AG_2_last_addr   = 12'd1022;
-            end  
+            end 
+            {KeyGen,6'd15}: begin ///////////////////////////////////////////////////////////////
+                AG_2_addr_adder  = {1'b0,DEC_ready_i};
+                AG_2_star_addr   = 12'd0;
+                // AG_2_last_addr   = 12'd159;
+                AG_2_last_addr   = 12'd161; //special to add 2 to meet decoder
+                AG_2_pasue  = ~DEC_ready_i;
+            end   
         endcase
     end
 
@@ -1504,7 +1525,7 @@ module Data_Path
         .reset(reset),
         .clk(clk),
         .sec_lvl(ENC_sec_lvl),
-        .encode_mode(ENC_encode_mode),
+        .encode_mode(ENC_mode),
         .valid_i(ENC_valid_i),
         .ready_i(ENC_ready_i),
         .di(ENC_di),
@@ -1515,35 +1536,35 @@ module Data_Path
 
     always @(*) begin
         ENC_sec_lvl = 3'd0;
-        ENC_encode_mode = 3'd0;
+        ENC_mode = 3'd0;
         ENC_di = 46'd0;
         ENC_valid_i = 1'b0;
         ENC_ready_o = 1'b0;
         case (ctrl_sign)
             {KeyGen,6'd4}:begin
                 ENC_sec_lvl = 3'd2;
-                ENC_encode_mode = 3'd2;
+                ENC_mode = 3'd2;
                 ENC_di = {{20'd0,s1_q_b},{20'd0,s1_q_a}};
                 ENC_valid_i = AG_2_data_valid;
                 ENC_ready_o = 1'b1;
             end
             {KeyGen,6'd5}:begin
                 ENC_sec_lvl = 3'd2;
-                ENC_encode_mode = 3'd2;
+                ENC_mode = 3'd2;
                 ENC_di = {{20'd0,s2_q_b},{20'd0,s2_q_a}};
                 ENC_valid_i = AG_2_data_valid;
                 ENC_ready_o = 1'b1;
             end
             {KeyGen,6'd7}:begin
                 ENC_sec_lvl = 3'd0;
-                ENC_encode_mode = 3'd1;
+                ENC_mode = 3'd1;
                 ENC_di = {PWM_out_b,PWM_out_a};
                 ENC_valid_i = AG_4_data_valid;
                 ENC_ready_o = 1'b1;
             end
             {KeyGen,6'd8}:begin
                 ENC_sec_lvl = 3'd0;
-                ENC_encode_mode = 3'd0;
+                ENC_mode = 3'd0;
                 ENC_di = {t_q_b,t_q_a};
                 ENC_valid_i = AG_2_data_valid;
                 ENC_ready_o = 1'b1;
@@ -1551,6 +1572,38 @@ module Data_Path
         endcase
     end
     /*---Encoder---*/ //------------------------------------------end
+
+    /*---Decoder---*/ //------------------------------------------str
+    decoder dec_(
+    .reset(reset),
+    .clk(clk),
+    .sec_lvl(DEC_sec_lvl),
+    .decode_mode(DEC_mode),
+    .valid_i(DEC_valid_i),
+    .ready_i(DEC_ready_i),
+    .di(DEC_di),
+    .dout(DEC_dout),
+    .valid_o(DEC_valid_o),
+    .ready_o(DEC_ready_o)
+    );
+
+     always @(*) begin
+        DEC_sec_lvl = 3'd0;
+        DEC_mode = 3'd0;
+        DEC_di = 46'd0;
+        DEC_valid_i = 1'b0;
+        DEC_ready_o = 1'b0;
+        case (ctrl_sign)
+            {KeyGen,6'd15}:begin
+                DEC_sec_lvl = 3'd0;
+                DEC_mode = 3'd1;
+                DEC_di = {t1_pack_q_a};
+                DEC_valid_i = AG_2_data_valid;
+                DEC_ready_o = 1'b1;
+            end
+        endcase
+    end
+    /*---Decoder---*/ //------------------------------------------end
 
     /*---PWM---*/ //------------------------------------------str
     PWM PWM_(  

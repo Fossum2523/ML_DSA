@@ -272,7 +272,7 @@ module Address_generate
             done <= 1'b0;
         else if(clean)      
             done <= 1'b0;
-        else if(cnt == last_addr)
+        else if(cnt == last_addr & ~pause)
             done <= 1'b1;
     end
 endmodule
