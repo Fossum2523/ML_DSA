@@ -3,17 +3,27 @@ module MLDSA
     input               clk,
     input               reset,
     input               start,
-    input               data_in_ready,
-    // input               i_valid,
-    // output              i_ready,
+
+    input   [1:0]       main_mode, // KeyGen, SignGen, SignVer
+
+    //AXI Stream input protocol A
+    input   [63:0]      MLDSA_data_in_A,
+    input               MLDSA_i_valid_A,
+    input               MLDSA_i_last_A,
+    output              MLDSA_i_ready_A,
+
+    //AXI Stream input protocol B
+    input   [63:0]      MLDSA_data_in_B,
+    input               MLDSA_i_valid_B,
+    input               MLDSA_i_last_B,
+    output              MLDSA_i_ready_B,
+
+    //AXI Stream output protocol
+    input               MLDSA_o_ready,
+    output  [63:0]      MLDSA_data_out,
     output              MLDSA_o_valid,
     output              MLDSA_o_last,
-    // input               o_ready,
-    input   [1:0]       main_mode, // KeyGen, SignGen, SignVer
-    //External signals
-    input   [2:0]       MLDSA_byte_num,
-    input   [63:0]      MLDSA_data_in,
-    output  [63:0]      MLDSA_data_out,
+    
 
     //test
     output  [1343:0]    padder_out,
@@ -76,6 +86,9 @@ module MLDSA
     wire AG_4_clean;
     wire AG_4_done;
 
+    //Decoder
+    wire DEC_ready_i;
+
     // Instantiate Controller
     Controller controller_inst (
         .clk(clk),
@@ -86,6 +99,14 @@ module MLDSA
         .start(start),
         // .data_in_ready(data_in_ready),
         .main_mode(main_mode),
+
+        //AXI Stream input protocol A
+        .MLDSA_i_last_A(MLDSA_i_last_A),
+        .MLDSA_i_ready_A(MLDSA_i_ready_A),
+        
+        //AXI Stream input protocol B
+        .MLDSA_i_last_B(MLDSA_i_last_B),
+        .MLDSA_i_ready_B(MLDSA_i_ready_B),
 
         /*---Keccak---*/
         .sha_en(sha_en),
@@ -132,7 +153,10 @@ module MLDSA
 
         .AG_4_triger(AG_4_triger),
         .AG_4_clean(AG_4_clean),
-        .AG_4_done(AG_4_done)
+        .AG_4_done(AG_4_done),
+
+        //Decoder
+        .DEC_ready_i(DEC_ready_i)
     );
 
     
@@ -149,21 +173,6 @@ module MLDSA
         .sha_en(sha_en),
         .sha_type(sha_type),
         .sha_out_ready(sha_out_ready),
-
-        // /*---Keack---*/
-        // .sha_in_ready(sha_in_ready),
-        // .sha_is_last(sha_is_last),
-        // .sha_squeeze(sha_squeeze),
-        // .sha_mode(sha_mode),
-        // .sha_hold(sha_hold),
-        // .sha_byte_num(sha_byte_num),
-        // .sha_out_ready(sha_out_ready),
-        // .sha_clean(sha_clean),
-        // .keccak_in_sel(keccak_in_sel),
-        // .mem_sel_1(mem_sel_1),
-        // .mem_sel_2(mem_sel_2),
-        // .index_sel(index_sel),
-        // .in_seed_sel(in_seed_sel),
 
         /*---Data_Mem---*/
         .mem_sel(mem_sel),
@@ -206,13 +215,27 @@ module MLDSA
         .AG_4_triger(AG_4_triger),
         .AG_4_clean(AG_4_clean),
         .AG_4_done(AG_4_done),
+
+        //Decoder
+        .DEC_ready_i(DEC_ready_i),
+
+        //AXI Stream input protocol A
+        .MLDSA_data_in_A(MLDSA_data_in_A),
+        .MLDSA_i_valid_A(MLDSA_i_valid_A),
+        .MLDSA_i_last_A(MLDSA_i_last_A),
+        // .MLDSA_i_ready_A(MLDSA_i_ready_A),
         
-        /*---from outside---*/
-        .data_in(MLDSA_data_in),
-        .data_in_ready(data_in_ready),
-        .data_out(MLDSA_data_out),
-        .o_valid(MLDSA_o_valid),
-        .o_last(MLDSA_o_last),
+        //AXI Stream input protocol B
+        .MLDSA_data_in_B(MLDSA_data_in_B),
+        .MLDSA_i_valid_B(MLDSA_i_valid_B),
+        .MLDSA_i_last_B(MLDSA_i_last_B),
+        .MLDSA_i_ready_B(MLDSA_i_ready_B),
+
+        //AXI Stream output protocol
+        .MLDSA_o_ready(MLDSA_o_ready),
+        .MLDSA_data_out(MLDSA_data_out),
+        .MLDSA_o_valid(MLDSA_o_valid),
+        .MLDSA_o_last(MLDSA_o_last),
 
         /*---test (Need to delete)---*/
         .padder_out(padder_out),

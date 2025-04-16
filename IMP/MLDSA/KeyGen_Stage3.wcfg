@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="18,513.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="18,682.201 ns"></ZoomEndTime>
-      <Cursor1Time time="18,540.000 ns"></Cursor1Time>
+      <ZoomStartTime time="40,817.333 ns"></ZoomStartTime>
+      <ZoomEndTime time="41,036.534 ns"></ZoomEndTime>
+      <Cursor1Time time="40,839.333 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="191"></NameColumnWidth>
-      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+      <ValueColumnWidth column_width="68"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="92" />
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_2/clk" type="logic">
@@ -494,6 +494,13 @@
       <obj_property name="UseCustomSignalColor">true</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/NTT_/NTT_addr_d" type="array">
+      <obj_property name="ElementShortName">NTT_addr_d[7:0]</obj_property>
+      <obj_property name="ObjectShortName">NTT_addr_d[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/NTT_/NTT_addr_u" type="array">
       <obj_property name="ElementShortName">NTT_addr_u[7:0]</obj_property>
       <obj_property name="ObjectShortName">NTT_addr_u[7:0]</obj_property>
@@ -506,13 +513,6 @@
       <obj_property name="ObjectShortName">done</obj_property>
       <obj_property name="CustomSignalColor">#00FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/NTT_/NTT_addr_d" type="array">
-      <obj_property name="ElementShortName">NTT_addr_d[7:0]</obj_property>
-      <obj_property name="ObjectShortName">NTT_addr_d[7:0]</obj_property>
-      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/NTT_/curr_state" type="array">
       <obj_property name="ElementShortName">curr_state[1:0]</obj_property>

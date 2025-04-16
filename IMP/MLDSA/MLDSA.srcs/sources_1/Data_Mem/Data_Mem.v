@@ -99,6 +99,18 @@ module Data_Mem
     input                   t_we_b,
     output  [DLEN-1:0]      t_q_a,
     output  [DLEN-1:0]      t_q_b,
+    
+    /*---t0---*/
+    input   [DLEN-1:0]      t0_data_a,
+    input   [DLEN-1:0]      t0_data_b,
+    input   [T_HLEN - 1:0]  t0_addr_a,
+    input   [T_HLEN - 1:0]  t0_addr_b,
+    input                   t0_en_a,
+    input                   t0_en_b,
+    input                   t0_we_a,
+    input                   t0_we_b,
+    output  [DLEN-1:0]      t0_q_a,
+    output  [DLEN-1:0]      t0_q_b,
 
     /*---temp_0---*/
     input   [DLEN-1:0]      temp_0_data_a,
@@ -112,10 +124,22 @@ module Data_Mem
     output  [DLEN-1:0]      temp_0_q_a,
     output  [DLEN-1:0]      temp_0_q_b,
 
+    /*---temp_1---*/
+    input   [DLEN-1:0]      temp_1_data_a,
+    input   [DLEN-1:0]      temp_1_data_b,
+    input   [T_HLEN - 1:0]  temp_1_addr_a,
+    input   [T_HLEN - 1:0]  temp_1_addr_b,
+    input                   temp_1_en_a,
+    input                   temp_1_en_b,
+    input                   temp_1_we_a,
+    input                   temp_1_we_b,
+    output  [DLEN-1:0]      temp_1_q_a,
+    output  [DLEN-1:0]      temp_1_q_b,
+
     /*---tr---*/
     input   [63:0]          tr_data_a,
     input   [63:0]          tr_data_b,
-    input   [2:0]           tr_addr_a, //4th data
+    input   [2:0]           tr_addr_a, //8th data
     input   [2:0]           tr_addr_b,
     input                   tr_en_a,
     input                   tr_en_b,
@@ -124,6 +148,29 @@ module Data_Mem
     output  [63:0]          tr_q_a,
     output  [63:0]          tr_q_b,
 
+    /*---u---*/
+    input   [63:0]          u_data_a,
+    input   [63:0]          u_data_b,
+    input   [2:0]           u_addr_a, //8th data
+    input   [2:0]           u_addr_b,
+    input                   u_en_a,
+    input                   u_en_b,
+    input                   u_we_a,
+    input                   u_we_b,
+    output  [63:0]          u_q_a,
+    output  [63:0]          u_q_b,
+
+    /*---p_prime_prime---*/
+    input   [63:0]          p_prime_prime_data_a,
+    input   [63:0]          p_prime_prime_data_b,
+    input   [2:0]           p_prime_prime_addr_a,
+    input   [2:0]           p_prime_prime_addr_b,
+    input                   p_prime_prime_en_a,
+    input                   p_prime_prime_en_b,
+    input                   p_prime_prime_we_a,
+    input                   p_prime_prime_we_b,
+    output  [63:0]          p_prime_prime_q_a,
+    output  [63:0]          p_prime_prime_q_b,
 
     /*---s1_pack---*/
     input   [63:0]          s1_pack_data_a,
@@ -338,6 +385,54 @@ module Data_Mem
         .q_b(tr_q_b)
     );
 
+    /*---u---*/
+    Dual_Port_Ram_Single_clk #(.DLEN(64), .HLEN(3)) u(
+        .clk_a(clk),
+        .clk_b(clk),
+        .data_a(u_data_a),
+        .data_b(u_data_b),
+        .addr_a(u_addr_a),
+        .addr_b(u_addr_b),
+        .en_a(u_en_a),
+        .en_b(u_en_b),
+        .we_a(u_we_a),
+        .we_b(u_we_b),
+        .q_a(u_q_a),
+        .q_b(u_q_b)
+    );
+
+    /*---p_prime_prime---*/
+    Dual_Port_Ram_Single_clk #(.DLEN(64), .HLEN(3)) p_prime_prime(
+        .clk_a(clk),
+        .clk_b(clk),
+        .data_a(p_prime_prime_data_a),
+        .data_b(p_prime_prime_data_b),
+        .addr_a(p_prime_prime_addr_a),
+        .addr_b(p_prime_prime_addr_b),
+        .en_a(p_prime_prime_en_a),
+        .en_b(p_prime_prime_en_b),
+        .we_a(p_prime_prime_we_a),
+        .we_b(p_prime_prime_we_b),
+        .q_a(p_prime_prime_q_a),
+        .q_b(p_prime_prime_q_b)
+    );
+
+    /*---t0---*/
+    Dual_Port_Ram_Single_clk #(.DLEN(DLEN), .HLEN(T_HLEN)) t0(
+        .clk_a(clk),
+        .clk_b(clk),
+        .data_a(t0_data_a),
+        .data_b(t0_data_b),
+        .addr_a(t0_addr_a),
+        .addr_b(t0_addr_b),
+        .en_a(t0_en_a),
+        .en_b(t0_en_b),
+        .we_a(t0_we_a),
+        .we_b(t0_we_b),
+        .q_a(t0_q_a),
+        .q_b(t0_q_b)
+    );
+
     /*---temp_0---*/
     Dual_Port_Ram_Single_clk #(.DLEN(DLEN), .HLEN(T_HLEN)) temp_0(
         .clk_a(clk),
@@ -352,6 +447,22 @@ module Data_Mem
         .we_b(temp_0_we_b),
         .q_a(temp_0_q_a),
         .q_b(temp_0_q_b)
+    );
+
+    /*---temp_1---*/
+    Dual_Port_Ram_Single_clk #(.DLEN(DLEN), .HLEN(T_HLEN)) temp_1(
+        .clk_a(clk),
+        .clk_b(clk),
+        .data_a(temp_1_data_a),
+        .data_b(temp_1_data_b),
+        .addr_a(temp_1_addr_a),
+        .addr_b(temp_1_addr_b),
+        .en_a(temp_1_en_a),
+        .en_b(temp_1_en_b),
+        .we_a(temp_1_we_a),
+        .we_b(temp_1_we_b),
+        .q_a(temp_1_q_a),
+        .q_b(temp_1_q_b)
     );
 
     /*---s1_pack---*/

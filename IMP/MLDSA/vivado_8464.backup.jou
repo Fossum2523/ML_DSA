@@ -1,0 +1,67 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Mon Apr 14 21:24:14 2025
+# Process ID: 8464
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2400 C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP\MLDSA\MLDSA.xpr
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/vivado.log
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA_tb_behav.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage4.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage5.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage3.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage6.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage8.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage9.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage10.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/test_decoder.wcfg
+source MLDSA_tb.tcl
+run 200 us
+create_wave_config
+current_wave_config {Untitled 1}
+add_wave {{/MLDSA_tb/uut/controller_inst/clk}} {{/MLDSA_tb/uut/controller_inst/reset}} {{/MLDSA_tb/uut/controller_inst/ctrl_sign}} {{/MLDSA_tb/uut/controller_inst/start}} 
+relaunch_sim
+run 200 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 200 us
+relaunch_sim
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage1.wcfg.wcfg}
+add_files -fileset sim_1 -norecurse C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage1.wcfg.wcfg
+set_property xsim.view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA_tb_behav.wcfg C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA_tb_behav1.wcfg C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage4.wcfg C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage5.wcfg C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage3.wcfg C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage6.wcfg C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA_tb_behav2.wcfg C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA_tb_behav7.wcfg C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage8.wcfg C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage9.wcfg C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage10.wcfg C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/test_decoder.wcfg C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage1.wcfg.wcfg} [get_filesets sim_1]
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage1.wcfg}
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA_tb_behav.wcfg}
+relaunch_sim
+relaunch_sim
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage4.wcfg}
+restart
+run 200 us
+run 200 us
+current_wave_config {KeyGen_Stage4.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/KEY_data_a}} {{/MLDSA_tb/uut/data_path_inst/DM/KEY_data_b}} {{/MLDSA_tb/uut/data_path_inst/DM/KEY_addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/KEY_addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/KEY_en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/KEY_en_b}} {{/MLDSA_tb/uut/data_path_inst/DM/KEY_we_a}} {{/MLDSA_tb/uut/data_path_inst/DM/KEY_we_b}} 
+restart
+run 200 us
+run 200 us
+current_wave_config {KeyGen_Stage4.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/s1_pack/data_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s1_pack/addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s1_pack/en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/s1_pack/we_a}} 
+restart
+run 200 us
+run 200 us
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage10.wcfg}
+relaunch_sim
+run 200 us
+relaunch_sim
+relaunch_sim
+run 200 us
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage4.wcfg}
+close_sim

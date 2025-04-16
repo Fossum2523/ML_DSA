@@ -2,11 +2,12 @@ module Keccak_Ctrl
     (   
     input               clk,
     input               reset,
+    input   [63:0]      sha_in,
     input               sha_data_valid,
     input               sha_en,
     input   [3:0]       sha_type,
-    input   [2:0]       MLSDA_in_byte_num,
     input               next_element,
+    input               MLDSA_i_last,
     output              sha_in_ready, 
     output  reg         sha_is_last,
     output              sha_squeeze, // when squeeze = 0, output once; otherwise, keep squeezing
@@ -45,22 +46,23 @@ module Keccak_Ctrl
                 H_tr_M_2    = 4'd12;
 
     wire            index_triger;
-    wire            index_en;
     reg             padder_cnt_clean;
     reg     [7:0]   padder_cnt;//用來計數padder的次數，最後會送一筆last訊號
     reg     [7:0]   padder_cnt_last;
-    reg     state;      
+
+    reg     [2:0]   H_tr_M_1_byte_num;
+
 
     assign  sha_in_ready =  sha_en & (sha_data_valid | index_triger);             
     assign  sha_squeeze  =  1'b0;//交由其他module來送，可以不用
     assign  sha_mode     =  sha_type == 4'd1 ? G : H;
     assign  sha_hold     =  1'b0;
-    assign  index_en     =  1'b1;
-    assign  index_triger =  padder_cnt == padder_cnt_last & index_en;
+    assign  index_triger =  padder_cnt == padder_cnt_last;
    
 
-    assign  sha_byte_num = sha_type <= 4'd5  ? 3'b010 :
-                           sha_type >= 4'd11 ? MLSDA_in_byte_num : 3'b000;
+    assign  sha_byte_num =  sha_type == H_tr_M_1  ? H_tr_M_1_byte_num :
+                            sha_type <= 4'd5  ? 3'b010 :
+                            sha_type >= 4'd11 ? 3'b000/*MLSDA_in_byte_num*/ : 3'b000;
 
     
     always @(posedge clk) begin
@@ -88,6 +90,15 @@ module Keccak_Ctrl
             H_pk_1:begin
                 padder_cnt_last = 8'd164; //p have 4 data and t1 have 160 data
             end
+            // H_tr_M_1:begin
+            //     padder_cnt_last = 8'd164; //p have 4 data and t1 have 160 data
+            // end
+            H_K_rnd_u:begin
+                padder_cnt_last = 8'd16; //p have 4 data and t1 have 160 data
+            end
+            Gen_y:begin
+                padder_cnt_last = 8'd8; //p have 4 data and t1 have 160 data
+            end
         endcase
     end 
 
@@ -106,6 +117,18 @@ module Keccak_Ctrl
             end
             H_pk_1:begin
                 if(AG_done)
+                    sha_clean = 1'b1;
+            end
+            H_tr_M_1:begin
+                if(AG_done)
+                    sha_clean = 1'b1;
+            end
+            H_K_rnd_u:begin
+                if(AG_done)
+                    sha_clean = 1'b1;
+            end
+            Gen_y:begin
+                if(next_element)
                     sha_clean = 1'b1;
             end
         endcase
@@ -168,6 +191,32 @@ module Keccak_Ctrl
                     kk_sub_sel_2  = 2'd2;
                 end
             end
+            H_tr_M_1:begin
+                keccak_in_sel = 2'd3;
+            end
+            H_K_rnd_u:begin
+                if(padder_cnt <= 7)begin
+                    keccak_in_sel = 2'd3;
+                end
+                else if(padder_cnt <= 15) begin
+                    keccak_in_sel = 2'd0;
+                    kk_sub_sel_1  = 2'd1;
+                end
+                else begin
+                    keccak_in_sel = 2'd1;
+                    kk_sub_sel_2  = 2'd2;
+                end
+            end
+            Gen_y:begin
+                if(padder_cnt <= 7)begin
+                    keccak_in_sel = 2'd0;
+                    kk_sub_sel_1  = 1'd0;
+                end
+                else begin
+                    keccak_in_sel = 2'd2;
+                    kk_sub_sel_3  = 2'd3;
+                end
+            end
         endcase
     end    
 
@@ -191,6 +240,24 @@ module Keccak_Ctrl
                 if(padder_cnt == 164)
                     sha_is_last = 1'b1;
             end
+            H_tr_M_1:begin
+                sha_is_last = MLDSA_i_last;
+            end
+            H_K_rnd_u:begin
+                if(padder_cnt == 16)
+                    sha_is_last = 1'b1;
+            end 
+            Gen_y:begin
+                if(padder_cnt == 8)
+                    sha_is_last = 1'b1;
+            end
         endcase
-    end        
+    end      
+
+    always @(posedge clk) begin
+        if(reset)
+            H_tr_M_1_byte_num <= 3'b0;
+        else if(sha_type == H_tr_M_1 & padder_cnt == 8)
+            H_tr_M_1_byte_num <= 3'd5 + sha_in[15:8];
+    end  
 endmodule

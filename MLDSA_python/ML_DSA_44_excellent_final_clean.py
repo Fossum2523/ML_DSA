@@ -78,16 +78,22 @@ def HASH_ML_DSA_Sign(sk,M,ctx,deterministic):
 
     #---M_prime---#
     M_prime_testbench = Verilog_trans(M_prime)
-    M_prime_len = math.ceil(len(M_prime_testbench) / 16) #split sk to 64bit a unit
+    M_prime_len = len(M_prime_testbench) #split sk to 64bit a unit
+    with open("MLDSA_SignGen_testbench_test_input_data_M_prime_len.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"{hex(math.ceil(M_prime_len/16))}\n")
+    for i in range(M_prime_len,0,-16): #M_prime_len = 102
+        if(i<16):
+            with open("MLDSA_SignGen_testbench_test_input_data_M_prime.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+                file.write(f"{M_prime_testbench[0:i]}\n")
+        else:
+            with open("MLDSA_SignGen_testbench_test_input_data_M_prime.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+                file.write(f"{M_prime_testbench[i - 16:i]}\n")
+            
 
-    for i in range(M_prime_len): #M_prime_len = 320
-        with open("MLDSA_SignGen_testbench_test_input_data_M_prime.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
-            file.write(f"{M_prime_testbench[(M_prime_len - i - 1)*16:(M_prime_len - i)*16]}\n")
-    
     #---rnd---#
     rnd_testbench = Verilog_trans(rnd)
     rnd_len = len(rnd_testbench) // 16 #split sk to 64bit a unit
-    for i in range(rnd_len): #sk_len = 320
+    for i in range(rnd_len): #rnd_len = 64
         with open("MLDSA_SignGen_testbench_test_input_data_rnd.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
             file.write(f"{rnd_testbench[(rnd_len - i - 1)*16:(rnd_len - i)*16]}\n")
     ### make testbench input data ###
@@ -146,6 +152,7 @@ def KeyGen(xi):
     A_hat = ExpandA(p)
     # print(A_hat)
     s1, s2 = ExpandS(p_prime)
+    # print(s1)
     # print(s2)
     s1Hat = [NTT(s) for s in s1]
     # print("s1hat=",list(s1Hat))
@@ -187,21 +194,31 @@ def KeyGen(xi):
 # 算法 2 ML-DSA.Sign(sk,M)
 def Sign(sk,M,rnd):
     (p,K,tr,s1,s2,t0) = sk_decode(sk)
+    print(t0)
+    # print(s1)
     s1_hat = [NTT(si) for si in s1]
+    # print(s1_hat)
     s2_hat = [NTT(si) for si in s2]
+    # print(s2_hat)
     t0_hat = [NTT(ti) for ti in t0]
     A_hat = ExpandA(p)
     # print(tr)
     # print(M)
     u = tr + M
     u = SHAKE_256(u,512)
+    # print(u)
+    # print(Verilog_trans(u))
     p_prime = K + rnd + u                                                                                                                        
     p_prime = SHAKE_256(p_prime,512)
+    # print(Verilog_trans(p_prime))
     ka = 0
     z = None
     h = None
     while z == None and h == None:
         y = ExpandMask(p_prime,ka)
+        if(ka == 0):
+            print(y)
+            # print(Verilog_trans(y))
         y_hat = [NTT(yi) for yi in y]
         w = NTT_dot(A_hat,y_hat)
         w = [NTT_inv(wi) for wi in w]
@@ -464,6 +481,7 @@ def sk_encode(p, K, tr, s1, s2, t0):
     sk = p + K + tr
     for si in s1:
         packed_si = BitPack(si, ML_DSA["eta"], ML_DSA["eta"])
+        # print(Verilog_trans(packed_si))
         sk = sk + packed_si
     for si in s2:
         packed_si = BitPack(si, ML_DSA["eta"], ML_DSA["eta"])
@@ -665,6 +683,8 @@ def ExpandMask(p, mu):
         H = p + n
         H = BitsToBytes(H)
         v = SHAKE_256(H, 32*c*8)
+        # if(mu==0):
+        #     print(Verilog_trans(v))
         s[r] = BitUnpack(v, ML_DSA["gamma_1"] - 1, ML_DSA["gamma_1"])
     return s
 
@@ -914,6 +934,9 @@ if os.path.exists("MLDSA_SignGen_testbench_test_input_data_sk.txt"):
 if os.path.exists("MLDSA_SignGen_testbench_test_input_data_M_prime.txt"):
         os.remove("MLDSA_SignGen_testbench_test_input_data_M_prime.txt")
 
+if os.path.exists("MLDSA_SignGen_testbench_test_input_data_M_prime_len.txt"):
+        os.remove("MLDSA_SignGen_testbench_test_input_data_M_prime_len.txt")
+
 if os.path.exists("MLDSA_SignGen_testbench_test_input_data_rnd.txt"):
         os.remove("MLDSA_SignGen_testbench_test_input_data_rnd.txt")
 
@@ -927,7 +950,7 @@ ctx = "23ffff"
 ctx_byte = ctx.encode("utf-8")  # let ctx to byte
 
 signature = HASH_ML_DSA_Sign(sk,M,ctx_byte,1)
-print(signature)
+# print(signature)
 ### --------------- SignGen --------------- ###
 
 ### --------------- SignVer --------------- ###
