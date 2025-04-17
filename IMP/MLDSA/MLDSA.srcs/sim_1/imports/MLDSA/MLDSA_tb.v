@@ -294,6 +294,19 @@ module MLDSA_tb;
         end
         MLDSA_i_last_B  = 1'b0;
 
+        //Send t0_pack data
+        j = 0;
+        while(j < 4)begin
+            if(j == 3)
+                MLDSA_i_last_B = 1'b1;
+            
+            if(MLDSA_i_ready_B)begin
+                MLDSA_data_in_B = sk_data[j];
+                j = j + 1;
+            end
+            #10;
+        end
+
         MLDSA_data_in_B = 64'd0;
         MLDSA_i_last_B  = 1'b0;
         MLDSA_i_valid_B = 0;

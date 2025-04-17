@@ -194,13 +194,14 @@ def KeyGen(xi):
 # 算法 2 ML-DSA.Sign(sk,M)
 def Sign(sk,M,rnd):
     (p,K,tr,s1,s2,t0) = sk_decode(sk)
-    print(t0)
+    # print(t0)
     # print(s1)
     s1_hat = [NTT(si) for si in s1]
     # print(s1_hat)
     s2_hat = [NTT(si) for si in s2]
     # print(s2_hat)
     t0_hat = [NTT(ti) for ti in t0]
+    # print(t0_hat)
     A_hat = ExpandA(p)
     # print(tr)
     # print(M)
@@ -216,12 +217,19 @@ def Sign(sk,M,rnd):
     h = None
     while z == None and h == None:
         y = ExpandMask(p_prime,ka)
-        if(ka == 0):
-            print(y)
+        # if(ka == 0):
+        #     print(y)
             # print(Verilog_trans(y))
         y_hat = [NTT(yi) for yi in y]
+        # if(ka == 0):
+        #     print(y_hat)
+        #     # print(Verilog_trans(y))
         w = NTT_dot(A_hat,y_hat)
+        # if(ka == 0):
+        #     print(w)
         w = [NTT_inv(wi) for wi in w]
+        if(ka == 0):
+            print(w)
         w1 = [HighBits(w1i) for w1i in w]
         w1 = w1Encode(w1)
         c_tilde = u + w1 

@@ -72,6 +72,7 @@ module MLDSA
 
     wire AG_1_triger;
     wire AG_1_clean;
+    wire AG_1_addr_en;
     wire AG_1_done;
 
     wire AG_2_triger;
@@ -101,10 +102,12 @@ module MLDSA
         .main_mode(main_mode),
 
         //AXI Stream input protocol A
+        .MLDSA_i_valid_A(MLDSA_i_valid_A),
         .MLDSA_i_last_A(MLDSA_i_last_A),
         .MLDSA_i_ready_A(MLDSA_i_ready_A),
         
         //AXI Stream input protocol B
+        .MLDSA_i_valid_B(MLDSA_i_valid_B),
         .MLDSA_i_last_B(MLDSA_i_last_B),
         .MLDSA_i_ready_B(MLDSA_i_ready_B),
 
@@ -141,6 +144,7 @@ module MLDSA
 
         .AG_1_triger(AG_1_triger),
         .AG_1_clean(AG_1_clean),
+        .AG_1_addr_en(AG_1_addr_en),
         .AG_1_done(AG_1_done),
 
         .AG_2_triger(AG_2_triger),
@@ -202,6 +206,7 @@ module MLDSA
 
         .AG_1_triger(AG_1_triger),
         .AG_1_clean(AG_1_clean),
+        .AG_1_addr_en(AG_1_addr_en),
         .AG_1_done(AG_1_done),
 
         .AG_2_triger(AG_2_triger),
