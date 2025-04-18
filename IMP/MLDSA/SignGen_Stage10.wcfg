@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="MLDSA_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="MLDSA_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="110,275.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="112,355.001 ns"></ZoomEndTime>
+      <Cursor1Time time="111,795.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="221"></NameColumnWidth>
+      <ValueColumnWidth column_width="143"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="80" />
+   <wvobject fp_name="/MLDSA_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/controller_inst/ctrl_sign" type="array">
+      <obj_property name="ElementShortName">ctrl_sign[8:0]</obj_property>
+      <obj_property name="ObjectShortName">ctrl_sign[8:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_1/addr_adder" type="array">
+      <obj_property name="ElementShortName">addr_adder[1:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_adder[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_1/last_addr" type="array">
+      <obj_property name="ElementShortName">last_addr[11:0]</obj_property>
+      <obj_property name="ObjectShortName">last_addr[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_1/star_addr" type="array">
+      <obj_property name="ElementShortName">star_addr[11:0]</obj_property>
+      <obj_property name="ObjectShortName">star_addr[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_1/triger" type="logic">
+      <obj_property name="ElementShortName">triger</obj_property>
+      <obj_property name="ObjectShortName">triger</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_1/pause" type="logic">
+      <obj_property name="ElementShortName">pause</obj_property>
+      <obj_property name="ObjectShortName">pause</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_1/clean" type="logic">
+      <obj_property name="ElementShortName">clean</obj_property>
+      <obj_property name="ObjectShortName">clean</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_1/addr_en" type="logic">
+      <obj_property name="ElementShortName">addr_en</obj_property>
+      <obj_property name="ObjectShortName">addr_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_1/addr_a" type="array">
+      <obj_property name="ElementShortName">addr_a[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_a[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_1/addr_b" type="array">
+      <obj_property name="ElementShortName">addr_b[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_b[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_1/data_valid" type="logic">
+      <obj_property name="ElementShortName">data_valid</obj_property>
+      <obj_property name="ObjectShortName">data_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_1/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_1/cnt_en" type="logic">
+      <obj_property name="ElementShortName">cnt_en</obj_property>
+      <obj_property name="ObjectShortName">cnt_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_1/cnt" type="array">
+      <obj_property name="ElementShortName">cnt[11:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/c_tlide_addr_a" type="array">
+      <obj_property name="ElementShortName">c_tlide_addr_a[1:0]</obj_property>
+      <obj_property name="ObjectShortName">c_tlide_addr_a[1:0]</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/c_tlide_addr_b" type="array">
+      <obj_property name="ElementShortName">c_tlide_addr_b[1:0]</obj_property>
+      <obj_property name="ObjectShortName">c_tlide_addr_b[1:0]</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/c_tlide_en_a" type="logic">
+      <obj_property name="ElementShortName">c_tlide_en_a</obj_property>
+      <obj_property name="ObjectShortName">c_tlide_en_a</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/c_tlide_en_b" type="logic">
+      <obj_property name="ElementShortName">c_tlide_en_b</obj_property>
+      <obj_property name="ObjectShortName">c_tlide_en_b</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/c_tlide_q_a" type="array">
+      <obj_property name="ElementShortName">c_tlide_q_a[63:0]</obj_property>
+      <obj_property name="ObjectShortName">c_tlide_q_a[63:0]</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/c_tlide_q_b" type="array">
+      <obj_property name="ElementShortName">c_tlide_q_b[63:0]</obj_property>
+      <obj_property name="ObjectShortName">c_tlide_q_b[63:0]</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KKC/sha_in" type="array">
+      <obj_property name="ElementShortName">sha_in[63:0]</obj_property>
+      <obj_property name="ObjectShortName">sha_in[63:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KKC/sha_data_valid" type="logic">
+      <obj_property name="ElementShortName">sha_data_valid</obj_property>
+      <obj_property name="ObjectShortName">sha_data_valid</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KKC/sha_en" type="logic">
+      <obj_property name="ElementShortName">sha_en</obj_property>
+      <obj_property name="ObjectShortName">sha_en</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KKC/sha_type" type="array">
+      <obj_property name="ElementShortName">sha_type[3:0]</obj_property>
+      <obj_property name="ObjectShortName">sha_type[3:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KKC/next_element" type="logic">
+      <obj_property name="ElementShortName">next_element</obj_property>
+      <obj_property name="ObjectShortName">next_element</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KKC/MLDSA_i_last" type="logic">
+      <obj_property name="ElementShortName">MLDSA_i_last</obj_property>
+      <obj_property name="ObjectShortName">MLDSA_i_last</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KKC/sha_in_ready" type="logic">
+      <obj_property name="ElementShortName">sha_in_ready</obj_property>
+      <obj_property name="ObjectShortName">sha_in_ready</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KKC/sha_is_last" type="logic">
+      <obj_property name="ElementShortName">sha_is_last</obj_property>
+      <obj_property name="ObjectShortName">sha_is_last</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KKC/sha_squeeze" type="logic">
+      <obj_property name="ElementShortName">sha_squeeze</obj_property>
+      <obj_property name="ObjectShortName">sha_squeeze</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KKC/sha_mode" type="logic">
+      <obj_property name="ElementShortName">sha_mode</obj_property>
+      <obj_property name="ObjectShortName">sha_mode</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KKC/sha_hold" type="logic">
+      <obj_property name="ElementShortName">sha_hold</obj_property>
+      <obj_property name="ObjectShortName">sha_hold</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KKC/sha_byte_num" type="array">
+      <obj_property name="ElementShortName">sha_byte_num[2:0]</obj_property>
+      <obj_property name="ObjectShortName">sha_byte_num[2:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KKC/sha_out_ready" type="logic">
+      <obj_property name="ElementShortName">sha_out_ready</obj_property>
+      <obj_property name="ObjectShortName">sha_out_ready</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KKC/sha_clean" type="logic">
+      <obj_property name="ElementShortName">sha_clean</obj_property>
+      <obj_property name="ObjectShortName">sha_clean</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KKC/keccak_in_sel" type="array">
+      <obj_property name="ElementShortName">keccak_in_sel[1:0]</obj_property>
+      <obj_property name="ObjectShortName">keccak_in_sel[1:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KKC/kk_sub_sel_1" type="array">
+      <obj_property name="ElementShortName">kk_sub_sel_1[1:0]</obj_property>
+      <obj_property name="ObjectShortName">kk_sub_sel_1[1:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KKC/kk_sub_sel_2" type="array">
+      <obj_property name="ElementShortName">kk_sub_sel_2[1:0]</obj_property>
+      <obj_property name="ObjectShortName">kk_sub_sel_2[1:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KKC/kk_sub_sel_3" type="array">
+      <obj_property name="ElementShortName">kk_sub_sel_3[1:0]</obj_property>
+      <obj_property name="ObjectShortName">kk_sub_sel_3[1:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KKC/AG_done" type="logic">
+      <obj_property name="ElementShortName">AG_done</obj_property>
+      <obj_property name="ObjectShortName">AG_done</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KKC/index_triger" type="logic">
+      <obj_property name="ElementShortName">index_triger</obj_property>
+      <obj_property name="ObjectShortName">index_triger</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KKC/padder_cnt_clean" type="logic">
+      <obj_property name="ElementShortName">padder_cnt_clean</obj_property>
+      <obj_property name="ObjectShortName">padder_cnt_clean</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KKC/padder_cnt" type="array">
+      <obj_property name="ElementShortName">padder_cnt[7:0]</obj_property>
+      <obj_property name="ObjectShortName">padder_cnt[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KKC/padder_cnt_last" type="array">
+      <obj_property name="ElementShortName">padder_cnt_last[7:0]</obj_property>
+      <obj_property name="ObjectShortName">padder_cnt_last[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KK/in" type="array">
+      <obj_property name="ElementShortName">in[63:0]</obj_property>
+      <obj_property name="ObjectShortName">in[63:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KK/in_ready" type="logic">
+      <obj_property name="ElementShortName">in_ready</obj_property>
+      <obj_property name="ObjectShortName">in_ready</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KK/is_last" type="logic">
+      <obj_property name="ElementShortName">is_last</obj_property>
+      <obj_property name="ObjectShortName">is_last</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KK/squeeze" type="logic">
+      <obj_property name="ElementShortName">squeeze</obj_property>
+      <obj_property name="ObjectShortName">squeeze</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KK/mode" type="logic">
+      <obj_property name="ElementShortName">mode</obj_property>
+      <obj_property name="ObjectShortName">mode</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KK/sha_hold" type="logic">
+      <obj_property name="ElementShortName">sha_hold</obj_property>
+      <obj_property name="ObjectShortName">sha_hold</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KK/byte_num" type="array">
+      <obj_property name="ElementShortName">byte_num[2:0]</obj_property>
+      <obj_property name="ObjectShortName">byte_num[2:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KK/buffer_full" type="logic">
+      <obj_property name="ElementShortName">buffer_full</obj_property>
+      <obj_property name="ObjectShortName">buffer_full</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KK/buffer_last" type="logic">
+      <obj_property name="ElementShortName">buffer_last</obj_property>
+      <obj_property name="ObjectShortName">buffer_last</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KK/out" type="array">
+      <obj_property name="ElementShortName">out[1343:0]</obj_property>
+      <obj_property name="ObjectShortName">out[1343:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/KK/out_ready" type="logic">
+      <obj_property name="ElementShortName">out_ready</obj_property>
+      <obj_property name="ObjectShortName">out_ready</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/mode" type="array">
+      <obj_property name="ElementShortName">mode[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mode[1:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/sampler_in_ready" type="logic">
+      <obj_property name="ElementShortName">sampler_in_ready</obj_property>
+      <obj_property name="ObjectShortName">sampler_in_ready</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/sampler_in" type="array">
+      <obj_property name="ElementShortName">sampler_in[1343:0]</obj_property>
+      <obj_property name="ObjectShortName">sampler_in[1343:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/sampler_squeeze" type="logic">
+      <obj_property name="ElementShortName">sampler_squeeze</obj_property>
+      <obj_property name="ObjectShortName">sampler_squeeze</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/next_element" type="logic">
+      <obj_property name="ElementShortName">next_element</obj_property>
+      <obj_property name="ObjectShortName">next_element</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/ci" type="array">
+      <obj_property name="ElementShortName">ci[22:0]</obj_property>
+      <obj_property name="ObjectShortName">ci[22:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/addr_ci" type="array">
+      <obj_property name="ElementShortName">addr_ci[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_ci[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/addr_cj" type="array">
+      <obj_property name="ElementShortName">addr_cj[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_cj[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/en_ci" type="logic">
+      <obj_property name="ElementShortName">en_ci</obj_property>
+      <obj_property name="ObjectShortName">en_ci</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/en_cj" type="logic">
+      <obj_property name="ElementShortName">en_cj</obj_property>
+      <obj_property name="ObjectShortName">en_cj</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/we_ci" type="logic">
+      <obj_property name="ElementShortName">we_ci</obj_property>
+      <obj_property name="ObjectShortName">we_ci</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/we_cj" type="logic">
+      <obj_property name="ElementShortName">we_cj</obj_property>
+      <obj_property name="ObjectShortName">we_cj</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/controller_inst/keccak_done_tmp" type="logic">
+      <obj_property name="ElementShortName">keccak_done_tmp</obj_property>
+      <obj_property name="ObjectShortName">keccak_done_tmp</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/SampleInBall_/sampler_in_ready" type="logic">
+      <obj_property name="ElementShortName">sampler_in_ready</obj_property>
+      <obj_property name="ObjectShortName">sampler_in_ready</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/SampleInBall_/sampler_in" type="array">
+      <obj_property name="ElementShortName">sampler_in[1343:0]</obj_property>
+      <obj_property name="ObjectShortName">sampler_in[1343:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/SampleInBall_/sampler_squeeze" type="logic">
+      <obj_property name="ElementShortName">sampler_squeeze</obj_property>
+      <obj_property name="ObjectShortName">sampler_squeeze</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/SampleInBall_/next_element" type="logic">
+      <obj_property name="ElementShortName">next_element</obj_property>
+      <obj_property name="ObjectShortName">next_element</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/SampleInBall_/ci" type="array">
+      <obj_property name="ElementShortName">ci[22:0]</obj_property>
+      <obj_property name="ObjectShortName">ci[22:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/SampleInBall_/addr_ci" type="array">
+      <obj_property name="ElementShortName">addr_ci[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_ci[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/SampleInBall_/addr_cj" type="array">
+      <obj_property name="ElementShortName">addr_cj[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_cj[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/SampleInBall_/en_ci" type="logic">
+      <obj_property name="ElementShortName">en_ci</obj_property>
+      <obj_property name="ObjectShortName">en_ci</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/SampleInBall_/en_cj" type="logic">
+      <obj_property name="ElementShortName">en_cj</obj_property>
+      <obj_property name="ObjectShortName">en_cj</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/SampleInBall_/we_ci" type="logic">
+      <obj_property name="ElementShortName">we_ci</obj_property>
+      <obj_property name="ObjectShortName">we_ci</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/SampleInBall_/we_cj" type="logic">
+      <obj_property name="ElementShortName">we_cj</obj_property>
+      <obj_property name="ObjectShortName">we_cj</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+</wave_config>

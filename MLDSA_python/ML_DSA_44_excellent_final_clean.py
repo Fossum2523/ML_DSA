@@ -217,8 +217,8 @@ def Sign(sk,M,rnd):
     h = None
     while z == None and h == None:
         y = ExpandMask(p_prime,ka)
-        # if(ka == 0):
-        #     print(y)
+        if(ka == 0):
+            print(y)
             # print(Verilog_trans(y))
         y_hat = [NTT(yi) for yi in y]
         # if(ka == 0):
@@ -228,19 +228,41 @@ def Sign(sk,M,rnd):
         # if(ka == 0):
         #     print(w)
         w = [NTT_inv(wi) for wi in w]
-        if(ka == 0):
-            print(w)
+        # if(ka == 0):
+        #     print(w)
         w1 = [HighBits(w1i) for w1i in w]
+        # if(ka == 0):
+        #     print(w1)
         w1 = w1Encode(w1)
+        # if(ka == 0):
+        #     print(Verilog_trans(w1))
         c_tilde = u + w1 
+        # if(ka == 0):
+        #     print(Verilog_trans(c_tilde))
         c_tilde = SHAKE_256(c_tilde,2*ML_DSA["lamda"])
+        # if(ka == 0):
+        #     print(Verilog_trans(c_tilde))
         c = SampleInBall(c_tilde)
+        # if(ka == 0):
+        #     print(c)
         c_hat = NTT(c)
+        # if(ka == 0):
+        #     print(c_hat)
         cs1 = NTT_dot_l(s1_hat,c_hat)
+        # if(ka == 0):
+        #     print(cs1)
         cs1 = [NTT_inv(csi) for csi in cs1]
+        if(ka == 0):
+            print(cs1)
         cs2 = NTT_dot_k(s2_hat,c_hat)
+        # if(ka == 0):
+        #     print(cs2)
         cs2 = [NTT_inv(csi) for csi in cs2]
+        # if(ka == 0):
+        #     print(cs2)
         z = array_plus_l(y,cs1)
+        if(ka == 0):
+            print(z)
         temp = array_minus_k(w,cs2)
         r0 = [LowBits(w1i) for w1i in temp]
         if infinity_norm(z) >= ML_DSA["gamma_1"] - ML_DSA["beta"] or infinity_norm(r0) >= ML_DSA["gamma_2"] - ML_DSA["beta"]:
@@ -1080,3 +1102,10 @@ signature = HASH_ML_DSA_Sign(sk,M,ctx_byte,1)
 # print(test)
 # test = test.hex()
 # print(test)
+
+# a,b = Decompose(500000)
+# print(a,b)
+
+# a = Decompose(6972272)
+
+# print(a)

@@ -200,6 +200,18 @@ module Data_Path
     reg            s2_we_b;
     wire [3-1:0]   s2_q_a;
     wire [3-1:0]   s2_q_b;
+    
+    //---c
+    reg [23 - 1:0]  c_data_a;
+    reg [23 - 1:0]  c_data_b;
+    reg [8 - 1:0] c_addr_a;
+    reg [8 - 1:0] c_addr_b;
+    reg            c_en_a;
+    reg            c_en_b;
+    reg            c_we_a;
+    reg            c_we_b;
+    wire [23-1:0]   c_q_a;
+    wire [23-1:0]   c_q_b;
 
     //---A
     reg [DLEN-1:0]   A_data_a;
@@ -334,6 +346,18 @@ module Data_Path
     wire [63:0]      t0_pack_q_a;
     wire [63:0]      t0_pack_q_b;
 
+    //---w1_pack
+    reg [63:0]       w1_pack_data_a;
+    reg [63:0]       w1_pack_data_b;
+    reg [6:0]        w1_pack_addr_a;
+    reg [6:0]        w1_pack_addr_b;
+    reg              w1_pack_en_a;
+    reg              w1_pack_en_b;
+    reg              w1_pack_we_a;
+    reg              w1_pack_we_b;
+    wire [63:0]      w1_pack_q_a;
+    wire [63:0]      w1_pack_q_b;
+
     //---w
     wire [DLEN-1:0] w_q_a;
     wire [DLEN-1:0] w_q_b;
@@ -341,6 +365,30 @@ module Data_Path
     //---c
     wire [DLEN-1:0] c_q_a;
     wire [DLEN-1:0] c_q_b;
+
+    //---c_tlide
+    reg [64-1:0]      c_tlide_data_a;
+    reg [64-1:0]      c_tlide_data_b;
+    reg [T_HLEN - 1:0]  c_tlide_addr_a;
+    reg [T_HLEN - 1:0]  c_tlide_addr_b;
+    reg                 c_tlide_en_a;
+    reg                 c_tlide_en_b;
+    reg                 c_tlide_we_a;
+    reg                 c_tlide_we_b;
+    wire [64-1:0]     c_tlide_q_a;
+    wire [64-1:0]     c_tlide_q_b;
+
+    //---c_hat
+    reg [23-1:0]      c_hat_data_a;
+    reg [23-1:0]      c_hat_data_b;
+    reg [T_HLEN - 1:0]  c_hat_addr_a;
+    reg [T_HLEN - 1:0]  c_hat_addr_b;
+    reg                 c_hat_en_a;
+    reg                 c_hat_en_b;
+    reg                 c_hat_we_a;
+    reg                 c_hat_we_b;
+    wire [23-1:0]     c_hat_q_a;
+    wire [23-1:0]     c_hat_q_b;
 
     //---temp_0
     reg [DLEN-1:0]      temp_0_data_a;
@@ -566,6 +614,12 @@ module Data_Path
             {SignGen,6'd5}:begin
                 sha_data_valid = AG_1_data_valid;
             end
+            {SignGen,6'd9}:begin
+                sha_data_valid = AG_1_data_valid;
+            end
+            {SignGen,6'd10}:begin
+                sha_data_valid = AG_1_data_valid;
+            end
         endcase
     end
     Keccak_Ctrl KKC(   
@@ -621,7 +675,7 @@ module Data_Path
         case (kk_sub_sel_1)
             2'd0: kk_sub_1_in = seed_q_a;      //seed mem
             2'd1: kk_sub_1_in = u_q_a;         //u mem
-            2'd2: kk_sub_1_in = 64'd0;         //w mem
+            2'd2: kk_sub_1_in = w1_pack_q_a;         //w1 mem
             2'd3: kk_sub_1_in = t1_pack_q_a;   //t1_pack mem
         endcase
     end
@@ -629,7 +683,7 @@ module Data_Path
     always @(*) begin
         kk_sub_2_in = 64'd0;
         case (kk_sub_sel_2)
-            2'd0: kk_sub_2_in = 64'd0;      //c1_tilde mem
+            2'd0: kk_sub_2_in = c_tlide_q_a;      //c1_tilde mem
             2'd1: kk_sub_2_in = 64'd0;      //tr mem
             2'd2: kk_sub_2_in = 64'd0;      //zero_index
             2'd3: kk_sub_2_in = 64'h0000_0000_0000_0404; //seed_gen_index
@@ -702,6 +756,18 @@ module Data_Path
         .s2_q_a(s2_q_a),
         .s2_q_b(s2_q_b),
 
+        /*---c---*/
+        .c_data_a(c_data_a),
+        .c_data_b(c_data_b),
+        .c_addr_a(c_addr_a),
+        .c_addr_b(c_addr_b),
+        .c_en_a(c_en_a),
+        .c_en_b(c_en_b),
+        .c_we_a(c_we_a),
+        .c_we_b(c_we_b),
+        .c_q_a(c_q_a),
+        .c_q_b(c_q_b),
+
         /*---A---*/
         .A_data_a(A_data_a),
         .A_data_b(A_data_b),//
@@ -725,6 +791,30 @@ module Data_Path
         .y_we_b(y_we_b),
         .y_q_a(y_q_a),
         .y_q_b(y_q_b),
+
+        /*---c_tlide---*/
+        .c_tlide_data_a(c_tlide_data_a),
+        .c_tlide_data_b(c_tlide_data_b),
+        .c_tlide_addr_a(c_tlide_addr_a),
+        .c_tlide_addr_b(c_tlide_addr_b),
+        .c_tlide_en_a(c_tlide_en_a),
+        .c_tlide_en_b(c_tlide_en_b),
+        .c_tlide_we_a(c_tlide_we_a),
+        .c_tlide_we_b(c_tlide_we_b),
+        .c_tlide_q_a(c_tlide_q_a),
+        .c_tlide_q_b(c_tlide_q_b),
+
+        /*---c_hat---*/
+        .c_hat_data_a(c_hat_data_a),
+        .c_hat_data_b(c_hat_data_b),
+        .c_hat_addr_a(c_hat_addr_a),
+        .c_hat_addr_b(c_hat_addr_b),
+        .c_hat_en_a(c_hat_en_a),
+        .c_hat_en_b(c_hat_en_b),
+        .c_hat_we_a(c_hat_we_a),
+        .c_hat_we_b(c_hat_we_b),
+        .c_hat_q_a(c_hat_q_a),
+        .c_hat_q_b(c_hat_q_b),
 
         /*---temp_0---*/
         .temp_0_data_a(temp_0_data_a),
@@ -881,6 +971,18 @@ module Data_Path
         .t0_pack_we_b(t0_pack_we_b),
         .t0_pack_q_a(t0_pack_q_a),
         .t0_pack_q_b(t0_pack_q_b),
+
+        /*---w1_pack---*/
+        .w1_pack_data_a(w1_pack_data_a),
+        .w1_pack_data_b(w1_pack_data_b),
+        .w1_pack_addr_a(w1_pack_addr_a),
+        .w1_pack_addr_b(w1_pack_addr_b),
+        .w1_pack_en_a(w1_pack_en_a),
+        .w1_pack_en_b(w1_pack_en_b),
+        .w1_pack_we_a(w1_pack_we_a),
+        .w1_pack_we_b(w1_pack_we_b),
+        .w1_pack_q_a(w1_pack_q_a),
+        .w1_pack_q_b(w1_pack_q_b),
 
         /*---PWM_temp---*/
         .PWM_temp_data_a(PWM_temp_data_a),
@@ -1154,7 +1256,42 @@ module Data_Path
                 y_en_a   = AG_2_addr_en;
                 y_en_b   = AG_2_addr_en;
             end
-            
+            {SignGen,6'd14}:begin
+                y_addr_a = AG_4_addr_a;
+                y_addr_b = AG_4_addr_b;
+                y_en_a   = AG_4_addr_en;
+                y_en_b   = AG_4_addr_en;
+            end
+        endcase
+    end
+
+    //---c mem
+    always @(*) begin
+        c_data_a = 23'd0;
+        c_data_b = 23'd0;
+        c_addr_a = 8'd0;
+        c_addr_b = 8'd0;
+        c_en_a   = 1'd0;
+        c_en_b   = 1'd0;
+        c_we_a   = 1'd0;
+        c_we_b   = 1'd0;
+        case (ctrl_sign)
+            {SignGen,6'd10}:begin //Gen_s1
+                c_data_a = ci;
+                c_data_b = c_q_a;
+                c_addr_a = addr_ci;
+                c_addr_b = addr_cj;
+                c_en_a   = en_ci;
+                c_en_b   = en_cj;
+                c_we_a   = we_ci;
+                c_we_b   = we_cj;
+            end
+            {SignGen,6'd11}:begin //NTT c -> c_hat
+                c_addr_a = {NTT_index,AG_2_addr_a[7:0]};
+                c_addr_b = {NTT_index,(AG_2_addr_a[7:0] + 8'd128)};
+                c_en_a   = AG_2_addr_en;
+                c_en_b   = AG_2_addr_en;
+            end    
         endcase
     end
 
@@ -1229,6 +1366,22 @@ module Data_Path
                 end
             end
             {SignGen,6'd7}:begin // INTT W^, take the w^ data from t MEM
+                t_addr_a = {NTT_index, AG_2_addr_a[7:0]};
+                t_addr_b = {NTT_index, AG_2_addr_a[7:0]} + 1'b1;
+                t_en_a   = AG_2_addr_en;
+                t_en_b   = AG_2_addr_en;
+            end
+            {SignGen,6'd12}:begin // PWM <<cs1>>^ = c^ * s1^ and store <<cs1>>^ here
+                t_data_a = PWM_out_a;
+                t_data_b = PWM_out_b;
+                t_addr_a = AG_4_addr_a - 2'd2;
+                t_addr_b = AG_4_addr_a - 2'd1;
+                t_en_a   = AG_4_data_valid;
+                t_en_b   = AG_4_data_valid;
+                t_we_a   = AG_4_data_valid;
+                t_we_b   = AG_4_data_valid;
+            end
+            {SignGen,6'd13}:begin // INTT <<cs1>>^, send out <<cs1>>^ data
                 t_addr_a = {NTT_index, AG_2_addr_a[7:0]};
                 t_addr_b = {NTT_index, AG_2_addr_a[7:0]} + 1'b1;
                 t_en_a   = AG_2_addr_en;
@@ -1321,6 +1474,12 @@ module Data_Path
             {SignGen,6'd2}:begin
                 u_addr_a = AG_1_addr_a[2:0];
                 u_en_a  =  AG_1_addr_en;
+            end
+            {SignGen,6'd9}:begin
+                if(~main_mem_sel[0])begin
+                    u_addr_a = AG_1_addr_a[2:0];
+                    u_en_a  =  AG_1_addr_en;
+                end
             end
         endcase
     end
@@ -1455,6 +1614,96 @@ module Data_Path
             end
         endcase
     end
+
+    //---w1_pack mem
+    always @(*) begin
+        w1_pack_data_b = 23'd0;
+        w1_pack_data_a = 23'd0;
+        w1_pack_addr_a = 7'd0;
+        w1_pack_addr_b = 7'd0;
+        w1_pack_en_a   = 1'd0;
+        w1_pack_en_b   = 1'd0;
+        w1_pack_we_a   = 1'd0;
+        w1_pack_we_b   = 1'd0;
+        case (ctrl_sign)
+            {SignGen,6'd8}:begin // Enocder t
+                w1_pack_data_a = ENC_dout;
+                w1_pack_addr_a = AG_3_addr_a;
+                w1_pack_en_a   = ENC_valid_o;
+                w1_pack_we_a   = ENC_valid_o;
+            end
+            {SignGen,6'd9}:begin
+                if(main_mem_sel[0])begin
+                   w1_pack_addr_a = AG_1_addr_a; 
+                   w1_pack_en_a  =  AG_1_addr_en;
+                end
+            end
+        endcase
+    end
+    
+    //---c_hat mem
+    always @(*) begin
+        c_hat_data_a = 23'd0;
+        c_hat_data_b = 23'd0;
+        c_hat_addr_a = 8'd0;
+        c_hat_addr_b = 8'd0;
+        c_hat_en_a   = 1'd0;
+        c_hat_en_b   = 1'd0;
+        c_hat_we_a   = 1'd0;
+        c_hat_we_b   = 1'd0;
+        case (ctrl_sign)
+            {SignGen,6'd11}:begin
+                c_hat_data_a = NTT_out_u;
+                c_hat_data_b = NTT_out_d;
+                c_hat_addr_a = NTT_addr_u;
+                c_hat_addr_b = NTT_addr_d;
+                c_hat_en_a   = NTT_out_ready;
+                c_hat_en_b   = NTT_out_ready;
+                c_hat_we_a   = NTT_out_ready;
+                c_hat_we_b   = NTT_out_ready;
+            end
+            {SignGen,6'd12}:begin //PWM <<cs1>> = c^ * s1^ and send c_hat data to PWM
+                c_hat_addr_a = AG_4_addr_a[7:0];
+                c_hat_addr_b = AG_4_addr_b[7:0];
+                c_hat_en_a   = AG_4_addr_en;
+                c_hat_en_b   = AG_4_addr_en;
+            end
+            {SignGen,6'd13}:begin //PWM <<cs2>> = c^ * s2^ and send c_hat data to PWM
+                c_hat_addr_a = AG_4_addr_a[7:0];
+                c_hat_addr_b = AG_4_addr_b[7:0];
+                c_hat_en_a   = AG_4_addr_en;
+                c_hat_en_b   = AG_4_addr_en;
+            end
+        endcase
+    end
+
+    //---c_tlide mem
+    always @(*) begin
+        c_tlide_data_a = 64'd0;
+        c_tlide_data_b = 64'd0;
+        c_tlide_addr_a = 2'd0;
+        c_tlide_addr_b = 2'd0;
+        c_tlide_en_a   = 1'd0;
+        c_tlide_en_b   = 1'd0;
+        c_tlide_we_a   = 1'd0;
+        c_tlide_we_b   = 1'd0;
+        case (ctrl_sign)
+            {SignGen,6'd9}:begin
+                c_tlide_data_a = seed_out[63:0];
+                c_tlide_data_b = seed_out[127:64];
+                c_tlide_addr_a = AG_4_addr_a[1:0];
+                c_tlide_addr_b = AG_4_addr_b[1:0];
+                c_tlide_en_a  =  AG_4_addr_en;
+                c_tlide_en_b  =  AG_4_addr_en;
+                c_tlide_we_a  =  AG_4_addr_en;
+                c_tlide_we_b  =  AG_4_addr_en;
+            end
+            {SignGen,6'd10}:begin
+                c_tlide_addr_a = AG_1_addr_a[1:0];
+                c_tlide_en_a  =  AG_1_addr_en;
+            end
+        endcase
+    end
     
     //---temp_0 mem
     always @(*) begin
@@ -1499,7 +1748,7 @@ module Data_Path
                 temp_0_en_a   = AG_4_addr_en;
                 temp_0_en_b   = AG_4_addr_en;
             end
-            {SignGen,6'd2}:begin
+            {SignGen,6'd2}:begin // NTT s1 and store s1^
                 temp_0_data_a = NTT_out_u;
                 temp_0_data_b = NTT_out_d;
                 temp_0_addr_a = {NTT_index,NTT_addr_u};
@@ -1509,7 +1758,28 @@ module Data_Path
                 temp_0_we_a   = NTT_out_ready;
                 temp_0_we_b   = NTT_out_ready;
             end
-
+            {SignGen,6'd12}:begin //PWM <<cs1>> = c^ * s1^ and send s1^ data to PWM
+                temp_0_addr_a = AG_4_addr_a;
+                temp_0_addr_b = AG_4_addr_b;
+                temp_0_en_a   = AG_4_addr_en;
+                temp_0_en_b   = AG_4_addr_en;
+            end
+            {SignGen,6'd13}:begin // INTT <<cs1>> and store <<cs1>>
+                temp_0_data_a = NTT_out_u;
+                temp_0_data_b = NTT_out_d;
+                temp_0_addr_a = {NTT_index,NTT_addr_u};
+                temp_0_addr_b = {NTT_index,NTT_addr_d};
+                temp_0_en_a   = NTT_out_ready;
+                temp_0_en_b   = NTT_out_ready;
+                temp_0_we_a   = NTT_out_ready;
+                temp_0_we_b   = NTT_out_ready;
+            end
+            {SignGen,6'd14}:begin
+                temp_0_addr_a = AG_4_addr_a;
+                temp_0_addr_b = AG_4_addr_b;
+                temp_0_en_a   = AG_4_addr_en;
+                temp_0_en_b   = AG_4_addr_en;
+            end
         endcase
     end
 
@@ -1524,7 +1794,23 @@ module Data_Path
         temp_1_we_a   = 1'd0;
         temp_1_we_b   = 1'd0;
         case (ctrl_sign)
-            {SignGen,6'd3}:begin
+            {SignGen,6'd3}:begin // NTT s2
+                temp_1_data_a = NTT_out_u;
+                temp_1_data_b = NTT_out_d;
+                temp_1_addr_a = {NTT_index,NTT_addr_u};
+                temp_1_addr_b = {NTT_index,NTT_addr_d};
+                temp_1_en_a   = NTT_out_ready;
+                temp_1_en_b   = NTT_out_ready;
+                temp_1_we_a   = NTT_out_ready;
+                temp_1_we_b   = NTT_out_ready;
+            end
+            {SignGen,6'd13}:begin //PWM <<cs2>> = c^ * s2^ and send s2^ data to PWM
+                temp_1_addr_a = AG_4_addr_a;
+                temp_1_addr_b = AG_4_addr_b;
+                temp_1_en_a   = AG_4_addr_en;
+                temp_1_en_b   = AG_4_addr_en;
+            end
+            {SignGen,6'd14}:begin // INTT <<cs2>>^ and store <<cs2>>
                 temp_1_data_a = NTT_out_u;
                 temp_1_data_b = NTT_out_d;
                 temp_1_addr_a = {NTT_index,NTT_addr_u};
@@ -1598,9 +1884,48 @@ module Data_Path
                 temp_3_we_a   = NTT_out_ready;
                 temp_3_we_b   = NTT_out_ready;
             end
+            {SignGen,6'd8}:begin // Decomposer w1 =Decomp(w) and Enocder w1 TX
+                temp_3_addr_a = AG_2_addr_a;
+                temp_3_addr_b = AG_2_addr_b;
+                temp_3_en_a   = AG_2_addr_en;
+                temp_3_en_b   = AG_2_addr_en;
+            end
+            {SignGen,6'd11}:begin //NTT c
+                temp_3_data_a = NTT_out_u;
+                temp_3_data_b = NTT_out_d;
+                temp_3_addr_a = {6,NTT_addr_u};
+                temp_3_addr_b = {NTT_index,NTT_addr_d};
+                temp_3_en_a   = NTT_out_ready;
+                temp_3_en_b   = NTT_out_ready;
+                temp_3_we_a   = NTT_out_ready;
+                temp_3_we_b   = NTT_out_ready;
+            end
         endcase
     end
 
+    // //---temp_4 mem
+    // always @(*) begin
+    //     temp_4_data_a = 23'd0;
+    //     temp_4_data_b = 23'd0;
+    //     temp_4_addr_a = 10'd0;
+    //     temp_4_addr_b = 10'd0;
+    //     temp_4_en_a   = 1'd0;
+    //     temp_4_en_b   = 1'd0;
+    //     temp_4_we_a   = 1'd0;
+    //     temp_4_we_b   = 1'd0;
+    //     case (ctrl_sign)
+    //         {SignGen,6'd11}:begin //NTT c
+    //             temp_4_data_a = NTT_out_u;
+    //             temp_4_data_b = NTT_out_d;
+    //             temp_4_addr_a = {6,NTT_addr_u};
+    //             temp_4_addr_b = {NTT_index,NTT_addr_d};
+    //             temp_4_en_a   = NTT_out_ready;
+    //             temp_4_en_b   = NTT_out_ready;
+    //             temp_4_we_a   = NTT_out_ready;
+    //             temp_4_we_b   = NTT_out_ready;
+    //         end
+    //     endcase
+    // end
 
     //---PWM_temp mem
     always @(*) begin
@@ -1648,6 +1973,22 @@ module Data_Path
                     PWM_temp_we_a   = AG_4_data_valid;
                     PWM_temp_we_b   = AG_4_data_valid;
                 end  
+            end
+            {SignGen,6'd13}:begin // PWM <<cs2>> = c^ * s2^ and store <<cs2>>^ here
+                PWM_temp_data_a = PWM_out_a;
+                PWM_temp_data_b = PWM_out_b;
+                PWM_temp_addr_a = AG_4_addr_a - 2'd2;
+                PWM_temp_addr_b = AG_4_addr_a - 2'd1;
+                PWM_temp_en_a   = AG_4_data_valid;
+                PWM_temp_en_b   = AG_4_data_valid;
+                PWM_temp_we_a   = AG_4_data_valid;
+                PWM_temp_we_b   = AG_4_data_valid;
+            end
+            {SignGen,6'd14}:begin // INTT <<cs2>>^, send out <<cs2>>^ data
+                PWM_temp_addr_a = {NTT_index, AG_2_addr_a[7:0]};
+                PWM_temp_addr_b = {NTT_index, AG_2_addr_a[7:0]} + 1'b1;
+                PWM_temp_en_a   = AG_2_addr_en;
+                PWM_temp_en_b   = AG_2_addr_en;
             end
         endcase
     end
@@ -1817,6 +2158,24 @@ module Data_Path
                 AG_1_star_addr   = 12'd8;
                 AG_1_last_addr   = 12'd11;
             end 
+            {SignGen,6'd9}: begin  //Gen pk and take the seed p from mem to keccak
+                AG_1_pasue  = sha_buffer_full;
+                if(~main_mem_sel[0])begin
+                    AG_1_addr_adder  = 2'd1;
+                    AG_1_star_addr   = 12'd0;
+                    AG_1_last_addr   = 12'd7;
+                end
+                else begin
+                    AG_1_addr_adder  = 2'd1;
+                    AG_1_star_addr   = 12'd0;
+                    AG_1_last_addr   = 12'd95;
+                end
+            end
+            {SignGen,6'd10}: begin  //Gen c and take the c_tilde from mem to keccak
+                AG_1_addr_adder  = 2'd1;
+                AG_1_star_addr   = 12'd0;
+                AG_1_last_addr   = 12'd3;
+            end 
         endcase
     end
 
@@ -1876,6 +2235,26 @@ module Data_Path
                 AG_2_star_addr   = 12'd0;
                 AG_2_last_addr   = 12'd254;
             end 
+            {SignGen,6'd8}: begin  // Decomposer w1 =Decomp(w) and Enocder w1 TX
+                AG_2_addr_adder  = {ENC_ready_i,1'b0};
+                AG_2_star_addr   = 12'd0;
+                AG_2_last_addr   = 12'd1022;
+            end
+            {SignGen,6'd11}: begin  // NTT c -> c_hat
+                AG_2_addr_adder  = 2'd1;
+                AG_2_star_addr   = 12'd0;
+                AG_2_last_addr   = 12'd127;
+            end
+            {SignGen,6'd13}: begin  // INTT <<cs1>>^
+                AG_2_addr_adder  = 2'd2;
+                AG_2_star_addr   = 12'd0;
+                AG_2_last_addr   = 12'd254;
+            end
+            {SignGen,6'd14}: begin  // INTT <<cs2>>^
+                AG_2_addr_adder  = 2'd2;
+                AG_2_star_addr   = 12'd0;
+                AG_2_last_addr   = 12'd254;
+            end  
         endcase
     end
 
@@ -1920,6 +2299,11 @@ module Data_Path
                 AG_3_star_addr   = 12'd0;
                 AG_3_last_addr   = 12'd1024;//speical to add 1 to make wait ENC_valid_o high
             end
+            {SignGen,6'd8}: begin //store 64bits w1 data to mem
+                AG_3_addr_adder  = {1'b0,ENC_valid_o};
+                AG_3_star_addr   = 12'd0;
+                AG_3_last_addr   = 12'd96;//speical to add 1 to make wait ENC_valid_o high
+            end 
         endcase
     end
 
@@ -1964,6 +2348,26 @@ module Data_Path
                 AG_4_star_addr   = 12'd0;
                 AG_4_last_addr   = 12'd1022;
             end 
+            {SignGen,6'd9}: begin  //Gen c_tilde by keccak and take data to c_tilde mem 
+                AG_4_addr_adder  = 2'd2;
+                AG_4_star_addr   = 12'd0;
+                AG_4_last_addr   = 12'd2;
+            end 
+            {SignGen,6'd12}: begin  //PWM　<<cs1>> = c^ * s1^
+                AG_4_addr_adder  = 2'd2;
+                AG_4_star_addr   = 12'd0;
+                AG_4_last_addr   = 12'd1022;;
+            end
+            {SignGen,6'd13}: begin  //PWM <<cs2>> = c^ * s2^
+                AG_4_addr_adder  = 2'd2;
+                AG_4_star_addr   = 12'd0;
+                AG_4_last_addr   = 12'd1022;;
+            end
+            {SignGen,6'd14}: begin  //PWM z = y + <<cs1>>
+                AG_4_addr_adder  = 2'd2;
+                AG_4_star_addr   = 12'd0;
+                AG_4_last_addr   = 12'd1022;;
+            end
         endcase
     end
     /*---AG---*/ //------------------------------------------end
@@ -2069,6 +2473,18 @@ module Data_Path
                 NTT_in_u = t_q_a;
                 NTT_in_d = t_q_b; 
             end
+            {SignGen,6'd11}:begin
+                NTT_in_u = c_q_a;
+                NTT_in_d = c_q_b; 
+            end
+            {SignGen,6'd13}:begin  // INTT <<cs1>>^
+                NTT_in_u = t_q_a;
+                NTT_in_d = t_q_b; 
+            end
+            {SignGen,6'd14}:begin  // INTT <<cs2>>^
+                NTT_in_u = PWM_temp_q_a;
+                NTT_in_d = PWM_temp_q_b; 
+            end
             default: begin
                 NTT_in_u = 23'd0;
                 NTT_in_d = 23'd0;
@@ -2113,16 +2529,23 @@ module Data_Path
                 ENC_ready_o = 1'b1;
             end
             {KeyGen,6'd7}:begin
-                ENC_sec_lvl = 3'd0;
+                ENC_sec_lvl = 3'd2;
                 ENC_encode_mode = 3'd1;
                 ENC_di = {PWM_out_b,PWM_out_a};
                 ENC_valid_i = AG_4_data_valid;
                 ENC_ready_o = 1'b1;
             end
             {KeyGen,6'd8}:begin
-                ENC_sec_lvl = 3'd0;
+                ENC_sec_lvl = 3'd2;
                 ENC_encode_mode = 3'd0;
                 ENC_di = {t_q_b,t_q_a};
+                ENC_valid_i = AG_2_data_valid;
+                ENC_ready_o = 1'b1;
+            end
+            {SignGen,6'd8}:begin
+                ENC_sec_lvl = 3'd2;
+                ENC_encode_mode = 3'd4;
+                ENC_di = {{17'd0,Decomposer_w1_b},{17'd0,Decomposer_w1_a}};
                 ENC_valid_i = AG_2_data_valid;
                 ENC_ready_o = 1'b1;
             end
@@ -2130,18 +2553,19 @@ module Data_Path
     end
     /*---Encoder---*/ //------------------------------------------end
 
+
     /*---Decoder---*/ //------------------------------------------str
     decoder dec_(
-    .reset(reset),
-    .clk(clk),
-    .sec_lvl(DEC_sec_lvl),
-    .decode_mode(DEC_mode),
-    .valid_i(DEC_valid_i),
-    .ready_i(DEC_ready_i),
-    .di(DEC_di),
-    .dout(DEC_dout),
-    .valid_o(DEC_valid_o),
-    .ready_o(DEC_ready_o)
+        .reset(reset),
+        .clk(clk),
+        .sec_lvl(DEC_sec_lvl),
+        .decode_mode(DEC_mode),
+        .valid_i(DEC_valid_i),
+        .ready_i(DEC_ready_i),
+        .di(DEC_di),
+        .dout(DEC_dout),
+        .valid_o(DEC_valid_o),
+        .ready_o(DEC_ready_o)
     );
 
      always @(*) begin
@@ -2175,6 +2599,7 @@ module Data_Path
         endcase
     end
     /*---Decoder---*/ //------------------------------------------end
+
 
     /*---PWM---*/ //------------------------------------------str
     PWM PWM_(  
@@ -2223,10 +2648,67 @@ module Data_Path
                 PWM_in_b1 = A_q_b;      //A
                 PWM_in_b2 = PWM_index[0] ? PWM_temp_q_b : t_q_b;  //w
             end
+            {SignGen,6'd12}:begin  //PWM <<cs1>> = c^ * s1^
+                PWM_mode  = SCALAR_VECTOR;
+                PWM_in_a0 = temp_0_q_a; //s1^
+                PWM_in_a1 = c_hat_q_a;      //c^
+                PWM_in_b0 = temp_0_q_b; //s1^
+                PWM_in_b1 = c_hat_q_b;      //c^
+            end
+            {SignGen,6'd13}:begin //PWM <<cs2>> = c^ * s2^
+                PWM_mode  = SCALAR_VECTOR;
+                PWM_in_a0 = temp_1_q_a; //s1^
+                PWM_in_a1 = c_hat_q_a;      //c^
+                PWM_in_b0 = temp_1_q_b; //s1^
+                PWM_in_b1 = c_hat_q_b;      //c^
+            end
+            {SignGen,6'd14}:begin //PWM z = y + <<cs1>>
+                PWM_mode  = ADD_VECTOR;
+                PWM_in_a1 = temp_0_q_a; //<<cs1>>
+                PWM_in_a2 = y_q_a;      //y
+                PWM_in_b1 = temp_0_q_b; //<<cs1>>
+                PWM_in_b2 = y_q_b;      //y
+            end
         endcase
     end
     /*---PWM---*/ //------------------------------------------end
 
+
+    /*---Decomposer---*/ //------------------------------------------str
+    reg  [22:0] Decomposer_in_a;
+    reg  [22:0] Decomposer_in_b;
+
+    wire [17:0] Decomposer_w0_a;
+    wire [17:0] Decomposer_w0_b;
+    
+    wire [5:0] Decomposer_w1_a;
+    wire [5:0] Decomposer_w1_b;
+
+    Decomposer Decomposer_(
+        //protocol 0
+        .r_in_a(Decomposer_in_a),
+        .r0_out_a(Decomposer_w0_a),
+        .r1_out_a(Decomposer_w1_a),
+
+        //protocol 1
+        .r_in_b(Decomposer_in_b),
+        .r0_out_b(Decomposer_w0_b),
+        .r1_out_b(Decomposer_w1_b)
+    );
+
+    always @(*) begin
+        Decomposer_in_a = 23'd0;
+        Decomposer_in_b = 23'd0;
+        case (ctrl_sign)
+            {SignGen,6'd8}:begin //Decomposer w1 =Decomp(w)
+                Decomposer_in_a = temp_3_q_a;
+                Decomposer_in_b = temp_3_q_b;
+            end
+        endcase
+    end
+    /*---Decomposer---*/ //------------------------------------------end
+
+    
     /*---AXI Stream input protocol B---*/ //------------------------------------------str
     // always @(*) begin
     //     MLDSA_i_ready_B = 1'b0;
@@ -2241,6 +2723,7 @@ module Data_Path
     // end
 
     /*---AXI Stream input protocol B---*/ //------------------------------------------end
+
 
     /*---AXI Stream output protocol---*/ //------------------------------------------str
     always @(*) begin

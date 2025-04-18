@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="16,507.200 ns"></ZoomStartTime>
-      <ZoomEndTime time="16,692.001 ns"></ZoomEndTime>
-      <Cursor1Time time="16,540.000 ns"></Cursor1Time>
+      <ZoomStartTime time="200,712.916 ns"></ZoomStartTime>
+      <ZoomEndTime time="201,057.417 ns"></ZoomEndTime>
+      <Cursor1Time time="201,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="191"></NameColumnWidth>
-      <ValueColumnWidth column_width="68"></ValueColumnWidth>
+      <NameColumnWidth column_width="182"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="139" />
    <wvobject fp_name="/MLDSA_tb/uut/clk" type="logic">
@@ -405,12 +405,14 @@
       <obj_property name="ObjectShortName">y_data_a[22:0]</obj_property>
       <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/y_data_b" type="array">
       <obj_property name="ElementShortName">y_data_b[22:0]</obj_property>
       <obj_property name="ObjectShortName">y_data_b[22:0]</obj_property>
       <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/y_addr_a" type="array">
       <obj_property name="ElementShortName">y_addr_a[9:0]</obj_property>

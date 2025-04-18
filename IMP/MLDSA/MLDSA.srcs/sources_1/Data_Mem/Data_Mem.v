@@ -88,6 +88,7 @@ module Data_Mem
     output  [DLEN-1:0]      c_q_a,
     output  [DLEN-1:0]      c_q_b,
 
+
     /*---t---*/
     input   [DLEN-1:0]      t_data_a,
     input   [DLEN-1:0]      t_data_b,
@@ -111,6 +112,30 @@ module Data_Mem
     input                   t0_we_b,
     output  [DLEN-1:0]      t0_q_a,
     output  [DLEN-1:0]      t0_q_b,
+
+    /*---c_tlide---*/
+    input   [64-1:0]        c_tlide_data_a,
+    input   [64-1:0]        c_tlide_data_b,
+    input   [2 - 1:0]       c_tlide_addr_a,  // 4th data
+    input   [2 - 1:0]       c_tlide_addr_b,
+    input                   c_tlide_en_a,
+    input                   c_tlide_en_b,
+    input                   c_tlide_we_a,
+    input                   c_tlide_we_b,
+    output  [64-1:0]        c_tlide_q_a,
+    output  [64-1:0]        c_tlide_q_b,
+
+    /*---c_hat---*/
+    input   [DLEN-1:0]        c_hat_data_a,
+    input   [DLEN-1:0]        c_hat_data_b,
+    input   [8 - 1:0]       c_hat_addr_a,  // 256th data
+    input   [8 - 1:0]       c_hat_addr_b,
+    input                   c_hat_en_a,
+    input                   c_hat_en_b,
+    input                   c_hat_we_a,
+    input                   c_hat_we_b,
+    output  [DLEN-1:0]        c_hat_q_a,
+    output  [DLEN-1:0]        c_hat_q_b,
 
     /*---temp_0---*/
     input   [DLEN-1:0]      temp_0_data_a,
@@ -243,6 +268,18 @@ module Data_Mem
     input                   t0_pack_we_b,
     output  [63:0]          t0_pack_q_a,
     output  [63:0]          t0_pack_q_b,
+
+    /*---w1_pack---*/
+    input   [63:0]          w1_pack_data_a,
+    input   [63:0]          w1_pack_data_b,
+    input   [6:0]           w1_pack_addr_a,  //96th data
+    input   [6:0]           w1_pack_addr_b,  //96th data
+    input                   w1_pack_en_a,
+    input                   w1_pack_en_b,
+    input                   w1_pack_we_a,
+    input                   w1_pack_we_b,
+    output  [63:0]          w1_pack_q_a,
+    output  [63:0]          w1_pack_q_b,
 
     /*---PWM_temp---*/
     input   [DLEN-1:0]      PWM_temp_data_a,
@@ -457,6 +494,39 @@ module Data_Mem
         .q_b(t0_q_b)
     );
 
+    /*---c_tlide---*/
+    Dual_Port_Ram_Single_clk #(.DLEN(64), .HLEN(2)) c_tlide(
+        .clk_a(clk),
+        .clk_b(clk),
+        .data_a(c_tlide_data_a),
+        .data_b(c_tlide_data_b),
+        .addr_a(c_tlide_addr_a),
+        .addr_b(c_tlide_addr_b),
+        .en_a(c_tlide_en_a),
+        .en_b(c_tlide_en_b),
+        .we_a(c_tlide_we_a),
+        .we_b(c_tlide_we_b),
+        .q_a(c_tlide_q_a),
+        .q_b(c_tlide_q_b)
+    );
+
+    /*---c_hat---*/
+    Dual_Port_Ram_Single_clk #(.DLEN(23), .HLEN(8)) c_hat(
+        .clk_a(clk),
+        .clk_b(clk),
+        .data_a(c_hat_data_a),
+        .data_b(c_hat_data_b),
+        .addr_a(c_hat_addr_a),
+        .addr_b(c_hat_addr_b),
+        .en_a(c_hat_en_a),
+        .en_b(c_hat_en_b),
+        .we_a(c_hat_we_a),
+        .we_b(c_hat_we_b),
+        .q_a(c_hat_q_a),
+        .q_b(c_hat_q_b)
+    );
+
+
     /*---temp_0---*/
     Dual_Port_Ram_Single_clk #(.DLEN(DLEN), .HLEN(T_HLEN)) temp_0(
         .clk_a(clk),
@@ -583,6 +653,22 @@ module Data_Mem
         .we_b(t0_pack_we_b),
         .q_a(t0_pack_q_a),
         .q_b(t0_pack_q_b)
+    );
+
+    /*---w1_pack---*/
+    Dual_Port_Ram_Single_clk #(.DLEN(64), .HLEN(7)) w1_pack(
+        .clk_a(clk),
+        .clk_b(clk),
+        .data_a(w1_pack_data_a),
+        .data_b(w1_pack_data_b),
+        .addr_a(w1_pack_addr_a),
+        .addr_b(w1_pack_addr_b),
+        .en_a(w1_pack_en_a),
+        .en_b(w1_pack_en_b),
+        .we_a(w1_pack_we_a),
+        .we_b(w1_pack_we_b),
+        .q_a(w1_pack_q_a),
+        .q_b(w1_pack_q_b)
     );
 
     /*---PWM_temp---*/

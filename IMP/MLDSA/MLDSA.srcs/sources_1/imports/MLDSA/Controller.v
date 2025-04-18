@@ -98,6 +98,10 @@ module Controller
                         STAGE_8     = 6'd8,        
                         STAGE_9     = 6'd9,        
                         STAGE_10    = 6'd10,        
+                        STAGE_11    = 6'd11,        
+                        STAGE_12    = 6'd12,        
+                        STAGE_13    = 6'd13,        
+                        STAGE_14    = 6'd14,        
                         STAGE_4_1    = 6'd20,        
                         STAGE_T     = 6'd15;        
 
@@ -125,6 +129,7 @@ module Controller
 
     reg  keccak_done;
     reg  keccak_done_tmp;
+    reg [1:0] NTT_end_index;
     reg  NTT_done_tmp;
 
     reg [1:0]PWM_index_tmp;
@@ -137,6 +142,8 @@ module Controller
     reg Decoder_done_tmp;
     reg send_done;
     reg send_done_tmp;
+    reg Decomposer_done;
+    reg Decomposer_done_tmp;
 
     assign  curr_state = main_mode == KeyGen  ? curr_state_KeyGen : 
                          main_mode == SignGen ? curr_state_SignGen:
@@ -293,9 +300,51 @@ module Controller
             end
             STAGE_7: begin
                 if(NTT_done_tmp)   
-                    next_state_SignGen = STAGE_T;
+                    next_state_SignGen = STAGE_8;
                 else 
                     next_state_SignGen = STAGE_7;
+            end
+            STAGE_8: begin
+                if(Encoder_done_tmp)   
+                    next_state_SignGen = STAGE_9;
+                else 
+                    next_state_SignGen = STAGE_8;
+            end
+            STAGE_9: begin
+                if(keccak_done_tmp)   
+                    next_state_SignGen = STAGE_10;
+                else 
+                    next_state_SignGen = STAGE_9;
+            end
+            STAGE_10: begin
+                if(keccak_done_tmp)   
+                    next_state_SignGen = STAGE_11;
+                else 
+                    next_state_SignGen = STAGE_10;
+            end ////////
+            STAGE_11: begin
+                if(NTT_done_tmp)   
+                    next_state_SignGen = STAGE_12;
+                else    
+                    next_state_SignGen = STAGE_11;
+            end
+            STAGE_12: begin
+                if(PWM_done_tmp)   
+                    next_state_SignGen = STAGE_13;
+                else 
+                    next_state_SignGen = STAGE_12;
+            end
+            STAGE_13: begin
+                if(NTT_done_tmp && PWM_done_tmp)   
+                    next_state_SignGen = STAGE_14;
+                else 
+                    next_state_SignGen = STAGE_13;
+            end
+            STAGE_14: begin
+                if(NTT_done_tmp && PWM_done_tmp)   
+                    next_state_SignGen = STAGE_T;
+                else 
+                    next_state_SignGen = STAGE_14;
             end
             STAGE_T: begin
                 next_state_SignGen = STAGE_T;
@@ -353,6 +402,12 @@ module Controller
             {SignGen,STAGE_5}: begin
                 sha_type = 4'd1;
             end
+            {SignGen,STAGE_9}: begin
+                sha_type = 4'd5;
+            end
+            {SignGen,STAGE_10}: begin
+                sha_type = 4'd8;
+            end
             default: sha_type = 4'd0;
         endcase
     end
@@ -370,7 +425,9 @@ module Controller
             {SignGen,STAGE_2},
             {SignGen,STAGE_3},
             {SignGen,STAGE_4},
-            {SignGen,STAGE_5}: begin
+            {SignGen,STAGE_5},
+            {SignGen,STAGE_9},
+            {SignGen,STAGE_10}: begin
                 sha_en = ~(keccak_done | keccak_done_tmp);
             end 
             default: sha_en = 1'd0;
@@ -435,6 +492,12 @@ module Controller
             {SignGen,STAGE_5}: begin
                 keccak_done = (A_index == 15 & next_element);
             end
+            {SignGen,STAGE_9}: begin  //store c_tilde to c_tilde MEM
+                keccak_done = AG_4_done;
+            end
+            {SignGen,STAGE_10}: begin
+                keccak_done = (next_element);
+            end
             default: keccak_done = 1'b0;
         endcase
     end
@@ -476,6 +539,11 @@ module Controller
                 if(sha_out_ready)
                     sampler_in_ready = 1'b1;
             end
+            {SignGen,6'd10}:begin
+                sampler_mode = SIB_mode;
+                if(sha_out_ready)
+                    sampler_in_ready = 1'b1;
+            end
             default: sampler_in_ready = 1'b0;
         endcase
     end
@@ -510,6 +578,15 @@ module Controller
             {SignGen,6'd7}:begin
                 NTT_mode = 1'b1;
             end
+            {SignGen,6'd11}:begin
+                NTT_mode = 1'b0;
+            end
+            {SignGen,6'd13}:begin
+                NTT_mode = 1'b1;
+            end
+            {SignGen,6'd14}:begin
+                NTT_mode = 1'b1;
+            end
             default: NTT_mode = 1'b0;
         endcase
     end
@@ -538,13 +615,44 @@ module Controller
             {SignGen,6'd7}:begin
                 NTT_in_ready = 1'b1;
             end
+            {SignGen,6'd11}:begin
+                NTT_in_ready = 1'b1;
+            end
+            {SignGen,6'd13}:begin
+                NTT_in_ready = 1'b1;
+            end
+            {SignGen,6'd14}:begin
+                NTT_in_ready = 1'b1;
+            end
             default: NTT_in_ready = 1'b0;
         endcase
     end
 
+    always @(*) begin
+        NTT_end_index  = 1'b0;
+        case (ctrl_sign)
+            {KeyGen,6'd3},
+            {KeyGen,6'd6},
+            {SignGen,6'd2},
+            {SignGen,6'd3},
+            {SignGen,6'd4},
+            {SignGen,6'd5},
+            {SignGen,6'd7},
+            {SignGen,6'd13},
+            {SignGen,6'd14}:begin
+                NTT_end_index = 2'd3;
+            end 
+            {SignGen,6'd11}:begin
+                NTT_end_index = 2'd0;
+            end 
+        endcase
+    end
+            
     always @ (posedge clk) begin 
         if (reset)                                                                                                                                                   
             NTT_index <= 2'd0;
+        else if(next_state != curr_state)
+            NTT_index <= 2'b0;
         else if(NTT_done)
             NTT_index <= NTT_index + 1'b1;
     end
@@ -554,7 +662,7 @@ module Controller
             NTT_done_tmp <= 1'b0;
         else if(next_state != curr_state)
             NTT_done_tmp <= 1'b0;
-        else if(NTT_index == 3 & NTT_done)
+        else if(NTT_index == NTT_end_index & NTT_done)
             NTT_done_tmp <= 1'b1;
     end
     /*---NTT---*/ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -574,6 +682,9 @@ module Controller
                 Encoder_done = AG_3_done;
             end
             {KeyGen,6'd8}:begin
+                Encoder_done = AG_3_done;
+            end
+            {SignGen,6'd8}:begin
                 Encoder_done = AG_3_done;
             end
         endcase
@@ -630,6 +741,9 @@ module Controller
                 main_mem_sel_triger = AG_1_done; 
             end
             {KeyGen,6'd10}:begin //main_mem_sel: "4'd0 -> p", "4'd1 -> t1_pack"
+                main_mem_sel_triger = AG_1_done; 
+            end
+            {SignGen,6'd9}:begin //main_mem_sel: 4'd0 -> u, 4'd1 -> w1_pack
                 main_mem_sel_triger = AG_1_done; 
             end
             // {KeyGen,6'd10}:begin //main_mem_sel: "3'd0 -> p", "3'd1 -> K", "3'd2 -> tr", "3'd3 -> s1_pack", "3'd4 -> s2_pack", "3'd5 -> t0_pack",    
@@ -690,6 +804,14 @@ module Controller
                 AG_1_triger      = ~(keccak_done | keccak_done_tmp);
                 AG_1_clean       = next_element;
             end
+            {SignGen,STAGE_9}: begin
+                AG_1_triger      = ~main_mem_sel[1];
+                AG_1_clean       = AG_1_done;
+            end
+            {SignGen,STAGE_10}: begin  //take c_tile MEM data out to keccak and then sampler gen c
+                AG_1_triger      = ~(keccak_done | keccak_done_tmp);
+                AG_1_clean       = next_element;
+            end  
         endcase
     end
 
@@ -741,6 +863,22 @@ module Controller
                 AG_2_triger      = ~NTT_done_tmp;
                 AG_2_clean       = NTT_done;
             end
+            {SignGen,STAGE_8}: begin // Decomposer w1 =Decomp(w) and Enocder w1 TX
+                AG_2_triger      = ~Encoder_done_tmp;
+                AG_2_clean       = Encoder_done;
+            end
+            {SignGen,STAGE_11}: begin  // NTT C
+                AG_2_triger      = ~NTT_done_tmp;
+                AG_2_clean       = NTT_done;
+            end 
+            {SignGen,STAGE_13}: begin  // INTT <<cs1>>^
+                AG_2_triger      = ~NTT_done_tmp;
+                AG_2_clean       = NTT_done;
+            end 
+            {SignGen,STAGE_14}: begin  // INTT <<cs2>>^
+                AG_2_triger      = ~NTT_done_tmp;
+                AG_2_clean       = NTT_done;
+            end 
         endcase
     end
 
@@ -775,6 +913,10 @@ module Controller
             {SignGen,STAGE_3}: begin // Decoder t0 RX
                 AG_3_triger      = ~Decoder_done_tmp;
                 AG_3_clean       = Decoder_done;
+            end
+            {SignGen,STAGE_8}: begin // Enocder w1 RX
+                AG_3_triger      = ~Encoder_done_tmp;
+                AG_3_clean       = Encoder_done;
             end
         endcase
     end
@@ -815,6 +957,22 @@ module Controller
                 AG_4_triger      = ~PWM_done_tmp;
                 AG_4_clean       = AG_4_done;
             end
+            {SignGen,STAGE_9}: begin //after keccak gen c_tilde , take c_tile to mem
+                AG_4_triger      = sha_out_ready;
+                AG_4_clean       = AG_4_done;
+            end
+            {SignGen,STAGE_12}: begin //PWM <<cs1>> = c^ * s1^
+                AG_4_triger      = ~PWM_done_tmp;
+                AG_4_clean       = AG_4_done;
+            end 
+            {SignGen,STAGE_13}: begin //PWM <<cs2>> = c^ * s2^
+                AG_4_triger      = ~PWM_done_tmp;
+                AG_4_clean       = AG_4_done;
+            end 
+            {SignGen,STAGE_14}: begin //PWM z = y + <<cs1>>
+                AG_4_triger      = ~PWM_done_tmp;
+                AG_4_clean       = AG_4_done;
+            end 
         endcase
     end
     /*---Address_Generate---*/ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -832,7 +990,17 @@ module Controller
             end
             {SignGen,STAGE_6}: begin
                 PWM_end_index = 2'd3;
-            end  
+            end 
+            {SignGen,STAGE_12}: begin
+                PWM_end_index = 2'd0;
+            end
+            {SignGen,STAGE_13}: begin
+                PWM_end_index = 2'd0;
+            end 
+            {SignGen,STAGE_14}: begin
+                PWM_end_index = 2'd0;
+            end
+
         endcase
     end
 
@@ -846,6 +1014,15 @@ module Controller
                 PWM_done = AG_4_done;
             end 
             {SignGen,STAGE_6}: begin
+                PWM_done = AG_4_done;
+            end 
+            {SignGen,STAGE_12}: begin
+                PWM_done = AG_4_done;
+            end 
+            {SignGen,STAGE_13}: begin
+                PWM_done = AG_4_done;
+            end 
+            {SignGen,STAGE_14}: begin
                 PWM_done = AG_4_done;
             end 
             default: PWM_done = 1'b0;
@@ -879,6 +1056,27 @@ module Controller
     /*---PWM---*/ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
+    /*---Decomposer---*/ //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    always @(*) begin
+        Decomposer_done = 1'b0;
+        case (ctrl_sign)
+            {SignGen,STAGE_8}: begin
+                Decomposer_done = AG_4_done;
+            end 
+        endcase
+    end
+
+    always @ (posedge clk) begin 
+        if (reset)                                                                                                                                                   
+            Decomposer_done_tmp <= 1'b0;
+        else if(next_state != curr_state)
+            Decomposer_done_tmp <= 1'b0;
+        else if(Decomposer_done)
+            Decomposer_done_tmp <= 1'b1;
+    end
+    /*---Decomposer---*/ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
     /*---AXI Stream input protocol A---*/ //------------------------------------------str
     always @(posedge clk) begin
         if(reset)
@@ -889,6 +1087,7 @@ module Controller
             MLDSA_i_ready_A <= 1'b0;
     end
     /*---AXI Stream input protocol A---*/ //------------------------------------------end
+
 
     /*---AXI Stream input protocol B---*/ //------------------------------------------str
     reg MLDSA_i_ready_B_tmp;
@@ -920,10 +1119,6 @@ module Controller
             MLDSA_i_ready_B_tmp <= 1'b0;
     end
     /*---AXI Stream input protocol B---*/ //------------------------------------------end
-
-
-
-
 endmodule
 
 

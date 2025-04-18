@@ -245,7 +245,7 @@ module Address_generate
     always @(posedge clk) begin
         if(reset)
             cnt_en <= 1'b0;
-        else if(cnt == last_addr | done)
+        else if((cnt == last_addr | done) & ~pause)
             cnt_en <= 1'b0;
         else if(triger)
             cnt_en <= 1'b1;
