@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="103,485.250 ns"></ZoomStartTime>
-      <ZoomEndTime time="103,523.851 ns"></ZoomEndTime>
-      <Cursor1Time time="103,508.250 ns"></Cursor1Time>
+      <ZoomStartTime time="200,944.083 ns"></ZoomStartTime>
+      <ZoomEndTime time="200,982.784 ns"></ZoomEndTime>
+      <Cursor1Time time="201,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="191"></NameColumnWidth>
-      <ValueColumnWidth column_width="65"></ValueColumnWidth>
+      <ValueColumnWidth column_width="61"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="40" />
    <wvobject fp_name="/MLDSA_tb/clk" type="logic">
@@ -200,12 +200,14 @@
       <obj_property name="ObjectShortName">temp_3_addr_a[9:0]</obj_property>
       <obj_property name="CustomSignalColor">#F0E68C</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_3_addr_b" type="array">
       <obj_property name="ElementShortName">temp_3_addr_b[9:0]</obj_property>
       <obj_property name="ObjectShortName">temp_3_addr_b[9:0]</obj_property>
       <obj_property name="CustomSignalColor">#F0E68C</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_3_en_a" type="logic">
       <obj_property name="ElementShortName">temp_3_en_a</obj_property>

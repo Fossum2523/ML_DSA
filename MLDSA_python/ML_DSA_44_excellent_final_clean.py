@@ -217,13 +217,13 @@ def Sign(sk,M,rnd):
     h = None
     while z == None and h == None:
         y = ExpandMask(p_prime,ka)
-        if(ka == 0):
-            print(y)
+        # if(ka == 4):
+        #     print(y)
             # print(Verilog_trans(y))
         y_hat = [NTT(yi) for yi in y]
-        # if(ka == 0):
+        # if(ka == 4):
         #     print(y_hat)
-        #     # print(Verilog_trans(y))
+            # print(Verilog_trans(y))
         w = NTT_dot(A_hat,y_hat)
         # if(ka == 0):
         #     print(w)
@@ -252,8 +252,8 @@ def Sign(sk,M,rnd):
         # if(ka == 0):
         #     print(cs1)
         cs1 = [NTT_inv(csi) for csi in cs1]
-        if(ka == 0):
-            print(cs1)
+        # if(ka == 0):
+        #     print(cs1)
         cs2 = NTT_dot_k(s2_hat,c_hat)
         # if(ka == 0):
         #     print(cs2)
@@ -261,15 +261,42 @@ def Sign(sk,M,rnd):
         # if(ka == 0):
         #     print(cs2)
         z = array_plus_l(y,cs1)
-        if(ka == 0):
-            print(z)
+        # if(ka == 0):
+        #     print(z)
+        
         temp = array_minus_k(w,cs2)
+        # if(ka == 0):
+        #     print(w)
+        #     print(cs2)
+        #     print(temp)
         r0 = [LowBits(w1i) for w1i in temp]
+        # if(ka == 0):
+        #     print(r0)
+        #     print(infinity_norm(z))
+        #     print(ML_DSA["gamma_1"] - ML_DSA["beta"])
+        #     print(infinity_norm(r0))
+        #     print(ML_DSA["gamma_2"] - ML_DSA["beta"])
+
+        #test use#
+        ct0 = NTT_dot_k(t0_hat,c_hat)
+        # if(ka == 0):
+        #     print(ct0)
+        ct0 = [NTT_inv(cti) for cti in ct0]
+        if(ka == 0):
+            print(ct0)
+        w_minus_cs2 = array_minus_k(w,cs2)
+        w_minus_cs2_pluse_ct0 = array_plus_k(w_minus_cs2,ct0)
+        if(ka == 0):
+            print(w_minus_cs2_pluse_ct0)
+        #test use#
+        
         if infinity_norm(z) >= ML_DSA["gamma_1"] - ML_DSA["beta"] or infinity_norm(r0) >= ML_DSA["gamma_2"] - ML_DSA["beta"]:
             z = None
             h = None
         else:
             ct0 = NTT_dot_k(t0_hat,c_hat)
+            if(ka == 0):
+                print(ct0)
             ct0 = [NTT_inv(cti) for cti in ct0]
             zero_array = [[0]*256] * ML_DSA["k"]
             w_minus_cs2 = array_minus_k(w,cs2)
