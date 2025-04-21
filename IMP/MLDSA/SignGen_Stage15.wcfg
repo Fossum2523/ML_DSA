@@ -12,14 +12,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="13.320001 us"></ZoomEndTime>
-      <Cursor1Time time="1.000000 us"></Cursor1Time>
+      <ZoomEndTime time="401.000000 us"></ZoomEndTime>
+      <Cursor1Time time="143.510000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="221"></NameColumnWidth>
-      <ValueColumnWidth column_width="139"></ValueColumnWidth>
+      <ValueColumnWidth column_width="134"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="131" />
+   <WVObjectSize size="130" />
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -453,10 +453,6 @@
    <wvobject fp_name="/MLDSA_tb/uut/controller_inst/PWM_done_tmp" type="logic">
       <obj_property name="ElementShortName">PWM_done_tmp</obj_property>
       <obj_property name="ObjectShortName">PWM_done_tmp</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/controller_inst/Decomposer_done_tmp" type="logic">
-      <obj_property name="ElementShortName">Decomposer_done_tmp</obj_property>
-      <obj_property name="ObjectShortName">Decomposer_done_tmp</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/controller_inst/ctrl_sign" type="array">
       <obj_property name="ElementShortName">ctrl_sign[8:0]</obj_property>

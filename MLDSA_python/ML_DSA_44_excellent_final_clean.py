@@ -477,7 +477,7 @@ def BitUnpack(v, a, b):
         w[i] = b - bti
     return w
 
-# 算法 14: HintBitpack(h) 
+# 算法 14: HintBitpack(h)
 def HintBitPack(h):
     # 初始化一個足夠大的陣列來存儲結果
     y = [0] * (ML_DSA["omega"] + ML_DSA["k"])

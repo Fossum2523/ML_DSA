@@ -1474,6 +1474,16 @@ module Data_Path
                 t0_en_a   = AG_2_addr_en;
                 t0_en_b   = AG_2_addr_en;
             end
+            {SignGen,6'd15}:begin //PWM w_cs2 = 𝐰 − ⟨⟨𝑐𝐬2⟩⟩ and LowBits(w_cs2)
+                t0_data_a = DEC_dout[22:0];
+                t0_data_b = DEC_dout[45:23];
+                t0_addr_a = AG_4_addr_a;
+                t0_addr_b = AG_4_addr_b;
+                t0_en_a   = AG_4_data_valid;
+                t0_en_b   = AG_4_data_valid;
+                t0_we_a   = AG_4_data_valid;
+                t0_we_b   = AG_4_data_valid;
+            end
         endcase
     end
     
@@ -2956,10 +2966,13 @@ module Data_Path
                 r0_fail <= 1'b1;
             end
         end
-    end
-
-    
+    end    
     /*---infinity_norm---*/ //------------------------------------------end
+
+
+    /*---Hint---*/ //------------------------------------------str
+
+    /*---Hint---*/ //------------------------------------------end
 
 
     /*---AXI Stream input protocol B---*/ //------------------------------------------str
