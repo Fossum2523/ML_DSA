@@ -90,6 +90,12 @@ module MLDSA
     //Decoder
     wire DEC_ready_i;
 
+    
+    //Sampler Rejection
+    wire    z_fail;
+    wire    r0_fail;
+    wire    ct0_fail;
+
     // Instantiate Controller
     Controller controller_inst (
         .clk(clk),
@@ -139,7 +145,12 @@ module MLDSA
         /*---PWM---*/
         .PWM_index(PWM_index),
         
-         /*---AG_1---*/
+        /*---Sampler Rejection---*/
+        .z_fail(z_fail),
+        .r0_fail(r0_fail),
+        .ct0_fail(ct0_fail),
+
+        /*---AG_1---*/
         .main_mem_sel(main_mem_sel),
 
         .AG_1_triger(AG_1_triger),
@@ -161,6 +172,7 @@ module MLDSA
 
         //Decoder
         .DEC_ready_i(DEC_ready_i)
+        
     );
 
     
@@ -223,6 +235,12 @@ module MLDSA
 
         //Decoder
         .DEC_ready_i(DEC_ready_i),
+
+        /*---Sampler Rejection---*/
+        .z_fail(z_fail),
+        .r0_fail(r0_fail),
+        .ct0_fail(ct0_fail),
+
 
         //AXI Stream input protocol A
         .MLDSA_data_in_A(MLDSA_data_in_A),

@@ -197,6 +197,30 @@ module Data_Mem
     output  [DLEN-1:0]      temp_4_q_a,
     output  [DLEN-1:0]      temp_4_q_b,
 
+    /*---temp_5---*/
+    input   [DLEN-1:0]      temp_5_data_a,
+    input   [DLEN-1:0]      temp_5_data_b,
+    input   [T_HLEN - 1:0]  temp_5_addr_a,
+    input   [T_HLEN - 1:0]  temp_5_addr_b,
+    input                   temp_5_en_a,
+    input                   temp_5_en_b,
+    input                   temp_5_we_a,
+    input                   temp_5_we_b,
+    output  [DLEN-1:0]      temp_5_q_a,
+    output  [DLEN-1:0]      temp_5_q_b,
+
+    /*---temp_6---*/
+    input   [DLEN-1:0]      temp_6_data_a,
+    input   [DLEN-1:0]      temp_6_data_b,
+    input   [T_HLEN - 1:0]  temp_6_addr_a,
+    input   [T_HLEN - 1:0]  temp_6_addr_b,
+    input                   temp_6_en_a,
+    input                   temp_6_en_b,
+    input                   temp_6_we_a,
+    input                   temp_6_we_b,
+    output  [DLEN-1:0]      temp_6_q_a,
+    output  [DLEN-1:0]      temp_6_q_b,
+
     /*---tr---*/
     input   [63:0]          tr_data_a,
     input   [63:0]          tr_data_b,
@@ -617,6 +641,38 @@ module Data_Mem
         .we_b(temp_4_we_b),
         .q_a(temp_4_q_a),
         .q_b(temp_4_q_b)
+    );
+
+    /*---temp_5---*/
+    Dual_Port_Ram_Single_clk #(.DLEN(DLEN), .HLEN(T_HLEN)) temp_5(
+        .clk_a(clk),
+        .clk_b(clk),
+        .data_a(temp_5_data_a),
+        .data_b(temp_5_data_b),
+        .addr_a(temp_5_addr_a),
+        .addr_b(temp_5_addr_b),
+        .en_a(temp_5_en_a),
+        .en_b(temp_5_en_b),
+        .we_a(temp_5_we_a),
+        .we_b(temp_5_we_b),
+        .q_a(temp_5_q_a),
+        .q_b(temp_5_q_b)
+    );
+
+    /*---temp_6---*/
+    Dual_Port_Ram_Single_clk #(.DLEN(DLEN), .HLEN(T_HLEN)) temp_6(
+        .clk_a(clk),
+        .clk_b(clk),
+        .data_a(temp_6_data_a),
+        .data_b(temp_6_data_b),
+        .addr_a(temp_6_addr_a),
+        .addr_b(temp_6_addr_b),
+        .en_a(temp_6_en_a),
+        .en_b(temp_6_en_b),
+        .we_a(temp_6_we_a),
+        .we_b(temp_6_we_b),
+        .q_a(temp_6_q_a),
+        .q_b(temp_6_q_b)
     );
 
     /*---s1_pack---*/

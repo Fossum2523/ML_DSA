@@ -270,6 +270,10 @@ def Sign(sk,M,rnd):
         #     print(cs2)
         #     print(temp)
         r0 = [LowBits(w1i) for w1i in temp]
+
+        test_w_cs2_highbit = [HighBits(w1i) for w1i in temp]
+        if(ka == 0):
+            print(test_w_cs2_highbit)
         # if(ka == 0):
         #     print(r0)
         #     print(infinity_norm(z))
@@ -282,12 +286,29 @@ def Sign(sk,M,rnd):
         # if(ka == 0):
         #     print(ct0)
         ct0 = [NTT_inv(cti) for cti in ct0]
-        if(ka == 0):
-            print(ct0)
+        # if(ka == 0):
+        #     print(ct0)
         w_minus_cs2 = array_minus_k(w,cs2)
         w_minus_cs2_pluse_ct0 = array_plus_k(w_minus_cs2,ct0)
+        zero_array = [[0]*256] * ML_DSA["k"]
+        minus_ct0 = array_minus_k(zero_array,ct0)
+        test_w_cs2_ct0_highbit = [HighBits(w1i) for w1i in w_minus_cs2_pluse_ct0]
         if(ka == 0):
-            print(w_minus_cs2_pluse_ct0)
+            print("test_w_cs2_ct0_highbit",test_w_cs2_ct0_highbit)
+        h,true_num = MakeHint(minus_ct0, w_minus_cs2_pluse_ct0)
+        packed_h = HintBitPack(h)
+        if(ka == 0):
+            # print(true_num)
+            # print(h)
+            # print(packed_h)
+            # print(Verilog_trans(packed_h))
+            ct0 = NTT_dot_k(t0_hat,c_hat)
+            ct0 = [NTT_inv(cti) for cti in ct0]
+            ct0 = [arr.tolist() for arr in ct0]
+            print(ct0)
+            print("ct0",infinity_norm(ct0))
+            # print(w_minus_cs2_pluse_ct0)
+            
         #test use#
         
         if infinity_norm(z) >= ML_DSA["gamma_1"] - ML_DSA["beta"] or infinity_norm(r0) >= ML_DSA["gamma_2"] - ML_DSA["beta"]:
@@ -298,12 +319,14 @@ def Sign(sk,M,rnd):
             if(ka == 0):
                 print(ct0)
             ct0 = [NTT_inv(cti) for cti in ct0]
+            print(type(ct0))
             zero_array = [[0]*256] * ML_DSA["k"]
             w_minus_cs2 = array_minus_k(w,cs2)
             w_minus_cs2_pluse_ct0 = array_plus_k(w_minus_cs2,ct0)
             minus_ct0 = array_minus_k(zero_array,ct0)
             h,true_num = MakeHint(minus_ct0, w_minus_cs2_pluse_ct0)
-            if infinity_norm(c_tilde) >= ML_DSA["gamma_2"] or true_num > ML_DSA["omega"]:
+            ct0 = [arr.tolist() for arr in ct0]#####
+            if infinity_norm(ct0) >= ML_DSA["gamma_2"] or true_num > ML_DSA["omega"]:
                 z = None
                 h = None    
         ka = ka + ML_DSA["l"]

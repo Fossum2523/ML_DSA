@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="146.390000 us"></ZoomStartTime>
-      <ZoomEndTime time="185.090001 us"></ZoomEndTime>
-      <Cursor1Time time="177.060000 us"></Cursor1Time>
+      <ZoomStartTime time="175,878.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="177,442.001 ns"></ZoomEndTime>
+      <Cursor1Time time="176,450.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="191"></NameColumnWidth>
-      <ValueColumnWidth column_width="61"></ValueColumnWidth>
+      <NameColumnWidth column_width="186"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="46" />
+   <WVObjectSize size="76" />
    <wvobject fp_name="/MLDSA_tb/uut/controller_inst/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -84,42 +84,6 @@
       <obj_property name="ElementShortName">cnt[11:0]</obj_property>
       <obj_property name="ObjectShortName">cnt[11:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_2_addr_a" type="array">
-      <obj_property name="ElementShortName">temp_2_addr_a[9:0]</obj_property>
-      <obj_property name="ObjectShortName">temp_2_addr_a[9:0]</obj_property>
-      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_2_addr_b" type="array">
-      <obj_property name="ElementShortName">temp_2_addr_b[9:0]</obj_property>
-      <obj_property name="ObjectShortName">temp_2_addr_b[9:0]</obj_property>
-      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_2_en_a" type="logic">
-      <obj_property name="ElementShortName">temp_2_en_a</obj_property>
-      <obj_property name="ObjectShortName">temp_2_en_a</obj_property>
-      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_2_en_b" type="logic">
-      <obj_property name="ElementShortName">temp_2_en_b</obj_property>
-      <obj_property name="ObjectShortName">temp_2_en_b</obj_property>
-      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_2_q_a" type="array">
-      <obj_property name="ElementShortName">temp_2_q_a[22:0]</obj_property>
-      <obj_property name="ObjectShortName">temp_2_q_a[22:0]</obj_property>
-      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_2_q_b" type="array">
-      <obj_property name="ElementShortName">temp_2_q_b[22:0]</obj_property>
-      <obj_property name="ObjectShortName">temp_2_q_b[22:0]</obj_property>
-      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/PWM_temp_addr_a" type="array">
       <obj_property name="ElementShortName">PWM_temp_addr_a[9:0]</obj_property>
       <obj_property name="ObjectShortName">PWM_temp_addr_a[9:0]</obj_property>
@@ -156,6 +120,42 @@
       <obj_property name="CustomSignalColor">#00FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_5_addr_a" type="array">
+      <obj_property name="ElementShortName">temp_5_addr_a[9:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_5_addr_a[9:0]</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_5_addr_b" type="array">
+      <obj_property name="ElementShortName">temp_5_addr_b[9:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_5_addr_b[9:0]</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_5_en_a" type="logic">
+      <obj_property name="ElementShortName">temp_5_en_a</obj_property>
+      <obj_property name="ObjectShortName">temp_5_en_a</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_5_en_b" type="logic">
+      <obj_property name="ElementShortName">temp_5_en_b</obj_property>
+      <obj_property name="ObjectShortName">temp_5_en_b</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_5_q_a" type="array">
+      <obj_property name="ElementShortName">temp_5_q_a[22:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_5_q_a[22:0]</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_5_q_b" type="array">
+      <obj_property name="ElementShortName">temp_5_q_b[22:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_5_q_b[22:0]</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/mode" type="array">
       <obj_property name="ElementShortName">mode[1:0]</obj_property>
       <obj_property name="ObjectShortName">mode[1:0]</obj_property>
@@ -180,88 +180,735 @@
       <obj_property name="CustomSignalColor">#F0E68C</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/out_a" type="array">
-      <obj_property name="ElementShortName">out_a[22:0]</obj_property>
-      <obj_property name="ObjectShortName">out_a[22:0]</obj_property>
-      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/in_b0" type="array">
       <obj_property name="ElementShortName">in_b0[22:0]</obj_property>
       <obj_property name="ObjectShortName">in_b0[22:0]</obj_property>
       <obj_property name="CustomSignalColor">#F0E68C</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/in_b1" type="array">
       <obj_property name="ElementShortName">in_b1[22:0]</obj_property>
       <obj_property name="ObjectShortName">in_b1[22:0]</obj_property>
       <obj_property name="CustomSignalColor">#F0E68C</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/in_b2" type="array">
       <obj_property name="ElementShortName">in_b2[22:0]</obj_property>
       <obj_property name="ObjectShortName">in_b2[22:0]</obj_property>
       <obj_property name="CustomSignalColor">#F0E68C</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/out_a" type="array">
+      <obj_property name="ElementShortName">out_a[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out_a[22:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/out_b" type="array">
       <obj_property name="ElementShortName">out_b[22:0]</obj_property>
       <obj_property name="ObjectShortName">out_b[22:0]</obj_property>
       <obj_property name="CustomSignalColor">#F0E68C</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_0_data_a" type="array">
-      <obj_property name="ElementShortName">temp_0_data_a[22:0]</obj_property>
-      <obj_property name="ObjectShortName">temp_0_data_a[22:0]</obj_property>
-      <obj_property name="CustomSignalColor">#FFA500</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_0_data_b" type="array">
-      <obj_property name="ElementShortName">temp_0_data_b[22:0]</obj_property>
-      <obj_property name="ObjectShortName">temp_0_data_b[22:0]</obj_property>
-      <obj_property name="CustomSignalColor">#FFA500</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t0_addr_a" type="array">
+      <obj_property name="ElementShortName">t0_addr_a[9:0]</obj_property>
+      <obj_property name="ObjectShortName">t0_addr_a[9:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_0_addr_a" type="array">
-      <obj_property name="ElementShortName">temp_0_addr_a[9:0]</obj_property>
-      <obj_property name="ObjectShortName">temp_0_addr_a[9:0]</obj_property>
-      <obj_property name="CustomSignalColor">#FFA500</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t0_addr_b" type="array">
+      <obj_property name="ElementShortName">t0_addr_b[9:0]</obj_property>
+      <obj_property name="ObjectShortName">t0_addr_b[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_0_addr_b" type="array">
-      <obj_property name="ElementShortName">temp_0_addr_b[9:0]</obj_property>
-      <obj_property name="ObjectShortName">temp_0_addr_b[9:0]</obj_property>
-      <obj_property name="CustomSignalColor">#FFA500</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t0_en_a" type="logic">
+      <obj_property name="ElementShortName">t0_en_a</obj_property>
+      <obj_property name="ObjectShortName">t0_en_a</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_0_en_a" type="logic">
-      <obj_property name="ElementShortName">temp_0_en_a</obj_property>
-      <obj_property name="ObjectShortName">temp_0_en_a</obj_property>
-      <obj_property name="CustomSignalColor">#FFA500</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t0_en_b" type="logic">
+      <obj_property name="ElementShortName">t0_en_b</obj_property>
+      <obj_property name="ObjectShortName">t0_en_b</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_0_en_b" type="logic">
-      <obj_property name="ElementShortName">temp_0_en_b</obj_property>
-      <obj_property name="ObjectShortName">temp_0_en_b</obj_property>
-      <obj_property name="CustomSignalColor">#FFA500</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t0_q_a" type="array">
+      <obj_property name="ElementShortName">t0_q_a[22:0]</obj_property>
+      <obj_property name="ObjectShortName">t0_q_a[22:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_0_we_a" type="logic">
-      <obj_property name="ElementShortName">temp_0_we_a</obj_property>
-      <obj_property name="ObjectShortName">temp_0_we_a</obj_property>
-      <obj_property name="CustomSignalColor">#FFA500</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t0_q_b" type="array">
+      <obj_property name="ElementShortName">t0_q_b[22:0]</obj_property>
+      <obj_property name="ObjectShortName">t0_q_b[22:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_0_we_b" type="logic">
-      <obj_property name="ElementShortName">temp_0_we_b</obj_property>
-      <obj_property name="ObjectShortName">temp_0_we_b</obj_property>
-      <obj_property name="CustomSignalColor">#FFA500</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
+   <wvobject fp_name="vbus3041" type="vbus">
+      <obj_property name="label">New Virtual Bus 4</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t0_q_a[5]" type="logic">
+         <obj_property name="ElementShortName">[5]</obj_property>
+         <obj_property name="ObjectShortName">[5]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t0_q_a[4]" type="logic">
+         <obj_property name="ElementShortName">[4]</obj_property>
+         <obj_property name="ObjectShortName">[4]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t0_q_a[3]" type="logic">
+         <obj_property name="ElementShortName">[3]</obj_property>
+         <obj_property name="ObjectShortName">[3]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t0_q_a[2]" type="logic">
+         <obj_property name="ElementShortName">[2]</obj_property>
+         <obj_property name="ObjectShortName">[2]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t0_q_a[1]" type="logic">
+         <obj_property name="ElementShortName">[1]</obj_property>
+         <obj_property name="ObjectShortName">[1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t0_q_a[0]" type="logic">
+         <obj_property name="ElementShortName">[0]</obj_property>
+         <obj_property name="ObjectShortName">[0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="vbus3071" type="vbus">
+      <obj_property name="label">New Virtual Bus 5</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t0_q_b[5]" type="logic">
+         <obj_property name="ElementShortName">[5]</obj_property>
+         <obj_property name="ObjectShortName">[5]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t0_q_b[4]" type="logic">
+         <obj_property name="ElementShortName">[4]</obj_property>
+         <obj_property name="ObjectShortName">[4]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t0_q_b[3]" type="logic">
+         <obj_property name="ElementShortName">[3]</obj_property>
+         <obj_property name="ObjectShortName">[3]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t0_q_b[2]" type="logic">
+         <obj_property name="ElementShortName">[2]</obj_property>
+         <obj_property name="ObjectShortName">[2]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t0_q_b[1]" type="logic">
+         <obj_property name="ElementShortName">[1]</obj_property>
+         <obj_property name="ObjectShortName">[1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t0_q_b[0]" type="logic">
+         <obj_property name="ElementShortName">[0]</obj_property>
+         <obj_property name="ObjectShortName">[0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Decomposer_/r1_out_a" type="array">
+      <obj_property name="ElementShortName">r1_out_a[5:0]</obj_property>
+      <obj_property name="ObjectShortName">r1_out_a[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Decomposer_/r1_out_b" type="array">
+      <obj_property name="ElementShortName">r1_out_b[5:0]</obj_property>
+      <obj_property name="ObjectShortName">r1_out_b[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/hint_a" type="logic">
+      <obj_property name="ElementShortName">hint_a</obj_property>
+      <obj_property name="ObjectShortName">hint_a</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/hint_b" type="logic">
+      <obj_property name="ElementShortName">hint_b</obj_property>
+      <obj_property name="ObjectShortName">hint_b</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/controller_inst/PWM_done_tmp" type="logic">
       <obj_property name="ElementShortName">PWM_done_tmp</obj_property>
       <obj_property name="ObjectShortName">PWM_done_tmp</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/sec_lvl" type="array">
+      <obj_property name="ElementShortName">sec_lvl[2:0]</obj_property>
+      <obj_property name="ObjectShortName">sec_lvl[2:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/reject_hint" type="logic">
+      <obj_property name="ElementShortName">reject_hint</obj_property>
+      <obj_property name="ObjectShortName">reject_hint</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/rej" type="logic">
+      <obj_property name="ElementShortName">rej</obj_property>
+      <obj_property name="ObjectShortName">rej</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/poly_valid_ie" type="logic">
+      <obj_property name="ElementShortName">poly_valid_ie</obj_property>
+      <obj_property name="ObjectShortName">poly_valid_ie</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/poly_valid_i" type="logic">
+      <obj_property name="ElementShortName">poly_valid_i</obj_property>
+      <obj_property name="ObjectShortName">poly_valid_i</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/poly_ready_i" type="logic">
+      <obj_property name="ElementShortName">poly_ready_i</obj_property>
+      <obj_property name="ObjectShortName">poly_ready_i</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/poly_num" type="array">
+      <obj_property name="ElementShortName">poly_num[2:0]</obj_property>
+      <obj_property name="ObjectShortName">poly_num[2:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/poly_hint_cnt" type="array">
+      <obj_property name="ElementShortName">poly_hint_cnt[7:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">poly_hint_cnt[7:0][7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/poly1_ie" type="array">
+      <obj_property name="ElementShortName">poly1_ie[47:0]</obj_property>
+      <obj_property name="ObjectShortName">poly1_ie[47:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/poly1_i" type="array">
+      <obj_property name="ElementShortName">poly1_i[47:0]</obj_property>
+      <obj_property name="ObjectShortName">poly1_i[47:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/poly0_ie" type="array">
+      <obj_property name="ElementShortName">poly0_ie[47:0]</obj_property>
+      <obj_property name="ObjectShortName">poly0_ie[47:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/poly0_i" type="array">
+      <obj_property name="ElementShortName">poly0_i[47:0]</obj_property>
+      <obj_property name="ObjectShortName">poly0_i[47:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/omega" type="array">
+      <obj_property name="ElementShortName">omega[6:0]</obj_property>
+      <obj_property name="ObjectShortName">omega[6:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/num_hints" type="array">
+      <obj_property name="ElementShortName">num_hints[7:0]</obj_property>
+      <obj_property name="ObjectShortName">num_hints[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/k" type="array">
+      <obj_property name="ElementShortName">k[31:0]</obj_property>
+      <obj_property name="ObjectShortName">k[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_valid_o" type="logic">
+      <obj_property name="ElementShortName">hint_valid_o</obj_property>
+      <obj_property name="ObjectShortName">hint_valid_o</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_ready_o" type="logic">
+      <obj_property name="ElementShortName">hint_ready_o</obj_property>
+      <obj_property name="ObjectShortName">hint_ready_o</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_o" type="array">
+      <obj_property name="ElementShortName">hint_o[63:0]</obj_property>
+      <obj_property name="ObjectShortName">hint_o[63:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_needed" type="array">
+      <obj_property name="ElementShortName">hint_needed[1:0]</obj_property>
+      <obj_property name="ObjectShortName">hint_needed[1:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr" type="array">
+      <obj_property name="ElementShortName">hint_addr[79:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">hint_addr[79:0][7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[79]" type="array">
+         <obj_property name="ElementShortName">[79][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[79][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[78]" type="array">
+         <obj_property name="ElementShortName">[78][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[78][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[77]" type="array">
+         <obj_property name="ElementShortName">[77][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[77][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[76]" type="array">
+         <obj_property name="ElementShortName">[76][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[76][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[75]" type="array">
+         <obj_property name="ElementShortName">[75][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[75][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[74]" type="array">
+         <obj_property name="ElementShortName">[74][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[74][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[73]" type="array">
+         <obj_property name="ElementShortName">[73][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[73][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[72]" type="array">
+         <obj_property name="ElementShortName">[72][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[72][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[71]" type="array">
+         <obj_property name="ElementShortName">[71][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[71][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[70]" type="array">
+         <obj_property name="ElementShortName">[70][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[70][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[69]" type="array">
+         <obj_property name="ElementShortName">[69][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[69][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[68]" type="array">
+         <obj_property name="ElementShortName">[68][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[68][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[67]" type="array">
+         <obj_property name="ElementShortName">[67][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[67][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[66]" type="array">
+         <obj_property name="ElementShortName">[66][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[66][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[65]" type="array">
+         <obj_property name="ElementShortName">[65][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[65][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[64]" type="array">
+         <obj_property name="ElementShortName">[64][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[64][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[63]" type="array">
+         <obj_property name="ElementShortName">[63][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[63][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[62]" type="array">
+         <obj_property name="ElementShortName">[62][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[62][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[61]" type="array">
+         <obj_property name="ElementShortName">[61][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[61][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[60]" type="array">
+         <obj_property name="ElementShortName">[60][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[60][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[59]" type="array">
+         <obj_property name="ElementShortName">[59][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[59][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[58]" type="array">
+         <obj_property name="ElementShortName">[58][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[58][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[57]" type="array">
+         <obj_property name="ElementShortName">[57][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[57][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[56]" type="array">
+         <obj_property name="ElementShortName">[56][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[56][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[55]" type="array">
+         <obj_property name="ElementShortName">[55][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[55][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[54]" type="array">
+         <obj_property name="ElementShortName">[54][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[54][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[53]" type="array">
+         <obj_property name="ElementShortName">[53][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[53][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[52]" type="array">
+         <obj_property name="ElementShortName">[52][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[52][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[51]" type="array">
+         <obj_property name="ElementShortName">[51][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[51][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[50]" type="array">
+         <obj_property name="ElementShortName">[50][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[50][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[49]" type="array">
+         <obj_property name="ElementShortName">[49][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[49][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[48]" type="array">
+         <obj_property name="ElementShortName">[48][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[48][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[47]" type="array">
+         <obj_property name="ElementShortName">[47][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[47][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[46]" type="array">
+         <obj_property name="ElementShortName">[46][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[46][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[45]" type="array">
+         <obj_property name="ElementShortName">[45][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[45][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[44]" type="array">
+         <obj_property name="ElementShortName">[44][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[44][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[43]" type="array">
+         <obj_property name="ElementShortName">[43][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[43][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[42]" type="array">
+         <obj_property name="ElementShortName">[42][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[42][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[41]" type="array">
+         <obj_property name="ElementShortName">[41][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[41][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[40]" type="array">
+         <obj_property name="ElementShortName">[40][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[40][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[39]" type="array">
+         <obj_property name="ElementShortName">[39][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[39][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[38]" type="array">
+         <obj_property name="ElementShortName">[38][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[38][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[37]" type="array">
+         <obj_property name="ElementShortName">[37][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[37][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[36]" type="array">
+         <obj_property name="ElementShortName">[36][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[36][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[35]" type="array">
+         <obj_property name="ElementShortName">[35][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[35][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[34]" type="array">
+         <obj_property name="ElementShortName">[34][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[34][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[33]" type="array">
+         <obj_property name="ElementShortName">[33][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[33][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[32]" type="array">
+         <obj_property name="ElementShortName">[32][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[32][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[31]" type="array">
+         <obj_property name="ElementShortName">[31][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[31][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[30]" type="array">
+         <obj_property name="ElementShortName">[30][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[30][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[29]" type="array">
+         <obj_property name="ElementShortName">[29][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[29][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[28]" type="array">
+         <obj_property name="ElementShortName">[28][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[28][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[27]" type="array">
+         <obj_property name="ElementShortName">[27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[27][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[26]" type="array">
+         <obj_property name="ElementShortName">[26][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[26][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[25]" type="array">
+         <obj_property name="ElementShortName">[25][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[25][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[24]" type="array">
+         <obj_property name="ElementShortName">[24][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[24][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[23]" type="array">
+         <obj_property name="ElementShortName">[23][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[23][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[22]" type="array">
+         <obj_property name="ElementShortName">[22][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[22][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[21]" type="array">
+         <obj_property name="ElementShortName">[21][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[21][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[20]" type="array">
+         <obj_property name="ElementShortName">[20][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[20][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[19]" type="array">
+         <obj_property name="ElementShortName">[19][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[19][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[18]" type="array">
+         <obj_property name="ElementShortName">[18][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[18][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[17]" type="array">
+         <obj_property name="ElementShortName">[17][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[17][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[16]" type="array">
+         <obj_property name="ElementShortName">[16][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[16][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[15]" type="array">
+         <obj_property name="ElementShortName">[15][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[15][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[14]" type="array">
+         <obj_property name="ElementShortName">[14][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[14][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[13]" type="array">
+         <obj_property name="ElementShortName">[13][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[13][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[12]" type="array">
+         <obj_property name="ElementShortName">[12][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[12][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[11]" type="array">
+         <obj_property name="ElementShortName">[11][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[11][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[10]" type="array">
+         <obj_property name="ElementShortName">[10][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[10][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[9]" type="array">
+         <obj_property name="ElementShortName">[9][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[9][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[8]" type="array">
+         <obj_property name="ElementShortName">[8][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[8][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[7]" type="array">
+         <obj_property name="ElementShortName">[7][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[6]" type="array">
+         <obj_property name="ElementShortName">[6][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[5]" type="array">
+         <obj_property name="ElementShortName">[5][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[4]" type="array">
+         <obj_property name="ElementShortName">[4][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[3]" type="array">
+         <obj_property name="ElementShortName">[3][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[2]" type="array">
+         <obj_property name="ElementShortName">[2][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[1]" type="array">
+         <obj_property name="ElementShortName">[1][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr[0]" type="array">
+         <obj_property name="ElementShortName">[0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/ctr" type="array">
+      <obj_property name="ElementShortName">ctr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ctr[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/state" type="logic">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/poly_num" type="array">
+      <obj_property name="ElementShortName">poly_num[2:0]</obj_property>
+      <obj_property name="ObjectShortName">poly_num[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/num_hints" type="array">
+      <obj_property name="ElementShortName">num_hints[7:0]</obj_property>
+      <obj_property name="ObjectShortName">num_hints[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/poly_hint_cnt" type="array">
+      <obj_property name="ElementShortName">poly_hint_cnt[7:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">poly_hint_cnt[7:0][7:0]</obj_property>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/poly_hint_cnt[7]" type="array">
+         <obj_property name="ElementShortName">[7][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/poly_hint_cnt[6]" type="array">
+         <obj_property name="ElementShortName">[6][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/poly_hint_cnt[5]" type="array">
+         <obj_property name="ElementShortName">[5][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/poly_hint_cnt[4]" type="array">
+         <obj_property name="ElementShortName">[4][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/poly_hint_cnt[3]" type="array">
+         <obj_property name="ElementShortName">[3][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/poly_hint_cnt[2]" type="array">
+         <obj_property name="ElementShortName">[2][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/poly_hint_cnt[1]" type="array">
+         <obj_property name="ElementShortName">[1][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/makehint_/poly_hint_cnt[0]" type="array">
+         <obj_property name="ElementShortName">[0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
    </wvobject>
 </wave_config>

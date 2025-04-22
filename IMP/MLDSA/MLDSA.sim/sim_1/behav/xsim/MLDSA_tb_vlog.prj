@@ -25,6 +25,7 @@ verilog xil_defaultlib  \
 "../../../../MLDSA.srcs/sources_1/Sampler/Sampler.v" \
 "../../../../MLDSA.srcs/sources_1/Decoder/decoder.v" \
 "../../../../MLDSA.srcs/sources_1/Encoder/encoder.v" \
+"../../../../MLDSA.srcs/sources_1/Hint/makehint.v" \
 "../../../../MLDSA.srcs/sources_1/NTT/mod_add.v" \
 "../../../../MLDSA.srcs/sources_1/NTT/mod_mul.v" \
 "../../../../MLDSA.srcs/sources_1/NTT/mod_sub.v" \

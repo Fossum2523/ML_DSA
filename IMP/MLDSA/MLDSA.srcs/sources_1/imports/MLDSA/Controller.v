@@ -50,6 +50,11 @@ module Controller
     output reg [1:0]    PWM_index,
     // input               PWM_done,
 
+    //Sampler Rejection
+    input             z_fail,
+    input             r0_fail,
+    input             ct0_fail,
+
     /*---Address genetate---*/
     output reg [3:0]    main_mem_sel,
 
@@ -357,11 +362,20 @@ module Controller
                     next_state_SignGen = STAGE_15;
             end
             STAGE_16: begin
-                if(NTT_done_tmp && PWM_done_tmp)   
+                if(NTT_done_tmp && PWM_done_tmp)
                     next_state_SignGen = STAGE_17;
                 else 
                     next_state_SignGen = STAGE_16;
             end
+            // STAGE_16: begin
+            //     if(NTT_done_tmp && PWM_done_tmp)
+            //         if(z_fail || r0_fail)
+            //             next_state_SignGen = STAGE_16;
+            //         else
+            //             next_state_SignGen = STAGE_17;
+            //     else 
+            //         next_state_SignGen = STAGE_16;
+            // end
             STAGE_17: begin
                 if(NTT_done_tmp)   
                     next_state_SignGen = STAGE_18;
@@ -374,6 +388,15 @@ module Controller
                 else 
                     next_state_SignGen = STAGE_18;
             end
+            // STAGE_18: begin
+            //     if(PWM_done_tmp)   
+            //         if(ct0_fail)
+            //             next_state_SignGen = STAGE_6;
+            //         else
+            //             next_state_SignGen = STAGE_T;
+            //     else 
+            //         next_state_SignGen = STAGE_18;
+            // end
             STAGE_T: begin
                 next_state_SignGen = STAGE_T;
             end

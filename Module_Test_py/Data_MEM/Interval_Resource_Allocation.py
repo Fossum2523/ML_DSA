@@ -7,10 +7,7 @@ variables = [
     {"name": "s2", "width": 23, "depth": 1024, "start": 2, "end": 3},
     {"name": "y", "width": 23, "depth": 1024, "start": 3, "end": 17},
     {"name": "t0", "width": 23, "depth": 1024, "start": 3, "end": 5},
-    {"name": "A0", "width": 23, "depth": 1024, "start": 5, "end": 7},
-    {"name": "A1", "width": 23, "depth": 1024, "start": 5, "end": 7},
-    {"name": "A2", "width": 23, "depth": 1024, "start": 5, "end": 7},
-    {"name": "A3", "width": 23, "depth": 1024, "start": 5, "end": 7},
+    {"name": "A", "width": 23, "depth": 4096, "start": 5, "end": 7},
     {"name": "c", "width": 23, "depth": 256, "start": 11, "end": 12},
     {"name": "cs1", "width": 23, "depth": 1024, "start": 14, "end": 15},
     {"name": "cs2", "width": 23, "depth": 1024, "start": 15, "end": 18},
@@ -20,16 +17,18 @@ variables = [
 
     # {"name": "p_prime_prime", "width": 23, "depth": 1024, "start": 2, "end": 3},
     # {"name": "p", "width": 23, "depth": 1024, "start": 2, "end": 3},
-    {"name": "s1_hat", "width": 23, "depth": 1024, "start": 2, "end": 13},
-    {"name": "s2_hat", "width": 23, "depth": 1024, "start": 3, "end": 14},
-    {"name": "t0_hat", "width": 23, "depth": 1024, "start": 5, "end": 17},
+    {"name": "s1_hat", "width": 24, "depth": 1024, "start": 2, "end": 13},
+    {"name": "s2_hat", "width": 25, "depth": 1024, "start": 3, "end": 14},
+    {"name": "t0_hat", "width": 26, "depth": 1024, "start": 5, "end": 17},
     {"name": "y_hat", "width": 23, "depth": 1024, "start": 6, "end": 7},
     {"name": "c_hat", "width": 23, "depth": 256, "start": 12, "end": 17},
     {"name": "cs1_hat", "width": 23, "depth": 1024, "start": 13, "end": 14},
     {"name": "cs2_hat", "width": 23, "depth": 1024, "start": 14, "end": 15},
     {"name": "ct0_hat", "width": 23, "depth": 1024, "start": 17, "end": 18},
     {"name": "w", "width": 23, "depth": 1024, "start": 8, "end": 18},
-    {"name": "w_hat", "width": 23, "depth": 1024, "start": 7, "end": 8}
+    {"name": "w_hat", "width": 23, "depth": 1024, "start": 7, "end": 8},
+    {"name": "Highbit(w_cs2⟩⟩)", "width": 23, "depth": 1024, "start": 15, "end": 18},
+    {"name": "hint", "width": 1, "depth": 1024, "start": 15, "end": 18}
 
 
 
