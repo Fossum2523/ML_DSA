@@ -113,17 +113,17 @@ module Data_Mem
     output  [DLEN-1:0]      t0_q_a,
     output  [DLEN-1:0]      t0_q_b,
 
-    /*---c_tlide---*/
-    input   [64-1:0]        c_tlide_data_a,
-    input   [64-1:0]        c_tlide_data_b,
-    input   [2 - 1:0]       c_tlide_addr_a,  // 4th data
-    input   [2 - 1:0]       c_tlide_addr_b,
-    input                   c_tlide_en_a,
-    input                   c_tlide_en_b,
-    input                   c_tlide_we_a,
-    input                   c_tlide_we_b,
-    output  [64-1:0]        c_tlide_q_a,
-    output  [64-1:0]        c_tlide_q_b,
+    /*---c_tilde---*/
+    input   [64-1:0]        c_tilde_data_a,
+    input   [64-1:0]        c_tilde_data_b,
+    input   [2 - 1:0]       c_tilde_addr_a,  // 4th data
+    input   [2 - 1:0]       c_tilde_addr_b,
+    input                   c_tilde_en_a,
+    input                   c_tilde_en_b,
+    input                   c_tilde_we_a,
+    input                   c_tilde_we_b,
+    output  [64-1:0]        c_tilde_q_a,
+    output  [64-1:0]        c_tilde_q_b,
 
     /*---c_hat---*/
     input   [DLEN-1:0]        c_hat_data_a,
@@ -530,20 +530,20 @@ module Data_Mem
         .q_b(t0_q_b)
     );
 
-    /*---c_tlide---*/
-    Dual_Port_Ram_Single_clk #(.DLEN(64), .HLEN(2)) c_tlide(
+    /*---c_tilde---*/
+    Dual_Port_Ram_Single_clk #(.DLEN(64), .HLEN(2)) c_tilde(
         .clk_a(clk),
         .clk_b(clk),
-        .data_a(c_tlide_data_a),
-        .data_b(c_tlide_data_b),
-        .addr_a(c_tlide_addr_a),
-        .addr_b(c_tlide_addr_b),
-        .en_a(c_tlide_en_a),
-        .en_b(c_tlide_en_b),
-        .we_a(c_tlide_we_a),
-        .we_b(c_tlide_we_b),
-        .q_a(c_tlide_q_a),
-        .q_b(c_tlide_q_b)
+        .data_a(c_tilde_data_a),
+        .data_b(c_tilde_data_b),
+        .addr_a(c_tilde_addr_a),
+        .addr_b(c_tilde_addr_b),
+        .en_a(c_tilde_en_a),
+        .en_b(c_tilde_en_b),
+        .we_a(c_tilde_we_a),
+        .we_b(c_tilde_we_b),
+        .q_a(c_tilde_q_a),
+        .q_b(c_tilde_q_b)
     );
 
     /*---c_hat---*/

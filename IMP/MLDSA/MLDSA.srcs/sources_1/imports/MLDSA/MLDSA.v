@@ -95,6 +95,7 @@ module MLDSA
     wire    z_fail;
     wire    r0_fail;
     wire    ct0_fail;
+    wire    hint_fail;
 
     // Instantiate Controller
     Controller controller_inst (
@@ -149,6 +150,7 @@ module MLDSA
         .z_fail(z_fail),
         .r0_fail(r0_fail),
         .ct0_fail(ct0_fail),
+        .hint_fail(hint_fail),
 
         /*---AG_1---*/
         .main_mem_sel(main_mem_sel),
@@ -240,6 +242,7 @@ module MLDSA
         .z_fail(z_fail),
         .r0_fail(r0_fail),
         .ct0_fail(ct0_fail),
+        .hint_fail(hint_fail),
 
 
         //AXI Stream input protocol A

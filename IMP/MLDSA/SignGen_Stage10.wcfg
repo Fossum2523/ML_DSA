@@ -11,15 +11,18 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="159.520959 us"></ZoomEndTime>
-      <Cursor1Time time="160.000000 us"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="998.733 ns"></ZoomEndTime>
+      <Cursor1Time time="0.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="221"></NameColumnWidth>
-      <ValueColumnWidth column_width="139"></ValueColumnWidth>
+      <ValueColumnWidth column_width="135"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="77" />
+   <WVObjectSize size="92" />
+   <wave_markers>
+      <marker time="200320000" label="" />
+   </wave_markers>
    <wvobject fp_name="/MLDSA_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -422,12 +425,14 @@
       <obj_property name="ObjectShortName">c_addr_a[7:0]</obj_property>
       <obj_property name="CustomSignalColor">#FF00FF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/c_addr_b" type="array">
       <obj_property name="ElementShortName">c_addr_b[7:0]</obj_property>
       <obj_property name="ObjectShortName">c_addr_b[7:0]</obj_property>
       <obj_property name="CustomSignalColor">#FF00FF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/c_en_a" type="logic">
       <obj_property name="ElementShortName">c_en_a</obj_property>
@@ -452,5 +457,97 @@
       <obj_property name="ObjectShortName">c_we_b</obj_property>
       <obj_property name="CustomSignalColor">#FF00FF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/c_q_a" type="array">
+      <obj_property name="ElementShortName">c_q_a[22:0]</obj_property>
+      <obj_property name="ObjectShortName">c_q_a[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/c_q_b" type="array">
+      <obj_property name="ElementShortName">c_q_b[22:0]</obj_property>
+      <obj_property name="ObjectShortName">c_q_b[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/SampleInBall_/we_ci" type="logic">
+      <obj_property name="ElementShortName">we_ci</obj_property>
+      <obj_property name="ObjectShortName">we_ci</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/SampleInBall_/addr_ci" type="array">
+      <obj_property name="ElementShortName">addr_ci[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_ci[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/SampleInBall_/ci" type="array">
+      <obj_property name="ElementShortName">ci[22:0]</obj_property>
+      <obj_property name="ObjectShortName">ci[22:0]</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/SampleInBall_/we_cj" type="logic">
+      <obj_property name="ElementShortName">we_cj</obj_property>
+      <obj_property name="ObjectShortName">we_cj</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/SampleInBall_/addr_cj" type="array">
+      <obj_property name="ElementShortName">addr_cj[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_cj[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/c_q_a" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">c_q_a[22:0]</obj_property>
+      <obj_property name="ObjectShortName">c_q_a[22:0]</obj_property>
+      <obj_property name="label">cj</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/SampleInBall_/j" type="array">
+      <obj_property name="ElementShortName">j[8:0]</obj_property>
+      <obj_property name="ObjectShortName">j[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/SampleInBall_/i" type="array">
+      <obj_property name="ElementShortName">i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/SampleInBall_/ci" type="array">
+      <obj_property name="ElementShortName">ci[22:0]</obj_property>
+      <obj_property name="ObjectShortName">ci[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/SampleInBall_/rej" type="logic">
+      <obj_property name="ElementShortName">rej</obj_property>
+      <obj_property name="ObjectShortName">rej</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/SampleInBall_/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/SampleInBall_/H" type="array">
+      <obj_property name="ElementShortName">H[63:0]</obj_property>
+      <obj_property name="ObjectShortName">H[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/Sampler_/SampleInBall_/j_next" type="array">
+      <obj_property name="ElementShortName">j_next[8:0]</obj_property>
+      <obj_property name="ObjectShortName">j_next[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

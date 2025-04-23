@@ -71,7 +71,7 @@ module Data_Path
     output  reg             z_fail,
     output  reg             r0_fail,
     output  reg             ct0_fail,
-    output  reg             reject_hint,
+    output  reg             hint_fail,
 
     //AXI Stream input protocol B
     input   [63:0]      MLDSA_data_in_B,
@@ -381,17 +381,17 @@ module Data_Path
     wire [DLEN-1:0] c_q_a;
     wire [DLEN-1:0] c_q_b;
 
-    //---c_tlide
-    reg [64-1:0]      c_tlide_data_a;
-    reg [64-1:0]      c_tlide_data_b;
-    reg [T_HLEN - 1:0]  c_tlide_addr_a;
-    reg [T_HLEN - 1:0]  c_tlide_addr_b;
-    reg                 c_tlide_en_a;
-    reg                 c_tlide_en_b;
-    reg                 c_tlide_we_a;
-    reg                 c_tlide_we_b;
-    wire [64-1:0]     c_tlide_q_a;
-    wire [64-1:0]     c_tlide_q_b;
+    //---c_tilde
+    reg [64-1:0]      c_tilde_data_a;
+    reg [64-1:0]      c_tilde_data_b;
+    reg [T_HLEN - 1:0]  c_tilde_addr_a;
+    reg [T_HLEN - 1:0]  c_tilde_addr_b;
+    reg                 c_tilde_en_a;
+    reg                 c_tilde_en_b;
+    reg                 c_tilde_we_a;
+    reg                 c_tilde_we_b;
+    wire [64-1:0]     c_tilde_q_a;
+    wire [64-1:0]     c_tilde_q_b;
 
     //---c_hat
     reg [23-1:0]      c_hat_data_a;
@@ -737,7 +737,7 @@ module Data_Path
     always @(*) begin
         kk_sub_2_in = 64'd0;
         case (kk_sub_sel_2)
-            2'd0: kk_sub_2_in = c_tlide_q_a;      //c1_tilde mem
+            2'd0: kk_sub_2_in = c_tilde_q_a;      //c1_tilde mem
             2'd1: kk_sub_2_in = 64'd0;      //tr mem
             2'd2: kk_sub_2_in = 64'd0;      //zero_index
             2'd3: kk_sub_2_in = 64'h0000_0000_0000_0404; //seed_gen_index
@@ -846,17 +846,17 @@ module Data_Path
         .y_q_a(y_q_a),
         .y_q_b(y_q_b),
 
-        /*---c_tlide---*/
-        .c_tlide_data_a(c_tlide_data_a),
-        .c_tlide_data_b(c_tlide_data_b),
-        .c_tlide_addr_a(c_tlide_addr_a),
-        .c_tlide_addr_b(c_tlide_addr_b),
-        .c_tlide_en_a(c_tlide_en_a),
-        .c_tlide_en_b(c_tlide_en_b),
-        .c_tlide_we_a(c_tlide_we_a),
-        .c_tlide_we_b(c_tlide_we_b),
-        .c_tlide_q_a(c_tlide_q_a),
-        .c_tlide_q_b(c_tlide_q_b),
+        /*---c_tilde---*/
+        .c_tilde_data_a(c_tilde_data_a),
+        .c_tilde_data_b(c_tilde_data_b),
+        .c_tilde_addr_a(c_tilde_addr_a),
+        .c_tilde_addr_b(c_tilde_addr_b),
+        .c_tilde_en_a(c_tilde_en_a),
+        .c_tilde_en_b(c_tilde_en_b),
+        .c_tilde_we_a(c_tilde_we_a),
+        .c_tilde_we_b(c_tilde_we_b),
+        .c_tilde_q_a(c_tilde_q_a),
+        .c_tilde_q_b(c_tilde_q_b),
 
         /*---c_hat---*/
         .c_hat_data_a(c_hat_data_a),
@@ -1154,7 +1154,7 @@ module Data_Path
                 seed_addr_a = AG_1_addr_a[3:0];
                 seed_en_a  =  AG_1_addr_en;
             end
-            {SignGen,6'd20}:begin //store p from MLDSA_in_B (stage_4-1)
+            {SignGen,6'd30}:begin //store p from MLDSA_in_B (stage_4-1)
                 seed_data_a = MLDSA_data_in_B;
                 seed_addr_a = AG_1_addr_a[3:0];
                 seed_en_a  =  AG_1_addr_en;
@@ -1396,11 +1396,16 @@ module Data_Path
                 c_we_a   = we_ci;
                 c_we_b   = we_cj;
             end
-            {SignGen,6'd11}:begin //NTT c -> c_hat
+            {SignGen,6'd11}:begin //NTT c -> c_hat  and clean to 0 for gen c
                 c_addr_a = {NTT_index,AG_2_addr_a[7:0]};
                 c_addr_b = {NTT_index,(AG_2_addr_a[7:0] + 8'd128)};
                 c_en_a   = AG_2_addr_en;
                 c_en_b   = AG_2_addr_en;
+
+                c_data_a = 23'd0;
+                c_data_b = 23'd0;
+                c_we_a   = AG_2_addr_en;
+                c_we_b   = AG_2_addr_en;
             end    
         endcase
     end
@@ -1636,8 +1641,8 @@ module Data_Path
 
     //---s1_pack mem
     always @(*) begin
-        s1_pack_data_a = 3'd0;
-        s1_pack_data_b = 3'd0;
+        s1_pack_data_a = 64'd0;
+        s1_pack_data_b = 64'd0;
         s1_pack_addr_a = 10'd0;
         s1_pack_addr_b = 10'd0;
         s1_pack_en_a   = 1'd0;
@@ -1656,6 +1661,16 @@ module Data_Path
                    s1_pack_addr_a = AG_1_addr_a; 
                    s1_pack_en_a  =  AG_1_addr_en;
                 end
+            end
+            {SignGen,6'd18}:begin // store hint
+                s1_pack_data_a = MH_hint_o;
+                s1_pack_addr_a = AG_3_addr_a;
+                s1_pack_en_a   = MH_hint_valid_o;
+                s1_pack_we_a   = MH_hint_valid_o;
+            end
+            {SignGen,6'd21}:begin
+                s1_pack_addr_a = AG_1_addr_a; 
+                s1_pack_en_a  =  AG_1_addr_en;
             end
         endcase
     end
@@ -1804,35 +1819,39 @@ module Data_Path
                 c_hat_addr_a = AG_4_addr_a[7:0];
                 c_hat_addr_b = AG_4_addr_b[7:0];
                 c_hat_en_a   = AG_4_addr_en;
-                c_hat_en_b   = AG_4_addr_en;
+                c_hat_en_b   = AG_4_addr_en;   
             end
         endcase
     end
 
-    //---c_tlide mem
+    //---c_tilde mem
     always @(*) begin
-        c_tlide_data_a = 64'd0;
-        c_tlide_data_b = 64'd0;
-        c_tlide_addr_a = 2'd0;
-        c_tlide_addr_b = 2'd0;
-        c_tlide_en_a   = 1'd0;
-        c_tlide_en_b   = 1'd0;
-        c_tlide_we_a   = 1'd0;
-        c_tlide_we_b   = 1'd0;
+        c_tilde_data_a = 64'd0;
+        c_tilde_data_b = 64'd0;
+        c_tilde_addr_a = 2'd0;
+        c_tilde_addr_b = 2'd0;
+        c_tilde_en_a   = 1'd0;
+        c_tilde_en_b   = 1'd0;
+        c_tilde_we_a   = 1'd0;
+        c_tilde_we_b   = 1'd0;
         case (ctrl_sign)
             {SignGen,6'd9}:begin
-                c_tlide_data_a = seed_out[63:0];
-                c_tlide_data_b = seed_out[127:64];
-                c_tlide_addr_a = AG_4_addr_a[1:0];
-                c_tlide_addr_b = AG_4_addr_b[1:0];
-                c_tlide_en_a  =  AG_4_addr_en;
-                c_tlide_en_b  =  AG_4_addr_en;
-                c_tlide_we_a  =  AG_4_addr_en;
-                c_tlide_we_b  =  AG_4_addr_en;
+                c_tilde_data_a = seed_out[63:0];
+                c_tilde_data_b = seed_out[127:64];
+                c_tilde_addr_a = AG_4_addr_a[1:0];
+                c_tilde_addr_b = AG_4_addr_b[1:0];
+                c_tilde_en_a  =  AG_4_addr_en;
+                c_tilde_en_b  =  AG_4_addr_en;
+                c_tilde_we_a  =  AG_4_addr_en;
+                c_tilde_we_b  =  AG_4_addr_en;
             end
             {SignGen,6'd10}:begin
-                c_tlide_addr_a = AG_1_addr_a[1:0];
-                c_tlide_en_a  =  AG_1_addr_en;
+                c_tilde_addr_a = AG_1_addr_a[1:0];
+                c_tilde_en_a  =  AG_1_addr_en;
+            end
+            {SignGen,6'd19}:begin
+                c_tilde_addr_a = AG_1_addr_a[1:0];
+                c_tilde_en_a  =  AG_1_addr_en;
             end
         endcase
     end
@@ -2041,6 +2060,12 @@ module Data_Path
                 temp_4_en_b   = AG_4_data_valid;
                 temp_4_we_a   = AG_4_data_valid;
                 temp_4_we_b   = AG_4_data_valid;
+            end
+            {SignGen,6'd20}:begin // Enocder z and send out
+                temp_4_addr_a = AG_2_addr_a;
+                temp_4_addr_b = AG_2_addr_b;
+                temp_4_en_a   = AG_2_addr_en;
+                temp_4_en_b   = AG_2_addr_en;   
             end
         endcase
     end
@@ -2373,7 +2398,7 @@ module Data_Path
                 AG_1_star_addr   = 12'd0;
                 AG_1_last_addr   = 12'd7;
             end 
-            {SignGen,6'd20}: begin  //store p from MLDSA_in_B (stage_4-1)
+            {SignGen,6'd30}: begin  //store p from MLDSA_in_B (stage_4-1)
                 AG_1_addr_adder  = {1'b0,MLDSA_i_ready_B & MLDSA_i_valid_B};
                 AG_1_star_addr   = 12'd8;
                 AG_1_last_addr   = 12'd11;
@@ -2406,6 +2431,16 @@ module Data_Path
                 AG_1_addr_adder  = 2'd1;
                 AG_1_star_addr   = 12'd0;
                 AG_1_last_addr   = 12'd7;
+            end 
+            {SignGen,6'd19}: begin  //send out c_tilde from c_tilde MEM
+                AG_1_addr_adder  = 2'd1;
+                AG_1_star_addr   = 12'd0;
+                AG_1_last_addr   = 12'd3;
+            end 
+            {SignGen,6'd21}: begin  //send out hint_packed from s1_packe MEM
+                AG_1_addr_adder  = 2'd1;
+                AG_1_star_addr   = 12'd0;
+                AG_1_last_addr   = 12'd10;
             end 
         endcase
     end
@@ -2496,6 +2531,11 @@ module Data_Path
                 AG_2_star_addr   = 12'd0;
                 AG_2_last_addr   = 12'd254;
             end  
+            {SignGen,6'd20}: begin //take 18 bits z data to encoder and change it to 64bits
+                AG_2_addr_adder  = 2'd2;
+                AG_2_star_addr   = 12'd0;
+                AG_2_last_addr   = 12'd1022;
+            end  
         endcase
     end
 
@@ -2544,6 +2584,16 @@ module Data_Path
                 AG_3_addr_adder  = {1'b0,ENC_valid_o};
                 AG_3_star_addr   = 12'd0;
                 AG_3_last_addr   = 12'd96;//speical to add 1 to make wait ENC_valid_o high
+            end 
+            {SignGen,6'd18}: begin //store 64bits h_pack data to mem
+                AG_3_addr_adder  = {1'b0,MH_hint_valid_o};
+                AG_3_star_addr   = 12'd0;
+                AG_3_last_addr   = 12'd10;
+            end 
+            {SignGen,6'd20}: begin //store 64bits z data to mem
+                AG_3_addr_adder  = {1'b0,ENC_valid_o};
+                AG_3_star_addr   = 12'd0;
+                AG_3_last_addr   = 12'd288;//speical to add 1 to make wait ENC_valid_o high
             end 
         endcase
     end
@@ -2629,9 +2679,13 @@ module Data_Path
     /*---AG---*/ //------------------------------------------end
 
     /*---Sampler---*/ //------------------------------------------str
+    wire sampler_reset;
+
+    assign sampler_reset = ctrl_sign == {{SignGen,6'd6}} || reset;
+
     Sampler Sampler_(
         .clk(clk),
-        .reset(reset),
+        .reset(sampler_reset),
 
         /*---Control----*/
         .mode(sampler_mode),
@@ -2813,6 +2867,13 @@ module Data_Path
                 ENC_valid_i = AG_2_data_valid;
                 ENC_ready_o = 1'b1;
             end
+            {SignGen,6'd20}:begin
+                ENC_sec_lvl = 3'd2;
+                ENC_encode_mode = 3'd5;
+                ENC_di = {temp_4_q_b,temp_4_q_a};
+                ENC_valid_i = AG_2_data_valid;
+                ENC_ready_o = 1'b1;
+            end
         endcase
     end
     /*---Encoder---*/ //------------------------------------------end
@@ -2904,13 +2965,20 @@ module Data_Path
                 PWM_in_b2 = temp_0_q_b; 
             end
             {SignGen,6'd6}:begin
+                if(PWM_index == 0)begin
+                    PWM_in_a2 = 23'd0;
+                    PWM_in_b2 = 23'd0;
+                end
+                else begin
+                    PWM_in_a2 = PWM_index[0] ? PWM_temp_q_a : t_q_a;  //w
+                    PWM_in_b2 = PWM_index[0] ? PWM_temp_q_b : t_q_b;  //w
+                end
                 PWM_mode  = MATRIX_VECTOR;
                 PWM_in_a0 = temp_3_q_a; //y^
                 PWM_in_a1 = A_q_a;      //A
-                PWM_in_a2 = PWM_index[0] ? PWM_temp_q_a : t_q_a;  //w
                 PWM_in_b0 = temp_3_q_b; //y^
                 PWM_in_b1 = A_q_b;      //A
-                PWM_in_b2 = PWM_index[0] ? PWM_temp_q_b : t_q_b;  //w
+                
             end
             {SignGen,6'd12}:begin  //PWM <<cs1>> = c^ * s1^
                 PWM_mode  = SCALAR_VECTOR;
@@ -3083,6 +3151,7 @@ module Data_Path
     /*---Hint---*/ //------------------------------------------str
     wire hint_a;
     wire hint_b;
+    wire MH_reset;
     reg [2:0]   MH_sec_lvl;
     wire        MH_reject_hint;
     reg [47:0]  MH_poly0_ie;
@@ -3093,7 +3162,7 @@ module Data_Path
     wire        MH_hint_valid_o;
     reg         MH_hint_ready_o;
 
-
+    assign MH_reset = reset || ctrl_sign == {SignGen,6'd6};
     assign hint_a = ctrl_sign == {SignGen,6'd18} ? t0_q_a[5:0] != Decomposer_w1_a: 1'b0;
     assign hint_b = ctrl_sign == {SignGen,6'd18} ? t0_q_b[5:0] != Decomposer_w1_b: 1'b0;
 
@@ -3125,12 +3194,24 @@ module Data_Path
                 MH_poly_valid_ie = AG_4_data_valid;
                 MH_hint_ready_o = 1'b1;
             end
-            {SignGen,6'd21}:begin
-                MH_sec_lvl = 3'd2;
-                MH_hint_ready_o = 1'b1;
-            end
+            // {SignGen,6'd21}:begin
+            //     MH_sec_lvl = 3'd2;
+            //     MH_hint_ready_o = 1'b1;
+            // end
         endcase
     end
+
+    always @(posedge clk) begin
+        if(reset)begin
+            hint_fail <= 1'b0;
+        end
+        else if(ctrl_sign == {SignGen,6'd6})begin
+            hint_fail <= 1'b0;
+        end
+        else if(ctrl_sign == {SignGen,6'd18} && MH_reject_hint)begin
+            hint_fail <= 1'b1;
+        end
+    end   
     /*---Hint---*/ //------------------------------------------end
 
 

@@ -196,141 +196,149 @@ def Sign(sk,M,rnd):
     (p,K,tr,s1,s2,t0) = sk_decode(sk)
     # print(t0)
     # print(s1)
+    
     s1_hat = [NTT(si) for si in s1]
+    with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"s1_hat = {s1_hat}\n")
     # print(s1_hat)
     s2_hat = [NTT(si) for si in s2]
+    with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"s2_hat = {s2_hat}\n")
     # print(s2_hat)
     t0_hat = [NTT(ti) for ti in t0]
+    with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"t0_hat = {t0_hat}\n")
     # print(t0_hat)
     A_hat = ExpandA(p)
+    with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"A_hat = {A_hat}\n")
     # print(tr)
     # print(M)
     u = tr + M
     u = SHAKE_256(u,512)
+    with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"u = {Verilog_trans(u)}\n")
     # print(u)
     # print(Verilog_trans(u))
     p_prime = K + rnd + u                                                                                                                        
     p_prime = SHAKE_256(p_prime,512)
+    with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"p_prime = {Verilog_trans(p_prime)}\n")
     # print(Verilog_trans(p_prime))
     ka = 0
     z = None
     h = None
     while z == None and h == None:
+        with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"ka = {ka}---------------------------------------------\n")
+
         y = ExpandMask(p_prime,ka)
-        # if(ka == 4):
-        #     print(y)
-            # print(Verilog_trans(y))
+        with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"y = {y}\n")
+
         y_hat = [NTT(yi) for yi in y]
-        # if(ka == 4):
-        #     print(y_hat)
-            # print(Verilog_trans(y))
+        with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"y_hat = {y_hat}\n")
+
         w = NTT_dot(A_hat,y_hat)
-        # if(ka == 0):
-        #     print(w)
+        with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"w_hat = {w}\n")
+
         w = [NTT_inv(wi) for wi in w]
-        # if(ka == 0):
-        #     print(w)
+        with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"w = {w}\n")
+
         w1 = [HighBits(w1i) for w1i in w]
-        # if(ka == 0):
-        #     print(w1)
+        with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"w1 = {w1}\n")
+
         w1 = w1Encode(w1)
-        # if(ka == 0):
-        #     print(Verilog_trans(w1))
+        with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"w1_encode = {Verilog_trans(w1)}\n")
         c_tilde = u + w1 
-        # if(ka == 0):
-        #     print(Verilog_trans(c_tilde))
         c_tilde = SHAKE_256(c_tilde,2*ML_DSA["lamda"])
-        # if(ka == 0):
-        #     print(Verilog_trans(c_tilde))
+        
+        with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"c_tilde = {Verilog_trans(c_tilde)}\n")
+
         c = SampleInBall(c_tilde)
-        # if(ka == 0):
-        #     print(c)
+        with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"c = {c}\n")
+
         c_hat = NTT(c)
-        # if(ka == 0):
-        #     print(c_hat)
+        with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"c_hat = {c_hat}\n")
+
         cs1 = NTT_dot_l(s1_hat,c_hat)
-        # if(ka == 0):
-        #     print(cs1)
+        with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"cs1_hat = {cs1}\n")
+
         cs1 = [NTT_inv(csi) for csi in cs1]
-        # if(ka == 0):
-        #     print(cs1)
+        with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"cs1 = {cs1}\n")
+
         cs2 = NTT_dot_k(s2_hat,c_hat)
-        # if(ka == 0):
-        #     print(cs2)
+        with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"cs2_hat = {cs2}\n")
+
         cs2 = [NTT_inv(csi) for csi in cs2]
-        # if(ka == 0):
-        #     print(cs2)
+        with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"cs2 = {cs2}\n")
+
         z = array_plus_l(y,cs1)
-        # if(ka == 0):
-        #     print(z)
-        
+        with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"z = {z}\n")
+
         temp = array_minus_k(w,cs2)
-        # if(ka == 0):
-        #     print(w)
-        #     print(cs2)
-        #     print(temp)
         r0 = [LowBits(w1i) for w1i in temp]
-
-        test_w_cs2_highbit = [HighBits(w1i) for w1i in temp]
-        if(ka == 0):
-            print(test_w_cs2_highbit)
-        # if(ka == 0):
-        #     print(r0)
-        #     print(infinity_norm(z))
-        #     print(ML_DSA["gamma_1"] - ML_DSA["beta"])
-        #     print(infinity_norm(r0))
-        #     print(ML_DSA["gamma_2"] - ML_DSA["beta"])
-
-        #test use#
-        ct0 = NTT_dot_k(t0_hat,c_hat)
-        # if(ka == 0):
-        #     print(ct0)
-        ct0 = [NTT_inv(cti) for cti in ct0]
-        # if(ka == 0):
-        #     print(ct0)
-        w_minus_cs2 = array_minus_k(w,cs2)
-        w_minus_cs2_pluse_ct0 = array_plus_k(w_minus_cs2,ct0)
-        zero_array = [[0]*256] * ML_DSA["k"]
-        minus_ct0 = array_minus_k(zero_array,ct0)
-        test_w_cs2_ct0_highbit = [HighBits(w1i) for w1i in w_minus_cs2_pluse_ct0]
-        if(ka == 0):
-            print("test_w_cs2_ct0_highbit",test_w_cs2_ct0_highbit)
-        h,true_num = MakeHint(minus_ct0, w_minus_cs2_pluse_ct0)
-        packed_h = HintBitPack(h)
-        if(ka == 0):
-            # print(true_num)
-            # print(h)
-            # print(packed_h)
-            # print(Verilog_trans(packed_h))
-            ct0 = NTT_dot_k(t0_hat,c_hat)
-            ct0 = [NTT_inv(cti) for cti in ct0]
-            ct0 = [arr.tolist() for arr in ct0]
-            print(ct0)
-            print("ct0",infinity_norm(ct0))
-            # print(w_minus_cs2_pluse_ct0)
+        with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"r0 = {r0}\n")
             
-        #test use#
-        
         if infinity_norm(z) >= ML_DSA["gamma_1"] - ML_DSA["beta"] or infinity_norm(r0) >= ML_DSA["gamma_2"] - ML_DSA["beta"]:
+            print("ka =",ka)
+            if(infinity_norm(z) >= ML_DSA["gamma_1"] - ML_DSA["beta"]):
+                print(infinity_norm(z))
+                print("z_fail")
+            if(infinity_norm(r0) >= ML_DSA["gamma_2"] - ML_DSA["beta"]):
+                print(infinity_norm(r0))
+                print("r0_fail")
             z = None
             h = None
         else:
             ct0 = NTT_dot_k(t0_hat,c_hat)
-            if(ka == 0):
-                print(ct0)
+            with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+                file.write(f"ct0_hat = {ct0}\n")
+
             ct0 = [NTT_inv(cti) for cti in ct0]
-            print(type(ct0))
+            with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+                file.write(f"ct0 = {ct0}\n")
+
             zero_array = [[0]*256] * ML_DSA["k"]
             w_minus_cs2 = array_minus_k(w,cs2)
             w_minus_cs2_pluse_ct0 = array_plus_k(w_minus_cs2,ct0)
             minus_ct0 = array_minus_k(zero_array,ct0)
             h,true_num = MakeHint(minus_ct0, w_minus_cs2_pluse_ct0)
+
+            with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+                file.write(f"h = {h}\n")
+
             ct0 = [arr.tolist() for arr in ct0]#####
+
             if infinity_norm(ct0) >= ML_DSA["gamma_2"] or true_num > ML_DSA["omega"]:
+                if(infinity_norm(ct0) >= ML_DSA["gamma_2"]):
+                    print(infinity_norm(ct0))
+                    print("ct0_fail")
+                if(true_num > ML_DSA["omega"]):
+                    print(true_num)
+                    print("hint_fail")
                 z = None
                 h = None    
         ka = ka + ML_DSA["l"]
     z_mod = []
+
+    with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"h = {h}\n")
+
     for i in range(ML_DSA["l"]):
         z_temp = []
         for j in range(256):
@@ -340,6 +348,7 @@ def Sign(sk,M,rnd):
     # print("p_prime = ",p_prime)
     # print("y = ",y)
     # print("ka = ",ka - ML_DSA["l"])
+    
     return Sigma
 
 # 算法 3 ML-DSA.Ver(sk,M)
@@ -605,11 +614,26 @@ def sk_decode(sk):
 # 算法 20 sigEncode(c˜,z,h)
 def sigEncode(c, z, h):
     sigma = c
+
+    with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"c_tilde = {Verilog_trans(c)}\n")
+
     for zi in z:
         packed_zi = BitPack(zi, ML_DSA["gamma_1"] - 1, ML_DSA["gamma_1"])
         sigma = sigma + packed_zi
+        with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"packed_zi = {Verilog_trans(packed_zi)}\n")
+
     packed_h = HintBitPack(h)
+
+    # with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+    #     file.write(f"packed_zi = {Verilog_trans(packed_zi)}\n")
+
+    with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"packed_h = {Verilog_trans(packed_h)}\n")
+
     packed_h = bytearray(packed_h)
+
     sigma = sigma + packed_h
     return sigma
 
@@ -659,6 +683,7 @@ def SampleInBall(p):
     # print(p)
     c = [0] * 256
     s = SHAKE_256(p,1768)
+    print(Verilog_trans(s[:8]))
     cnt = 8
     h = BytesToBits(s[:8]) 
     # print(test.hex())
@@ -673,9 +698,17 @@ def SampleInBall(p):
             j = s[cnt]
             # print("j = ",j)
             cnt = cnt + 1
-        # print("------------------------------------------")
-        c[i] = c[j]
+        print("------------------------------------------")
+        
+        
+        c[i] = c[j]  
+        
         c[j] = (-1)**(h[(i + ML_DSA["tau"] - 256)])
+        print(f"i = {j}")
+        print(f"c[i] = {c[j]}")
+        print(f"j = {i}")
+        print(f"c[j] = {c[i]}")
+        print("------------------------------------------")
     # print(c)
     # print("cnt",cnt)
     # print(c)
@@ -1022,7 +1055,10 @@ if os.path.exists("MLDSA_SignGen_testbench_test_input_data_rnd.txt"):
 
 if os.path.exists("MLDSA_SignGen_testbench_test_output_data_signature.txt"):
         os.remove("MLDSA_SignGen_testbench_test_output_data_signature.txt")
-        
+
+if os.path.exists("MLDSA_SignGen_testbench_test_golden_data.txt"):
+        os.remove("MLDSA_SignGen_testbench_test_golden_data.txt")
+
 M = "430B1F46E87DDE9A3D055A7D4D6AB1277B2DA6EDA642896412126391AA2B29AFD81C246EC839929F5C06749491DC4D81D58CC989D8500B6879E8807B1C3AA0B199EB599AEB86B344B77E3DB1AA034C938D80CB4BDCC29B31B710F57C7E491D99B71E97DD6FDA01A0D8A54C7481C2786F64FFC53AD358CF31C9C875ED278CEA03F2BF732372B19252BB9FA4ABF465FA2CFD1C08684D10582B410A8E012DBD407C5140D97CEE768C6D68124B2C84113B58C9A2AA67093B44CC3B6199FF1EFA6506CC28BD30BEC4CEA88411A491DD948DDB09ADFB92C40CA50E709840BC1F107E0CA428C111EC4505C5346E74AE4AB5647C1EB80F9C07092F8D39A975C4890317F9C0EF474110AB941949029BF39ADFB8E65CCAC0360A3EFCEB69D2BD805E4FC8D0620F8E039BC046DFEF1ADB03F5995FF62AD41352D479084EF3E302578B83332506918CFAD6E3BA701C94B0138DF0CF6C2948049274CE61EE0A64E756306273A02D68F3C405883F2F668820356812B2DA3A32B9FF23608DFA559183151221F83DCA18253FCA099FE24728F302C8B7808D7AF978299F3EB853A8BECDA46B8657598BE9ECE8A02DD4B25C593DDCB436B82335EF9C6A7B8426B701C66C9EBBFB3C8405A73881DAB57D1664F3AEC6F5BA19155D89A0A80B5D01C46BC79E1D4338A50B203397CD4B16ACD597A7C77C49917E9FE4B0D761065CB89C758498868B14BE2B6FF758745AFDC535EAA605C3F97648034D2A320264150278A7F1CB114B977C9D6BC1F29295CCCA16B23B7709D5608E4095E41D08B22AEC6289ED402414787062B0DA2387B6DEE76B32E42C51788B65E815E089BCF92D778F49A9707D37FCFBDF8CEF953A48A4201FA0173529BA360BFA6A77200F57FD5245146C2CD7FE8882670EE6878386D06036F0E1BA4B728CFB75806F05BA6409C514731B0BA8DA11015A63A8B5B5AB8C69703185191D12C5611F1407E8FFE3E50FC39C3310EF4091BC09FECC11D3AC107C696EE89F74CD6147830B4B3A971A0027747B62C528F6D858D1F9E67F59496C6B4E9E03FF0A598B26625B06C79863B5F07E265A40175E1A6D6EF3F900F3C4A28AD3E49D4D0B7E4ECEBB79244264474CCBFADA43FCD33F4FEBEB0F7E5928479F869D6A0FE52EB0CAC1232D7F674A057DEC4C2248934A40F5E2C9CBFDD53F71FC3BE06E48E13398ED426D8D3CC82118B7E8E5BDCA248380F4E64C427D1BF2384F60F6A07F01EE62AA1746CB143F26412547E7EF0E8FD1F2DC606F3643DEAF330D81CD6309465F9ED7F34D9B175FE1641D90212D4FFFB91CC300E7DFA0C555F7B35D2AF6A343D1467436EEC7AB95F2C34010FC99D66391377770A7DB8CD4D5C6BBF931092322741929F790E037318D6ADB74B4768C11F0E4674D18185DFB3D051725F93800CD38F58688AAC747F885908804D6CADAEDECB43131D75B18FBA2D4BED8D9BCC2156FB23F8F6378C622153EA8301300D0FCDEF1E2BB4E6F807784EA0171E95C372EC19B05A6C7B8DECE7080A057D29CE5A445A83410EB83B174590647424736A3B6967BCDF8A416A51202CE3F00E4D97DCC2C48A78D12CDA98E94A9BD6CCBE09DAF8085304F6911ECED3547DE9512461E16721322E4E6233BC7CA360A9004DA5AE064514603EFF0DF4E2D8EB04E9574C59F3AC14726C10100C688203F4960197CE696730AD7E558D7B939E3E6E7EAC4E70A7F6AAA80C1F1546E282B5CC7AA193213769B137C7F450AE5410817166F29F2E4E7E962932DF282A9F08A1DEF3E19C251F95611DDA9CFF4E2FED873439B45F8451B9AE06C6B2C698778BC4C742708BDB54CB35B686F0E7FC856CDBF977AFB663DFE44F7FCCE0E0555BE81EB28984BAFBD6FED3F0182F78A1396AF7B7081280864E5E4BFD7C52DA28BB5DE5FFA211678D13D41BF825F4B21BE1CBD29719ABA341E7B0C3F101CEDFE2F709E4DA4B5A6D0C021152AB546837024F4DCC4C45C132A038315A0F1D69AE768F70606D070169AE0818685C4BDB7341BFE15AA0455F535766FBEBB50875246A6DAE86C7B9F6F3A9FE01AB9928A99C13E6628431D41C1506381A63FAAB57BFB3B180F5D7FF59A434233EBC5A659B71CAE6970CC838D5FB638676216E3B16E8BA6C01349A7482AAF32ABD17DF7FAB8C69789F0194022BC4E62B6A6AAA4CDEF13B1E3BF5E1F4FA69F82B1EE3FDCC16DDE1106E3D2C41F6E661E33984DE7AD6021EAAD3E64D8C9CD7B5CB538AF88DB82FA048E5705EFDAC0EF479827EDCA0255BA60771A5EBC716C690CD3AC840FB6FF462063503D68C199050BFBD64533D94E093A47658822A25D54CBBFC689DFCBEB1DDD5BC6190B8F02C6FF3D001AC63729D35C8C50FAD3DCA2E67C5CCC6A8799420B159C7C5CACAB958B423964C489DAB1982A4E2222D700BA5AB772C4A11A44FF64018AF477D054217EAE28FB8E37595941FEE7AF87FD44960A144DB0CE2A44B33DC79B1EE31CAF80DAD620666D0ACEA76841EEE6CE81C6FF1F6D1027502EF89F1595065CDEC19B30E4B5314EFD64031B3B9DDFC6C95A4943247ADF7E4C93350C241ECA71260A454707B84017C5EB7AFFEB5DBB863A1CBDE0062C662308A2E824CDF6397863EF78F62319E2873B506F8A9EE82135B803025D962E609E006961EA3F7B67347518E70D9273893D79530F67CB678D6A8D28A0342BAF904BFC0A69AD575CDA4AB73AF22B52AE5D58372E0C26795CA96A16B8461AC61E6F68433ABCEFCBC16B857A89C475D1A322D34266539A17D485B8FA356EC3E154D37BAFC4CE75829FBE8BC823FAFF15A49F847C286F999A1F2C12B03E8F8A4C34A97588D91971279FFCB100EDB943E636F78ABFBAF88BCA5C55C935F6147E51BF798267E1350D2F5E3F74B339F6EFE86208C5BDE149C5B71056BEE748D06614AFEAF6DDA2A6EFFBB56B0880AF9B201B3C12055D292E3BB556240DD031C29A67BF244F59112BFB6865EEEC1DFE1CDB1E27F0A9E3372638FE4407099D0E54E9A188079C8BB9470BE6F63C83612D80BD60C21B251B64236E5CAF09A11C12F1A5E94F199DBC7C9E394C0B0E07A583E707E5241B8FB33E39BB26C31929F39316F4FDE206493566E17B51CE635420493176D8FD353206EF87F0994F039DF8F008AF602F50D7F9C0051B56227F3A2ED20B29611219FC4376234EB900093A81389ED00991272B739389F1F978A92A3E41F0A28985D697C01240875AC46A82B2FE94004CBD7B1E7594AE38A9DA0E84FE7E122482BB391538EB8E85AF9DC022CB32CC08FDA7A95165725EC29A0F824F97F0251BE636B57E0791A7F50EE190D45749472B29A674239AF95B373A40A6E0E09C674071186B125EF5AF72CB434AC0AA990341F063EBFE30963451491474B603733959A23A6D5B8A378F15A5A5B9CE4BA44BAEF6AA531AF5097ADE73F64AED0A541784119665F548FAEB447DE108AB74A74893017F0A1AF84AEF0730B555767B0CF6AE502E7693374D2E01C54C64E411AA93C96DC5FA010267B387299D4376FBB190E1C51A560871B559FC800D82ABD119A5732B50270BEDBCC8A636E7499149AE0E47F736FDB71EBF1995D1E8BDCB0EE96E732E8C2509F98717C3D174C78A4A2BE43DD89195408CD300505A219305809A1BFE7294BC2EECE6D98C768A8A1E0F74B665EE3D652AE8E008EBBB11F0D2148E4E5C93D7FE0190D27B3EBB7D2194BFBB624AF3A894CEF7AED571954D006824950A981F4ADA72BEAA0D820C5DD9BD519D39BB7915681F266DA66D49BDAB9E55879B953A7332F877DC5F5CC7BB3C9E1C1F2E41EB55EFC02A450B5142514F1E06D43E48FBF5DC80DF241169D5936432BFE9BE99DCB17293CF968A17F3111C884635EF2BEDFC87DBB80BF25EE9BF57B55CFE635FD99554F5FF2B4482D1948BD282FA282C48C0302348982E30A772BF14195CAC7FE39F836E6238EB1E1FD074E63B9AD0A8D37111087E47FE5D04B62DEB496353457BC76C53A2FC9D5AC9AE6A47F632E6D45E08786DA128464FF2266BFF92B5CD89176A19226F2EB14CDEB331C497F1836FB6C0A117ED6BAF95E9DB8254487B0DFA7301397AA29D95FF2065D851BD302B747AB47BA0AF408B51E4BBBF042ED1B2B604EEF4C266FE243261515778BC9451A8DFB025FA3212E868C3A078C7CFF65077DE94E50ED90A259FAFAEB398A94FF15C838EFA7F49904BEAFCCECD8C9ED4E014EA00C7AEF1D437DA306E8B7DFCE536912C169BAF0A3B78A643D6E210E5550E3B2BAF7EDFE01E721E3D05BAC1378EC1DFDEB2E2AC0F0BC368E0A8CC64F375DFEA2FC20CBDC515440FC2ABBBCEA3584E103BD686C5403EFE376D44F5242D35C9F9D35E1A869FFCB6657823EA0D4331ADD5CCFA99BD6EB3494A48ABBA7B7ABC32ACB8FF00512E1B0AD493F579898847E328C06FE05FE282F8D4AF48A1AAD0495AF1AC7354275A6D45AD5A7B3F6787F893EA558BC5D4ADDE1F0D265ABF73C86550D25C00821C3138B385448E3E02901E2E6EBC6A0F211CB6F22F8F865F0DF3893B987DD086B6674F5464ACE18B9F0EAE948667B2FC04FECEA3E2B7EA6B869D5F66D02D4DB124A59621B96E0DEFBF99A91AFA0CFD6D5A5968E62EF42B4C8908C3719BA0254929A9A183D50C566CE4FC970E047474490FFB07F576765AC5286B2E0FDBF1EC56A8AE8E6F560C69614FDF5C89BA53B8B7189E6388F7CDF7B819F78F3E6EA54C40865262BD2C8CE87284FEC36E2E73BDB8AA9CB5283272A90A6BBBFC3F7FED5F124E8BFD770B6254CDC695FBA0D8627315370E2CCDB89BCC84C96E20805AAF087F9E9BD1A189F4C6D66A6DC3FEF773788B3B57EF876CFEAE1F2C876CD239BE3B8A94F21350EDAE6C269698CC66BAF90B3641593F96399C71B2ECBE50F61B5D6F37D47DF702A9B9E47BED2824DEB19ADE7D7D8830A8F610088CF4BD0AD22A5A4FBA767D01987688BE710235A74129666FF7917B506A18E6B5D6166E8B682BE6B1946A4D4420926FF8CDF2488EABE71EFA7F2536B9DBEFBA08BB9E94086F55B1B991E18E6023E6952D4A563F2420A1536A1EDDE119E5779223CB712AB5C0BA4F0C176830FE523DD8603F1B316E128579E65454C2BE62C922C1DFE09DFB47D4497CC552AA9987A8BFE19C44E207397204686C718A0936145FC102B8A7111F74A421226AE016EDE658DE5DF9D3C28A247A87F2BC6FECF66CE7A6699880E0871CDB6F066D2CB3F9F625DC5E80751DBBC85982982E2EFAE3AB8F4F1EDA0D13C3B65FD2178E8AE4A712B521B7539785BB058176AB4396E6EFF2FD9052D4C6AF17DC30F50630233C3F05C62E151EECE13CE124E58A25F0F3AB65033ACAC9EA6E41CB3FA435D367DFEB0B9C9B37414CF32DC85A3C43087A578165C86D100E47DBA1FE7061111AAA961E67ED057C715974D3144912A58B6DB22D51BEDF6A8646D810190D91B61F0776DA00C8B0BAA7A83F4433F357E758F5AE8F278119908497E717A7AD25B09EA7C76B306A9A3AFCD9AE6B4F64016D5E80BD3FBE2F5EE673A7459B03AD9356148EA83461B66716346DBE85678C37C932EBC53B033A3F46DC28219880CFA8BB5E15F8862D345923BBC179FD763A0F943FC56BAB69F26C0C15D668BAD923D7AE6B35C07621768F9D972E2D6F46551D45E3FBBB577D13F01E8C1AFDBDD2F052E931C0529380F290FA1DE8BF5A11F82612943BAA2C0D086EBEC84069B271AC8656883F686C67B1808E27C860ECD1B95FF6CC6E6A5846DA29992CBA450081B8C37DD4911470EFF281FE94F10636A29B790E41EA6A342A5BE79CAF575FE9B0147F2EFE02874BC8A0E136A395B42E77D9F18CA4F61501E6C1805CDCDC10D0292593481F7E0F93281D0456EB51F6ABB7C379C028890F445D9FAC0D96AF68CDF6CC879A406CF2F0991916B33A72A193CF170B45AA079DB1BFD4B4126FA9AD3ED13FC98CE4C6C3C30923C8C53BCE1812B21BB644ED3A0CC0596C60032FFB1462DF5182528553AE865BF87FB7C7F61D1FD8E40D830B8D8F54924EDF934D1EBB88DA90BC59EEF1F6BF9FC2D17D8E9E0E39FFAD22EB84EFF39BAA70447B124E492D760E55D6301DCDFBCF9173FE293AC4D6CAF2E1964B32973067EC76BBECC65113C1FAB85375D92CE1436E1D1B205A88202B304264620B282E62CAAF5CFE1169EDAD9459B15BF0060C5744A17460F9FB164974CC55B3FFA71AAC13437BE58325E5E27E151C71D195F886F5630925D441A54695DF23F64C6BC3B0CA83F0E88D01BA4DC748A29F42AC2997C2A21EC258E430032C09E73E73AC2B21B55E1DFB2DBA281426620A0545D2507D1E96A3778C780FE77F1DA3B615E1B0D14DE8729229472E6619AB3B67CCAF21CFBFFD1F237E780927F147425B2142BF62CAD6B467A10F7B3DB922F095A0012EC179C4F8D5437AA8024F13A2A485E8890940DB69FB719B94B7D2629D277B593B94ECC744AA4CFF3D33D2250236C74DA057496BEFDB961B89BD6F44D581AD7A28524A6AF2253FD27530B7FF16FB5804FCA7E44BA2A3AB85FEDEED837DC130F533E8215B3AC3F584A2EC0E9B6194F97741EC050576E16349AD852DE8AAE2BF83CB1894107299F101AD5A2C05EC590B2CC698663C44FC0DC7F893F42BC5A2DECFF2FAF46CC1C00FA7294A0184A85CDDA2B1F38A89B1B17EC08555D082411A4CAEDED562C9FBBC1F512118EEC3BC931CC91636461151BDA454C4F029E01231BF170EBE17C526F3D8F705DC46560642B1AF36E3B401325A6CF59B88BCD4B3242D676FF4066E4252ADCA37786CBDB340DD81C5DD0540992F0B142C5A18D3BD1070719AF996E3C3768C3B234D303E6E9850B35C7AE52496C76106D7CAE4CF8ED01767B6DB5603F339FBAA019B08FA35E3DE1129A6A4D578264CF1FC8A1DBF218DD72B4865214DAA795A00505D4AE2B85E90F589065D65FC60CDD828007D4D3A4C084C7EC159C5D86817860CA03545FF74F17AD8570B2ADA55ECA12BFAB5C10067A086A34A57AAD8694C953137BBE901F8D3DEC27DB5DAD2AC96D56C312E25FE48BDC889373ED252B4F88D32DED6702B58D35A1FB40ABE2F2ABDE21CAA5FD0F67E7407A8"
 M = hex_to_bytes(M)
 
@@ -1030,7 +1066,7 @@ ctx = "23ffff"
 ctx_byte = ctx.encode("utf-8")  # let ctx to byte
 
 signature = HASH_ML_DSA_Sign(sk,M,ctx_byte,1)
-# print(signature)
+print(signature)
 ### --------------- SignGen --------------- ###
 
 ### --------------- SignVer --------------- ###
@@ -1159,3 +1195,7 @@ signature = HASH_ML_DSA_Sign(sk,M,ctx_byte,1)
 # a = Decompose(6972272)
 
 # print(a)
+
+# c_tilde = bytearray(b'\x92p\x1c,\xd2\xacX_\x94;\x94\xc6\xcd0#(\xf5\x82j\xf7\xa1\x17\xb2\x17)#\xcdi\xb0C\xd4\xb0')
+# c = SampleInBall(c_tilde)
+# print(Verilog_trans(c_tilde))

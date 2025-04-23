@@ -5,8 +5,8 @@ Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 2 for port 'c_tlide_addr_a' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:852]
-WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 2 for port 'c_tlide_addr_b' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:853]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 2 for port 'c_tilde_addr_a' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:852]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 2 for port 'c_tilde_addr_b' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:853]
 WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 8 for port 'c_hat_addr_a' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:864]
 WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 8 for port 'c_hat_addr_b' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:865]
 WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 3 for port 'sel' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:1095]
@@ -17,7 +17,7 @@ WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 4 for
 WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 5 for port 'addr' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/NTT.v:461]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 6 for port 'addr' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/NTT.v:509]
 WARNING: [VRFC 10-3091] actual bit length 64 differs from formal bit length 7 for port 'addr' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/NTT.v:557]
-WARNING: [VRFC 10-5021] port 'Rho_en' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/MLDSA.v:182]
+WARNING: [VRFC 10-5021] port 'Rho_en' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/MLDSA.v:184]
 WARNING: [VRFC 10-1324] repetition multiplier must be positive [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/CONTR.v:35]
 WARNING: [VRFC 10-1324] repetition multiplier must be positive [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/NTT/CONTR.v:38]
 Completed static elaboration

@@ -54,6 +54,7 @@ module Controller
     input             z_fail,
     input             r0_fail,
     input             ct0_fail,
+    input             hint_fail,
 
     /*---Address genetate---*/
     output reg [3:0]    main_mem_sel,
@@ -111,8 +112,12 @@ module Controller
                         STAGE_16    = 6'd16,        
                         STAGE_17    = 6'd17,        
                         STAGE_18    = 6'd18,        
-                        STAGE_4_1   = 6'd20,        
-                        STAGE_T     = 6'd21;        
+                        STAGE_19    = 6'd19,        
+                        STAGE_20    = 6'd20,        
+                        STAGE_21    = 6'd21,
+
+                        STAGE_4_1   = 6'd30,        
+                        STAGE_T     = 6'd31;        
 
     //Sampler mode
     localparam [1:0]    S_mode    = 2'd0,
@@ -136,7 +141,7 @@ module Controller
 
     reg        sha_out_ready_tmp;
 
-    reg  keccak_done;
+    reg  keccak_done; 
     reg  keccak_done_tmp;
     reg [1:0] NTT_end_index;
     reg  NTT_done_tmp;
@@ -153,6 +158,8 @@ module Controller
     reg send_done_tmp;
     reg Decomposer_done;
     reg Decomposer_done_tmp;
+    reg MakeHint_done;
+    reg MakeHint_done_tmp;
 
     assign  curr_state = main_mode == KeyGen  ? curr_state_KeyGen : 
                          main_mode == SignGen ? curr_state_SignGen:
@@ -361,42 +368,60 @@ module Controller
                 else 
                     next_state_SignGen = STAGE_15;
             end
-            STAGE_16: begin
-                if(NTT_done_tmp && PWM_done_tmp)
-                    next_state_SignGen = STAGE_17;
-                else 
-                    next_state_SignGen = STAGE_16;
-            end
             // STAGE_16: begin
             //     if(NTT_done_tmp && PWM_done_tmp)
-            //         if(z_fail || r0_fail)
-            //             next_state_SignGen = STAGE_16;
-            //         else
-            //             next_state_SignGen = STAGE_17;
+            //         next_state_SignGen = STAGE_17;
             //     else 
             //         next_state_SignGen = STAGE_16;
             // end
+            STAGE_16: begin
+                if(NTT_done_tmp && PWM_done_tmp)
+                    if(z_fail || r0_fail)
+                        next_state_SignGen = STAGE_6;
+                    else
+                        next_state_SignGen = STAGE_17;
+                else 
+                    next_state_SignGen = STAGE_16;
+            end
             STAGE_17: begin
                 if(NTT_done_tmp)   
                     next_state_SignGen = STAGE_18;
                 else 
                     next_state_SignGen = STAGE_17;
             end
-            STAGE_18: begin
-                if(PWM_done_tmp)   
-                    next_state_SignGen = STAGE_T;
-                else 
-                    next_state_SignGen = STAGE_18;
-            end
             // STAGE_18: begin
             //     if(PWM_done_tmp)   
-            //         if(ct0_fail)
-            //             next_state_SignGen = STAGE_6;
-            //         else
-            //             next_state_SignGen = STAGE_T;
+            //         next_state_SignGen = STAGE_T;
             //     else 
             //         next_state_SignGen = STAGE_18;
             // end
+            STAGE_18: begin
+                if(PWM_done_tmp && MakeHint_done)   
+                    if(ct0_fail || hint_fail)
+                        next_state_SignGen = STAGE_6;
+                    else
+                        next_state_SignGen = STAGE_19;
+                else 
+                    next_state_SignGen = STAGE_18;
+            end
+            STAGE_19: begin
+                if(send_done)   
+                    next_state_SignGen = STAGE_20;
+                else 
+                    next_state_SignGen = STAGE_19;
+            end
+            STAGE_20: begin
+                if(Encoder_done_tmp)   
+                    next_state_SignGen = STAGE_21;
+                else 
+                    next_state_SignGen = STAGE_20;
+            end
+            STAGE_21: begin
+                if(send_done)   
+                    next_state_SignGen = STAGE_T;
+                else 
+                    next_state_SignGen = STAGE_21;
+            end
             STAGE_T: begin
                 next_state_SignGen = STAGE_T;
             end
@@ -415,6 +440,12 @@ module Controller
             end
             {KeyGen,6'd10}: begin
                 send_done = main_mem_sel[2] & main_mem_sel[0] & AG_1_done;
+            end
+            {SignGen,6'd19}: begin
+                send_done = AG_1_done;
+            end
+            {SignGen,6'd21}: begin
+                send_done = AG_1_done;
             end
         endcase
     end
@@ -764,6 +795,12 @@ module Controller
             {SignGen,6'd8}:begin
                 Encoder_done = AG_3_done;
             end
+            {SignGen,6'd15}:begin
+                Encoder_done = AG_3_done;
+            end
+            {SignGen,6'd20}:begin
+                Encoder_done = AG_3_done;
+            end
         endcase
     end
 
@@ -804,6 +841,25 @@ module Controller
     end
     /*---Decoder---*/ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+    /*---MakeHint---*/ //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    always @(*) begin
+        MakeHint_done = 1'b0;
+        case (ctrl_sign)
+            {SignGen,6'd18}:begin
+                MakeHint_done = AG_3_done;
+            end
+        endcase
+    end
+
+    always @ (posedge clk) begin 
+        if (reset)                                                                                                                                                   
+            MakeHint_done_tmp <= 1'b0;
+        else if(next_state != curr_state)
+            MakeHint_done_tmp <= 1'b0;
+        else if(MakeHint_done)
+            MakeHint_done_tmp <= 1'b1;
+    end
+    /*---MakeHint---*/ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
     /*---Address_Generate---*/ //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     reg main_mem_sel_triger;
@@ -892,7 +948,15 @@ module Controller
             {SignGen,STAGE_15}: begin  //take p'' MEM data out to keccak gen y
                 AG_1_triger      = ~(keccak_done | keccak_done_tmp);
                 AG_1_clean       = next_element;
-            end  
+            end 
+            {SignGen,STAGE_19}: begin  //sned out c_tilde
+                AG_1_triger      = ~AG_1_done;
+                AG_1_clean       = AG_1_done;
+            end 
+            {SignGen,STAGE_21}: begin  //sned out hint_packed
+                AG_1_triger      = ~AG_1_done;
+                AG_1_clean       = AG_1_done;
+            end 
         endcase
     end
 
@@ -967,7 +1031,11 @@ module Controller
             {SignGen,STAGE_17}: begin  // INTT(<<ct0>>^ )
                 AG_2_triger      = ~NTT_done_tmp;
                 AG_2_clean       = NTT_done;
-            end  
+            end 
+            {SignGen,STAGE_20}: begin // Enocder z TX
+                AG_2_triger      = ~Encoder_done_tmp;
+                AG_2_clean       = Encoder_done;
+            end 
         endcase
     end
 
@@ -1004,6 +1072,14 @@ module Controller
                 AG_3_clean       = Decoder_done;
             end
             {SignGen,STAGE_8}: begin // Enocder w1 RX
+                AG_3_triger      = ~Encoder_done_tmp;
+                AG_3_clean       = Encoder_done;
+            end
+            {SignGen,STAGE_18}: begin // MakeHint hint RX
+                AG_3_triger      = ~MakeHint_done_tmp;
+                AG_3_clean       = MakeHint_done;
+            end
+            {SignGen,STAGE_20}: begin // Enocder z RX
                 AG_3_triger      = ~Encoder_done_tmp;
                 AG_3_clean       = Encoder_done;
             end

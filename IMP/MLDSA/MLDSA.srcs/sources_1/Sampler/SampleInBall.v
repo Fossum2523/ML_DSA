@@ -13,7 +13,7 @@ module SampleInBall(
     output      [7:0]       addr_ci,            // Write addresses for c
     output reg  [7:0]       addr_cj,            // Write addresses for c
     output                  en_ci,              // enable for c values
-    output reg              en_cj,              // enable for c values
+    output                  en_cj,              // enable for c values
     output                  we_ci,              // Write enable for c values
     output                  we_cj               // Write enable for c values
     );  
@@ -41,6 +41,7 @@ module SampleInBall(
     wire [8:0]   j_next;
     wire         j_plus_num; // Increment value for j
     wire         last_C;
+    reg          en_cj_temp;  
 
     mux_gen #( 
         .param_in(1088),
@@ -84,11 +85,12 @@ module SampleInBall(
 
     always @(posedge clk) begin
         if (reset)
-            en_cj <=  1'b0;
+            en_cj_temp <=  1'b0;
         else
-            en_cj <= en_ci;  
+            en_cj_temp <= en_ci;  
     end
 
+    assign en_cj = en_cj_temp & (addr_ci!=addr_cj);
     assign we_cj = en_cj;
     
     always @ (posedge clk) begin
