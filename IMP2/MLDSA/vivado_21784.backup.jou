@@ -1,0 +1,263 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Tue Apr 22 05:07:05 2025
+# Process ID: 21784
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5112 C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP\MLDSA\MLDSA.xpr
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/vivado.log
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA_tb_behav.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage4.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage5.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage3.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage6.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage8.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage9.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage10.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/test_decoder.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage2.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage3.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage4_1.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage6.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage7.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage8.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage9.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage10.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage11.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage12.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage13.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage14.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage15.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage16.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage17.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage18.wcfg
+source MLDSA_tb.tcl
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage13.wcfg}
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage12.wcfg}
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage14.wcfg}
+run 200 us
+create_wave_config
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage15.wcfg}
+run 200 us
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage16.wcfg}
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage18.wcfg}
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage13.wcfg}
+relaunch_sim
+run 200 us
+current_wave_config {SignGen_Stage13.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_data_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_data_b}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_en_b}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_we_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_we_b}} 
+restart
+run 200 us
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage13.wcfg}
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage14.wcfg}
+current_wave_config {SignGen_Stage14.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_data_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_data_b}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_en_b}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_we_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_we_b}} 
+current_wave_config {SignGen_Stage14.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_q_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_q_b}} 
+current_wave_config {SignGen_Stage14.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_data_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_data_b}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_en_b}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_we_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_we_b}} 
+restart
+run 200 us
+run 200 us
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage15.wcfg}
+restart
+run 200 us
+current_wave_config {SignGen_Stage15.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/t0_data_a}} {{/MLDSA_tb/uut/data_path_inst/DM/t0_data_b}} {{/MLDSA_tb/uut/data_path_inst/DM/t0_addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/t0_addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/t0_en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/t0_en_b}} {{/MLDSA_tb/uut/data_path_inst/DM/t0_we_a}} {{/MLDSA_tb/uut/data_path_inst/DM/t0_we_b}} 
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage14.wcfg}
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage15.wcfg}
+current_wave_config {SignGen_Stage15.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_en_b}} 
+current_wave_config {SignGen_Stage15.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_q_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_q_b}} 
+restart
+run 200 us
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage15.wcfg}
+current_wave_config {SignGen_Stage16.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_data_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_data_b}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_en_b}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_we_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_we_b}} 
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage17.wcfg}
+current_wave_config {SignGen_Stage17.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_data_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_data_b}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_en_b}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_we_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_we_b}} 
+relaunch_sim
+relaunch_sim
+run 200 us
+current_wave_config {SignGen_Stage17.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_en_b}} 
+current_wave_config {SignGen_Stage17.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_q_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_q_b}} 
+restart
+run 200 us
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage17.wcfg}
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage18.wcfg}
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage16.wcfg}
+restart
+run 200 us
+run 200 us
+current_wave_config {SignGen_Stage18.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_en_b}} 
+current_wave_config {SignGen_Stage18.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_q_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_6_q_b}} 
+current_wave_config {SignGen_Stage18.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_en_b}} 
+current_wave_config {SignGen_Stage18.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_q_a}} {{/MLDSA_tb/uut/data_path_inst/DM/temp_5_q_b}} 
+restart
+run 200 us
+run 200 us
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage18.wcfg}
+relaunch_sim
+relaunch_sim
+current_wave_config {SignGen_Stage18.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/hint_a}} {{/MLDSA_tb/uut/data_path_inst/hint_b}} 
+restart
+run 200 us
+current_wave_config {SignGen_Stage18.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/t0_addr_a}} {{/MLDSA_tb/uut/data_path_inst/DM/t0_addr_b}} {{/MLDSA_tb/uut/data_path_inst/DM/t0_en_a}} {{/MLDSA_tb/uut/data_path_inst/DM/t0_en_b}} 
+current_wave_config {SignGen_Stage18.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/DM/t0_q_a}} {{/MLDSA_tb/uut/data_path_inst/DM/t0_q_b}} 
+relaunch_sim
+run 200 us
+relaunch_sim
+run 200 us
+relaunch_sim
+run 200 us
+current_wave_config {SignGen_Stage18.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/Decomposer_/r1_out_a}} 
+current_wave_config {SignGen_Stage18.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/Decomposer_/r1_out_b}} 
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage18.wcfg}
+restart
+run 200 us
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage15.wcfg}
+restart
+run 200 us
+relaunch_sim
+run 200 us
+restart
+run 200 us
+relaunch_sim
+run 200 us
+run 200 us
+add_files -norecurse -scan_for_includes {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/Hint/usehint.v C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA.srcs/sources_1/Hint/makehint.v}
+update_compile_order -fileset sources_1
+relaunch_sim
+relaunch_sim
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage15.wcfg}
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage18.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/MLDSA_tb_behav.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage4.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage5.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage3.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage6.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage8.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage9.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/KeyGen_Stage10.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/test_decoder.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage2.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage3.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage4_1.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage6.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage7.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage8.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage9.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage10.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage11.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage12.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage13.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage14.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage15.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage16.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage17.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage18.wcfg
+source MLDSA_tb.tcl
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage18.wcfg}
+run 200 us
+run 200 us
+current_wave_config {SignGen_Stage18.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/makehint_/sec_lvl}} {{/MLDSA_tb/uut/data_path_inst/makehint_/reject_hint}} {{/MLDSA_tb/uut/data_path_inst/makehint_/poly0_ie}} {{/MLDSA_tb/uut/data_path_inst/makehint_/poly1_ie}} {{/MLDSA_tb/uut/data_path_inst/makehint_/poly_valid_ie}} {{/MLDSA_tb/uut/data_path_inst/makehint_/poly_ready_i}} {{/MLDSA_tb/uut/data_path_inst/makehint_/hint_o}} {{/MLDSA_tb/uut/data_path_inst/makehint_/hint_valid_o}} {{/MLDSA_tb/uut/data_path_inst/makehint_/hint_ready_o}} {{/MLDSA_tb/uut/data_path_inst/makehint_/poly0_i}} {{/MLDSA_tb/uut/data_path_inst/makehint_/poly1_i}} {{/MLDSA_tb/uut/data_path_inst/makehint_/poly_valid_i}} {{/MLDSA_tb/uut/data_path_inst/makehint_/GAMMA2}} {{/MLDSA_tb/uut/data_path_inst/makehint_/state}} 
+restart
+run 200 us
+relaunch_sim
+run 200 us
+relaunch_sim
+run 200 us
+relaunch_sim
+run 200 us
+current_wave_config {SignGen_Stage18.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/makehint_/rej}} 
+restart
+run 200 us
+current_wave_config {SignGen_Stage18.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/makehint_/state}} {{/MLDSA_tb/uut/data_path_inst/makehint_/sec_lvl}} {{/MLDSA_tb/uut/data_path_inst/makehint_/reset}} {{/MLDSA_tb/uut/data_path_inst/makehint_/reject_hint}} {{/MLDSA_tb/uut/data_path_inst/makehint_/rej}} {{/MLDSA_tb/uut/data_path_inst/makehint_/poly_valid_ie}} {{/MLDSA_tb/uut/data_path_inst/makehint_/poly_valid_i}} {{/MLDSA_tb/uut/data_path_inst/makehint_/poly_ready_i}} {{/MLDSA_tb/uut/data_path_inst/makehint_/poly_num}} {{/MLDSA_tb/uut/data_path_inst/makehint_/poly_hint_cnt}} {{/MLDSA_tb/uut/data_path_inst/makehint_/poly1_ie}} {{/MLDSA_tb/uut/data_path_inst/makehint_/poly1_i}} {{/MLDSA_tb/uut/data_path_inst/makehint_/poly0_ie}} {{/MLDSA_tb/uut/data_path_inst/makehint_/poly0_i}} {{/MLDSA_tb/uut/data_path_inst/makehint_/omega}} {{/MLDSA_tb/uut/data_path_inst/makehint_/num_hints}} {{/MLDSA_tb/uut/data_path_inst/makehint_/k}} {{/MLDSA_tb/uut/data_path_inst/makehint_/i}} {{/MLDSA_tb/uut/data_path_inst/makehint_/hint_valid_o}} {{/MLDSA_tb/uut/data_path_inst/makehint_/hint_ready_o}} {{/MLDSA_tb/uut/data_path_inst/makehint_/hint_o}} {{/MLDSA_tb/uut/data_path_inst/makehint_/hint_needed}} {{/MLDSA_tb/uut/data_path_inst/makehint_/hint_addr}} {{/MLDSA_tb/uut/data_path_inst/makehint_/ctr}} {{/MLDSA_tb/uut/data_path_inst/makehint_/clk}} 
+restart
+run 200 us
+relaunch_sim
+run 200 us
+relaunch_sim
+run 200 us
+relaunch_sim
+run 200 us
+current_wave_config {SignGen_Stage18.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/makehint_/state}} 
+restart
+run 200 us
+relaunch_sim
+run 200 us
+relaunch_sim
+run 200 us
+current_wave_config {SignGen_Stage18.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/makehint_/poly_num}} 
+current_wave_config {SignGen_Stage18.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/makehint_/num_hints}} 
+relaunch_sim
+run 200 us
+relaunch_sim
+run 200 us
+current_wave_config {SignGen_Stage18.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/makehint_/poly_hint_cnt}} 
+relaunch_sim
+run 200 us
+relaunch_sim
+run 200 us
+relaunch_sim
+run 200 us
+relaunch_sim
+relaunch_sim
+current_wave_config {SignGen_Stage18.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/ct0_mod_half_q_b}} {{/MLDSA_tb/uut/data_path_inst/ct0_mod_half_q_a}} {{/MLDSA_tb/uut/data_path_inst/ct0_fail}} {{/MLDSA_tb/uut/data_path_inst/ct0_b}} {{/MLDSA_tb/uut/data_path_inst/ct0_a}} 
+restart
+run 200 us
+relaunch_sim
+run 200 us
+relaunch_sim
+run 200 us
+relaunch_sim
+run 200 us
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage17.wcfg}
+restart
+run 200 us
+current_wave_config {SignGen_Stage17.wcfg}
+add_wave {{/MLDSA_tb/uut/data_path_inst/ct0_mod_half_q_b}} {{/MLDSA_tb/uut/data_path_inst/ct0_mod_half_q_a}} {{/MLDSA_tb/uut/data_path_inst/ct0_fail}} {{/MLDSA_tb/uut/data_path_inst/ct0_b}} {{/MLDSA_tb/uut/data_path_inst/ct0_a}} 
+restart
+run 200 us
+relaunch_sim
+relaunch_sim
+run 200 us
+relaunch_sim
+run 200 us
+relaunch_sim
+run 200 us
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage18.wcfg}
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/MLDSA/SignGen_Stage17.wcfg}
+close_sim

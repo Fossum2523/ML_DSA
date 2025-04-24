@@ -101,10 +101,15 @@ def HASH_ML_DSA_Sign(sk,M,ctx,deterministic):
     ### make testbench output data ###
     #---signature---#
     signature_testbench = Verilog_trans(sigma)
-    signature_len = len(signature_testbench) // 16 #split sk to 64bit a unit
-    for i in range(signature_len): #sk_len = 320
-        with open("MLDSA_SignGen_testbench_test_output_data_signature.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
-            file.write(f"{signature_testbench[(signature_len - i - 1)*16:(signature_len - i)*16]}\n")
+    signature_len = len(signature_testbench)
+    print(signature_len)
+    for i in range(signature_len,0,-16): #sk_len = 320
+        if(i<16):
+            with open("MLDSA_SignGen_testbench_test_output_data_signature.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+                file.write(f"{signature_testbench[0:i]}\n")
+        else:
+            with open("MLDSA_SignGen_testbench_test_output_data_signature.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+                file.write(f"{signature_testbench[(i - 16):i]}\n")
 
     ### make testbench output data ###
     
@@ -130,47 +135,71 @@ def HASH_ML_DSA_Ver(pk,M,sigma,ctx):
         oid +
         PH_M
     )
-    return Ver(pk,M_prime,sigma)
+
+    verification = Ver(pk,M_prime,sigma)
+
+    ### make testbench input data ###
+    #---pk---#
+    pk_testbench = Verilog_trans(pk)
+    pk_len = len(pk_testbench) // 16 #split pk to 64bit a unit
+    for i in range(pk_len): #pk_len = 164
+        with open("MLDSA_SignVer_testbench_test_input_data_pk.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"{pk_testbench[(pk_len - i - 1)*16:(pk_len - i)*16]}\n")
+    
+    #---M_prime---#
+    M_prime_testbench = Verilog_trans(M_prime)
+    M_prime_len = len(M_prime_testbench) #split sk to 64bit a unit
+    with open("MLDSA_SignVer_testbench_test_input_data_M_prime_len.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"{hex(math.ceil(M_prime_len/16))}\n")
+    for i in range(M_prime_len,0,-16): #M_prime_len = 102
+        if(i<16):
+            with open("MLDSA_SignVer_testbench_test_input_data_M_prime.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+                file.write(f"{M_prime_testbench[0:i]}\n")
+        else:
+            with open("MLDSA_SignVer_testbench_test_input_data_M_prime.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+                file.write(f"{M_prime_testbench[i - 16:i]}\n")
+    
+     #---signature---#
+    signature_testbench = Verilog_trans(sigma)
+    signature_len = len(signature_testbench)
+    print(signature_len)
+    for i in range(signature_len,0,-16): #sk_len = 320
+        if(i<16):
+            with open("MLDSA_SignVer_testbench_test_input_data_signature.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+                file.write(f"{signature_testbench[0:i]}\n")
+        else:
+            with open("MLDSA_SignVer_testbench_test_input_data_signature.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+                file.write(f"{signature_testbench[(i - 16):i]}\n")
+    ### make testbench input data ###
+
+    ### make testbench output data ###
+    #---verification---#
+    with open("MLDSA_SignVer_testbench_test_input_data_verification.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"{verification}\n")
+    ### make testbench output data ###
+    return verification
 
 
 # 算法 1 ML-DSA.KeyGen() 
 def KeyGen(xi):
-    # print(xi)
     xi = xi + IntegerToByte(ML_DSA["k"],1) + IntegerToByte(ML_DSA["l"],1)
-    # print(xi)
     H_xi = SHAKE_256(xi,1024)
-    # print(H_xi.hex())
     p = H_xi[:32]
     p_prime = H_xi[32:96]
     K = H_xi[96:128]
-    # print(p)
-    # print(p.hex())
-    # print(p_prime)
-    # print(p_prime.hex())
-    # print(K)
-    # print(K.hex())
     A_hat = ExpandA(p)
-    # print(A_hat)
     s1, s2 = ExpandS(p_prime)
-    # print(s1)
-    # print(s2)
     s1Hat = [NTT(s) for s in s1]
-    # print("s1hat=",list(s1Hat))
     s1Hat = np.array(s1Hat)
     A_NTT_s1 = NTT_dot(A_hat,s1Hat)
-    # print(A_NTT_s1)
     aHat_mul_s1Hat = [NTT_inv(s) for s in A_NTT_s1]
-    # print(aHat_mul_s1Hat)
     t = []
     for i in range(ML_DSA["k"]):
         d = []
         for k in range(256):
             sum = aHat_mul_s1Hat[i][k] + s2[i][k]
-            # sum = aHat_mul_s1Hat[i][k]
             d.append(sum)
         t.append(d)
-
-    # print(t)
     t1 = []
     t0 = []
     for ti in range (ML_DSA["k"]):
@@ -182,55 +211,46 @@ def KeyGen(xi):
             ta0.append(t0_temp)
         t1.append(ta1)
         t0.append(ta0)
-    # print(t1)
     pk = pk_encode(p, t1)
-    # print(pk)
-    # print(Verilog_trans(pk))
     tr = SHAKE_256(pk,512)
-    # print(Verilog_trans(tr))
     sk = sk_encode(p, K, tr, s1, s2, t0)
     return pk, sk
 
 # 算法 2 ML-DSA.Sign(sk,M)
 def Sign(sk,M,rnd):
     (p,K,tr,s1,s2,t0) = sk_decode(sk)
-    # print(t0)
-    # print(s1)
-    
     s1_hat = [NTT(si) for si in s1]
     with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
         file.write(f"s1_hat = {s1_hat}\n")
-    # print(s1_hat)
+
     s2_hat = [NTT(si) for si in s2]
     with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
         file.write(f"s2_hat = {s2_hat}\n")
-    # print(s2_hat)
+
     t0_hat = [NTT(ti) for ti in t0]
     with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
         file.write(f"t0_hat = {t0_hat}\n")
-    # print(t0_hat)
+
     A_hat = ExpandA(p)
     with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
         file.write(f"A_hat = {A_hat}\n")
-    # print(tr)
-    # print(M)
+
     u = tr + M
     u = SHAKE_256(u,512)
     with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
         file.write(f"u = {Verilog_trans(u)}\n")
-    # print(u)
-    # print(Verilog_trans(u))
+
     p_prime = K + rnd + u                                                                                                                        
     p_prime = SHAKE_256(p_prime,512)
     with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
         file.write(f"p_prime = {Verilog_trans(p_prime)}\n")
-    # print(Verilog_trans(p_prime))
+
     ka = 0
     z = None
     h = None
     while z == None and h == None:
         with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
-            file.write(f"ka = {ka}---------------------------------------------\n")
+            file.write(f"--------------------***ka = {ka}***--------------------\n")
 
         y = ExpandMask(p_prime,ka)
         with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
@@ -255,9 +275,9 @@ def Sign(sk,M,rnd):
         w1 = w1Encode(w1)
         with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
             file.write(f"w1_encode = {Verilog_trans(w1)}\n")
+
         c_tilde = u + w1 
         c_tilde = SHAKE_256(c_tilde,2*ML_DSA["lamda"])
-        
         with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
             file.write(f"c_tilde = {Verilog_trans(c_tilde)}\n")
 
@@ -295,13 +315,14 @@ def Sign(sk,M,rnd):
             file.write(f"r0 = {r0}\n")
             
         if infinity_norm(z) >= ML_DSA["gamma_1"] - ML_DSA["beta"] or infinity_norm(r0) >= ML_DSA["gamma_2"] - ML_DSA["beta"]:
-            print("ka =",ka)
             if(infinity_norm(z) >= ML_DSA["gamma_1"] - ML_DSA["beta"]):
-                print(infinity_norm(z))
-                print("z_fail")
+                with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+                    file.write(f"z_fail-> infinity_norm(z) = {infinity_norm(z)}\n")
+
             if(infinity_norm(r0) >= ML_DSA["gamma_2"] - ML_DSA["beta"]):
-                print(infinity_norm(r0))
-                print("r0_fail")
+                with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+                    file.write(f"r0_fail-> infinity_norm(r0) = {infinity_norm(r0)}\n")
+
             z = None
             h = None
         else:
@@ -322,15 +343,16 @@ def Sign(sk,M,rnd):
             with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
                 file.write(f"h = {h}\n")
 
-            ct0 = [arr.tolist() for arr in ct0]#####
-
+            ct0 = [arr.tolist() for arr in ct0]##### replace numpy array to list
             if infinity_norm(ct0) >= ML_DSA["gamma_2"] or true_num > ML_DSA["omega"]:
                 if(infinity_norm(ct0) >= ML_DSA["gamma_2"]):
-                    print(infinity_norm(ct0))
-                    print("ct0_fail")
+                    with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+                        file.write(f"ct0_fail-> infinity_norm(ct0) = {infinity_norm(ct0)}\n")
+
                 if(true_num > ML_DSA["omega"]):
-                    print(true_num)
-                    print("hint_fail")
+                    with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+                        file.write(f"hint_fail-> true_num = {true_num}\n")
+
                 z = None
                 h = None    
         ka = ka + ML_DSA["l"]
@@ -683,7 +705,7 @@ def SampleInBall(p):
     # print(p)
     c = [0] * 256
     s = SHAKE_256(p,1768)
-    print(Verilog_trans(s[:8]))
+    # print(Verilog_trans(s[:8]))
     cnt = 8
     h = BytesToBits(s[:8]) 
     # print(test.hex())
@@ -698,17 +720,17 @@ def SampleInBall(p):
             j = s[cnt]
             # print("j = ",j)
             cnt = cnt + 1
-        print("------------------------------------------")
+        # print("------------------------------------------")
         
         
         c[i] = c[j]  
         
         c[j] = (-1)**(h[(i + ML_DSA["tau"] - 256)])
-        print(f"i = {j}")
-        print(f"c[i] = {c[j]}")
-        print(f"j = {i}")
-        print(f"c[j] = {c[i]}")
-        print("------------------------------------------")
+        # print(f"i = {j}")
+        # print(f"c[i] = {c[j]}")
+        # print(f"j = {i}")
+        # print(f"c[j] = {c[i]}")
+        # print("------------------------------------------")
     # print(c)
     # print("cnt",cnt)
     # print(c)
@@ -1024,6 +1046,9 @@ if os.path.exists("MLDSA_KeyGen_testbench_test_output_data_pk.txt"):
 if os.path.exists("MLDSA_KeyGen_testbench_test_output_data_sk.txt"):
         os.remove("MLDSA_KeyGen_testbench_test_output_data_sk.txt")
 
+if os.path.exists("MLDSA_KeyGen_testbench_test_golden_data.txt"):
+        os.remove("MLDSA_KeyGen_testbench_test_golden_data.txt")
+
 pk,sk = ML_DSA_KeyGen()
 
 pk_testbench = Verilog_trans(pk)
@@ -1066,15 +1091,30 @@ ctx = "23ffff"
 ctx_byte = ctx.encode("utf-8")  # let ctx to byte
 
 signature = HASH_ML_DSA_Sign(sk,M,ctx_byte,1)
-print(signature)
+# print(signature)
 ### --------------- SignGen --------------- ###
 
-### --------------- SignVer --------------- ###
-# a = HASH_ML_DSA_Ver(pk,M,signature,ctx)
+## --------------- SignVer --------------- ###
+if os.path.exists("MLDSA_SignVer_testbench_test_input_data_pk.txt"):
+    os.remove("MLDSA_SignVer_testbench_test_input_data_pk.txt")
 
-# print(a)
-# print(len(M))
-### --------------- SignVer --------------- ###
+if os.path.exists("MLDSA_SignVer_testbench_test_input_data_M_prime.txt"):
+    os.remove("MLDSA_SignVer_testbench_test_input_data_M_prime.txt")
+
+if os.path.exists("MLDSA_SignVer_testbench_test_input_data_M_prime_len.txt"):
+    os.remove("MLDSA_SignVer_testbench_test_input_data_M_prime_len.txt")
+
+if os.path.exists("MLDSA_SignVer_testbench_test_input_data_signature.txt"):
+    os.remove("MLDSA_SignVer_testbench_test_input_data_signature.txt")
+
+if os.path.exists("MLDSA_SignVer_testbench_test_input_data_verification.txt"):
+    os.remove("MLDSA_SignVer_testbench_test_input_data_verification.txt")
+
+a = HASH_ML_DSA_Ver(pk,M,signature,ctx_byte)
+
+print(a)
+print(len(M))
+## --------------- SignVer --------------- ###
 
 # p = "3202542EF1E239D32BE1BCE5AE4AC8052D578899D653E368E11BC11C5480BA06"
 # p = hex_to_bytes(p)
