@@ -1,0 +1,106 @@
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot Keccak_tb_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.Keccak_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+INFO: [XSIM 43-3451] SDF backannotation process started with SDF file "Keccak_tb_time_synth.sdf", for root module "Keccak_tb/uut".
+INFO: [XSIM 43-3452] SDF backannotation was successful for SDF file "Keccak_tb_time_synth.sdf", for root module "Keccak_tb/uut".
+Time Resolution for simulation is 1ps
+Compiling module simprims_ver.OBUF
+Compiling module simprims_ver.IBUFCTRL_default
+Compiling module simprims_ver.INBUF_default
+Compiling module xil_defaultlib.IBUF_UNIQ_BASE_
+Compiling module xil_defaultlib.IBUF_HD153
+Compiling module xil_defaultlib.IBUF_HD154
+Compiling module simprims_ver.BUFGCE(CE_TYPE="ASYNC",SIM_DEVIC...
+Compiling module xil_defaultlib.IBUF_HD155
+Compiling module simprims_ver.LUT5
+Compiling module simprims_ver.FDRE_default
+Compiling module simprims_ver.x_lut2_mux4
+Compiling module simprims_ver.LUT2
+Compiling module simprims_ver.LUT6
+Compiling module simprims_ver.LUT4
+Compiling module simprims_ver.x_lut3_mux8
+Compiling module simprims_ver.LUT3
+Compiling module xil_defaultlib.round_A
+Compiling module xil_defaultlib.F_Permutation
+Compiling module xil_defaultlib.IBUF_HD156
+Compiling module xil_defaultlib.IBUF_HD157
+Compiling module xil_defaultlib.IBUF_HD158
+Compiling module xil_defaultlib.IBUF_HD159
+Compiling module xil_defaultlib.IBUF_HD160
+Compiling module xil_defaultlib.IBUF_HD161
+Compiling module xil_defaultlib.IBUF_HD162
+Compiling module xil_defaultlib.IBUF_HD163
+Compiling module xil_defaultlib.IBUF_HD164
+Compiling module xil_defaultlib.IBUF_HD165
+Compiling module xil_defaultlib.IBUF_HD166
+Compiling module xil_defaultlib.IBUF_HD167
+Compiling module xil_defaultlib.IBUF_HD168
+Compiling module xil_defaultlib.IBUF_HD169
+Compiling module xil_defaultlib.IBUF_HD170
+Compiling module xil_defaultlib.IBUF_HD171
+Compiling module xil_defaultlib.IBUF_HD172
+Compiling module xil_defaultlib.IBUF_HD173
+Compiling module xil_defaultlib.IBUF_HD174
+Compiling module xil_defaultlib.IBUF_HD175
+Compiling module xil_defaultlib.IBUF_HD176
+Compiling module xil_defaultlib.IBUF_HD177
+Compiling module xil_defaultlib.IBUF_HD178
+Compiling module xil_defaultlib.IBUF_HD179
+Compiling module xil_defaultlib.IBUF_HD180
+Compiling module xil_defaultlib.IBUF_HD181
+Compiling module xil_defaultlib.IBUF_HD182
+Compiling module xil_defaultlib.IBUF_HD183
+Compiling module xil_defaultlib.IBUF_HD184
+Compiling module xil_defaultlib.IBUF_HD185
+Compiling module xil_defaultlib.IBUF_HD186
+Compiling module xil_defaultlib.IBUF_HD187
+Compiling module xil_defaultlib.IBUF_HD188
+Compiling module xil_defaultlib.IBUF_HD189
+Compiling module xil_defaultlib.IBUF_HD190
+Compiling module xil_defaultlib.IBUF_HD191
+Compiling module xil_defaultlib.IBUF_HD192
+Compiling module xil_defaultlib.IBUF_HD193
+Compiling module xil_defaultlib.IBUF_HD194
+Compiling module xil_defaultlib.IBUF_HD195
+Compiling module xil_defaultlib.IBUF_HD196
+Compiling module xil_defaultlib.IBUF_HD197
+Compiling module xil_defaultlib.IBUF_HD198
+Compiling module xil_defaultlib.IBUF_HD199
+Compiling module xil_defaultlib.IBUF_HD200
+Compiling module xil_defaultlib.IBUF_HD201
+Compiling module xil_defaultlib.IBUF_HD202
+Compiling module xil_defaultlib.IBUF_HD203
+Compiling module xil_defaultlib.IBUF_HD204
+Compiling module xil_defaultlib.IBUF_HD205
+Compiling module xil_defaultlib.IBUF_HD206
+Compiling module xil_defaultlib.IBUF_HD207
+Compiling module xil_defaultlib.IBUF_HD208
+Compiling module xil_defaultlib.IBUF_HD209
+Compiling module xil_defaultlib.IBUF_HD210
+Compiling module xil_defaultlib.IBUF_HD211
+Compiling module xil_defaultlib.IBUF_HD212
+Compiling module xil_defaultlib.IBUF_HD213
+Compiling module xil_defaultlib.IBUF_HD214
+Compiling module xil_defaultlib.IBUF_HD215
+Compiling module xil_defaultlib.IBUF_HD216
+Compiling module xil_defaultlib.IBUF_HD217
+Compiling module xil_defaultlib.IBUF_HD218
+Compiling module xil_defaultlib.IBUF_HD219
+Compiling module xil_defaultlib.IBUF_HD220
+Compiling module xil_defaultlib.IBUF_HD221
+Compiling module xil_defaultlib.IBUF_HD222
+Compiling module xil_defaultlib.Padder
+Compiling module xil_defaultlib.IBUF_HD223
+Compiling module xil_defaultlib.IBUF_HD224
+Compiling module xil_defaultlib.IBUF_HD225
+Compiling module xil_defaultlib.Keccak
+Compiling module xil_defaultlib.Keccak_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Keccak_tb_time_synth

@@ -1,0 +1,21 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/F_Permutation.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/Keccak.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Keccak
+WARNING: [VRFC 10-9336] redeclaration of ANSI port 'f_out_ready' is not allowed [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/Keccak.v:26]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/Padder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Padder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/padder1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module padder1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/rconst.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rconst
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/SHA3_imp/round_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_A
+INFO: [VRFC 10-311] analyzing module round_A
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'round_A' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/SHA3_imp/round_A.v:121]
+INFO: [VRFC 10-311] analyzing module round_A
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'round_A' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/SHA3_imp/round_A.v:233]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/SHA3_imp/round_B.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_B
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sim_1/imports/Keccak_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Keccak_tb

@@ -1,0 +1,14 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.sim/sim_1/impl/timing/xsim/Keccak_tb_time_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IBUF_UNIQ_BASE_
+INFO: [VRFC 10-311] analyzing module IBUF_HD1
+INFO: [VRFC 10-311] analyzing module IBUF_HD2
+INFO: [VRFC 10-311] analyzing module IBUF_HD3
+INFO: [VRFC 10-311] analyzing module IBUF_HD4
+INFO: [VRFC 10-311] analyzing module IBUF_HD5
+INFO: [VRFC 10-311] analyzing module IBUF_HD6
+INFO: [VRFC 10-311] analyzing module F_Permutation
+INFO: [VRFC 10-311] analyzing module Keccak
+INFO: [VRFC 10-311] analyzing module Padder
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sim_1/imports/Keccak_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Keccak_tb

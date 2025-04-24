@@ -1,0 +1,35 @@
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Keccak_tb_behav xil_defaultlib.Keccak_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/Keccak.v" Line 1. Module Keccak doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/Padder.v" Line 1. Module Padder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/padder1.v" Line 1. Module padder1 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/F_Permutation.v" Line 76. Module F_Permutation doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/rconst.v" Line 1. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/SHA3_imp/round_A.v" Line 233. Module round_A doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/SHA3_imp/round_B.v" Line 9. Module round_B doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/Keccak.v" Line 1. Module Keccak doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/Padder.v" Line 1. Module Padder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/padder1.v" Line 1. Module padder1 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/F_Permutation.v" Line 76. Module F_Permutation doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/rconst.v" Line 1. Module rconst doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/SHA3_imp/round_A.v" Line 233. Module round_A doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.srcs/sources_1/imports/SHA3_imp/round_B.v" Line 9. Module round_B doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.padder1
+Compiling module xil_defaultlib.Padder
+Compiling module xil_defaultlib.rconst
+Compiling module xil_defaultlib.round_A
+Compiling module xil_defaultlib.round_B
+Compiling module xil_defaultlib.F_Permutation
+Compiling module xil_defaultlib.Keccak
+Compiling module xil_defaultlib.Keccak_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Keccak_tb_behav

@@ -1,0 +1,96 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Fri Apr 25 02:29:26 2025
+# Process ID: 7344
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8232 C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\Keccak\Keccak.xpr
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/vivado.log
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+open_run impl_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+launch_simulation -mode post-implementation -type timing
+source Keccak_tb.tcl
+run 10 us
+close_sim
+close_design
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_simulation -mode post-synthesis -type timing
+source Keccak_tb.tcl
+run 10 us
+relaunch_sim
+relaunch_sim
+close_sim
+launch_simulation -mode post-synthesis -type timing
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+close_design
+launch_simulation -mode post-synthesis -type timing
+source Keccak_tb.tcl
+run 10 us
+update_compile_order -fileset sources_1
+close_sim
+close_design
+launch_simulation
+launch_simulation
+add_files -norecurse -scan_for_includes {C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v}
+import_files -norecurse {C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_B.v C:/Users/fossu/Desktop/SHA3_imp/F_Permutation_Dilithium/F_Permutation_Dilithium.srcs/sources_1/imports/SHA3_imp/round_A.v}
+launch_simulation
+source Keccak_tb.tcl
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+current_wave_config {Untitled 4}
+add_wave {{/Keccak_tb/uut/f_permutation_/i_sti_buf}} 
+current_wave_config {Untitled 4}
+add_wave {{/Keccak_tb/uut/f_permutation_/i}} 
+restart
+run 10 us
+run 10 us
+current_wave_config {Untitled 4}
+add_wave {{/Keccak_tb/uut/f_permutation_/update}} {{/Keccak_tb/uut/f_permutation_/accept}} {{/Keccak_tb/uut/f_permutation_/calc}} 
+restart
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak_tb_behav.wcfg}
+add_files -fileset sim_1 -norecurse C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak_tb_behav.wcfg
+set_property xsim.view C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak_tb_behav.wcfg [get_filesets sim_1]
+close_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_simulation -mode post-synthesis -type timing
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak_tb_behav.wcfg
+source Keccak_tb.tcl
+run 10 us
+run 10 us
+close_sim
