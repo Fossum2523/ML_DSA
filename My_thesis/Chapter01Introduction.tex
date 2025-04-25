@@ -1,0 +1,46 @@
+%
+\ifdefined\integrated\else
+\documentclass[12pt, a4paper]{./styles/ntust_report}
+\input{./styles/ntust_style_thesis.tex}
+%\usepackage{wallpaper}
+%\CenterWallPaper{1}{ntust_watermark.jpg}
+\setcounter{page}{1}
+\begin{document}
+\baselineskip=24pt  % 24 lines per page
+\setcounter{chapter}{0} \fi
+
+\chapter{緒論} \label{cha:intro}
+
+\section{研究動機與方向}
+
+隨著量子電腦技術逐步發展，傳統公鑰密碼演算法如 RSA 與 ECC 面臨潛在被破解的風險。為應對此威脅，美國國家標準與技術研究院（NIST）於 2016 年展開後量子密碼學（Post-Quantum Cryptography, PQC）標準制定，並於 2024 年正式發布 ML-DSA（Module-Lattice-Based Digital Signature Algorithm）作為新一代數位簽章標準之一。ML-DSA 基於模組格理論問題，具有高安全性與量子抗性，預期將成為嵌入式安全應用中重要的簽章技術。
+
+ML-DSA 的演算法特性包含大量的模數多項式計算（透過 NTT 實現）、高頻率的隨機雜湊運算（透過 SHAKE/Keccak 實現）以及簽章中的重複性拒絕取樣邏輯（Fiat-Shamir with Aborts 結構），使其在硬體層面實作上面臨高效能與面積間的權衡挑戰。目前已有數篇研究文獻針對 ML-DSA 提出 RTL 或 FPGA 實作架構，然而多數方案為追求效能，採用了多組相同子模組（如多個 Keccak 核心與多組 NTT 單元）以達到併行處理，但也造成整體硬體面積大幅增加，難以部署於資源受限之嵌入式平台中。
+
+本研究的核心目標即在於突破此瓶頸，設計出面積精簡且具高效能之硬體加速器。為此，我們提出一個創新的設計策略：
+\begin{itemize}
+    \item 僅使用一組 Keccak 雜湊模組與一組 NTT 運算模組；
+    \item 以模組內部高平行度與運算排程最佳化方式，提升模組利用率；
+    \item 實現具備低面積、高吞吐量、相容 AXI-4 介面的 ML-DSA 硬體加速器。
+\end{itemize}
+
+本設計特別針對 ML-DSA-44（對應 NIST 安全等級 Category 2）進行最佳化，並以 RTL/Verilog 撰寫實現，可部署於 FPGA 與 ASIC 平台中。實驗結果顯示，在硬體面積顯著小於現有文獻設計的條件下，仍能提供具有競爭力的簽章延遲與效能，充分展現本架構在實務應用中的潛力。
+
+
+\section{章節安排}
+本論文一共分為六章，其編排如下：
+\begin{itemize}
+\setlength{\itemsep}{2pt}
+\setlength{\parsep}{2pt}
+\setlength{\parskip}{2pt}
+  \item 第1章緒論，說明研究動機、研究方向與論文架構。
+  \item 第2章演算法與背景介紹：介紹後量子密碼學、模組格理論、ML-DSA 演算法結構與其運作流程。
+  \item 第3章ML-DSA 模組分析與架構設計：探討數位簽章過程中所需的主要模組與運算瓶頸。
+  \item 第4章相容 AXI-4 介面之硬體加速器設計：詳細說明所設計的 RTL 架構、模組分工與時序設計。
+  \item 第5章實現與實驗結果分析：包含 FPGA 與 ASIC 實作結果、效能分析與比較。
+  \item 第6章結論與未來展望：總結本研究成果並提出後續改進方向。
+\end{itemize}
+
+\ifdefined\integrated\else
+\input{backpages/ntust_backpages.tex}
+\end{document} \fi
