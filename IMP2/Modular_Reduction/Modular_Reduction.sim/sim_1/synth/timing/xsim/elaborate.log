@@ -1,0 +1,80 @@
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot Modular_Reduction_tb_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.Modular_Reduction_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+INFO: [XSIM 43-3451] SDF backannotation process started with SDF file "Modular_Reduction_tb_time_synth.sdf", for root module "Modular_Reduction_tb/MUT".
+INFO: [XSIM 43-3452] SDF backannotation was successful for SDF file "Modular_Reduction_tb_time_synth.sdf", for root module "Modular_Reduction_tb/MUT".
+Time Resolution for simulation is 1ps
+Compiling module simprims_ver.x_lut3_mux8
+Compiling module simprims_ver.LUT3
+Compiling module simprims_ver.FDRE_default
+Compiling module simprims_ver.x_lut2_mux4
+Compiling module simprims_ver.LUT2
+Compiling module simprims_ver.LUT4
+Compiling module simprims_ver.LUT5
+Compiling module simprims_ver.LUT6
+Compiling module simprims_ver.CARRY8
+Compiling module simprims_ver.x_lut1_mux2
+Compiling module simprims_ver.LUT1
+Compiling module simprims_ver.BUFGCE(CE_TYPE="ASYNC",SIM_DEVIC...
+Compiling module simprims_ver.IBUFCTRL_default
+Compiling module simprims_ver.INBUF_default
+Compiling module xil_defaultlib.IBUF_UNIQ_BASE_
+Compiling module xil_defaultlib.IBUF_HD95
+Compiling module xil_defaultlib.IBUF_HD96
+Compiling module xil_defaultlib.IBUF_HD97
+Compiling module xil_defaultlib.IBUF_HD98
+Compiling module xil_defaultlib.IBUF_HD99
+Compiling module xil_defaultlib.IBUF_HD100
+Compiling module xil_defaultlib.IBUF_HD101
+Compiling module xil_defaultlib.IBUF_HD102
+Compiling module xil_defaultlib.IBUF_HD103
+Compiling module xil_defaultlib.IBUF_HD104
+Compiling module xil_defaultlib.IBUF_HD105
+Compiling module xil_defaultlib.IBUF_HD106
+Compiling module xil_defaultlib.IBUF_HD107
+Compiling module xil_defaultlib.IBUF_HD108
+Compiling module xil_defaultlib.IBUF_HD109
+Compiling module xil_defaultlib.IBUF_HD110
+Compiling module xil_defaultlib.IBUF_HD111
+Compiling module xil_defaultlib.IBUF_HD112
+Compiling module xil_defaultlib.IBUF_HD113
+Compiling module xil_defaultlib.IBUF_HD114
+Compiling module xil_defaultlib.IBUF_HD115
+Compiling module xil_defaultlib.IBUF_HD116
+Compiling module xil_defaultlib.IBUF_HD117
+Compiling module xil_defaultlib.IBUF_HD118
+Compiling module xil_defaultlib.IBUF_HD119
+Compiling module xil_defaultlib.IBUF_HD120
+Compiling module xil_defaultlib.IBUF_HD121
+Compiling module xil_defaultlib.IBUF_HD122
+Compiling module xil_defaultlib.IBUF_HD123
+Compiling module xil_defaultlib.IBUF_HD124
+Compiling module xil_defaultlib.IBUF_HD125
+Compiling module xil_defaultlib.IBUF_HD126
+Compiling module xil_defaultlib.IBUF_HD127
+Compiling module xil_defaultlib.IBUF_HD128
+Compiling module xil_defaultlib.IBUF_HD129
+Compiling module xil_defaultlib.IBUF_HD130
+Compiling module xil_defaultlib.IBUF_HD131
+Compiling module xil_defaultlib.IBUF_HD132
+Compiling module xil_defaultlib.IBUF_HD133
+Compiling module xil_defaultlib.IBUF_HD134
+Compiling module xil_defaultlib.IBUF_HD135
+Compiling module xil_defaultlib.IBUF_HD136
+Compiling module xil_defaultlib.IBUF_HD137
+Compiling module xil_defaultlib.IBUF_HD138
+Compiling module xil_defaultlib.IBUF_HD139
+Compiling module xil_defaultlib.IBUF_HD140
+Compiling module simprims_ver.OBUF
+Compiling module xil_defaultlib.IBUF_HD141
+Compiling module xil_defaultlib.Modular_Reduction
+Compiling module xil_defaultlib.Modular_Reduction_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Modular_Reduction_tb_time_synth

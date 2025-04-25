@@ -1,0 +1,19 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../NTT.srcs/sources_1/imports/NTT/BU.v" \
+"../../../../NTT.srcs/sources_1/imports/NTT/CONTR.v" \
+"../../../../NTT.srcs/sim_1/imports/NTT/Dual_Port_Ram_Single_clk.v" \
+"../../../../NTT.srcs/sources_1/imports/NTT/Modular_Reduction.v" \
+"../../../../NTT.srcs/sources_1/imports/NTT/NTT.v" \
+"../../../../NTT.srcs/sources_1/imports/NTT/RU.v" \
+"../../../../NTT.srcs/sources_1/imports/NTT/mod_add.v" \
+"../../../../NTT.srcs/sources_1/imports/NTT/mod_mul.v" \
+"../../../../NTT.srcs/sources_1/imports/NTT/mod_sub.v" \
+"../../../../NTT.srcs/sources_1/imports/NTT/rom.v" \
+"../../../../NTT.srcs/sim_1/imports/NTT/NTT_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

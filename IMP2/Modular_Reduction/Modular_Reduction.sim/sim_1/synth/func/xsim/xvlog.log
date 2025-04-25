@@ -1,0 +1,5 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Modular_Reduction/Modular_Reduction.sim/sim_1/synth/func/xsim/Modular_Reduction_tb_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Modular_Reduction
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Modular_Reduction/Modular_Reduction.srcs/sim_1/new/Modular_Reduction_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Modular_Reduction_tb

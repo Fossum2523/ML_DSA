@@ -1,0 +1,9 @@
+Time resolution is 1 ps
+time=0 reset=1 in=000000000000 out=xxxxxx
+time=2000 reset=1 in=000000000000 out=000000
+time=20000 reset=0 in=123456789abc out=000000
+time=30000 reset=0 in=3fffffffffff out=000000
+time=40000 reset=0 in=000000000001 out=000000
+time=50000 reset=0 in=2aaaaaaa5555 out=000000
+time=60000 reset=0 in=155555555555 out=000000
+$finish called at time : 90 ns : File "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Modular_Reduction/Modular_Reduction.srcs/sim_1/new/Modular_Reduction_tb.v" Line 63

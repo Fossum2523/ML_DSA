@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Modular_Reduction_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="Modular_Reduction_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="87.917 ns"></ZoomEndTime>
+      <Cursor1Time time="82.878 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="224"></NameColumnWidth>
+      <ValueColumnWidth column_width="109"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="21" />
+   <wvobject fp_name="/Modular_Reduction_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Modular_Reduction_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Modular_Reduction_tb/in" type="array">
+      <obj_property name="ElementShortName">in[45:0]</obj_property>
+      <obj_property name="ObjectShortName">in[45:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Modular_Reduction_tb/out" type="array">
+      <obj_property name="ElementShortName">out[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out[22:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Modular_Reduction_tb/MUT/x" type="array">
+      <obj_property name="ElementShortName">x[22:0]</obj_property>
+      <obj_property name="ObjectShortName">x[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Modular_Reduction_tb/MUT/adder_0" type="array">
+      <obj_property name="ElementShortName">adder_0[1:0]</obj_property>
+      <obj_property name="ObjectShortName">adder_0[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Modular_Reduction_tb/MUT/adder_1" type="array">
+      <obj_property name="ElementShortName">adder_1[34:0]</obj_property>
+      <obj_property name="ObjectShortName">adder_1[34:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Modular_Reduction_tb/MUT/y" type="array">
+      <obj_property name="ElementShortName">y[23:0]</obj_property>
+      <obj_property name="ObjectShortName">y[23:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Modular_Reduction_tb/MUT/z" type="array">
+      <obj_property name="ElementShortName">z[1:0]</obj_property>
+      <obj_property name="ObjectShortName">z[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Modular_Reduction_tb/MUT/adder_2" type="array">
+      <obj_property name="ElementShortName">adder_2[26:0]</obj_property>
+      <obj_property name="ObjectShortName">adder_2[26:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Modular_Reduction_tb/MUT/temp_0" type="array">
+      <obj_property name="ElementShortName">temp_0[22:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_0[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Modular_Reduction_tb/MUT/temp_1" type="array">
+      <obj_property name="ElementShortName">temp_1[14:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_1[14:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Modular_Reduction_tb/MUT/adder_3" type="array">
+      <obj_property name="ElementShortName">adder_3[26:0]</obj_property>
+      <obj_property name="ObjectShortName">adder_3[26:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Modular_Reduction_tb/MUT/adjust" type="array">
+      <obj_property name="ElementShortName">adjust[23:0]</obj_property>
+      <obj_property name="ObjectShortName">adjust[23:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Modular_Reduction_tb/MUT/adder_4" type="array">
+      <obj_property name="ElementShortName">adder_4[23:0]</obj_property>
+      <obj_property name="ObjectShortName">adder_4[23:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Modular_Reduction_tb/MUT/x_temp" type="array">
+      <obj_property name="ElementShortName">x_temp[22:0]</obj_property>
+      <obj_property name="ObjectShortName">x_temp[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Modular_Reduction_tb/MUT/adder_0_temp" type="logic">
+      <obj_property name="ElementShortName">adder_0_temp</obj_property>
+      <obj_property name="ObjectShortName">adder_0_temp</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Modular_Reduction_tb/MUT/adder_1_temp" type="array">
+      <obj_property name="ElementShortName">adder_1_temp[34:0]</obj_property>
+      <obj_property name="ObjectShortName">adder_1_temp[34:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Modular_Reduction_tb/MUT/adder_2_temp" type="array">
+      <obj_property name="ElementShortName">adder_2_temp[26:0]</obj_property>
+      <obj_property name="ObjectShortName">adder_2_temp[26:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Modular_Reduction_tb/MUT/concatenate_temp" type="array">
+      <obj_property name="ElementShortName">concatenate_temp[11:0]</obj_property>
+      <obj_property name="ObjectShortName">concatenate_temp[11:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Modular_Reduction_tb/MUT/adder_3_temp" type="array">
+      <obj_property name="ElementShortName">adder_3_temp[26:0]</obj_property>
+      <obj_property name="ObjectShortName">adder_3_temp[26:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

@@ -1,0 +1,95 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Sat Apr 26 03:42:33 2025
+# Process ID: 2144
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Modular_Reduction
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent27336 C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\Modular_Reduction\Modular_Reduction.xpr
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Modular_Reduction/vivado.log
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Modular_Reduction\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Modular_Reduction/Modular_Reduction.xpr
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Modular_Reduction/Modular_Reduction_tb_behav.wcfg
+source Modular_Reduction_tb.tcl
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation -mode post-synthesis -type timing
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Modular_Reduction/Modular_Reduction_tb_behav.wcfg
+source Modular_Reduction_tb.tcl
+restart
+run 10 us
+restart
+run 10 us
+run 10 us
+restart
+run 10 us
+relaunch_sim
+run 10 us
+close_sim
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Modular_Reduction/Modular_Reduction_tb_behav.wcfg
+source Modular_Reduction_tb.tcl
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Modular_Reduction/Modular_Reduction_tb_behav.wcfg}
+close_sim
+launch_simulation -mode post-synthesis -type timing
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Modular_Reduction/Modular_Reduction_tb_behav.wcfg
+source Modular_Reduction_tb.tcl
+restart
+run 10 us
+current_wave_config {Modular_Reduction_tb_behav.wcfg}
+add_wave {{/Modular_Reduction_tb/in}} {{/Modular_Reduction_tb/out}} 
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Modular_Reduction/Modular_Reduction_tb_behav.wcfg
+source Modular_Reduction_tb.tcl
+close_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+close_design
+launch_simulation -mode post-synthesis -type timing
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Modular_Reduction/Modular_Reduction_tb_behav.wcfg
+source Modular_Reduction_tb.tcl
+close_sim
+copy_run -name synth_1_copy_1 [get_runs synth_1] 
+set_property part xcu250-figd2104-2L-e [current_project]
+close_design
+open_run synth_1 -name synth_1
+launch_simulation -mode post-synthesis -type timing
+launch_simulation -mode post-synthesis -type timing
+update_compile_order -fileset sim_1
+Clean Project
+Clean Project
+launch_simulation -mode post-synthesis -type timing
+update_compile_order -fileset sim_1
+close_design
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_simulation -mode post-synthesis -type timing
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Modular_Reduction/Modular_Reduction_tb_behav.wcfg
+source Modular_Reduction_tb.tcl
+close_sim
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Modular_Reduction/Modular_Reduction_tb_behav.wcfg
+source Modular_Reduction_tb.tcl
+close_sim
+launch_simulation -mode post-synthesis -type timing
+launch_simulation -mode post-synthesis -type timing
+launch_simulation -mode post-synthesis -type timing
+Run Post-Synthesis Timing Simulation
+launch_simulation -mode post-synthesis -type functional
+close_design
+launch_simulation -mode post-synthesis -type timing
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Modular_Reduction/Modular_Reduction_tb_behav.wcfg
+source Modular_Reduction_tb.tcl
+close_sim
