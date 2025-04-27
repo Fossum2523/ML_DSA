@@ -41,7 +41,7 @@ module NTT_tb;
     NTT #(.BIT_LEN(BIT_LEN)) uut (
         .clk(clk),
         .reset(reset),
-        .mode(1'b0),
+        .mode(1'b1),
         .in_ready(in_ready),
         .NTT_in_u(s1_q_a),
         .NTT_in_d(s1_q_b),
@@ -66,7 +66,8 @@ module NTT_tb;
     	.HLEN(10),
 		// .INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/NTT/s1_0.txt")
 		// .INIT_FILE("C:/Users/USER/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/NTT/s1_Hat_0.txt")
-		.INIT_FILE("../../../../NTT.srcs/sim_1/imports/NTT/s1_0.txt")
+//		.INIT_FILE("../../../../NTT.srcs/sim_1/imports/NTT/s1_0.txt")
+		.INIT_FILE("../../../../NTT.srcs/sim_1/imports/NTT/s1_Hat_0.txt")
 		// .INIT_FILE("C:/Users/fossu/Desktop/ML_DSA_syn/IMP/NTT/NTT2/NTT.srcs/sources_1/imports/NTT/s1_Hat_0.txt")
 	)s1(
         .clk_a(clk),
@@ -107,10 +108,10 @@ module NTT_tb;
             s1_en_b = 1;
             for( i = 0 ; i < 128 ; i = i + 1)begin
                 in_ready = 1;
-                s1_addr_a = i;
-                s1_addr_b = i + 128;
-                // s1_addr_a = i * 2;
-                // s1_addr_b = i * 2 + 1;
+//                s1_addr_a = i;
+//                s1_addr_b = i + 128;
+                 s1_addr_a = i * 2;
+                 s1_addr_b = i * 2 + 1;
                 #(CLK_PERIOD);
             end
             in_ready = 0;

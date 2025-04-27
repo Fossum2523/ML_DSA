@@ -1,0 +1,16 @@
+0.7
+2020.2
+Oct 13 2023
+20:47:58
+C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim/glbl.v,1697210495,verilog,,,,glbl,,,,,,,,
+C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sim_1/imports/NTT/Dual_Port_Ram_Single_clk.v,1742876828,verilog,,C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/Modular_Reduction.v,,Dual_Port_Ram_Single_clk,,,,,,,,
+C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sim_1/imports/NTT/NTT_tb.v,1745691877,verilog,,,,NTT_tb,,,,,,,,
+C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/BU.v,1745742733,verilog,,C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/Modular_Reduction.v,,BU,,,,,,,,
+C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v,1745739694,verilog,,C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/Modular_Reduction.v,,CONTR,,,,,,,,
+C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/Modular_Reduction.v,1745681958,verilog,,C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v,,Modular_Reduction,,,,,,,,
+C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v,1745743229,verilog,,C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_add.v,,NTT,,,,,,,,
+C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v,1745738590,verilog,,C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_add.v,,RU,,,,,,,,
+C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_add.v,1745681935,verilog,,C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_mul.v,,mod_add,,,,,,,,
+C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_mul.v,1745681942,verilog,,C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_sub.v,,mod_mul,,,,,,,,
+C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_sub.v,1745681950,verilog,,C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sim_1/imports/NTT/NTT_tb.v,,mod_sub,,,,,,,,
+C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/rom.v,1745734163,verilog,,C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sim_1/imports/NTT/NTT_tb.v,,rom,,,,,,,,

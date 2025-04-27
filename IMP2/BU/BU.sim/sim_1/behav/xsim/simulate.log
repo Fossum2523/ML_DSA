@@ -1,0 +1,14 @@
+Time resolution is 1 ps
+                   0 a=      x, b=      x, zeta=      x, out_a=      x, out_b=      x
+                   5 a=      x, b=      x, zeta=      x, out_a=      0, out_b=      x
+                 100 a=      x, b=      x, zeta=      x, out_a=      0, out_b=      0
+                 101 a=      0, b=      0, zeta=      1, out_a=      0, out_b=      0
+                 121 a=8380416, b=8380416, zeta=8380416, out_a=      0, out_b=      0
+                 131 a=4190208, b=4190208, zeta=4190208, out_a=      0, out_b=      0
+                 141 a=1234567, b=7654321, zeta=5000000, out_a=      0, out_b=      0
+                 151 a=      1, b=8380416, zeta=      2, out_a=      0, out_b=      0
+                 175 a=      1, b=8380416, zeta=      2, out_a=      0, out_b=8380415
+                 185 a=      1, b=8380416, zeta=      2, out_a=2095104, out_b=6285312
+                 195 a=      1, b=8380416, zeta=      2, out_a=1683137, out_b= 785997
+                 205 a=      1, b=8380416, zeta=      2, out_a=8380416, out_b=      3
+$finish called at time : 211 ns : File "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/BU/BU.srcs/sim_1/new/BU_tb.v" Line 83

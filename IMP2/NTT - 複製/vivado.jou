@@ -1,0 +1,63 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Mon Apr 28 02:05:03 2025
+# Process ID: 16864
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT - 複製
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5908 C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT - 複製\NTT.xpr
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT - 複製/vivado.log
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT - 複製\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT - 複製/NTT.xpr}
+launch_simulation
+source NTT_tb.tcl
+update_compile_order -fileset sources_1
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_tb_behav.wcfg}
+current_wave_config {NTT_tb_behav.wcfg}
+add_wave {{/NTT_tb/uut/out_u_0}} {{/NTT_tb/uut/out_d_0}} {{/NTT_tb/uut/out_u_1}} {{/NTT_tb/uut/out_d_1}} {{/NTT_tb/uut/out_u_2}} {{/NTT_tb/uut/out_d_2}} {{/NTT_tb/uut/out_u_3}} {{/NTT_tb/uut/out_d_3}} {{/NTT_tb/uut/out_u_4}} {{/NTT_tb/uut/out_d_4}} {{/NTT_tb/uut/out_u_5}} {{/NTT_tb/uut/out_d_5}} {{/NTT_tb/uut/out_u_6}} {{/NTT_tb/uut/out_d_6}} {{/NTT_tb/uut/out_u_7}} {{/NTT_tb/uut/out_d_7}} 
+current_wave_config {NTT_tb_behav.wcfg}
+add_wave {{/NTT_tb/uut/NTT_in_u}} {{/NTT_tb/uut/NTT_in_d}} {{/NTT_tb/uut/out_ready}} {{/NTT_tb/uut/NTT_out_u}} {{/NTT_tb/uut/NTT_out_d}} {{/NTT_tb/uut/NTT_addr_u}} {{/NTT_tb/uut/done}} {{/NTT_tb/uut/NTT_addr_d}} 
+restart
+run 10 us
+run 10 us
+run 10 us
+current_wave_config {NTT_tb_behav.wcfg}
+add_wave {{/NTT_tb/uut/mode}} 
+restart
+run 10 us
+run 10 us
+relaunch_sim
+relaunch_sim
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+current_wave_config {NTT_tb_behav.wcfg}
+add_wave {{/NTT_tb/in_ready}} 
+relaunch_sim
+run 10 us
+run all
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_tb_behav.wcfg}
+close_sim
+launch_simulation
+source NTT_tb.tcl
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/INTT.wcfg}
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_tb_behav.wcfg}
+restart
+run 10 us
+run 10 us
+current_wave_config {NTT_tb_behav.wcfg}
+add_wave {{/NTT_tb/uut/BU_7/a}} {{/NTT_tb/uut/BU_7/b}} {{/NTT_tb/uut/BU_7/zeta}} {{/NTT_tb/uut/BU_7/out_a}} {{/NTT_tb/uut/BU_7/out_b}} 
+restart
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_tb_behav.wcfg}
+close_sim

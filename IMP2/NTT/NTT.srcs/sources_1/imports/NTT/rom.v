@@ -12,12 +12,7 @@ module rom #(
     (* rom_style = "distributed" *) reg[WIDTH-1:0] ram [LENGTH-1:0];
     
     assign do = ram[addr];
-    
-    // always @(posedge clk) begin 
-    //     if (en) begin
-    //         do <= ram[addr];
-    //     end
-    // end
+
     
     integer i;
     initial begin

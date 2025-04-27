@@ -1,0 +1,31 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Sun Apr 27 02:29:34 2025
+# Process ID: 15784
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/BU
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent26356 C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\BU\BU.xpr
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/BU/vivado.log
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/BU\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/BU/BU.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/BU/tb_BU_behav.wcfg
+source tb_BU.tcl
+run 10 us
+relaunch_sim
+run 10 us
+close_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_simulation -mode post-synthesis -type timing
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/BU/tb_BU_behav.wcfg
+source tb_BU.tcl
+run 10 us
+close_sim

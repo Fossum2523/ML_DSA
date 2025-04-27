@@ -1,0 +1,91 @@
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot NTT_tb_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+INFO: [XSIM 43-3451] SDF backannotation process started with SDF file "NTT_tb_time_synth.sdf", for root module "NTT_tb/dut".
+INFO: [XSIM 43-3452] SDF backannotation was successful for SDF file "NTT_tb_time_synth.sdf", for root module "NTT_tb/dut".
+Time Resolution for simulation is 1ps
+Compiling module simprims_ver.SRL16E_default
+Compiling module simprims_ver.FDRE_default
+Compiling module simprims_ver.x_lut2_mux4
+Compiling module simprims_ver.LUT2
+Compiling module simprims_ver.CARRY4
+Compiling module simprims_ver.LUT4
+Compiling module xil_defaultlib.mod_add_31
+Compiling module simprims_ver.LUT5
+Compiling module simprims_ver.x_lut3_mux8
+Compiling module simprims_ver.LUT3
+Compiling module simprims_ver.LUT6
+Compiling module simprims_ver.x_lut1_mux2
+Compiling module simprims_ver.LUT1
+Compiling module xil_defaultlib.Modular_Reduction_34
+Compiling module simprims_ver.DSP48E1(ALUMODEREG=0,CARRYINREG=...
+Compiling module simprims_ver.DSP48E1(ACASCREG=0,ALUMODEREG=0,...
+Compiling module xil_defaultlib.mod_mul_32
+Compiling module xil_defaultlib.mod_sub_33
+Compiling module xil_defaultlib.BU
+Compiling module xil_defaultlib.mod_add_27
+Compiling module xil_defaultlib.Modular_Reduction_30
+Compiling module xil_defaultlib.mod_mul_28
+Compiling module xil_defaultlib.mod_sub_29
+Compiling module xil_defaultlib.BU_0
+Compiling module xil_defaultlib.mod_add_23
+Compiling module xil_defaultlib.Modular_Reduction_26
+Compiling module xil_defaultlib.mod_mul_24
+Compiling module xil_defaultlib.mod_sub_25
+Compiling module xil_defaultlib.BU_1
+Compiling module xil_defaultlib.mod_add_19
+Compiling module xil_defaultlib.Modular_Reduction_22
+Compiling module xil_defaultlib.mod_mul_20
+Compiling module xil_defaultlib.mod_sub_21
+Compiling module xil_defaultlib.BU_2
+Compiling module xil_defaultlib.mod_add_15
+Compiling module xil_defaultlib.Modular_Reduction_18
+Compiling module xil_defaultlib.mod_mul_16
+Compiling module xil_defaultlib.mod_sub_17
+Compiling module xil_defaultlib.BU_3
+Compiling module xil_defaultlib.mod_add_11
+Compiling module xil_defaultlib.Modular_Reduction_14
+Compiling module xil_defaultlib.mod_mul_12
+Compiling module xil_defaultlib.mod_sub_13
+Compiling module xil_defaultlib.BU_4
+Compiling module xil_defaultlib.mod_add_7
+Compiling module xil_defaultlib.Modular_Reduction_10
+Compiling module xil_defaultlib.mod_mul_8
+Compiling module xil_defaultlib.mod_sub_9
+Compiling module xil_defaultlib.BU_5
+Compiling module xil_defaultlib.mod_add
+Compiling module xil_defaultlib.Modular_Reduction
+Compiling module xil_defaultlib.mod_mul
+Compiling module xil_defaultlib.mod_sub
+Compiling module xil_defaultlib.BU_6
+Compiling module xil_defaultlib.CONTR
+Compiling module xil_defaultlib.CONTR__parameterized0
+Compiling module xil_defaultlib.CONTR__parameterized1
+Compiling module xil_defaultlib.CONTR__parameterized2
+Compiling module xil_defaultlib.CONTR__parameterized3
+Compiling module xil_defaultlib.CONTR__parameterized4
+Compiling module xil_defaultlib.CONTR__parameterized5
+Compiling module simprims_ver.OBUFT
+Compiling module simprims_ver.IBUF
+Compiling module simprims_ver.OBUF
+Compiling module simprims_ver.SRLC32E_default
+Compiling module simprims_ver.FDSE_default
+Compiling module xil_defaultlib.RU
+Compiling module xil_defaultlib.RU__parameterized0
+Compiling module xil_defaultlib.RU__parameterized1
+Compiling module xil_defaultlib.RU__parameterized2
+Compiling module xil_defaultlib.RU__parameterized3
+Compiling module xil_defaultlib.RU__parameterized4
+Compiling module xil_defaultlib.RU__parameterized5
+Compiling module simprims_ver.BUFG
+Compiling module xil_defaultlib.NTT
+Compiling module xil_defaultlib.NTT_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot NTT_tb_time_synth

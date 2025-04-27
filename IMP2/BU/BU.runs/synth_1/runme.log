@@ -1,0 +1,317 @@
+
+*** Running vivado
+    with args -log BU.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source BU.tcl
+
+
+ECHO 已關閉。
+ECHO 已關閉。
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source BU.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 473.508 ; gain = 179.828
+Command: read_checkpoint -auto_incremental -incremental C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/BU/BU.srcs/utils_1/imports/synth_1/BU.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/BU/BU.srcs/utils_1/imports/synth_1/BU.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top BU -part xc7k70tfbv676-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 19532
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 924.637 ; gain = 439.188
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-11065] parameter 'DATA_WIDTH' becomes localparam in 'BU' with formal parameter declaration list [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/BU/BU.srcs/sources_1/imports/NTT/BU.v:22]
+WARNING: [Synth 8-11065] parameter 'DELAY_CYCLES' becomes localparam in 'BU' with formal parameter declaration list [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/BU/BU.srcs/sources_1/imports/NTT/BU.v:23]
+INFO: [Synth 8-6157] synthesizing module 'BU' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/BU/BU.srcs/sources_1/imports/NTT/BU.v:3]
+INFO: [Synth 8-6157] synthesizing module 'mod_add' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/BU/BU.srcs/sources_1/imports/NTT/mod_add.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'mod_add' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/BU/BU.srcs/sources_1/imports/NTT/mod_add.v:3]
+INFO: [Synth 8-6157] synthesizing module 'mod_sub' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/BU/BU.srcs/sources_1/imports/NTT/mod_sub.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'mod_sub' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/BU/BU.srcs/sources_1/imports/NTT/mod_sub.v:3]
+INFO: [Synth 8-6157] synthesizing module 'mod_mul' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/BU/BU.srcs/sources_1/imports/NTT/mod_mul.v:3]
+INFO: [Synth 8-6157] synthesizing module 'Modular_Reduction' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/BU/BU.srcs/sources_1/imports/NTT/Modular_Reduction.v:117]
+INFO: [Synth 8-6155] done synthesizing module 'Modular_Reduction' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/BU/BU.srcs/sources_1/imports/NTT/Modular_Reduction.v:117]
+INFO: [Synth 8-6155] done synthesizing module 'mod_mul' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/BU/BU.srcs/sources_1/imports/NTT/mod_mul.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'BU' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/BU/BU.srcs/sources_1/imports/NTT/BU.v:3]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1032.047 ; gain = 546.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1032.047 ; gain = 546.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k70tfbv676-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7k70tfbv676-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1032.047 ; gain = 546.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1032.047 ; gain = 546.598
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input   35 Bit       Adders := 1     
+	   4 Input   27 Bit       Adders := 1     
+	   3 Input   27 Bit       Adders := 1     
+	   2 Input   24 Bit       Adders := 3     
+	   3 Input   23 Bit       Adders := 1     
+	   2 Input   23 Bit       Adders := 1     
+	   3 Input    2 Bit       Adders := 1     
++---Registers : 
+	               48 Bit    Registers := 2     
+	               35 Bit    Registers := 1     
+	               27 Bit    Registers := 2     
+	               23 Bit    Registers := 16    
+	               12 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input   24 Bit        Muxes := 1     
+	   2 Input   23 Bit        Muxes := 9     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP mm/a_mul_b0, operation Mode is: A2*B2.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: Generating DSP mm/a_mul_b_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register mul_in_0_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[47]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[46]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[45]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[44]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[43]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[42]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[41]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[40]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[39]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[38]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[37]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[36]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[35]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[34]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[33]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[32]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[31]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[30]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[29]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[28]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[27]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[26]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[25]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[24]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[23]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[22]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[21]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[20]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[19]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[18]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[17]) is unused and will be removed from module BU.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:23 . Memory (MB): peak = 1221.824 ; gain = 736.375
+---------------------------------------------------------------------------------
+ Sort Area is  mm/a_mul_b0_0 : 0 0 : 3382 4576 : Used 1 time 0
+ Sort Area is  mm/a_mul_b0_0 : 0 1 : 1194 4576 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping      | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|BU          | A2*B2            | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17)+A2*B2 | 24     | 7      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:23 . Memory (MB): peak = 1221.824 ; gain = 736.375
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:23 . Memory (MB): peak = 1221.824 ; gain = 736.375
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1221.824 ; gain = 736.375
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1221.824 ; gain = 736.375
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1221.824 ; gain = 736.375
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1221.824 ; gain = 736.375
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1221.824 ; gain = 736.375
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1221.824 ; gain = 736.375
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+-----------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+-----------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|BU          | valid_buf_reg[5]                        | 6      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|BU          | DELAY_CHAIN_a[5].shift_reg_a_reg[5][22] | 6      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|BU          | DELAY_CHAIN_b[5].shift_reg_b_reg[5][22] | 6      | 23    | YES          | NO                 | YES               | 23     | 0       | 
++------------+-----------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping      | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|BU          | A'*B'            | 23     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17+A*B')' | 0      | 6      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |    53|
+|3     |DSP48E1 |     2|
+|4     |LUT1    |    16|
+|5     |LUT2    |   157|
+|6     |LUT3    |   108|
+|7     |LUT4    |   109|
+|8     |LUT5    |    28|
+|9     |LUT6    |    58|
+|10    |MUXF7   |     1|
+|11    |SRL16E  |    47|
+|12    |FDRE    |   263|
+|13    |IBUF    |    73|
+|14    |OBUF    |    47|
++------+--------+------+
+
+Report Instance Areas: 
++------+---------+------------------+------+
+|      |Instance |Module            |Cells |
++------+---------+------------------+------+
+|1     |top      |                  |   963|
+|2     |  ma     |mod_add           |    29|
+|3     |  mm     |mod_mul           |   587|
+|4     |    MR   |Modular_Reduction |   528|
+|5     |  ms     |mod_sub           |    33|
++------+---------+------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1221.824 ; gain = 736.375
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 34 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1221.824 ; gain = 736.375
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1221.824 ; gain = 736.375
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1231.629 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 56 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1325.895 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+系統找不到指定的路徑。
+Synth Design complete | Checksum: 9763c249
+INFO: [Common 17-83] Releasing license: Synthesis
+26 Infos, 34 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:29 . Memory (MB): peak = 1325.895 ; gain = 847.422
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1325.895 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/BU/BU.runs/synth_1/BU.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file BU_utilization_synth.rpt -pb BU_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Apr 27 02:35:33 2025...

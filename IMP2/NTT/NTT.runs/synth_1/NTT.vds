@@ -1,0 +1,724 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Sun Apr 27 23:35:29 2025
+# Process ID: 8248
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.runs/synth_1
+# Command line: vivado.exe -log NTT.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source NTT.tcl
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.runs/synth_1/NTT.vds
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.runs/synth_1\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+source NTT.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 472.371 ; gain = 179.387
+Command: read_checkpoint -auto_incremental -incremental C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/utils_1/imports/synth_1/NTT.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/utils_1/imports/synth_1/NTT.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top NTT -part xc7k70tfbv676-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 8724
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 923.523 ; gain = 439.938
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-11065] parameter 'DATA_WIDTH' becomes localparam in 'BU' with formal parameter declaration list [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/BU.v:22]
+WARNING: [Synth 8-11065] parameter 'DELAY_CYCLES' becomes localparam in 'BU' with formal parameter declaration list [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/BU.v:23]
+INFO: [Synth 8-11241] undeclared symbol 'RU_1_zeta_trig', assumed default net type 'wire' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:95]
+INFO: [Synth 8-11241] undeclared symbol 'RU_2_zeta_trig', assumed default net type 'wire' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:174]
+INFO: [Synth 8-11241] undeclared symbol 'RU_3_zeta_trig', assumed default net type 'wire' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:253]
+INFO: [Synth 8-11241] undeclared symbol 'RU_4_zeta_trig', assumed default net type 'wire' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:332]
+INFO: [Synth 8-11241] undeclared symbol 'RU_5_zeta_trig', assumed default net type 'wire' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:411]
+INFO: [Synth 8-11241] undeclared symbol 'RU_6_zeta_trig', assumed default net type 'wire' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:490]
+INFO: [Synth 8-11241] undeclared symbol 'RU_7_zeta_trig', assumed default net type 'wire' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:569]
+WARNING: [Synth 8-6901] identifier 'BU_7_out_data_u' is used before its declaration [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:31]
+WARNING: [Synth 8-6901] identifier 'BU_7_out_data_d' is used before its declaration [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:32]
+WARNING: [Synth 8-6901] identifier 'BU_7_o_valid' is used before its declaration [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:33]
+INFO: [Synth 8-6157] synthesizing module 'NTT' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:1]
+INFO: [Synth 8-6157] synthesizing module 'BU' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/BU.v:3]
+INFO: [Synth 8-6157] synthesizing module 'mod_add' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_add.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'mod_add' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_add.v:3]
+INFO: [Synth 8-6157] synthesizing module 'mod_sub' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_sub.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'mod_sub' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_sub.v:3]
+INFO: [Synth 8-6157] synthesizing module 'mod_mul' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_mul.v:3]
+INFO: [Synth 8-6157] synthesizing module 'Modular_Reduction' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/Modular_Reduction.v:117]
+INFO: [Synth 8-6155] done synthesizing module 'Modular_Reduction' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/Modular_Reduction.v:117]
+INFO: [Synth 8-6155] done synthesizing module 'mod_mul' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_mul.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'BU' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/BU.v:3]
+INFO: [Synth 8-6157] synthesizing module 'RU' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v:1]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RU' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v:1]
+INFO: [Synth 8-6157] synthesizing module 'CONTR' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v:54]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'CONTR' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v:54]
+INFO: [Synth 8-6157] synthesizing module 'rom' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/rom.v:1]
+	Parameter WIDTH bound to: 23 - type: integer 
+	Parameter LENGTH bound to: 2 - type: integer 
+	Parameter INIT_FILE bound to: ../../../../NTT.srcs/sources_1/imports/NTT/MEM_zeta/MEM_zeta_1.txt - type: string 
+INFO: [Synth 8-3876] $readmem data file '../../../../NTT.srcs/sources_1/imports/NTT/MEM_zeta/MEM_zeta_1.txt' is read successfully [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/rom.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'rom' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/rom.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RU__parameterized0' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v:1]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RU__parameterized0' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v:1]
+INFO: [Synth 8-6157] synthesizing module 'CONTR__parameterized0' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v:54]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'CONTR__parameterized0' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v:54]
+INFO: [Synth 8-6157] synthesizing module 'rom__parameterized0' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/rom.v:1]
+	Parameter WIDTH bound to: 23 - type: integer 
+	Parameter LENGTH bound to: 4 - type: integer 
+	Parameter INIT_FILE bound to: ../../../../NTT.srcs/sources_1/imports/NTT/MEM_zeta/MEM_zeta_2.txt - type: string 
+INFO: [Synth 8-3876] $readmem data file '../../../../NTT.srcs/sources_1/imports/NTT/MEM_zeta/MEM_zeta_2.txt' is read successfully [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/rom.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'rom__parameterized0' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/rom.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RU__parameterized1' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v:1]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RU__parameterized1' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v:1]
+INFO: [Synth 8-6157] synthesizing module 'CONTR__parameterized1' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v:54]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'CONTR__parameterized1' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v:54]
+INFO: [Synth 8-6157] synthesizing module 'rom__parameterized1' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/rom.v:1]
+	Parameter WIDTH bound to: 23 - type: integer 
+	Parameter LENGTH bound to: 8 - type: integer 
+	Parameter INIT_FILE bound to: ../../../../NTT.srcs/sources_1/imports/NTT/MEM_zeta/MEM_zeta_3.txt - type: string 
+INFO: [Synth 8-3876] $readmem data file '../../../../NTT.srcs/sources_1/imports/NTT/MEM_zeta/MEM_zeta_3.txt' is read successfully [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/rom.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'rom__parameterized1' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/rom.v:1]
+WARNING: [Synth 8-689] width (4) of port connection 'addr' does not match port width (3) of module 'rom__parameterized1' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:278]
+INFO: [Synth 8-6157] synthesizing module 'RU__parameterized2' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v:1]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RU__parameterized2' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v:1]
+INFO: [Synth 8-6157] synthesizing module 'CONTR__parameterized2' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v:54]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'CONTR__parameterized2' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v:54]
+INFO: [Synth 8-6157] synthesizing module 'rom__parameterized2' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/rom.v:1]
+	Parameter WIDTH bound to: 23 - type: integer 
+	Parameter LENGTH bound to: 16 - type: integer 
+	Parameter INIT_FILE bound to: ../../../../NTT.srcs/sources_1/imports/NTT/MEM_zeta/MEM_zeta_4.txt - type: string 
+INFO: [Synth 8-3876] $readmem data file '../../../../NTT.srcs/sources_1/imports/NTT/MEM_zeta/MEM_zeta_4.txt' is read successfully [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/rom.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'rom__parameterized2' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/rom.v:1]
+WARNING: [Synth 8-689] width (8) of port connection 'addr' does not match port width (4) of module 'rom__parameterized2' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:357]
+INFO: [Synth 8-6157] synthesizing module 'RU__parameterized3' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v:1]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RU__parameterized3' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v:1]
+INFO: [Synth 8-6157] synthesizing module 'CONTR__parameterized3' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v:54]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'CONTR__parameterized3' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v:54]
+INFO: [Synth 8-6157] synthesizing module 'rom__parameterized3' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/rom.v:1]
+	Parameter WIDTH bound to: 23 - type: integer 
+	Parameter LENGTH bound to: 32 - type: integer 
+	Parameter INIT_FILE bound to: ../../../../NTT.srcs/sources_1/imports/NTT/MEM_zeta/MEM_zeta_5.txt - type: string 
+INFO: [Synth 8-3876] $readmem data file '../../../../NTT.srcs/sources_1/imports/NTT/MEM_zeta/MEM_zeta_5.txt' is read successfully [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/rom.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'rom__parameterized3' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/rom.v:1]
+WARNING: [Synth 8-689] width (16) of port connection 'addr' does not match port width (5) of module 'rom__parameterized3' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:436]
+INFO: [Synth 8-6157] synthesizing module 'RU__parameterized4' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v:1]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RU__parameterized4' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v:1]
+INFO: [Synth 8-6157] synthesizing module 'CONTR__parameterized4' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v:54]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'CONTR__parameterized4' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v:54]
+INFO: [Synth 8-6157] synthesizing module 'rom__parameterized4' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/rom.v:1]
+	Parameter WIDTH bound to: 23 - type: integer 
+	Parameter LENGTH bound to: 64 - type: integer 
+	Parameter INIT_FILE bound to: ../../../../NTT.srcs/sources_1/imports/NTT/MEM_zeta/MEM_zeta_6.txt - type: string 
+INFO: [Synth 8-3876] $readmem data file '../../../../NTT.srcs/sources_1/imports/NTT/MEM_zeta/MEM_zeta_6.txt' is read successfully [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/rom.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'rom__parameterized4' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/rom.v:1]
+WARNING: [Synth 8-689] width (32) of port connection 'addr' does not match port width (6) of module 'rom__parameterized4' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:515]
+INFO: [Synth 8-6157] synthesizing module 'RU__parameterized5' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v:1]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RU__parameterized5' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v:1]
+INFO: [Synth 8-6157] synthesizing module 'CONTR__parameterized5' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v:54]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'CONTR__parameterized5' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v:54]
+INFO: [Synth 8-6157] synthesizing module 'rom__parameterized5' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/rom.v:1]
+	Parameter WIDTH bound to: 23 - type: integer 
+	Parameter LENGTH bound to: 128 - type: integer 
+	Parameter INIT_FILE bound to: ../../../../NTT.srcs/sources_1/imports/NTT/MEM_zeta/MEM_zeta_7.txt - type: string 
+INFO: [Synth 8-3876] $readmem data file '../../../../NTT.srcs/sources_1/imports/NTT/MEM_zeta/MEM_zeta_7.txt' is read successfully [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/rom.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'rom__parameterized5' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/rom.v:1]
+WARNING: [Synth 8-689] width (64) of port connection 'addr' does not match port width (7) of module 'rom__parameterized5' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:594]
+INFO: [Synth 8-6155] done synthesizing module 'NTT' (0#1) [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:1]
+WARNING: [Synth 8-3848] Net i_ready in module/entity NTT does not have driver. [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:8]
+WARNING: [Synth 8-3848] Net NTT_addr_u in module/entity NTT does not have driver. [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:13]
+WARNING: [Synth 8-3848] Net NTT_addr_d in module/entity NTT does not have driver. [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:14]
+WARNING: [Synth 8-3848] Net done in module/entity NTT does not have driver. [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:17]
+WARNING: [Synth 8-7129] Port clk in module rom__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port en in module rom__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mode in module CONTR__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module rom__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port en in module rom__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mode in module CONTR__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module rom__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port en in module rom__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mode in module CONTR__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module rom__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port en in module rom__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mode in module CONTR__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module rom__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port en in module rom__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mode in module CONTR__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module rom__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port en in module rom__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mode in module CONTR__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port en in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mode in module CONTR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_ready in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_u[7] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_u[6] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_u[5] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_u[4] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_u[3] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_u[2] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_u[1] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_u[0] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_d[7] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_d[6] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_d[5] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_d[4] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_d[3] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_d[2] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_d[1] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_d[0] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port done in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_ready in module NTT is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1047.500 ; gain = 563.914
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1047.500 ; gain = 563.914
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k70tfbv676-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1047.500 ; gain = 563.914
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7k70tfbv676-1
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1047.500 ; gain = 563.914
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input   35 Bit       Adders := 8     
+	   4 Input   27 Bit       Adders := 8     
+	   3 Input   27 Bit       Adders := 8     
+	   2 Input   24 Bit       Adders := 24    
+	   3 Input   23 Bit       Adders := 8     
+	   2 Input   23 Bit       Adders := 8     
+	   2 Input    8 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 1     
+	   3 Input    2 Bit       Adders := 8     
+	   2 Input    2 Bit       Adders := 1     
+	   2 Input    1 Bit       Adders := 1     
++---Registers : 
+	               48 Bit    Registers := 16    
+	               35 Bit    Registers := 8     
+	               27 Bit    Registers := 16    
+	               23 Bit    Registers := 382   
+	               12 Bit    Registers := 8     
+	                8 Bit    Registers := 1     
+	                6 Bit    Registers := 8     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 276   
++---Muxes : 
+	   2 Input   24 Bit        Muxes := 8     
+	   2 Input   23 Bit        Muxes := 86    
+	   2 Input    1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP mm/a_mul_b0, operation Mode is: A2*B2.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: Generating DSP mm/a_mul_b_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register mul_in_0_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: Generating DSP mm/a_mul_b0, operation Mode is: A2*B2.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: Generating DSP mm/a_mul_b_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register mul_in_0_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: Generating DSP mm/a_mul_b0, operation Mode is: A2*B2.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: Generating DSP mm/a_mul_b_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register mul_in_0_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: Generating DSP mm/a_mul_b0, operation Mode is: A2*B2.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: Generating DSP mm/a_mul_b_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register mul_in_0_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: Generating DSP mm/a_mul_b0, operation Mode is: A2*B2.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: Generating DSP mm/a_mul_b_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register mul_in_0_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: Generating DSP mm/a_mul_b0, operation Mode is: A2*B2.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: Generating DSP mm/a_mul_b_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register mul_in_0_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: Generating DSP mm/a_mul_b0, operation Mode is: A2*B2.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: Generating DSP mm/a_mul_b_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register mul_in_0_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: Generating DSP mm/a_mul_b0, operation Mode is: A2*B2.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: Generating DSP mm/a_mul_b_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register mul_in_0_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+WARNING: [Synth 8-7129] Port i_ready in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_u[7] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_u[6] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_u[5] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_u[4] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_u[3] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_u[2] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_u[1] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_u[0] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_d[7] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_d[6] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_d[5] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_d[4] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_d[3] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_d[2] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_d[1] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port NTT_addr_d[0] in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port done in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_ready in module NTT is either unconnected or has no load
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[47]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[46]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[45]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[44]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[43]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[42]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[41]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[40]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[39]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[38]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[37]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[36]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[35]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[34]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[33]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[32]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[31]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[30]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[29]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[28]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[27]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[26]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[25]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[24]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[23]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[22]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[21]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[20]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[19]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[18]) is unused and will be removed from module BU.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[17]) is unused and will be removed from module BU.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1245.992 ; gain = 762.406
+---------------------------------------------------------------------------------
+ Sort Area is  mm/a_mul_b0_0 : 0 0 : 3382 4576 : Used 1 time 0
+ Sort Area is  mm/a_mul_b0_0 : 0 1 : 1194 4576 : Used 1 time 0
+ Sort Area is  mm/a_mul_b0_3 : 0 0 : 3382 4576 : Used 1 time 0
+ Sort Area is  mm/a_mul_b0_3 : 0 1 : 1194 4576 : Used 1 time 0
+ Sort Area is  mm/a_mul_b0_4 : 0 0 : 3382 4576 : Used 1 time 0
+ Sort Area is  mm/a_mul_b0_4 : 0 1 : 1194 4576 : Used 1 time 0
+ Sort Area is  mm/a_mul_b0_5 : 0 0 : 3382 4576 : Used 1 time 0
+ Sort Area is  mm/a_mul_b0_5 : 0 1 : 1194 4576 : Used 1 time 0
+ Sort Area is  mm/a_mul_b0_6 : 0 0 : 3382 4576 : Used 1 time 0
+ Sort Area is  mm/a_mul_b0_6 : 0 1 : 1194 4576 : Used 1 time 0
+ Sort Area is  mm/a_mul_b0_7 : 0 0 : 3382 4576 : Used 1 time 0
+ Sort Area is  mm/a_mul_b0_7 : 0 1 : 1194 4576 : Used 1 time 0
+ Sort Area is  mm/a_mul_b0_8 : 0 0 : 3382 4576 : Used 1 time 0
+ Sort Area is  mm/a_mul_b0_8 : 0 1 : 1194 4576 : Used 1 time 0
+ Sort Area is  mm/a_mul_b0_9 : 0 0 : 3382 4576 : Used 1 time 0
+ Sort Area is  mm/a_mul_b0_9 : 0 1 : 1194 4576 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|rom         | ram        | 2x4           | LUT            | 
+|rom         | ram        | 4x9           | LUT            | 
+|rom         | ram        | 8x22          | LUT            | 
+|rom         | ram        | 16x23         | LUT            | 
+|rom         | ram        | 32x23         | LUT            | 
+|rom         | ram        | 64x23         | LUT            | 
+|rom         | ram        | 128x23        | LUT            | 
+|NTT         | p_0_out    | 32x23         | LUT            | 
+|NTT         | p_0_out    | 64x23         | LUT            | 
+|NTT         | p_0_out    | 128x23        | LUT            | 
++------------+------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping      | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|BU          | A2*B2            | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17)+A2*B2 | 24     | 7      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A2*B2            | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17)+A2*B2 | 24     | 7      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A2*B2            | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17)+A2*B2 | 24     | 7      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A2*B2            | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17)+A2*B2 | 24     | 7      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A2*B2            | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17)+A2*B2 | 24     | 7      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A2*B2            | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17)+A2*B2 | 24     | 7      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A2*B2            | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17)+A2*B2 | 24     | 7      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A2*B2            | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17)+A2*B2 | 24     | 7      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1245.992 ; gain = 762.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1250.156 ; gain = 766.570
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1261.949 ; gain = 778.363
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1261.949 ; gain = 778.363
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1261.949 ; gain = 778.363
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1261.949 ; gain = 778.363
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1261.949 ; gain = 778.363
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1261.949 ; gain = 778.363
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+----------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                           | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+----------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|NTT         | BU_0/valid_buf_reg[5]                              | 6      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|NTT         | BU_0/DELAY_CHAIN_a[5].shift_reg_a_reg[5][22]       | 6      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|NTT         | BU_0/DELAY_CHAIN_b[5].shift_reg_b_reg[5][22]       | 6      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|NTT         | RU_1/valid_buf_[63].valid_buf_reg[63]              | 64     | 1     | YES          | NO                 | YES               | 0      | 2       | 
+|NTT         | RU_1/shift_registers_d[63].shift_reg_d_reg[63][22] | 64     | 23    | YES          | NO                 | YES               | 0      | 46      | 
+|NTT         | RU_1/shift_registers_u[63].shift_reg_u_reg[63][22] | 64     | 23    | YES          | NO                 | YES               | 0      | 46      | 
+|NTT         | BU_1/valid_buf_reg[5]                              | 6      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|NTT         | BU_1/DELAY_CHAIN_a[5].shift_reg_a_reg[5][22]       | 6      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|NTT         | BU_1/DELAY_CHAIN_b[5].shift_reg_b_reg[5][22]       | 6      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|NTT         | RU_2/valid_buf_[31].valid_buf_reg[31]              | 32     | 1     | YES          | NO                 | YES               | 0      | 1       | 
+|NTT         | RU_2/shift_registers_d[31].shift_reg_d_reg[31][22] | 32     | 23    | YES          | NO                 | YES               | 0      | 23      | 
+|NTT         | RU_2/shift_registers_u[31].shift_reg_u_reg[31][22] | 32     | 23    | YES          | NO                 | YES               | 0      | 23      | 
+|NTT         | BU_2/valid_buf_reg[5]                              | 6      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|NTT         | BU_2/DELAY_CHAIN_a[5].shift_reg_a_reg[5][22]       | 6      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|NTT         | BU_2/DELAY_CHAIN_b[5].shift_reg_b_reg[5][22]       | 6      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|NTT         | RU_3/valid_buf_[15].valid_buf_reg[15]              | 16     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|NTT         | RU_3/shift_registers_d[15].shift_reg_d_reg[15][22] | 16     | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|NTT         | RU_3/shift_registers_u[15].shift_reg_u_reg[15][22] | 16     | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|NTT         | BU_3/valid_buf_reg[5]                              | 6      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|NTT         | BU_3/DELAY_CHAIN_a[5].shift_reg_a_reg[5][22]       | 6      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|NTT         | BU_3/DELAY_CHAIN_b[5].shift_reg_b_reg[5][22]       | 6      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|NTT         | RU_4/valid_buf_[7].valid_buf_reg[7]                | 8      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|NTT         | RU_4/shift_registers_d[7].shift_reg_d_reg[7][22]   | 8      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|NTT         | RU_4/shift_registers_u[7].shift_reg_u_reg[7][22]   | 8      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|NTT         | BU_4/valid_buf_reg[5]                              | 6      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|NTT         | BU_4/DELAY_CHAIN_a[5].shift_reg_a_reg[5][22]       | 6      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|NTT         | BU_4/DELAY_CHAIN_b[5].shift_reg_b_reg[5][22]       | 6      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|NTT         | RU_5/valid_buf_[3].valid_buf_reg[3]                | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|NTT         | RU_5/shift_registers_d[3].shift_reg_d_reg[3][22]   | 4      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|NTT         | RU_5/shift_registers_u[3].shift_reg_u_reg[3][22]   | 4      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|NTT         | BU_5/valid_buf_reg[5]                              | 6      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|NTT         | BU_5/DELAY_CHAIN_a[5].shift_reg_a_reg[5][22]       | 6      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|NTT         | BU_5/DELAY_CHAIN_b[5].shift_reg_b_reg[5][22]       | 6      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|NTT         | BU_6/valid_buf_reg[5]                              | 6      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|NTT         | BU_6/DELAY_CHAIN_a[5].shift_reg_a_reg[5][22]       | 6      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|NTT         | BU_6/DELAY_CHAIN_b[5].shift_reg_b_reg[5][22]       | 6      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|NTT         | BU_7/valid_buf_reg[5]                              | 6      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|NTT         | BU_7/DELAY_CHAIN_a[5].shift_reg_a_reg[5][22]       | 6      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|NTT         | BU_7/DELAY_CHAIN_b[5].shift_reg_b_reg[5][22]       | 6      | 23    | YES          | NO                 | YES               | 23     | 0       | 
++------------+----------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping      | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|BU          | A'*B'            | 23     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17+A*B')' | 0      | 6      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A'*B'            | 23     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17+A*B')' | 0      | 6      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A'*B'            | 23     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17+A*B')' | 0      | 6      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A'*B'            | 23     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17+A*B')' | 0      | 6      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A'*B'            | 23     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17+A*B')' | 0      | 6      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A'*B'            | 23     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17+A*B')' | 0      | 6      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A'*B'            | 23     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17+A*B')' | 0      | 6      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A'*B'            | 23     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17+A*B')' | 0      | 6      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |   421|
+|3     |DSP48E1 |    16|
+|4     |LUT1    |   119|
+|5     |LUT2    |  1228|
+|6     |LUT3    |   722|
+|7     |LUT4    |   928|
+|8     |LUT5    |   548|
+|9     |LUT6    |   629|
+|10    |SRL16E  |   517|
+|11    |SRLC32E |   141|
+|12    |FDRE    |  2908|
+|13    |FDSE    |     6|
+|14    |IBUF    |    50|
+|15    |OBUF    |    47|
+|16    |OBUFT   |    18|
++------+--------+------+
+
+Report Instance Areas: 
++------+----------+----------------------+------+
+|      |Instance  |Module                |Cells |
++------+----------+----------------------+------+
+|1     |top       |                      |  8299|
+|2     |  BU_0    |BU                    |   811|
+|3     |    ma    |mod_add_31            |    29|
+|4     |    mm    |mod_mul_32            |   562|
+|5     |      MR  |Modular_Reduction_34  |   542|
+|6     |    ms    |mod_sub_33            |    32|
+|7     |  BU_1    |BU_0                  |   765|
+|8     |    ma    |mod_add_27            |    29|
+|9     |    mm    |mod_mul_28            |   520|
+|10    |      MR  |Modular_Reduction_30  |   496|
+|11    |    ms    |mod_sub_29            |    28|
+|12    |  BU_2    |BU_1                  |   763|
+|13    |    ma    |mod_add_23            |    29|
+|14    |    mm    |mod_mul_24            |   518|
+|15    |      MR  |Modular_Reduction_26  |   498|
+|16    |    ms    |mod_sub_25            |    28|
+|17    |  BU_3    |BU_2                  |   763|
+|18    |    ma    |mod_add_19            |    29|
+|19    |    mm    |mod_mul_20            |   518|
+|20    |      MR  |Modular_Reduction_22  |   498|
+|21    |    ms    |mod_sub_21            |    28|
+|22    |  BU_4    |BU_3                  |   762|
+|23    |    ma    |mod_add_15            |    29|
+|24    |    mm    |mod_mul_16            |   517|
+|25    |      MR  |Modular_Reduction_18  |   498|
+|26    |    ms    |mod_sub_17            |    28|
+|27    |  BU_5    |BU_4                  |   762|
+|28    |    ma    |mod_add_11            |    29|
+|29    |    mm    |mod_mul_12            |   517|
+|30    |      MR  |Modular_Reduction_14  |   498|
+|31    |    ms    |mod_sub_13            |    28|
+|32    |  BU_6    |BU_5                  |   763|
+|33    |    ma    |mod_add_7             |    29|
+|34    |    mm    |mod_mul_8             |   517|
+|35    |      MR  |Modular_Reduction_10  |   498|
+|36    |    ms    |mod_sub_9             |    28|
+|37    |  BU_7    |BU_6                  |   733|
+|38    |    ma    |mod_add               |    29|
+|39    |    mm    |mod_mul               |   488|
+|40    |      MR  |Modular_Reduction     |   469|
+|41    |    ms    |mod_sub               |    28|
+|42    |  CONTR_1 |CONTR                 |     9|
+|43    |  CONTR_2 |CONTR__parameterized0 |    22|
+|44    |  CONTR_3 |CONTR__parameterized1 |    43|
+|45    |  CONTR_4 |CONTR__parameterized2 |    46|
+|46    |  CONTR_5 |CONTR__parameterized3 |    46|
+|47    |  CONTR_6 |CONTR__parameterized4 |    69|
+|48    |  CONTR_7 |CONTR__parameterized5 |   104|
+|49    |  RU_1    |RU                    |   427|
+|50    |  RU_2    |RU__parameterized0    |   278|
+|51    |  RU_3    |RU__parameterized1    |   260|
+|52    |  RU_4    |RU__parameterized2    |   253|
+|53    |  RU_5    |RU__parameterized3    |   249|
+|54    |  RU_6    |RU__parameterized4    |   155|
+|55    |  RU_7    |RU__parameterized5    |   100|
++------+----------+----------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1261.949 ; gain = 778.363
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 105 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1261.949 ; gain = 778.363
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1261.949 ; gain = 778.363
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.244 . Memory (MB): peak = 1274.980 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 437 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1359.785 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 930fec51
+INFO: [Common 17-83] Releasing license: Synthesis
+84 Infos, 105 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:34 . Memory (MB): peak = 1359.785 ; gain = 883.453
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1359.785 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.runs/synth_1/NTT.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file NTT_utilization_synth.rpt -pb NTT_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Apr 27 23:36:13 2025...
