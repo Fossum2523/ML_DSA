@@ -36,6 +36,8 @@ module BU
     reg  [DATA_WIDTH-1:0] shift_reg_a [0:DELAY_CYCLES-1];
     reg  [DATA_WIDTH-1:0] shift_reg_b [0:DELAY_CYCLES-1];
 
+    integer i;
+    
     mod_add ma(add_in_0, add_in_1, add_out);
     mod_sub ms(sub_in_0, sub_in_1, sub_out);
     mod_mul mm(clk,reset,mul_in_0, mul_in_1, mul_out);
@@ -53,49 +55,39 @@ module BU
 
     assign neg_zeta = 23'd8380417 - zeta;
     
-    always @(posedge clk) begin
+    always @(posedge clk or posedge reset) begin
         if(reset)
             mul_in_0 <= 23'd0;
         else
             mul_in_0 <= mode ? neg_zeta: zeta; // -1 應該要改成數 之後INTT接好後改
     end   
 
-    always @(posedge clk) begin
+    always @(posedge clk or posedge reset) begin
         if(reset)
             mul_in_1 <= 23'd0;
         else
             mul_in_1 <= mode ? sub_out : b;
     end   
 
-    genvar i;
-    generate
-        for (i = 0; i < DELAY_CYCLES; i = i + 1) begin : DELAY_CHAIN_a
-            always @(posedge clk) begin
-                if (reset)
-                    shift_reg_a[i] <= {DATA_WIDTH{1'b0}};
-                else if (i == 0)
-                    shift_reg_a[i] <= a;
-                else
-                    shift_reg_a[i] <= shift_reg_a[i-1];
+    
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            for (i = 0; i < DELAY_CYCLES; i = i + 1) begin
+                shift_reg_a[i] <= {DATA_WIDTH{1'b0}};
+                shift_reg_b[i] <= {DATA_WIDTH{1'b0}};
             end
         end
-    endgenerate
-
-    genvar j;
-    generate
-        for (j = 0; j < DELAY_CYCLES; j = j + 1) begin : DELAY_CHAIN_b
-            always @(posedge clk) begin
-                if (reset)
-                    shift_reg_b[j] <= {DATA_WIDTH{1'b0}};
-                else if (j == 0)
-                    shift_reg_b[j] <= b;
-                else
-                    shift_reg_b[j] <= shift_reg_b[j-1];
+        else begin
+            shift_reg_a[0] <= a;
+            shift_reg_b[0] <= b;
+            for (i = 1; i < DELAY_CYCLES; i = i + 1) begin
+                shift_reg_a[i] <= shift_reg_a[i-1];
+                shift_reg_b[i] <= shift_reg_b[i-1];
             end
         end
-    endgenerate
+    end
 
-    always @(posedge clk) begin
+    always @(posedge clk or posedge reset) begin
         if (reset)
             valid_buf <= {DELAY_CYCLES{1'b0}};
         else 

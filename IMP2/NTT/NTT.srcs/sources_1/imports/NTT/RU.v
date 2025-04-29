@@ -26,7 +26,7 @@ module RU#(
     genvar i_u;
     generate
         for (i_u = 0; i_u < depth; i_u = i_u + 1) begin : shift_registers_u
-            always @(posedge clk) begin
+            always @(posedge clk or posedge reset) begin
                 if (reset)
                     shift_reg_u[i_u] <= 0;
                 else if (i_u == 0)
@@ -40,7 +40,7 @@ module RU#(
     genvar i_d;
     generate
         for (i_d = 0; i_d < depth; i_d = i_d + 1) begin : shift_registers_d
-            always @(posedge clk) begin
+            always @(posedge clk or posedge reset) begin
                 if (reset)
                     shift_reg_d[i_d] <= 0;
                 else if (i_d == 0)
@@ -55,7 +55,7 @@ module RU#(
     genvar i;
     generate
         for (i = 0; i < depth; i = i + 1) begin : valid_buf_
-            always @(posedge clk) begin
+            always @(posedge clk or posedge reset) begin
                 if (reset)begin
                     valid_buf[i] <= 1'b0; 
                 end
@@ -71,7 +71,7 @@ module RU#(
 
     generate
         for (i = 0; i < depth; i = i + 1) begin : switch_buf_
-            always @(posedge clk) begin
+            always @(posedge clk or posedge reset) begin
                 if (reset)begin
                     if (i == 0)
                         switch_buf[i] <= 1'b1;
@@ -88,7 +88,7 @@ module RU#(
         end
     endgenerate
 
-    always @(posedge clk) begin
+    always @(posedge clk or posedge reset) begin
         if (reset)
             switch <= 1'b0;
         else if(switch_buf[depth-1] && i_valid)

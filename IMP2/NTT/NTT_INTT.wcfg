@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="6,285.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="6,556.001 ns"></ZoomEndTime>
-      <Cursor1Time time="6,320.000 ns"></Cursor1Time>
+      <ZoomStartTime time="237.600 ns"></ZoomStartTime>
+      <ZoomEndTime time="389.601 ns"></ZoomEndTime>
+      <Cursor1Time time="280.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="207"></NameColumnWidth>
-      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+      <ValueColumnWidth column_width="64"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="96" />
+   <WVObjectSize size="99" />
    <wvobject fp_name="/NTT_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -591,24 +591,32 @@
       <obj_property name="CustomSignalColor">#FF0000</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/NTT_tb/dut/MEM_zeta_7/en" type="logic">
-      <obj_property name="ElementShortName">en</obj_property>
-      <obj_property name="ObjectShortName">en</obj_property>
-      <obj_property name="CustomSignalColor">#FF0000</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
+   <wvobject fp_name="/NTT_tb/dut/CONTR_7/zeta_addr" type="array">
+      <obj_property name="ElementShortName">zeta_addr[6:0]</obj_property>
+      <obj_property name="ObjectShortName">zeta_addr[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/NTT_tb/dut/MEM_zeta_7/addr" type="array">
+   <wvobject fp_name="/NTT_tb/dut/CONTR_7/mode" type="logic">
+      <obj_property name="ElementShortName">mode</obj_property>
+      <obj_property name="ObjectShortName">mode</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/dut/CONTR_7/i_valid" type="logic">
+      <obj_property name="ElementShortName">i_valid</obj_property>
+      <obj_property name="ObjectShortName">i_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/dut/CONTR_7/zeta_addr" type="array">
+      <obj_property name="ElementShortName">zeta_addr[6:0]</obj_property>
+      <obj_property name="ObjectShortName">zeta_addr[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/dut/CONTR_7/triger_buf" type="array">
+      <obj_property name="ElementShortName">triger_buf[0:0]</obj_property>
+      <obj_property name="ObjectShortName">triger_buf[0:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/NTT_tb/dut/CONTR_7/addr" type="array">
       <obj_property name="ElementShortName">addr[6:0]</obj_property>
       <obj_property name="ObjectShortName">addr[6:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#FF0000</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/NTT_tb/dut/MEM_zeta_7/do" type="array">
-      <obj_property name="ElementShortName">do[22:0]</obj_property>
-      <obj_property name="ObjectShortName">do[22:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#FF0000</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
 </wave_config>

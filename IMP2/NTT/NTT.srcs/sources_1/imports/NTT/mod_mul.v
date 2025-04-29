@@ -14,7 +14,7 @@ module mod_mul
 
     Modular_Reduction MR(clk,reset,a_mul_b, out);
 
-    always @(posedge clk) begin
+    always @(posedge clk or posedge reset) begin
         if(reset)
             a_mul_b <= 46'd0;
         else
