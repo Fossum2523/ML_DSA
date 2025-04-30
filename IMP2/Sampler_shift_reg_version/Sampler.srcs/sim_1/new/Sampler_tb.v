@@ -916,13 +916,13 @@ module Sampler_tb;
         apply_reset();
 
         // // Test case 0: S0
-       S();
+    //    S();
 
         // // Test case 1: A
         //  A();
 
         // // Test case 2: y
-//        y();
+       y();
 
         // // Test case 3: c
         //  c();

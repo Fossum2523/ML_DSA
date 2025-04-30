@@ -22,8 +22,8 @@ module Sampler(
     /*---A---"*/
     output  [22:0]      A0,             // Write data A0 to Mem
     output  [22:0]      A1,             // Write data A1 to Mem
-    output  [7:0]      addr_A0,        // Write addresses for A0
-    output  [7:0]      addr_A1,        // Write addresses for A1
+    output  [7:0]       addr_A0,        // Write addresses for A0
+    output  [7:0]       addr_A1,        // Write addresses for A1
     output              en_A0,           // enable for A values
     output              we_A0,           // Write enable for A values
     output              en_A1,           // enable for A values
@@ -46,6 +46,16 @@ module Sampler(
     output              we_ci,          // Write enable for ci values
     output              we_cj           // Write enable for cj values
     );
+
+    //***---MASK only---***//
+    reg  [3:0]   round_cnt;
+    /*---round sampler_temp size---"*/
+    localparam round_0 = 0;
+    localparam round_1 = 8;
+    localparam round_2 = 16;
+    localparam round_3 = 24;
+    localparam round_4 = 32;
+    //***---MASK only---***//
 
     localparam [1:0] S_mode = 2'd0,
                      A_mode = 2'd1,
@@ -79,17 +89,21 @@ module Sampler(
     wire        shake_triger;
     wire        last_sample;
 
+    
+
     assign sampler_in_ready_S    = mode == S_mode    & curr_state == SAMPLE_PROCESS;
-    assign sampler_in_ready_A    = mode == A_mode    & sampler_in_ready_buffer;
-    assign sampler_in_ready_MASK = mode == MASK_mode & sampler_in_ready_buffer;
-    assign sampler_in_ready_SIB  = mode == SIB_mode  & sampler_in_ready_buffer;
+    assign sampler_in_ready_A    = mode == A_mode    & curr_state == SAMPLE_PROCESS;
+    assign sampler_in_ready_MASK = mode == MASK_mode & curr_state == SAMPLE_PROCESS;
+    assign sampler_in_ready_SIB  = mode == SIB_mode  & curr_state == SAMPLE_PROCESS;
 
     assign j_next = mode == S_mode    ? j_next_s    :
                     mode == A_mode    ? j_next_A    :
                     mode == MASK_mode ? j_next_MASK :
                     mode == SIB_mode  ? j_next_SIB  : 9'd0;
     
-    assign shake_triger = mode == S_mode ? shake_cnt == 8'd135 : 1'b0;
+    assign shake_triger = mode == S_mode ?      shake_cnt == 8'd135 :
+                          mode == A_mode ?      shake_cnt == 8'd27  :
+                          mode == MASK_mode ?   shake_cnt == 8'd29  : 1'b0;
 
     assign sampler_squeeze = shake_triger & ~last_sample; // Shake condition
     
@@ -114,37 +128,37 @@ module Sampler(
         .we_z1(we_z1)
     );   
 
-    // ExpandA ExpandA_(
-    //     .clk(clk),
-    //     .reset(reset),
-    //     .sampler_in_ready(sampler_in_ready_A),
-    //     .sampler_in(sampler_buffer),
-    //     .sampler_squeeze(sampler_squeeze_A),
-    //     .next_element(next_element_A),
-    //     .A0(A0),
-    //     .A1(A1),
-    //     .addr_A0(addr_A0),
-    //     .addr_A1(addr_A1),
-    //     .en_A0(en_A0),
-    //     .we_A0(we_A0),
-    //     .en_A1(en_A1),
-    //     .we_A1(we_A1)
-    // );
+    ExpandA ExpandA_(
+        .clk(clk),
+        .reset(reset),
+        .sampler_in_ready(sampler_in_ready_A),
+        .sampler_in(sampler_buffer[47:0]),
+        .j(j),
+        .j_next(j_next_A),
+        .A0(A0),
+        .A1(A1),
+        .addr_A0(addr_A0),
+        .addr_A1(addr_A1),
+        .en_A0(en_A0),
+        .we_A0(we_A0),
+        .en_A1(en_A1),
+        .we_A1(we_A1)
+    );
 
-    // ExpandMASK ExpandMASK_(
-    //     .clk(clk),
-    //     .reset(reset),
-    //     .sampler_in_ready(sampler_in_ready_MASK),
-    //     .sampler_in(sampler_in),
-    //     .sampler_squeeze(sampler_squeeze_MASK),
-    //     .next_element(next_element_MASK),
-    //     .y0(y0),
-    //     .y1(y1),
-    //     .addr_y0(addr_y0),
-    //     .addr_y1(addr_y1),
-    //     .en_y(en_y),
-    //     .we_y(we_y)
-    // );
+    ExpandMASK ExpandMASK_(
+        .clk(clk),
+        .reset(reset),
+        .sampler_in_ready(sampler_in_ready_MASK),
+        .sampler_in(sampler_buffer[35:0]),
+        .j(j),
+        .j_next(j_next_MASK),
+        .y0(y0),
+        .y1(y1),
+        .addr_y0(addr_y0),
+        .addr_y1(addr_y1),
+        .en_y(en_y),
+        .we_y(we_y)
+    );
 
     // SampleInBall SampleInBall_(
     //     .clk(clk),
@@ -162,13 +176,32 @@ module Sampler(
     //     .we_cj(we_cj)
     // );
 
+    wire [5:0]  MASK_remain;
+    wire [1343:0]  test;
+    wire [1343:0]  test2;
+
+    assign test2 = ({(1344){1'b1}} >> (1344-MASK_remain));
+    assign test = (sampler_buffer & test2);
+
+    assign MASK_remain = round_cnt == 5'd0 ? round_0:
+                         round_cnt == 5'd1 ? round_1:
+                         round_cnt == 5'd2 ? round_2:
+                         round_cnt == 5'd3 ? round_3:
+                         round_4;
+
+// 1344'd1 >> (1344-MASK_remain)
     always @(posedge clk) begin
         if(reset)
             sampler_buffer <= 1344'd0;
         else if(curr_state == SAMPLE_WAIT || sampler_in_ready)
-            sampler_buffer <= sampler_in; 
+            sampler_buffer <= mode == MASK_mode ? ((sampler_in[1087:0] << MASK_remain) | test) : sampler_in;
+            // sampler_buffer <= mode == MASK_mode ? ((sampler_in[1087:0] << MASK_remain) | test) : 
+            //                   mode == A_mode    ? sampler_in :
+            //                  /*mode == S_mode & SIB_mode*/{256'd0,sampler_in[1087:0]};  
         else if (curr_state == SAMPLE_PROCESS)
-            sampler_buffer <= mode == S_mode ? {256'd0,8'd0,sampler_buffer[1087:8]}:1344'd0;
+            sampler_buffer <= mode == S_mode    ? {256'd0,8'd0,sampler_buffer[1087:8]}:
+                              mode == A_mode    ? {48'd0,sampler_buffer[1343:48]}:
+                              mode == MASK_mode ? {256'd0,36'd0,sampler_buffer[1087:36]}:1344'd0;
     end
 
     always @(posedge clk) begin
@@ -185,7 +218,7 @@ module Sampler(
         if (reset)
             shake_cnt <= 8'd0;
         else if (curr_state == SAMPLE_PROCESS)
-            shake_cnt <= shake_cnt == 135 ? 8'd0 : shake_cnt + 1'b1; // Reset or increment
+            shake_cnt <= shake_cnt + 1'b1; // Reset or increment
         else if (curr_state == SAMPLE_WAIT)
             shake_cnt <= 8'd0;
     end
@@ -196,9 +229,23 @@ module Sampler(
         else if (next_element)
             j <=  9'd0; 
         else if (curr_state == SAMPLE_PROCESS)
-            j <= mode == S_mode ? j_next_s : 9'd0; 
+            j <=    mode == S_mode ?    j_next_s :
+                    mode == A_mode ?    j_next_A :
+                    mode == MASK_mode ? j_next_MASK :
+                    mode == A_mode ?    j_next_SIB : 9'd0; 
     end
     
+    //***---MASK only---***//
+    always @ (posedge clk) begin
+        if (reset)
+            round_cnt <= 5'd0;
+        else if (sampler_squeeze)
+            round_cnt <= round_cnt + 5'd1;
+        else if (next_element)
+            round_cnt <= 5'd0;
+    end
+    //***---MASK only---***//
+
     always @ (posedge clk) begin
         if (reset)
             curr_state <= SAMPLE_WAIT;

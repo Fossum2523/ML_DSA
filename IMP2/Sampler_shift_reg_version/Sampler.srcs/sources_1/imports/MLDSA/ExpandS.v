@@ -6,7 +6,6 @@ module ExpandS(
     input               sampler_in_ready,
     input   [7:0]       sampler_in,
     input   [8:0]       j,
-
     output  [8:0]       j_next,     // Increment value for j
 
     /*---S1 Mem---"*/
