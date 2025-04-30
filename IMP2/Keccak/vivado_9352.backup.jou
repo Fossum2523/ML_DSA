@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Wed Apr 30 16:39:18 2025
+# Process ID: 9352
+# Current directory: C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/Keccak
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent23436 C:\Users\USER\Desktop\ML_DSA_syn_new\IMP2\Keccak\Keccak.xpr
+# Log file: C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/Keccak/vivado.log
+# Journal file: C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/Keccak\vivado.jou
+# Running On: LAPTOP-2P71OMBV, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 16, Host memory: 16542 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/Keccak/Keccak.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/Keccak/Keccak_tb_behav.wcfg
+source Keccak_tb.tcl
+run 200 us
+close_sim

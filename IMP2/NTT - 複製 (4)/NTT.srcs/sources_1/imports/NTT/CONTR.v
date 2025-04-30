@@ -59,7 +59,6 @@ module CONTR#(
     input   reset,
     input   mode,
     input   i_valid,
-    input   zeta_trig,
     output  [$clog2(256/(depth)) - 1:0]   zeta_addr                       
     );
 

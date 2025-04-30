@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Sampler_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="Sampler_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="35.695001 us"></ZoomEndTime>
+      <Cursor1Time time="7.139000 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="194"></NameColumnWidth>
+      <ValueColumnWidth column_width="74"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="34" />
+   <wvobject fp_name="/Sampler_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/mode" type="array">
+      <obj_property name="ElementShortName">mode[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mode[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/sampler_in_ready" type="logic">
+      <obj_property name="ElementShortName">sampler_in_ready</obj_property>
+      <obj_property name="ObjectShortName">sampler_in_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/sampler_in" type="array">
+      <obj_property name="ElementShortName">sampler_in[1343:0]</obj_property>
+      <obj_property name="ObjectShortName">sampler_in[1343:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/sampler_squeeze" type="logic">
+      <obj_property name="ElementShortName">sampler_squeeze</obj_property>
+      <obj_property name="ObjectShortName">sampler_squeeze</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/next_element" type="logic">
+      <obj_property name="ElementShortName">next_element</obj_property>
+      <obj_property name="ObjectShortName">next_element</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/z0" type="array">
+      <obj_property name="ElementShortName">z0[22:0]</obj_property>
+      <obj_property name="ObjectShortName">z0[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/z1" type="array">
+      <obj_property name="ElementShortName">z1[22:0]</obj_property>
+      <obj_property name="ObjectShortName">z1[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/addr_z0" type="array">
+      <obj_property name="ElementShortName">addr_z0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_z0[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/addr_z1" type="array">
+      <obj_property name="ElementShortName">addr_z1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_z1[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/en_z0" type="logic">
+      <obj_property name="ElementShortName">en_z0</obj_property>
+      <obj_property name="ObjectShortName">en_z0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/we_z0" type="logic">
+      <obj_property name="ElementShortName">we_z0</obj_property>
+      <obj_property name="ObjectShortName">we_z0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/en_z1" type="logic">
+      <obj_property name="ElementShortName">en_z1</obj_property>
+      <obj_property name="ObjectShortName">en_z1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/we_z1" type="logic">
+      <obj_property name="ElementShortName">we_z1</obj_property>
+      <obj_property name="ObjectShortName">we_z1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandS_/sampler_in_ready" type="logic">
+      <obj_property name="ElementShortName">sampler_in_ready</obj_property>
+      <obj_property name="ObjectShortName">sampler_in_ready</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandS_/sampler_in" type="array">
+      <obj_property name="ElementShortName">sampler_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">sampler_in[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandS_/j" type="array">
+      <obj_property name="ElementShortName">j[8:0]</obj_property>
+      <obj_property name="ObjectShortName">j[8:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandS_/j_next" type="array">
+      <obj_property name="ElementShortName">j_next[8:0]</obj_property>
+      <obj_property name="ObjectShortName">j_next[8:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandS_/z0" type="array">
+      <obj_property name="ElementShortName">z0[22:0]</obj_property>
+      <obj_property name="ObjectShortName">z0[22:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandS_/z1" type="array">
+      <obj_property name="ElementShortName">z1[22:0]</obj_property>
+      <obj_property name="ObjectShortName">z1[22:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandS_/addr_z0" type="array">
+      <obj_property name="ElementShortName">addr_z0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_z0[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandS_/addr_z1" type="array">
+      <obj_property name="ElementShortName">addr_z1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_z1[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandS_/en_z0" type="logic">
+      <obj_property name="ElementShortName">en_z0</obj_property>
+      <obj_property name="ObjectShortName">en_z0</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandS_/we_z0" type="logic">
+      <obj_property name="ElementShortName">we_z0</obj_property>
+      <obj_property name="ObjectShortName">we_z0</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandS_/en_z1" type="logic">
+      <obj_property name="ElementShortName">en_z1</obj_property>
+      <obj_property name="ObjectShortName">en_z1</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandS_/we_z1" type="logic">
+      <obj_property name="ElementShortName">we_z1</obj_property>
+      <obj_property name="ObjectShortName">we_z1</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandS_/CFHB_0_out" type="array">
+      <obj_property name="ElementShortName">CFHB_0_out[2:0]</obj_property>
+      <obj_property name="ObjectShortName">CFHB_0_out[2:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandS_/CFHB_1_out" type="array">
+      <obj_property name="ElementShortName">CFHB_1_out[2:0]</obj_property>
+      <obj_property name="ObjectShortName">CFHB_1_out[2:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandS_/a" type="logic">
+      <obj_property name="ElementShortName">a</obj_property>
+      <obj_property name="ObjectShortName">a</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandS_/b" type="logic">
+      <obj_property name="ElementShortName">b</obj_property>
+      <obj_property name="ObjectShortName">b</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandS_/z0_tmp" type="array">
+      <obj_property name="ElementShortName">z0_tmp[2:0]</obj_property>
+      <obj_property name="ObjectShortName">z0_tmp[2:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandS_/z1_tmp" type="array">
+      <obj_property name="ElementShortName">z1_tmp[2:0]</obj_property>
+      <obj_property name="ObjectShortName">z1_tmp[2:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Sampler_tb/uut/ExpandS_/j_plus_num" type="array">
+      <obj_property name="ElementShortName">j_plus_num[1:0]</obj_property>
+      <obj_property name="ObjectShortName">j_plus_num[1:0]</obj_property>
+   </wvobject>
+</wave_config>

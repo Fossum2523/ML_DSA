@@ -3,16 +3,18 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Fri Apr 25 03:56:50 2025
-# Process ID: 26356
-# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8416 C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\Keccak\Keccak.xpr
-# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/vivado.log
-# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak\vivado.jou
-# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+# Start of session at: Wed Apr 30 16:40:53 2025
+# Process ID: 12332
+# Current directory: C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/Keccak
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2220 C:\Users\USER\Desktop\ML_DSA_syn_new\IMP2\Keccak\Keccak.xpr
+# Log file: C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/Keccak/vivado.log
+# Journal file: C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/Keccak\vivado.jou
+# Running On: LAPTOP-2P71OMBV, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 16, Host memory: 16542 MB
 #-----------------------------------------------------------
 start_gui
-open_project C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Keccak/Keccak.xpr
+open_project C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/Keccak/Keccak.xpr
 update_compile_order -fileset sources_1
-open_run synth_1 -name synth_1
-report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+launch_simulation
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/Keccak/Keccak_tb_behav.wcfg
+source Keccak_tb.tcl
+close_sim

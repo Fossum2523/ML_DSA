@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xczu7ev-ffvf1517-1LV-i" LaunchTime="1745523922" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Keccak.dcp">
   <File Type="PA-TCL" Name="Keccak.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="Keccak_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Keccak_reports.tcl"/>
   <File Type="RDS-RDS" Name="Keccak.vds"/>
   <File Type="RDS-UTIL" Name="Keccak_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="Keccak_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="Keccak.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="Keccak_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="Keccak_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/F_Permutation.v">
