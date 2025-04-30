@@ -1,0 +1,6 @@
+0.7
+2020.2
+Oct 13 2023
+20:47:58
+C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/synth/timing/xsim/NTT_tb_time_synth.v,1745769209,verilog,,C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sim_1/imports/NTT/NTT_tb.v,,BU;BU_0;BU_1;BU_2;BU_3;BU_4;BU_5;BU_6;CONTR;CONTR__parameterized0;CONTR__parameterized1;CONTR__parameterized2;CONTR__parameterized3;CONTR__parameterized4;CONTR__parameterized5;Modular_Reduction;Modular_Reduction_10;Modular_Reduction_14;Modular_Reduction_18;Modular_Reduction_22;Modular_Reduction_26;Modular_Reduction_30;Modular_Reduction_34;NTT;RU;RU__parameterized0;RU__parameterized1;RU__parameterized2;RU__parameterized3;RU__parameterized4;RU__parameterized5;glbl;mod_add;mod_add_11;mod_add_15;mod_add_19;mod_add_23;mod_add_27;mod_add_31;mod_add_7;mod_mul;mod_mul_12;mod_mul_16;mod_mul_20;mod_mul_24;mod_mul_28;mod_mul_32;mod_mul_8;mod_sub;mod_sub_13;mod_sub_17;mod_sub_21;mod_sub_25;mod_sub_29;mod_sub_33;mod_sub_9,,,,,,,,
+C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sim_1/imports/NTT/NTT_tb.v,1745768594,verilog,,,,NTT_tb,,,,,,,,
