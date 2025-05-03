@@ -1,4 +1,5 @@
 import random
+import os
 
 
 def AddNTT(a_hat, b_hat):
@@ -32,13 +33,10 @@ def MatrixVectorNTT(M_hat, v_hat):
     for i in range(k):
         for j in range(l):
             temp = MultiplyNTT(M_hat[i][j], v_hat[j])
-            
             w_hat[i] = AddNTT(w_hat[i], temp)
-            if(i==0):
-                print("----------------------------------------------\n")
-                print("temp",temp)
-                print("----------------------------------------------\n")
-                print("what",w_hat[i])
+            # for p in w_hat[i]:
+            #     with open("MATRIX_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            #         file.write(f"{p}\n")
     return w_hat
 
 
@@ -228,6 +226,27 @@ s1 = [[ 827366, 2588109, 3064700, 4932982, 7302014, 4967869, 8034231,
 # result_scalar = ScalarVectorNTT(s1[0], s1)
 
 # Example: Applying MatrixVectorNTT with A and s1
+if os.path.exists("A_hat_data.txt"):
+        os.remove("A_hat_data.txt")
+
+if os.path.exists("s1_hat_data.txt"):
+        os.remove("s1_hat_data.txt")
+
+if os.path.exists("MATRIX_golden_data.txt"):
+        os.remove("MATRIX_golden_data.txt")
+
+
+for i in range(4):
+    for j in range(4):
+        for k in A[i][j]:
+            with open("A_hat_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+                file.write(f"{hex(k)[2:]}\n")
+
+for i in range(4):
+    for k in s1[i]:
+        with open("s1_hat_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"{hex(k)[2:]}\n")
+
 result_matrix = MatrixVectorNTT(A, s1)
 
 # print("Result of ScalarVectorNTT:")

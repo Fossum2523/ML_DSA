@@ -64,8 +64,8 @@ module Sampler_tb;
     wire [DLEN-1:0] s1_q_b;
     wire [DLEN-1:0] A_q_a;
     wire [DLEN-1:0] A_q_b;
-    wire [DLEN-1:0] w_q_a;
-    wire [DLEN-1:0] w_q_b;
+    wire [DLEN-1:0] y_q_a;
+    wire [DLEN-1:0] y_q_b;
     wire [DLEN-1:0] c_q_a;
     wire [DLEN-1:0] c_q_b;
 
@@ -922,10 +922,10 @@ module Sampler_tb;
         //  A();
 
         // // Test case 2: y
-       y();
+    //    y();
 
         // // Test case 3: c
-        //  c();
+         c();
 
 
         // Finish simulation

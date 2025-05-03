@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Thu Feb 27 01:48:40 2025
+# Process ID: 16912
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Sampler
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11692 C:\Users\fossu\Desktop\ML_DSA_Syn\IMP\Sampler\Sampler.xpr
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Sampler/vivado.log
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Sampler\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Sampler/Sampler.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Sampler/tb_Sampler_behav.wcfg
+source Sampler_tb.tcl
+current_wave_config {tb_Sampler_behav.wcfg}
+add_wave {{/Sampler_tb/uut/sampler_in_ready_buffer}} 
+restart
+run 10 us
+relaunch_sim
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/Sampler/tb_Sampler_behav.wcfg}
+close_sim

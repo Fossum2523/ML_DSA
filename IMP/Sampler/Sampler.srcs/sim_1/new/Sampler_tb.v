@@ -919,13 +919,13 @@ module Sampler_tb;
 //        S();
 
         // // Test case 1: A
-         A();
+//         A();
 
         // // Test case 2: y
 //        y();
 
         // // Test case 3: c
-        //  c();
+          c();
 
 
         // Finish simulation

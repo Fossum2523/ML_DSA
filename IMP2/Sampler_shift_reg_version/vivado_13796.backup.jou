@@ -1,0 +1,172 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Thu May  1 00:30:02 2025
+# Process ID: 13796
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Sampler_shift_reg_version
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7820 C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\Sampler_shift_reg_version\Sampler.xpr
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Sampler_shift_reg_version/vivado.log
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Sampler_shift_reg_version\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Sampler_shift_reg_version/Sampler.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Sampler_shift_reg_version/tb_Sampler_behav.wcfg
+source Sampler_tb.tcl
+run 10 us
+run 10 us
+current_wave_config {tb_Sampler_behav.wcfg}
+add_wave {{/Sampler_tb/uut/curr_state}} {{/Sampler_tb/uut/next_state}} 
+restart
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+run 10 us
+relaunch_sim
+relaunch_sim
+update_compile_order -fileset sources_1
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Sampler_shift_reg_version/tb_Sampler_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Sampler_shift_reg_version/tb_Sampler_behav.wcfg
+source Sampler_tb.tcl
+run 10 us
+current_wave_config {tb_Sampler_behav.wcfg}
+add_wave {{/Sampler_tb/DM/A/data_a}} {{/Sampler_tb/DM/A/data_b}} {{/Sampler_tb/DM/A/addr_a}} {{/Sampler_tb/DM/A/addr_b}} {{/Sampler_tb/DM/A/en_a}} {{/Sampler_tb/DM/A/en_b}} {{/Sampler_tb/DM/A/we_a}} {{/Sampler_tb/DM/A/we_b}} {{/Sampler_tb/DM/A/q_a}} {{/Sampler_tb/DM/A/q_b}} 
+restart
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+current_wave_config {tb_Sampler_behav.wcfg}
+add_wave {{/Sampler_tb/uut/ExpandS_/sampler_in_ready}} {{/Sampler_tb/uut/ExpandS_/sampler_in}} {{/Sampler_tb/uut/ExpandS_/j}} {{/Sampler_tb/uut/ExpandS_/j_next}} {{/Sampler_tb/uut/ExpandS_/z0}} {{/Sampler_tb/uut/ExpandS_/z1}} {{/Sampler_tb/uut/ExpandS_/addr_z0}} {{/Sampler_tb/uut/ExpandS_/addr_z1}} {{/Sampler_tb/uut/ExpandS_/en_z0}} {{/Sampler_tb/uut/ExpandS_/we_z0}} {{/Sampler_tb/uut/ExpandS_/en_z1}} {{/Sampler_tb/uut/ExpandS_/we_z1}} 
+current_wave_config {tb_Sampler_behav.wcfg}
+add_wave {{/Sampler_tb/uut/ExpandA_/sampler_in_ready}} {{/Sampler_tb/uut/ExpandA_/sampler_in}} {{/Sampler_tb/uut/ExpandA_/j}} {{/Sampler_tb/uut/ExpandA_/j_next}} {{/Sampler_tb/uut/ExpandA_/A0}} {{/Sampler_tb/uut/ExpandA_/A1}} {{/Sampler_tb/uut/ExpandA_/addr_A0}} {{/Sampler_tb/uut/ExpandA_/addr_A1}} {{/Sampler_tb/uut/ExpandA_/en_A0}} {{/Sampler_tb/uut/ExpandA_/we_A0}} {{/Sampler_tb/uut/ExpandA_/en_A1}} {{/Sampler_tb/uut/ExpandA_/we_A1}} {{/Sampler_tb/uut/ExpandA_/j_plus_num}} {{/Sampler_tb/uut/ExpandA_/rej0}} {{/Sampler_tb/uut/ExpandA_/rej1}} 
+restart
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+update_compile_order -fileset sources_1
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Sampler_shift_reg_version/tb_Sampler_behav.wcfg}
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Sampler_shift_reg_version/tb_Sampler_behav.wcfg
+source Sampler_tb.tcl
+current_wave_config {tb_Sampler_behav.wcfg}
+add_wave {{/Sampler_tb/uut/ExpandMASK_/sampler_in_ready}} {{/Sampler_tb/uut/ExpandMASK_/sampler_in}} {{/Sampler_tb/uut/ExpandMASK_/j}} {{/Sampler_tb/uut/ExpandMASK_/j_next}} {{/Sampler_tb/uut/ExpandMASK_/y0}} {{/Sampler_tb/uut/ExpandMASK_/y1}} {{/Sampler_tb/uut/ExpandMASK_/addr_y0}} {{/Sampler_tb/uut/ExpandMASK_/addr_y1}} {{/Sampler_tb/uut/ExpandMASK_/en_y}} {{/Sampler_tb/uut/ExpandMASK_/we_y}} {{/Sampler_tb/uut/ExpandMASK_/round_cnt}} {{/Sampler_tb/uut/ExpandMASK_/sampler_temp}} {{/Sampler_tb/uut/ExpandMASK_/H0}} {{/Sampler_tb/uut/ExpandMASK_/H1}} {{/Sampler_tb/uut/ExpandMASK_/larger_0}} {{/Sampler_tb/uut/ExpandMASK_/larger_1}} {{/Sampler_tb/uut/ExpandMASK_/y_minuend_0}} {{/Sampler_tb/uut/ExpandMASK_/y_minuend_1}} {{/Sampler_tb/uut/ExpandMASK_/y_subtrahend_0}} {{/Sampler_tb/uut/ExpandMASK_/y_subtrahend_1}} {{/Sampler_tb/uut/ExpandMASK_/mux_in}} {{/Sampler_tb/uut/ExpandMASK_/j_plus_num}} 
+restart
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+run 10 us
+current_wave_config {tb_Sampler_behav.wcfg}
+add_wave {{/Sampler_tb/uut/sampler_in_ready_buffer}} 
+restart
+run 10 us
+current_wave_config {tb_Sampler_behav.wcfg}
+add_wave {{/Sampler_tb/uut/sampler_buffer}} 
+restart
+run 10 us
+current_wave_config {tb_Sampler_behav.wcfg}
+add_wave {{/Sampler_tb/uut/curr_state}} {{/Sampler_tb/uut/next_state}} 
+restart
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+run 10 us
+current_wave_config {tb_Sampler_behav.wcfg}
+add_wave {{/Sampler_tb/uut/round_cnt}} 
+restart
+run 10 us
+current_wave_config {tb_Sampler_behav.wcfg}
+add_wave {{/Sampler_tb/uut/MASK_remain}} 
+restart
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+relaunch_sim
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Sampler_shift_reg_version/tb_Sampler_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Sampler_shift_reg_version/tb_Sampler_behav.wcfg
+source Sampler_tb.tcl
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 10 us
+run 10 us
+relaunch_sim
+current_wave_config {tb_Sampler_behav.wcfg}
+add_wave {{/Sampler_tb/uut/test}} 
+restart
+run 10 us
+relaunch_sim
+relaunch_sim
+run 10 us
+current_wave_config {tb_Sampler_behav.wcfg}
+add_wave {{/Sampler_tb/uut/test2}} 
+restart
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Sampler_shift_reg_version/tb_Sampler_behav.wcfg}
+close_sim
