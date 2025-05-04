@@ -1,9 +1,10 @@
+
 from typing import List, Dict, Tuple
 
 # 假設輸入的變數清單（你可自行填入從圖中分析的資料）
 variables = [
     {"name": "c_tilde", "width": 64, "depth": 4, "start": 1, "end": 8},##
-    {"name": "c", "width": 23, "depth": 256, "start": 1, "end": 3},
+    {"name": "c", "width": 23, "depth": 1024, "start": 1, "end": 3},
     {"name": "t1", "width": 23, "depth":1024, "start": 1, "end": 2},
 
     {"name": "tr", "width": 64, "depth": 8, "start": 2, "end": 5},
@@ -11,17 +12,19 @@ variables = [
     {"name": "t1_hat", "width": 23, "depth":1024, "start": 2, "end": 4},
 
     {"name": "A", "width": 23, "depth": 4096, "start": 3, "end": 5},
-    {"name": "c_hat", "width": 23, "depth": 256, "start": 3, "end": 4},
+    {"name": "c_hat", "width": 23, "depth": 1024, "start": 3, "end": 4},
 
     {"name": "z_hat", "width": 23, "depth":1024, "start": 4, "end": 5}, 
     {"name": "ct1_hat", "width": 23, "depth":1024, "start": 4, "end": 6},
 
-    {"name": "u",  "width": 64, "depth": 8,    "start": 5, "end": 8},##
+    {"name": "u",  "width": 64, "depth": 8,    "start": 5, "end": 9},##
     {"name": "Az_hat", "width": 23, "depth": 1024, "start": 5, "end": 6},
 
     {"name": "w_hat", "width": 23, "depth": 1024, "start": 6, "end": 7},
 
-    {"name": "w", "width": 23, "depth": 1024, "start": 7, "end": 8},
+    {"name": "w'appr", "width": 23, "depth": 1024, "start": 7, "end": 8},
+    
+    {"name": "w'1", "width": 23, "depth": 1024, "start": 8, "end": 9},
 ] 
 
 # 預先計算每個變數的 size（bits）
