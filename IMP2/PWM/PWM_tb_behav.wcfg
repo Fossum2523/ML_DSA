@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="PWM_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="PWM_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="2,657.334 ns"></ZoomStartTime>
+      <ZoomEndTime time="2,793.335 ns"></ZoomEndTime>
+      <Cursor1Time time="2,680.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="190"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="25" />
+   <wvobject fp_name="/PWM_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/mode" type="array">
+      <obj_property name="ElementShortName">mode[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mode[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/i_valid" type="logic">
+      <obj_property name="ElementShortName">i_valid</obj_property>
+      <obj_property name="ObjectShortName">i_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/i_ready" type="logic">
+      <obj_property name="ElementShortName">i_ready</obj_property>
+      <obj_property name="ObjectShortName">i_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/o_ready" type="logic">
+      <obj_property name="ElementShortName">o_ready</obj_property>
+      <obj_property name="ObjectShortName">o_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/o_valid" type="logic">
+      <obj_property name="ElementShortName">o_valid</obj_property>
+      <obj_property name="ObjectShortName">o_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/in_a0" type="array">
+      <obj_property name="ElementShortName">in_a0[22:0]</obj_property>
+      <obj_property name="ObjectShortName">in_a0[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/in_a1" type="array">
+      <obj_property name="ElementShortName">in_a1[22:0]</obj_property>
+      <obj_property name="ObjectShortName">in_a1[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/in_a2" type="array">
+      <obj_property name="ElementShortName">in_a2[22:0]</obj_property>
+      <obj_property name="ObjectShortName">in_a2[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/in_b0" type="array">
+      <obj_property name="ElementShortName">in_b0[22:0]</obj_property>
+      <obj_property name="ObjectShortName">in_b0[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/in_b1" type="array">
+      <obj_property name="ElementShortName">in_b1[22:0]</obj_property>
+      <obj_property name="ObjectShortName">in_b1[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/in_b2" type="array">
+      <obj_property name="ElementShortName">in_b2[22:0]</obj_property>
+      <obj_property name="ObjectShortName">in_b2[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/out_a" type="array">
+      <obj_property name="ElementShortName">out_a[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out_a[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/out_b" type="array">
+      <obj_property name="ElementShortName">out_b[22:0]</obj_property>
+      <obj_property name="ObjectShortName">out_b[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/addr_a" type="array">
+      <obj_property name="ElementShortName">addr_a[9:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_a[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/addr_b" type="array">
+      <obj_property name="ElementShortName">addr_b[9:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_b[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/s1_hat" type="array">
+      <obj_property name="ElementShortName">s1_hat[0:1023][22:0]</obj_property>
+      <obj_property name="ObjectShortName">s1_hat[0:1023][22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/j" type="array">
+      <obj_property name="ElementShortName">j[31:0]</obj_property>
+      <obj_property name="ObjectShortName">j[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/BIT_LEN" type="array">
+      <obj_property name="ElementShortName">BIT_LEN[31:0]</obj_property>
+      <obj_property name="ObjectShortName">BIT_LEN[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/CLK_PERIOD" type="array">
+      <obj_property name="ElementShortName">CLK_PERIOD[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CLK_PERIOD[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/uut/cnt_i" type="array">
+      <obj_property name="ElementShortName">cnt_i[10:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt_i[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PWM_tb/uut/cnt_o" type="array">
+      <obj_property name="ElementShortName">cnt_o[10:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt_o[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

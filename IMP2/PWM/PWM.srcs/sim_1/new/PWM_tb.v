@@ -16,7 +16,7 @@ module PWM_tb;
     reg [BIT_LEN-1:0] in_a0, in_a1, in_a2;
     reg [BIT_LEN-1:0] in_b0, in_b1, in_b2;
     wire [BIT_LEN-1:0] out_a, out_b;
-    wire [7:0] addr_a, addr_b;
+    wire [9:0] addr_a, addr_b;
 
     reg [BIT_LEN-1:0] A_hat [0:4095];
     reg [BIT_LEN-1:0] s1_hat [0:1023];
@@ -25,6 +25,8 @@ module PWM_tb;
     reg [BIT_LEN-1:0] PWM_temp_1 [0:1023];
 
     integer i;
+    integer j;
+
     // Instantiate DUT
     PWM #(BIT_LEN) uut (
         .clk(clk),
@@ -51,13 +53,13 @@ module PWM_tb;
 
     // Clock generation
     initial begin
-        clk = 1;
+        clk = 0;
         forever #(CLK_PERIOD / 2) clk = ~clk;
     end
 
     // Stimulus
     initial begin
-        for(i=0;i<1023;i=i+1)begin
+        for(i=0;i<1024;i=i+1)begin
             PWM_temp_0[i] = 0;
             PWM_temp_1[i] = 0;
         end
@@ -71,15 +73,66 @@ module PWM_tb;
 
         // Test MATRIX_VECTOR
         mode = 2'b00;
-        for(i=0;i<4096;i=i+1)begin
-            i_valid = 1;
-            in_a0 = s1_hat[i%1024];
-            in_a1 = A_hat[i];
-            in_a2 = PWM_temp_0[i];
+        i=0;
+        j=0;
+        while(!done)begin
+            if(i_ready & i<1024) begin
+                i_valid = 1;
+                /*---a---*/
+                in_a0 = s1_hat[(i%256)];
+                in_a1 = A_hat[i%256+j*1024];
+                in_a2 = PWM_temp_0[i];
+                /*---b---*/
+                in_b0 = s1_hat[(i%256)+1];
+                in_b1 = A_hat[i%256+j*1024+1];
+                in_b2 = PWM_temp_0[i+1];
+            end
+            else
+                i_valid = 0;
+
+            if(o_ready) begin
+                PWM_temp_1[addr_a] = out_a;
+                PWM_temp_1[addr_b] = out_b;
+            end
+            
+            i=i+2;
+            if((i%256)==0)
+                j = j + 1;
             #(CLK_PERIOD); 
         end
-        i_valid = 0;
         #(3 * CLK_PERIOD); 
+
+        i=0;
+        j=0;
+        while(!done)begin
+            if(i_ready & i<1024) begin
+                i_valid = 1;
+                /*---a---*/
+                in_a0 = s1_hat[(i%256)];
+                in_a1 = A_hat[i%256+j*1024];
+                in_a2 = PWM_temp_0[i];
+                /*---b---*/
+                in_b0 = s1_hat[(i%256)+1];
+                in_b1 = A_hat[i%256+j*1024+1];
+                in_b2 = PWM_temp_0[i+1];
+            end
+            else
+                i_valid = 0;
+
+            if(o_ready) begin
+                PWM_temp_1[addr_a] = out_a;
+                PWM_temp_1[addr_b] = out_b;
+            end
+            
+            i=i+2;
+            if((i%256)==0)
+                j = j + 1;
+            #(CLK_PERIOD); 
+        end
+        #(3 * CLK_PERIOD); 
+        
+    
+
 
         // // Test SCALAR_VECTOR
         // mode = 2'b01;

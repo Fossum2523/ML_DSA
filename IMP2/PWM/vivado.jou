@@ -3,21 +3,132 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Sun May  4 00:10:16 2025
-# Process ID: 24752
-# Current directory: C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/PWM
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent25924 C:\Users\USER\Desktop\ML_DSA_syn_new\IMP2\PWM\PWM.xpr
-# Log file: C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/PWM/vivado.log
-# Journal file: C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/PWM\vivado.jou
-# Running On: LAPTOP-2P71OMBV, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 16, Host memory: 16542 MB
+# Start of session at: Sun May  4 02:10:38 2025
+# Process ID: 13996
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/PWM
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent25628 C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\PWM\PWM.xpr
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/PWM/vivado.log
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/PWM\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
 #-----------------------------------------------------------
 start_gui
-open_project C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/PWM/PWM.xpr
+open_project C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/PWM/PWM.xpr
 update_compile_order -fileset sources_1
-launch_simulation
-launch_simulation
 launch_simulation
 source PWM_tb.tcl
 relaunch_sim
-run 20 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 10 us
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+current_wave_config {Untitled 1}
+add_wave {{/PWM_tb/uut/cnt_i}} {{/PWM_tb/uut/cnt_o}} 
+restart
+run 10 us
+run 10 us
+relaunch_sim
+relaunch_sim
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+relaunch_sim
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/PWM/PWM_tb_behav.wcfg}
+add_files -fileset sim_1 -norecurse C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/PWM/PWM_tb_behav.wcfg
+set_property xsim.view C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/PWM/PWM_tb_behav.wcfg [get_filesets sim_1]
+close_sim
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/PWM/PWM_tb_behav.wcfg
+source PWM_tb.tcl
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 10 us
+run 10 us
+relaunch_sim
+relaunch_sim
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+relaunch_sim
+relaunch_sim
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+relaunch_sim
+relaunch_sim
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+relaunch_sim
+relaunch_sim
+run 10 us
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 10 us
+run 10 us
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/PWM/PWM_tb_behav.wcfg}
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+relaunch_sim
+relaunch_sim
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
 close_sim

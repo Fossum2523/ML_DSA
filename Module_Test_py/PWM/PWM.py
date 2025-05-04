@@ -34,6 +34,8 @@ def MatrixVectorNTT(M_hat, v_hat):
         for j in range(l):
             temp = MultiplyNTT(M_hat[i][j], v_hat[j])
             w_hat[i] = AddNTT(w_hat[i], temp)
+            if(j==0):
+                 print(temp)
             # for p in w_hat[i]:
             #     with open("MATRIX_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
             #         file.write(f"{p}\n")
