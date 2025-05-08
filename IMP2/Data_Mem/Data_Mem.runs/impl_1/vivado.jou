@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Wed May  7 15:56:04 2025
+# Process ID: 26120
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Data_Mem/Data_Mem.runs/impl_1
+# Command line: vivado.exe -log Data_Mem.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Data_Mem.tcl -notrace
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Data_Mem/Data_Mem.runs/impl_1/Data_Mem.vdi
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/Data_Mem/Data_Mem.runs/impl_1\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+source Data_Mem.tcl -notrace

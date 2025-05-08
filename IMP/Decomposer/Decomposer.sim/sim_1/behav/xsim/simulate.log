@@ -6,4 +6,4 @@ Time		 r_in_0		| r1_out_0 | r0_out_0 || r_in_1		| r1_out_1 | r0_out_1
 30000	 500000	| 3	| -71392 || 750000	| 3	| -83536
 40000	 8380416	| 0	| -1 || 8380415	| 43	| -71681
 ´ú¸Õµ²§ô¡I
-$finish called at time : 40 ns : File "C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/Decomposer/Decomposer.srcs/sim_1/new/Decomposer_tb.v" Line 42
+$finish called at time : 40 ns : File "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP/Decomposer/Decomposer.srcs/sim_1/new/Decomposer_tb.v" Line 42

@@ -2691,10 +2691,7 @@ module Data_Path
         .mode(sampler_mode),
         .sampler_in_ready(sampler_in_ready),
         .sampler_in(sha_out),
-        .sampler_squeeze(sampler_squeeze),
-        .next_element(next_element),
-
-        /*---ExpandS----*/
+   
         .z0(z0),
         .z1(z1),
         .addr_z0(addr_z0),

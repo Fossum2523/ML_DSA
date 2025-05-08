@@ -1,0 +1,9 @@
+Time resolution is 1 ps
+開始雙通道 Decomposer 測試！
+Time		 r_in_0		| r1_out_0 | r0_out_0 || r_in_1		| r1_out_1 | r0_out_1
+10000	 0	| 0	| 0 || 95232	| 0	| 95232
+20000	 95233	| 1	| -95231 || 190464	| 1	| 0
+30000	 500000	| 3	| -71392 || 750000	| 3	| -83536
+40000	 8380416	| 0	| -1 || 8380415	| 43	| -71681
+測試結束！
+$finish called at time : 40 ns : File "C:/Users/USER/Desktop/ML_DSA_syn_new/IMP/Decomposer/Decomposer.srcs/sim_1/new/Decomposer_tb.v" Line 42

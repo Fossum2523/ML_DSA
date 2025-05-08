@@ -185,14 +185,32 @@ def KeyGen(xi):
     xi = xi + IntegerToByte(ML_DSA["k"],1) + IntegerToByte(ML_DSA["l"],1)
     H_xi = SHAKE_256(xi,1024)
     p = H_xi[:32]
+    with open("MLDSA_KeyGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"p = {Verilog_trans(p)}\n")
     p_prime = H_xi[32:96]
+    with open("MLDSA_KeyGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"p_prime = {Verilog_trans(p_prime)}\n")
     K = H_xi[96:128]
+    with open("MLDSA_KeyGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"K = {Verilog_trans(K)}\n")
     A_hat = ExpandA(p)
+    with open("MLDSA_KeyGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"A_hat = {A_hat}\n")
     s1, s2 = ExpandS(p_prime)
+    with open("MLDSA_KeyGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"s1 = {s1}\n")
+    with open("MLDSA_KeyGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"s2 = {s2}\n")
     s1Hat = [NTT(s) for s in s1]
+    with open("MLDSA_KeyGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"s1_hat = {s1Hat}\n")
     s1Hat = np.array(s1Hat)
     A_NTT_s1 = NTT_dot(A_hat,s1Hat)
+    with open("MLDSA_KeyGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"As1_hat = {A_NTT_s1}\n")
     aHat_mul_s1Hat = [NTT_inv(s) for s in A_NTT_s1]
+    with open("MLDSA_KeyGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"As1 = {aHat_mul_s1Hat}\n")
     t = []
     for i in range(ML_DSA["k"]):
         d = []
@@ -213,12 +231,27 @@ def KeyGen(xi):
         t0.append(ta0)
     pk = pk_encode(p, t1)
     tr = SHAKE_256(pk,512)
+    with open("MLDSA_KeyGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"tr = {Verilog_trans(tr)}\n")
     sk = sk_encode(p, K, tr, s1, s2, t0)
     return pk, sk
 
 # 算法 2 ML-DSA.Sign(sk,M)
 def Sign(sk,M,rnd):
     (p,K,tr,s1,s2,t0) = sk_decode(sk)
+    with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"p = {Verilog_trans(p)}\n")
+    with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"K = {Verilog_trans(K)}\n")
+    with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"tr = {Verilog_trans(tr)}\n")
+    with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"s1 = {s1}\n")
+    with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"s2 = {s2}\n")
+    with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"t0 = {t0}\n")
+    
     s1_hat = [NTT(si) for si in s1]
     with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
         file.write(f"s1_hat = {s1_hat}\n")
@@ -1091,29 +1124,29 @@ ctx = "23ffff"
 ctx_byte = ctx.encode("utf-8")  # let ctx to byte
 
 signature = HASH_ML_DSA_Sign(sk,M,ctx_byte,1)
-# print(signature)
+print(signature)
 ### --------------- SignGen --------------- ###
 
 ## --------------- SignVer --------------- ###
-if os.path.exists("MLDSA_SignVer_testbench_test_input_data_pk.txt"):
-    os.remove("MLDSA_SignVer_testbench_test_input_data_pk.txt")
+# if os.path.exists("MLDSA_SignVer_testbench_test_input_data_pk.txt"):
+#     os.remove("MLDSA_SignVer_testbench_test_input_data_pk.txt")
 
-if os.path.exists("MLDSA_SignVer_testbench_test_input_data_M_prime.txt"):
-    os.remove("MLDSA_SignVer_testbench_test_input_data_M_prime.txt")
+# if os.path.exists("MLDSA_SignVer_testbench_test_input_data_M_prime.txt"):
+#     os.remove("MLDSA_SignVer_testbench_test_input_data_M_prime.txt")
 
-if os.path.exists("MLDSA_SignVer_testbench_test_input_data_M_prime_len.txt"):
-    os.remove("MLDSA_SignVer_testbench_test_input_data_M_prime_len.txt")
+# if os.path.exists("MLDSA_SignVer_testbench_test_input_data_M_prime_len.txt"):
+#     os.remove("MLDSA_SignVer_testbench_test_input_data_M_prime_len.txt")
 
-if os.path.exists("MLDSA_SignVer_testbench_test_input_data_signature.txt"):
-    os.remove("MLDSA_SignVer_testbench_test_input_data_signature.txt")
+# if os.path.exists("MLDSA_SignVer_testbench_test_input_data_signature.txt"):
+#     os.remove("MLDSA_SignVer_testbench_test_input_data_signature.txt")
 
-if os.path.exists("MLDSA_SignVer_testbench_test_input_data_verification.txt"):
-    os.remove("MLDSA_SignVer_testbench_test_input_data_verification.txt")
+# if os.path.exists("MLDSA_SignVer_testbench_test_input_data_verification.txt"):
+#     os.remove("MLDSA_SignVer_testbench_test_input_data_verification.txt")
 
-a = HASH_ML_DSA_Ver(pk,M,signature,ctx_byte)
+# a = HASH_ML_DSA_Ver(pk,M,signature,ctx_byte)
 
-print(a)
-print(len(M))
+# print(a)
+# print(len(M))
 ## --------------- SignVer --------------- ###
 
 # p = "3202542EF1E239D32BE1BCE5AE4AC8052D578899D653E368E11BC11C5480BA06"

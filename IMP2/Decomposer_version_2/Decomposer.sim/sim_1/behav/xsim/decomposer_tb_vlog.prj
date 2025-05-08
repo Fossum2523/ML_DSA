@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../Decomposer.srcs/sources_1/coeff_decomposer.v" \
+"../../../../Decomposer.srcs/sources_1/decomp_map1.v" \
+"../../../../Decomposer.srcs/sources_1/decomposer.v" \
+"../../../../Decomposer.srcs/sim_1/new/Decomposer_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -124,7 +124,7 @@ module MLDSA_tb;
     end
     initial begin
         fd = $fopen("../../../../Testbench_Input_File/SignGen/MLDSA_SignGen_testbench_test_input_data_M_prime_len.txt", "r");
-        r = $fscanf(fd, "%h", M_prime_len);  // ä¸€æ¬¡ä¸€å€‹å€¼
+        r = $fscanf(fd, "%h", M_prime_len);  // ä¸?æ¬¡ä??‹å??
         $fclose(fd);
     end
 
@@ -158,17 +158,17 @@ module MLDSA_tb;
         reset = 0;
 
         /*-----KeyGen-----*/
-        // main_mode = 2'b00;
-        // start = 1;
-        // #10;
-        // start = 0;
+         main_mode = 2'b00;
+         start = 1;
+         #10;
+         start = 0;
         /*-----KeyGen-----*/
 
         /*-----SignGen-----*/
-        main_mode = 2'b01;
-        start = 1;
-        #10;
-        start = 0;
+//        main_mode = 2'b01;
+//        start = 1;
+//        #10;
+//        start = 0;
         /*-----SignGen-----*/
     end 
 
@@ -179,67 +179,67 @@ module MLDSA_tb;
         wait(start);
         #10;
         /*---------------------------------------KeyGen---------------------------------------*/
-        // MLDSA_i_valid_A = 1;
-        // for(i=0;i<4;i=i+1)begin
-        //     MLDSA_data_in_A = xi_data[i];
-        //     #10;
-        // end
-        // MLDSA_i_valid_A = 0;
+         MLDSA_i_valid_A = 1;
+         for(i=0;i<4;i=i+1)begin
+             MLDSA_data_in_A = xi_data[i];
+             #10;
+         end
+         MLDSA_i_valid_A = 0;
         /*---------------------------------------KeyGen---------------------------------------*/
 
         /*---------------------------------------SignGen---------------------------------------*/
-        //keccak with protocol A
-        MLDSA_i_valid_A = 1;
-        //Send tr data
-        i = 8;
-        while(i<16)begin
-            if(MLDSA_i_ready_A)begin
-                MLDSA_data_in_A = sk_data[i];
-                i = i + 1;
-            end
-            #10;
-        end
+//        //keccak with protocol A
+//        MLDSA_i_valid_A = 1;
+//        //Send tr data
+//        i = 8;
+//        while(i<16)begin
+//            if(MLDSA_i_ready_A)begin
+//                MLDSA_data_in_A = sk_data[i];
+//                i = i + 1;
+//            end
+//            #10;
+//        end
 
-        //Send M_prime data
-        i = 0;
-        while(i<M_prime_len)begin
-            if(i == (M_prime_len-1))
-                MLDSA_i_last_A = 1'b1;
-            if(MLDSA_i_ready_A)begin
-                MLDSA_data_in_A = M_prime_data[i];
-                i = i + 1;
-            end
-            #10;
-        end
-        MLDSA_i_last_A = 1'b0;
+//        //Send M_prime data
+//        i = 0;
+//        while(i<M_prime_len)begin
+//            if(i == (M_prime_len-1))
+//                MLDSA_i_last_A = 1'b1;
+//            if(MLDSA_i_ready_A)begin
+//                MLDSA_data_in_A = M_prime_data[i];
+//                i = i + 1;
+//            end
+//            #10;
+//        end
+//        MLDSA_i_last_A = 1'b0;
 
-        //Send K data
-        i = 4;
-        while(i<8)begin
-            if(MLDSA_i_ready_A)begin
-                MLDSA_data_in_A = sk_data[i];
-                i = i + 1;
-            end
-            #10;
+//        //Send K data
+//        i = 4;
+//        while(i<8)begin
+//            if(MLDSA_i_ready_A)begin
+//                MLDSA_data_in_A = sk_data[i];
+//                i = i + 1;
+//            end
+//            #10;
             
-        end
+//        end
 
-        //Send rnd data
-        i = 0;
-        while(i<4)begin
-            if(i == (4-1))
-                MLDSA_i_last_A = 1'b1;
-            if(MLDSA_i_ready_A)begin
-                MLDSA_data_in_A = rnd_data[i];
-                i = i + 1;
-            end
-            #10;
-        end
+//        //Send rnd data
+//        i = 0;
+//        while(i<4)begin
+//            if(i == (4-1))
+//                MLDSA_i_last_A = 1'b1;
+//            if(MLDSA_i_ready_A)begin
+//                MLDSA_data_in_A = rnd_data[i];
+//                i = i + 1;
+//            end
+//            #10;
+//        end
 
 
-        MLDSA_data_in_A = 64'd0;
-        MLDSA_i_last_A  = 1'b0;
-        MLDSA_i_valid_A = 0;
+//        MLDSA_data_in_A = 64'd0;
+//        MLDSA_i_last_A  = 1'b0;
+//        MLDSA_i_valid_A = 0;
 
         
         /*---------------------------------------SignGen---------------------------------------*/
