@@ -2647,32 +2647,32 @@ module Data_Path
             {SignGen,6'd13}: begin  //PWM　<<cs1>> = c^ * s1^
                 AG_4_addr_adder  = 2'd2;
                 AG_4_star_addr   = 12'd0;
-                AG_4_last_addr   = 12'd1022;;
+                AG_4_last_addr   = 12'd1022;
             end
             {SignGen,6'd14}: begin  //PWM <<cs2>> = c^ * s2^
                 AG_4_addr_adder  = 2'd2;
                 AG_4_star_addr   = 12'd0;
-                AG_4_last_addr   = 12'd1022;;
+                AG_4_last_addr   = 12'd1022;
             end
             {SignGen,6'd15}: begin  //PWM z = y + <<cs1>>
                 AG_4_addr_adder  = 2'd2;
                 AG_4_star_addr   = 12'd0;
-                AG_4_last_addr   = 12'd1022;;
+                AG_4_last_addr   = 12'd1022;
             end
             {SignGen,6'd16}: begin  // PWM w_cs2 = 𝐰 − ⟨⟨𝑐𝐬2⟩⟩ and LowBits(w_cs2)
                 AG_4_addr_adder  = 2'd2;
                 AG_4_star_addr   = 12'd0;
-                AG_4_last_addr   = 12'd1022;;
+                AG_4_last_addr   = 12'd1022;
             end
             {SignGen,6'd17}: begin  //PWM <<ct0>>^ = c^ * t0^
                 AG_4_addr_adder  = 2'd2;
                 AG_4_star_addr   = 12'd0;
-                AG_4_last_addr   = 12'd1022;;
+                AG_4_last_addr   = 12'd1022;
             end
             {SignGen,6'd19}: begin  //PWM (𝐰 − ⟨⟨𝑐𝐬2⟩⟩) + <<ct0>>
                 AG_4_addr_adder  = 2'd2;
                 AG_4_star_addr   = 12'd0;
-                AG_4_last_addr   = 12'd1022;;
+                AG_4_last_addr   = 12'd1022;
             end
         endcase
     end

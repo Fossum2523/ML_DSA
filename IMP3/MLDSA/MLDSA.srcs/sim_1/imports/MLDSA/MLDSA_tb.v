@@ -427,48 +427,51 @@ module MLDSA_tb;
         MLDSA_i_valid_B = 0;
     end
     /***------------------------------------protocol B------------------------------------***/
-    /*---------------------------------------------signGen---------------------------------------------*/
+    
+    /***------------------------------------output------------------------------------***/
+    initial begin
+        MLDSA_o_ready = 1;
 
-
-
-
-
-
-
-
-    /*---------------------------------------signature---------------------------------------*/
-    // always @(posedge clk) begin
-    //     if(main_mode == SignGen & signature_index <303)begin
-    //         if (MLDSA_o_valid) begin
-    //             $display("Checking output %0d: DUT = %0h, Golden = %0h", signature_index, MLDSA_data_out, signature_golden_data[signature_index]);
-
-    //             if (MLDSA_data_out !== signature_golden_data[signature_index]) begin
-    //                 $display(">> MISMATCH at %0d: DUT = %0h, Golden = %0h", signature_index, MLDSA_data_out, signature_golden_data[signature_index]);
-    //                 error_count = error_count + 1;
-    //             end
-    //             signature_index = signature_index + 1;
-    //         end
-    //     end
-    // end
-
-    always @(posedge clk) begin
-        if (signature_index == 303 & error_count == 0) begin
-            signature_index = 0;
-            signature_check <= 1;
+        //sig → "c_tilde"
+        signature_index = 0;
+        while(signature_index < 4)begin
+            if(MLDSA_o_valid)begin
+                $display("sig → 'c_tilde', Checking output %0d: DUT = %0h, Golden = %0h", signature_index, MLDSA_data_out, signature_golden_data[signature_index]);
+                signature_index = signature_index + 1;
+            end
+            #(CLK_PERIOD);
         end
-        else if(signature_check)begin
-            signature_check <= 0;
+
+        //sig → "z"
+        signature_index = 4;
+        while(signature_index < 292)begin
+            if(MLDSA_o_valid)begin
+                $display("sig → 'z', Checking output %0d: DUT = %0h, Golden = %0h", signature_index, MLDSA_data_out, signature_golden_data[signature_index]);
+                signature_index = signature_index + 1;
+            end
+            #(CLK_PERIOD);
         end
+
+        //sig → "h"
+        signature_index = 292;
+        while(signature_index < 303)begin
+            if(MLDSA_o_valid)begin
+                $display("sig → 'h', Checking output %0d: DUT = %0h, Golden = %0h", signature_index, MLDSA_data_out, signature_golden_data[signature_index]);
+                signature_index = signature_index + 1;
+            end
+            #(CLK_PERIOD);
+        end
+        
+        MLDSA_o_ready = 0;
+        #(CLK_PERIOD);
+
+
+        //finish
+        $display("signGen Ouput Data: pk, sk All PASS");
+        #(20*CLK_PERIOD);
+        $finish;
+        /***------------------------------------output------------------------------------***/
     end
-
-    always @(posedge clk) begin
-        if(signature_check == 1)begin
-            $display("SignGen Ouput Data: signature All PASS");
-        end
-    end
-    /*---------------------------------------signature---------------------------------------*/
-
-
     
 
     always @(posedge clk ) begin

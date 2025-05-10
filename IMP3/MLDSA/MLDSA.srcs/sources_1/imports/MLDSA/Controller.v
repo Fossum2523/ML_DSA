@@ -157,6 +157,7 @@ module Controller
     reg Decomposer_done_tmp;
     reg MakeHint_done;
     reg MakeHint_done_tmp;
+    reg clean_done_tmp;
 
     assign  curr_state = main_mode == KeyGen  ? curr_state_KeyGen : 
                          main_mode == SignGen ? curr_state_SignGen:
@@ -297,7 +298,7 @@ module Controller
                     next_state_SignGen = STAGE_6;
             end
             STAGE_7: begin
-                if(PWM_done_tmp)   
+                if(PWM_done_tmp && clean_done_tmp)   
                     next_state_SignGen = STAGE_8;
                 else 
                     next_state_SignGen = STAGE_7;
@@ -309,7 +310,7 @@ module Controller
                     next_state_SignGen = STAGE_8;
             end
             STAGE_9: begin
-                if(Encoder_done_tmp)   
+                if(Decomposer_done_tmp)   
                     next_state_SignGen = STAGE_10;
                 else 
                     next_state_SignGen = STAGE_9;
@@ -359,7 +360,7 @@ module Controller
             STAGE_17: begin
                 if(NTT_done_tmp && PWM_done_tmp)
                     if(z_fail || r0_fail)
-                        next_state_SignGen = STAGE_6;
+                        next_state_SignGen = STAGE_7;
                     else
                         next_state_SignGen = STAGE_18;
                 else 
@@ -374,7 +375,7 @@ module Controller
             STAGE_19: begin
                 if(PWM_done_tmp && MakeHint_done)   
                     if(ct0_fail || hint_fail)
-                        next_state_SignGen = STAGE_6;
+                        next_state_SignGen = STAGE_7;
                     else
                         next_state_SignGen = STAGE_20;
                 else 
@@ -394,12 +395,9 @@ module Controller
             end
             STAGE_22: begin
                 if(send_done)   
-                    next_state_SignGen = STAGE_T;
+                    next_state_SignGen = IDLE;
                 else 
                     next_state_SignGen = STAGE_22;
-            end
-            STAGE_T: begin
-                next_state_SignGen = STAGE_T;
             end
             default: next_state_SignGen = IDLE;
         endcase
@@ -788,7 +786,7 @@ module Controller
             {KeyGen,6'd9}:begin
                 Encoder_done = AG_3_done;
             end
-            {SignGen,6'd9}:begin
+            {SignGen,6'd10}:begin
                 Encoder_done = AG_3_done;
             end
             {SignGen,6'd16}:begin
@@ -869,9 +867,6 @@ module Controller
             {KeyGen,6'd10}:begin //main_mem_sel: "4'd0 -> p", "4'd1 -> t1_pack"
                 main_mem_sel_triger = AG_1_done; 
             end
-            {SignGen,6'd10}:begin //main_mem_sel: 4'd0 -> u, 4'd1 -> w1_pack
-                main_mem_sel_triger = AG_1_done; 
-            end
             // {KeyGen,6'd10}:begin //main_mem_sel: "3'd0 -> p", "3'd1 -> K", "3'd2 -> tr", "3'd3 -> s1_pack", "3'd4 -> s2_pack", "3'd5 -> t0_pack",    
             //     main_mem_sel_triger = AG_1_done; 
             // end
@@ -918,9 +913,9 @@ module Controller
                 AG_1_triger      = ~(keccak_done | keccak_done_tmp);
                 AG_1_clean       = next_element;
             end
-            {SignGen,6'd10}: begin
-                AG_1_triger      = ~main_mem_sel[1];
-                AG_1_clean       = AG_1_done;
+            {SignGen,6'd10}: begin //"c_tilde = H(u || w1)", read out u data to keccak
+                AG_1_triger      = ~(keccak_done | keccak_done_tmp);
+                AG_1_clean       = keccak_done_tmp;
             end
             {SignGen,6'd11}: begin  //take c_tile MEM data out to keccak and then sampler gen c
                 AG_1_triger      = ~(keccak_done | keccak_done_tmp);
@@ -985,15 +980,23 @@ module Controller
                 AG_2_triger      = ~NTT_done_tmp;
                 AG_2_clean       = NTT_done;
             end 
+            {SignGen,6'd7}: begin  // "clean c"
+                AG_2_triger      = ~clean_done_tmp;
+                AG_2_clean       = clean_done_tmp;
+            end 
             {SignGen,6'd8}: begin  // INTT W^
                 AG_2_triger      = ~NTT_done_tmp;
                 AG_2_clean       = NTT_done;
             end
-            {SignGen,6'd9}: begin // Decomposer w1 =Decomp(w) and Enocder w1 TX
+            {SignGen,6'd9}: begin //"H_w = High(w)"
+                AG_2_triger      = ~Decomposer_done_tmp;
+                AG_2_clean       = Decomposer_done;
+            end
+            {SignGen,6'd10}: begin //"w1 = Encode(H_w)"
                 AG_2_triger      = ~Encoder_done_tmp;
                 AG_2_clean       = Encoder_done;
             end
-            {SignGen,6'd12}: begin  // NTT C
+            {SignGen,6'd12}: begin  //"c_hat = NTT(c)"
                 AG_2_triger      = ~NTT_done_tmp;
                 AG_2_clean       = NTT_done;
             end 
@@ -1012,6 +1015,10 @@ module Controller
             {SignGen,6'd18}: begin  // INTT(<<ct0>>^ )
                 AG_2_triger      = ~NTT_done_tmp;
                 AG_2_clean       = NTT_done;
+            end
+            {SignGen,6'd19}: begin  //"h = MakeHint", cooperate Highbit(w_cs2+ct0) generated by Decomposer to hint
+                AG_2_triger      = ~Decomposer_done_tmp;
+                AG_2_clean       = Decomposer_done_tmp;
             end 
             {SignGen,6'd21}: begin // Enocder z TX
                 AG_2_triger      = ~Encoder_done_tmp;
@@ -1026,35 +1033,43 @@ module Controller
         case (ctrl_sign)
             {KeyGen,6'd4}: begin // Enocder s1 RX
                 AG_3_triger      = ~Encoder_done_tmp;
-                AG_3_clean       = Encoder_done;
+                AG_3_clean       = Encoder_done_tmp;
             end 
             {KeyGen,6'd5}: begin // Enocder s2 RX
                 AG_3_triger      = ~Encoder_done_tmp;
-                AG_3_clean       = Encoder_done;
+                AG_3_clean       = Encoder_done_tmp;
             end 
             {KeyGen,6'd8}: begin // Enocder t1 RX
                 AG_3_triger      = ~Encoder_done_tmp;
-                AG_3_clean       = Encoder_done;
+                AG_3_clean       = Encoder_done_tmp;
             end 
             {KeyGen,6'd9}: begin // Enocder t0 RX
                 AG_3_triger      = ~Encoder_done_tmp;
-                AG_3_clean       = Encoder_done;
+                AG_3_clean       = Encoder_done_tmp;
             end
             {SignGen,6'd1}: begin // Decoder s1 RX
                 AG_3_triger      = ~Decoder_done_tmp;
-                AG_3_clean       = Decoder_done;
+                AG_3_clean       = Decoder_done_tmp;
             end
             {SignGen,6'd2}: begin // Decoder s2 RX
                 AG_3_triger      = ~Decoder_done_tmp;
-                AG_3_clean       = Decoder_done;
+                AG_3_clean       = Decoder_done_tmp;
             end
             {SignGen,6'd3}: begin // Decoder t0 RX
                 AG_3_triger      = ~Decoder_done_tmp;
-                AG_3_clean       = Decoder_done;
+                AG_3_clean       = Decoder_done_tmp;
             end
-            {SignGen,6'd9}: begin // Enocder w1 RX
+            {SignGen,6'd9}: begin //"H_w = High(w)"
+                AG_3_triger      = ~Decomposer_done_tmp;
+                AG_3_clean       = Decomposer_done_tmp;
+            end
+            {SignGen,6'd10}: begin // Enocder w1 RX
                 AG_3_triger      = ~Encoder_done_tmp;
                 AG_3_clean       = Encoder_done;
+            end
+            {SignGen,6'd16}: begin //"r0 = LowBits(w_cs2)"
+                AG_3_triger      = ~Decomposer_done_tmp;
+                AG_3_clean       = Decomposer_done_tmp;
             end
             {SignGen,6'd19}: begin // MakeHint hint RX
                 AG_3_triger      = ~MakeHint_done_tmp;
@@ -1103,37 +1118,37 @@ module Controller
                 AG_4_triger      = sha_out_ready;
                 AG_4_clean       = AG_4_done;
             end 
-            {SignGen,6'd7}: begin //PWM W^ = A^ * y^
+            {SignGen,6'd7}: begin //"w_hat = A ‧ y_hat", PWM
                 AG_4_triger      = ~PWM_done_tmp;
-                AG_4_clean       = AG_4_done;
+                AG_4_clean       = PWM_done;
             end
-            {SignGen,6'd10}: begin //after keccak gen c_tilde , take c_tile to mem
+            {SignGen,6'd10}: begin //"Gen(c)", after keccak gen c_tilde , take c_tile to mem
                 AG_4_triger      = sha_out_ready;
                 AG_4_clean       = AG_4_done;
             end
-            {SignGen,6'd13}: begin //PWM <<cs1>> = c^ * s1^
+            {SignGen,6'd13}: begin //"cs1_hat = c_hat ‧ s1_hat", PWM
                 AG_4_triger      = ~PWM_done_tmp;
-                AG_4_clean       = AG_4_done;
+                AG_4_clean       = PWM_done;
             end 
-            {SignGen,6'd14}: begin //PWM <<cs2>> = c^ * s2^
+            {SignGen,6'd14}: begin //"cs2_hat = c_hat ‧ s2_hat", PWM
                 AG_4_triger      = ~PWM_done_tmp;
-                AG_4_clean       = AG_4_done;
+                AG_4_clean       = PWM_done;
             end 
-            {SignGen,6'd15}: begin //PWM z = y + <<cs1>>
+            {SignGen,6'd15}: begin //"z = y + cs1", PWM
                 AG_4_triger      = ~PWM_done_tmp;
-                AG_4_clean       = AG_4_done;
+                AG_4_clean       = PWM_done;
             end 
             {SignGen,6'd16}: begin // PWM w_cs2 = ??�� ??? ?��?��???��?��2?��?�� and LowBits(w_cs2)
                 AG_4_triger      = ~PWM_done_tmp;
-                AG_4_clean       = AG_4_done;
+                AG_4_clean       = PWM_done;
             end 
             {SignGen,6'd17}: begin //PWM <<ct0>>^ = c^ * t0^
                 AG_4_triger      = ~PWM_done_tmp;
-                AG_4_clean       = AG_4_done;
+                AG_4_clean       = PWM_done;
             end 
             {SignGen,6'd19}: begin //PWM (??�� ??? ?��?��???��?��2?��?��) + <<ct0>>
                 AG_4_triger      = ~PWM_done_tmp;
-                AG_4_clean       = AG_4_done;
+                AG_4_clean       = PWM_done;
             end 
         endcase
     end
@@ -1206,10 +1221,13 @@ module Controller
         Decomposer_done = 1'b0;
         case (ctrl_sign)
             {SignGen,6'd9}: begin
-                Decomposer_done = AG_4_done;
+                Decomposer_done = AG_3_done;
             end 
             {SignGen,6'd16}: begin
                 Decomposer_done = AG_4_done;
+            end 
+            {SignGen,6'd19}: begin
+                Decomposer_done = AG_2_done;
             end 
         endcase
     end
@@ -1223,6 +1241,18 @@ module Controller
             Decomposer_done_tmp <= 1'b1;
     end
     /*---Decomposer---*/ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+    /*---Clean---*/ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    always @ (posedge clk) begin 
+        if (reset)                                                                                                                                                   
+           clean_done_tmp <= 1'b0;
+        else if(next_state != curr_state)
+            clean_done_tmp <= 1'b0;
+        else if(ctrl_sign == {SignGen,6'd7} && AG_2_done)
+            clean_done_tmp <= 1'b1;
+    end
+    /*---Clean---*/ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
     /*---AXI Stream input protocol A---*/ //------------------------------------------str

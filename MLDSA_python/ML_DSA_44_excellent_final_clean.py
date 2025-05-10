@@ -343,6 +343,10 @@ def Sign(sk,M,rnd):
             file.write(f"z = {z}\n")
 
         temp = array_minus_k(w,cs2)
+
+        with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"w_cs2 = {temp}\n")
+
         r0 = [LowBits(w1i) for w1i in temp]
         with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
             file.write(f"r0 = {r0}\n")
@@ -369,7 +373,11 @@ def Sign(sk,M,rnd):
 
             zero_array = [[0]*256] * ML_DSA["k"]
             w_minus_cs2 = array_minus_k(w,cs2)
+            with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+                file.write(f"w_cs2 = {w_minus_cs2}\n")
             w_minus_cs2_pluse_ct0 = array_plus_k(w_minus_cs2,ct0)
+            with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+                file.write(f"w_cs2 + ct0 = {w_minus_cs2_pluse_ct0}\n")
             minus_ct0 = array_minus_k(zero_array,ct0)
             h,true_num = MakeHint(minus_ct0, w_minus_cs2_pluse_ct0)
 
@@ -910,7 +918,11 @@ def MakeHint(z, r):
     for i in range(ML_DSA["k"]):
         d = []
         r1 = HighBits(r[i])
+        with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"HighBits(w_cs2 + ct0) = {r1}\n")
         v1 = HighBits(r_plus_z[i])
+        with open("MLDSA_SignGen_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"r1 = {v1}\n")
         for j in range(256):
             bol = int(r1[j] != v1[j])
             if bol == 1:

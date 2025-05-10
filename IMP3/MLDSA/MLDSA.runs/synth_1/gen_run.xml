@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1746714143" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/MLDSA.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1746903465" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/MLDSA.dcp">
   <File Type="PA-TCL" Name="MLDSA.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="MLDSA_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="MLDSA_reports.tcl"/>
   <File Type="RDS-RDS" Name="MLDSA.vds"/>
   <File Type="RDS-UTIL" Name="MLDSA_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="MLDSA_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="MLDSA.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="MLDSA_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="MLDSA_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/Address_generate/Address_generate.v">
@@ -56,6 +59,20 @@
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/Data_Path.v"/>
         <Attr Name="ImportTime" Val="1736003262"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/Decoder/Decoder.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/Decomposer/Decomposer.v">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -159,6 +176,27 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/Decomposer/coeff_decomposer.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/Decomposer/decomp_map1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/Hint/makehint.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/NTT/mod_add.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -226,6 +264,14 @@
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../test/MLDSA/MLDSA.v"/>
         <Attr Name="ImportTime" Val="1736003295"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/Hint/usehint.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>

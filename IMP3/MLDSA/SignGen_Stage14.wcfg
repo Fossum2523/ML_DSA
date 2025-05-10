@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="116.766667 us"></ZoomStartTime>
-      <ZoomEndTime time="194.666668 us"></ZoomEndTime>
-      <Cursor1Time time="129.750000 us"></Cursor1Time>
+      <ZoomStartTime time="74.505000 us"></ZoomStartTime>
+      <ZoomEndTime time="232.105001 us"></ZoomEndTime>
+      <Cursor1Time time="103.905100 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="179"></NameColumnWidth>
-      <ValueColumnWidth column_width="68"></ValueColumnWidth>
+      <ValueColumnWidth column_width="64"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="85" />
+   <WVObjectSize size="89" />
    <wvobject fp_name="/MLDSA_tb/uut/controller_inst/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -76,47 +76,39 @@
       <obj_property name="ElementShortName">done</obj_property>
       <obj_property name="ObjectShortName">done</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_2/cnt_en" type="logic">
-      <obj_property name="ElementShortName">cnt_en</obj_property>
-      <obj_property name="ObjectShortName">cnt_en</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_2/cnt" type="array">
-      <obj_property name="ElementShortName">cnt[11:0]</obj_property>
-      <obj_property name="ObjectShortName">cnt[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t_addr_a" type="array">
-      <obj_property name="ElementShortName">t_addr_a[9:0]</obj_property>
-      <obj_property name="ObjectShortName">t_addr_a[9:0]</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_2_addr_a" type="array">
+      <obj_property name="ElementShortName">temp_2_addr_a[9:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_2_addr_a[9:0]</obj_property>
       <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t_addr_b" type="array">
-      <obj_property name="ElementShortName">t_addr_b[9:0]</obj_property>
-      <obj_property name="ObjectShortName">t_addr_b[9:0]</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_2_addr_b" type="array">
+      <obj_property name="ElementShortName">temp_2_addr_b[9:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_2_addr_b[9:0]</obj_property>
       <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t_en_a" type="logic">
-      <obj_property name="ElementShortName">t_en_a</obj_property>
-      <obj_property name="ObjectShortName">t_en_a</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_2_en_a" type="logic">
+      <obj_property name="ElementShortName">temp_2_en_a</obj_property>
+      <obj_property name="ObjectShortName">temp_2_en_a</obj_property>
       <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t_en_b" type="logic">
-      <obj_property name="ElementShortName">t_en_b</obj_property>
-      <obj_property name="ObjectShortName">t_en_b</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_2_en_b" type="logic">
+      <obj_property name="ElementShortName">temp_2_en_b</obj_property>
+      <obj_property name="ObjectShortName">temp_2_en_b</obj_property>
       <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t_q_a" type="array">
-      <obj_property name="ElementShortName">t_q_a[22:0]</obj_property>
-      <obj_property name="ObjectShortName">t_q_a[22:0]</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_2_q_a" type="array">
+      <obj_property name="ElementShortName">temp_2_q_a[22:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_2_q_a[22:0]</obj_property>
       <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/t_q_b" type="array">
-      <obj_property name="ElementShortName">t_q_b[22:0]</obj_property>
-      <obj_property name="ObjectShortName">t_q_b[22:0]</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_2_q_b" type="array">
+      <obj_property name="ElementShortName">temp_2_q_b[22:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_2_q_b[22:0]</obj_property>
       <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
@@ -126,9 +118,15 @@
       <obj_property name="CustomSignalColor">#00FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/NTT_/in_ready" type="logic">
-      <obj_property name="ElementShortName">in_ready</obj_property>
-      <obj_property name="ObjectShortName">in_ready</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/NTT_/i_valid" type="logic">
+      <obj_property name="ElementShortName">i_valid</obj_property>
+      <obj_property name="ObjectShortName">i_valid</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/NTT_/i_ready" type="logic">
+      <obj_property name="ElementShortName">i_ready</obj_property>
+      <obj_property name="ObjectShortName">i_ready</obj_property>
       <obj_property name="CustomSignalColor">#00FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
@@ -144,25 +142,17 @@
       <obj_property name="CustomSignalColor">#00FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/NTT_/out_ready" type="logic">
-      <obj_property name="ElementShortName">out_ready</obj_property>
-      <obj_property name="ObjectShortName">out_ready</obj_property>
-      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/NTT_/NTT_out_u" type="array">
       <obj_property name="ElementShortName">NTT_out_u[22:0]</obj_property>
       <obj_property name="ObjectShortName">NTT_out_u[22:0]</obj_property>
       <obj_property name="CustomSignalColor">#00FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/NTT_/NTT_out_d" type="array">
       <obj_property name="ElementShortName">NTT_out_d[22:0]</obj_property>
       <obj_property name="ObjectShortName">NTT_out_d[22:0]</obj_property>
       <obj_property name="CustomSignalColor">#00FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/NTT_/NTT_addr_u" type="array">
       <obj_property name="ElementShortName">NTT_addr_u[7:0]</obj_property>
@@ -176,69 +166,75 @@
       <obj_property name="CustomSignalColor">#00FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/NTT_/o_valid" type="logic">
+      <obj_property name="ElementShortName">o_valid</obj_property>
+      <obj_property name="ObjectShortName">o_valid</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/NTT_/o_ready" type="logic">
+      <obj_property name="ElementShortName">o_ready</obj_property>
+      <obj_property name="ObjectShortName">o_ready</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/NTT_/done" type="logic">
       <obj_property name="ElementShortName">done</obj_property>
       <obj_property name="ObjectShortName">done</obj_property>
       <obj_property name="CustomSignalColor">#00FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_5_data_a" type="array">
-      <obj_property name="ElementShortName">temp_5_data_a[22:0]</obj_property>
-      <obj_property name="ObjectShortName">temp_5_data_a[22:0]</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_3_data_a" type="array">
+      <obj_property name="ElementShortName">temp_3_data_a[22:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_3_data_a[22:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_3_data_b" type="array">
+      <obj_property name="ElementShortName">temp_3_data_b[22:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_3_data_b[22:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_3_addr_a" type="array">
+      <obj_property name="ElementShortName">temp_3_addr_a[9:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_3_addr_a[9:0]</obj_property>
       <obj_property name="CustomSignalColor">#F0E68C</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_5_data_b" type="array">
-      <obj_property name="ElementShortName">temp_5_data_b[22:0]</obj_property>
-      <obj_property name="ObjectShortName">temp_5_data_b[22:0]</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_3_addr_b" type="array">
+      <obj_property name="ElementShortName">temp_3_addr_b[9:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_3_addr_b[9:0]</obj_property>
       <obj_property name="CustomSignalColor">#F0E68C</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_5_addr_a" type="array">
-      <obj_property name="ElementShortName">temp_5_addr_a[9:0]</obj_property>
-      <obj_property name="ObjectShortName">temp_5_addr_a[9:0]</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_3_en_a" type="logic">
+      <obj_property name="ElementShortName">temp_3_en_a</obj_property>
+      <obj_property name="ObjectShortName">temp_3_en_a</obj_property>
       <obj_property name="CustomSignalColor">#F0E68C</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_5_addr_b" type="array">
-      <obj_property name="ElementShortName">temp_5_addr_b[9:0]</obj_property>
-      <obj_property name="ObjectShortName">temp_5_addr_b[9:0]</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_3_en_b" type="logic">
+      <obj_property name="ElementShortName">temp_3_en_b</obj_property>
+      <obj_property name="ObjectShortName">temp_3_en_b</obj_property>
       <obj_property name="CustomSignalColor">#F0E68C</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_5_en_a" type="logic">
-      <obj_property name="ElementShortName">temp_5_en_a</obj_property>
-      <obj_property name="ObjectShortName">temp_5_en_a</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_3_we_a" type="logic">
+      <obj_property name="ElementShortName">temp_3_we_a</obj_property>
+      <obj_property name="ObjectShortName">temp_3_we_a</obj_property>
       <obj_property name="CustomSignalColor">#F0E68C</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_5_en_b" type="logic">
-      <obj_property name="ElementShortName">temp_5_en_b</obj_property>
-      <obj_property name="ObjectShortName">temp_5_en_b</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_3_we_b" type="logic">
+      <obj_property name="ElementShortName">temp_3_we_b</obj_property>
+      <obj_property name="ObjectShortName">temp_3_we_b</obj_property>
       <obj_property name="CustomSignalColor">#F0E68C</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_5_we_a" type="logic">
-      <obj_property name="ElementShortName">temp_5_we_a</obj_property>
-      <obj_property name="ObjectShortName">temp_5_we_a</obj_property>
-      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_5_we_b" type="logic">
-      <obj_property name="ElementShortName">temp_5_we_b</obj_property>
-      <obj_property name="ObjectShortName">temp_5_we_b</obj_property>
-      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/ctrl_sign" type="array">
+   <wvobject fp_name="/MLDSA_tb/uut/controller_inst/ctrl_sign" type="array">
       <obj_property name="ElementShortName">ctrl_sign[8:0]</obj_property>
       <obj_property name="ObjectShortName">ctrl_sign[8:0]</obj_property>
    </wvobject>
@@ -286,156 +282,214 @@
       <obj_property name="ElementShortName">done</obj_property>
       <obj_property name="ObjectShortName">done</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_4/cnt_en" type="logic">
-      <obj_property name="ElementShortName">cnt_en</obj_property>
-      <obj_property name="ObjectShortName">cnt_en</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/AG_4/cnt" type="array">
-      <obj_property name="ElementShortName">cnt[11:0]</obj_property>
-      <obj_property name="ObjectShortName">cnt[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_1_addr_a" type="array">
-      <obj_property name="ElementShortName">temp_1_addr_a[9:0]</obj_property>
-      <obj_property name="ObjectShortName">temp_1_addr_a[9:0]</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_6_addr_a" type="array">
+      <obj_property name="ElementShortName">temp_6_addr_a[9:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_6_addr_a[9:0]</obj_property>
       <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_1_addr_b" type="array">
-      <obj_property name="ElementShortName">temp_1_addr_b[9:0]</obj_property>
-      <obj_property name="ObjectShortName">temp_1_addr_b[9:0]</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_6_addr_b" type="array">
+      <obj_property name="ElementShortName">temp_6_addr_b[9:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_6_addr_b[9:0]</obj_property>
       <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_1_en_a" type="logic">
-      <obj_property name="ElementShortName">temp_1_en_a</obj_property>
-      <obj_property name="ObjectShortName">temp_1_en_a</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_6_en_a" type="logic">
+      <obj_property name="ElementShortName">temp_6_en_a</obj_property>
+      <obj_property name="ObjectShortName">temp_6_en_a</obj_property>
       <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_1_en_b" type="logic">
-      <obj_property name="ElementShortName">temp_1_en_b</obj_property>
-      <obj_property name="ObjectShortName">temp_1_en_b</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_6_en_b" type="logic">
+      <obj_property name="ElementShortName">temp_6_en_b</obj_property>
+      <obj_property name="ObjectShortName">temp_6_en_b</obj_property>
       <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_1_q_a" type="array">
-      <obj_property name="ElementShortName">temp_1_q_a[22:0]</obj_property>
-      <obj_property name="ObjectShortName">temp_1_q_a[22:0]</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_6_q_a" type="array">
+      <obj_property name="ElementShortName">temp_6_q_a[22:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_6_q_a[22:0]</obj_property>
       <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/temp_1_q_b" type="array">
-      <obj_property name="ElementShortName">temp_1_q_b[22:0]</obj_property>
-      <obj_property name="ObjectShortName">temp_1_q_b[22:0]</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_6_q_b" type="array">
+      <obj_property name="ElementShortName">temp_6_q_b[22:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_6_q_b[22:0]</obj_property>
       <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/c_hat_addr_a" type="array">
-      <obj_property name="ElementShortName">c_hat_addr_a[7:0]</obj_property>
-      <obj_property name="ObjectShortName">c_hat_addr_a[7:0]</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_8_addr_a" type="array">
+      <obj_property name="ElementShortName">temp_8_addr_a[9:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_8_addr_a[9:0]</obj_property>
       <obj_property name="CustomSignalColor">#00FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/c_hat_addr_b" type="array">
-      <obj_property name="ElementShortName">c_hat_addr_b[7:0]</obj_property>
-      <obj_property name="ObjectShortName">c_hat_addr_b[7:0]</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_8_addr_b" type="array">
+      <obj_property name="ElementShortName">temp_8_addr_b[9:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_8_addr_b[9:0]</obj_property>
       <obj_property name="CustomSignalColor">#00FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/c_hat_en_a" type="logic">
-      <obj_property name="ElementShortName">c_hat_en_a</obj_property>
-      <obj_property name="ObjectShortName">c_hat_en_a</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_8_en_a" type="logic">
+      <obj_property name="ElementShortName">temp_8_en_a</obj_property>
+      <obj_property name="ObjectShortName">temp_8_en_a</obj_property>
       <obj_property name="CustomSignalColor">#00FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/c_hat_en_b" type="logic">
-      <obj_property name="ElementShortName">c_hat_en_b</obj_property>
-      <obj_property name="ObjectShortName">c_hat_en_b</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_8_en_b" type="logic">
+      <obj_property name="ElementShortName">temp_8_en_b</obj_property>
+      <obj_property name="ObjectShortName">temp_8_en_b</obj_property>
       <obj_property name="CustomSignalColor">#00FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/c_hat_q_a" type="array">
-      <obj_property name="ElementShortName">c_hat_q_a[22:0]</obj_property>
-      <obj_property name="ObjectShortName">c_hat_q_a[22:0]</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_8_q_a" type="array">
+      <obj_property name="ElementShortName">temp_8_q_a[22:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_8_q_a[22:0]</obj_property>
       <obj_property name="CustomSignalColor">#00FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/c_hat_q_b" type="array">
-      <obj_property name="ElementShortName">c_hat_q_b[22:0]</obj_property>
-      <obj_property name="ObjectShortName">c_hat_q_b[22:0]</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_8_q_b" type="array">
+      <obj_property name="ElementShortName">temp_8_q_b[22:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_8_q_b[22:0]</obj_property>
       <obj_property name="CustomSignalColor">#00FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/mode" type="array">
       <obj_property name="ElementShortName">mode[1:0]</obj_property>
       <obj_property name="ObjectShortName">mode[1:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/i_valid" type="logic">
+      <obj_property name="ElementShortName">i_valid</obj_property>
+      <obj_property name="ObjectShortName">i_valid</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/i_ready" type="logic">
+      <obj_property name="ElementShortName">i_ready</obj_property>
+      <obj_property name="ObjectShortName">i_ready</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/o_ready" type="logic">
+      <obj_property name="ElementShortName">o_ready</obj_property>
+      <obj_property name="ObjectShortName">o_ready</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/o_valid" type="logic">
+      <obj_property name="ElementShortName">o_valid</obj_property>
+      <obj_property name="ObjectShortName">o_valid</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/in_a0" type="array">
       <obj_property name="ElementShortName">in_a0[22:0]</obj_property>
       <obj_property name="ObjectShortName">in_a0[22:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/in_a1" type="array">
       <obj_property name="ElementShortName">in_a1[22:0]</obj_property>
       <obj_property name="ObjectShortName">in_a1[22:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/in_a2" type="array">
       <obj_property name="ElementShortName">in_a2[22:0]</obj_property>
       <obj_property name="ObjectShortName">in_a2[22:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/in_b0" type="array">
-      <obj_property name="ElementShortName">in_b0[22:0]</obj_property>
-      <obj_property name="ObjectShortName">in_b0[22:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/in_b1" type="array">
-      <obj_property name="ElementShortName">in_b1[22:0]</obj_property>
-      <obj_property name="ObjectShortName">in_b1[22:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/in_b2" type="array">
-      <obj_property name="ElementShortName">in_b2[22:0]</obj_property>
-      <obj_property name="ObjectShortName">in_b2[22:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/out_a" type="array">
       <obj_property name="ElementShortName">out_a[22:0]</obj_property>
       <obj_property name="ObjectShortName">out_a[22:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/addr_a" type="array">
+      <obj_property name="ElementShortName">addr_a[9:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_a[9:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/in_b0" type="array">
+      <obj_property name="ElementShortName">in_b0[22:0]</obj_property>
+      <obj_property name="ObjectShortName">in_b0[22:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/in_b1" type="array">
+      <obj_property name="ElementShortName">in_b1[22:0]</obj_property>
+      <obj_property name="ObjectShortName">in_b1[22:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/in_b2" type="array">
+      <obj_property name="ElementShortName">in_b2[22:0]</obj_property>
+      <obj_property name="ObjectShortName">in_b2[22:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/out_b" type="array">
       <obj_property name="ElementShortName">out_b[22:0]</obj_property>
       <obj_property name="ObjectShortName">out_b[22:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/addr_b" type="array">
+      <obj_property name="ElementShortName">addr_b[9:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_b[9:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/PWM_/valid_buf" type="array">
+      <obj_property name="ElementShortName">valid_buf[2:0]</obj_property>
+      <obj_property name="ObjectShortName">valid_buf[2:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_4_data_a" type="array">
+      <obj_property name="ElementShortName">temp_4_data_a[22:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_4_data_a[22:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/PWM_temp_data_a" type="array">
-      <obj_property name="ElementShortName">PWM_temp_data_a[22:0]</obj_property>
-      <obj_property name="ObjectShortName">PWM_temp_data_a[22:0]</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_4_data_b" type="array">
+      <obj_property name="ElementShortName">temp_4_data_b[22:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_4_data_b[22:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/PWM_temp_data_b" type="array">
-      <obj_property name="ElementShortName">PWM_temp_data_b[22:0]</obj_property>
-      <obj_property name="ObjectShortName">PWM_temp_data_b[22:0]</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_4_addr_a" type="array">
+      <obj_property name="ElementShortName">temp_4_addr_a[9:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_4_addr_a[9:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/PWM_temp_addr_a" type="array">
-      <obj_property name="ElementShortName">PWM_temp_addr_a[9:0]</obj_property>
-      <obj_property name="ObjectShortName">PWM_temp_addr_a[9:0]</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_4_addr_b" type="array">
+      <obj_property name="ElementShortName">temp_4_addr_b[9:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_4_addr_b[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/PWM_temp_addr_b" type="array">
-      <obj_property name="ElementShortName">PWM_temp_addr_b[9:0]</obj_property>
-      <obj_property name="ObjectShortName">PWM_temp_addr_b[9:0]</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_4_en_a" type="logic">
+      <obj_property name="ElementShortName">temp_4_en_a</obj_property>
+      <obj_property name="ObjectShortName">temp_4_en_a</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/PWM_temp_en_a" type="logic">
-      <obj_property name="ElementShortName">PWM_temp_en_a</obj_property>
-      <obj_property name="ObjectShortName">PWM_temp_en_a</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_4_en_b" type="logic">
+      <obj_property name="ElementShortName">temp_4_en_b</obj_property>
+      <obj_property name="ObjectShortName">temp_4_en_b</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/PWM_temp_en_b" type="logic">
-      <obj_property name="ElementShortName">PWM_temp_en_b</obj_property>
-      <obj_property name="ObjectShortName">PWM_temp_en_b</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_4_we_a" type="logic">
+      <obj_property name="ElementShortName">temp_4_we_a</obj_property>
+      <obj_property name="ObjectShortName">temp_4_we_a</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/PWM_temp_we_a" type="logic">
-      <obj_property name="ElementShortName">PWM_temp_we_a</obj_property>
-      <obj_property name="ObjectShortName">PWM_temp_we_a</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM/PWM_temp_we_b" type="logic">
-      <obj_property name="ElementShortName">PWM_temp_we_b</obj_property>
-      <obj_property name="ObjectShortName">PWM_temp_we_b</obj_property>
+   <wvobject fp_name="/MLDSA_tb/uut/data_path_inst/DM_/temp_4_we_b" type="logic">
+      <obj_property name="ElementShortName">temp_4_we_b</obj_property>
+      <obj_property name="ObjectShortName">temp_4_we_b</obj_property>
    </wvobject>
 </wave_config>

@@ -18,8 +18,14 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_n
 INFO: [VRFC 10-311] analyzing module Data_Mem
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Data_Path
+WARNING: [VRFC 10-3380] identifier 'MH_hint_o' is used before its declaration [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:1697]
+WARNING: [VRFC 10-3380] identifier 'MH_hint_valid_o' is used before its declaration [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:1699]
+WARNING: [VRFC 10-3380] identifier 'MH_hint_valid_o' is used before its declaration [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:1700]
+WARNING: [VRFC 10-3380] identifier 'MH_hint_valid_o' is used before its declaration [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:2035]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/Decoder/Decoder.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/Decomposer/Decomposer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decomposer
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/Encoder/Encoder.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Encoder
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/Sampler/ExpandA.v" into library xil_defaultlib
@@ -51,6 +57,12 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_n
 INFO: [VRFC 10-311] analyzing module SampleInBall
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/Sampler/Sampler.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Sampler
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/Decomposer/coeff_decomposer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module coeff_decomposer
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/Decomposer/decomp_map1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decomp_map1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/Hint/makehint.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module makehint
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/NTT/mod_add.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module mod_add
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/NTT/mod_mul.v" into library xil_defaultlib

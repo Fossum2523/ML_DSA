@@ -28,9 +28,9 @@ variables = [
 
     {"name": "c_tilde", "width": 64, "depth": 4, "start": 10, "end": 20},##
 
-    {"name": "c", "width": 23, "depth": 256, "start": 11, "end": 12},
+    {"name": "c", "width": 23, "depth": 1024, "start": 11, "end": 12},
 
-    {"name": "c_hat", "width": 23, "depth": 256, "start": 12, "end": 17},
+    {"name": "c_hat", "width": 23, "depth": 1024, "start": 12, "end": 17},
 
     {"name": "cs1_hat", "width": 23, "depth": 1024, "start": 13, "end": 14},
 
@@ -41,7 +41,7 @@ variables = [
     {"name": "z", "width": 23, "depth": 1024, "start": 15, "end": 20},
 
     {"name": "w_cs2", "width": 23, "depth": 1024, "start": 16, "end": 19},
-    {"name": "Highbit(w_cs2⟩⟩)", "width": 23, "depth": 1024, "start": 16, "end": 19},
+    # {"name": "Highbit(w_cs2⟩⟩)", "width": 23, "depth": 1024, "start": 16, "end": 19},
     
     {"name": "ct0_hat", "width": 23, "depth": 1024, "start": 17, "end": 18},
 

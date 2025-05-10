@@ -1,0 +1,1 @@
+    {"name": "Highbit(w_cs2⟩⟩)", "width": 23, "depth": 1024, "start": 16, "end": 19},

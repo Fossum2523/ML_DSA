@@ -46,13 +46,13 @@ module Decoder #(
         
         /* ----- decoder lane connection ----- */
         DECODE_LVL = 0;
-        for (i = 0; i < 4; i = i + 1)
+        for (i = 0; i < OUTPUT_W; i = i + 1)
             sipo_out_in[i*COEFF_W+:COEFF_W] = 0;
         
         casex(decode_mode)
         {DECODE_T0}: begin
             DECODE_LVL = 13;
-            for (i = 0; i < 4; i = i + 1)
+            for (i = 0; i < OUTPUT_W; i = i + 1)
                 sipo_out_in[i*COEFF_W+:COEFF_W] =  (SIPO_IN[i*13+:13] > 4096) ? DILITHIUM_Q - SIPO_IN[i*13+:13] + 4096 : 4096 - SIPO_IN[i*13+:13];
 
         end
@@ -66,17 +66,17 @@ module Decoder #(
         {DECODE_S1}: begin
             DECODE_LVL = 3;
             ETA = 2;
-            for (i = 0; i < 2; i = i + 1)
+            for (i = 0; i < OUTPUT_W; i = i + 1)
                 sipo_out_in[i*COEFF_W+:COEFF_W] = (SIPO_IN[i*3+:3] > ETA) ? ETA + DILITHIUM_Q - SIPO_IN[i*3+:3]: ETA - SIPO_IN[i*3+:3];
         end
         {DECODE_W1}: begin
             DECODE_LVL = 6;
-            for (i = 0; i < 4; i = i + 1)
+            for (i = 0; i < OUTPUT_W; i = i + 1)
                 sipo_out_in[i*COEFF_W+:COEFF_W] = SIPO_IN[i*6+:6];
         end
         {DECODE_Z}: begin
             DECODE_LVL = 18;
-            for (i = 0; i < 4; i = i + 1) begin
+            for (i = 0; i < OUTPUT_W; i = i + 1) begin
                 if (sipo_in_len >= (i+1)*18)
                     sipo_out_in[i*COEFF_W+:COEFF_W] = (SIPO_IN[i*18+:18] > GAMMA1_2) ? GAMMA1_2 + (DILITHIUM_Q - SIPO_IN[i*18+:18]) : GAMMA1_2 - SIPO_IN[i*18+:18];
             end

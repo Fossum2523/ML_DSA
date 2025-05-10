@@ -223,7 +223,7 @@ module Keccak_Ctrl
             Gen_y:begin
                 if(padder_cnt <= 7)begin
                     keccak_in_sel = 2'd0;
-                    kk_sub_sel_1  = 1'd0;
+                    kk_sub_sel_1  = 1'd1;
                 end
                 else begin
                     keccak_in_sel = 2'd2;
@@ -237,7 +237,7 @@ module Keccak_Ctrl
                 end
                 else if(padder_cnt <= 103)begin
                     keccak_in_sel = 2'd0;
-                    kk_sub_sel_1  = 2'd2;
+                    kk_sub_sel_1  = 2'd3;
                 end
                 else begin
                     keccak_in_sel = 2'd1;
@@ -246,7 +246,7 @@ module Keccak_Ctrl
             end
             Gen_c_1:begin
                 if(padder_cnt <= 3)begin
-                    keccak_in_sel = 2'd1;
+                    keccak_in_sel = 2'd0;
                     kk_sub_sel_2  = 2'd0;
                 end
                 else begin

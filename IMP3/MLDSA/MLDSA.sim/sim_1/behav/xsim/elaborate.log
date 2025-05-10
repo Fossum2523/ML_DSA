@@ -67,6 +67,10 @@ Compiling module xil_defaultlib.uncenter_coeff
 Compiling module xil_defaultlib.zero_strip
 Compiling module xil_defaultlib.Encoder_default
 Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.decomp_map1
+Compiling module xil_defaultlib.coeff_decomposer
+Compiling module xil_defaultlib.Decomposer_default
+Compiling module xil_defaultlib.makehint
 Compiling module xil_defaultlib.Data_Path_default
 Compiling module xil_defaultlib.MLDSA
 Compiling module xil_defaultlib.MLDSA_tb

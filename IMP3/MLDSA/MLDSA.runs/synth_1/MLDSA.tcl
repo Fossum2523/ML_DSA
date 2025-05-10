@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7k70tfbv676-1
 
@@ -95,6 +94,8 @@ read_verilog -library xil_defaultlib {
   C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Controller.v
   C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/Data_Mem/Data_Mem.v
   C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/Decoder/Decoder.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/Decomposer/Decomposer.v
   C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/Encoder/Encoder.v
   C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/Sampler/ExpandA.v
   C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/Sampler/ExpandMASK.v
@@ -109,6 +110,9 @@ read_verilog -library xil_defaultlib {
   C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/NTT/RU.v
   C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/Sampler/SampleInBall.v
   C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/Sampler/Sampler.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/Decomposer/coeff_decomposer.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/Decomposer/decomp_map1.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/Hint/makehint.v
   C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/NTT/mod_add.v
   C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/NTT/mod_mul.v
   C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP3/MLDSA/MLDSA.srcs/sources_1/NTT/mod_sub.v
