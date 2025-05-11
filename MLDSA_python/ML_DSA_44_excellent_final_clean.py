@@ -174,8 +174,8 @@ def HASH_ML_DSA_Ver(pk,M,sigma,ctx):
 
     ### make testbench output data ###
     #---verification---#
-    with open("MLDSA_SignVer_testbench_test_input_data_verification.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
-            file.write(f"{verification}\n")
+    with open("MLDSA_SignVer_testbench_test_output_data_verification.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+            file.write(f"{hex(int(verification))}\n")
     ### make testbench output data ###
     return verification
 
@@ -417,58 +417,71 @@ def Sign(sk,M,rnd):
 # 算法 3 ML-DSA.Ver(sk,M)
 def Ver(pk,M,signature):
     rho,t1 = pk_decode(pk)
-    # print(rho)
-    # print(t1)
+    with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"rho = {Verilog_trans(rho)}\n")
+    with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"t1 = {t1}\n")
     c_tilde,z,h = sigDecode(signature)
-    # print(len(c_tilde))
-    # print(c_tilde.hex())
-    # print(z)
-    # print(h)
+    with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"c_tilde = {c_tilde}\n")
+    with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"z = {z}\n")
+    with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"h = {h}\n")
     if h == None:
         return False
-
     A_hat = ExpandA(rho)
-    # for i in A_hat:
-    #     print(i)
-
+    with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"A_hat = {A_hat}\n")
     tr = SHAKE_256(pk,512)
-
-    # test = "D26AF4F24DE50EBEDA020DFC6F841B0A2D83D2781C06D8B3DF8EDA97A7EA4F9913ABEE9858F88F8A2F52C13DF2DE4BA023BAA5B3CB0ED941E077A08AE3F14035DB8494BA19C4118FB15D0ACF4254FD37483FCF4748FD1844F717CE6F69589E61772CFEFA7F9758653409D4EE5A264B834E60D6BB96499EBEB2B06B0BA874BF31E641394CFAA6A2D30DDB8F045876208D2F51DE15E205E8C91B87ECEB05FF3183271B2649665DD3CC49BFDB998D539DA809305516BBBE9C906021191C5223E525A8FC3616A1765EC3F9C5DB53CC337E039F186ACFEA91148EE2A79CCA3689EDB62AAF28B5D752FDE265EE5280B519726C1CA9803295C674B7EFAFA4D61B306A79E3F6E7A887C2FB535B3B0FB3D9EBC87603EAFEF170C1F1D28E99BB"
-    # test = hex_to_bytes(test)
+    with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"tr = {Verilog_trans(tr)}\n")
     mu = SHAKE_256(tr + M,512)
-    # print(tr)
-    # print(mu)
-    # print(len(mu))
-    # c_tilde = "0000000000000000000000000000000000000000000000000000000000000000"
-    # c_tilde = hex_to_bytes(c_tilde)
-    # print(len(c_tilde))
+    with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"mu = {Verilog_trans(mu)}\n")
     c = SampleInBall(c_tilde)
-    # c = [0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, -1, 1, 1, 0, 0, 0, 0, 0, -1, 0, -1, 0, 1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, -1, 1, 0, 0, -1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, -1, 0, 0, 0, 0, 0, 0, 0, -1, 0, -1, 0, 0, -1, -1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1, -1, 0, -1, 0, 1, 0, 0, 0, 0, 0, 0, 0, -1, 1, 0, 0, 1, 0, -1, 0, 0, 0, 1, 0, -1, 0, 0, 0, 1, 0, 0, -1, 0, 0, 1, 0, 0, -1, -1, 1, -1, -1, 0, 1, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1, 0, 0, -1, 0, 0]
-    # print(len(c))
-    # print(c)
+    with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"c = {c}\n")
     z_hat = [NTT(zi) for zi in z]
-    # print(z_hat)
+    with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"z_hat = {z_hat}\n")
     Ah_d_zh = NTT_dot(A_hat,z_hat)
-    # print(Ah_d_zh)
+    with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"Az_hat = {Ah_d_zh}\n")
     c_hat = NTT(c)
-    # print(c_hat)
+    with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"c_hat = {c_hat}\n")
     t1_hat = [NTT(ti) for ti in t1]
+    with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"t1_hat = {t1_hat}\n")
     for i in range(ML_DSA["k"]):
         for j in range(256):
             t1_hat[i][j] = (t1_hat[i][j] * (2**ML_DSA["d"])) % ML_DSA["q"]
+    with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"t1_hat_bias = {t1_hat}\n")
     ch_d_t12d = NTT_dot_k(t1_hat,c_hat)
+    with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"ct1_hat = {ch_d_t12d}\n")
     w_prime_approx = array_minus_k(Ah_d_zh,ch_d_t12d)
+    with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"w_hat = {w_prime_approx}\n")
     w_prime_approx = [NTT_inv(wi) for wi in w_prime_approx]
+    with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"w'aprr = {w_prime_approx}\n")
     w1_prime = []
     for i in range(ML_DSA["k"]):
         w1_prime_temp = []
         for j in range(256):
             w1_prime_temp.append(UseHint(h[i][j],w_prime_approx[i][j]))
         w1_prime.append(w1_prime_temp) 
+    with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"w'1 = {w1_prime}\n")
     w1En = w1Encode(w1_prime)
+    with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"Enc_w1  = {w1En}\n")
     c_prime_tilde = SHAKE_256(mu + w1En,2 * ML_DSA["lamda"])
-    # print(c_tilde)
-    # print(c_prime_tilde)
+    with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
+        file.write(f"c_tilde' = {Verilog_trans(c_prime_tilde)}\n")
     return (infinity_norm(z) < (ML_DSA["gamma_1"] - ML_DSA["beta"])) and (c_prime_tilde == c_tilde)
 
 
@@ -1136,30 +1149,33 @@ ctx = "23ffff"
 ctx_byte = ctx.encode("utf-8")  # let ctx to byte
 
 signature = HASH_ML_DSA_Sign(sk,M,ctx_byte,1)
-print(signature)
+# print(signature)
 ### --------------- SignGen --------------- ###
 
-## --------------- SignVer --------------- ###
-# if os.path.exists("MLDSA_SignVer_testbench_test_input_data_pk.txt"):
-#     os.remove("MLDSA_SignVer_testbench_test_input_data_pk.txt")
+### --------------- SignVer --------------- ###
+if os.path.exists("MLDSA_SignVer_testbench_test_input_data_pk.txt"):
+    os.remove("MLDSA_SignVer_testbench_test_input_data_pk.txt")
 
-# if os.path.exists("MLDSA_SignVer_testbench_test_input_data_M_prime.txt"):
-#     os.remove("MLDSA_SignVer_testbench_test_input_data_M_prime.txt")
+if os.path.exists("MLDSA_SignVer_testbench_test_input_data_M_prime.txt"):
+    os.remove("MLDSA_SignVer_testbench_test_input_data_M_prime.txt")
 
-# if os.path.exists("MLDSA_SignVer_testbench_test_input_data_M_prime_len.txt"):
-#     os.remove("MLDSA_SignVer_testbench_test_input_data_M_prime_len.txt")
+if os.path.exists("MLDSA_SignVer_testbench_test_input_data_M_prime_len.txt"):
+    os.remove("MLDSA_SignVer_testbench_test_input_data_M_prime_len.txt")
 
-# if os.path.exists("MLDSA_SignVer_testbench_test_input_data_signature.txt"):
-#     os.remove("MLDSA_SignVer_testbench_test_input_data_signature.txt")
+if os.path.exists("MLDSA_SignVer_testbench_test_input_data_signature.txt"):
+    os.remove("MLDSA_SignVer_testbench_test_input_data_signature.txt")
 
-# if os.path.exists("MLDSA_SignVer_testbench_test_input_data_verification.txt"):
-#     os.remove("MLDSA_SignVer_testbench_test_input_data_verification.txt")
+if os.path.exists("MLDSA_SignVer_testbench_test_output_data_verification.txt"):
+    os.remove("MLDSA_SignVer_testbench_test_output_data_verification.txt")
 
-# a = HASH_ML_DSA_Ver(pk,M,signature,ctx_byte)
+if os.path.exists("MLDSA_SignVer_testbench_test_golden_data.txt"):
+    os.remove("MLDSA_SignVer_testbench_test_golden_data.txt")
 
-# print(a)
+a = HASH_ML_DSA_Ver(pk,M,signature,ctx_byte)
+
+print(a)
 # print(len(M))
-## --------------- SignVer --------------- ###
+### --------------- SignVer --------------- ###
 
 # p = "3202542EF1E239D32BE1BCE5AE4AC8052D578899D653E368E11BC11C5480BA06"
 # p = hex_to_bytes(p)

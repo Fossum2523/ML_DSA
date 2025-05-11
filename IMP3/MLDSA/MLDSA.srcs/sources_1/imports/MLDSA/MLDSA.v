@@ -40,6 +40,7 @@ module MLDSA
     /*---Sha---*/
     wire          sha_en;
     wire  [3:0]   sha_type;
+    wire          sha_buffer_full;
     // wire          sha_out_ready;
 
     /*---Data_MEM---*/
@@ -74,6 +75,7 @@ module MLDSA
     wire AG_1_triger;
     wire AG_1_clean;
     wire AG_1_addr_en;
+    wire AG_1_data_valid;
     wire AG_1_done;
 
     wire AG_2_triger;
@@ -122,6 +124,7 @@ module MLDSA
         /*---Keccak---*/
         .sha_en(sha_en),
         .sha_type(sha_type),
+        .sha_buffer_full(sha_buffer_full),
         .sha_out_ready(sha_out_ready),
 
         /*---Data_Mem---*/
@@ -160,6 +163,7 @@ module MLDSA
         .AG_1_triger(AG_1_triger),
         .AG_1_clean(AG_1_clean),
         .AG_1_addr_en(AG_1_addr_en),
+        .AG_1_data_valid(AG_1_data_valid),
         .AG_1_done(AG_1_done),
 
         .AG_2_triger(AG_2_triger),
@@ -192,6 +196,7 @@ module MLDSA
         /*---Keccak---*/
         .sha_en(sha_en),
         .sha_type(sha_type),
+        .sha_buffer_full(sha_buffer_full),
         .sha_out_ready(sha_out_ready),
 
         /*---Data_Mem---*/
@@ -224,6 +229,7 @@ module MLDSA
         .AG_1_triger(AG_1_triger),
         .AG_1_clean(AG_1_clean),
         .AG_1_addr_en(AG_1_addr_en),
+        .AG_1_data_valid(AG_1_data_valid),
         .AG_1_done(AG_1_done),
 
         .AG_2_triger(AG_2_triger),
@@ -265,6 +271,7 @@ module MLDSA
         .MLDSA_data_out(MLDSA_data_out),
         .MLDSA_o_valid(MLDSA_o_valid),
         .MLDSA_o_last(MLDSA_o_last),
+        .MLDSA_i_ready_A(MLDSA_i_ready_A),
 
         /*---test (Need to delete)---*/
         .padder_out(padder_out),

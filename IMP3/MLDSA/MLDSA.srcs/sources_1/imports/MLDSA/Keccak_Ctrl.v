@@ -89,6 +89,9 @@ module Keccak_Ctrl
             H_pk_1:begin
                 padder_cnt_last = 8'd164; //p have 4 data and t1 have 160 data
             end
+            H_pk_2:begin
+                padder_cnt_last = 8'd164; //p have 4 data and t1 have 160 data
+            end
             // H_tr_M_1:begin
             //     padder_cnt_last = 8'd164; //p have 4 data and t1 have 160 data
             // end
@@ -124,6 +127,10 @@ module Keccak_Ctrl
                 if(AG_done)
                     sha_clean = 1'b1;
             end
+            H_pk_2:begin
+                if(AG_done)
+                    sha_clean = 1'b1;
+            end
             H_tr_M_1:begin
                 if(AG_done)
                     sha_clean = 1'b1;
@@ -144,6 +151,7 @@ module Keccak_Ctrl
                 if(next_element)
                     sha_clean = 1'b1;
             end
+            default:sha_clean = 1'b0;
         endcase
     end 
 
@@ -198,6 +206,15 @@ module Keccak_Ctrl
                 else if(padder_cnt <= 163)begin
                     keccak_in_sel = 2'd0;
                     kk_sub_sel_1  = 2'd3;
+                end
+                else begin
+                    keccak_in_sel = 2'd1;
+                    kk_sub_sel_2  = 2'd2;
+                end
+            end
+            H_pk_2:begin
+                if(padder_cnt <= 163)begin
+                   keccak_in_sel = 2'd3;
                 end
                 else begin
                     keccak_in_sel = 2'd1;
@@ -274,6 +291,10 @@ module Keccak_Ctrl
                     sha_is_last = 1'b1;
             end
             H_pk_1:begin
+                if(padder_cnt == 164)
+                    sha_is_last = 1'b1;
+            end
+            H_pk_2:begin
                 if(padder_cnt == 164)
                     sha_is_last = 1'b1;
             end

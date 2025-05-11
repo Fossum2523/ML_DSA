@@ -42,7 +42,7 @@ module Padder(
     padder1 p0 (in, byte_num, v0);
 
 
-    always @ (posedge clk)
+    always @ (posedge clk or posedge reset)
       if (reset)
         out <= 0;
       else if (update)
@@ -51,13 +51,13 @@ module Padder(
         else 
           out <= {v1, out[1087:64]}; // need update
 
-    always @ (posedge clk)
+    always @ (posedge clk or posedge reset)
       if (reset)
         i <= 0;
       else if (f_ack | update)
         i <= {i[19:0], 1'b1} & {21{~ f_ack}}; // need update
 
-    always @ (posedge clk)
+    always @ (posedge clk or posedge reset)
       if (reset)
         state <= 0;
       else if (is_last)
@@ -65,7 +65,7 @@ module Padder(
       else
         state <= state;
 
-    always @ (posedge clk)
+    always @ (posedge clk or posedge reset)
       if (reset)
         done <= 0;
       else if (state & out_ready)

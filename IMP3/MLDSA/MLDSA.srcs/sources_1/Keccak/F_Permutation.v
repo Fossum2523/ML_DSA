@@ -43,24 +43,24 @@ module F_Permutation(
     round_B
       roundB_ (out, rc, round_out_B);
 
-    always @ (posedge clk)
+    always @ (posedge clk or posedge reset)
       if (reset) i <= 0;
       else if(sha_hold) i <= i;
       else if (sel[1]) i <= {i[21:0], i_sti_buf[1]};
       else  i <= i;
     
-    always @ (posedge clk)
+    always @ (posedge clk or posedge reset)
       if (reset) calc <= 0;
       else       calc <= (calc & (~ (i[22] & sel[1])) ) | accept | squeeze;
 
-    always @ (posedge clk)
+    always @ (posedge clk or posedge reset)
       if (reset) i_sti_buf <= 0;
       else  begin
         i_sti_buf[1] <= i_sti_buf[0];
         i_sti_buf[0] <= accept | squeeze;
       end
 
-    always @ (posedge clk)
+    always @ (posedge clk or posedge reset)
       if (reset)
         out_ready <= 0;
       else if (i == 0) 
@@ -68,7 +68,7 @@ module F_Permutation(
       else if (i[22] & sel[1]) // only change at the last round
         out_ready <= 1;
 
-    always @ (posedge clk)
+    always @ (posedge clk or posedge reset)
       if (reset) sel <= 0;
       // else if (accept) sel <= sel;
       else if (update | squeeze) sel <= {sel[0] & (~out_ready), (sel[1] | accept | squeeze) };
@@ -78,7 +78,7 @@ module F_Permutation(
       // else if ((accept & out_ready)|sha_hold) sel <= sel;
       // else sel <= {sel[0], (sel[1] | update) };
     
-    always @ (posedge clk)
+    always @ (posedge clk or posedge reset)
       if (reset)
         out <= 1600'd0;
       else if (accept)
