@@ -41,6 +41,7 @@ verilog xil_defaultlib  \
 "../../../../MLDSA.srcs/sources_1/Keccak/round_A.v" \
 "../../../../MLDSA.srcs/sources_1/Keccak/round_B.v" \
 "../../../../MLDSA.srcs/sources_1/Encoder/uncenter_coeff.v" \
+"../../../../MLDSA.srcs/sources_1/Hint/usehint.v" \
 "../../../../MLDSA.srcs/sources_1/Encoder/zero_strip.v" \
 "../../../../MLDSA.srcs/sim_1/imports/MLDSA/MLDSA_tb.v" \
 

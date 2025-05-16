@@ -77,7 +77,10 @@ module Controller
     input               AG_4_done,
 
     /*---Encoder---*/
-    input               DEC_ready_i
+    input               DEC_ready_i,
+
+    /*---UseHint---*/
+    input               UH_ready_i
     // /*---Encoder---*/
     // output reg          ENC_valid_i,
     // input               ENC_ready_i,
@@ -448,19 +451,19 @@ module Controller
                     next_state_SignVer = STAGE_4;
             end
             STAGE_5: begin
-                if(keccak_done_tmp && PWM_done_tmp)   
+                if(PWM_done_tmp)   
                     next_state_SignVer = STAGE_6;
                 else 
                     next_state_SignVer = STAGE_5;
             end
             STAGE_6: begin
-                if(NTT_done_tmp)   
+                if(PWM_done_tmp)   
                     next_state_SignVer = STAGE_7;
                 else 
                     next_state_SignVer = STAGE_6;
             end
             STAGE_7: begin
-                if(NTT_done_tmp)   
+                if(keccak_done_tmp && NTT_done_tmp)   
                     next_state_SignVer = STAGE_8;
                 else 
                     next_state_SignVer = STAGE_7;
@@ -570,17 +573,17 @@ module Controller
                 sha_type = 4'd7;
             end
             {SignVer,6'd2}: begin //"Gen_c_2"
-                sha_type = 4'd7;
+                sha_type = 4'd9;
             end
             {SignVer,6'd3},
             {SignVer,6'd4}: begin //"Gen_A"
                 sha_type = 4'd1;
             end
-            {SignVer,6'd5}: begin //"H_tr_M_2"
+            {SignVer,6'd7}: begin //"H_tr_M_2"
                 sha_type = 4'd12;
             end
-            {SignVer,6'd9}: begin //"H_u_w1"
-                sha_type = 4'd5;
+            {SignVer,6'd9}: begin //"H_u_w1_2"
+                sha_type = 4'd13;
             end
             default: sha_type = 4'd0;
         endcase
@@ -607,7 +610,7 @@ module Controller
             {SignVer,6'd2},
             {SignVer,6'd3},
             {SignVer,6'd4},
-            {SignVer,6'd5},
+            {SignVer,6'd7},
             {SignVer,6'd9}: begin
                 sha_en = ~(keccak_done | keccak_done_tmp);
             end 
@@ -692,7 +695,7 @@ module Controller
             {SignVer,6'd4}: begin
                 keccak_done = (A_index == 15 & next_element);
             end
-            {SignVer,6'd5}: begin
+            {SignVer,6'd7}: begin
                 keccak_done = AG_4_done;
             end 
             {SignVer,6'd9}: begin
@@ -1075,7 +1078,7 @@ module Controller
                 AG_1_clean       = keccak_done_tmp;
             end
             {SignVer,6'd2}: begin  //store c_tilde from MLDSA_in_A
-                AG_1_triger      = ~MLDSA_i_valid_B;
+                AG_1_triger      = ~(keccak_done | keccak_done_tmp);
                 AG_1_clean       = keccak_done_tmp;
             end
             {SignVer,6'd3},       //"Gen(A)"
@@ -1083,7 +1086,7 @@ module Controller
                 AG_1_triger      = ~(keccak_done | keccak_done_tmp);
                 AG_1_clean       = next_element;
             end
-            {SignVer,6'd5}: begin //"u = H(𝑡𝑟 || 𝑀′)", read out tr data to keccak
+            {SignVer,6'd7}: begin //"u = H(𝑡𝑟 || 𝑀′)", read out tr data to keccak
                 AG_1_triger      = ~(keccak_done | keccak_done_tmp);
                 AG_1_clean       = keccak_done_tmp;
             end
@@ -1182,6 +1185,10 @@ module Controller
                 AG_2_triger      = ~Encoder_done_tmp;
                 AG_2_clean       = Encoder_done;
             end
+            {SignVer,6'd1}: begin  // "clean c"
+                AG_2_triger      = ~clean_done_tmp;
+                AG_2_clean       = clean_done_tmp;
+            end 
             {SignVer,6'd2}: begin  // "t1_hat = NTT(t1*2^d)"
                 AG_2_triger      = ~NTT_done_tmp;
                 AG_2_clean       = NTT_done;
@@ -1198,17 +1205,13 @@ module Controller
                 AG_2_triger      = ~NTT_done_tmp;
                 AG_2_clean       = NTT_done;
             end
-            {SignVer,6'd8}: begin  // "w'1  = UseHint(h,w'aprr)", read out w'aprr t0 UseHint
-                AG_2_triger      = ~Hint_done_tmp;
-                AG_2_clean       = Hint_done;
+            {SignVer,6'd8}: begin  // "w'1  = UseHint(h,w'aprr)", read out w'aprr t0 decomposer
+                AG_2_triger      = ~Decomposer_done_tmp;
+                AG_2_clean       = Hint_done_tmp;
             end 
             {SignVer,6'd9}: begin  // "Enc_w1 = Encode(w'1) ", TX
                 AG_2_triger      = ~Encoder_done_tmp;
                 AG_2_clean       = Encoder_done;
-            end 
-            {SignVer,6'd1}: begin  // "clean c"
-                AG_2_triger      = ~clean_done_tmp;
-                AG_2_clean       = clean_done_tmp;
             end 
         endcase
     end
@@ -1352,7 +1355,7 @@ module Controller
                 AG_4_triger      = ~PWM_done_tmp;
                 AG_4_clean       = PWM_done;
             end 
-            {SignVer,6'd1}: begin //"tr = H(pk)", after keccak gen tr, store to temp_seed
+            {SignVer,6'd1}: begin //"tr = H(pk)", after keccak gen tr, store to temp_L
                 AG_4_triger      = sha_out_ready;
                 AG_4_clean       = AG_4_done;
             end 
@@ -1368,6 +1371,10 @@ module Controller
                 AG_4_triger      = ~PWM_done_tmp;
                 AG_4_clean       = PWM_done;
             end
+            {SignVer,6'd7}: begin //"u = H(𝑡𝑟 || 𝑀′)", after keccak gen u, store to temp_seed
+                AG_4_triger      = sha_out_ready;
+                AG_4_clean       = AG_4_done;
+            end 
             // {SignVer,6'd9}: begin //"c_tilde' = H(u || Enc_w1)",store c_tilde
             //     AG_4_triger      = ~PWM_done_tmp;
             //     AG_4_clean       = PWM_done;
@@ -1460,6 +1467,9 @@ module Controller
             {SignGen,6'd19}: begin
                 Decomposer_done = AG_2_done;
             end 
+            {SignVer,6'd8}: begin
+                Decomposer_done = AG_2_done;
+            end 
         endcase
     end
 
@@ -1492,20 +1502,40 @@ module Controller
     always @(*) begin
         MLDSA_i_ready_A = 1'b0;
         case (ctrl_sign)
-            {SignVer,6'd1}: begin
-                MLDSA_i_ready_A = MLDSA_i_ready_A_tmp && (~sha_buffer_full);
+            {KeyGen,6'd1}: begin
+                MLDSA_i_ready_A = MLDSA_i_ready_A_tmp & (~sha_buffer_full);
             end 
+            {SignVer,6'd1}: begin
+                MLDSA_i_ready_A = MLDSA_i_ready_A_tmp & (~sha_buffer_full) & (AG_1_addr_en | AG_1_done);
+            end 
+            {SignVer,6'd2}: begin
+                MLDSA_i_ready_A = MLDSA_i_ready_A_tmp & (~sha_buffer_full) & AG_1_addr_en;
+            end 
+            {SignVer,6'd7}: begin
+                MLDSA_i_ready_A = MLDSA_i_ready_A_tmp & (~sha_buffer_full) & (~AG_1_data_valid & AG_1_done);
+            end
+            {SignVer,6'd8}: begin
+                MLDSA_i_ready_A = MLDSA_i_ready_A_tmp & UH_ready_i;
+            end
         endcase
     end
 
     always @(posedge clk) begin
         if(reset)
-            MLDSA_i_ready_A_tmp = 1'b0;
+            MLDSA_i_ready_A_tmp <= 1'b0;
         else if(next_state != curr_state)
             MLDSA_i_ready_A_tmp <= 1'b1;
-        else if(MLDSA_i_last_A)
+        else if(MLDSA_i_last_A && MLDSA_i_ready_A && MLDSA_i_valid_A)
             MLDSA_i_ready_A_tmp <= 1'b0;
     end
+    // always @(posedge clk) begin
+    //     if(reset)
+    //         MLDSA_i_ready_A = 1'b0;
+    //     else if(next_state != curr_state)
+    //         MLDSA_i_ready_A <= 1'b1;
+    //     else if(MLDSA_i_last_A && MLDSA_i_valid_A)
+    //         MLDSA_i_ready_A <= 1'b0;
+    // end
     /*---AXI Stream input protocol A---*/ //------------------------------------------end
 
 
@@ -1531,20 +1561,20 @@ module Controller
                 MLDSA_i_ready_B = MLDSA_i_ready_B_tmp & DEC_ready_i;
             end
             {SignVer,6'd1}: begin
-                MLDSA_i_ready_B = MLDSA_i_ready_B_tmp & DEC_ready_i;
+                MLDSA_i_ready_B = MLDSA_i_ready_B_tmp & DEC_ready_i & (~Decoder_done_tmp);
             end 
             {SignVer,6'd2}: begin
-                MLDSA_i_ready_B = MLDSA_i_ready_B_tmp & DEC_ready_i;
+                MLDSA_i_ready_B = MLDSA_i_ready_B_tmp & DEC_ready_i & (~Decoder_done_tmp);
             end 
         endcase
     end
     
     always @(posedge clk) begin
         if(reset)
-            MLDSA_i_ready_B_tmp = 1'b0;
+            MLDSA_i_ready_B_tmp <= 1'b0;
         else if(next_state != curr_state)
             MLDSA_i_ready_B_tmp <= 1'b1;
-        else if(MLDSA_i_last_B && MLDSA_i_ready_B)
+        else if(MLDSA_i_last_B && MLDSA_i_ready_B && MLDSA_i_valid_B)
             MLDSA_i_ready_B_tmp <= 1'b0;
     end
     /*---AXI Stream input protocol B---*/ //------------------------------------------end

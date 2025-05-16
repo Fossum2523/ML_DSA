@@ -36,7 +36,8 @@ module Keccak_Ctrl
                 Gen_s1      = 4'd2,
                 Gen_s2      = 4'd3,
                 Gen_y       = 4'd4,
-                H_u_w1      = 4'd5,
+                H_u_w1_1    = 4'd5,
+                H_u_w1_2    = 4'd13,
                 H_pk_1      = 4'd6,
                 H_pk_2      = 4'd7,
                 Gen_c_1     = 4'd8,
@@ -49,17 +50,17 @@ module Keccak_Ctrl
     reg     [7:0]   padder_cnt;//Used to count the number of padding operations, and a final last signal will be sent.
     reg     [7:0]   padder_cnt_last;
 
-    reg     [2:0]   H_tr_M_1_byte_num;
+    reg     [2:0]   H_tr_M_byte_num;
 
 
     assign  sha_in_ready =  sha_en & (sha_data_valid | index_triger);             
     assign  sha_squeeze  =  1'b0;
     assign  sha_mode     =  sha_type == 4'd1 ? G : H;
     assign  sha_hold     =  1'b0;
-    assign  index_triger =  padder_cnt == padder_cnt_last;
+    assign  index_triger =  padder_cnt == padder_cnt_last && !((sha_type == H_tr_M_1 || sha_type == H_tr_M_2));
    
 
-    assign  sha_byte_num =  sha_type == H_tr_M_1  ? H_tr_M_1_byte_num :
+    assign  sha_byte_num =  (sha_type == H_tr_M_1 || sha_type == H_tr_M_2)  ? H_tr_M_byte_num :
                             sha_type < 4'd5  ? 3'b010 :
                             sha_type >= 4'd11 ? 3'b000/*MLSDA_in_byte_num*/ : 3'b000;
 
@@ -92,19 +93,22 @@ module Keccak_Ctrl
             H_pk_2:begin
                 padder_cnt_last = 8'd164; //p have 4 data and t1 have 160 data
             end
-            // H_tr_M_1:begin
-            //     padder_cnt_last = 8'd164; //p have 4 data and t1 have 160 data
-            // end
             H_K_rnd_u:begin
                 padder_cnt_last = 8'd16; //p have 4 data and t1 have 160 data
             end
             Gen_y:begin
                 padder_cnt_last = 8'd8; //y have 8 data 
             end
-            H_u_w1:begin
+            H_u_w1_1:begin
+                padder_cnt_last = 8'd104; //u have 8 data and w1 have 96 data
+            end
+            H_u_w1_2:begin
                 padder_cnt_last = 8'd104; //u have 8 data and w1 have 96 data
             end
             Gen_c_1:begin
+                padder_cnt_last = 8'd4; //ctilde have 4 data
+            end
+            Gen_c_2:begin
                 padder_cnt_last = 8'd4; //ctilde have 4 data
             end
         endcase
@@ -135,6 +139,10 @@ module Keccak_Ctrl
                 if(AG_done)
                     sha_clean = 1'b1;
             end
+            H_tr_M_2:begin
+                if(AG_done)
+                    sha_clean = 1'b1;
+            end
             H_K_rnd_u:begin
                 if(AG_done)
                     sha_clean = 1'b1;
@@ -143,11 +151,19 @@ module Keccak_Ctrl
                 if(next_element)
                     sha_clean = 1'b1;
             end
-            H_u_w1:begin
+            H_u_w1_1:begin
+                if(AG_done)
+                    sha_clean = 1'b1;
+            end
+            H_u_w1_2:begin
                 if(AG_done)
                     sha_clean = 1'b1;
             end
             Gen_c_1:begin
+                if(next_element)
+                    sha_clean = 1'b1;
+            end
+            Gen_c_2:begin
                 if(next_element)
                     sha_clean = 1'b1;
             end
@@ -224,6 +240,15 @@ module Keccak_Ctrl
             H_tr_M_1:begin
                 keccak_in_sel = 2'd3;
             end
+            H_tr_M_2:begin
+                if(padder_cnt <= 7)begin
+                    keccak_in_sel = 2'd0;
+                    kk_sub_sel_1  = 2'd1;
+                end
+                else begin
+                    keccak_in_sel = 2'd3;
+                end
+            end
             H_K_rnd_u:begin
                 if(padder_cnt <= 7)begin
                     keccak_in_sel = 2'd3;
@@ -247,10 +272,24 @@ module Keccak_Ctrl
                     kk_sub_sel_3  = 2'd3;
                 end
             end
-            H_u_w1:begin
+            H_u_w1_1:begin
                 if(padder_cnt <= 7)begin
                     keccak_in_sel = 2'd0;
                     kk_sub_sel_1  = 2'd1;
+                end
+                else if(padder_cnt <= 103)begin
+                    keccak_in_sel = 2'd0;
+                    kk_sub_sel_1  = 2'd3;
+                end
+                else begin
+                    keccak_in_sel = 2'd1;
+                    kk_sub_sel_2  = 2'd2;
+                end
+            end
+            H_u_w1_2:begin
+                if(padder_cnt <= 7)begin
+                    keccak_in_sel = 2'd0;
+                    kk_sub_sel_1  = 2'd0;
                 end
                 else if(padder_cnt <= 103)begin
                     keccak_in_sel = 2'd0;
@@ -265,6 +304,15 @@ module Keccak_Ctrl
                 if(padder_cnt <= 3)begin
                     keccak_in_sel = 2'd0;
                     kk_sub_sel_2  = 2'd0;
+                end
+                else begin
+                    keccak_in_sel = 2'd1;
+                    kk_sub_sel_2  = 2'd2;
+                end
+            end
+            Gen_c_2:begin
+                if(padder_cnt <= 3)begin
+                    keccak_in_sel = 2'd3;
                 end
                 else begin
                     keccak_in_sel = 2'd1;
@@ -291,14 +339,17 @@ module Keccak_Ctrl
                     sha_is_last = 1'b1;
             end
             H_pk_1:begin
-                if(padder_cnt == 164)
+                if(padder_cnt == 164)               
                     sha_is_last = 1'b1;
             end
             H_pk_2:begin
-                if(padder_cnt == 164)
+                if(padder_cnt == 164)               
                     sha_is_last = 1'b1;
             end
             H_tr_M_1:begin
+                sha_is_last = MLDSA_i_last;
+            end
+            H_tr_M_2:begin
                 sha_is_last = MLDSA_i_last;
             end
             H_K_rnd_u:begin
@@ -309,11 +360,19 @@ module Keccak_Ctrl
                 if(padder_cnt == 8)
                     sha_is_last = 1'b1;
             end
-            H_u_w1:begin
+            H_u_w1_1:begin
+                if(padder_cnt == 104)
+                    sha_is_last = 1'b1;
+            end
+            H_u_w1_2:begin
                 if(padder_cnt == 104)
                     sha_is_last = 1'b1;
             end
             Gen_c_1:begin
+                if(padder_cnt == 4)
+                    sha_is_last = 1'b1;
+            end
+            Gen_c_2:begin
                 if(padder_cnt == 4)
                     sha_is_last = 1'b1;
             end
@@ -322,8 +381,8 @@ module Keccak_Ctrl
 
     always @(posedge clk) begin
         if(reset)
-            H_tr_M_1_byte_num <= 3'b0;
-        else if(sha_type == H_tr_M_1 & padder_cnt == 8)
-            H_tr_M_1_byte_num <= 3'd5 + sha_in[15:8];
+            H_tr_M_byte_num <= 3'b0;
+        else if((sha_type == H_tr_M_1 ||sha_type == H_tr_M_2) & padder_cnt == 8)
+            H_tr_M_byte_num <= 3'd5 + sha_in[15:8];
     end  
 endmodule

@@ -93,6 +93,9 @@ module MLDSA
     //Decoder
     wire DEC_ready_i;
 
+    //UseHint;
+    wire UH_ready_i;
+
     
     //Sampler Rejection
     wire    z_fail;
@@ -179,8 +182,10 @@ module MLDSA
         .AG_4_done(AG_4_done),
 
         //Decoder
-        .DEC_ready_i(DEC_ready_i)
-        
+        .DEC_ready_i(DEC_ready_i),
+
+        //UseHint
+        .UH_ready_i(UH_ready_i)
     );
 
     
@@ -246,6 +251,9 @@ module MLDSA
 
         //Decoder
         .DEC_ready_i(DEC_ready_i),
+
+        //UseHint
+        .UH_ready_i(UH_ready_i),
 
         /*---Sampler Rejection---*/
         .z_fail(z_fail),

@@ -423,7 +423,7 @@ def Ver(pk,M,signature):
         file.write(f"t1 = {t1}\n")
     c_tilde,z,h = sigDecode(signature)
     with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
-        file.write(f"c_tilde = {c_tilde}\n")
+        file.write(f"c_tilde = {Verilog_trans(c_tilde)}\n")
     with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
         file.write(f"z = {z}\n")
     with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
@@ -478,7 +478,7 @@ def Ver(pk,M,signature):
         file.write(f"w'1 = {w1_prime}\n")
     w1En = w1Encode(w1_prime)
     with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
-        file.write(f"Enc_w1  = {w1En}\n")
+        file.write(f"Enc_w1  = {Verilog_trans(w1En)}\n")
     c_prime_tilde = SHAKE_256(mu + w1En,2 * ML_DSA["lamda"])
     with open("MLDSA_SignVer_testbench_test_golden_data.txt", "a") as file:  # "w" 代表寫入模式，會覆蓋原內容
         file.write(f"c_tilde' = {Verilog_trans(c_prime_tilde)}\n")

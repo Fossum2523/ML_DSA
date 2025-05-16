@@ -39,6 +39,8 @@ module Address_generate
     always @(posedge clk) begin
         if(reset)
             data_valid_tmp <= 1'b0;
+        else if(pause)
+            data_valid_tmp <= 1'b0;
         else
             data_valid_tmp <= cnt_en;
     end
