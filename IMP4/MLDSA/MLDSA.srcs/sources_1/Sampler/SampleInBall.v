@@ -1,6 +1,6 @@
 module SampleInBall(   
     input                   clk,
-    input                   reset,
+    input                   resetn,
 
     /*---Control Signal---"*/
     input               sampler_in_ready,
@@ -51,22 +51,22 @@ module SampleInBall(
     assign j_next = j + j_plus_num;
 
 
-    always @(posedge clk) begin
-        if (reset)
+    always @(posedge clk or negedge resetn) begin
+        if (!resetn)
             addr_cj <=  8'd0;
         else
             addr_cj <= j_bios;  
     end
 
-    always @(posedge clk) begin
-        if (reset)
+    always @(posedge clk or negedge resetn) begin
+        if (!resetn)
             en_cj_temp <=  1'b0;
         else
             en_cj_temp <= en_ci && load_H;  
     end
     
-    always @(posedge clk) begin
-        if (reset) 
+    always @(posedge clk or negedge resetn) begin
+        if (!resetn) 
             load_H <= 1'b0;
         else if(j[8])
             load_H <= 1'b0;
@@ -74,8 +74,8 @@ module SampleInBall(
             load_H <= 1'b1; 
     end
 
-    always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             H = 64'd0;
         else if(sampler_in_ready && ~load_H)
             H = sampler_in[63:0];

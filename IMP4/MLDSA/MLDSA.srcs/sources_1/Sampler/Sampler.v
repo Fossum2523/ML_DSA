@@ -1,6 +1,6 @@
 module Sampler(
     input                   clk,
-    input                   reset,
+    input                   resetn,
     input       [1:0]       mode,
     input                   sampler_in_ready,
     input       [1343:0]    sampler_in,
@@ -118,7 +118,7 @@ module Sampler(
 
     ExpandS ExpandS_(
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .sampler_in_ready(sampler_in_ready_S),
         .sampler_in(sampler_buffer[7:0]),
         .j(j),
@@ -135,7 +135,7 @@ module Sampler(
 
     ExpandA ExpandA_(
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .sampler_in_ready(sampler_in_ready_A),
         .sampler_in(sampler_buffer[47:0]),
         .j(j),
@@ -152,7 +152,7 @@ module Sampler(
 
     ExpandMASK ExpandMASK_(
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .sampler_in_ready(sampler_in_ready_MASK),
         .sampler_in(sampler_buffer[35:0]),
         .j(j),
@@ -167,7 +167,7 @@ module Sampler(
 
     SampleInBall SampleInBall_(
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .sampler_in_ready(sampler_in_ready_SIB),
         .sampler_in(sampler_buffer[63:0]),
         .j(j),
@@ -183,15 +183,11 @@ module Sampler(
     );
 
     wire [5:0]  MASK_remain;
-    wire [1343:0]  test;
-    wire [1343:0]  test2;
-    wire [31:0]  test3;
-    wire [63:0]  test4;
+    wire [1343:0]  reamin_data_MASK;
+    wire [1343:0]  valid_bit_MASK;
 
-    assign test4 = sampler_buffer[63:0];
-    assign test3 = test[31:0];
-    assign test2 = ({(1344){1'b1}} >> (1344-MASK_remain));
-    assign test = (sampler_buffer & test2);
+    assign valid_bit_MASK = ({(1344){1'b1}} >> (1344-MASK_remain));
+    assign reamin_data_MASK = (sampler_buffer & valid_bit_MASK);
 
     assign MASK_remain = round_cnt == 5'd0 ? round_0:
                          round_cnt == 5'd1 ? round_1:
@@ -199,13 +195,12 @@ module Sampler(
                          round_cnt == 5'd3 ? round_3:
                          round_4;
 
-// 1344'd1 >> (1344-MASK_remain)
-    always @(posedge clk) begin
-        if(reset)
+
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             sampler_buffer <= 1344'd0;
         else if(curr_state == SAMPLE_WAIT && sampler_in_ready)
-            // sampler_buffer <= mode == MASK_mode ? ((sampler_in[1087:0] << MASK_remain) | test) : sampler_in;
-            sampler_buffer <= mode == MASK_mode ? ((sampler_in[1087:0] << MASK_remain) | test) : 
+            sampler_buffer <= mode == MASK_mode ? ((sampler_in[1087:0] << MASK_remain) | reamin_data_MASK) : 
                               mode == A_mode    ? sampler_in :
                              /*mode == S_mode & SIB_mode*/{256'd0,sampler_in[1087:0]};  
         else if (curr_state == SAMPLE_PROCESS)
@@ -216,18 +211,9 @@ module Sampler(
                               mode == SIB_mode & SIB_load_H ? {256'd0,8'd0,sampler_buffer[1087:8]}:1344'd0;
     end
 
-    always @(posedge clk) begin
-        if(reset)
-            sampler_in_ready_buffer <= 1'd0;
-        else if(sampler_in_ready)
-            sampler_in_ready_buffer <= sampler_in_ready; 
-        else
-            sampler_in_ready_buffer <= 1'd0;
-    end
 
-    ///////////////////////////////////////////////////////////////
-     always @ (posedge clk) begin
-        if (reset)
+     always @ (posedge clk or negedge resetn) begin
+        if (!resetn)
             shake_cnt <= 8'd0;
         else if (curr_state == SAMPLE_PROCESS)
             if(mode == SIB_mode & ~SIB_load_H)
@@ -238,8 +224,8 @@ module Sampler(
             shake_cnt <= 8'd0;
     end
 
-    always @ (posedge clk) begin
-        if (reset)
+    always @ (posedge clk or negedge resetn) begin
+        if (!resetn)
             j <=  9'd0;
         else if (next_element)
             j <=  9'd0; 
@@ -251,8 +237,8 @@ module Sampler(
     end
     
     //***---MASK only---***//
-    always @ (posedge clk) begin
-        if (reset)
+    always @ (posedge clk or negedge resetn) begin
+        if (!resetn)
             round_cnt <= 5'd0;
         else if (sampler_squeeze)
             round_cnt <= round_cnt + 5'd1;
@@ -261,8 +247,8 @@ module Sampler(
     end
     //***---MASK only---***//
 
-    always @ (posedge clk) begin
-        if (reset)
+    always @ (posedge clk or negedge resetn) begin
+        if (!resetn)
             curr_state <= SAMPLE_WAIT;
         else 
             curr_state <= next_state;

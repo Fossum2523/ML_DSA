@@ -2,7 +2,7 @@
 
 module Modular_Reduction(
     input               clk,
-    input               reset,
+    input               resetn,
     input       [45:0]  in,
     output reg  [22:0]  out
     );
@@ -34,15 +34,15 @@ module Modular_Reduction(
     //stage 2 ------------------------------------------------str
     assign adder_2 =  in[22:0] - adder_1[34:11] - adder_1[10:9];
 
-    always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             adder_2_temp <= 27'd0;
         else
             adder_2_temp <= adder_2;
     end
 
-     always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             concatenate_temp <= 12'd0;
         else
             concatenate_temp <= {adder_1[10:9],adder_1[8:0],adder_0[0]};
@@ -67,8 +67,8 @@ module Modular_Reduction(
 
     assign adder_4 = adder_3[23:0] + adjust;
 
-    always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             out <= 23'd0;
         else
             out <= adder_4[23] ?  adder_3[22:0] : adder_4[22:0];

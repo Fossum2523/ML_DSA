@@ -1,6 +1,6 @@
 module ExpandS(   
     input               clk,
-    input               reset,
+    input               resetn,
 
     /*---Control Signal---"*/
     input               sampler_in_ready,

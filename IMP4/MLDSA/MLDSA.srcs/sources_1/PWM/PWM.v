@@ -3,7 +3,7 @@ module PWM
     parameter BIT_LEN = 23
 )(  
     input                   clk,
-    input                   reset,
+    input                   resetn,
     input   [1:0]           mode,
     input                   i_valid,
     output                  i_ready,
@@ -60,22 +60,22 @@ module PWM
     assign addr_b = cnt_o + 1'b1;
 
     assign done = cnt_o == 11'd1024 ? 1'b1 : 1'b0;
-    always @(posedge clk or posedge reset) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             mul_a <= 46'd0;
         else
             mul_a <= in_a0 * in_a1;
     end
 
-    always @(posedge clk or posedge reset) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             mul_b <= 46'd0;
         else
             mul_b <= in_b0 * in_b1;
     end
 
-    Modular_Reduction MR0(.clk(clk),.reset(reset),.in(mul_a),.out(mod_mul_a));
-    Modular_Reduction MR1(.clk(clk),.reset(reset),.in(mul_b),.out(mod_mul_b));
+    Modular_Reduction MR0(.clk(clk),.resetn(resetn),.in(mul_a),.out(mod_mul_a));
+    Modular_Reduction MR1(.clk(clk),.resetn(resetn),.in(mul_b),.out(mod_mul_b));
 
     assign mod_0_in_a = mode[1] ? in_a1 : mod_mul_a;
     assign mod_0_in_b = mode[1] ? in_b1 : mod_mul_b;
@@ -91,8 +91,8 @@ module PWM
     assign out_b = mode[0]  ? /*SCALAR_VECTOR*/             mod_mul_b:
                               /*MATRIX_VECTOR & ADD_VECTOR*/w_b ;
 
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
+    always @(posedge clk or negedge resetn) begin
+        if (!resetn) begin
             for (i = 0; i < DELAY_CYCLES; i = i + 1) begin
                 shift_reg_a[i] <= {BIT_LEN{1'b0}};
                 shift_reg_b[i] <= {BIT_LEN{1'b0}};
@@ -108,15 +108,15 @@ module PWM
         end
     end
 
-    always @(posedge clk or posedge reset) begin
-        if (reset)
+    always @(posedge clk or negedge resetn) begin
+        if (!resetn)
             valid_buf <= {DELAY_CYCLES{1'b0}};
         else 
             valid_buf <= {valid_buf[DELAY_CYCLES-2:0],i_valid};
     end  
 
-    always @(posedge clk or posedge reset) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             cnt_i <= 11'd0;
         else if(done)
             cnt_i <= 11'd0;
@@ -124,8 +124,8 @@ module PWM
             cnt_i <= cnt_i + 2'd2;
     end 
 
-    always @(posedge clk or posedge reset) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             cnt_o <= 11'd0;
         else if(done)
             cnt_o <= 11'd0;

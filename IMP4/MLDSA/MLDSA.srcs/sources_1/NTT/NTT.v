@@ -2,7 +2,7 @@ module NTT#(
     parameter BIT_LEN = 23
     )(
 	input                clk,
-	input                reset,
+	input                resetn,
     input                mode,
 	input                i_valid,
 	output               i_ready,
@@ -166,8 +166,8 @@ module NTT#(
     wire [BIT_LEN-1:0]    INTT_o_d;
     reg  [DELAY_CYCLES - 1:0 ]  valid_buf;
 
-    always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             cnt_i <= 8'd0;
         else if(done)
             cnt_i <= 8'd0;
@@ -175,8 +175,8 @@ module NTT#(
             cnt_i <= cnt_i + 1'b1;
     end
 
-    always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             cnt_o <= 8'd0;
         else if(done)
             cnt_o <= 8'd0;
@@ -184,13 +184,12 @@ module NTT#(
             cnt_o <= cnt_o + 1'b1;
     end
 
-    always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             done <= 1'b0;
         else
             done <= cnt_o == 127 && o_valid ? 1'b1 : 1'b0;
     end
-
 
     assign i_ready   = cnt_i <= 128;
     assign o_valid   = mode ? valid_buf[DELAY_CYCLES-1] : BU_7_o_valid;
@@ -198,11 +197,11 @@ module NTT#(
     assign inv_rot_o_u = BU_0_out_data_u * 23'd8347681;
     assign inv_rot_o_d = BU_0_out_data_d * 23'd8347681;
 
-    Modular_Reduction MR1(clk,reset,inv_rot_o_u, INTT_o_u);
-    Modular_Reduction MR2(clk,reset,inv_rot_o_d, INTT_o_d);
+    Modular_Reduction MR1(clk,resetn,inv_rot_o_u, INTT_o_u);
+    Modular_Reduction MR2(clk,resetn,inv_rot_o_d, INTT_o_d);
 
-    always @(posedge clk) begin
-        if (reset)
+    always @(posedge clk or negedge resetn) begin
+        if (!resetn)
             valid_buf <= {DELAY_CYCLES{1'b0}};
         else 
             valid_buf <= {valid_buf[DELAY_CYCLES-2:0],BU_0_o_valid};
@@ -220,7 +219,7 @@ module NTT#(
 
 
     BU BU_0(
-        .reset(reset),
+        .resetn(resetn),
         .clk(clk),
         .mode(mode),
         .i_valid(BU_0_i_valid),
@@ -248,7 +247,7 @@ module NTT#(
         .depth(depth_1)
     ) RU_1(
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .i_valid(RU_1_i_valid),
         .in_u(RU_1_in_data_u),
         .in_d(RU_1_in_data_d),
@@ -262,7 +261,7 @@ module NTT#(
         .depth(depth_1)
     ) CONTR_1(
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .mode(mode),
         .i_valid(CONTR_1_i_valid),
         .zeta_addr(MEM_zeta_1_addr)
@@ -282,7 +281,7 @@ module NTT#(
 
 
     BU BU_1(
-        .reset(reset),
+        .resetn(resetn),
         .clk(clk),
         .mode(mode),
         .i_valid(BU_1_i_valid),
@@ -310,7 +309,7 @@ module NTT#(
         .depth(depth_2)
     ) RU_2(
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .i_valid(RU_2_i_valid),
         .in_u(RU_2_in_data_u),
         .in_d(RU_2_in_data_d),
@@ -324,7 +323,7 @@ module NTT#(
         .depth(depth_2)
     ) CONTR_2(
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .mode(mode),
         .i_valid(CONTR_2_i_valid),
         .zeta_addr(MEM_zeta_2_addr)
@@ -344,7 +343,7 @@ module NTT#(
 
 
     BU BU_2(
-        .reset(reset),
+        .resetn(resetn),
         .clk(clk),
         .mode(mode),
         .i_valid(BU_2_i_valid),
@@ -372,7 +371,7 @@ module NTT#(
         .depth(depth_3)
     ) RU_3(
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .i_valid(RU_3_i_valid),
         .in_u(RU_3_in_data_u),
         .in_d(RU_3_in_data_d),
@@ -386,7 +385,7 @@ module NTT#(
         .depth(depth_3)
     ) CONTR_3(
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .mode(mode),
         .i_valid(CONTR_3_i_valid),
         .zeta_addr(MEM_zeta_3_addr)
@@ -406,7 +405,7 @@ module NTT#(
 
 
     BU BU_3(
-        .reset(reset),
+        .resetn(resetn),
         .clk(clk),
         .mode(mode),
         .i_valid(BU_3_i_valid),
@@ -434,7 +433,7 @@ module NTT#(
         .depth(depth_4)
     ) RU_4(
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .i_valid(RU_4_i_valid),
         .in_u(RU_4_in_data_u),
         .in_d(RU_4_in_data_d),
@@ -448,7 +447,7 @@ module NTT#(
         .depth(depth_4)
     ) CONTR_4(
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .mode(mode),
         .i_valid(CONTR_4_i_valid),
         .zeta_addr(MEM_zeta_4_addr)
@@ -468,7 +467,7 @@ module NTT#(
 
 
     BU BU_4(
-        .reset(reset),
+        .resetn(resetn),
         .clk(clk),
         .mode(mode),
         .i_valid(BU_4_i_valid),
@@ -496,7 +495,7 @@ module NTT#(
         .depth(depth_5)
     ) RU_5(
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .i_valid(RU_5_i_valid),
         .in_u(RU_5_in_data_u),
         .in_d(RU_5_in_data_d),
@@ -510,7 +509,7 @@ module NTT#(
         .depth(depth_5)
     ) CONTR_5(
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .mode(mode),
         .i_valid(CONTR_5_i_valid),
         .zeta_addr(MEM_zeta_5_addr)
@@ -530,7 +529,7 @@ module NTT#(
 
 
     BU BU_5(
-        .reset(reset),
+        .resetn(resetn),
         .clk(clk),
         .mode(mode),
         .i_valid(BU_5_i_valid),
@@ -558,7 +557,7 @@ module NTT#(
         .depth(depth_6)
     ) RU_6(
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .i_valid(RU_6_i_valid),
         .in_u(RU_6_in_data_u),
         .in_d(RU_6_in_data_d),
@@ -572,7 +571,7 @@ module NTT#(
         .depth(depth_6)
     ) CONTR_6(
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .mode(mode),
         .i_valid(CONTR_6_i_valid),
         .zeta_addr(MEM_zeta_6_addr)
@@ -592,7 +591,7 @@ module NTT#(
 
 
     BU BU_6(
-        .reset(reset),
+        .resetn(resetn),
         .clk(clk),
         .mode(mode),
         .i_valid(BU_6_i_valid),
@@ -622,7 +621,7 @@ module NTT#(
         .depth(depth_7)
     ) RU_7(
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .i_valid(RU_7_i_valid),
         .in_u(RU_7_in_data_u),
         .in_d(RU_7_in_data_d),
@@ -636,7 +635,7 @@ module NTT#(
         .depth(depth_7)
     ) CONTR_7(
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .mode(mode),
         .i_valid(CONTR_7_i_valid),
         .zeta_addr(MEM_zeta_7_addr)
@@ -656,7 +655,7 @@ module NTT#(
 
 
     BU BU_7(
-        .reset(reset),
+        .resetn(resetn),
         .clk(clk),
         .mode(mode),
         .i_valid(BU_7_i_valid),

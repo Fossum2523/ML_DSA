@@ -6,7 +6,7 @@ module BU
     parameter depth = 64
 )(
     input                            clk,
-    input                            reset,
+    input                            resetn,
     input                            i_valid,
     input                            mode,
     input   [BIT_LEN - 1:0]          a,  //Individual input points, each 8 bits wide
@@ -19,8 +19,8 @@ module BU
     localparam  NTT_mode  = 1'b0,
                 INTT_mode = 1'b1;
     
-    parameter DATA_WIDTH    = 23; 
-    parameter DELAY_CYCLES  = 4;
+    localparam DATA_WIDTH    = 23; 
+    localparam DELAY_CYCLES  = 4;
 
     reg  [DELAY_CYCLES - 1:0 ]  valid_buf;
     wire [BIT_LEN - 1:0]  add_in_0;
@@ -40,7 +40,7 @@ module BU
 
     mod_add ma(add_in_0, add_in_1, add_out);
     mod_sub ms(sub_in_0, sub_in_1, sub_out);
-    mod_mul mm(clk,reset,mul_in_0, mul_in_1, mul_out);
+    mod_mul mm(clk,resetn,mul_in_0, mul_in_1, mul_out);
 
     assign add_in_0 = shift_reg_a[DELAY_CYCLES-1];
     assign add_in_1 = mode ? shift_reg_b[DELAY_CYCLES-1] : mul_out;
@@ -55,22 +55,22 @@ module BU
 
     assign neg_zeta = 23'd8380417 - zeta;
     
-    always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             mul_in_0 <= 23'd0;
         else
             mul_in_0 <= mode ? neg_zeta: zeta;
     end   
 
-    always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             mul_in_1 <= 23'd0;
         else
             mul_in_1 <= mode ? sub_out : b;
     end   
 
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
+    always @(posedge clk or negedge resetn) begin
+        if (!resetn) begin
             for (i = 0; i < DELAY_CYCLES; i = i + 1) begin
                 shift_reg_a[i] <= {DATA_WIDTH{1'b0}};
                 shift_reg_b[i] <= {DATA_WIDTH{1'b0}};
@@ -86,8 +86,8 @@ module BU
         end
     end
 
-    always @(posedge clk) begin
-        if (reset)
+    always @(posedge clk or negedge resetn) begin
+        if (!resetn)
             valid_buf <= {DELAY_CYCLES{1'b0}};
         else 
             valid_buf <= {valid_buf[DELAY_CYCLES-2:0],i_valid};

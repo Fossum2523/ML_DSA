@@ -1,11 +1,12 @@
 module Controller
     (   
     input               clk,
-    input               reset,
+    input               resetn,
 
     output [8:0]        ctrl_sign,
     /*---from outside---*/
     input               start,
+    output              done,
     input   [1:0]       main_mode, //KeyGen, SignGen, SignVer
 
     //AXI Stream input protocol A
@@ -17,17 +18,17 @@ module Controller
     input               MLDSA_i_valid_B,
     input               MLDSA_i_last_B,
     output reg          MLDSA_i_ready_B,
+    
+    //AXI Stream output protocol
+    input               MLDSA_o_ready,
+    input               MLDSA_o_valid,
+    input               MLDSA_o_last,
 
     /*---Keack---*/
     output  reg         sha_en, 
     output  reg [3:0]   sha_type,
     input               sha_buffer_full,
     input               sha_out_ready,
-
-    /*---Data_Mem---*/
-    output              mem_sel,
-    output              A_mem_sel,
-    output              t_mem_sel,
 
     /*---Sampler---*/
     output reg [1:0]    sampler_mode,
@@ -81,13 +82,6 @@ module Controller
 
     /*---UseHint---*/
     input               UH_ready_i
-    // /*---Encoder---*/
-    // output reg          ENC_valid_i,
-    // input               ENC_ready_i,
-    // input               ENC_valid_o,
-    // output reg          ENC_ready_o
-
-
     );  
 
     //main mode
@@ -115,12 +109,11 @@ module Controller
                         STAGE_16    = 6'd16,        
                         STAGE_17    = 6'd17,        
                         STAGE_18    = 6'd18,        
-                        STAGE_19    = 6'd19,        
+                        STAGE_19    = 6'd19,            
                         STAGE_20    = 6'd20,        
                         STAGE_21    = 6'd21,
                         STAGE_22    = 6'd22,  
-
-                        STAGE_T     = 6'd31;        
+                        STAGE_23    = 6'd23;        
 
     //Sampler mode
     localparam [1:0]    S_mode    = 2'd0,
@@ -164,6 +157,11 @@ module Controller
     reg Hint_done_tmp;
     reg clean_done_tmp;
 
+    reg main_mem_sel_triger;
+
+    reg MLDSA_i_ready_A_tmp;
+    reg MLDSA_i_ready_B_tmp;
+
     assign  curr_state = main_mode == KeyGen  ? curr_state_KeyGen : 
                          main_mode == SignGen ? curr_state_SignGen:
                          main_mode == SignVer ? curr_state_SignVer: 6'd0;
@@ -174,15 +172,19 @@ module Controller
 
     assign  ctrl_sign = {main_mode,curr_state};
 
+    assign done =   main_mode == KeyGen  ? curr_state_KeyGen ==  STAGE_10: 
+                    main_mode == SignGen ? curr_state_SignGen ==  STAGE_23:
+                    main_mode == SignVer ? curr_state_SignVer ==  STAGE_11: 1'd0;
     /*---KeyGen Main---*/ //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    always @ (posedge clk or posedge reset) begin
-        if (reset)
+    always @(posedge clk or negedge resetn) begin
+        if (!resetn)
             curr_state_KeyGen <= IDLE;
         else if(main_mode == KeyGen)
             curr_state_KeyGen <= next_state_KeyGen;
     end
 
     always @(*) begin
+        next_state_KeyGen = 6'd0;
         case (curr_state_KeyGen)
             IDLE: begin
                 if(start)   
@@ -240,9 +242,12 @@ module Controller
             end
             STAGE_9: begin
                 if(Encoder_done_tmp && send_done_tmp)   
-                    next_state_KeyGen = IDLE;
+                    next_state_KeyGen = STAGE_10;
                 else                
                     next_state_KeyGen = STAGE_9;
+            end
+            STAGE_10: begin 
+                    next_state_KeyGen = IDLE;
             end 
             default: next_state_KeyGen = IDLE;
         endcase
@@ -251,14 +256,15 @@ module Controller
 
 
     /*---SignGen Main---*/ //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    always @ (posedge clk or posedge reset) begin
-        if (reset)
+    always @(posedge clk or negedge resetn) begin
+        if (!resetn)
             curr_state_SignGen <= IDLE;
         else if(main_mode == SignGen)
             curr_state_SignGen <= next_state_SignGen;
     end
 
     always @(*) begin
+        next_state_SignGen = 6'd0;
         case (curr_state_SignGen)
             IDLE: begin
                 if(start)   
@@ -400,9 +406,12 @@ module Controller
             end
             STAGE_22: begin
                 if(send_done)   
-                    next_state_SignGen = IDLE;
+                    next_state_SignGen = STAGE_23;
                 else 
                     next_state_SignGen = STAGE_22;
+            end
+            STAGE_23: begin  
+                next_state_SignGen = IDLE;
             end
             default: next_state_SignGen = IDLE;
         endcase
@@ -411,14 +420,15 @@ module Controller
 
 
     /*---SignVer Main---*/ //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    always @ (posedge clk or posedge reset) begin
-        if (reset)
+    always @(posedge clk or negedge resetn) begin
+        if (!resetn)
             curr_state_SignVer <= IDLE;
         else if(main_mode == SignVer)
             curr_state_SignVer <= next_state_SignVer;
     end
 
     always @(*) begin
+        next_state_SignVer = 6'd0;
         case (curr_state_SignVer)
             IDLE: begin
                 if(start)   
@@ -475,10 +485,19 @@ module Controller
                     next_state_SignVer = STAGE_8;
             end
             STAGE_9: begin
-                if(send_done)   
-                    next_state_SignVer = IDLE;
+                if(keccak_done_tmp && Encoder_done_tmp)   
+                    next_state_SignVer = STAGE_10;
                 else 
                     next_state_SignVer = STAGE_9;
+            end
+            STAGE_10: begin
+                if(send_done_tmp)   
+                    next_state_SignVer = STAGE_11;
+                else 
+                    next_state_SignVer = STAGE_10;
+            end
+            STAGE_11: begin
+                next_state_SignVer = IDLE;
             end
             default: next_state_SignVer = IDLE;
         endcase
@@ -514,11 +533,15 @@ module Controller
             {SignGen,6'd22}: begin
                 send_done = AG_1_done;
             end
+            {SignVer,6'd10}: begin
+                send_done = MLDSA_o_valid & MLDSA_o_ready;
+            end
+            default:send_done = 1'b0;
         endcase
     end
 
-    always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             send_done_tmp <= 1'b0;
         else if(next_state != curr_state)
             send_done_tmp <= 1'b0;
@@ -623,22 +646,22 @@ module Controller
     assign A_index  = A_mem_cnt;
     assign y_index  = y_mem_cnt;
 
-    always @ (posedge clk) begin 
-        if (reset)                                                                                                                                                   
+    always @(posedge clk or negedge resetn) begin 
+        if (!resetn)                                                                                                                                                   
             s_mem_cnt <= 4'd0;
         else if((ctrl_sign == {KeyGen,6'd2} | curr_state == {KeyGen,6'd3}) && next_element)
             s_mem_cnt <= s_mem_cnt + 1'b1;
     end
 
-    always @ (posedge clk) begin 
-        if (reset)                                                                                                                                                   
+    always @(posedge clk or negedge resetn) begin 
+        if (!resetn)                                                                                                                                                   
             A_mem_cnt <= 4'd0;
         else if((ctrl_sign == {KeyGen,6'd4} | ctrl_sign == {SignGen,6'd5} | ctrl_sign == {SignGen,6'd6} | ctrl_sign == {SignVer,6'd3} | ctrl_sign == {SignVer,6'd4}) && next_element)
             A_mem_cnt <= A_mem_cnt + 1'b1;
     end
 
-    always @ (posedge clk) begin 
-        if (reset)                                                                                                                                                   
+    always @(posedge clk or negedge resetn) begin 
+        if (!resetn)                                                                                                                                                   
             y_mem_cnt <= 2'd0;
         else if((ctrl_sign  == {SignGen,6'd3} | ctrl_sign  == {SignGen,6'd16}) && next_element)
             y_mem_cnt <= y_mem_cnt + 1'b1;
@@ -705,8 +728,8 @@ module Controller
         endcase
     end
 
-    always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             keccak_done_tmp <= 1'b0;
         else if(next_state != curr_state)
             keccak_done_tmp <= 1'b0;
@@ -718,49 +741,43 @@ module Controller
 
     /*---Sampler---*/ //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     always @(*) begin
+        sampler_mode = 2'd0;
+        sampler_in_ready = 1'b0;
         case (ctrl_sign)
             {KeyGen,6'd2},
             {KeyGen,6'd3}:begin
                 sampler_mode = S_mode;
-                if(sha_out_ready)
-                    sampler_in_ready = 1'b1;
+                sampler_in_ready = sha_out_ready;
             end
             {KeyGen,6'd4}:begin
                 sampler_mode = A_mode;
-                if(sha_out_ready)
-                    sampler_in_ready = 1'b1;
+                sampler_in_ready = sha_out_ready;
             end
             {SignGen,6'd3}:begin
                 sampler_mode = MASK_mode;
-                if(sha_out_ready)
-                    sampler_in_ready = 1'b1;
+                sampler_in_ready = sha_out_ready;
             end
             {SignGen,6'd5},
             {SignGen,6'd6}:begin
                 sampler_mode = A_mode;
-                if(sha_out_ready)
-                    sampler_in_ready = 1'b1;
+                sampler_in_ready = sha_out_ready;
             end
             {SignGen,6'd11}:begin
                 sampler_mode = SIB_mode;
-                if(sha_out_ready)
-                    sampler_in_ready = 1'b1;
+                sampler_in_ready = sha_out_ready;
             end
             {SignGen,6'd16}:begin
                 sampler_mode = MASK_mode;
-                if(sha_out_ready)
-                    sampler_in_ready = 1'b1;
+                sampler_in_ready = sha_out_ready;
             end
             {SignVer,6'd2}:begin
                 sampler_mode = SIB_mode;
-                if(sha_out_ready)
-                    sampler_in_ready = 1'b1;
+                sampler_in_ready = sha_out_ready;
             end
             {SignVer,6'd3},
             {SignVer,6'd4}:begin
                 sampler_mode = A_mode;
-                if(sha_out_ready)
-                    sampler_in_ready = 1'b1;
+                sampler_in_ready = sha_out_ready;
             end
             default: begin
                 sampler_mode = 2'd0;
@@ -875,11 +892,12 @@ module Controller
             {SignVer,6'd3}:begin
                 NTT_end_index = 2'd0;
             end 
+            default:NTT_end_index  = 1'b0;
         endcase
     end
             
-    always @ (posedge clk) begin 
-        if (reset)                                                                                                                                                   
+    always @(posedge clk or negedge resetn) begin 
+        if (!resetn)                                                                                                                                                   
             NTT_index <= 2'd0;
         else if(next_state != curr_state)
             NTT_index <= 2'b0;
@@ -887,12 +905,12 @@ module Controller
             NTT_index <= NTT_index + 1'b1;
     end
 
-    always @ (posedge clk) begin 
-        if (reset)                                                                                                                                                   
+    always @(posedge clk or negedge resetn) begin 
+        if (!resetn)                                                                                                                                                   
             NTT_done_tmp <= 1'b0;
         else if(next_state != curr_state)
             NTT_done_tmp <= 1'b0;
-        else if(NTT_index == NTT_end_index & NTT_done)
+        else if(NTT_index == NTT_end_index && NTT_done)
             NTT_done_tmp <= 1'b1;
     end
     /*---NTT---*/ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -926,11 +944,12 @@ module Controller
             {SignVer,6'd9}:begin
                 Encoder_done = AG_3_done;
             end
+            default:Encoder_done = 1'b0;
         endcase
     end
 
-    always @ (posedge clk) begin 
-        if (reset)                                                                                                                                                   
+    always @(posedge clk or negedge resetn) begin 
+        if (!resetn)                                                                                                                                                   
             Encoder_done_tmp <= 1'b0;
         else if(next_state != curr_state)
             Encoder_done_tmp <= 1'b0;
@@ -959,11 +978,12 @@ module Controller
             {SignVer,6'd2}:begin
                 Decoder_done = AG_3_done;
             end
+            default:Decoder_done = 1'b0;
         endcase
     end
 
-    always @ (posedge clk) begin 
-        if (reset)                                                                                                                                                   
+    always @(posedge clk or negedge resetn) begin 
+        if (!resetn)                                                                                                                                                   
             Decoder_done_tmp <= 1'b0;
         else if(next_state != curr_state)
             Decoder_done_tmp <= 1'b0;
@@ -982,11 +1002,12 @@ module Controller
             {SignVer,6'd8}:begin
                 Hint_done = AG_3_done;
             end
+            default:Hint_done = 1'b0;
         endcase
     end
 
-    always @ (posedge clk) begin 
-        if (reset)                                                                                                                                                   
+    always @(posedge clk or negedge resetn) begin 
+        if (!resetn)                                                                                                                                                   
             Hint_done_tmp <= 1'b0;
         else if(next_state != curr_state)
             Hint_done_tmp <= 1'b0;
@@ -996,8 +1017,6 @@ module Controller
     /*---MakeHint---*/ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
     /*---Address_Generate---*/ //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    reg main_mem_sel_triger;
-
     always @(*) begin
         main_mem_sel_triger = 1'b0;
         case (ctrl_sign)
@@ -1007,14 +1026,12 @@ module Controller
             {KeyGen,6'd10}:begin //main_mem_sel: "4'd0 -> p", "4'd1 -> t1_pack"
                 main_mem_sel_triger = AG_1_done; 
             end
-            // {KeyGen,6'd10}:begin //main_mem_sel: "3'd0 -> p", "3'd1 -> K", "3'd2 -> tr", "3'd3 -> s1_pack", "3'd4 -> s2_pack", "3'd5 -> t0_pack",    
-            //     main_mem_sel_triger = AG_1_done; 
-            // end
+            default:main_mem_sel_triger = 1'b0;
         endcase
     end
 
-    always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             main_mem_sel <= 4'd0;
         else if(next_state != curr_state)
             main_mem_sel <= 4'd0;
@@ -1093,6 +1110,14 @@ module Controller
             {SignVer,6'd9}: begin //"c_tilde' = H(u || Enc_w1)", read out u data to keccak
                 AG_1_triger      = ~(keccak_done | keccak_done_tmp);
                 AG_1_clean       = keccak_done_tmp;
+            end
+            {SignVer,6'd10}: begin //"Compare", read out c_tilde and c_tilde'
+                AG_1_triger      = ~send_done_tmp;
+                AG_1_clean       = send_done_tmp;
+            end
+            default:begin
+                AG_1_triger      = 1'b0;
+                AG_1_clean       = 1'b0;
             end
         endcase
     end
@@ -1213,6 +1238,10 @@ module Controller
                 AG_2_triger      = ~Encoder_done_tmp;
                 AG_2_clean       = Encoder_done;
             end 
+            default:begin
+                AG_2_triger      = 1'b0;
+                AG_2_clean       = 1'b0;
+            end
         endcase
     end
 
@@ -1284,6 +1313,10 @@ module Controller
                 AG_3_triger      = ~Encoder_done_tmp;
                 AG_3_clean       = Encoder_done;
             end 
+            default:begin
+                AG_3_triger      = 1'b0;
+                AG_3_clean       = 1'b0;
+            end
         endcase
     end
 
@@ -1375,10 +1408,14 @@ module Controller
                 AG_4_triger      = sha_out_ready;
                 AG_4_clean       = AG_4_done;
             end 
-            // {SignVer,6'd9}: begin //"c_tilde' = H(u || Enc_w1)",store c_tilde
-            //     AG_4_triger      = ~PWM_done_tmp;
-            //     AG_4_clean       = PWM_done;
-            // end  
+            {SignVer,6'd9}: begin //"c_tilde' = H(u || Enc_w1)", after keccak gen c_tilde', store c_tilde'
+                AG_4_triger      = sha_out_ready;
+                AG_4_clean       = AG_4_done;
+            end
+            default:begin
+                AG_4_triger      = 1'b0;
+                AG_4_clean       = 1'b0;
+            end  
         endcase
     end
     /*---Address_Generate---*/ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -1424,11 +1461,12 @@ module Controller
             {SignVer,6'd6}: begin //"w_hat = Az_hat - ct1_hat"
                 PWM_end_index = 2'd0;
             end 
+            default:PWM_end_index  = 1'b0;
         endcase
     end
     
-    always @ (posedge clk) begin 
-        if (reset)                                                                                                                                                   
+    always @(posedge clk or negedge resetn) begin 
+        if (!resetn)                                                                                                                                                   
             PWM_index_tmp <= 2'd0;
         else if(next_state != curr_state)
             PWM_index_tmp <= 2'd0;
@@ -1436,15 +1474,15 @@ module Controller
             PWM_index_tmp <= PWM_index_tmp + 1'b1;
     end
 
-    always @ (posedge clk) begin 
-        if (reset)                                                                                                                                                   
+    always @(posedge clk or negedge resetn) begin 
+        if (!resetn)                                                                                                                                                   
             PWM_index <= 2'd0;
         else
             PWM_index <= PWM_index_tmp;
     end
 
-    always @ (posedge clk) begin 
-        if (reset)                                                                                                                                                   
+    always @(posedge clk or negedge resetn) begin 
+        if (!resetn)                                                                                                                                                   
             PWM_done_tmp <= 1'b0;
         else if(next_state != curr_state)
             PWM_done_tmp <= 1'b0;
@@ -1470,11 +1508,12 @@ module Controller
             {SignVer,6'd8}: begin
                 Decomposer_done = AG_2_done;
             end 
+            default:Decomposer_done = 1'b0;
         endcase
     end
 
-    always @ (posedge clk) begin 
-        if (reset)                                                                                                                                                   
+    always @(posedge clk or negedge resetn) begin 
+        if (!resetn)                                                                                                                                                   
             Decomposer_done_tmp <= 1'b0;
         else if(next_state != curr_state)
             Decomposer_done_tmp <= 1'b0;
@@ -1485,8 +1524,8 @@ module Controller
 
 
     /*---Clean---*/ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    always @ (posedge clk) begin 
-        if (reset)                                                                                                                                                   
+    always @(posedge clk or negedge resetn) begin 
+        if (!resetn)                                                                                                                                                   
            clean_done_tmp <= 1'b0;
         else if(next_state != curr_state)
             clean_done_tmp <= 1'b0;
@@ -1497,12 +1536,14 @@ module Controller
 
 
     /*---AXI Stream input protocol A---*/ //------------------------------------------str
-    reg MLDSA_i_ready_A_tmp;
-
     always @(*) begin
         MLDSA_i_ready_A = 1'b0;
         case (ctrl_sign)
             {KeyGen,6'd1}: begin
+                MLDSA_i_ready_A = MLDSA_i_ready_A_tmp & (~sha_buffer_full);
+            end 
+            {SignGen,6'd1},
+            {SignGen,6'd2}: begin
                 MLDSA_i_ready_A = MLDSA_i_ready_A_tmp & (~sha_buffer_full);
             end 
             {SignVer,6'd1}: begin
@@ -1517,31 +1558,22 @@ module Controller
             {SignVer,6'd8}: begin
                 MLDSA_i_ready_A = MLDSA_i_ready_A_tmp & UH_ready_i;
             end
+            default:MLDSA_i_ready_A = 1'b0;
         endcase
     end
 
-    always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             MLDSA_i_ready_A_tmp <= 1'b0;
         else if(next_state != curr_state)
             MLDSA_i_ready_A_tmp <= 1'b1;
         else if(MLDSA_i_last_A && MLDSA_i_ready_A && MLDSA_i_valid_A)
             MLDSA_i_ready_A_tmp <= 1'b0;
     end
-    // always @(posedge clk) begin
-    //     if(reset)
-    //         MLDSA_i_ready_A = 1'b0;
-    //     else if(next_state != curr_state)
-    //         MLDSA_i_ready_A <= 1'b1;
-    //     else if(MLDSA_i_last_A && MLDSA_i_valid_A)
-    //         MLDSA_i_ready_A <= 1'b0;
-    // end
     /*---AXI Stream input protocol A---*/ //------------------------------------------end
 
 
     /*---AXI Stream input protocol B---*/ //------------------------------------------str
-    reg MLDSA_i_ready_B_tmp;
-
     always @(*) begin
         MLDSA_i_ready_B = 1'b0;
         case (ctrl_sign)
@@ -1558,19 +1590,17 @@ module Controller
                 MLDSA_i_ready_B = MLDSA_i_ready_B_tmp & AG_1_addr_en;
             end
             {SignVer,6'd1}: begin
-                MLDSA_i_ready_B = MLDSA_i_ready_B_tmp & DEC_ready_i;
-            end
-            {SignVer,6'd1}: begin
                 MLDSA_i_ready_B = MLDSA_i_ready_B_tmp & DEC_ready_i & (~Decoder_done_tmp);
             end 
             {SignVer,6'd2}: begin
                 MLDSA_i_ready_B = MLDSA_i_ready_B_tmp & DEC_ready_i & (~Decoder_done_tmp);
             end 
+            default:MLDSA_i_ready_B = 1'b0;
         endcase
     end
     
-    always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             MLDSA_i_ready_B_tmp <= 1'b0;
         else if(next_state != curr_state)
             MLDSA_i_ready_B_tmp <= 1'b1;

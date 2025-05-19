@@ -11,22 +11,18 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="18,336.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="19,254.001 ns"></ZoomEndTime>
-      <Cursor1Time time="19,089.000 ns"></Cursor1Time>
+      <ZoomStartTime time="64.535000 us"></ZoomStartTime>
+      <ZoomEndTime time="145.535001 us"></ZoomEndTime>
+      <Cursor1Time time="132.035000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="166"></NameColumnWidth>
+      <NameColumnWidth column_width="156"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="127" />
+   <WVObjectSize size="161" />
    <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/start" type="logic">
       <obj_property name="ElementShortName">start</obj_property>
@@ -309,10 +305,6 @@
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
-   </wvobject>
    <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/start" type="logic">
       <obj_property name="ElementShortName">start</obj_property>
       <obj_property name="ObjectShortName">start</obj_property>
@@ -501,10 +493,6 @@
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
-   </wvobject>
    <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/ctrl_sign" type="array">
       <obj_property name="ElementShortName">ctrl_sign[8:0]</obj_property>
       <obj_property name="ObjectShortName">ctrl_sign[8:0]</obj_property>
@@ -558,12 +546,14 @@
       <obj_property name="ObjectShortName">temp_1_addr_a[9:0]</obj_property>
       <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_1_addr_b" type="array">
       <obj_property name="ElementShortName">temp_1_addr_b[9:0]</obj_property>
       <obj_property name="ObjectShortName">temp_1_addr_b[9:0]</obj_property>
       <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_1_en_a" type="logic">
       <obj_property name="ElementShortName">temp_1_en_a</obj_property>
@@ -724,5 +714,155 @@
    <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/Decoder_done_tmp" type="logic">
       <obj_property name="ElementShortName">Decoder_done_tmp</obj_property>
       <obj_property name="ObjectShortName">Decoder_done_tmp</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_resetn" type="logic">
+      <obj_property name="ElementShortName">NTT_resetn</obj_property>
+      <obj_property name="ObjectShortName">NTT_resetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/BU_0_out_data_u" type="array">
+      <obj_property name="ElementShortName">BU_0_out_data_u[22:0]</obj_property>
+      <obj_property name="ObjectShortName">BU_0_out_data_u[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/BU_0_out_data_d" type="array">
+      <obj_property name="ElementShortName">BU_0_out_data_d[22:0]</obj_property>
+      <obj_property name="ObjectShortName">BU_0_out_data_d[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/RU_1_out_data_u" type="array">
+      <obj_property name="ElementShortName">RU_1_out_data_u[22:0]</obj_property>
+      <obj_property name="ObjectShortName">RU_1_out_data_u[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/RU_1_out_data_d" type="array">
+      <obj_property name="ElementShortName">RU_1_out_data_d[22:0]</obj_property>
+      <obj_property name="ObjectShortName">RU_1_out_data_d[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/BU_1_out_data_u" type="array">
+      <obj_property name="ElementShortName">BU_1_out_data_u[22:0]</obj_property>
+      <obj_property name="ObjectShortName">BU_1_out_data_u[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/BU_1_out_data_d" type="array">
+      <obj_property name="ElementShortName">BU_1_out_data_d[22:0]</obj_property>
+      <obj_property name="ObjectShortName">BU_1_out_data_d[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/RU_2_out_data_u" type="array">
+      <obj_property name="ElementShortName">RU_2_out_data_u[22:0]</obj_property>
+      <obj_property name="ObjectShortName">RU_2_out_data_u[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/RU_2_out_data_d" type="array">
+      <obj_property name="ElementShortName">RU_2_out_data_d[22:0]</obj_property>
+      <obj_property name="ObjectShortName">RU_2_out_data_d[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/BU_2_out_data_u" type="array">
+      <obj_property name="ElementShortName">BU_2_out_data_u[22:0]</obj_property>
+      <obj_property name="ObjectShortName">BU_2_out_data_u[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/BU_2_out_data_d" type="array">
+      <obj_property name="ElementShortName">BU_2_out_data_d[22:0]</obj_property>
+      <obj_property name="ObjectShortName">BU_2_out_data_d[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/RU_3_out_data_u" type="array">
+      <obj_property name="ElementShortName">RU_3_out_data_u[22:0]</obj_property>
+      <obj_property name="ObjectShortName">RU_3_out_data_u[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/RU_3_out_data_d" type="array">
+      <obj_property name="ElementShortName">RU_3_out_data_d[22:0]</obj_property>
+      <obj_property name="ObjectShortName">RU_3_out_data_d[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/BU_3_out_data_u" type="array">
+      <obj_property name="ElementShortName">BU_3_out_data_u[22:0]</obj_property>
+      <obj_property name="ObjectShortName">BU_3_out_data_u[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/BU_3_out_data_d" type="array">
+      <obj_property name="ElementShortName">BU_3_out_data_d[22:0]</obj_property>
+      <obj_property name="ObjectShortName">BU_3_out_data_d[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/RU_4_out_data_u" type="array">
+      <obj_property name="ElementShortName">RU_4_out_data_u[22:0]</obj_property>
+      <obj_property name="ObjectShortName">RU_4_out_data_u[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/RU_4_out_data_d" type="array">
+      <obj_property name="ElementShortName">RU_4_out_data_d[22:0]</obj_property>
+      <obj_property name="ObjectShortName">RU_4_out_data_d[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/BU_4_out_data_u" type="array">
+      <obj_property name="ElementShortName">BU_4_out_data_u[22:0]</obj_property>
+      <obj_property name="ObjectShortName">BU_4_out_data_u[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/BU_4_out_data_d" type="array">
+      <obj_property name="ElementShortName">BU_4_out_data_d[22:0]</obj_property>
+      <obj_property name="ObjectShortName">BU_4_out_data_d[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/RU_5_out_data_u" type="array">
+      <obj_property name="ElementShortName">RU_5_out_data_u[22:0]</obj_property>
+      <obj_property name="ObjectShortName">RU_5_out_data_u[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/RU_5_out_data_d" type="array">
+      <obj_property name="ElementShortName">RU_5_out_data_d[22:0]</obj_property>
+      <obj_property name="ObjectShortName">RU_5_out_data_d[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/BU_5_out_data_u" type="array">
+      <obj_property name="ElementShortName">BU_5_out_data_u[22:0]</obj_property>
+      <obj_property name="ObjectShortName">BU_5_out_data_u[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/BU_5_out_data_d" type="array">
+      <obj_property name="ElementShortName">BU_5_out_data_d[22:0]</obj_property>
+      <obj_property name="ObjectShortName">BU_5_out_data_d[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/RU_6_out_data_u" type="array">
+      <obj_property name="ElementShortName">RU_6_out_data_u[22:0]</obj_property>
+      <obj_property name="ObjectShortName">RU_6_out_data_u[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/RU_6_out_data_d" type="array">
+      <obj_property name="ElementShortName">RU_6_out_data_d[22:0]</obj_property>
+      <obj_property name="ObjectShortName">RU_6_out_data_d[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/BU_6_out_data_u" type="array">
+      <obj_property name="ElementShortName">BU_6_out_data_u[22:0]</obj_property>
+      <obj_property name="ObjectShortName">BU_6_out_data_u[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/BU_6_out_data_d" type="array">
+      <obj_property name="ElementShortName">BU_6_out_data_d[22:0]</obj_property>
+      <obj_property name="ObjectShortName">BU_6_out_data_d[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/RU_7_out_data_u" type="array">
+      <obj_property name="ElementShortName">RU_7_out_data_u[22:0]</obj_property>
+      <obj_property name="ObjectShortName">RU_7_out_data_u[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/RU_7_out_data_d" type="array">
+      <obj_property name="ElementShortName">RU_7_out_data_d[22:0]</obj_property>
+      <obj_property name="ObjectShortName">RU_7_out_data_d[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/BU_7_out_data_u" type="array">
+      <obj_property name="ElementShortName">BU_7_out_data_u[22:0]</obj_property>
+      <obj_property name="ObjectShortName">BU_7_out_data_u[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/BU_7_out_data_d" type="array">
+      <obj_property name="ElementShortName">BU_7_out_data_d[22:0]</obj_property>
+      <obj_property name="ObjectShortName">BU_7_out_data_d[22:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/cnt_i" type="array">
+      <obj_property name="ElementShortName">cnt_i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt_i[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/cnt_o" type="array">
+      <obj_property name="ElementShortName">cnt_o[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt_o[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/o_valid" type="logic">
+      <obj_property name="ElementShortName">o_valid</obj_property>
+      <obj_property name="ObjectShortName">o_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/resetn" type="logic">
+      <obj_property name="ElementShortName">resetn</obj_property>
+      <obj_property name="ObjectShortName">resetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/NTT_index" type="array">
+      <obj_property name="ElementShortName">NTT_index[1:0]</obj_property>
+      <obj_property name="ObjectShortName">NTT_index[1:0]</obj_property>
    </wvobject>
 </wave_config>

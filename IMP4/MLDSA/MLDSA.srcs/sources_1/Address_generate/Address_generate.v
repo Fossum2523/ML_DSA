@@ -1,7 +1,7 @@
 module Address_generate
     (   
     input               clk,
-    input               reset,
+    input               resetn,
 
     /*---Address genetate---*/
     input  [1:0]        addr_adder,
@@ -27,8 +27,8 @@ module Address_generate
     assign  addr_a  = cnt;
     assign  addr_b  = cnt + 1'b1;
 
-    always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             cnt_en <= 1'b0;
         else if((cnt == last_addr | done) & ~pause)
             cnt_en <= 1'b0;
@@ -36,8 +36,8 @@ module Address_generate
             cnt_en <= 1'b1;
     end
 
-    always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             data_valid_tmp <= 1'b0;
         else if(pause)
             data_valid_tmp <= 1'b0;
@@ -45,8 +45,8 @@ module Address_generate
             data_valid_tmp <= cnt_en;
     end
 
-    always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             cnt <= 12'd0;
         else if(cnt_en & ~done & ~pause)
             cnt <= cnt + addr_adder;
@@ -54,8 +54,8 @@ module Address_generate
             cnt <= star_addr;
     end
 
-    always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             done <= 1'b0;
         else if(clean)      
             done <= 1'b0;

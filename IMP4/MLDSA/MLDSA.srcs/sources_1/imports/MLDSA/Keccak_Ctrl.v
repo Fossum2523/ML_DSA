@@ -1,7 +1,7 @@
 module Keccak_Ctrl
     (   
     input               clk,
-    input               reset,
+    input               resetn,
     input   [63:0]      sha_in,
     input               sha_data_valid,
     input               sha_en,
@@ -65,8 +65,8 @@ module Keccak_Ctrl
                             sha_type >= 4'd11 ? 3'b000/*MLSDA_in_byte_num*/ : 3'b000;
 
     
-    always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             padder_cnt <= 8'd0;
         else if(sha_clean)
             padder_cnt <= 8'd0;
@@ -111,6 +111,7 @@ module Keccak_Ctrl
             Gen_c_2:begin
                 padder_cnt_last = 8'd4; //ctilde have 4 data
             end
+            default:padder_cnt_last = 8'd0;
         endcase
     end 
 
@@ -319,6 +320,12 @@ module Keccak_Ctrl
                     kk_sub_sel_2  = 2'd2;
                 end
             end
+            default:begin
+                keccak_in_sel = 2'd0;
+                kk_sub_sel_1  = 2'd0;
+                kk_sub_sel_2  = 2'd0;
+                kk_sub_sel_3  = 2'd0;
+            end
         endcase
     end    
 
@@ -376,11 +383,12 @@ module Keccak_Ctrl
                 if(padder_cnt == 4)
                     sha_is_last = 1'b1;
             end
+            default:sha_is_last = 1'b0;
         endcase
     end      
 
-    always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             H_tr_M_byte_num <= 3'b0;
         else if((sha_type == H_tr_M_1 ||sha_type == H_tr_M_2) & padder_cnt == 8)
             H_tr_M_byte_num <= 3'd5 + sha_in[15:8];

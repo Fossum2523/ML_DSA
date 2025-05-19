@@ -4,7 +4,7 @@ module Encoder #(
     parameter MAX_LVL     = 20,
     parameter W           = 64
     )(
-    input                           reset,
+    input                           resetn,
     input                           clk,
     input [2:0]                     encode_mode,
     input                           valid_i,
@@ -57,11 +57,9 @@ module Encoder #(
     
     
     always @(*) begin
-       /* ----- decoder lane connection ----- */
         ENCODE_LVL = 0;
         mode = NONE;
-        
-        casex({encode_mode})
+        case(encode_mode)
             {ENCODE_T0}: begin
                 ENCODE_LVL = 13;
                 mode = T0;
@@ -82,6 +80,10 @@ module Encoder #(
                 ENCODE_LVL = 18;
                 mode = GAMMA1;
             end
+            default:begin
+                ENCODE_LVL = 0;
+                mode = NONE;
+            end
         endcase
     
         
@@ -92,8 +94,8 @@ module Encoder #(
         dout = PISO[W-1:0];
     end
     
-    always @(posedge clk) begin
-        if (reset) begin
+    always @(posedge clk or negedge resetn) begin
+        if (!resetn) begin
             PISO     <= 0;
         end 
         else begin
@@ -111,15 +113,15 @@ module Encoder #(
         end
     end
     
-    always @(posedge clk) begin
-        if (reset)
+    always @(posedge clk or negedge resetn) begin
+        if (!resetn)
             piso_len <= 0;
         else
             piso_len <= piso_len_next + buffer_len[1];
     end
 
-    always @(posedge clk) begin
-        if (reset) begin
+    always @(posedge clk or negedge resetn) begin
+        if (!resetn) begin
             valid_buffer <= 2'd0;
         end 
         else begin
@@ -128,15 +130,15 @@ module Encoder #(
         end
     end
 
-    always @(posedge clk) begin
-        if (reset)
+    always @(posedge clk or negedge resetn) begin
+        if (!resetn)
             di_uncentered_buffer <= {(OUTPUT_W*COEFF_W){1'b0}};
         else
             di_uncentered_buffer <= di_uncentered;
     end
 
-    always @(posedge clk) begin
-        if (reset)begin
+    always @(posedge clk or negedge resetn) begin
+        if (!resetn)begin
             buffer_len[0] <= 10'd0;
             buffer_len[1] <= 10'd0;
         end
@@ -146,8 +148,8 @@ module Encoder #(
         end
     end
 
-    always @(posedge clk) begin
-        if (reset)
+    always @(posedge clk or negedge resetn) begin
+        if (!resetn)
             di_buffer <= {(OUTPUT_W*COEFF_W){1'b0}};
         else
             di_buffer <= di;

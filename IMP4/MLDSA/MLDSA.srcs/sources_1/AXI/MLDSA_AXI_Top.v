@@ -41,15 +41,7 @@ module MLDSA_AXI_Top (
     output wire [63:0]  m_axis_tdata,
     output wire         m_axis_tvalid,
     output wire         m_axis_tlast,
-    input  wire         m_axis_tready,
-
-    //test
-    output  [1343:0]    padder_out,
-    output              padder_out_ready,
-    output  [1599:0]    f_out,
-    output              f_out_ready,
-    output  [1343:0]    sha_out,
-    output              sha_out_ready
+    input  wire         m_axis_tready
 );
 
     wire [1:0]  main_mode;
@@ -131,7 +123,7 @@ module MLDSA_AXI_Top (
 
     MLDSA MLDSA_ (
         .clk                (clk),
-        .reset              (~resetn),
+        .resetn             (resetn),
         .start              (start_pulse),
         .main_mode          (main_mode),
         .done               (done),
@@ -149,17 +141,7 @@ module MLDSA_AXI_Top (
         .MLDSA_data_out     (MLDSA_data_out),
         .MLDSA_o_valid      (MLDSA_o_valid),
         .MLDSA_o_last       (MLDSA_o_last),
-        .MLDSA_o_ready      (MLDSA_o_ready),
-
-        
-
-        //test
-        .padder_out(padder_out),
-        .padder_out_ready(padder_out_ready),
-        .f_out(f_out),
-        .f_out_ready(f_out_ready),
-        .sha_out(sha_out),
-        .sha_out_ready(sha_out_ready)
+        .MLDSA_o_ready      (MLDSA_o_ready)
     );
 
 endmodule

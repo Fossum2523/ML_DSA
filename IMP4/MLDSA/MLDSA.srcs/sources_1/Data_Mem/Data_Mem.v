@@ -2,7 +2,6 @@ module Data_Mem
 #(  parameter DLEN = 23, L_DLEN = 64, TA_HLEN = 12, T_HLEN = 10, L_HLEN = 4)
 (
     input clk,
-    input reset,
 
     /*---temp_A---*/
     input   [DLEN-1:0]      temp_A_data_a,

@@ -1,6 +1,6 @@
 module Padder(
     input               clk,
-    input               reset,
+    input               resetn,
     input      [63:0]   in,
     input               in_ready,
     input               is_last,
@@ -42,8 +42,8 @@ module Padder(
     padder1 p0 (in, byte_num, v0);
 
 
-    always @ (posedge clk or posedge reset)
-      if (reset)
+    always @ (posedge clk or negedge resetn)
+      if (!resetn)
         out <= 0;
       else if (update)
         if (mode == G)
@@ -51,22 +51,22 @@ module Padder(
         else 
           out <= {v1, out[1087:64]}; // need update
 
-    always @ (posedge clk or posedge reset)
-      if (reset)
+    always @ (posedge clk or negedge resetn)
+      if (!resetn)
         i <= 0;
       else if (f_ack | update)
         i <= {i[19:0], 1'b1} & {21{~ f_ack}}; // need update
 
-    always @ (posedge clk or posedge reset)
-      if (reset)
+    always @ (posedge clk or negedge resetn)
+      if (!resetn)
         state <= 0;
       else if (is_last)
         state <= 1;
       else
         state <= state;
 
-    always @ (posedge clk or posedge reset)
-      if (reset)
+    always @ (posedge clk or negedge resetn)
+      if (!resetn)
         done <= 0;
       else if (state & out_ready)
         done <= 1;

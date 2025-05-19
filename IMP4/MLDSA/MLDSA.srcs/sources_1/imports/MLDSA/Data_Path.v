@@ -1,24 +1,14 @@
 module Data_Path(   
     input           clk,
-    input           reset,
+    input           resetn,
 
     input  [8:0]    ctrl_sign,
+
     /*---Keack---*/
     input           sha_en,
     input  [3:0]    sha_type,
     output          sha_buffer_full,
     output          sha_out_ready,
-
-    /*---Data_Mem---*/
-    input           mem_sel,
-    input           A_mem_sel,
-    input           t_mem_sel,
-    input           Rho_en,
-    input           Rho_prime_en,
-    input           Kata_en,
-    input           Rho_mode,
-    input           Rho_prime_mode,
-    input           Kata_mode,
 
     /*---Sampler---*/
     input   [1:0]   sampler_mode,
@@ -66,17 +56,17 @@ module Data_Path(
     //UseHint
     output          UH_ready_i,
 
-    //AXI Stream input protocol A
-    input   [63:0]      MLDSA_data_in_A,
-    input               MLDSA_i_valid_A,
-    input               MLDSA_i_last_A,
-    input               MLDSA_i_ready_A,
-
     //Sampler Rejection
     output  reg             z_fail,
     output  reg             r0_fail,
     output  reg             ct0_fail,
     output  reg             hint_fail,
+
+    //AXI Stream input protocol A
+    input   [63:0]      MLDSA_data_in_A,
+    input               MLDSA_i_valid_A,
+    input               MLDSA_i_last_A,
+    input               MLDSA_i_ready_A,
 
     //AXI Stream input protocol B
     input   [63:0]      MLDSA_data_in_B,
@@ -88,16 +78,7 @@ module Data_Path(
     input               MLDSA_o_ready,
     output reg [63:0]   MLDSA_data_out,
     output reg          MLDSA_o_valid,
-    output reg          MLDSA_o_last,
-    
-    /*---test (Need to chAG_1e to wire)---*/
-    output  [1343:0]    padder_out,
-    output              padder_out_ready,
-    output  [1599:0]    f_out,
-    output              f_out_ready,
-    output  [1343:0]    sha_out
-
-    
+    output reg          MLDSA_o_last
     );  
 
 
@@ -377,6 +358,8 @@ module Data_Path(
     // wire            sha_buffer_full;
     wire [2:0]      sha_byte_num;
     wire            sha_clean;
+    wire  [1343:0]  sha_out;
+    // wire            sha_out_ready;
     wire [1:0]      keccak_in_sel;
     wire [1:0]      kk_sub_sel_1;
     wire [1:0]      kk_sub_sel_2;
@@ -434,7 +417,7 @@ module Data_Path(
 
     /*---NTT signals---*/
     //---Control
-    wire                NTT_reset;
+    wire                NTT_resetn;
     reg                 NTT_i_valid;
     wire                NTT_i_ready;
     wire                NTT_o_valid;
@@ -497,7 +480,7 @@ module Data_Path(
     reg         Decomp_ready_o;
 
     /*---MakeHint signals---*/
-    wire MH_reset;
+    wire MH_resetn;
     reg [2:0]   MH_sec_lvl;
     wire        MH_reject_hint;
     reg [45:0]  MH_poly0_ie;
@@ -510,6 +493,19 @@ module Data_Path(
     reg [45:0]  MH_PWM_data_delay_BF;
     reg         MH_PWM_valid_delay_BF;
     
+    /*---UseHint signals---*/
+    reg             UH_start;
+    reg [63:0]      UH_di;
+    reg             UH_valid_i;
+    // wire            UH_ready_i;
+    reg [45:0]      UH_poly0_i;
+    reg [45:0]      UH_poly1_i;
+    reg             UH_poly_valid_i;
+    wire            UH_poly_ready_i;
+    wire [45:0]     UH_poly_o;
+    wire            UH_poly_valid_o;
+    reg             UH_poly_ready_o;
+
     /*---infinity_norm signals---*/
     wire [22:0] z_mod_half_q_a;
     wire [22:0] z_mod_half_q_b;
@@ -524,11 +520,14 @@ module Data_Path(
     wire [22:0] ct0_a;
     wire [22:0] ct0_b;
 
+    /*---SignVer signals---*/
+    reg verify;
+
+
     
     /*---Data_Mem---*/ //------------------------------------------str
     Data_Mem DM_ (
         .clk(clk),
-        .reset(reset),
 
         /*---temp_A---*/
         .temp_A_data_a(temp_A_data_a),
@@ -1046,7 +1045,7 @@ module Data_Path(
             end
             {SignVer,6'd8}:begin //"w'1  = UseHint(h,w'aprr)", store w'1 data
                 temp_0_data_a = UH_poly_o[22:0];
-                temp_0_data_b = UH_poly_o[46:24];
+                temp_0_data_b = UH_poly_o[45:23];
                 temp_0_addr_a = AG_3_addr_a;
                 temp_0_addr_b = AG_3_addr_b;
                 temp_0_en_a   = UH_poly_valid_o;
@@ -1882,6 +1881,22 @@ module Data_Path(
                 temp_L_addr_a = AG_1_addr_a[3:0];
                 temp_L_en_a   = AG_1_addr_en;
             end
+            {SignVer,6'd9}:begin //"c_tilde' = H(u || Enc_w1)", after keccak gen c_tilde', store c_tilde'
+                temp_L_data_a = sha_out >> (AG_4_addr_a << 6);
+                temp_L_data_b = sha_out >> (AG_4_addr_b << 6);
+                temp_L_addr_a = AG_4_addr_a[3:0];
+                temp_L_addr_b = AG_4_addr_b[3:0];
+                temp_L_en_a  =  AG_4_addr_en;
+                temp_L_en_b  =  AG_4_addr_en;
+                temp_L_we_a  =  AG_4_addr_en;
+                temp_L_we_b  =  AG_4_addr_en;
+            end
+            {SignVer,6'd10}:begin //"Compare", read out c_tilde and c_tilde'
+                temp_L_addr_a = AG_1_addr_a[3:0];
+                temp_L_addr_b = AG_1_addr_a[3:0] + 4'd8;
+                temp_L_en_a  =  AG_1_addr_en;
+                temp_L_en_b  =  AG_1_addr_en;
+            end
             default:begin
                 temp_L_data_a = 64'd0;
                 temp_L_data_b = 64'd0;
@@ -2022,7 +2037,7 @@ module Data_Path(
     Address_generate AG_1
     (   
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .addr_adder(AG_1_addr_adder),
         .last_addr(AG_1_last_addr),
         .star_addr(AG_1_star_addr),
@@ -2039,7 +2054,7 @@ module Data_Path(
     Address_generate AG_2
     (   
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .addr_adder(AG_2_addr_adder),
         .last_addr(AG_2_last_addr),
         .star_addr(AG_2_star_addr),
@@ -2056,7 +2071,7 @@ module Data_Path(
     Address_generate AG_3
     (   
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .addr_adder(AG_3_addr_adder),
         .last_addr(AG_3_last_addr),
         .star_addr(AG_3_star_addr),
@@ -2073,7 +2088,7 @@ module Data_Path(
     Address_generate AG_4
     (   
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .addr_adder(AG_4_addr_adder),
         .last_addr(AG_4_last_addr),
         .star_addr(AG_4_star_addr),
@@ -2090,6 +2105,10 @@ module Data_Path(
 
 
     always @(*) begin
+        AG_1_addr_adder  = 2'd0;
+        AG_1_star_addr   = 12'd0;
+        AG_1_last_addr   = 12'd1024;
+        AG_1_pasue       = 1'b0;
         case (ctrl_sign)
             {KeyGen,6'd2},        //"Gen(s1)", read out the seed  p' from the temp seed
             {KeyGen,6'd3}: begin  //"Gen(s2)", read out the seed  p' from the temp seed
@@ -2179,16 +2198,24 @@ module Data_Path(
                 AG_1_star_addr   = 12'd0;
                 AG_1_last_addr   = 12'd7;
             end
+            {SignVer,6'd10}: begin //"Compare", read out c_tilde and c_tilde'
+                AG_1_addr_adder  = 2'd1;
+                AG_1_star_addr   = 12'd0;
+                AG_1_last_addr   = 12'd3;
+            end
             default:begin
                 AG_1_addr_adder  = 2'd0;
                 AG_1_star_addr   = 12'd0;
-                AG_1_last_addr   = 12'd255;
+                AG_1_last_addr   = 12'd1024;
                 AG_1_pasue       = 1'b0;
             end
         endcase
     end
 
     always @(*) begin
+        AG_2_addr_adder  = 2'd0;
+        AG_2_star_addr   = 12'd0;
+        AG_2_last_addr   = 12'd1024;
         AG_2_pasue       = 1'b0;
         case (ctrl_sign)
            {KeyGen,6'd3}: begin  //"s1_hat = NTT(s1)"
@@ -2331,13 +2358,17 @@ module Data_Path(
             default:begin
                 AG_2_addr_adder  = 2'd0;
                 AG_2_star_addr   = 12'd0;
-                AG_2_last_addr   = 12'd255;
+                AG_2_last_addr   = 12'd1024;
                 AG_2_pasue       = 1'b0;
             end
         endcase
     end
 
     always @(*) begin
+        AG_3_addr_adder  = 2'd0;
+        AG_3_star_addr   = 12'd0;
+        AG_3_last_addr   = 12'd1024;
+        AG_3_pasue       = 1'b0;
         case (ctrl_sign)
             {KeyGen,6'd4},       //"Pack(s1)", send out s1_pack to tb
             {KeyGen,6'd5}: begin //"Pack(s2)", send out s2_pack to tb
@@ -2345,11 +2376,11 @@ module Data_Path(
                 AG_3_star_addr   = 12'd0;
                 AG_3_last_addr   = 12'd48;//speical to add 1 to make wait ENC_valid_o high
             end
-            {KeyGen,6'd8}: begin //"Pack(t1)", send out t1_pack to tb and Keccak 
-                AG_3_addr_adder  = {1'b0,(ENC_valid_o & (~sha_buffer_full))};
-                AG_3_star_addr   = 12'd0;
-                AG_3_last_addr   = 12'd160;//speical to add 1 to make wait ENC_valid_o high
-            end 
+            // {KeyGen,6'd8}: begin //"Pack(t1)", send out t1_pack to tb and Keccak 
+            //     AG_3_addr_adder  = {1'b0,(ENC_valid_o & (~sha_buffer_full))};
+            //     AG_3_star_addr   = 12'd0;
+            //     AG_3_last_addr   = 12'd160;//speical to add 1 to make wait ENC_valid_o high
+            // end 
             {KeyGen,6'd8}: begin //"Pack(t0)", send out t0_pack to tb
                 AG_3_addr_adder  = {1'b0,(ENC_valid_o)};
                 AG_3_star_addr   = 12'd0;
@@ -2423,13 +2454,17 @@ module Data_Path(
             default:begin
                 AG_3_addr_adder  = 2'd0;
                 AG_3_star_addr   = 12'd0;
-                AG_3_last_addr   = 12'd255;
+                AG_3_last_addr   = 12'd1024;
                 AG_3_pasue       = 1'b0;
             end
         endcase
     end
 
     always @(*) begin
+        AG_4_addr_adder  = 2'd0;
+        AG_4_star_addr   = 12'd0;
+        AG_4_last_addr   = 12'd1024;
+        AG_4_pasue       = 1'b0;
         case (ctrl_sign)
             {KeyGen,6'd1}: begin  //"p, p', K = H(𝜉+x04+x04) ", after keccak gen seed, take seed to mem
                 AG_4_addr_adder  = 2'd2;
@@ -2536,10 +2571,15 @@ module Data_Path(
                 AG_4_star_addr   = 12'd0;
                 AG_4_last_addr   = 12'd6;
             end
+            {SignVer,6'd9}: begin  //"c_tilde' = H(u || Enc_w1)", after keccak gen c_tilde', store c_tilde'
+                AG_4_addr_adder  = 2'd2;
+                AG_4_star_addr   = 12'd0;
+                AG_4_last_addr   = 12'd2;
+            end
             default:begin
                 AG_4_addr_adder  = 2'd0;
                 AG_4_star_addr   = 12'd0;
-                AG_4_last_addr   = 12'd255;
+                AG_4_last_addr   = 12'd1024;
                 AG_4_pasue       = 1'b0;
             end
         endcase
@@ -2549,14 +2589,15 @@ module Data_Path(
 
 
     /*---Keccak---*/ //------------------------------------------str
-    always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             kappa <= 16'd0;
         else if(y_index == 3 && next_element)
             kappa <= kappa + 16'd4;
     end
 
     always @(*) begin
+        sha_data_valid = 1'b0;
         case (ctrl_sign)
             {KeyGen,6'd1}:begin  //"p, p', K = H(𝜉+x04+x04) ", valid from MLDSA_i_valid_A
                 sha_data_valid = MLDSA_i_valid_A;
@@ -2618,7 +2659,7 @@ module Data_Path(
 
     Keccak_Ctrl KKC(   
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .sha_in(sha_in),
         .sha_data_valid(sha_data_valid),
         .sha_en(sha_en),
@@ -2642,7 +2683,7 @@ module Data_Path(
 
     Keccak KK(
         .clk(clk),
-        .reset(sha_reset),
+        .resetn(sha_resetn),
         .in(sha_in),
         .in_ready(sha_in_ready),
         .is_last(sha_is_last),
@@ -2654,14 +2695,10 @@ module Data_Path(
         .buffer_full(sha_buffer_full),
         // .buffer_last(buffer_last),
         .out(sha_out),
-        .out_ready(sha_out_ready),
-        .padder_out(padder_out),
-        .padder_out_ready(padder_out_ready),
-        .f_out(f_out),                                  
-        .f_out_ready(f_out_ready)
+        .out_ready(sha_out_ready)
     );
 
-    assign sha_reset = reset | sha_clean;
+    assign sha_resetn = resetn & ~sha_clean;
 
     always @(*) begin
         kk_sub_1_in = 64'd0;
@@ -2707,13 +2744,13 @@ module Data_Path(
 
 
     /*---Sampler---*/ //------------------------------------------str
-    wire sampler_reset;
+    wire sampler_resetn;
 
-    assign sampler_reset = ctrl_sign == {{SignGen,6'd7}} || reset;
+    assign sampler_resetn = ctrl_sign != {{SignGen,6'd7}} & resetn;
 
     Sampler Sampler_(
         .clk(clk),
-        .reset(sampler_reset),
+        .resetn(sampler_resetn),
 
         /*---Control----*/
         .mode(sampler_mode),
@@ -2764,11 +2801,11 @@ module Data_Path(
 
 
     /*---NTT---*/ //------------------------------------------str
-    assign NTT_reset = reset | NTT_done;
+    assign NTT_resetn = resetn;
 
     NTT NTT_ (
         .clk(clk),
-        .reset(NTT_reset),
+        .resetn(NTT_resetn),
         .mode(NTT_mode),
         .i_valid(NTT_i_valid),
         .i_ready(NTT_i_ready),
@@ -2784,6 +2821,10 @@ module Data_Path(
     );
 
     always @(*) begin
+        NTT_in_u = 23'd0;
+        NTT_in_d = 23'd0;
+        NTT_i_valid = 1'b0;
+        NTT_o_ready = 1'b0;
         case (ctrl_sign)
             {KeyGen,6'd3}:begin //"s1_hat = NTT(s1)"
                 NTT_i_valid = AG_2_data_valid & NTT_in_ready;
@@ -2896,7 +2937,7 @@ module Data_Path(
      /*---PWM---*/ //------------------------------------------str
     PWM PWM_(
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .mode(PWM_mode),
         .i_valid(PWM_i_valid),
         .i_ready(PWM_i_ready),
@@ -2916,6 +2957,15 @@ module Data_Path(
     );
 
     always @(*) begin
+        PWM_mode  = 2'd0;
+        PWM_i_valid = 1'b0;
+        PWM_o_ready = 1'b0;
+        PWM_in_a0 = 23'd0;
+        PWM_in_a1 = 23'd0;
+        PWM_in_a2 = 23'd0;
+        PWM_in_b0 = 23'd0;
+        PWM_in_b1 = 23'd0;
+        PWM_in_b2 = 23'd0;
         case (ctrl_sign)
             {KeyGen,6'd5}:begin //"As1_hat = A_hat ‧ s1_hat"
                 if(PWM_index == 0)begin
@@ -3068,7 +3118,7 @@ module Data_Path(
 
     /*---Encoder---*/ //------------------------------------------str
     Encoder Enc_(
-        .reset(reset),
+        .resetn(resetn),
         .clk(clk),
         .encode_mode(ENC_encode_mode),
         .valid_i(ENC_valid_i),
@@ -3080,6 +3130,10 @@ module Data_Path(
     );
 
     always @(*) begin
+        ENC_encode_mode = 3'd1;
+        ENC_di = 46'd0;
+        ENC_valid_i = 1'b0;
+        ENC_ready_o = 1'b0;
         case (ctrl_sign)
             {KeyGen,6'd4}:begin //"Pack(s1)" 
                 ENC_encode_mode = 3'd2;
@@ -3136,7 +3190,7 @@ module Data_Path(
 
     /*---Decoder---*/ //------------------------------------------str
     Decoder Dec_(
-        .reset(reset),
+        .resetn(resetn),
         .clk(clk),
         .decode_mode(DEC_mode),
         .valid_i(DEC_valid_i),
@@ -3183,6 +3237,12 @@ module Data_Path(
                 DEC_valid_i = MLDSA_i_valid_B & MLDSA_i_ready_B;
                 DEC_ready_o = 1'b1;
             end
+            default:begin
+                DEC_mode = 3'd0;
+                DEC_di = 46'd0;
+                DEC_valid_i = 1'b0;
+                DEC_ready_o = 1'b0;
+            end
         endcase
     end
     /*---Decoder---*/ //------------------------------------------end
@@ -3191,7 +3251,7 @@ module Data_Path(
 
     /*---Decomposer---*/ //------------------------------------------str
     Decomposer Decomp_(
-        .reset(reset),
+        .resetn(resetn),
         .clk(clk),
         .valid_i(Decomp_valid_i),
         .ready_i(Decomp_ready_i),
@@ -3203,6 +3263,9 @@ module Data_Path(
     );
 
     always @(*) begin
+        Decomp_valid_i = 1'b0;
+        Decomp_di      = 46'd0;
+        Decomp_ready_o = 1'b0;
         case (ctrl_sign)
             {SignGen,6'd9}:begin //"H_w = High(w)"
                 Decomp_valid_i = AG_2_data_valid;
@@ -3236,10 +3299,10 @@ module Data_Path(
 
 
     /*---MakeHint---*/ //------------------------------------------str
-    assign MH_reset = reset || ctrl_sign == {SignGen,6'd7};
+    assign MH_resetn = resetn & ctrl_sign != {SignGen,6'd7};
 
     makehint makehint_(
-        .reset(reset),
+        .resetn(resetn),
         .clk(clk),
         .reject_hint(MH_reject_hint),
         .poly0_ie(MH_poly0_ie),
@@ -3252,15 +3315,15 @@ module Data_Path(
     );
 
 
-    always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             MH_PWM_data_delay_BF <= 46'd0;
         else
             MH_PWM_data_delay_BF <= Decomp_dob;
     end
 
-    always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             MH_PWM_valid_delay_BF <= 1'd0;
         else
             MH_PWM_valid_delay_BF <= Decomp_valid_o;
@@ -3279,11 +3342,17 @@ module Data_Path(
                 MH_poly_valid_ie = MH_PWM_valid_delay_BF;
                 MH_hint_ready_o = 1'b1;
             end
+            default:begin
+                MH_poly0_ie = 46'd0;
+                MH_poly1_ie = 46'd0;
+                MH_poly_valid_ie = 1'b0;
+                MH_hint_ready_o = 1'b0;
+            end
         endcase
     end
 
-    always @(posedge clk) begin
-        if(reset)begin
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)begin
             hint_fail <= 1'b0;
         end
         else if(ctrl_sign == {SignGen,6'd7})begin
@@ -3297,21 +3366,9 @@ module Data_Path(
 
 
     /*---UseHint---*/ //------------------------------------------str
-    reg             UH_start;
-    reg [63:0]      UH_di;
-    reg             UH_valid_i;
-    // wire            UH_ready_i;
-    reg [47:0]      UH_poly0_i;
-    reg [47:0]      UH_poly1_i;
-    reg             UH_poly_valid_i;
-    wire            UH_poly_ready_i;
-    wire [47:0]     UH_poly_o;
-    wire            UH_poly_valid_o;
-    reg             UH_poly_ready_o;
-
     usehint usehint_(
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         .start(UH_start),
         .di(UH_di),
         .valid_i(UH_valid_i),
@@ -3338,12 +3395,21 @@ module Data_Path(
                 UH_start = ~AG_2_done;
                 UH_di = MLDSA_data_in_A;
                 UH_valid_i = MLDSA_i_valid_A;
-                // UH_poly0_i = Decomp_doa;
-                UH_poly0_i = {1'b0,Decomp_doa[45:23],1'b0,Decomp_doa[22:0]};
-                // UH_poly1_i = Decomp_dob;
-                UH_poly1_i = {1'b0,Decomp_dob[45:23],1'b0,Decomp_dob[22:0]};
+                UH_poly0_i = Decomp_doa;
+                // UH_poly0_i = {1'b0,Decomp_doa[45:23],1'b0,Decomp_doa[22:0]};
+                UH_poly1_i = Decomp_dob;
+                // UH_poly1_i = {1'b0,Decomp_dob[45:23],1'b0,Decomp_dob[22:0]};
                 UH_poly_valid_i = Decomp_valid_o;
                 UH_poly_ready_o = 1'b1;
+            end
+            default:begin
+                UH_start = 1'b0;
+                UH_di = 64'd0;
+                UH_valid_i = 1'b0;
+                UH_poly0_i = 48'd0;
+                UH_poly1_i = 48'd0;
+                UH_poly_valid_i = 1'b0;
+                UH_poly_ready_o = 1'b0;
             end
         endcase
     end   
@@ -3358,8 +3424,8 @@ module Data_Path(
     assign z_a = z_mod_half_q_a[22] ? 24'b1000_0000_0000_0000_0000_0000 - z_mod_half_q_a : z_mod_half_q_a;
     assign z_b = z_mod_half_q_b[22] ? 24'b1000_0000_0000_0000_0000_0000 - z_mod_half_q_b : z_mod_half_q_b;
 
-    always @(posedge clk) begin
-        if(reset)begin
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)begin
             z_fail <= 1'b0;
         end
         else if(ctrl_sign == {SignGen,6'd7})begin
@@ -3378,8 +3444,8 @@ module Data_Path(
     assign r0_a = r0_mod_half_q_a[22] ? 24'b1000_0000_0000_0000_0000_0000 - r0_mod_half_q_a : r0_mod_half_q_a;
     assign r0_b = r0_mod_half_q_b[22] ? 24'b1000_0000_0000_0000_0000_0000 - r0_mod_half_q_b : r0_mod_half_q_b;
     
-    always @(posedge clk) begin
-        if(reset)begin
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)begin
             r0_fail <= 1'b0;
         end
         else if(ctrl_sign == {SignGen,6'd7})begin
@@ -3398,8 +3464,8 @@ module Data_Path(
     assign ct0_a = ct0_mod_half_q_a[22] ? 24'b1000_0000_0000_0000_0000_0000 - ct0_mod_half_q_a : ct0_mod_half_q_a;
     assign ct0_b = ct0_mod_half_q_b[22] ? 24'b1000_0000_0000_0000_0000_0000 - ct0_mod_half_q_b : ct0_mod_half_q_b;
 
-    always @(posedge clk) begin
-        if(reset)begin
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)begin
             ct0_fail <= 1'b0;
         end
         else if(ctrl_sign == {SignGen,6'd7})begin
@@ -3412,6 +3478,19 @@ module Data_Path(
         end
     end   
     /*---infinity_norm---*/ //------------------------------------------end
+
+
+    /*---verification---*/ //------------------------------------------end
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)begin
+            verify <= 1'b0;
+        end
+        else if(ctrl_sign == {SignVer,6'd10} && AG_1_data_valid)begin
+            if(temp_L_q_a != temp_L_q_b)
+                verify <= 1'b1;
+        end
+    end 
+    /*---verification---*/ //------------------------------------------end
 
 
     /*---AXI Stream output protocol---*/ //------------------------------------------str
@@ -3445,6 +3524,10 @@ module Data_Path(
             {SignGen,6'd22}:begin
                 MLDSA_o_valid = AG_1_data_valid;
             end
+            {SignVer,6'd10}:begin
+                MLDSA_o_valid = AG_1_done;
+            end
+            default:MLDSA_o_valid = 1'b0;
         endcase
     end
 
@@ -3481,6 +3564,10 @@ module Data_Path(
             {SignGen,6'd22}:begin
                 MLDSA_data_out = temp_seed_q_a;
             end
+            {SignVer,6'd10}:begin
+                MLDSA_data_out = {63'd0,~verify};
+            end
+            default:MLDSA_data_out = 64'd0;
         endcase
     end
 
@@ -3493,11 +3580,11 @@ module Data_Path(
             {SignGen,6'd22}:begin
                 MLDSA_o_last = AG_1_done;
             end
+            {SignVer,6'd10}:begin
+                MLDSA_o_last = AG_1_done;
+            end
+            default:MLDSA_o_last = 1'b0;
         endcase
     end
     /*---AXI Stream output protocol---*/ //------------------------------------------end
-
-
-
-    
 endmodule

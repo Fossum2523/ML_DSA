@@ -1,7 +1,7 @@
 module MLDSA
     (   
     input               clk,
-    input               reset,
+    input               resetn,
     input               start,
     input   [1:0]       main_mode, // KeyGen, SignGen, SignVer
     output              done,
@@ -22,16 +22,7 @@ module MLDSA
     input               MLDSA_o_ready,
     output  [63:0]      MLDSA_data_out,
     output              MLDSA_o_valid,
-    output              MLDSA_o_last,
-    
-
-    //test
-    output  [1343:0]    padder_out,
-    output              padder_out_ready,
-    output  [1599:0]    f_out,
-    output              f_out_ready,
-    output  [1343:0]    sha_out,
-    output              sha_out_ready
+    output              MLDSA_o_last
     );  
     
     // Controller signals
@@ -106,12 +97,12 @@ module MLDSA
     // Instantiate Controller
     Controller controller_inst (
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
 
         .ctrl_sign(ctrl_sign),
         /*---from outside---*/
         .start(start),
-        // .data_in_ready(data_in_ready),
+        .done(done),
         .main_mode(main_mode),
 
         //AXI Stream input protocol A
@@ -124,16 +115,16 @@ module MLDSA
         .MLDSA_i_last_B(MLDSA_i_last_B),
         .MLDSA_i_ready_B(MLDSA_i_ready_B),
 
+        //AXI Stream output protocol
+        .MLDSA_o_ready(MLDSA_o_ready),
+        .MLDSA_o_valid(MLDSA_o_valid),
+        .MLDSA_o_last(MLDSA_o_last),
+
         /*---Keccak---*/
         .sha_en(sha_en),
         .sha_type(sha_type),
         .sha_buffer_full(sha_buffer_full),
         .sha_out_ready(sha_out_ready),
-
-        /*---Data_Mem---*/
-        .mem_sel(mem_sel),
-        .A_mem_sel(A_mem_sel),
-        .t_mem_sel(t_mem_sel),
 
         /*---Sampler---*/
         .sampler_mode(sampler_mode),
@@ -194,7 +185,7 @@ module MLDSA
     // Instantiate Data_Path
     Data_Path data_path_inst (
         .clk(clk),
-        .reset(reset),
+        .resetn(resetn),
         
         .ctrl_sign(ctrl_sign),
 
@@ -203,11 +194,6 @@ module MLDSA
         .sha_type(sha_type),
         .sha_buffer_full(sha_buffer_full),
         .sha_out_ready(sha_out_ready),
-
-        /*---Data_Mem---*/
-        .mem_sel(mem_sel),
-        .A_mem_sel(A_mem_sel),
-        .t_mem_sel(t_mem_sel),
 
         /*---Sampler---*/
         .sampler_mode(sampler_mode),
@@ -261,12 +247,11 @@ module MLDSA
         .ct0_fail(ct0_fail),
         .hint_fail(hint_fail),
 
-
         //AXI Stream input protocol A
         .MLDSA_data_in_A(MLDSA_data_in_A),
         .MLDSA_i_valid_A(MLDSA_i_valid_A),
         .MLDSA_i_last_A(MLDSA_i_last_A),
-        // .MLDSA_i_ready_A(MLDSA_i_ready_A),
+        .MLDSA_i_ready_A(MLDSA_i_ready_A),
         
         //AXI Stream input protocol B
         .MLDSA_data_in_B(MLDSA_data_in_B),
@@ -278,15 +263,7 @@ module MLDSA
         .MLDSA_o_ready(MLDSA_o_ready),
         .MLDSA_data_out(MLDSA_data_out),
         .MLDSA_o_valid(MLDSA_o_valid),
-        .MLDSA_o_last(MLDSA_o_last),
-        .MLDSA_i_ready_A(MLDSA_i_ready_A),
-
-        /*---test (Need to delete)---*/
-        .padder_out(padder_out),
-        .padder_out_ready(padder_out_ready),
-        .f_out(f_out),
-        .f_out_ready(f_out_ready),
-        .sha_out(sha_out)
+        .MLDSA_o_last(MLDSA_o_last)
     );
 
 endmodule

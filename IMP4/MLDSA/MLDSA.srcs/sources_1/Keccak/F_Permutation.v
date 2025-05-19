@@ -1,6 +1,6 @@
 module F_Permutation(
     input               clk,
-    input               reset,
+    input               resetn,
     input      [1343:0] in,
     input               in_ready,           // when squeeze = 0, output once; otherwise, keep squeezing
     input               squeeze,            // when squeeze = 0, output once; otherwise, keep squeezing
@@ -43,33 +43,33 @@ module F_Permutation(
     round_B
       roundB_ (out, rc, round_out_B);
 
-    always @ (posedge clk or posedge reset)
-      if (reset) i <= 0;
+    always @ (posedge clk or negedge resetn)
+      if (!resetn) i <= 0;
       else if(sha_hold) i <= i;
       else if (sel[1]) i <= {i[21:0], i_sti_buf[1]};
       else  i <= i;
     
-    always @ (posedge clk or posedge reset)
-      if (reset) calc <= 0;
+    always @ (posedge clk or negedge resetn)
+      if (!resetn) calc <= 0;
       else       calc <= (calc & (~ (i[22] & sel[1])) ) | accept | squeeze;
 
-    always @ (posedge clk or posedge reset)
-      if (reset) i_sti_buf <= 0;
+    always @ (posedge clk or negedge resetn)
+      if (!resetn) i_sti_buf <= 0;
       else  begin
         i_sti_buf[1] <= i_sti_buf[0];
         i_sti_buf[0] <= accept | squeeze;
       end
 
-    always @ (posedge clk or posedge reset)
-      if (reset)
+    always @ (posedge clk or negedge resetn)
+      if (!resetn)
         out_ready <= 0;
       else if (i == 0) 
         out_ready <= 0;
       else if (i[22] & sel[1]) // only change at the last round
         out_ready <= 1;
 
-    always @ (posedge clk or posedge reset)
-      if (reset) sel <= 0;
+    always @ (posedge clk or negedge resetn)
+      if (!resetn) sel <= 0;
       // else if (accept) sel <= sel;
       else if (update | squeeze) sel <= {sel[0] & (~out_ready), (sel[1] | accept | squeeze) };
       else if (out_ready) sel <= 2'd0;
@@ -78,8 +78,8 @@ module F_Permutation(
       // else if ((accept & out_ready)|sha_hold) sel <= sel;
       // else sel <= {sel[0], (sel[1] | update) };
     
-    always @ (posedge clk or posedge reset)
-      if (reset)
+    always @ (posedge clk or negedge resetn)
+      if (!resetn)
         out <= 1600'd0;
       else if (accept)
         out <= (mode == G)?     {out[1599:1344], rate[1343:0]}:   //204 G sahke128

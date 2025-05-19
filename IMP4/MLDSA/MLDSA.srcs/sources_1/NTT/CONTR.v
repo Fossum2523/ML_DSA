@@ -3,7 +3,7 @@ module CONTR#(
     parameter depth = 64
     )(
     input   clk,
-    input   reset,
+    input   resetn,
     input   mode,
     input   i_valid,
     output  [$clog2(128/(depth)) - 1:0]   zeta_addr                       
@@ -20,8 +20,8 @@ module CONTR#(
     genvar i;
     generate
         for (i = 0; i < depth; i = i + 1) begin : triger_buf_
-            always @(posedge clk) begin
-                if (reset)begin
+            always @(posedge clk or negedge resetn) begin
+                if (!resetn)begin
                     if (i == 0)
                         triger_buf[i] <= 1'b1;
                     else
@@ -37,8 +37,8 @@ module CONTR#(
         end
     endgenerate
 
-    always @(posedge clk) begin
-        if(reset)
+    always @(posedge clk or negedge resetn) begin
+        if(!resetn)
             addr <= {($clog2(128/(depth))){1'b0}};
         else if(i_valid & triger_buf[depth-1])
             addr <= addr + 1'b1;
