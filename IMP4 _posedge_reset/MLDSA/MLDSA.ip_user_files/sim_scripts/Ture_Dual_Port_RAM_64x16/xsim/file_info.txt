@@ -1,2 +1,0 @@
-Ture_Dual_Port_RAM_64x16.v,verilog,xil_defaultlib,../../../../MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_64x16_3/sim/Ture_Dual_Port_RAM_64x16.v,
-glbl.v,Verilog,xil_defaultlib,glbl.v
