@@ -774,17 +774,17 @@ def SampleInBall(p):
             j = s[cnt]
             # print("j = ",j)
             cnt = cnt + 1
-        # print("------------------------------------------")
+        print("------------------------------------------")
         
         
         c[i] = c[j]  
         
         c[j] = (-1)**(h[(i + ML_DSA["tau"] - 256)])
-        # print(f"i = {j}")
-        # print(f"c[i] = {c[j]}")
-        # print(f"j = {i}")
-        # print(f"c[j] = {c[i]}")
-        # print("------------------------------------------")
+        print(f"i = {j}")
+        print(f"c[i] = {c[j]}")
+        print(f"j = {i}")
+        print(f"c[j] = {c[i]}")
+        print("------------------------------------------")
     # print(c)
     # print("cnt",cnt)
     # print(c)

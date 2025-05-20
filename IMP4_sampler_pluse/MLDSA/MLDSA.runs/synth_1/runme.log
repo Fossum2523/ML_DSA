@@ -1,0 +1,1426 @@
+
+*** Running vivado
+    with args -log MLDSA_AXI_Top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MLDSA_AXI_Top.tcl
+
+
+ECHO 已關閉。
+ECHO 已關閉。
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source MLDSA_AXI_Top.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 484.773 ; gain = 179.004
+Command: read_checkpoint -auto_incremental -incremental C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/utils_1/imports/synth_1/MLDSA.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/utils_1/imports/synth_1/MLDSA.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top MLDSA_AXI_Top -part xc7k70tfbv676-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Device 21-403] Loading part xc7k70tfbv676-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 7084
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1327.449 ; gain = 438.691
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11241] undeclared symbol 'sha_reset', assumed default net type 'wire' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:2687]
+INFO: [Synth 8-11241] undeclared symbol 'sha_out_ready', assumed default net type 'wire' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/MLDSA.v:127]
+INFO: [Synth 8-11241] undeclared symbol 'NTT_mode', assumed default net type 'wire' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/MLDSA.v:139]
+INFO: [Synth 8-6157] synthesizing module 'MLDSA_AXI_Top' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/AXI/MLDSA_AXI_Top.v:1]
+INFO: [Synth 8-6157] synthesizing module 'AXI4_Lite_Slave' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/AXI/AXI4_Lite_Slave.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'AXI4_Lite_Slave' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/AXI/AXI4_Lite_Slave.v:1]
+INFO: [Synth 8-6157] synthesizing module 'AXIS_MLDSA_Wrapper' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/AXI/AXIS_MLDSA_Wrapper.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'AXIS_MLDSA_Wrapper' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/AXI/AXIS_MLDSA_Wrapper.v:1]
+INFO: [Synth 8-6157] synthesizing module 'MLDSA' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/MLDSA.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Controller' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Controller.v:1]
+WARNING: [Synth 8-151] case item 9'b010000001 is unreachable [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Controller.v:1587]
+INFO: [Synth 8-6155] done synthesizing module 'Controller' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Controller.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Data_Path' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Data_Mem' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Data_Mem/Data_Mem.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Ture_Dual_Port_RAM_23x4096' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.runs/synth_1/.Xil/Vivado-6948-LAPTOP-2P71OMBV/realtime/Ture_Dual_Port_RAM_23x4096_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Ture_Dual_Port_RAM_23x4096' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.runs/synth_1/.Xil/Vivado-6948-LAPTOP-2P71OMBV/realtime/Ture_Dual_Port_RAM_23x4096_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Ture_Dual_Port_RAM_23x1024' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.runs/synth_1/.Xil/Vivado-6948-LAPTOP-2P71OMBV/realtime/Ture_Dual_Port_RAM_23x1024_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Ture_Dual_Port_RAM_23x1024' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.runs/synth_1/.Xil/Vivado-6948-LAPTOP-2P71OMBV/realtime/Ture_Dual_Port_RAM_23x1024_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Ture_Dual_Port_RAM_64x16' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.runs/synth_1/.Xil/Vivado-6948-LAPTOP-2P71OMBV/realtime/Ture_Dual_Port_RAM_64x16_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Ture_Dual_Port_RAM_64x16' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.runs/synth_1/.Xil/Vivado-6948-LAPTOP-2P71OMBV/realtime/Ture_Dual_Port_RAM_64x16_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Data_Mem' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Data_Mem/Data_Mem.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Address_generate' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Address_generate/Address_generate.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'Address_generate' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Address_generate/Address_generate.v:1]
+WARNING: [Synth 8-151] case item 9'b000001000 is unreachable [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:2373]
+INFO: [Synth 8-6157] synthesizing module 'Keccak_Ctrl' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Keccak_Ctrl.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'Keccak_Ctrl' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Keccak_Ctrl.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Keccak' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Keccak/Keccak.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Padder' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Keccak/Padder.v:1]
+INFO: [Synth 8-6157] synthesizing module 'padder1' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Keccak/padder1.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'padder1' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Keccak/padder1.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'Padder' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Keccak/Padder.v:1]
+INFO: [Synth 8-6157] synthesizing module 'F_Permutation' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Keccak/F_Permutation.v:1]
+INFO: [Synth 8-6157] synthesizing module 'rconst' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Keccak/rconst.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'rconst' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Keccak/rconst.v:1]
+INFO: [Synth 8-6157] synthesizing module 'round_A' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Keccak/round_A.v:233]
+INFO: [Synth 8-6155] done synthesizing module 'round_A' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Keccak/round_A.v:233]
+INFO: [Synth 8-6157] synthesizing module 'round_B' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Keccak/round_B.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'round_B' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Keccak/round_B.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'F_Permutation' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Keccak/F_Permutation.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'Keccak' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Keccak/Keccak.v:1]
+WARNING: [Synth 8-7071] port 'buffer_last' of module 'Keccak' is unconnected for instance 'KK' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:2685]
+WARNING: [Synth 8-7023] instance 'KK' of module 'Keccak' has 13 connections declared, but only 12 given [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:2685]
+INFO: [Synth 8-226] default block is never used [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:2725]
+INFO: [Synth 8-6157] synthesizing module 'Sampler' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/Sampler.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ExpandS' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/ExpandS.v:1]
+INFO: [Synth 8-6157] synthesizing module 'CoeffFromHalfByte' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/CoeffFromHalfByte.v:1]
+INFO: [Synth 8-226] default block is never used [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/CoeffFromHalfByte.v:33]
+INFO: [Synth 8-226] default block is never used [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/CoeffFromHalfByte.v:35]
+INFO: [Synth 8-226] default block is never used [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/CoeffFromHalfByte.v:44]
+INFO: [Synth 8-226] default block is never used [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/CoeffFromHalfByte.v:53]
+INFO: [Synth 8-226] default block is never used [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/CoeffFromHalfByte.v:62]
+INFO: [Synth 8-6155] done synthesizing module 'CoeffFromHalfByte' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/CoeffFromHalfByte.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'ExpandS' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/ExpandS.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ExpandA' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/ExpandA.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'ExpandA' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/ExpandA.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ExpandMASK' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/ExpandMASK.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'ExpandMASK' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/ExpandMASK.v:1]
+INFO: [Synth 8-6157] synthesizing module 'SampleInBall' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/SampleInBall.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'SampleInBall' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/SampleInBall.v:1]
+INFO: [Synth 8-226] default block is never used [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/Sampler.v:258]
+INFO: [Synth 8-6155] done synthesizing module 'Sampler' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/Sampler.v:1]
+INFO: [Synth 8-6157] synthesizing module 'NTT' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/NTT.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Modular_Reduction' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/Modular_Reduction.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'Modular_Reduction' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/Modular_Reduction.v:3]
+INFO: [Synth 8-6157] synthesizing module 'BU' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/BU.v:3]
+INFO: [Synth 8-6157] synthesizing module 'mod_add' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/mod_add.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'mod_add' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/mod_add.v:3]
+INFO: [Synth 8-6157] synthesizing module 'mod_sub' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/mod_sub.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'mod_sub' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/mod_sub.v:3]
+INFO: [Synth 8-6157] synthesizing module 'mod_mul' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/mod_mul.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'mod_mul' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/mod_mul.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'BU' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/BU.v:3]
+INFO: [Synth 8-6157] synthesizing module 'RU' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/RU.v:1]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RU' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/RU.v:1]
+INFO: [Synth 8-6157] synthesizing module 'CONTR' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/CONTR.v:1]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'CONTR' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/CONTR.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RU__parameterized0' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/RU.v:1]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RU__parameterized0' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/RU.v:1]
+INFO: [Synth 8-6157] synthesizing module 'CONTR__parameterized0' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/CONTR.v:1]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'CONTR__parameterized0' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/CONTR.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RU__parameterized1' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/RU.v:1]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RU__parameterized1' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/RU.v:1]
+INFO: [Synth 8-6157] synthesizing module 'CONTR__parameterized1' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/CONTR.v:1]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'CONTR__parameterized1' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/CONTR.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RU__parameterized2' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/RU.v:1]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RU__parameterized2' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/RU.v:1]
+INFO: [Synth 8-6157] synthesizing module 'CONTR__parameterized2' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/CONTR.v:1]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'CONTR__parameterized2' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/CONTR.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RU__parameterized3' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/RU.v:1]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RU__parameterized3' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/RU.v:1]
+INFO: [Synth 8-6157] synthesizing module 'CONTR__parameterized3' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/CONTR.v:1]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'CONTR__parameterized3' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/CONTR.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RU__parameterized4' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/RU.v:1]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RU__parameterized4' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/RU.v:1]
+INFO: [Synth 8-6157] synthesizing module 'CONTR__parameterized4' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/CONTR.v:1]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'CONTR__parameterized4' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/CONTR.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RU__parameterized5' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/RU.v:1]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RU__parameterized5' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/RU.v:1]
+INFO: [Synth 8-6157] synthesizing module 'CONTR__parameterized5' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/CONTR.v:1]
+	Parameter BIT_LEN bound to: 23 - type: integer 
+	Parameter depth bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'CONTR__parameterized5' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/CONTR.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'NTT' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/NTT.v:1]
+INFO: [Synth 8-6157] synthesizing module 'PWM' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/PWM/PWM.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'PWM' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/PWM/PWM.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Encoder' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Encoder/Encoder.v:1]
+INFO: [Synth 8-6157] synthesizing module 'uncenter_coeff' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Encoder/uncenter_coeff.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'uncenter_coeff' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Encoder/uncenter_coeff.v:1]
+INFO: [Synth 8-6157] synthesizing module 'zero_strip' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Encoder/zero_strip.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'zero_strip' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Encoder/zero_strip.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'Encoder' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Encoder/Encoder.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Decoder' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Decoder/Decoder.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'Decoder' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Decoder/Decoder.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Decomposer' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Decomposer/Decomposer.v:3]
+INFO: [Synth 8-6157] synthesizing module 'coeff_decomposer' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Decomposer/coeff_decomposer.v:3]
+INFO: [Synth 8-6157] synthesizing module 'decomp_map1' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Decomposer/decomp_map1.v:3]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Decomposer/decomp_map1.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'decomp_map1' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Decomposer/decomp_map1.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'coeff_decomposer' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Decomposer/coeff_decomposer.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'Decomposer' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Decomposer/Decomposer.v:3]
+INFO: [Synth 8-6157] synthesizing module 'makehint' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Hint/makehint.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'makehint' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Hint/makehint.v:3]
+INFO: [Synth 8-6157] synthesizing module 'usehint' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Hint/usehint.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'usehint' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Hint/usehint.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'Data_Path' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'MLDSA' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/MLDSA.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'MLDSA_AXI_Top' (0#1) [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/AXI/MLDSA_AXI_Top.v:1]
+WARNING: [Synth 8-7129] Port o_ready in module PWM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_ready in module NTT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module ExpandMASK is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module ExpandMASK is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module ExpandA is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module ExpandA is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sampler_in[47] in module ExpandA is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sampler_in[23] in module ExpandA is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module ExpandS is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module ExpandS is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[62] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[61] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[60] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[59] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[58] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[57] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[56] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[55] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[54] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[53] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[52] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[51] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[50] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[49] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[48] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[47] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[46] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[45] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[44] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[43] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[42] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[41] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[40] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[39] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[38] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[37] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[36] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[35] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[34] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[33] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[32] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[30] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[29] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[28] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[27] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[26] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[25] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[24] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[23] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[22] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[21] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[20] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[19] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[18] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[17] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[16] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[14] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[13] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[12] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[11] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[10] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[9] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[8] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[6] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[5] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[4] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port round_const[2] in module round_B is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in[63] in module padder1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in[62] in module padder1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in[61] in module padder1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in[60] in module padder1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in[59] in module padder1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in[58] in module padder1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in[57] in module padder1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in[56] in module padder1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[63] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[62] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[61] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[60] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[59] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[58] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[57] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[56] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[55] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[54] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[53] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[52] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[51] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[50] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[49] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[48] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[47] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[46] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[45] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[44] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[43] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[42] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[41] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[40] in module Keccak_Ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sha_in[39] in module Keccak_Ctrl is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1578.410 ; gain = 689.652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1578.410 ; gain = 689.652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1578.410 ; gain = 689.652
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.683 . Memory (MB): peak = 1578.410 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_64x16_3/Ture_Dual_Port_RAM_64x16/Ture_Dual_Port_RAM_64x16_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_L'
+Finished Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_64x16_3/Ture_Dual_Port_RAM_64x16/Ture_Dual_Port_RAM_64x16_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_L'
+Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_64x16_3/Ture_Dual_Port_RAM_64x16/Ture_Dual_Port_RAM_64x16_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_seed'
+Finished Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_64x16_3/Ture_Dual_Port_RAM_64x16/Ture_Dual_Port_RAM_64x16_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_seed'
+Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x1024_3/Ture_Dual_Port_RAM_23x1024/Ture_Dual_Port_RAM_23x1024_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_PWM'
+Finished Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x1024_3/Ture_Dual_Port_RAM_23x1024/Ture_Dual_Port_RAM_23x1024_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_PWM'
+Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x1024_3/Ture_Dual_Port_RAM_23x1024/Ture_Dual_Port_RAM_23x1024_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_0'
+Finished Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x1024_3/Ture_Dual_Port_RAM_23x1024/Ture_Dual_Port_RAM_23x1024_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_0'
+Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x1024_3/Ture_Dual_Port_RAM_23x1024/Ture_Dual_Port_RAM_23x1024_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_1'
+Finished Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x1024_3/Ture_Dual_Port_RAM_23x1024/Ture_Dual_Port_RAM_23x1024_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_1'
+Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x1024_3/Ture_Dual_Port_RAM_23x1024/Ture_Dual_Port_RAM_23x1024_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_2'
+Finished Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x1024_3/Ture_Dual_Port_RAM_23x1024/Ture_Dual_Port_RAM_23x1024_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_2'
+Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x1024_3/Ture_Dual_Port_RAM_23x1024/Ture_Dual_Port_RAM_23x1024_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_3'
+Finished Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x1024_3/Ture_Dual_Port_RAM_23x1024/Ture_Dual_Port_RAM_23x1024_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_3'
+Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x1024_3/Ture_Dual_Port_RAM_23x1024/Ture_Dual_Port_RAM_23x1024_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_4'
+Finished Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x1024_3/Ture_Dual_Port_RAM_23x1024/Ture_Dual_Port_RAM_23x1024_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_4'
+Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x1024_3/Ture_Dual_Port_RAM_23x1024/Ture_Dual_Port_RAM_23x1024_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_5'
+Finished Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x1024_3/Ture_Dual_Port_RAM_23x1024/Ture_Dual_Port_RAM_23x1024_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_5'
+Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x1024_3/Ture_Dual_Port_RAM_23x1024/Ture_Dual_Port_RAM_23x1024_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_6'
+Finished Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x1024_3/Ture_Dual_Port_RAM_23x1024/Ture_Dual_Port_RAM_23x1024_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_6'
+Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x1024_3/Ture_Dual_Port_RAM_23x1024/Ture_Dual_Port_RAM_23x1024_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_7'
+Finished Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x1024_3/Ture_Dual_Port_RAM_23x1024/Ture_Dual_Port_RAM_23x1024_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_7'
+Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x1024_3/Ture_Dual_Port_RAM_23x1024/Ture_Dual_Port_RAM_23x1024_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_8'
+Finished Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x1024_3/Ture_Dual_Port_RAM_23x1024/Ture_Dual_Port_RAM_23x1024_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_8'
+Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x1024_3/Ture_Dual_Port_RAM_23x1024/Ture_Dual_Port_RAM_23x1024_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_9'
+Finished Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x1024_3/Ture_Dual_Port_RAM_23x1024/Ture_Dual_Port_RAM_23x1024_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_9'
+Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x4096_3/Ture_Dual_Port_RAM_23x4096/Ture_Dual_Port_RAM_23x4096_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_A'
+Finished Parsing XDC File [c:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x4096_3/Ture_Dual_Port_RAM_23x4096/Ture_Dual_Port_RAM_23x4096_in_context.xdc] for cell 'MLDSA_/data_path_inst/DM_/temp_A'
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1734.707 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+系統找不到指定的路徑。
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.105 . Memory (MB): peak = 1734.707 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1734.707 ; gain = 845.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k70tfbv676-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1734.707 ; gain = 845.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for MLDSA_/data_path_inst/DM_/temp_L. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for MLDSA_/data_path_inst/DM_/temp_seed. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for MLDSA_/data_path_inst/DM_/temp_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for MLDSA_/data_path_inst/DM_/temp_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for MLDSA_/data_path_inst/DM_/temp_2. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for MLDSA_/data_path_inst/DM_/temp_3. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for MLDSA_/data_path_inst/DM_/temp_4. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for MLDSA_/data_path_inst/DM_/temp_5. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for MLDSA_/data_path_inst/DM_/temp_6. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for MLDSA_/data_path_inst/DM_/temp_7. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for MLDSA_/data_path_inst/DM_/temp_8. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for MLDSA_/data_path_inst/DM_/temp_9. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for MLDSA_/data_path_inst/DM_/temp_PWM. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for MLDSA_/data_path_inst/DM_/temp_A. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1734.707 ; gain = 845.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Preparing Guide Design
+---------------------------------------------------------------------------------
+got a mismatch Controller
+---------------------------------------------------------------------------------
+Finished Doing Graph Differ : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1734.707 ; gain = 845.949
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6702] IncrSynth : Over 50% of partitions are impacted by design changes. Reverting to default synthesis
+WARNING: [Synth 8-6702] IncrSynth : Reverting to default synthesis
+---------------------------------------------------------------------------------
+Finished Preparing Guide Design : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1734.707 ; gain = 845.949
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module 'AXI4_Lite_Slave'
+INFO: [Synth 8-802] inferred FSM for state register 'curr_state_KeyGen_reg' in module 'Controller'
+INFO: [Synth 8-802] inferred FSM for state register 'curr_state_SignGen_reg' in module 'Controller'
+INFO: [Synth 8-802] inferred FSM for state register 'curr_state_SignVer_reg' in module 'Controller'
+INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module 'usehint'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                           000001 |                              000
+             MODE_CHOOSE |                           000010 |                              001
+          WRESP__CHANNEL |                           000100 |                              010
+             START_MLDSA |                           001000 |                              011
+              WORK_MLDSA |                           010000 |                              100
+              OVER_MLDSA |                           100000 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_reg' using encoding 'one-hot' in module 'AXI4_Lite_Slave'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |         000000000000000000000001 |                           000000
+                 STAGE_1 |         000000000000000000000010 |                           000001
+                 STAGE_2 |         000000000000000000000100 |                           000010
+                 STAGE_3 |         000000000000000000001000 |                           000011
+                 STAGE_4 |         000000000000000000010000 |                           000100
+                 STAGE_5 |         000000000000000000100000 |                           000101
+                 STAGE_6 |         000000000000000001000000 |                           000110
+                 STAGE_7 |         000000000000000010000000 |                           000111
+                 STAGE_8 |         000000000000000100000000 |                           001000
+                 STAGE_9 |         000000000000001000000000 |                           001001
+                STAGE_10 |         000000000000010000000000 |                           001010
+                STAGE_11 |         000000000000100000000000 |                           001011
+                STAGE_12 |         000000000001000000000000 |                           001100
+                STAGE_13 |         000000000010000000000000 |                           001101
+                STAGE_14 |         000000000100000000000000 |                           001110
+                STAGE_15 |         000000001000000000000000 |                           001111
+                STAGE_16 |         000000010000000000000000 |                           010000
+                STAGE_17 |         000000100000000000000000 |                           010001
+                STAGE_18 |         000001000000000000000000 |                           010010
+                STAGE_19 |         000010000000000000000000 |                           010011
+                STAGE_20 |         000100000000000000000000 |                           010100
+                STAGE_21 |         001000000000000000000000 |                           010101
+                STAGE_22 |         010000000000000000000000 |                           010110
+                STAGE_23 |         100000000000000000000000 |                           010111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_SignGen_reg' using encoding 'one-hot' in module 'Controller'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                      00000000001 |                           000000
+                 STAGE_1 |                      00000000010 |                           000001
+                 STAGE_2 |                      00000000100 |                           000010
+                 STAGE_3 |                      00000001000 |                           000011
+                 STAGE_4 |                      00000010000 |                           000100
+                 STAGE_5 |                      00000100000 |                           000101
+                 STAGE_6 |                      00001000000 |                           000110
+                 STAGE_7 |                      00010000000 |                           000111
+                 STAGE_8 |                      00100000000 |                           001000
+                 STAGE_9 |                      01000000000 |                           001001
+                STAGE_10 |                      10000000000 |                           001010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_KeyGen_reg' using encoding 'one-hot' in module 'Controller'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                     000000000001 |                           000000
+                 STAGE_1 |                     000000000010 |                           000001
+                 STAGE_2 |                     000000000100 |                           000010
+                 STAGE_3 |                     000000001000 |                           000011
+                 STAGE_4 |                     000000010000 |                           000100
+                 STAGE_5 |                     000000100000 |                           000101
+                 STAGE_6 |                     000001000000 |                           000110
+                 STAGE_7 |                     000010000000 |                           000111
+                 STAGE_8 |                     000100000000 |                           001000
+                 STAGE_9 |                     001000000000 |                           001001
+                STAGE_10 |                     010000000000 |                           001010
+                STAGE_11 |                     100000000000 |                           001011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_SignVer_reg' using encoding 'one-hot' in module 'Controller'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1734.707 ; gain = 845.949
+---------------------------------------------------------------------------------
+
+
+Incremental Synthesis Report Summary:
+
+1. Incremental synthesis run: no
+
+   Reason for not running incremental synthesis : Change is too high
+
+
+INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   6 Input   56 Bit       Adders := 2     
+	   2 Input   56 Bit       Adders := 2     
+	   3 Input   56 Bit       Adders := 2     
+	   4 Input   35 Bit       Adders := 12    
+	   2 Input   32 Bit       Adders := 1     
+	   4 Input   27 Bit       Adders := 12    
+	   3 Input   27 Bit       Adders := 12    
+	   2 Input   24 Bit       Adders := 34    
+	   3 Input   23 Bit       Adders := 12    
+	   2 Input   23 Bit       Adders := 38    
+	   2 Input   17 Bit       Adders := 1     
+	   2 Input   12 Bit       Adders := 5     
+	   2 Input   11 Bit       Adders := 5     
+	   2 Input   10 Bit       Adders := 4     
+	   4 Input    9 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 5     
+	   2 Input    8 Bit       Adders := 15    
+	   3 Input    8 Bit       Adders := 1     
+	   2 Input    7 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 7     
+	   2 Input    3 Bit       Adders := 3     
+	   2 Input    2 Bit       Adders := 4     
+	   3 Input    2 Bit       Adders := 14    
+	   2 Input    1 Bit       Adders := 1     
++---XORs : 
+	   2 Input   1344 Bit         XORs := 1     
+	   5 Input     64 Bit         XORs := 5     
+	   3 Input     64 Bit         XORs := 25    
+	   2 Input     64 Bit         XORs := 25    
+	   2 Input      1 Bit         XORs := 7     
++---Registers : 
+	             1600 Bit    Registers := 1     
+	             1344 Bit    Registers := 2     
+	              672 Bit    Registers := 1     
+	              256 Bit    Registers := 1     
+	              200 Bit    Registers := 1     
+	              192 Bit    Registers := 1     
+	               64 Bit    Registers := 1     
+	               56 Bit    Registers := 6     
+	               48 Bit    Registers := 20    
+	               46 Bit    Registers := 5     
+	               27 Bit    Registers := 12    
+	               23 Bit    Registers := 357   
+	               21 Bit    Registers := 1     
+	               12 Bit    Registers := 12    
+	               11 Bit    Registers := 3     
+	               10 Bit    Registers := 5     
+	                9 Bit    Registers := 3     
+	                8 Bit    Registers := 102   
+	                7 Bit    Registers := 9     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 13    
+	                3 Bit    Registers := 5     
+	                2 Bit    Registers := 10    
+	                1 Bit    Registers := 429   
++---Muxes : 
+	   2 Input 2048 Bit        Muxes := 1     
+	   2 Input 1600 Bit        Muxes := 7     
+	   2 Input 1344 Bit        Muxes := 4     
+	   4 Input 1344 Bit        Muxes := 1     
+	   3 Input 1344 Bit        Muxes := 1     
+	   2 Input 1080 Bit        Muxes := 2     
+	   2 Input  672 Bit        Muxes := 1     
+	   2 Input  256 Bit        Muxes := 2     
+	   2 Input  200 Bit        Muxes := 1     
+	   2 Input  192 Bit        Muxes := 1     
+	   2 Input  128 Bit        Muxes := 2     
+	   3 Input   64 Bit        Muxes := 1     
+	   2 Input   64 Bit        Muxes := 13    
+	   6 Input   64 Bit        Muxes := 1     
+	   4 Input   64 Bit        Muxes := 3     
+	  17 Input   64 Bit        Muxes := 1     
+	   5 Input   64 Bit        Muxes := 1     
+	  11 Input   64 Bit        Muxes := 1     
+	   5 Input   46 Bit        Muxes := 2     
+	   2 Input   46 Bit        Muxes := 4     
+	  24 Input   24 Bit        Muxes := 1     
+	   2 Input   24 Bit        Muxes := 37    
+	   2 Input   23 Bit        Muxes := 212   
+	   4 Input   23 Bit        Muxes := 5     
+	   8 Input   23 Bit        Muxes := 5     
+	   7 Input   23 Bit        Muxes := 8     
+	   6 Input   23 Bit        Muxes := 8     
+	   9 Input   23 Bit        Muxes := 2     
+	   5 Input   23 Bit        Muxes := 2     
+	   3 Input   23 Bit        Muxes := 10    
+	   2 Input   22 Bit        Muxes := 1     
+	   2 Input   18 Bit        Muxes := 6     
+	  12 Input   12 Bit        Muxes := 1     
+	   2 Input   12 Bit        Muxes := 13    
+	   3 Input   12 Bit        Muxes := 2     
+	  11 Input   11 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 18    
+	   8 Input   11 Bit        Muxes := 2     
+	  19 Input   11 Bit        Muxes := 1     
+	   4 Input   11 Bit        Muxes := 3     
+	   5 Input   11 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 27    
+	   4 Input   10 Bit        Muxes := 3     
+	  12 Input   10 Bit        Muxes := 3     
+	  13 Input   10 Bit        Muxes := 1     
+	  10 Input   10 Bit        Muxes := 1     
+	  11 Input   10 Bit        Muxes := 1     
+	   7 Input   10 Bit        Muxes := 2     
+	   3 Input   10 Bit        Muxes := 4     
+	   2 Input    9 Bit        Muxes := 3     
+	   5 Input    9 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 93    
+	   4 Input    8 Bit        Muxes := 1     
+	  12 Input    8 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 1     
+	  24 Input    6 Bit        Muxes := 1     
+	  11 Input    6 Bit        Muxes := 1     
+	  12 Input    6 Bit        Muxes := 1     
+	   4 Input    6 Bit        Muxes := 2     
+	   2 Input    6 Bit        Muxes := 6     
+	  46 Input    6 Bit        Muxes := 2     
+	   6 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 3     
+	   3 Input    5 Bit        Muxes := 2     
+	  24 Input    5 Bit        Muxes := 1     
+	   4 Input    5 Bit        Muxes := 1     
+	   6 Input    5 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 16    
+	  11 Input    4 Bit        Muxes := 1     
+	  12 Input    4 Bit        Muxes := 1     
+	  18 Input    4 Bit        Muxes := 1     
+	  19 Input    4 Bit        Muxes := 3     
+	  23 Input    4 Bit        Muxes := 1     
+	   5 Input    4 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	   3 Input    4 Bit        Muxes := 1     
+	  24 Input    4 Bit        Muxes := 4     
+	  20 Input    4 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 13    
+	  29 Input    3 Bit        Muxes := 2     
+	   8 Input    3 Bit        Muxes := 2     
+	  11 Input    3 Bit        Muxes := 1     
+	  16 Input    3 Bit        Muxes := 2     
+	  17 Input    3 Bit        Muxes := 4     
+	  13 Input    3 Bit        Muxes := 6     
+	  23 Input    3 Bit        Muxes := 1     
+	  20 Input    3 Bit        Muxes := 2     
+	  19 Input    3 Bit        Muxes := 2     
+	  10 Input    3 Bit        Muxes := 2     
+	   6 Input    3 Bit        Muxes := 2     
+	   4 Input    3 Bit        Muxes := 6     
+	   7 Input    3 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 23    
+	   3 Input    2 Bit        Muxes := 3     
+	  13 Input    2 Bit        Muxes := 2     
+	   9 Input    2 Bit        Muxes := 1     
+	  23 Input    2 Bit        Muxes := 2     
+	  11 Input    2 Bit        Muxes := 4     
+	  28 Input    2 Bit        Muxes := 2     
+	  16 Input    2 Bit        Muxes := 1     
+	   7 Input    2 Bit        Muxes := 4     
+	  10 Input    2 Bit        Muxes := 2     
+	   4 Input    2 Bit        Muxes := 1     
+	  15 Input    2 Bit        Muxes := 2     
+	  18 Input    1 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 497   
+	   5 Input    1 Bit        Muxes := 5     
+	   3 Input    1 Bit        Muxes := 11    
+	  10 Input    1 Bit        Muxes := 3     
+	   9 Input    1 Bit        Muxes := 2     
+	   4 Input    1 Bit        Muxes := 7     
+	   7 Input    1 Bit        Muxes := 8     
+	  17 Input    1 Bit        Muxes := 10    
+	   6 Input    1 Bit        Muxes := 1     
+	  23 Input    1 Bit        Muxes := 1     
+	  13 Input    1 Bit        Muxes := 3     
+	  19 Input    1 Bit        Muxes := 3     
+	  11 Input    1 Bit        Muxes := 3     
+	  24 Input    1 Bit        Muxes := 2     
+	  20 Input    1 Bit        Muxes := 4     
+	2048 Input    1 Bit        Muxes := 1     
+	   8 Input    1 Bit        Muxes := 3     
+	  14 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP mm/a_mul_b0, operation Mode is: A2*B2.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: Generating DSP mm/a_mul_b_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register mul_in_0_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: Generating DSP mm/a_mul_b0, operation Mode is: A2*B2.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: Generating DSP mm/a_mul_b_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register mul_in_0_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: Generating DSP mm/a_mul_b0, operation Mode is: A2*B2.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: Generating DSP mm/a_mul_b_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register mul_in_0_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: Generating DSP mm/a_mul_b0, operation Mode is: A2*B2.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: Generating DSP mm/a_mul_b_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register mul_in_0_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: Generating DSP mm/a_mul_b0, operation Mode is: A2*B2.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: Generating DSP mm/a_mul_b_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register mul_in_0_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: Generating DSP mm/a_mul_b0, operation Mode is: A2*B2.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: Generating DSP mm/a_mul_b_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register mul_in_0_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: Generating DSP mm/a_mul_b0, operation Mode is: A2*B2.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: Generating DSP mm/a_mul_b_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register mul_in_0_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: Generating DSP mm/a_mul_b0, operation Mode is: A2*B2.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: register mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b0.
+DSP Report: Generating DSP mm/a_mul_b_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register mul_in_0_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: register mm/a_mul_b_reg is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+DSP Report: operator mm/a_mul_b0 is absorbed into DSP mm/a_mul_b_reg.
+INFO: [Synth 8-5544] ROM "zeta_2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "zeta_3" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "zeta_4" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+DSP Report: Generating DSP inv_rot_o_u, operation Mode is: (A:0x7f6021)*B.
+DSP Report: operator inv_rot_o_u is absorbed into DSP inv_rot_o_u.
+DSP Report: operator inv_rot_o_u is absorbed into DSP inv_rot_o_u.
+DSP Report: Generating DSP inv_rot_o_u, operation Mode is: (PCIN>>17)+(A:0x7f6021)*B.
+DSP Report: operator inv_rot_o_u is absorbed into DSP inv_rot_o_u.
+DSP Report: operator inv_rot_o_u is absorbed into DSP inv_rot_o_u.
+DSP Report: Generating DSP inv_rot_o_d, operation Mode is: (A:0x7f6021)*B.
+DSP Report: operator inv_rot_o_d is absorbed into DSP inv_rot_o_d.
+DSP Report: operator inv_rot_o_d is absorbed into DSP inv_rot_o_d.
+DSP Report: Generating DSP inv_rot_o_d, operation Mode is: (PCIN>>17)+(A:0x7f6021)*B.
+DSP Report: operator inv_rot_o_d is absorbed into DSP inv_rot_o_d.
+DSP Report: operator inv_rot_o_d is absorbed into DSP inv_rot_o_d.
+INFO: [Synth 8-3886] merging instance 'NTT_/BU_2/mm/MR/adder_2_temp_reg[26]' (FDR) to 'NTT_/BU_2/mm/MR/adder_2_temp_reg[25]'
+INFO: [Synth 8-3886] merging instance 'NTT_/BU_3/mm/MR/adder_2_temp_reg[26]' (FDR) to 'NTT_/BU_3/mm/MR/adder_2_temp_reg[25]'
+INFO: [Synth 8-3886] merging instance 'NTT_/BU_1/mm/MR/adder_2_temp_reg[26]' (FDR) to 'NTT_/BU_1/mm/MR/adder_2_temp_reg[25]'
+INFO: [Synth 8-3886] merging instance 'NTT_/BU_4/mm/MR/adder_2_temp_reg[26]' (FDR) to 'NTT_/BU_4/mm/MR/adder_2_temp_reg[25]'
+INFO: [Synth 8-3886] merging instance 'NTT_/BU_0/mm/MR/adder_2_temp_reg[26]' (FDR) to 'NTT_/BU_0/mm/MR/adder_2_temp_reg[25]'
+INFO: [Synth 8-3886] merging instance 'NTT_/BU_5/mm/MR/adder_2_temp_reg[26]' (FDR) to 'NTT_/BU_5/mm/MR/adder_2_temp_reg[25]'
+INFO: [Synth 8-3886] merging instance 'NTT_/MR2/adder_2_temp_reg[26]' (FDR) to 'NTT_/MR2/adder_2_temp_reg[25]'
+INFO: [Synth 8-3886] merging instance 'NTT_/BU_6/mm/MR/adder_2_temp_reg[26]' (FDR) to 'NTT_/BU_6/mm/MR/adder_2_temp_reg[25]'
+INFO: [Synth 8-3886] merging instance 'NTT_/MR1/adder_2_temp_reg[26]' (FDR) to 'NTT_/MR1/adder_2_temp_reg[25]'
+INFO: [Synth 8-3886] merging instance 'NTT_/BU_7/mm/MR/adder_2_temp_reg[26]' (FDR) to 'NTT_/BU_7/mm/MR/adder_2_temp_reg[25]'
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[47]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[46]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[45]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[44]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[43]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[42]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[41]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[40]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[39]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[38]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[37]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[36]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[35]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[34]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[33]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[32]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[31]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[30]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[29]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[28]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[27]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[26]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[25]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[24]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[23]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[22]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[21]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[20]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[19]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[18]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[17]) is unused and will be removed from module BU__1.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[47]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[46]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[45]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[44]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[43]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[42]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[41]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[40]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[39]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[38]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[37]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[36]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[35]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[34]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[33]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[32]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[31]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[30]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[29]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[28]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[27]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[26]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[25]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[24]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[23]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[22]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[21]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[20]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[19]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[18]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[17]) is unused and will be removed from module BU__2.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[47]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[46]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[45]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[44]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[43]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[42]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[41]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[40]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[39]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[38]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[37]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[36]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[35]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[34]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[33]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[32]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[31]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[30]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[29]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[28]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[27]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[26]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[25]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[24]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[23]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[22]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[21]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[20]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[19]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[18]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[17]) is unused and will be removed from module BU__3.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[47]) is unused and will be removed from module BU__4.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[46]) is unused and will be removed from module BU__4.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[45]) is unused and will be removed from module BU__4.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[44]) is unused and will be removed from module BU__4.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[43]) is unused and will be removed from module BU__4.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[42]) is unused and will be removed from module BU__4.
+WARNING: [Synth 8-3332] Sequential element (mm/a_mul_b_reg[41]) is unused and will be removed from module BU__4.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+DSP Report: Generating DSP mul_a0, operation Mode is: A*B.
+DSP Report: operator mul_a0 is absorbed into DSP mul_a0.
+DSP Report: operator mul_a0 is absorbed into DSP mul_a0.
+DSP Report: Generating DSP mul_a0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator mul_a0 is absorbed into DSP mul_a0.
+DSP Report: operator mul_a0 is absorbed into DSP mul_a0.
+DSP Report: Generating DSP mul_b0, operation Mode is: A*B.
+DSP Report: operator mul_b0 is absorbed into DSP mul_b0.
+DSP Report: operator mul_b0 is absorbed into DSP mul_b0.
+DSP Report: Generating DSP mul_b0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator mul_b0 is absorbed into DSP mul_b0.
+DSP Report: operator mul_b0 is absorbed into DSP mul_b0.
+INFO: [Synth 8-5546] ROM "AG_3_last_addr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "NTT_o_ready" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "PWM_mode" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "PWM_o_ready" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "AG_1_last_addr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "AG_1_star_addr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "AG_2_last_addr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "AG_3_star_addr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "AG_4_addr_adder" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "AG_4_last_addr" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "AG_4_star_addr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "AG_3_last_addr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "NTT_o_ready" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "PWM_mode" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "PWM_o_ready" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "AG_1_last_addr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "AG_1_star_addr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "AG_2_last_addr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "AG_3_star_addr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "AG_4_addr_adder" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "AG_4_last_addr" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "AG_4_star_addr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[55]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[54]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[53]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[52]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[51]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[50]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[49]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[48]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[47]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[46]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[45]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[44]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[43]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[42]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[41]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[40]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[39]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[38]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[37]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[36]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[35]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[34]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[33]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[32]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[31]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[30]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[29]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[28]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[27]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[26]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[25]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[24]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_0_reg[23]' (FDE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[23]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[55]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[54]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[54]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[53]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[53]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[52]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[52]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[51]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[51]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[50]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[50]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[49]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[49]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[48]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[48]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[47]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[47]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[46]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[46]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[45]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[45]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[44]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[44]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[43]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[43]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[42]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[42]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[41]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[41]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[40]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[40]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[39]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[39]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[38]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[38]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[37]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[37]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[36]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[36]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[35]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[35]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[34]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[34]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[33]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[33]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[32]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[32]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[31]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[31]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[30]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[30]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[29]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[29]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[28]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[28]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[27]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[27]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[26]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[26]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[25]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[25]' (FDRE) to 'Decomp_/genblk1[1].COEFF_DECOMP/a0_0_reg[24]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (Decomp_/\genblk1[1].COEFF_DECOMP/a0_0_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (Decomp_/\genblk1[1].COEFF_DECOMP/a0_0_reg[23] )
+INFO: [Synth 8-3886] merging instance 'PWM_/MR1/adder_2_temp_reg[26]' (FDR) to 'PWM_/MR1/adder_2_temp_reg[25]'
+INFO: [Synth 8-3886] merging instance 'PWM_/MR0/adder_2_temp_reg[26]' (FDR) to 'PWM_/MR0/adder_2_temp_reg[25]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_12/\kappa_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_12/\kappa_reg[1] )
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[55]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[54]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[54]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[53]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[53]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[52]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[52]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[25]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[25]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[26]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[26]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[27]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[27]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[28]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[28]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[29]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[29]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[30]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[30]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[31]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[31]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[32]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[32]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[33]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[33]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[34]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[34]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[35]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[35]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[36]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[36]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[37]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[37]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[38]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[38]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[39]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[39]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[40]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[40]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[41]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[41]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[42]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[42]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[43]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[43]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[44]'
+INFO: [Synth 8-3886] merging instance 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[44]' (FDE) to 'Decomp_/genblk1[0].COEFF_DECOMP/a0_1_reg[45]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-4471] merging register 'pos_reg[9:0]' into 'pos_reg[9:0]' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Hint/usehint.v:156]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1694] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1693] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1696] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1695] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1690] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1689] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1692] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1691] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1686] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1685] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1688] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1687] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1682] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1681] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1684] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1683] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1674] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1673] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1676] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1675] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1678] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1677] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1680] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1679] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1670] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1669] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1672] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1671] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1668] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1667] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1666] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1665] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1706] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1705] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1708] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1707] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1712] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1711] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1710] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1709] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1702] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1701] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1704] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1703] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1698] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1697] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1700] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1699] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1720] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1719] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1718] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1717] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1714] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1713] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1716] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1715] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1728] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1727] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1726] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1725] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1724] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1723] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1722] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1721] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1758] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1757] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1760] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1759] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1754] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1753] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1756] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1755] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1752] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1751] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1750] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1749] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1746] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1745] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1748] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1747] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1738] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1737] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1740] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1739] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1742] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1741] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1744] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1743] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1734] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1733] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1736] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1735] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1732] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1731] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1730] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (usehint_/\hint_poly_reg[1729] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-4471] merging register 'ctr_reg[7:0]' into 'ctr_reg[7:0]' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Hint/makehint.v:87]
+INFO: [Synth 8-4471] merging register 'ctr_reg[7:0]' into 'ctr_reg[7:0]' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Hint/makehint.v:87]
+INFO: [Synth 8-4471] merging register 'sipo_in_len_reg[8:0]' into 'sipo_in_len_reg[8:0]' [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Decoder/Decoder.v:166]
+INFO: [Synth 8-5544] ROM "DECODE_LVL" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "DECODE_LVL" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ENCODE_LVL" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ENCODE_LVL" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "DEC_mode" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ENC_encode_mode" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "DEC_mode" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ENC_encode_mode" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "padder_cnt_last" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "padder_cnt_last" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "kk_sub_2_in" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:09 ; elapsed = 00:01:37 . Memory (MB): peak = 1734.707 ; gain = 845.949
+---------------------------------------------------------------------------------
+ Sort Area is Data_Path__GB0 mm/a_mul_b0_0 : 0 0 : 3382 4576 : Used 1 time 0
+ Sort Area is Data_Path__GB0 mm/a_mul_b0_0 : 0 1 : 1194 4576 : Used 1 time 0
+ Sort Area is Data_Path__GB0 mm/a_mul_b0_3 : 0 0 : 3382 4576 : Used 1 time 0
+ Sort Area is Data_Path__GB0 mm/a_mul_b0_3 : 0 1 : 1194 4576 : Used 1 time 0
+ Sort Area is Data_Path__GB0 mm/a_mul_b0_4 : 0 0 : 3382 4576 : Used 1 time 0
+ Sort Area is Data_Path__GB0 mm/a_mul_b0_4 : 0 1 : 1194 4576 : Used 1 time 0
+ Sort Area is Data_Path__GB0 mm/a_mul_b0_5 : 0 0 : 3382 4576 : Used 1 time 0
+ Sort Area is Data_Path__GB0 mm/a_mul_b0_5 : 0 1 : 1194 4576 : Used 1 time 0
+ Sort Area is Data_Path__GB0 mm/a_mul_b0_6 : 0 0 : 3382 4576 : Used 1 time 0
+ Sort Area is Data_Path__GB0 mm/a_mul_b0_6 : 0 1 : 1194 4576 : Used 1 time 0
+ Sort Area is Data_Path__GB0 mm/a_mul_b0_7 : 0 0 : 3382 4576 : Used 1 time 0
+ Sort Area is Data_Path__GB0 mm/a_mul_b0_7 : 0 1 : 1194 4576 : Used 1 time 0
+ Sort Area is Data_Path__GB0 mm/a_mul_b0_8 : 0 0 : 3382 4576 : Used 1 time 0
+ Sort Area is Data_Path__GB0 mm/a_mul_b0_8 : 0 1 : 1194 4576 : Used 1 time 0
+ Sort Area is Data_Path__GB0 mm/a_mul_b0_9 : 0 0 : 3382 4576 : Used 1 time 0
+ Sort Area is Data_Path__GB0 mm/a_mul_b0_9 : 0 1 : 1194 4576 : Used 1 time 0
+ Sort Area is Data_Path__GB1 mul_a0_0 : 0 0 : 3340 4455 : Used 1 time 0
+ Sort Area is Data_Path__GB1 mul_a0_0 : 0 1 : 1115 4455 : Used 1 time 0
+ Sort Area is Data_Path__GB1 mul_b0_3 : 0 0 : 3340 4455 : Used 1 time 0
+ Sort Area is Data_Path__GB1 mul_b0_3 : 0 1 : 1115 4455 : Used 1 time 0
+ Sort Area is Data_Path__GB0 inv_rot_o_d_d : 0 0 : 2016 2482 : Used 1 time 0
+ Sort Area is Data_Path__GB0 inv_rot_o_d_d : 0 1 : 466 2482 : Used 1 time 0
+ Sort Area is Data_Path__GB0 inv_rot_o_u_a : 0 0 : 2016 2482 : Used 1 time 0
+ Sort Area is Data_Path__GB0 inv_rot_o_u_a : 0 1 : 466 2482 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|NTT         | zeta_7     | 128x23        | LUT            | 
+|NTT         | zeta_6     | 64x23         | LUT            | 
+|NTT         | zeta_5     | 32x23         | LUT            | 
++------------+------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+---------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping               | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+---------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|BU          | A2*B2                     | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17)+A2*B2          | 24     | 7      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A2*B2                     | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17)+A2*B2          | 24     | 7      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A2*B2                     | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17)+A2*B2          | 24     | 7      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A2*B2                     | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17)+A2*B2          | 24     | 7      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A2*B2                     | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17)+A2*B2          | 24     | 7      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A2*B2                     | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17)+A2*B2          | 24     | 7      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A2*B2                     | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17)+A2*B2          | 24     | 7      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A2*B2                     | 24     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17)+A2*B2          | 24     | 7      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|NTT         | (A:0x7f6021)*B            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|NTT         | (PCIN>>17)+(A:0x7f6021)*B | 24     | 7      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|NTT         | (A:0x7f6021)*B            | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|NTT         | (PCIN>>17)+(A:0x7f6021)*B | 24     | 7      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|PWM         | A*B                       | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|PWM         | (PCIN>>17)+A*B            | 24     | 7      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|PWM         | A*B                       | 24     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|PWM         | (PCIN>>17)+A*B            | 24     | 7      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+---------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:18 ; elapsed = 00:01:46 . Memory (MB): peak = 1734.707 ; gain = 845.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:21 ; elapsed = 00:01:49 . Memory (MB): peak = 1734.707 ; gain = 845.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/PWM/PWM.v:65]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/PWM/PWM.v:72]
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:30 ; elapsed = 00:02:04 . Memory (MB): peak = 1734.707 ; gain = 845.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:39 ; elapsed = 00:02:13 . Memory (MB): peak = 1734.707 ; gain = 845.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:39 ; elapsed = 00:02:13 . Memory (MB): peak = 1734.707 ; gain = 845.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:41 ; elapsed = 00:02:16 . Memory (MB): peak = 1734.707 ; gain = 845.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:42 ; elapsed = 00:02:16 . Memory (MB): peak = 1734.707 ; gain = 845.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:45 ; elapsed = 00:02:19 . Memory (MB): peak = 1734.707 ; gain = 845.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:45 ; elapsed = 00:02:19 . Memory (MB): peak = 1734.707 ; gain = 845.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++--------------+-------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name   | RTL Name                                                                      | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++--------------+-------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/Decomp_/genblk1[0].COEFF_DECOMP/dob_reg[5]              | 3      | 12    | NO           | NO                 | YES               | 12     | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_0/valid_buf_reg[3]                              | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/RU_1/valid_buf_[63].valid_buf_reg[63]              | 64     | 1     | YES          | NO                 | YES               | 0      | 2       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/RU_1/shift_registers_d[63].shift_reg_d_reg[63][22] | 64     | 23    | YES          | NO                 | YES               | 0      | 46      | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/RU_1/shift_registers_u[63].shift_reg_u_reg[63][22] | 64     | 23    | YES          | NO                 | YES               | 0      | 46      | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_1/valid_buf_reg[3]                              | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/RU_2/valid_buf_[31].valid_buf_reg[31]              | 32     | 1     | YES          | NO                 | YES               | 0      | 1       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/RU_2/shift_registers_d[31].shift_reg_d_reg[31][22] | 32     | 23    | YES          | NO                 | YES               | 0      | 23      | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/RU_2/shift_registers_u[31].shift_reg_u_reg[31][22] | 32     | 23    | YES          | NO                 | YES               | 0      | 23      | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_2/valid_buf_reg[3]                              | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/RU_3/valid_buf_[15].valid_buf_reg[15]              | 16     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/RU_3/shift_registers_d[15].shift_reg_d_reg[15][22] | 16     | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/RU_3/shift_registers_u[15].shift_reg_u_reg[15][22] | 16     | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_3/valid_buf_reg[3]                              | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/RU_4/valid_buf_[7].valid_buf_reg[7]                | 8      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/RU_4/shift_registers_d[7].shift_reg_d_reg[7][22]   | 8      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/RU_4/shift_registers_u[7].shift_reg_u_reg[7][22]   | 8      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_4/valid_buf_reg[3]                              | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/RU_5/valid_buf_[3].valid_buf_reg[3]                | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/RU_5/shift_registers_d[3].shift_reg_d_reg[3][22]   | 4      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/RU_5/shift_registers_u[3].shift_reg_u_reg[3][22]   | 4      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_5/valid_buf_reg[3]                              | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_6/valid_buf_reg[3]                              | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_7/valid_buf_reg[3]                              | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_0/shift_reg_a_reg[3][22]                        | 4      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_0/shift_reg_b_reg[3][22]                        | 4      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_1/shift_reg_a_reg[3][22]                        | 4      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_1/shift_reg_b_reg[3][22]                        | 4      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_2/shift_reg_a_reg[3][22]                        | 4      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_2/shift_reg_b_reg[3][22]                        | 4      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_3/shift_reg_a_reg[3][22]                        | 4      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_3/shift_reg_b_reg[3][22]                        | 4      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_4/shift_reg_a_reg[3][22]                        | 4      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_4/shift_reg_b_reg[3][22]                        | 4      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_5/shift_reg_a_reg[3][22]                        | 4      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_5/shift_reg_b_reg[3][22]                        | 4      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_6/shift_reg_a_reg[3][22]                        | 4      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_6/shift_reg_b_reg[3][22]                        | 4      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_7/shift_reg_a_reg[3][22]                        | 4      | 23    | YES          | NO                 | YES               | 23     | 0       | 
+|MLDSA_AXI_Top | MLDSA_/data_path_inst/NTT_/BU_7/shift_reg_b_reg[3][22]                        | 4      | 23    | YES          | NO                 | YES               | 23     | 0       | 
++--------------+-------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping      | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|NTT         | A*B              | 23     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|NTT         | PCIN>>17+A*B     | 0      | 6      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|NTT         | A*B              | 23     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|NTT         | PCIN>>17+A*B     | 0      | 6      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|BU          | A'*B'            | 23     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17+A*B')' | 0      | 6      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A'*B'            | 23     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17+A*B')' | 0      | 6      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A'*B'            | 23     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17+A*B')' | 0      | 6      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A'*B'            | 23     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17+A*B')' | 0      | 6      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A'*B'            | 23     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17+A*B')' | 0      | 6      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A'*B'            | 23     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17+A*B')' | 0      | 6      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A'*B'            | 23     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17+A*B')' | 0      | 6      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|BU          | A'*B'            | 23     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|BU          | (PCIN>>17+A*B')' | 0      | 6      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|PWM         | A*B              | 23     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|PWM         | (PCIN>>17+A*B)'  | 23     | 6      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|PWM         | A*B              | 23     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|PWM         | (PCIN>>17+A*B)'  | 23     | 6      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++------+---------------------------+----------+
+|      |BlackBox name              |Instances |
++------+---------------------------+----------+
+|1     |Ture_Dual_Port_RAM_23x4096 |         1|
+|2     |Ture_Dual_Port_RAM_23x1024 |        11|
+|3     |Ture_Dual_Port_RAM_64x16   |         2|
++------+---------------------------+----------+
+
+Report Cell Usage: 
++------+---------------------------+------+
+|      |Cell                       |Count |
++------+---------------------------+------+
+|1     |Ture_Dual_Port_RAM_23x1024 |    11|
+|12    |Ture_Dual_Port_RAM_23x4096 |     1|
+|13    |Ture_Dual_Port_RAM_64x16   |     2|
+|15    |BUFG                       |     1|
+|16    |CARRY4                     |   869|
+|17    |DSP48E1                    |    24|
+|22    |LUT1                       |   567|
+|23    |LUT2                       |  3291|
+|24    |LUT3                       |  5226|
+|25    |LUT4                       |  5091|
+|26    |LUT5                       |  5396|
+|27    |LUT6                       | 10666|
+|28    |MUXF7                      |  1010|
+|29    |MUXF8                      |   183|
+|30    |SRL16E                     |   529|
+|31    |SRLC32E                    |   141|
+|32    |FDCE                       |  3634|
+|33    |FDPE                       |     4|
+|34    |FDRE                       |  7404|
+|35    |FDSE                       |    12|
+|36    |IBUF                       |   140|
+|37    |OBUF                       |   109|
++------+---------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:45 ; elapsed = 00:02:19 . Memory (MB): peak = 1734.707 ; gain = 845.949
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 274 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:28 ; elapsed = 00:02:12 . Memory (MB): peak = 1734.707 ; gain = 689.652
+Synthesis Optimization Complete : Time (s): cpu = 00:01:45 ; elapsed = 00:02:20 . Memory (MB): peak = 1734.707 ; gain = 845.949
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.640 . Memory (MB): peak = 1734.707 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2086 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1734.707 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+系統找不到指定的路徑。
+Synth Design complete | Checksum: b10a55df
+INFO: [Common 17-83] Releasing license: Synthesis
+397 Infos, 206 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:55 ; elapsed = 00:02:32 . Memory (MB): peak = 1734.707 ; gain = 1235.312
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.070 . Memory (MB): peak = 1734.707 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA/MLDSA.runs/synth_1/MLDSA_AXI_Top.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1734.707 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file MLDSA_AXI_Top_utilization_synth.rpt -pb MLDSA_AXI_Top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun May 18 00:19:14 2025...

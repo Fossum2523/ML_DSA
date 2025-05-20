@@ -1,0 +1,1019 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Tue May 20 14:27:55 2025
+# Process ID: 2604
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5880 C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP4\MLDSA\MLDSA.xpr
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/vivado.log
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.xpr
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.6 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kc705/1.6/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu1500/1.2/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc707/1.4/board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc709:part0:1.8 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc709/1.8/board.xml as part xc7vx690tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.6/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.7/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu110/1.4/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.0/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.3 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.3/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.4/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu129/production/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.3 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu1525/1.3/board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.1/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_mpsoc:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_mpsoc/1.0/board.xml as part xczu19eg-ffvd1760-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_rfsoc:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_rfsoc/1.0/board.xml as part xczu21dr-ffvd1156-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.1/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.1/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc706/1.4/board.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.3 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.3/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.4/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.2 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.2/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.3 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.3/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.4 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.4/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1275:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1275/1.0/board.xml as part xczu29dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1285:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1285/1.0/board.xml as part xczu39dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208/production/2.0/board.xml as part xczu48dr-fsvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216/production/2.0/board.xml as part xczu49dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [Project 1-313] Project file moved from 'C:/Users/USER/Desktop/ML_DSA_syn_new/IMP4/MLDSA' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2023.2/data/ip'.
+open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:35 . Memory (MB): peak = 1476.906 ; gain = 334.137
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'MLDSA_AXI_Top_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/Xilinx/Vivado/2023.2/data/xsim/xsim.ini' copied to run dir:'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'MLDSA_AXI_Top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj MLDSA_AXI_Top_tb_vlog.prj"
+ECHO �w�����C
+ECHO �w�����C
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_64x16_3/sim/Ture_Dual_Port_RAM_64x16.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Ture_Dual_Port_RAM_64x16
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x1024_3/sim/Ture_Dual_Port_RAM_23x1024.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Ture_Dual_Port_RAM_23x1024
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.gen/sources_1/ip/Ture_Dual_Port_RAM_23x4096_3/sim/Ture_Dual_Port_RAM_23x4096.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Ture_Dual_Port_RAM_23x4096
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/AXI/AXI4_Lite_Slave.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AXI4_Lite_Slave
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/AXI/AXIS_MLDSA_Wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AXIS_MLDSA_Wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Address_generate/Address_generate.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Address_generate
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/BU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/CONTR.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CONTR
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/CoeffFromHalfByte.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CoeffFromHalfByte
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Data_Mem/Data_Mem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_Mem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_Path
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Decoder/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Decomposer/Decomposer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decomposer
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Encoder/Encoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Encoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/ExpandA.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ExpandA
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/ExpandMASK.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ExpandMASK
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/ExpandS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ExpandS
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Keccak/F_Permutation.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module F_Permutation
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Keccak/Keccak.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Keccak
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Keccak_Ctrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Keccak_Ctrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/MLDSA.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MLDSA
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/AXI/MLDSA_AXI_Top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MLDSA_AXI_Top
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/Modular_Reduction.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Modular_Reduction
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/NTT.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module NTT
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/PWM/PWM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PWM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Keccak/Padder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Padder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/RU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/SampleInBall.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SampleInBall
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Sampler/Sampler.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Sampler
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Decomposer/coeff_decomposer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module coeff_decomposer
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Decomposer/decomp_map1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decomp_map1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Hint/makehint.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module makehint
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/mod_add.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mod_add
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/mod_mul.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mod_mul
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/NTT/mod_sub.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mod_sub
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Keccak/padder1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module padder1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Keccak/rconst.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rconst
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Keccak/round_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_A
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Keccak/round_B.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_B
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Encoder/uncenter_coeff.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uncenter_coeff
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Hint/usehint.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module usehint
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sources_1/Encoder/zero_strip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module zero_strip
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sim_1/imports/MLDSA/MLDSA_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MLDSA_AXI_Top_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 1502.219 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '7' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_7 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot MLDSA_AXI_Top_tb_behav xil_defaultlib.MLDSA_AXI_Top_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO �w�����C
+ECHO �w�����C
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_7 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot MLDSA_AXI_Top_tb_behav xil_defaultlib.MLDSA_AXI_Top_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.AXI4_Lite_Slave
+Compiling module xil_defaultlib.AXIS_MLDSA_Wrapper
+Compiling module xil_defaultlib.Controller
+Compiling module blk_mem_gen_v8_4_7.blk_mem_gen_v8_4_7_output_stage(...
+Compiling module blk_mem_gen_v8_4_7.blk_mem_gen_v8_4_7_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_7.blk_mem_gen_v8_4_7_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_7.blk_mem_gen_v8_4_7(C_FAMILY="kin...
+Compiling module xil_defaultlib.Ture_Dual_Port_RAM_23x4096
+Compiling module blk_mem_gen_v8_4_7.blk_mem_gen_v8_4_7_output_stage(...
+Compiling module blk_mem_gen_v8_4_7.blk_mem_gen_v8_4_7_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_7.blk_mem_gen_v8_4_7_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_7.blk_mem_gen_v8_4_7(C_FAMILY="kin...
+Compiling module xil_defaultlib.Ture_Dual_Port_RAM_23x1024
+Compiling module blk_mem_gen_v8_4_7.blk_mem_gen_v8_4_7_output_stage(...
+Compiling module blk_mem_gen_v8_4_7.blk_mem_gen_v8_4_7_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_7.blk_mem_gen_v8_4_7_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_7.blk_mem_gen_v8_4_7(C_FAMILY="kin...
+Compiling module xil_defaultlib.Ture_Dual_Port_RAM_64x16
+Compiling module xil_defaultlib.Data_Mem
+Compiling module xil_defaultlib.Address_generate
+Compiling module xil_defaultlib.Keccak_Ctrl
+Compiling module xil_defaultlib.padder1
+Compiling module xil_defaultlib.Padder
+Compiling module xil_defaultlib.rconst
+Compiling module xil_defaultlib.round_A
+Compiling module xil_defaultlib.round_B
+Compiling module xil_defaultlib.F_Permutation
+Compiling module xil_defaultlib.Keccak
+Compiling module xil_defaultlib.CoeffFromHalfByte
+Compiling module xil_defaultlib.ExpandS
+Compiling module xil_defaultlib.ExpandA
+Compiling module xil_defaultlib.ExpandMASK
+Compiling module xil_defaultlib.SampleInBall
+Compiling module xil_defaultlib.Sampler
+Compiling module xil_defaultlib.Modular_Reduction
+Compiling module xil_defaultlib.mod_add
+Compiling module xil_defaultlib.mod_sub
+Compiling module xil_defaultlib.mod_mul
+Compiling module xil_defaultlib.BU
+Compiling module xil_defaultlib.RU_default
+Compiling module xil_defaultlib.CONTR_default
+Compiling module xil_defaultlib.RU(depth=32)
+Compiling module xil_defaultlib.CONTR(depth=32)
+Compiling module xil_defaultlib.RU(depth=16)
+Compiling module xil_defaultlib.CONTR(depth=16)
+Compiling module xil_defaultlib.RU(depth=8)
+Compiling module xil_defaultlib.CONTR(depth=8)
+Compiling module xil_defaultlib.RU(depth=4)
+Compiling module xil_defaultlib.CONTR(depth=4)
+Compiling module xil_defaultlib.RU(depth=2)
+Compiling module xil_defaultlib.CONTR(depth=2)
+Compiling module xil_defaultlib.RU(depth=1)
+Compiling module xil_defaultlib.CONTR(depth=1)
+Compiling module xil_defaultlib.NTT
+Compiling module xil_defaultlib.PWM
+Compiling module xil_defaultlib.uncenter_coeff
+Compiling module xil_defaultlib.zero_strip
+Compiling module xil_defaultlib.Encoder_default
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.decomp_map1
+Compiling module xil_defaultlib.coeff_decomposer
+Compiling module xil_defaultlib.Decomposer_default
+Compiling module xil_defaultlib.makehint
+Compiling module xil_defaultlib.usehint
+Compiling module xil_defaultlib.Data_Path_default
+Compiling module xil_defaultlib.MLDSA
+Compiling module xil_defaultlib.MLDSA_AXI_Top
+Compiling module xil_defaultlib.MLDSA_AXI_Top_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot MLDSA_AXI_Top_tb_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:19 . Memory (MB): peak = 1502.219 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '19' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "MLDSA_AXI_Top_tb_behav -key {Behavioral:sim_1:Functional:MLDSA_AXI_Top_tb} -tclbatch {MLDSA_AXI_Top_tb.tcl} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage1.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA_AXI_Top_tb_behav.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage2.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage3.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage4.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage5.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage6.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage7.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage8.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage9.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage10.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage1.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA_AXI_Top_tb_behav.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage2.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage3.wcfg
+WARNING: Simulation object /MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/reset was not found in the design.
+WARNING: Simulation object /MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/reset was not found in the design.
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage4.wcfg
+WARNING: Simulation object /MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/reset was not found in the design.
+WARNING: Simulation object /MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/reset was not found in the design.
+WARNING: Simulation object /MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/reset was not found in the design.
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage5.wcfg
+WARNING: Simulation object /MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/reset was not found in the design.
+WARNING: Simulation object /MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/reset was not found in the design.
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage6.wcfg
+WARNING: Simulation object /MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/reset was not found in the design.
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage7.wcfg
+WARNING: Simulation object /MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/reset was not found in the design.
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage8.wcfg
+WARNING: Simulation object /MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/reset was not found in the design.
+WARNING: Simulation object /MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/usehint_/test1 was not found in the design.
+WARNING: Simulation object /MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/usehint_/test2 was not found in the design.
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage9.wcfg
+WARNING: Simulation object /MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/reset was not found in the design.
+WARNING: Simulation object /MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/reset was not found in the design.
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage10.wcfg
+WARNING: Simulation object /MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/reset was not found in the design.
+source MLDSA_AXI_Top_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_A.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_PWM.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_0.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_1.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_2.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_3.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_4.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_5.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_6.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_7.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_8.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_9.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_L.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_seed.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+xsim: Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 1563.914 ; gain = 48.125
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'MLDSA_AXI_Top_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:14 ; elapsed = 00:00:36 . Memory (MB): peak = 1563.914 ; gain = 70.855
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignGen_Stage19.wcfg}
+WARNING: Simulation object /MLDSA_tb/uut/controller_inst/clk was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/controller_inst/reset was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/controller_inst/ctrl_sign was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_4/addr_adder was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_4/last_addr was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_4/star_addr was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_4/triger was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_4/pause was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_4/clean was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_4/addr_en was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_4/addr_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_4/addr_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_4/data_valid was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_4/done was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_4/cnt_en was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/mode was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/in_a0 was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/in_a1 was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/in_a2 was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/in_b0 was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/in_b1 was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/in_b2 was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/out_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/out_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/ctrl_sign was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/addr_adder was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/last_addr was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/star_addr was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/triger was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/pause was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/clean was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/addr_en was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/addr_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/addr_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/data_valid was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/done was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/reject_hint was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/poly0_ie was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/poly1_ie was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/poly_valid_ie was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/poly_ready_i was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/hint_o was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/hint_valid_o was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/hint_ready_o was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_3/addr_adder was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_3/last_addr was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_3/star_addr was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_3/triger was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_3/pause was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_3/clean was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_3/addr_en was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_3/addr_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_3/addr_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_3/data_valid was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_3/done was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/sec_lvl was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/reject_hint was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/poly0_ie was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/poly1_ie was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/poly_valid_ie was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/poly_ready_i was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/hint_o was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/hint_valid_o was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/hint_ready_o was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/poly0_i was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/poly1_i was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/poly_valid_i was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/GAMMA2 was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/state was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/omega was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/poly_num was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/hint_addr was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/poly_hint_cnt was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/num_hints was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/ctr was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/rej was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/hint_needed was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/K was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/i was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/makehint_/k was not found in the design.
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 10 us
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_A.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_PWM.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_0.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_1.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_2.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_3.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_4.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_5.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_6.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_7.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_8.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_9.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_L.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_seed.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+current_wave_config {SignGen_Stage19.wcfg}
+SignGen_Stage19.wcfg
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/clk}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/resetn}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/ctrl_sign}} 
+current_wave_config {SignGen_Stage19.wcfg}
+SignGen_Stage19.wcfg
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/reject_hint}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/poly0_ie}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/poly1_ie}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/poly_valid_ie}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/poly_ready_i}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/hint_o}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/hint_valid_o}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/hint_ready_o}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/poly0_i}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/poly1_i}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/poly_valid_i}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/state}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/poly_num}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/hint_addr}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/poly_hint_cnt}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/num_hints}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/ctr}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/rej}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/hint_needed}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/i}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/k}} 
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 10 us
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_A.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_PWM.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_0.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_1.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_2.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_3.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_4.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_5.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_6.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_7.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_8.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_9.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_L.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MLDSA_AXI_Top_tb.DUT.MLDSA_.data_path_inst.DM_.temp_seed.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+run 800 us
+sig → 'c_tilde', Checking output 0: DUT = 4f2417e5f8b2575c, Golden = 4f2417e5f8b2575c
+sig → 'c_tilde', Checking output 1: DUT = 25479459c1aeec14, Golden = 25479459c1aeec14
+sig → 'c_tilde', Checking output 2: DUT = 3f2cfa08aaae6dbc, Golden = 3f2cfa08aaae6dbc
+sig → 'c_tilde', Checking output 3: DUT = 7743953e03a51c14, Golden = 7743953e03a51c14
+sig → 'z', Checking output 4: DUT = 2f763f1d21d6f733, Golden = 2f763f1d21d6f733
+sig → 'z', Checking output 5: DUT = 770954c4b067fc39, Golden = 770954c4b067fc39
+sig → 'z', Checking output 6: DUT = 352f86928b83d7b7, Golden = 352f86928b83d7b7
+sig → 'z', Checking output 7: DUT = d01d030ab8a5b8fe, Golden = d01d030ab8a5b8fe
+sig → 'z', Checking output 8: DUT = 8ca7d41db38570eb, Golden = 8ca7d41db38570eb
+sig → 'z', Checking output 9: DUT = e3397b8e91429f11, Golden = e3397b8e91429f11
+sig → 'z', Checking output 10: DUT = 53f2eff0acde4d5a, Golden = 53f2eff0acde4d5a
+sig → 'z', Checking output 11: DUT = ec5bb4d2cdaa5e66, Golden = ec5bb4d2cdaa5e66
+sig → 'z', Checking output 12: DUT = 8dc1dd726f3416a8, Golden = 8dc1dd726f3416a8
+sig → 'z', Checking output 13: DUT = a6cef2d05ce1ef39, Golden = a6cef2d05ce1ef39
+sig → 'z', Checking output 14: DUT = 539d3bc227c00c, Golden = 539d3bc227c00c
+sig → 'z', Checking output 15: DUT = 66d8eb98be8404bd, Golden = 66d8eb98be8404bd
+sig → 'z', Checking output 16: DUT = 40bc316d1f8af42d, Golden = 40bc316d1f8af42d
+sig → 'z', Checking output 17: DUT = 3dcd244002079a58, Golden = 3dcd244002079a58
+sig → 'z', Checking output 18: DUT = 1af6cc29c610747e, Golden = 1af6cc29c610747e
+sig → 'z', Checking output 19: DUT = 8eeac8f1d199ffe5, Golden = 8eeac8f1d199ffe5
+sig → 'z', Checking output 20: DUT = d80908a9cec7940e, Golden = d80908a9cec7940e
+sig → 'z', Checking output 21: DUT = 873881e895c7fd2d, Golden = 873881e895c7fd2d
+sig → 'z', Checking output 22: DUT = 3e5b9b7b4f9b6222, Golden = 3e5b9b7b4f9b6222
+sig → 'z', Checking output 23: DUT = 75aa5e06363a43ec, Golden = 75aa5e06363a43ec
+sig → 'z', Checking output 24: DUT = f904f929984a74d9, Golden = f904f929984a74d9
+sig → 'z', Checking output 25: DUT = 4d63ea16db0a965a, Golden = 4d63ea16db0a965a
+sig → 'z', Checking output 26: DUT = ba4835422b4b08eb, Golden = ba4835422b4b08eb
+sig → 'z', Checking output 27: DUT = 1dc891378d6aaf68, Golden = 1dc891378d6aaf68
+sig → 'z', Checking output 28: DUT = 73f03cf71c6b480f, Golden = 73f03cf71c6b480f
+sig → 'z', Checking output 29: DUT = 5dc7208264e91e55, Golden = 5dc7208264e91e55
+sig → 'z', Checking output 30: DUT = c7d59de1022b35c2, Golden = c7d59de1022b35c2
+sig → 'z', Checking output 31: DUT = 8bdbf69793ea9718, Golden = 8bdbf69793ea9718
+sig → 'z', Checking output 32: DUT = 68056488c2230765, Golden = 68056488c2230765
+sig → 'z', Checking output 33: DUT = 96d1b58b532f0b10, Golden = 96d1b58b532f0b10
+sig → 'z', Checking output 34: DUT = bc2bd1b04fecad84, Golden = bc2bd1b04fecad84
+sig → 'z', Checking output 35: DUT = a35b0d6c172d7969, Golden = a35b0d6c172d7969
+sig → 'z', Checking output 36: DUT = bb8c02e51c288e21, Golden = bb8c02e51c288e21
+sig → 'z', Checking output 37: DUT = 8fd2d878a04c0d38, Golden = 8fd2d878a04c0d38
+sig → 'z', Checking output 38: DUT = 3c94145e2e9fc57a, Golden = 3c94145e2e9fc57a
+sig → 'z', Checking output 39: DUT = ba8ac4e78dd4e20e, Golden = ba8ac4e78dd4e20e
+sig → 'z', Checking output 40: DUT = 3072806436ff984d, Golden = 3072806436ff984d
+sig → 'z', Checking output 41: DUT = 26da76f5ddf63574, Golden = 26da76f5ddf63574
+sig → 'z', Checking output 42: DUT = 7dd49e4118ecaef5, Golden = 7dd49e4118ecaef5
+sig → 'z', Checking output 43: DUT = 324c88cf47050838, Golden = 324c88cf47050838
+sig → 'z', Checking output 44: DUT = 9ad8a012400e4299, Golden = 9ad8a012400e4299
+sig → 'z', Checking output 45: DUT = c782e49c24db280, Golden = c782e49c24db280
+sig → 'z', Checking output 46: DUT = 8484e4185a448719, Golden = 8484e4185a448719
+sig → 'z', Checking output 47: DUT = d457870a0733ba03, Golden = d457870a0733ba03
+sig → 'z', Checking output 48: DUT = e8b1a977417cbb7e, Golden = e8b1a977417cbb7e
+sig → 'z', Checking output 49: DUT = fc3c4c9498a811e6, Golden = fc3c4c9498a811e6
+sig → 'z', Checking output 50: DUT = 804797cb0517079d, Golden = 804797cb0517079d
+sig → 'z', Checking output 51: DUT = 67143533c1b6f929, Golden = 67143533c1b6f929
+sig → 'z', Checking output 52: DUT = b94bb946283f86f5, Golden = b94bb946283f86f5
+sig → 'z', Checking output 53: DUT = 32804f81c9627b5c, Golden = 32804f81c9627b5c
+sig → 'z', Checking output 54: DUT = b365586176be3ac, Golden = b365586176be3ac
+sig → 'z', Checking output 55: DUT = e7fdec365f415b2b, Golden = e7fdec365f415b2b
+sig → 'z', Checking output 56: DUT = 61288b742a40fed3, Golden = 61288b742a40fed3
+sig → 'z', Checking output 57: DUT = 646919f2a0941e30, Golden = 646919f2a0941e30
+sig → 'z', Checking output 58: DUT = cab2f9899ac97123, Golden = cab2f9899ac97123
+sig → 'z', Checking output 59: DUT = 2b5919fe95a4a761, Golden = 2b5919fe95a4a761
+sig → 'z', Checking output 60: DUT = 3d4e12fb49ff5d44, Golden = 3d4e12fb49ff5d44
+sig → 'z', Checking output 61: DUT = ed64cd73264a6dad, Golden = ed64cd73264a6dad
+sig → 'z', Checking output 62: DUT = 4937806ebf14de6e, Golden = 4937806ebf14de6e
+sig → 'z', Checking output 63: DUT = 321d0ab46de3edc9, Golden = 321d0ab46de3edc9
+sig → 'z', Checking output 64: DUT = 45dff7c22bca5c00, Golden = 45dff7c22bca5c00
+sig → 'z', Checking output 65: DUT = 204e0b6fada85964, Golden = 204e0b6fada85964
+sig → 'z', Checking output 66: DUT = ba9b0bc76c9bec7a, Golden = ba9b0bc76c9bec7a
+sig → 'z', Checking output 67: DUT = 8577556be2543b34, Golden = 8577556be2543b34
+sig → 'z', Checking output 68: DUT = db630e0bddccc3aa, Golden = db630e0bddccc3aa
+sig → 'z', Checking output 69: DUT = 76963d18429c5672, Golden = 76963d18429c5672
+sig → 'z', Checking output 70: DUT = 4c451cddf9c28c9f, Golden = 4c451cddf9c28c9f
+sig → 'z', Checking output 71: DUT = 8af45efd53585b24, Golden = 8af45efd53585b24
+sig → 'z', Checking output 72: DUT = 1e2c74d8b6d82f9c, Golden = 1e2c74d8b6d82f9c
+sig → 'z', Checking output 73: DUT = dad05443b393d92a, Golden = dad05443b393d92a
+sig → 'z', Checking output 74: DUT = 4a82bd5ddd7217f3, Golden = 4a82bd5ddd7217f3
+sig → 'z', Checking output 75: DUT = c1b7262ec96aa149, Golden = c1b7262ec96aa149
+sig → 'z', Checking output 76: DUT = fd54a3aadc5e851d, Golden = fd54a3aadc5e851d
+sig → 'z', Checking output 77: DUT = 79046a929d7ab498, Golden = 79046a929d7ab498
+sig → 'z', Checking output 78: DUT = aa1ac9f48e9a6b8b, Golden = aa1ac9f48e9a6b8b
+sig → 'z', Checking output 79: DUT = a44703857dea794e, Golden = a44703857dea794e
+sig → 'z', Checking output 80: DUT = 3ff26759166a3c62, Golden = 3ff26759166a3c62
+sig → 'z', Checking output 81: DUT = b14b83770cef03e2, Golden = b14b83770cef03e2
+sig → 'z', Checking output 82: DUT = aa772e7b6e19e206, Golden = aa772e7b6e19e206
+sig → 'z', Checking output 83: DUT = c300ffe84dbdb113, Golden = c300ffe84dbdb113
+sig → 'z', Checking output 84: DUT = 9d536f9731b9d90, Golden = 9d536f9731b9d90
+sig → 'z', Checking output 85: DUT = 660832e36689f2ac, Golden = 660832e36689f2ac
+sig → 'z', Checking output 86: DUT = 2a8dbf99db4d88d, Golden = 2a8dbf99db4d88d
+sig → 'z', Checking output 87: DUT = 5cecb4cc82afaf87, Golden = 5cecb4cc82afaf87
+sig → 'z', Checking output 88: DUT = 11826b6db1c2cf27, Golden = 11826b6db1c2cf27
+sig → 'z', Checking output 89: DUT = b4a0ee678bff20f1, Golden = b4a0ee678bff20f1
+sig → 'z', Checking output 90: DUT = bf145ed330d2dc78, Golden = bf145ed330d2dc78
+sig → 'z', Checking output 91: DUT = 19f960d941368547, Golden = 19f960d941368547
+sig → 'z', Checking output 92: DUT = ae020415a6327f48, Golden = ae020415a6327f48
+sig → 'z', Checking output 93: DUT = 23af138c3bfb129b, Golden = 23af138c3bfb129b
+sig → 'z', Checking output 94: DUT = 8940dcdef95c9e61, Golden = 8940dcdef95c9e61
+sig → 'z', Checking output 95: DUT = 2c0c870bd3aa51fa, Golden = 2c0c870bd3aa51fa
+sig → 'z', Checking output 96: DUT = 75ac94d326664d23, Golden = 75ac94d326664d23
+sig → 'z', Checking output 97: DUT = 424cfd94f47d2190, Golden = 424cfd94f47d2190
+sig → 'z', Checking output 98: DUT = 907c68d4bc12e510, Golden = 907c68d4bc12e510
+sig → 'z', Checking output 99: DUT = a32cdd63664ca59, Golden = a32cdd63664ca59
+sig → 'z', Checking output 100: DUT = 67e322d03eedd3ca, Golden = 67e322d03eedd3ca
+sig → 'z', Checking output 101: DUT = fdec1f7948f8ae2a, Golden = fdec1f7948f8ae2a
+sig → 'z', Checking output 102: DUT = 469c70f1202cd643, Golden = 469c70f1202cd643
+sig → 'z', Checking output 103: DUT = d1988df1854e1593, Golden = d1988df1854e1593
+sig → 'z', Checking output 104: DUT = e55f943501d90cbf, Golden = e55f943501d90cbf
+sig → 'z', Checking output 105: DUT = 28d917a5d52a407, Golden = 28d917a5d52a407
+sig → 'z', Checking output 106: DUT = c5da063fa5b5a1f9, Golden = c5da063fa5b5a1f9
+sig → 'z', Checking output 107: DUT = b9cd0a6971429726, Golden = b9cd0a6971429726
+sig → 'z', Checking output 108: DUT = bd4a2a881fbd0d7, Golden = bd4a2a881fbd0d7
+sig → 'z', Checking output 109: DUT = 3ece2f64b67bee42, Golden = 3ece2f64b67bee42
+sig → 'z', Checking output 110: DUT = 70fb288160cecf0c, Golden = 70fb288160cecf0c
+sig → 'z', Checking output 111: DUT = 31af35184e6e833b, Golden = 31af35184e6e833b
+sig → 'z', Checking output 112: DUT = e9e288a3f87ecbc0, Golden = e9e288a3f87ecbc0
+sig → 'z', Checking output 113: DUT = 533569986f4bf4df, Golden = 533569986f4bf4df
+sig → 'z', Checking output 114: DUT = c6d04574e0f666a1, Golden = c6d04574e0f666a1
+sig → 'z', Checking output 115: DUT = 21b5ca3993beb461, Golden = 21b5ca3993beb461
+sig → 'z', Checking output 116: DUT = 2560887b9b4a645d, Golden = 2560887b9b4a645d
+sig → 'z', Checking output 117: DUT = 90f795ea6bb77818, Golden = 90f795ea6bb77818
+sig → 'z', Checking output 118: DUT = badee178ae66b743, Golden = badee178ae66b743
+sig → 'z', Checking output 119: DUT = ad4212bbf4b770f, Golden = ad4212bbf4b770f
+sig → 'z', Checking output 120: DUT = 6c73a9863e1a5e7a, Golden = 6c73a9863e1a5e7a
+sig → 'z', Checking output 121: DUT = c7124c7c48707f65, Golden = c7124c7c48707f65
+sig → 'z', Checking output 122: DUT = 7d0ca1f5676c0a5f, Golden = 7d0ca1f5676c0a5f
+sig → 'z', Checking output 123: DUT = d536b945de3d54a2, Golden = d536b945de3d54a2
+sig → 'z', Checking output 124: DUT = cc8ac8fa6eb38b5f, Golden = cc8ac8fa6eb38b5f
+sig → 'z', Checking output 125: DUT = bd5849d3185b5cfa, Golden = bd5849d3185b5cfa
+sig → 'z', Checking output 126: DUT = 98aa09a23c2c8933, Golden = 98aa09a23c2c8933
+sig → 'z', Checking output 127: DUT = c3697f11efa7952, Golden = c3697f11efa7952
+sig → 'z', Checking output 128: DUT = a15866454f79e170, Golden = a15866454f79e170
+sig → 'z', Checking output 129: DUT = c703110c7c7767e4, Golden = c703110c7c7767e4
+sig → 'z', Checking output 130: DUT = ad676db29b003a11, Golden = ad676db29b003a11
+sig → 'z', Checking output 131: DUT = f8952901b5826274, Golden = f8952901b5826274
+sig → 'z', Checking output 132: DUT = 53f5315e0983ccf9, Golden = 53f5315e0983ccf9
+sig → 'z', Checking output 133: DUT = 34bb7a39d629c5c7, Golden = 34bb7a39d629c5c7
+sig → 'z', Checking output 134: DUT = 665319bfb0ed81a3, Golden = 665319bfb0ed81a3
+sig → 'z', Checking output 135: DUT = ad4f6842e8f27928, Golden = ad4f6842e8f27928
+sig → 'z', Checking output 136: DUT = 9283276632936ca7, Golden = 9283276632936ca7
+sig → 'z', Checking output 137: DUT = bb3e9057b0504462, Golden = bb3e9057b0504462
+sig → 'z', Checking output 138: DUT = 4673674be9dafba3, Golden = 4673674be9dafba3
+sig → 'z', Checking output 139: DUT = 22cefee4a7f7b2be, Golden = 22cefee4a7f7b2be
+sig → 'z', Checking output 140: DUT = 653b79270a84ea94, Golden = 653b79270a84ea94
+sig → 'z', Checking output 141: DUT = 81a088e18e7b7464, Golden = 81a088e18e7b7464
+sig → 'z', Checking output 142: DUT = b7f4a3b3d3086fdd, Golden = b7f4a3b3d3086fdd
+sig → 'z', Checking output 143: DUT = ff4c940ea4e26cd8, Golden = ff4c940ea4e26cd8
+sig → 'z', Checking output 144: DUT = 1af7bd0ac157bcd2, Golden = 1af7bd0ac157bcd2
+sig → 'z', Checking output 145: DUT = 15e08dc3b97fd821, Golden = 15e08dc3b97fd821
+sig → 'z', Checking output 146: DUT = bbe3389a7568408a, Golden = bbe3389a7568408a
+sig → 'z', Checking output 147: DUT = ad7f6668140eb0b4, Golden = ad7f6668140eb0b4
+sig → 'z', Checking output 148: DUT = 3addbf4db3aad0a5, Golden = 3addbf4db3aad0a5
+sig → 'z', Checking output 149: DUT = ac7b2ae51a69d7c, Golden = ac7b2ae51a69d7c
+sig → 'z', Checking output 150: DUT = 4d18d2f692eac98f, Golden = 4d18d2f692eac98f
+sig → 'z', Checking output 151: DUT = c82259255fddb77e, Golden = c82259255fddb77e
+sig → 'z', Checking output 152: DUT = 96dadae05db6c836, Golden = 96dadae05db6c836
+sig → 'z', Checking output 153: DUT = 4d4cdcd6c90fecb6, Golden = 4d4cdcd6c90fecb6
+sig → 'z', Checking output 154: DUT = fc5127e277ba862b, Golden = fc5127e277ba862b
+sig → 'z', Checking output 155: DUT = 9460a6dac3e70d7e, Golden = 9460a6dac3e70d7e
+sig → 'z', Checking output 156: DUT = 116097d8e88426d4, Golden = 116097d8e88426d4
+sig → 'z', Checking output 157: DUT = 26f1d7f0adc9e263, Golden = 26f1d7f0adc9e263
+sig → 'z', Checking output 158: DUT = 11ac74e9a49c21c5, Golden = 11ac74e9a49c21c5
+sig → 'z', Checking output 159: DUT = 99b970994b190944, Golden = 99b970994b190944
+sig → 'z', Checking output 160: DUT = ec2115135b1a3229, Golden = ec2115135b1a3229
+sig → 'z', Checking output 161: DUT = 757eedafc76bb3f2, Golden = 757eedafc76bb3f2
+sig → 'z', Checking output 162: DUT = db6cb0fbe464cecd, Golden = db6cb0fbe464cecd
+sig → 'z', Checking output 163: DUT = 208a36af579f2482, Golden = 208a36af579f2482
+sig → 'z', Checking output 164: DUT = c4a90df85df964c4, Golden = c4a90df85df964c4
+sig → 'z', Checking output 165: DUT = 36f6fd50c31ad275, Golden = 36f6fd50c31ad275
+sig → 'z', Checking output 166: DUT = 811fb033b00d1f0b, Golden = 811fb033b00d1f0b
+sig → 'z', Checking output 167: DUT = 36e0658f767a8053, Golden = 36e0658f767a8053
+sig → 'z', Checking output 168: DUT = 4a6baea7e32243a6, Golden = 4a6baea7e32243a6
+sig → 'z', Checking output 169: DUT = 652243d70cd1083d, Golden = 652243d70cd1083d
+sig → 'z', Checking output 170: DUT = 2c4cded8142c6403, Golden = 2c4cded8142c6403
+sig → 'z', Checking output 171: DUT = e55c8516d6de0fe0, Golden = e55c8516d6de0fe0
+sig → 'z', Checking output 172: DUT = 13974f15a7d94d35, Golden = 13974f15a7d94d35
+sig → 'z', Checking output 173: DUT = 72be1000d0145e4d, Golden = 72be1000d0145e4d
+sig → 'z', Checking output 174: DUT = 24bd2ce55d21597e, Golden = 24bd2ce55d21597e
+sig → 'z', Checking output 175: DUT = ff5f084b436440aa, Golden = ff5f084b436440aa
+sig → 'z', Checking output 176: DUT = 793a62ef605dc8be, Golden = 793a62ef605dc8be
+sig → 'z', Checking output 177: DUT = 3283ac90014c5fee, Golden = 3283ac90014c5fee
+sig → 'z', Checking output 178: DUT = a0dd5f7570f25a7, Golden = a0dd5f7570f25a7
+sig → 'z', Checking output 179: DUT = 4ee3dd2d5d22cd76, Golden = 4ee3dd2d5d22cd76
+sig → 'z', Checking output 180: DUT = 299179da62f30cb4, Golden = 299179da62f30cb4
+sig → 'z', Checking output 181: DUT = b8e88ce2060efcb7, Golden = b8e88ce2060efcb7
+sig → 'z', Checking output 182: DUT = f2541853b90540dd, Golden = f2541853b90540dd
+sig → 'z', Checking output 183: DUT = b64e45e330f8692c, Golden = b64e45e330f8692c
+sig → 'z', Checking output 184: DUT = 6897a2ad4dc9ce0f, Golden = 6897a2ad4dc9ce0f
+sig → 'z', Checking output 185: DUT = 7b3848cd4cb7a906, Golden = 7b3848cd4cb7a906
+sig → 'z', Checking output 186: DUT = 66e9f7828cf06af1, Golden = 66e9f7828cf06af1
+sig → 'z', Checking output 187: DUT = 8556b3b9868d0e50, Golden = 8556b3b9868d0e50
+sig → 'z', Checking output 188: DUT = cfb6140402f860b, Golden = cfb6140402f860b
+sig → 'z', Checking output 189: DUT = 6b22d8486d1bd404, Golden = 6b22d8486d1bd404
+sig → 'z', Checking output 190: DUT = 8bb63a822df6d13c, Golden = 8bb63a822df6d13c
+sig → 'z', Checking output 191: DUT = fdde83db0f361e37, Golden = fdde83db0f361e37
+sig → 'z', Checking output 192: DUT = e31217f9e731b0fb, Golden = e31217f9e731b0fb
+sig → 'z', Checking output 193: DUT = 289ce172e8ddfe10, Golden = 289ce172e8ddfe10
+sig → 'z', Checking output 194: DUT = 2eced2ff95f617c6, Golden = 2eced2ff95f617c6
+sig → 'z', Checking output 195: DUT = 66fbb831faf1fe30, Golden = 66fbb831faf1fe30
+sig → 'z', Checking output 196: DUT = c849e42d3f878468, Golden = c849e42d3f878468
+sig → 'z', Checking output 197: DUT = 9e7a25d70a4395a3, Golden = 9e7a25d70a4395a3
+sig → 'z', Checking output 198: DUT = 6f2bf196380a3bf9, Golden = 6f2bf196380a3bf9
+sig → 'z', Checking output 199: DUT = e27196d726461940, Golden = e27196d726461940
+sig → 'z', Checking output 200: DUT = 49251331866c894, Golden = 49251331866c894
+sig → 'z', Checking output 201: DUT = f7871573d5425a54, Golden = f7871573d5425a54
+sig → 'z', Checking output 202: DUT = 5ea53179ca752c64, Golden = 5ea53179ca752c64
+sig → 'z', Checking output 203: DUT = efeaeeddd97a21e7, Golden = efeaeeddd97a21e7
+sig → 'z', Checking output 204: DUT = d2c4f980dc2d14ce, Golden = d2c4f980dc2d14ce
+sig → 'z', Checking output 205: DUT = be13bff40362ea2a, Golden = be13bff40362ea2a
+sig → 'z', Checking output 206: DUT = 3bc5f6b23e76ef0a, Golden = 3bc5f6b23e76ef0a
+sig → 'z', Checking output 207: DUT = 7f7d13756165fcf4, Golden = 7f7d13756165fcf4
+sig → 'z', Checking output 208: DUT = c6a5c3c17af82671, Golden = c6a5c3c17af82671
+sig → 'z', Checking output 209: DUT = 8e15bc9ccfd0893e, Golden = 8e15bc9ccfd0893e
+sig → 'z', Checking output 210: DUT = ba2ce21b22cea7c9, Golden = ba2ce21b22cea7c9
+sig → 'z', Checking output 211: DUT = 7a27d35bacf97b85, Golden = 7a27d35bacf97b85
+sig → 'z', Checking output 212: DUT = ac90d84b5c1e447c, Golden = ac90d84b5c1e447c
+sig → 'z', Checking output 213: DUT = de38d7f549654f20, Golden = de38d7f549654f20
+sig → 'z', Checking output 214: DUT = 4437f8d2e8ac2f4b, Golden = 4437f8d2e8ac2f4b
+sig → 'z', Checking output 215: DUT = cfa2ad050d54890, Golden = cfa2ad050d54890
+sig → 'z', Checking output 216: DUT = d97a412d2d4f43e4, Golden = d97a412d2d4f43e4
+sig → 'z', Checking output 217: DUT = 6dd7872568c07593, Golden = 6dd7872568c07593
+sig → 'z', Checking output 218: DUT = 608e60efd93e8348, Golden = 608e60efd93e8348
+sig → 'z', Checking output 219: DUT = 8673b85b2caf90c, Golden = 8673b85b2caf90c
+sig → 'z', Checking output 220: DUT = 11a9d903d6cd6a1, Golden = 11a9d903d6cd6a1
+sig → 'z', Checking output 221: DUT = bf54da7eb4939ca2, Golden = bf54da7eb4939ca2
+sig → 'z', Checking output 222: DUT = 9c82c4392053e32d, Golden = 9c82c4392053e32d
+sig → 'z', Checking output 223: DUT = bafa0417f84bbc14, Golden = bafa0417f84bbc14
+sig → 'z', Checking output 224: DUT = cff2dd520f259bb3, Golden = cff2dd520f259bb3
+sig → 'z', Checking output 225: DUT = f257051ca3011103, Golden = f257051ca3011103
+sig → 'z', Checking output 226: DUT = 442576bfd8cdbf15, Golden = 442576bfd8cdbf15
+sig → 'z', Checking output 227: DUT = fa339e0ad7012b5d, Golden = fa339e0ad7012b5d
+sig → 'z', Checking output 228: DUT = 6e4de5a425a0f99c, Golden = 6e4de5a425a0f99c
+sig → 'z', Checking output 229: DUT = a668b3333e68d38d, Golden = a668b3333e68d38d
+sig → 'z', Checking output 230: DUT = 96511365f40f3626, Golden = 96511365f40f3626
+sig → 'z', Checking output 231: DUT = 6c70b0299d11c33c, Golden = 6c70b0299d11c33c
+sig → 'z', Checking output 232: DUT = 9177ddc2f80c76d9, Golden = 9177ddc2f80c76d9
+sig → 'z', Checking output 233: DUT = b4bb4d5f52b008a1, Golden = b4bb4d5f52b008a1
+sig → 'z', Checking output 234: DUT = 234de60fb8b0acd7, Golden = 234de60fb8b0acd7
+sig → 'z', Checking output 235: DUT = 9493103919874982, Golden = 9493103919874982
+sig → 'z', Checking output 236: DUT = 223a627cc7d28ab3, Golden = 223a627cc7d28ab3
+sig → 'z', Checking output 237: DUT = fec4357efadb3d5e, Golden = fec4357efadb3d5e
+sig → 'z', Checking output 238: DUT = 95c26e9e47ef8d0, Golden = 95c26e9e47ef8d0
+sig → 'z', Checking output 239: DUT = 8192f8dce477b04e, Golden = 8192f8dce477b04e
+sig → 'z', Checking output 240: DUT = 5ea37bb766205f13, Golden = 5ea37bb766205f13
+sig → 'z', Checking output 241: DUT = d2907169fe572e77, Golden = d2907169fe572e77
+sig → 'z', Checking output 242: DUT = f746d5b818336ebb, Golden = f746d5b818336ebb
+sig → 'z', Checking output 243: DUT = c6b6d139a1e8f970, Golden = c6b6d139a1e8f970
+sig → 'z', Checking output 244: DUT = 46425d03f7188212, Golden = 46425d03f7188212
+sig → 'z', Checking output 245: DUT = 2b76386976d85e0a, Golden = 2b76386976d85e0a
+sig → 'z', Checking output 246: DUT = 868a375ab3951166, Golden = 868a375ab3951166
+sig → 'z', Checking output 247: DUT = 6436c85c70f1bc00, Golden = 6436c85c70f1bc00
+sig → 'z', Checking output 248: DUT = 499df1ed4961f495, Golden = 499df1ed4961f495
+sig → 'z', Checking output 249: DUT = 628759dffe4bb074, Golden = 628759dffe4bb074
+sig → 'z', Checking output 250: DUT = fb0381397da1a351, Golden = fb0381397da1a351
+sig → 'z', Checking output 251: DUT = 158a12d0fc7899e9, Golden = 158a12d0fc7899e9
+sig → 'z', Checking output 252: DUT = a70e9ba93d8c1eb1, Golden = a70e9ba93d8c1eb1
+sig → 'z', Checking output 253: DUT = c13a2d2c2d00e3d1, Golden = c13a2d2c2d00e3d1
+sig → 'z', Checking output 254: DUT = c9dccc3d50fbccae, Golden = c9dccc3d50fbccae
+sig → 'z', Checking output 255: DUT = ad0f1807f1d41ff7, Golden = ad0f1807f1d41ff7
+sig → 'z', Checking output 256: DUT = c82365eec89436e, Golden = c82365eec89436e
+sig → 'z', Checking output 257: DUT = b430ccf6d596934, Golden = b430ccf6d596934
+sig → 'z', Checking output 258: DUT = 2ba251fe921247d0, Golden = 2ba251fe921247d0
+sig → 'z', Checking output 259: DUT = ee48846b0c65eeb7, Golden = ee48846b0c65eeb7
+sig → 'z', Checking output 260: DUT = ab3164372f0160d2, Golden = ab3164372f0160d2
+sig → 'z', Checking output 261: DUT = 2131622e106230d4, Golden = 2131622e106230d4
+sig → 'z', Checking output 262: DUT = 528caa8a34f62ae3, Golden = 528caa8a34f62ae3
+sig → 'z', Checking output 263: DUT = c0a7ef0e5dd70a4e, Golden = c0a7ef0e5dd70a4e
+sig → 'z', Checking output 264: DUT = 9ba023d5509ed45, Golden = 9ba023d5509ed45
+sig → 'z', Checking output 265: DUT = 90722c70bb292646, Golden = 90722c70bb292646
+sig → 'z', Checking output 266: DUT = 7e7a6d5078f8963e, Golden = 7e7a6d5078f8963e
+sig → 'z', Checking output 267: DUT = e94a428dbfbff411, Golden = e94a428dbfbff411
+sig → 'z', Checking output 268: DUT = 8702edb895db143d, Golden = 8702edb895db143d
+sig → 'z', Checking output 269: DUT = 72287c69a08426a7, Golden = 72287c69a08426a7
+sig → 'z', Checking output 270: DUT = 5d8d683761ad10ac, Golden = 5d8d683761ad10ac
+sig → 'z', Checking output 271: DUT = 3f4889022e39fbef, Golden = 3f4889022e39fbef
+sig → 'z', Checking output 272: DUT = f334716ab757fe14, Golden = f334716ab757fe14
+sig → 'z', Checking output 273: DUT = 6d18cccf73fda46a, Golden = 6d18cccf73fda46a
+sig → 'z', Checking output 274: DUT = 8e5f4fa6d09e1c15, Golden = 8e5f4fa6d09e1c15
+sig → 'z', Checking output 275: DUT = 4609e51e36695bd0, Golden = 4609e51e36695bd0
+sig → 'z', Checking output 276: DUT = d898b8ce44d1fa30, Golden = d898b8ce44d1fa30
+sig → 'z', Checking output 277: DUT = d1cb74f02252be5a, Golden = d1cb74f02252be5a
+sig → 'z', Checking output 278: DUT = 158de34824379484, Golden = 158de34824379484
+sig → 'z', Checking output 279: DUT = be18fcfd1f5c640c, Golden = be18fcfd1f5c640c
+sig → 'z', Checking output 280: DUT = 7cf7249708d75650, Golden = 7cf7249708d75650
+sig → 'z', Checking output 281: DUT = 6ae60bb15c878873, Golden = 6ae60bb15c878873
+sig → 'z', Checking output 282: DUT = fc8a6abef4af0285, Golden = fc8a6abef4af0285
+sig → 'z', Checking output 283: DUT = df5f5540534310ed, Golden = df5f5540534310ed
+sig → 'z', Checking output 284: DUT = 7d0b05493e8c955d, Golden = 7d0b05493e8c955d
+sig → 'z', Checking output 285: DUT = 8aa719b24d178804, Golden = 8aa719b24d178804
+sig → 'z', Checking output 286: DUT = f33971cc5c4b0f6, Golden = f33971cc5c4b0f6
+sig → 'z', Checking output 287: DUT = f0186a4bb6f03b7e, Golden = f0186a4bb6f03b7e
+sig → 'z', Checking output 288: DUT = e64f112ca5b38fb5, Golden = e64f112ca5b38fb5
+sig → 'z', Checking output 289: DUT = 2192703db8ee722d, Golden = 2192703db8ee722d
+sig → 'z', Checking output 290: DUT = 9a4b5282185f34b6, Golden = 9a4b5282185f34b6
+sig → 'z', Checking output 291: DUT = a3e89808ce99b71, Golden = a3e89808ce99b71
+sig → 'h', Checking output 292: DUT = a58d626152210d06, Golden = a58d626152210d06
+sig → 'h', Checking output 293: DUT = 2c1101f5e3d9b7aa, Golden = 2c1101f5e3d9b7aa
+sig → 'h', Checking output 294: DUT = cdcac9968973453c, Golden = cdcac9968973453c
+sig → 'h', Checking output 295: DUT = 363530291710d2ce, Golden = 363530291710d2ce
+sig → 'h', Checking output 296: DUT = 908e5f55544b4a44, Golden = 908e5f55544b4a44
+sig → 'h', Checking output 297: DUT = dfd4bbb6b5979392, Golden = dfd4bbb6b5979392
+sig → 'h', Checking output 298: DUT = 815e51362a251af1, Golden = 815e51362a251af1
+sig → 'h', Checking output 299: DUT = e39a86, Golden = e39a86
+sig → 'h', Checking output 300: DUT = 0, Golden = 0
+sig → 'h', Checking output 301: DUT = 0, Golden = 0
+sig → 'h', Checking output 302: DUT = 3b311a0d, Golden = 3b311a0d
+SignGen Ouput Data: pk, sk All PASS
+$finish called at time : 534565 ns : File "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.srcs/sim_1/imports/MLDSA/MLDSA_tb.v" Line 526
+run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1728.988 ; gain = 98.008
+current_wave_config {SignGen_Stage19.wcfg}
+SignGen_Stage19.wcfg
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Decomp_/valid_i}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Decomp_/ready_i}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Decomp_/di}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Decomp_/doa}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Decomp_/dob}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Decomp_/valid_o}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Decomp_/ready_o}} 
+current_wave_config {SignGen_Stage19.wcfg}
+SignGen_Stage19.wcfg
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/mode}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/i_valid}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/i_ready}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/o_ready}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/o_valid}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/done}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_a0}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_a1}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_a2}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/out_a}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/addr_a}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_b0}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_b1}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_b2}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/out_b}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/addr_b}} 
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignGen_Stage17.wcfg}
+WARNING: Simulation object /MLDSA_tb/uut/controller_inst/clk was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/controller_inst/reset was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/controller_inst/ctrl_sign was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/controller_inst/ctrl_sign[5] was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/controller_inst/ctrl_sign[4] was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/controller_inst/ctrl_sign[3] was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/controller_inst/ctrl_sign[2] was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/controller_inst/ctrl_sign[1] was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/controller_inst/ctrl_sign[0] was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/addr_adder was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/last_addr was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/star_addr was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/triger was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/pause was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/clean was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/addr_en was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/addr_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/addr_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/data_valid was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/done was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/cnt_en was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/cnt was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_0_addr_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_0_addr_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_0_en_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_0_en_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_0_q_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_0_q_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/mode was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/i_valid was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/i_ready was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/NTT_in_u was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/NTT_in_d was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/NTT_out_u was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/NTT_out_d was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/NTT_addr_u was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/NTT_addr_d was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/o_valid was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/o_ready was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/done was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_1_data_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_1_data_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_1_addr_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_1_addr_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_1_en_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_1_en_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_1_we_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_1_we_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/ctrl_sign was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_4/addr_adder was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_4/last_addr was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_4/star_addr was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_4/triger was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_4/pause was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_4/clean was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_4/addr_en was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_4/addr_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_4/addr_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_4/data_valid was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_4/done was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_6_addr_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_6_addr_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_6_en_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_6_en_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_6_q_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_6_q_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_9_addr_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_9_addr_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_9_en_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_9_en_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_9_q_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_9_q_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/mode was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/i_valid was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/i_ready was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/o_ready was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/o_valid was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/done was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/in_a0 was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/in_a1 was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/in_a2 was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/out_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/addr_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/in_b0 was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/in_b1 was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/in_b2 was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/out_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/PWM_/addr_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_2_data_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_2_data_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_2_addr_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_2_addr_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_2_en_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_2_en_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_2_we_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_2_we_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/z_fail was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/r0_fail was not found in the design.
+current_wave_config {SignGen_Stage17.wcfg}
+SignGen_Stage17.wcfg
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/i_valid}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/i_ready}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_in_u}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_in_d}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_out_u}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_out_d}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_addr_u}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_addr_d}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/o_valid}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/o_ready}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/done}} 
+current_wave_config {SignGen_Stage17.wcfg}
+SignGen_Stage17.wcfg
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/mode}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/i_valid}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/i_ready}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/o_ready}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/o_valid}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/done}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_a0}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_a1}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_a2}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/out_a}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/addr_a}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_b0}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_b1}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_b2}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/out_b}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/addr_b}} 
+current_wave_config {SignGen_Stage17.wcfg}
+SignGen_Stage17.wcfg
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/clk}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/resetn}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/ctrl_sign}} 
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignGen_Stage12.wcfg}
+WARNING: Simulation object /MLDSA_tb/clk was not found in the design.
+WARNING: Simulation object /MLDSA_tb/reset was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/controller_inst/ctrl_sign was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/addr_adder was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/last_addr was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/star_addr was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/triger was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/pause was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/clean was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/addr_en was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/addr_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/addr_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/data_valid was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/AG_2/done was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_3_addr_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_3_addr_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_3_en_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_3_en_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_3_q_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_3_q_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/mode was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/i_valid was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/i_ready was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/NTT_in_u was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/NTT_in_d was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/NTT_out_u was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/NTT_out_d was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/NTT_addr_u was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/NTT_addr_d was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/o_valid was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/o_ready was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/NTT_/done was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_6_data_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_6_data_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_6_addr_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_6_addr_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_6_en_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_6_en_b was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_6_we_a was not found in the design.
+WARNING: Simulation object /MLDSA_tb/uut/data_path_inst/DM_/temp_6_we_b was not found in the design.
+current_wave_config {SignGen_Stage12.wcfg}
+SignGen_Stage12.wcfg
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/mode}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/i_valid}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/i_ready}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_in_u}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_in_d}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_out_u}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_out_d}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_addr_u}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_addr_d}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/o_valid}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/o_ready}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/done}} 
+current_wave_config {SignGen_Stage12.wcfg}
+SignGen_Stage12.wcfg
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/clk}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/resetn}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/ctrl_sign}} 
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignGen_Stage12.wcfg}
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignGen_Stage17.wcfg}
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignGen_Stage19.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue May 20 19:36:31 2025...

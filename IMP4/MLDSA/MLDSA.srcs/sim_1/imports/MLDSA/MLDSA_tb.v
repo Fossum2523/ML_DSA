@@ -1,8 +1,8 @@
 
 `timescale 1ns / 1ps
 // `define KEYGEN_TEST
-`define SIGNGEN_TEST
-// `define SIGNVER_TEST
+//`define SIGNGEN_TEST
+ `define SIGNVER_TEST
 module MLDSA_AXI_Top_tb;
 
     parameter CLK_PERIOD = 10; // 100MHz
@@ -246,71 +246,71 @@ module MLDSA_AXI_Top_tb;
             /***------------------------------------input------------------------------------***/
 
             /***------------------------------------output------------------------------------***/
-            //pk, sk → "p"
+            //pk, sk ??? "p"
             pk_index = 0;
             while(pk_index < 4)begin
                 if(m_axis_tvalid)begin
-                    $display("pk, sk → 'p', Checking output %0d: DUT = %0h, Golden = %0h", pk_index, m_axis_tdata, pk_golden_data[pk_index]);
+                    $display("pk, sk ??? 'p', Checking output %0d: DUT = %0h, Golden = %0h", pk_index, m_axis_tdata, pk_golden_data[pk_index]);
                     pk_index = pk_index + 1;
                 end
                 @(posedge clk);
             end
 
-            //sk → "K"
+            //sk ??? "K"
             sk_index = 4;
             while(sk_index < 8)begin
                 if(m_axis_tvalid)begin
-                    $display("sk → 'K', Checking output %0d: DUT = %0h, Golden = %0h", sk_index, m_axis_tdata, sk_golden_data[sk_index]);
+                    $display("sk ??? 'K', Checking output %0d: DUT = %0h, Golden = %0h", sk_index, m_axis_tdata, sk_golden_data[sk_index]);
                     sk_index = sk_index + 1;
                 end
                 @(posedge clk);
             end
 
-            //sk → "s1"
+            //sk ??? "s1"
             sk_index = 16;
             while(sk_index < 64)begin
                 if(m_axis_tvalid)begin
-                    $display("sk → 's1', Checking output %0d: DUT = %0h, Golden = %0h", sk_index, m_axis_tdata, sk_golden_data[sk_index]);
+                    $display("sk ??? 's1', Checking output %0d: DUT = %0h, Golden = %0h", sk_index, m_axis_tdata, sk_golden_data[sk_index]);
                     sk_index = sk_index + 1;
                 end
                 @(posedge clk);
             end
 
-            //sk → "s2"
+            //sk ??? "s2"
             sk_index = 64;
             while(sk_index < 112)begin
                 if(m_axis_tvalid)begin
-                    $display("sk → 's2', Checking output %0d: DUT = %0h, Golden = %0h", sk_index, m_axis_tdata, sk_golden_data[sk_index]);
+                    $display("sk ??? 's2', Checking output %0d: DUT = %0h, Golden = %0h", sk_index, m_axis_tdata, sk_golden_data[sk_index]);
                     sk_index = sk_index + 1;
                 end
                 @(posedge clk);
             end
 
-            //pk → "t1"
+            //pk ??? "t1"
             pk_index = 4;
             while(pk_index < 164)begin
                 if(m_axis_tvalid)begin
-                    $display("pk → 't1', Checking output %0d: DUT = %0h, Golden = %0h", pk_index, m_axis_tdata, pk_golden_data[pk_index]);
+                    $display("pk ??? 't1', Checking output %0d: DUT = %0h, Golden = %0h", pk_index, m_axis_tdata, pk_golden_data[pk_index]);
                     pk_index = pk_index + 1;
                 end
                 @(posedge clk);
             end
 
-            //sk → "tr"
+            //sk ??? "tr"
             sk_index = 8;
             while(sk_index < 16)begin
                 if(m_axis_tvalid)begin
-                    $display("sk → 'tr', Checking output %0d: DUT = %0h, Golden = %0h", sk_index, m_axis_tdata, sk_golden_data[sk_index]);
+                    $display("sk ??? 'tr', Checking output %0d: DUT = %0h, Golden = %0h", sk_index, m_axis_tdata, sk_golden_data[sk_index]);
                     sk_index = sk_index + 1;
                 end
                 @(posedge clk);
             end
 
-            //sk → "t0"
+            //sk ??? "t0"
             sk_index = 112;
             while(sk_index < 320)begin
                 if(m_axis_tvalid)begin
-                    $display("sk → 't0', Checking output %0d: DUT = %0h, Golden = %0h", sk_index, m_axis_tdata, sk_golden_data[sk_index]);
+                    $display("sk ??? 't0', Checking output %0d: DUT = %0h, Golden = %0h", sk_index, m_axis_tdata, sk_golden_data[sk_index]);
                     sk_index = sk_index + 1;
                 end
                 @(posedge clk);
@@ -490,31 +490,31 @@ module MLDSA_AXI_Top_tb;
         initial begin
             m_axis_tready = 1;
 
-            //sig → "c_tilde"
+            //sig ??? "c_tilde"
             signature_index = 0;
             while(signature_index < 4)begin
                 if(m_axis_tvalid)begin
-                    $display("sig → 'c_tilde', Checking output %0d: DUT = %0h, Golden = %0h", signature_index, m_axis_tdata, signature_golden_data[signature_index]);
+                    $display("sig ??? 'c_tilde', Checking output %0d: DUT = %0h, Golden = %0h", signature_index, m_axis_tdata, signature_golden_data[signature_index]);
                     signature_index = signature_index + 1;
                 end
                 @(posedge clk);
             end
 
-            //sig → "z"
+            //sig ??? "z"
             signature_index = 4;
             while(signature_index < 292)begin
                 if(m_axis_tvalid)begin
-                    $display("sig → 'z', Checking output %0d: DUT = %0h, Golden = %0h", signature_index, m_axis_tdata, signature_golden_data[signature_index]);
+                    $display("sig ??? 'z', Checking output %0d: DUT = %0h, Golden = %0h", signature_index, m_axis_tdata, signature_golden_data[signature_index]);
                     signature_index = signature_index + 1;
                 end
                 @(posedge clk);
             end
 
-            //sig → "h"
+            //sig ??? "h"
             signature_index = 292;
             while(signature_index < 303)begin
                 if(m_axis_tvalid)begin
-                    $display("sig → 'h', Checking output %0d: DUT = %0h, Golden = %0h", signature_index, m_axis_tdata, signature_golden_data[signature_index]);
+                    $display("sig ??? 'h', Checking output %0d: DUT = %0h, Golden = %0h", signature_index, m_axis_tdata, signature_golden_data[signature_index]);
                     signature_index = signature_index + 1;
                 end
                 @(posedge clk);

@@ -1,0 +1,59 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Tue May 20 14:27:55 2025
+# Process ID: 2604
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5880 C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP4\MLDSA\MLDSA.xpr
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/vivado.log
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA\vivado.jou
+# Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage1.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/MLDSA_AXI_Top_tb_behav.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage2.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage3.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage4.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage5.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage6.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage7.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage8.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage9.wcfg
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage10.wcfg
+source MLDSA_AXI_Top_tb.tcl
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignGen_Stage19.wcfg}
+restart
+run 10 us
+current_wave_config {SignGen_Stage19.wcfg}
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/clk}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/resetn}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/ctrl_sign}} 
+current_wave_config {SignGen_Stage19.wcfg}
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/reject_hint}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/poly0_ie}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/poly1_ie}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/poly_valid_ie}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/poly_ready_i}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/hint_o}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/hint_valid_o}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/hint_ready_o}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/poly0_i}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/poly1_i}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/poly_valid_i}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/state}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/poly_num}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/hint_addr}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/poly_hint_cnt}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/num_hints}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/ctr}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/rej}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/hint_needed}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/i}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/makehint_/k}} 
+restart
+run 10 us
+run 800 us
+current_wave_config {SignGen_Stage19.wcfg}
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Decomp_/valid_i}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Decomp_/ready_i}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Decomp_/di}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Decomp_/doa}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Decomp_/dob}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Decomp_/valid_o}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Decomp_/ready_o}} 
+current_wave_config {SignGen_Stage19.wcfg}
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/mode}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/i_valid}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/i_ready}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/o_ready}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/o_valid}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/done}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_a0}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_a1}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_a2}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/out_a}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/addr_a}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_b0}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_b1}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_b2}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/out_b}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/addr_b}} 
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignGen_Stage17.wcfg}
+current_wave_config {SignGen_Stage17.wcfg}
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/i_valid}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/i_ready}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_in_u}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_in_d}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_out_u}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_out_d}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_addr_u}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_addr_d}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/o_valid}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/o_ready}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/done}} 
+current_wave_config {SignGen_Stage17.wcfg}
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/mode}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/i_valid}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/i_ready}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/o_ready}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/o_valid}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/done}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_a0}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_a1}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_a2}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/out_a}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/addr_a}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_b0}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_b1}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/in_b2}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/out_b}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/PWM_/addr_b}} 
+current_wave_config {SignGen_Stage17.wcfg}
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/clk}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/resetn}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/ctrl_sign}} 
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignGen_Stage12.wcfg}
+current_wave_config {SignGen_Stage12.wcfg}
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/mode}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/i_valid}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/i_ready}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_in_u}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_in_d}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_out_u}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_out_d}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_addr_u}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_addr_d}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/o_valid}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/o_ready}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/done}} 
+current_wave_config {SignGen_Stage12.wcfg}
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/clk}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/resetn}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/ctrl_sign}} 
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignGen_Stage12.wcfg}
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignGen_Stage17.wcfg}
+save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignGen_Stage19.wcfg}
+close_sim

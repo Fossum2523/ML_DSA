@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="64.535000 us"></ZoomStartTime>
-      <ZoomEndTime time="145.535001 us"></ZoomEndTime>
-      <Cursor1Time time="132.035000 us"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="161.401 ns"></ZoomEndTime>
+      <Cursor1Time time="0.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="156"></NameColumnWidth>
-      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+      <ValueColumnWidth column_width="68"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="161" />
    <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/clk" type="logic">
@@ -167,18 +167,21 @@
       <obj_property name="ObjectShortName">ci[22:0]</obj_property>
       <obj_property name="CustomSignalColor">#00FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/addr_ci" type="array">
       <obj_property name="ElementShortName">addr_ci[7:0]</obj_property>
       <obj_property name="ObjectShortName">addr_ci[7:0]</obj_property>
       <obj_property name="CustomSignalColor">#00FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/addr_cj" type="array">
       <obj_property name="ElementShortName">addr_cj[7:0]</obj_property>
       <obj_property name="ObjectShortName">addr_cj[7:0]</obj_property>
       <obj_property name="CustomSignalColor">#00FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/en_ci" type="logic">
       <obj_property name="ElementShortName">en_ci</obj_property>
@@ -209,24 +212,28 @@
       <obj_property name="ObjectShortName">temp_0_data_a[22:0]</obj_property>
       <obj_property name="CustomSignalColor">#F0E68C</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0_data_b" type="array">
       <obj_property name="ElementShortName">temp_0_data_b[22:0]</obj_property>
       <obj_property name="ObjectShortName">temp_0_data_b[22:0]</obj_property>
       <obj_property name="CustomSignalColor">#F0E68C</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0_addr_a" type="array">
       <obj_property name="ElementShortName">temp_0_addr_a[9:0]</obj_property>
       <obj_property name="ObjectShortName">temp_0_addr_a[9:0]</obj_property>
       <obj_property name="CustomSignalColor">#F0E68C</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0_addr_b" type="array">
       <obj_property name="ElementShortName">temp_0_addr_b[9:0]</obj_property>
       <obj_property name="ObjectShortName">temp_0_addr_b[9:0]</obj_property>
       <obj_property name="CustomSignalColor">#F0E68C</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0_en_a" type="logic">
       <obj_property name="ElementShortName">temp_0_en_a</obj_property>
