@@ -1,0 +1,496 @@
+%
+\ifdefined\integrated\else
+\documentclass[12pt, a4paper, fleqn]{./styles/ntust_report}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\input{./styles/ntust_style_thesis.tex}
+%\usepackage{wallpaper}
+%\CenterWallPaper{1}{ntust_watermark.jpg}
+\setcounter{page}{1}
+\begin{document}
+\baselineskip=24pt  % 24 lines per page
+\setcounter{chapter}{1} \fi
+
+\chapter{ML-DSA 演算法與技術背景}
+
+本章將介紹 ML-DSA 整體演算法架構所依據的密碼學基礎與技術背景。內容安排如下：
+
+\begin{itemize}
+    \item \textbf{2.1 節} 說明後量子密碼學的發展背景與 NIST PQC 標準簡介，並介紹 ML-DSA 所依據的 Module-LWE 與 Module-SIS 數學問題與安全性來源。
+    \item \textbf{2.2 節} 詳細說明 ML-DSA 的簽章演算法流程，包括金鑰生成、簽章與驗證，並解釋 ML-DSA-44 參數組的意涵與設計選擇。
+    \item \textbf{2.3 節} 介紹實現中關鍵的數學運算：Number Theoretic Transform（NTT）與其反轉換（INTT），以及模數轉換、位元包裝等硬體化技巧。
+    \item \textbf{2.4 節} 說明 SHAKE 雜湊函數於 ML-DSA 中的重要角色，包含 SHAKE128 與 SHAKE256 的運作與本研究對其硬體架構的設計方式。
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{後量子密碼學簡介}
+\subsection{後量子密碼學背景與標準化}
+
+隨著 Shor 演算法的問世，傳統以整數分解與離散對數問題為基礎的公鑰密碼系統（如 RSA、ECC）將無法抵禦量子電腦的攻擊。為因應此一挑戰，美國國家標準與技術研究院（NIST）於 2016 年啟動「後量子密碼學（Post-Quantum Cryptography, PQC）」標準制定計畫，歷經三輪評選與數十種候選演算法之競爭，最終於 2024 年公布 ML-DSA 作為數位簽章的標準之一。
+
+ML-DSA（Module-Lattice-Based Digital Signature Algorithm）係以 CRYSTALS-Dilithium 為基礎，採用模組格（Module Lattice）問題作為安全性依據，結合高效的多項式計算與雜湊生成機制，具備短簽名長度、運算速度快、且硬體實作友善等特性。
+
+
+
+\subsection{Module-LWE 問題（模組化學習誤差）}
+
+模組化學習誤差問題（Module Learning With Errors, MLWE）為傳統 LWE 問題的模組格推廣形式，其核心思想為：在高維模組格中加入小誤差後，使得線性關係難以識別。
+
+\textbf{定義：} 給定公開參數 $A \in R_q^{k \times l}$，秘密向量 $s_1 \in R_q^l, s_2 \in R_q^k$，計算公開項：
+\[
+A =
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1l} \\
+a_{21} & a_{22} & \cdots & a_{2l} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{k1} & a_{k2} & \cdots & a_{kl}
+\end{bmatrix}
+\in R_q^{k \times l}, \quad
+s_1 =
+\begin{bmatrix}
+s_{11} \\
+s_{12} \\
+\vdots \\
+s_{1l}
+\end{bmatrix}\quad
+s_2 =
+\begin{bmatrix}
+s_{21} \\
+s_{22} \\
+\vdots \\
+s_{2l}
+\end{bmatrix}
+\in R_q^l,
+\quad
+t = A \cdot s_1 + s_2 \in R_q^k
+\]
+攻擊者須判斷 $(A, t)$ 是否為上述結構或隨機生成的 $(A, t')$，此即為決定型 MLWE 問題。安全性來自於從 $(A, t)$ 無法有效還原 $s_1, s_2$，即使是量子演算法亦無解。
+
+MLWE 廣泛應用於公開金鑰生成與抗選擇密文攻擊設計中，是 ML-DSA 提供「金鑰保密性」的核心安全假設。
+
+
+\subsection{Module-SIS 問題（模組最短整數解問題）}
+模組最短整數解問題（Module Short Integer Solution, MSIS）為格基密碼學中常見的假設之一。其目標為：在模 $q$ 多項式環中尋找非零短向量 $z$，使其映射後為零。
+
+\textbf{定義：} 給定 $A \in R_q^{k \times l}$，尋找非零向量 $z$ 滿足：
+\[
+A =
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1l} \\
+a_{21} & a_{22} & \cdots & a_{2l} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{k1} & a_{k2} & \cdots & a_{kl}
+\end{bmatrix}
+\in R_q^{k \times l}, \quad
+z =
+\begin{bmatrix}
+z_1 \\
+z_2 \\
+\vdots \\
+z_l
+\end{bmatrix}
+\in R_q^l, \quad
+\text{such that} \quad
+A \cdot z = 0 \mod q
+\]
+
+
+MSIS 通常用於證明數位簽章的「不可偽造性」，在 ML-DSA 中，與檢查簽章是否落入合法集合及誤差範圍有關。
+
+
+
+\subsection{Fiat-Shamir with Aborts 架構}
+
+Fiat-Shamir Heuristic 是將互動式證明轉為非互動數位簽章的經典技術，其流程包含：
+\begin{enumerate}
+  \item \textbf{承諾（Commitment）}：產生隨機向量，計算中間值傳送給驗證者。
+  \item \textbf{挑戰（Challenge）}：由驗證者（或雜湊函數）產生隨機挑戰值。
+  \item \textbf{響應（Response）}：簽章者依據挑戰值計算響應，驗證者可用以驗證正確性。
+\end{enumerate}
+
+為防止側信道洩漏，Fiat-Shamir with Aborts 架構進一步加入「拒絕抽樣」機制，即若響應值 $z$ 不符合某些範數條件，則重新抽樣，直到產生合格響應。
+
+此機制能有效：
+\begin{itemize}
+  \item 避免 $z$ 與私鑰具統計關聯
+  \item 提升安全性（防私鑰重建攻擊）
+  \item 增加可實作性（支援均勻雜湊與簡單取樣）
+\end{itemize}
+
+
+
+\subsection{ML-DSA 簽章流程步驟}
+
+ML-DSA 簽章流程採用 Fiat-Shamir with Aborts，具體步驟如下：
+
+\begin{enumerate}
+  \item \textbf{生成承諾值}：產生 $y \in R_q^l$，計算 $w = A \cdot y$ 並四捨五入得 $w_1$。
+  \item \textbf{挑戰生成}：計算 $\mu = H(tr \| M)$ 並與 $w_1$ 雜湊產生 challenge $c$。
+  \item \textbf{響應計算}：計算 $z = y + c \cdot s_1$。
+  \item \textbf{提示值計算}：從 $z$ 與 $t_1$ 推出提示值 $h$，幫助驗證者重建 $w_1$。
+  \item \textbf{組合簽章}：輸出簽章三元組 $\sigma = (\tilde{c}, z, h)$。
+  \item \textbf{拒絕機制}：若 $z$ 或 $r_0$ 不符範圍，或 $h$ 太長，則拒絕並重試。
+\end{enumerate}
+
+此流程設計結合模組格安全性與實用性，使 ML-DSA 成為後量子環境下具備抗量子、效率佳的數位簽章演算法。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ML-DSA 演算法流程與參數敘述}
+
+本節將詳細說明 ML-DSA 簽章系統所使用的三大核心演算法，包括金鑰產生（KeyGen）、簽章產生（Sign）與簽章驗證（Verify），並列出各演算法的運作邏輯與參數配置方式，說明其如何根據不同安全等級設定簽章參數與誤差邊界，作為後續硬體實作與模組設計之依據。
+
+\subsection{Key Generation（金鑰產生）}
+
+金鑰產生演算法負責產生簽章系統的公開金鑰與私密金鑰，流程如下：
+
+\begin{enumerate}
+  \item 使用亂數種子 $\zeta \in \{0,1\}^{256}$ 經雜湊後生成 $(\rho, \rho', K)$ 三組種子。
+  \item 根據 $\rho$ 以擴展雜湊函數 ExpandA 生成公開矩陣 $A \in R_q^{k \times l}$。
+  \item 根據 $\rho'$ 生成秘密向量 $s_1 \in R_q^l$、$s_2 \in R_q^k$。
+  \item 計算 $t = A \cdot s_1 + s_2$，並使用 Power2Round 將 $t$ 拆分為高位元 $t_1$ 與低位元 $t_0$。
+  \item 生成公鑰摘要 $tr = H(\rho \| t_1)$。
+  \item 組成公鑰 $pk = (\rho, t_1)$，私鑰 $sk = (\rho, K, tr, s_1, s_2, t_0)$。
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figures/Algorithm/KeyGen.png}
+    \caption{ML-DSA 金鑰產生流程示意圖}
+\end{figure}
+
+\subsection{Signature Generation（簽章產生）}
+
+簽章演算法負責對訊息 $M$ 進行加密簽章，流程如下：
+
+\begin{enumerate}
+  \item 由私鑰 $sk$ 解出 $\rho, K, tr, s_1, s_2, t_0$，重新生成矩陣 $A$。
+  \item 將 $tr \| M$ 雜湊生成訊息摘要 $\mu$，計算隨機遮罩種子 $\rho'$。
+  \item 進入 rejection sampling 迴圈，直到產出合法簽章：
+  \begin{itemize}
+    \item 生成遮罩向量 $y \in R_q^l$，計算 $w = Ay$ 並擷取高位元 $w_1$。
+    \item 使用雜湊 $H(\mu \| w_1)$ 產生挑戰 $c$。
+    \item 計算回應值 $z = y + cs_1$，並檢查其範圍。
+    \item 計算 $r_0 = LowBits(w - cs_2)$，並確認是否落於安全範圍內。
+    \item 若條件不符，則丟棄本次嘗試，重新抽樣。
+  \end{itemize}
+  \item 產生提示值 $h = MakeHint(-ct_0, w - cs_2 + ct_0)$。
+  \item 組合簽章 $\sigma = (\tilde{c}, z, h)$。
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/Algorithm/SignGen.png}
+    \caption{ML-DSA 簽章產生流程示意圖}
+\end{figure}
+
+\subsection{Signature Verification（簽章驗證）}
+
+驗章演算法負責驗證簽章的合法性與訊息完整性，流程如下：
+
+\begin{enumerate}
+  \item 根據公鑰 $pk = (\rho, t_1)$ 重新生成矩陣 $A$。
+  \item 雜湊 $H(H(\rho \| t_1) \| M)$ 產生訊息摘要 $\mu$。
+  \item 根據簽章中的 $\tilde{c}$ 還原挑戰 $c$。
+  \item 根據提示值 $h$ 及 $z$ 還原 $w_1'$，並重新雜湊與原挑戰比較。
+  \item 若 $\|z\|_\infty < \gamma_1 - \beta$ 且提示值符合範圍，且雜湊值一致，則簽章有效。
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/Algorithm/SignVer.png}
+    \caption{ML-DSA 簽章認證流程示意圖}
+\end{figure}
+
+\subsection{參數設定與 ML-DSA-44 組態}
+
+ML-DSA-44 對應 NIST category 2 安全等級，其參數組如下：
+\begin{itemize}
+  \item $k=4$, $\ell=4$, $n=256$, $q=8380417$
+  \item $\eta=2$, $\gamma_1=2^{17}$, $\gamma_2=261888$, $\beta=78$, $\omega=80$
+\end{itemize}
+
+
+透過適當調整參數（例如提升 $k, \ell$ 或減小 $\gamma_2$），可達成更高的安全等級；相反亦可作為低功耗系統之參數下修。
+
+本研究所實作之硬體架構即針對 ML-DSA-44 進行最佳化設計，並支援 rejection loop 的重複嘗試與雜湊 / NTT 模組的高重用，於後續章節說明其實作細節與優化策略。
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{數論轉換（NTT）之數學背景與硬體考量}
+\subsection{數論轉換基本概念}
+數論轉換（Number Theoretic Transform, NTT）是一種在模數 $q$ 下進行多項式運算加速的技術，與傅立葉變換（FFT）在複數域的性質相似。NTT 將多項式乘法由傳統的 $O(n^2)$ 時間複雜度，降至 $O(n \log n)$，顯著提升運算效率。
+
+數學上，NTT 可定義為：對向量 $(a_0, a_1, \ldots, a_{n-1})$，使用原根 $\omega$ 計算轉換後的向量 $(A_0, A_1, \ldots, A_{n-1})$，其中：
+
+
+\[
+A_k = \sum_{j=0}^{n-1} a_j \omega^{jk} \mod q
+\]
+
+
+
+\subsection{正向與反向 NTT：FFT 結構化加速}
+
+數論轉換與其反變換可以藉由快速傅立葉變換（FFT）技巧來加速，最典型的就是 Cooley-Tukey (CT) 演算法與 Gentleman-Sande (GS) 演算法，分別用於正向 NTT 與反向 INTT。以下為更詳細的數學推導：
+
+\textbf{Cooley-Tukey（CT）快速NTT推導：}
+
+將傳統 NTT 的總和根據指標的奇偶性拆分：
+\[
+\hat{a}_j = \sum_{i=0}^{n-1} \psi^{2ij+i} a_i \mod q = \sum_{i=0}^{n/2-1} \psi^{4ij+2i} a_{2i} + \psi^{2j+1} \sum_{i=0}^{n/2-1} \psi^{4ij+2i} a_{2i+1} \mod q
+\]
+由於 $\psi^{n} = -1$，透過對稱性，我們也可以推得：
+\[
+\hat{a}_{j+n/2} = \sum_{i=0}^{n/2-1} \psi^{4ij+2i} a_{2i} - \psi^{2j+1} \sum_{i=0}^{n/2-1} \psi^{4ij+2i} a_{2i+1} \mod q
+\]
+設：
+\[
+A_j = \sum_{i=0}^{n/2-1} \psi^{4ij+2i} a_{2i}, \quad B_j = \sum_{i=0}^{n/2-1} \psi^{4ij+2i} a_{2i+1}
+\]
+則：
+\[
+\hat{a}_j = A_j + \psi^{2j+1} B_j \mod q
+\]
+\[
+\hat{a}_{j+n/2} = A_j - \psi^{2j+1} B_j \mod q
+\]
+
+
+\textbf{Gentleman-Sande（GS）快速INTT推導：}
+
+將總和根據上下半部拆解，令 $\hat{a}_j$ 為輸入之 NTT 領域向量，INTT 推導如下：
+\[
+a_i = \sum_{j=0}^{n-1} \psi^{-(2i+1)j} \hat{a}_j \mod q = \psi^{-i} \left[ \sum_{j=0}^{n/2-1} \psi^{-2ij} \hat{a}_j + \sum_{j=0}^{n/2-1} \psi^{-2i(j + n/2)} \hat{a}_{j + n/2} \right] \mod q
+\]
+偶數項推導：
+\[
+a_{2i} = \psi^{-2i} \sum_{j=0}^{n/2-1} \left( \hat{a}_j + \hat{a}_{j+n/2} \right) \psi^{-4ij} \mod q
+\]
+奇數項推導：
+\[
+a_{2i+1} = \psi^{-2i} \sum_{j=0}^{n/2-1} \left( \hat{a}_j - \hat{a}_{j+n/2} \right) \psi^{-4ij} \mod q
+\]
+設：
+\[
+A_i = \sum_{j=0}^{n/2-1} \hat{a}_j \psi^{-4ij}, \quad B_i = \sum_{j=0}^{n/2-1} \hat{a}_{j+n/2} \psi^{-4ij}
+\]
+則可得：
+\[
+a_{2i} = (A_i + B_i) \psi^{-2i} \mod q
+\]
+\[
+a_{2i+1} = (A_i - B_i) \psi^{-2i} \mod q
+\]
+
+
+\subsection{2.3.3 蝴蝶結構（Butterfly Unit）與運算流程圖}
+
+為了實現 NTT/INTT 的加速運算，演算法通常會被拆解為重複執行的小型處理單元，其核心為蝴蝶結構（Butterfly Unit）。蝴蝶結構負責進行資料配對後的加減與旋轉因子乘法，是整體 NTT 基本的運算元件。
+
+以下為 Cooley-Tukey 與 Gentleman-Sande 所對應的蝴蝶結構圖示：
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/NTT/Cooley-Tukey.png}
+    \caption{Cooley-Tukey (CT) 蝴蝶結構}
+    \label{fig:ct-butterfly}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/NTT/Gentleman-Sande.png}
+    \caption{Gentleman-Sande (GS) 蝴蝶結構}
+    \label{fig:gs-butterfly}
+\end{figure}
+
+此兩種蝴蝶操作模式分別對應於 NTT 與 INTT 的迭代運算方式，並可依照資料流與控制邏輯進行流水線化處理。
+
+
+\subsection{負捲積與模數選擇}
+
+在 ML-DSA 中，多項式運算定義在模 $x^n + 1$ 的環上，需使用負捲積（Negacyclic Convolution）。
+
+為此，必須選擇滿足以下條件的模數 $q$：
+\begin{itemize}
+  \item 存在階數為 $2n$ 的原根 $\psi \in \mathbb{Z}_q$。
+  \item $q \equiv 1 \mod 2n$。
+\end{itemize}
+
+
+
+\subsection{小結}
+
+透過 NTT 技術，ML-DSA 能將多項式乘法運算顯著加速，為實現高效簽章演算法奠定基礎。本研究針對 ML-DSA-44 的參數組，選擇 MDC 流水線架構，實作低延遲且可資源重用的 NTT 加速器，支援 FPGA 與 ASIC 雙平台部署。
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{SHAKE 與雜湊運算在 ML-DSA 中的角色}
+\subsection{SHA-3 與 SHAKE：從傳統雜湊到彈性輸出雜湊的演進}
+SHA-3 是由 NIST 於 2015 年通過的第三代安全雜湊標準，其核心演算法 Keccak 採用與 SHA-2 完全不同的架構設計。SHA-3 系列可分為兩大類：四種固定長度的雜湊函數（SHA3-224、SHA3-256、SHA3-384、SHA3-512）與兩種可擴展輸出函數（Extendable-Output Functions, XOF），即 SHAKE128 與 SHAKE256。
+
+XOF 最大的特點是可產生任意長度的輸出，因此特別適合用於金鑰擴展（KDF）、雜湊隨機數產生（PRNG）、訊息雜湊與數位簽章等密碼學應用 \cite{FIPS202}。
+
+
+\begin{table}[htbp]
+\centering
+\caption{SHA-3 家族分類與安全強度比較}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Function & SHA3 Primitive & Output Size & Collision & Preimage & 2nd Preimage \\
+\hline
+\multirow{4}{*}{Cryptographic Hash Function}
+    & SHA3-224 & 224 & 112 & 224 & 112 \\
+    & SHA3-256 & 256 & 128 & 256 & 128 \\
+    & SHA3-384 & 384 & 192 & 384 & 192 \\
+    & SHA3-512 & 512 & 256 & 512 & 256 \\
+\hline
+\multirow{2}{*}{Extendable-Output Function}
+    & SHAKE128 & arbitrary & up to 128 & up to 128 & up to 128 \\
+    & SHAKE256 & arbitrary & up to 256 & up to 256 & up to 256 \\
+\hline
+\end{tabular}
+}
+\end{table}
+
+
+
+
+\subsection{Sponge Construction：Keccak 的基礎運作原理}
+
+SHA-3 函數採用 \textbf{海綿結構（Sponge Construction）}，其基本過程分為兩階段：
+
+\begin{itemize}
+    \item \textbf{吸收階段（Absorb Phase）}：將輸入訊息分塊為 $r$ 位元，逐塊與 state 進行 XOR 運算，並送入 permutation function。
+    \item \textbf{擠壓階段（Squeeze Phase）}：從 state 前 $r$ 位元中取出輸出資料，如需更長輸出則持續迭代。
+\end{itemize}
+
+整體 state 長度為 $b = r + c$，其中：
+\begin{itemize}
+    \item $r$：bitrate，每輪可處理輸入/輸出位元數，影響處理速率。
+    \item $c$：capacity，用於提供碰撞抗性與原像安全性。
+    \item SHA-3 固定採用 $b = 1600$。
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/Keccak/sponge-construction.png}
+    \caption{Sponge Construction 吸收與擠壓階段示意圖}
+\end{figure}
+
+SHA-3 採用 \textbf{pad10*1} 多速率填補規則以確保完整分塊，並使用 KECCAK-p[1600,24] 作為 permutation 核心 \cite{FIPS202}。
+
+
+
+
+%\subsection{SHAKE 與 SHA-3 雜湊的差異與安全性考量}
+%
+%SHAKE128 與 SHAKE256 與 SHA3-256 等固定長度雜湊函數共用相同 sponge 結構與 permutation 核心，但輸出長度可由使用者自由指定，實現極高彈性。
+%
+%其安全強度如下所示 \cite{FIPS202}：
+%
+%\begin{table}[H]
+%\centering
+%\caption{SHAKE 雜湊函數的安全強度}
+%\begin{tabular}{|c|c|c|c|}
+%\hline
+%\textbf{函數} & \textbf{Collision} & \textbf{Preimage} & \textbf{2nd Preimage} \\
+%\hline
+%SHAKE128 & $\min(d/2, 128)$ & $\min(d, 128)$ & $\min(d, 128)$ \\
+%SHAKE256 & $\min(d/2, 256)$ & $\min(d, 256)$ & $\min(d, 256)$ \\
+%\hline
+%\end{tabular}
+%\end{table}
+%
+%然而，SHAKE 的「可延展性」特性也可能帶來潛在風險：相同輸入的不同長度雜湊輸出具有重疊性，需仰賴 \textbf{domain separation（輸入尾碼）} 技術避免被利用。例如：
+%\[
+%\text{SHAKE128}(M, 224) = \text{Trunc}_{224}(\text{SHAKE128}(M, 512))
+%\]
+
+
+
+
+\subsection{SHAKE128 與 SHAKE256 在 ML-DSA 中的應用與硬體設計策略}
+
+本研究只使用SHA-3中的SHAKE128 與 SHAKE256 兩種雜湊函數，皆為 SHA-3 標準中的可擴展輸出函數（Extendable-Output Functions, XOF）。其核心皆採用 KECCAK-p[1600,24] permutation，並透過 sponge 結構運作。與固定長度輸出的 SHA3-256 不同，SHAKE 提供任意長度的輸出能力，並透過輸入尾碼（例如 0x1F）實現 \textbf{domain separation}，以避免不同應用間產生重疊輸出。
+
+在 ML-DSA 的簽章與驗證流程中，SHAKE 的角色至關重要：
+\begin{itemize}
+    \item \textbf{SHAKE128}：用於產生公鑰矩陣 $A$（ExpandA）。此模組需高速率輸出，故使用 $r=1344$ 的 SHAKE128。
+    \item \textbf{SHAKE256}：應用於大多數雜湊與亂數產生操作，如 ExpandS、ExpandMask、SampleInBall，以及訊息摘要雜湊（如 $H(tr\|M)$、$H(K\|rnd\|\mu)$ 等）。
+\end{itemize}
+
+下表整理了 ML-DSA 使用 SHAKE 的典型應用與資料規模：
+
+\begin{table}[H]
+\centering
+\caption{SHAKE 應用於 ML-DSA 各模組之 Input/Output 資訊}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{模組} & \textbf{SHAKE 類型} & \textbf{應用階段} & \textbf{輸入(bits)} & \textbf{輸出(bits)} \\
+\hline
+ExpandA & SHAKE128 & KeyGen / Sign & 272 & 7152 \\
+ExpandS & SHAKE256 & KeyGen & 528 & 3848 \\
+ExpandMask & SHAKE256 & Sign & 528 & 4608 \\
+SampleInBall & SHAKE256 & Sign / Verify & 256 & 1768 \\
+$H(tr\|M)$ 等 & SHAKE256 & Sign / Verify & 多達 10496 & 512 \\
+\hline
+\end{tabular}
+\end{table}
+
+與現有文獻中常見的「多 Keccak 雜湊核心並行架構」相比，本研究以硬體資源效率為導向，採用僅 \textbf{單一 SHAKE 雜湊模組}，並支援 \textbf{動態切換 SHAKE128/SHAKE256 模式}。透過 mode select 控制信號與動態參數設定，該模組可根據不同雜湊需求調整 $r$ 與 $c$ 值，並自動完成輸出長度的擠壓與輸入尾碼的配置，實現高度模組共用性。
+
+此外，本設計亦加入以下結構以提升模組整體運作效率：
+\begin{itemize}
+    \item \textbf{Keccak 控制排程器（SHAKE controller）}：負責調度不同操作間的工作時序。
+    \item \textbf{Hash input multiplexer}：支援不同資料來源之雜湊操作資料交錯。
+    \item \textbf{輸出隊列與 pipeline 寄存器}：減少等待時間並提升模組利用率。
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{2.5 本系統之 AXI 傳輸架構概觀}
+
+為實現本研究所設計之 ML-DSA 加速器與處理器核心之高效資料交換與控制介面，本系統採用 AMBA AXI（Advanced eXtensible Interface）作為主要傳輸協定。AXI 為 ARM 所提出的 AMBA 匯流排家族之一，具備高頻寬、低延遲與支援多通道非同步資料傳輸的特性，適用於處理器與客製化硬體模組間之整合。
+
+AXI 規範依應用需求可區分為三種類型：
+
+\begin{itemize}
+  \item \textbf{AXI4}：支援完整突發傳輸與分離的控制／資料通道，適合高效能系統。
+  \item \textbf{AXI4-Lite}：簡化控制通訊介面，僅支援單筆資料存取，適合簡單暫存器控制。
+  \item \textbf{AXI4-Stream}：以連續資料流為傳輸模式，不需位址傳輸，適用於高速數據通道。
+\end{itemize}
+
+本系統中，ML-DSA 硬體模組核心（含簽章與驗證引擎）以 \textbf{AXI4-Stream} 為主要數據通道，進行訊息輸入與簽章結果輸出；並由 \textbf{AXI4-Slave} 接口控制模組內部狀態與操作指令。其架構如圖 \ref{fig:axi-arch} 所示。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{axi_system_overview.png}
+    \caption{本系統所採用之 AXI 傳輸架構與控制模型}
+    \label{fig:axi-arch}
+\end{figure}
+
+AXI4 通訊總線包含五組通道：讀／寫位址、讀／寫資料與回應通道。每通道皆採用單向握手協定（READY/VALID），支援 burst 傳輸與交錯交易，並透過 ID 編號實現亂序處理與高吞吐性能能。
+
+後續第 4 章將進一步詳細說明 AXI4-Stream 與 AXI4-Slave 實作細節、時序圖與介面接腳之設計原則。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+\ifdefined\integrated\else
+\input{backpages/ntust_backpages.tex}
+\end{document} \fi

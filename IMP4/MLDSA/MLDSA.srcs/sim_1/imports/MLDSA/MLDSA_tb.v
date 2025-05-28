@@ -1,8 +1,8 @@
 
 `timescale 1ns / 1ps
-// `define KEYGEN_TEST
+`define KEYGEN_TEST
 //`define SIGNGEN_TEST
- `define SIGNVER_TEST
+//  `define SIGNVER_TEST
 module MLDSA_AXI_Top_tb;
 
     parameter CLK_PERIOD = 10; // 100MHz

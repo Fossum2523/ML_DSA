@@ -3,10 +3,10 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Mon Apr 28 22:34:01 2025
-# Process ID: 476
+# Start of session at: Sun May 25 20:54:32 2025
+# Process ID: 16604
 # Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16952 C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent27356 C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.xpr
 # Log file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/vivado.log
 # Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT\vivado.jou
 # Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
@@ -69,14 +69,13 @@ WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 availab
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at D:/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
-INFO: [Project 1-313] Project file moved from 'C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/NTT' since last save.
 INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.gen/sources_1'.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2023.2/data/ip'.
-open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:34 . Memory (MB): peak = 1495.105 ; gain = 347.285
+open_project: Time (s): cpu = 00:00:22 ; elapsed = 00:00:34 . Memory (MB): peak = 1475.340 ; gain = 315.590
 update_compile_order -fileset sources_1
 launch_simulation
 Command: launch_simulation 
@@ -101,83 +100,91 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_n
 INFO: [VRFC 10-311] analyzing module Modular_Reduction
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module NTT
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_1 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:650]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_1 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:652]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_1 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:653]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_2 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:658]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_2 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:660]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_2 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:661]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_2 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:662]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_2 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:663]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_3 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:668]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_3 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:670]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_3 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:671]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_3 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:672]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_3 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:673]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_3 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:674]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_3 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:675]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_3 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:676]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_3 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:677]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_4 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:682]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_4 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:684]
-INFO: [#UNDEF] Sorry, too many errors..
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 1501.996 ; gain = 0.000
-INFO: [USF-XSim-69] 'compile' step finished in '7' seconds
-INFO: [USF-XSim-99] Step results log file:'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim/xvlog.log'
-ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim/xvlog.log' file for more information.
-ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
-launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 1501.996 ; gain = 0.000
-ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-launch_simulation
-Command: launch_simulation 
-INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'NTT_tb' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj NTT_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_add.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mod_add
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_mul.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mod_mul
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_sub.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mod_sub
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sim_1/imports/NTT/NTT_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module NTT_tb
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1487.027 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '6' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log"
 ECHO 已關閉。
 ECHO 已關閉。
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/BU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module BU
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module CONTR
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/Modular_Reduction.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Modular_Reduction
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NTT
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_1 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:650]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_1 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:652]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_1 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:653]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_2 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:658]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_2 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:660]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_2 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:661]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_2 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:662]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_2 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:663]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_3 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:668]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_3 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:670]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_3 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:671]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_3 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:672]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_3 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:673]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_3 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:674]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_3 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:675]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_3 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:676]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_3 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:677]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_4 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:682]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register zeta_4 is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:684]
-INFO: [#UNDEF] Sorry, too many errors..
-INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
-INFO: [USF-XSim-99] Step results log file:'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim/xvlog.log'
-ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim/xvlog.log' file for more information.
-ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
-ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-launch_simulation
-Command: launch_simulation 
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.mod_add
+Compiling module xil_defaultlib.mod_sub
+Compiling module xil_defaultlib.Modular_Reduction
+Compiling module xil_defaultlib.mod_mul
+Compiling module xil_defaultlib.BU
+Compiling module xil_defaultlib.RU_default
+Compiling module xil_defaultlib.CONTR
+Compiling module xil_defaultlib.RU(depth=32)
+Compiling module xil_defaultlib.CONTR(depth=32)
+Compiling module xil_defaultlib.RU(depth=16)
+Compiling module xil_defaultlib.CONTR(depth=16)
+Compiling module xil_defaultlib.RU(depth=8)
+Compiling module xil_defaultlib.CONTR(depth=8)
+Compiling module xil_defaultlib.RU(depth=4)
+Compiling module xil_defaultlib.CONTR(depth=4)
+Compiling module xil_defaultlib.RU(depth=2)
+Compiling module xil_defaultlib.CONTR(depth=2)
+Compiling module xil_defaultlib.RU(depth=1)
+Compiling module xil_defaultlib.CONTR(depth=1)
+Compiling module xil_defaultlib.NTT
+Compiling module xil_defaultlib.NTT_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot NTT_tb_behav
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:15 . Memory (MB): peak = 1487.027 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '15' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "NTT_tb_behav -key {Behavioral:sim_1:Functional:NTT_tb} -tclbatch {NTT_tb.tcl} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_tb_time_synth.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/INTT.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_INTT.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_tb_time_synth.wcfg
+WARNING: Simulation object /NTT_tb/dut/BU_0/BU_0_out_data_d was not found in the design.
+WARNING: Simulation object /NTT_tb/dut/BU_1/BU_1_out_data_d was not found in the design.
+WARNING: Simulation object /NTT_tb/dut/BU_2/BU_2_out_data_d was not found in the design.
+WARNING: Simulation object /NTT_tb/dut/BU_3/BU_3_out_data_d was not found in the design.
+WARNING: Simulation object /NTT_tb/dut/BU_4/BU_4_out_data_d was not found in the design.
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/INTT.wcfg
+WARNING: Simulation object /NTT_tb/dut/CONTR_7/zeta_trig was not found in the design.
+open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_INTT.wcfg
+source NTT_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'NTT_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:27 . Memory (MB): peak = 1572.785 ; gain = 85.758
+run 100 us
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
 INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
 WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
@@ -209,9 +216,12 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_n
 INFO: [VRFC 10-311] analyzing module mod_sub
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sim_1/imports/NTT/NTT_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module NTT_tb
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
 "xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log"
@@ -224,19 +234,6 @@ Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'zeta_addr' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:246]
-WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 3 for port 'zeta_addr' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:308]
-WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 5 for port 'zeta_addr' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:432]
-WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 6 for port 'zeta_addr' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:494]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 7 for port 'zeta_addr' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:556]
-WARNING: [VRFC 10-3091] actual bit length 64 differs from formal bit length 8 for port 'zeta_addr' [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:620]
-WARNING: [VRFC 10-5021] port 'zeta_trig' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:238]
-WARNING: [VRFC 10-5021] port 'zeta_trig' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:300]
-WARNING: [VRFC 10-5021] port 'zeta_trig' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:362]
-WARNING: [VRFC 10-5021] port 'zeta_trig' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:424]
-WARNING: [VRFC 10-5021] port 'zeta_trig' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:486]
-WARNING: [VRFC 10-5021] port 'zeta_trig' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:548]
-WARNING: [VRFC 10-5021] port 'zeta_trig' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:612]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -247,7 +244,7 @@ Compiling module xil_defaultlib.Modular_Reduction
 Compiling module xil_defaultlib.mod_mul
 Compiling module xil_defaultlib.BU
 Compiling module xil_defaultlib.RU_default
-Compiling module xil_defaultlib.CONTR_default
+Compiling module xil_defaultlib.CONTR
 Compiling module xil_defaultlib.RU(depth=32)
 Compiling module xil_defaultlib.CONTR(depth=32)
 Compiling module xil_defaultlib.RU(depth=16)
@@ -264,76 +261,26 @@ Compiling module xil_defaultlib.NTT
 Compiling module xil_defaultlib.NTT_tb
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot NTT_tb_behav
-run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:13 . Memory (MB): peak = 1501.996 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '14' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "NTT_tb_behav -key {Behavioral:sim_1:Functional:NTT_tb} -tclbatch {NTT_tb.tcl} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_tb_time_synth.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/INTT.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_INTT.wcfg} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1580.672 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1580.672 ; gain = 0.000
 Time resolution is 1 ps
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_tb_time_synth.wcfg
-WARNING: Simulation object /NTT_tb/dut/BU_0/BU_0_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_1/BU_1_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_2/BU_2_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_3/BU_3_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_4/BU_4_out_data_d was not found in the design.
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/INTT.wcfg
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_INTT.wcfg
-WARNING: Simulation object /NTT_tb/dut/MEM_zeta_7/en was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/MEM_zeta_7/addr was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/MEM_zeta_7/do was not found in the design.
-source NTT_tb.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'NTT_tb_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:20 . Memory (MB): peak = 1582.523 ; gain = 80.527
-run 10 us
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 1580.672 ; gain = 0.000
+run 100 us
 current_wave_config {NTT_INTT.wcfg}
 NTT_INTT.wcfg
-add_wave {{/NTT_tb/dut/CONTR_7/zeta_addr}} 
+add_wave {{/NTT_tb/dut/BU_0/out_a}} {{/NTT_tb/dut/BU_0/out_b}} 
 relaunch_sim
 Command: launch_simulation -step compile -simset sim_1 -mode behavioral
 INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
 WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'NTT_tb' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
 INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
 "xvlog --incr --relax -prj NTT_tb_vlog.prj"
 ECHO 已關閉。
 ECHO 已關閉。
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/BU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module BU
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module CONTR
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/Modular_Reduction.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Modular_Reduction
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NTT
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RU
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_add.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_add
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_mul.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_mul
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_sub.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_sub
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sim_1/imports/NTT/NTT_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NTT_tb
 INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
 Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
 INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
@@ -352,351 +299,12 @@ Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-5021] port 'zeta_trig' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:238]
-WARNING: [VRFC 10-5021] port 'zeta_trig' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:300]
-WARNING: [VRFC 10-5021] port 'zeta_trig' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:362]
-WARNING: [VRFC 10-5021] port 'zeta_trig' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:424]
-WARNING: [VRFC 10-5021] port 'zeta_trig' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:486]
-WARNING: [VRFC 10-5021] port 'zeta_trig' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:548]
-WARNING: [VRFC 10-5021] port 'zeta_trig' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:612]
 Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.mod_add
-Compiling module xil_defaultlib.mod_sub
-Compiling module xil_defaultlib.Modular_Reduction
-Compiling module xil_defaultlib.mod_mul
-Compiling module xil_defaultlib.BU
-Compiling module xil_defaultlib.RU_default
-Compiling module xil_defaultlib.CONTR_default
-Compiling module xil_defaultlib.RU(depth=32)
-Compiling module xil_defaultlib.CONTR(depth=32)
-Compiling module xil_defaultlib.RU(depth=16)
-Compiling module xil_defaultlib.CONTR(depth=16)
-Compiling module xil_defaultlib.RU(depth=8)
-Compiling module xil_defaultlib.CONTR(depth=8)
-Compiling module xil_defaultlib.RU(depth=4)
-Compiling module xil_defaultlib.CONTR(depth=4)
-Compiling module xil_defaultlib.RU(depth=2)
-Compiling module xil_defaultlib.CONTR(depth=2)
-Compiling module xil_defaultlib.RU(depth=1)
-Compiling module xil_defaultlib.CONTR(depth=1)
-Compiling module xil_defaultlib.NTT
-Compiling module xil_defaultlib.NTT_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot NTT_tb_behav
-run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1601.094 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
-launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1601.094 ; gain = 0.000
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
 Time resolution is 1 ps
-relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:14 . Memory (MB): peak = 1601.094 ; gain = 0.000
-run 10 us
-save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_INTT.wcfg}
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-Command: launch_simulation 
-INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'NTT_tb' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj NTT_tb_vlog.prj"
-ECHO 已關閉。
-ECHO 已關閉。
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/BU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module BU
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module CONTR
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/Modular_Reduction.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Modular_Reduction
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NTT
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RU
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_add.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_add
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_mul.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_mul
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_sub.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_sub
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sim_1/imports/NTT/NTT_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NTT_tb
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log"
-ECHO 已關閉。
-ECHO 已關閉。
-Vivado Simulator v2023.2
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-5021] port 'zeta_trig' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:238]
-WARNING: [VRFC 10-5021] port 'zeta_trig' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:300]
-WARNING: [VRFC 10-5021] port 'zeta_trig' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:362]
-WARNING: [VRFC 10-5021] port 'zeta_trig' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:424]
-WARNING: [VRFC 10-5021] port 'zeta_trig' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:486]
-WARNING: [VRFC 10-5021] port 'zeta_trig' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:548]
-WARNING: [VRFC 10-5021] port 'zeta_trig' is not connected on this instance [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v:612]
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.mod_add
-Compiling module xil_defaultlib.mod_sub
-Compiling module xil_defaultlib.Modular_Reduction
-Compiling module xil_defaultlib.mod_mul
-Compiling module xil_defaultlib.BU
-Compiling module xil_defaultlib.RU_default
-Compiling module xil_defaultlib.CONTR_default
-Compiling module xil_defaultlib.RU(depth=32)
-Compiling module xil_defaultlib.CONTR(depth=32)
-Compiling module xil_defaultlib.RU(depth=16)
-Compiling module xil_defaultlib.CONTR(depth=16)
-Compiling module xil_defaultlib.RU(depth=8)
-Compiling module xil_defaultlib.CONTR(depth=8)
-Compiling module xil_defaultlib.RU(depth=4)
-Compiling module xil_defaultlib.CONTR(depth=4)
-Compiling module xil_defaultlib.RU(depth=2)
-Compiling module xil_defaultlib.CONTR(depth=2)
-Compiling module xil_defaultlib.RU(depth=1)
-Compiling module xil_defaultlib.CONTR(depth=1)
-Compiling module xil_defaultlib.NTT
-Compiling module xil_defaultlib.NTT_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot NTT_tb_behav
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 1601.094 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "NTT_tb_behav -key {Behavioral:sim_1:Functional:NTT_tb} -tclbatch {NTT_tb.tcl} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_tb_time_synth.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/INTT.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_INTT.wcfg} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Time resolution is 1 ps
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_tb_time_synth.wcfg
-WARNING: Simulation object /NTT_tb/dut/BU_0/BU_0_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_1/BU_1_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_2/BU_2_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_3/BU_3_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_4/BU_4_out_data_d was not found in the design.
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/INTT.wcfg
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_INTT.wcfg
-source NTT_tb.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-xsim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1601.094 ; gain = 0.000
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'NTT_tb_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:16 . Memory (MB): peak = 1601.094 ; gain = 0.000
-run 10 us
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-launch_simulation
-Command: launch_simulation 
-INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'NTT_tb' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj NTT_tb_vlog.prj"
-ECHO 已關閉。
-ECHO 已關閉。
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/BU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module BU
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module CONTR
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/Modular_Reduction.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Modular_Reduction
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NTT
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RU
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_add.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_add
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_mul.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_mul
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_sub.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_sub
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sim_1/imports/NTT/NTT_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NTT_tb
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log"
-ECHO 已關閉。
-ECHO 已關閉。
-Vivado Simulator v2023.2
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.mod_add
-Compiling module xil_defaultlib.mod_sub
-Compiling module xil_defaultlib.Modular_Reduction
-Compiling module xil_defaultlib.mod_mul
-Compiling module xil_defaultlib.BU
-Compiling module xil_defaultlib.RU_default
-Compiling module xil_defaultlib.CONTR_default
-Compiling module xil_defaultlib.RU(depth=32)
-Compiling module xil_defaultlib.CONTR(depth=32)
-Compiling module xil_defaultlib.RU(depth=16)
-Compiling module xil_defaultlib.CONTR(depth=16)
-Compiling module xil_defaultlib.RU(depth=8)
-Compiling module xil_defaultlib.CONTR(depth=8)
-Compiling module xil_defaultlib.RU(depth=4)
-Compiling module xil_defaultlib.CONTR(depth=4)
-Compiling module xil_defaultlib.RU(depth=2)
-Compiling module xil_defaultlib.CONTR(depth=2)
-Compiling module xil_defaultlib.RU(depth=1)
-Compiling module xil_defaultlib.CONTR(depth=1)
-Compiling module xil_defaultlib.NTT
-Compiling module xil_defaultlib.NTT_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot NTT_tb_behav
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 2127.445 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "NTT_tb_behav -key {Behavioral:sim_1:Functional:NTT_tb} -tclbatch {NTT_tb.tcl} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_tb_time_synth.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/INTT.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_INTT.wcfg} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Time resolution is 1 ps
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_tb_time_synth.wcfg
-WARNING: Simulation object /NTT_tb/dut/BU_0/BU_0_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_1/BU_1_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_2/BU_2_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_3/BU_3_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_4/BU_4_out_data_d was not found in the design.
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/INTT.wcfg
-WARNING: Simulation object /NTT_tb/dut/CONTR_7/zeta_trig was not found in the design.
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_INTT.wcfg
-source NTT_tb.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'NTT_tb_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 2127.445 ; gain = 0.000
-run 10 us
-relaunch_sim
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-Command: launch_simulation -step compile -simset sim_1 -mode behavioral
-INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-ERROR: [Common 17-180] Spawn failed: No error
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj NTT_tb_vlog.prj"
-ECHO 已關閉。
-ECHO 已關閉。
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/BU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module BU
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module CONTR
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/Modular_Reduction.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Modular_Reduction
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NTT
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RU
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_add.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_add
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_mul.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_mul
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_sub.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_sub
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sim_1/imports/NTT/NTT_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NTT_tb
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 2641.508 ; gain = 0.000
+run 100 us
 relaunch_sim
 Command: launch_simulation -step compile -simset sim_1 -mode behavioral
 INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
@@ -754,7 +362,7 @@ Compiling module xil_defaultlib.Modular_Reduction
 Compiling module xil_defaultlib.mod_mul
 Compiling module xil_defaultlib.BU
 Compiling module xil_defaultlib.RU_default
-Compiling module xil_defaultlib.CONTR_default
+Compiling module xil_defaultlib.CONTR
 Compiling module xil_defaultlib.RU(depth=32)
 Compiling module xil_defaultlib.CONTR(depth=32)
 Compiling module xil_defaultlib.RU(depth=16)
@@ -771,89 +379,12 @@ Compiling module xil_defaultlib.NTT
 Compiling module xil_defaultlib.NTT_tb
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot NTT_tb_behav
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 2127.445 ; gain = 0.000
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 2641.508 ; gain = 0.000
 INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
-launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 2127.445 ; gain = 0.000
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 2641.508 ; gain = 0.000
 Time resolution is 1 ps
-relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 2127.445 ; gain = 0.000
-current_wave_config {NTT_INTT.wcfg}
-NTT_INTT.wcfg
-add_wave {{/NTT_tb/dut/CONTR_7/mode}} {{/NTT_tb/dut/CONTR_7/i_valid}} {{/NTT_tb/dut/CONTR_7/zeta_addr}} {{/NTT_tb/dut/CONTR_7/triger_buf}} {{/NTT_tb/dut/CONTR_7/addr}} 
-restart
-INFO: [Wavedata 42-604] Simulation restarted
-run 10 us
-relaunch_sim
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-Command: launch_simulation -step compile -simset sim_1 -mode behavioral
-INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-ERROR: [Common 17-180] Spawn failed: No error
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj NTT_tb_vlog.prj"
-ECHO 已關閉。
-ECHO 已關閉。
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/BU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module BU
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module CONTR
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/Modular_Reduction.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Modular_Reduction
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NTT
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RU
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_add.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_add
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_mul.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_mul
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_sub.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_sub
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sim_1/imports/NTT/NTT_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NTT_tb
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-
-relaunch_sim
-Command: launch_simulation -step compile -simset sim_1 -mode behavioral
-INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [USF-XSim-2] XSim::Compile design
-ERROR: [Common 17-180] Spawn failed: No error
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj NTT_tb_vlog.prj"
-ECHO 已關閉。
-ECHO 已關閉。
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/BU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module BU
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module CONTR
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/Modular_Reduction.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Modular_Reduction
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NTT
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RU
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_add.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_add
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_mul.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_mul
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_sub.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_sub
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sim_1/imports/NTT/NTT_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NTT_tb
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 2641.508 ; gain = 0.000
+run 100 us
 relaunch_sim
 Command: launch_simulation -step compile -simset sim_1 -mode behavioral
 INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
@@ -911,7 +442,7 @@ Compiling module xil_defaultlib.Modular_Reduction
 Compiling module xil_defaultlib.mod_mul
 Compiling module xil_defaultlib.BU
 Compiling module xil_defaultlib.RU_default
-Compiling module xil_defaultlib.CONTR_default
+Compiling module xil_defaultlib.CONTR
 Compiling module xil_defaultlib.RU(depth=32)
 Compiling module xil_defaultlib.CONTR(depth=32)
 Compiling module xil_defaultlib.RU(depth=16)
@@ -928,33 +459,18 @@ Compiling module xil_defaultlib.NTT
 Compiling module xil_defaultlib.NTT_tb
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot NTT_tb_behav
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 2146.203 ; gain = 0.000
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 2641.508 ; gain = 0.000
 INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
-launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 2146.203 ; gain = 0.000
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 2641.508 ; gain = 0.000
 Time resolution is 1 ps
-relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 2146.203 ; gain = 0.000
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_INTT.wcfg}
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-launch_simulation
-Command: launch_simulation 
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 2641.508 ; gain = 0.000
+run 100 us
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
 INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
 WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'NTT_tb' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
 INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
 "xvlog --incr --relax -prj NTT_tb_vlog.prj"
@@ -962,30 +478,57 @@ ECHO 已關閉。
 ECHO 已關閉。
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/BU.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module BU
-ERROR: [VRFC 10-1280] procedural assignment to a non-register i is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/BU.v:73]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register i is not permitted, left-hand side should be reg/integer/time/genvar [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/BU.v:81]
-ERROR: [VRFC 10-8530] module 'BU' is ignored due to previous errors [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/BU.v:3]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CONTR
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/Modular_Reduction.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Modular_Reduction
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module NTT
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_add.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mod_add
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_mul.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mod_mul
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_sub.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mod_sub
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sim_1/imports/NTT/NTT_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module NTT_tb
 INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-99] Step results log file:'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim/xvlog.log'
-ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 已關閉。
+ECHO 已關閉。
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-3180] cannot find port 'reset' on this module [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sim_1/imports/NTT/NTT_tb.v:186]
+ERROR: [VRFC 10-8530] module 'RU_default' is ignored due to previous errors [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v:1]
+ERROR: [VRFC 10-8530] module 'CONTR(depth=32)' is ignored due to previous errors [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v:3]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim/elaborate.log' file for more information.
 ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
 ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-launch_simulation
-Command: launch_simulation 
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
 INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
 WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'NTT_tb' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
 INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
 "xvlog --incr --relax -prj NTT_tb_vlog.prj"
@@ -1010,129 +553,11 @@ INFO: [VRFC 10-311] analyzing module mod_sub
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sim_1/imports/NTT/NTT_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module NTT_tb
 INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log"
-ECHO 已關閉。
-ECHO 已關閉。
-Vivado Simulator v2023.2
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.mod_add
-Compiling module xil_defaultlib.mod_sub
-Compiling module xil_defaultlib.Modular_Reduction
-Compiling module xil_defaultlib.mod_mul
-Compiling module xil_defaultlib.BU
-Compiling module xil_defaultlib.RU_default
-Compiling module xil_defaultlib.CONTR_default
-Compiling module xil_defaultlib.RU(depth=32)
-Compiling module xil_defaultlib.CONTR(depth=32)
-Compiling module xil_defaultlib.RU(depth=16)
-Compiling module xil_defaultlib.CONTR(depth=16)
-Compiling module xil_defaultlib.RU(depth=8)
-Compiling module xil_defaultlib.CONTR(depth=8)
-Compiling module xil_defaultlib.RU(depth=4)
-Compiling module xil_defaultlib.CONTR(depth=4)
-Compiling module xil_defaultlib.RU(depth=2)
-Compiling module xil_defaultlib.CONTR(depth=2)
-Compiling module xil_defaultlib.RU(depth=1)
-Compiling module xil_defaultlib.CONTR(depth=1)
-Compiling module xil_defaultlib.NTT
-Compiling module xil_defaultlib.NTT_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot NTT_tb_behav
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 2146.203 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "NTT_tb_behav -key {Behavioral:sim_1:Functional:NTT_tb} -tclbatch {NTT_tb.tcl} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_tb_time_synth.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/INTT.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_INTT.wcfg} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Time resolution is 1 ps
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_tb_time_synth.wcfg
-WARNING: Simulation object /NTT_tb/dut/BU_0/BU_0_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_1/BU_1_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_2/BU_2_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_3/BU_3_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_4/BU_4_out_data_d was not found in the design.
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/INTT.wcfg
-WARNING: Simulation object /NTT_tb/dut/CONTR_7/zeta_trig was not found in the design.
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_INTT.wcfg
-source NTT_tb.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-xsim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 2146.203 ; gain = 0.000
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'NTT_tb_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:16 . Memory (MB): peak = 2146.203 ; gain = 0.000
-run 10 us
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-Command: launch_simulation 
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
 INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
 WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'NTT_tb' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj NTT_tb_vlog.prj"
-ECHO 已關閉。
-ECHO 已關閉。
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/BU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module BU
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module CONTR
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/Modular_Reduction.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Modular_Reduction
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NTT
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RU
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_add.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_add
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_mul.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_mul
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_sub.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_sub
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sim_1/imports/NTT/NTT_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NTT_tb
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
 "xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log"
@@ -1149,9 +574,9 @@ Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Modular_Reduction
 Compiling module xil_defaultlib.mod_add
 Compiling module xil_defaultlib.mod_sub
-Compiling module xil_defaultlib.Modular_Reduction
 Compiling module xil_defaultlib.mod_mul
 Compiling module xil_defaultlib.BU
 Compiling module xil_defaultlib.RU_default
@@ -1172,166 +597,17 @@ Compiling module xil_defaultlib.NTT
 Compiling module xil_defaultlib.NTT_tb
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot NTT_tb_behav
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 2146.203 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "NTT_tb_behav -key {Behavioral:sim_1:Functional:NTT_tb} -tclbatch {NTT_tb.tcl} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_tb_time_synth.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/INTT.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_INTT.wcfg} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Time resolution is 1 ps
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_tb_time_synth.wcfg
-WARNING: Simulation object /NTT_tb/dut/BU_0/BU_0_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_1/BU_1_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_2/BU_2_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_3/BU_3_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_4/BU_4_out_data_d was not found in the design.
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/INTT.wcfg
-WARNING: Simulation object /NTT_tb/dut/CONTR_7/zeta_trig was not found in the design.
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_INTT.wcfg
-source NTT_tb.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'NTT_tb_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 2146.203 ; gain = 0.000
-run 10 us
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-Command: launch_simulation 
-INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'NTT_tb' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj NTT_tb_vlog.prj"
-ECHO 已關閉。
-ECHO 已關閉。
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/BU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module BU
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module CONTR
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/Modular_Reduction.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Modular_Reduction
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NTT
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RU
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_add.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_add
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_mul.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_mul
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_sub.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mod_sub
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sim_1/imports/NTT/NTT_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module NTT_tb
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log"
-ECHO 已關閉。
-ECHO 已關閉。
-Vivado Simulator v2023.2
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.mod_add
-Compiling module xil_defaultlib.mod_sub
-Compiling module xil_defaultlib.Modular_Reduction
-Compiling module xil_defaultlib.mod_mul
-Compiling module xil_defaultlib.BU
-Compiling module xil_defaultlib.RU_default
-Compiling module xil_defaultlib.CONTR
-Compiling module xil_defaultlib.RU(depth=32)
-Compiling module xil_defaultlib.CONTR(depth=32)
-Compiling module xil_defaultlib.RU(depth=16)
-Compiling module xil_defaultlib.CONTR(depth=16)
-Compiling module xil_defaultlib.RU(depth=8)
-Compiling module xil_defaultlib.CONTR(depth=8)
-Compiling module xil_defaultlib.RU(depth=4)
-Compiling module xil_defaultlib.CONTR(depth=4)
-Compiling module xil_defaultlib.RU(depth=2)
-Compiling module xil_defaultlib.CONTR(depth=2)
-Compiling module xil_defaultlib.RU(depth=1)
-Compiling module xil_defaultlib.CONTR(depth=1)
-Compiling module xil_defaultlib.NTT
-Compiling module xil_defaultlib.NTT_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot NTT_tb_behav
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 2146.203 ; gain = 0.000
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 2641.508 ; gain = 0.000
 INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "NTT_tb_behav -key {Behavioral:sim_1:Functional:NTT_tb} -tclbatch {NTT_tb.tcl} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_tb_time_synth.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/INTT.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_INTT.wcfg} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 2641.508 ; gain = 0.000
 Time resolution is 1 ps
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_tb_time_synth.wcfg
-WARNING: Simulation object /NTT_tb/dut/BU_0/BU_0_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_1/BU_1_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_2/BU_2_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_3/BU_3_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_4/BU_4_out_data_d was not found in the design.
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/INTT.wcfg
-WARNING: Simulation object /NTT_tb/dut/CONTR_7/zeta_trig was not found in the design.
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_INTT.wcfg
-source NTT_tb.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'NTT_tb_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 2146.203 ; gain = 0.000
-run 10 us
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-Command: launch_simulation 
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 2641.508 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
 INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
 WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'NTT_tb' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
 INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
 "xvlog --incr --relax -prj NTT_tb_vlog.prj"
@@ -1355,7 +631,127 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_n
 INFO: [VRFC 10-311] analyzing module mod_sub
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sim_1/imports/NTT/NTT_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module NTT_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 已關閉。
+ECHO 已關閉。
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Modular_Reduction
+Compiling module xil_defaultlib.mod_add
+Compiling module xil_defaultlib.mod_sub
+Compiling module xil_defaultlib.mod_mul
+Compiling module xil_defaultlib.BU
+Compiling module xil_defaultlib.RU_default
+Compiling module xil_defaultlib.CONTR
+Compiling module xil_defaultlib.RU(depth=32)
+Compiling module xil_defaultlib.CONTR(depth=32)
+Compiling module xil_defaultlib.RU(depth=16)
+Compiling module xil_defaultlib.CONTR(depth=16)
+Compiling module xil_defaultlib.RU(depth=8)
+Compiling module xil_defaultlib.CONTR(depth=8)
+Compiling module xil_defaultlib.RU(depth=4)
+Compiling module xil_defaultlib.CONTR(depth=4)
+Compiling module xil_defaultlib.RU(depth=2)
+Compiling module xil_defaultlib.CONTR(depth=2)
+Compiling module xil_defaultlib.RU(depth=1)
+Compiling module xil_defaultlib.CONTR(depth=1)
+Compiling module xil_defaultlib.NTT
+Compiling module xil_defaultlib.NTT_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot NTT_tb_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 2641.508 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 2641.508 ; gain = 0.000
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 2641.508 ; gain = 0.000
+run 100 us
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj NTT_tb_vlog.prj"
+ECHO 已關閉。
+ECHO 已關閉。
 INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 已關閉。
+ECHO 已關閉。
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 2641.508 ; gain = 0.000
+run 100 us
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj NTT_tb_vlog.prj"
+ECHO 已關閉。
+ECHO 已關閉。
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/BU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/CONTR.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CONTR
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/Modular_Reduction.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Modular_Reduction
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/NTT.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module NTT
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/RU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_add.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mod_add
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_mul.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mod_mul
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sources_1/imports/NTT/mod_sub.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mod_sub
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.srcs/sim_1/imports/NTT/NTT_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module NTT_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
 "xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log"
@@ -1395,44 +791,48 @@ Compiling module xil_defaultlib.NTT
 Compiling module xil_defaultlib.NTT_tb
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot NTT_tb_behav
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 2146.203 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "NTT_tb_behav -key {Behavioral:sim_1:Functional:NTT_tb} -tclbatch {NTT_tb.tcl} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_tb_time_synth.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/INTT.wcfg} -view {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_INTT.wcfg} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 2641.508 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 2641.508 ; gain = 0.000
 Time resolution is 1 ps
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_tb_time_synth.wcfg
-WARNING: Simulation object /NTT_tb/dut/BU_0/BU_0_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_1/BU_1_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_2/BU_2_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_3/BU_3_out_data_d was not found in the design.
-WARNING: Simulation object /NTT_tb/dut/BU_4/BU_4_out_data_d was not found in the design.
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/INTT.wcfg
-WARNING: Simulation object /NTT_tb/dut/CONTR_7/zeta_trig was not found in the design.
-open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT_INTT.wcfg
-source NTT_tb.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'NTT_tb_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 2146.203 ; gain = 0.000
-run 10 us
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\rom.v:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP2\NTT\NTT.srcs\sources_1\imports\NTT\NTT.v:]
-ERROR: [Common 17-180] Spawn failed: No error
-create_clock -name my_clock -period 10 [get_ports clock]
-ERROR: [Common 17-53] User Exception: No open design. Please open an elaborated, synthesized or implemented design before executing this command.
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 2641.508 ; gain = 0.000
+run 100 us
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj NTT_tb_vlog.prj"
+ECHO 已關閉。
+ECHO 已關閉。
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'NTT_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/NTT/NTT.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log"
+ECHO 已關閉。
+ECHO 已關閉。
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot NTT_tb_behav xil_defaultlib.NTT_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 2641.508 ; gain = 0.000
+run 100 us
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
 exit
-INFO: [Common 17-206] Exiting Vivado at Tue Apr 29 23:08:44 2025...
+INFO: [Common 17-206] Exiting Vivado at Mon May 26 01:28:15 2025...

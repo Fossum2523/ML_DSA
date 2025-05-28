@@ -3,10 +3,10 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Tue May 20 21:39:45 2025
-# Process ID: 23256
+# Start of session at: Sun May 25 21:53:23 2025
+# Process ID: 7992
 # Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17796 C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP4\MLDSA\MLDSA.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent20532 C:\Users\fossu\Desktop\ML_DSA_Syn_new\IMP4\MLDSA\MLDSA.xpr
 # Log file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/vivado.log
 # Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA\vivado.jou
 # Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
@@ -27,31 +27,37 @@ open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage8
 open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage9.wcfg
 open_wave_config C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage10.wcfg
 source MLDSA_AXI_Top_tb.tcl
+open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/KeyGen_Stage2.wcfg}
+current_wave_config {KeyGen_Stage2.wcfg}
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/clk}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/resetn}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/ctrl_sign}} 
+current_wave_config {KeyGen_Stage2.wcfg}
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/mode}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/sampler_in_ready}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/sampler_in}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/sampler_squeeze}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/next_element}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/z0}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/z1}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/addr_z0}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/addr_z1}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/en_z0}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/we_z0}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/en_z1}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/we_z1}} 
+current_wave_config {KeyGen_Stage2.wcfg}
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0/clka}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0/ena}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0/wea}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0/addra}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0/dina}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0/douta}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0/clkb}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0/enb}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0/web}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0/addrb}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0/dinb}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0/doutb}} 
+current_wave_config {KeyGen_Stage2.wcfg}
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0_data_a}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0_data_b}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0_addr_a}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0_addr_b}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0_en_a}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0_en_b}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0_we_a}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/DM_/temp_0_we_b}} 
 restart
-run 800 us
+run 100 us
+current_wave_config {KeyGen_Stage2.wcfg}
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/mode}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/i_valid}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/i_ready}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_in_u}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_in_d}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_out_u}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_out_d}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_addr_u}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/NTT_addr_d}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/o_valid}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/o_ready}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/done}} 
+restart
+run 100 us
+current_wave_config {KeyGen_Stage2.wcfg}
+add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/BU_0/o_valid}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/BU_0/out_a}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/NTT_/BU_0/out_b}} 
+restart
+run 100 us
+run 100 us
+run 100 us
 relaunch_sim
-run 800 us
-restart
-save_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage2.wcfg}
-run 10 us
-open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage3.wcfg}
-restart
-run 10 us
-run 10 us
-run 10 us
-open_wave_config {C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4/MLDSA/SignVer_Stage10.wcfg}
-run 100 us
-restart
+relaunch_sim
 run 100 us
 run 100 us
-current_wave_config {SignVer_Stage2.wcfg}
-add_wave {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/SampleInBall_/j}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/SampleInBall_/j_next}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/SampleInBall_/load_H}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/SampleInBall_/ci}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/SampleInBall_/addr_ci}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/SampleInBall_/addr_cj}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/SampleInBall_/en_ci}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/SampleInBall_/en_cj}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/SampleInBall_/we_ci}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/SampleInBall_/we_cj}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/SampleInBall_/H}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/SampleInBall_/i}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/SampleInBall_/rej}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/SampleInBall_/j_plus_num}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/SampleInBall_/j_bios}} {{/MLDSA_AXI_Top_tb/DUT/MLDSA_/data_path_inst/Sampler_/SampleInBall_/en_cj_temp}} 
-restart
+relaunch_sim
+relaunch_sim
 run 100 us
 run 100 us
-create_wave_config
-current_wave_config {Untitled 1}
-add_wave {{/MLDSA_AXI_Top_tb/clk}} {{/MLDSA_AXI_Top_tb/resetn}} {{/MLDSA_AXI_Top_tb/s_axi_awaddr}} {{/MLDSA_AXI_Top_tb/s_axi_awvalid}} {{/MLDSA_AXI_Top_tb/s_axi_awready}} {{/MLDSA_AXI_Top_tb/s_axi_wdata}} {{/MLDSA_AXI_Top_tb/s_axi_wstrb}} {{/MLDSA_AXI_Top_tb/s_axi_wvalid}} {{/MLDSA_AXI_Top_tb/s_axi_wready}} {{/MLDSA_AXI_Top_tb/s_axi_bresp}} {{/MLDSA_AXI_Top_tb/s_axi_bvalid}} {{/MLDSA_AXI_Top_tb/s_axi_bready}} {{/MLDSA_AXI_Top_tb/s_axi_araddr}} {{/MLDSA_AXI_Top_tb/s_axi_arvalid}} {{/MLDSA_AXI_Top_tb/s_axi_arready}} {{/MLDSA_AXI_Top_tb/s_axi_rdata}} {{/MLDSA_AXI_Top_tb/s_axi_rresp}} {{/MLDSA_AXI_Top_tb/s_axi_rvalid}} {{/MLDSA_AXI_Top_tb/s_axi_rready}} {{/MLDSA_AXI_Top_tb/s_axis_a_tdata}} {{/MLDSA_AXI_Top_tb/s_axis_a_tvalid}} {{/MLDSA_AXI_Top_tb/s_axis_a_tlast}} {{/MLDSA_AXI_Top_tb/s_axis_a_tready}} {{/MLDSA_AXI_Top_tb/s_axis_b_tdata}} {{/MLDSA_AXI_Top_tb/s_axis_b_tvalid}} {{/MLDSA_AXI_Top_tb/s_axis_b_tlast}} {{/MLDSA_AXI_Top_tb/s_axis_b_tready}} {{/MLDSA_AXI_Top_tb/m_axis_tdata}} {{/MLDSA_AXI_Top_tb/m_axis_tvalid}} {{/MLDSA_AXI_Top_tb/m_axis_tlast}} {{/MLDSA_AXI_Top_tb/m_axis_tready}} {{/MLDSA_AXI_Top_tb/pk_index}} {{/MLDSA_AXI_Top_tb/sk_index}} {{/MLDSA_AXI_Top_tb/signature_index}} {{/MLDSA_AXI_Top_tb/error_count}} {{/MLDSA_AXI_Top_tb/i}} {{/MLDSA_AXI_Top_tb/j}} {{/MLDSA_AXI_Top_tb/fd_SignGen}} {{/MLDSA_AXI_Top_tb/r_SignGen}} {{/MLDSA_AXI_Top_tb/fd_SignVer}} {{/MLDSA_AXI_Top_tb/r_SignVer}} {{/MLDSA_AXI_Top_tb/xi_data}} {{/MLDSA_AXI_Top_tb/sk_data}} {{/MLDSA_AXI_Top_tb/rnd_data}} {{/MLDSA_AXI_Top_tb/M_prime_SignGen_data}} {{/MLDSA_AXI_Top_tb/M_prime_SignGen_len}} {{/MLDSA_AXI_Top_tb/pk_data}} {{/MLDSA_AXI_Top_tb/signature_data}} {{/MLDSA_AXI_Top_tb/M_prime_SignVer_data}} {{/MLDSA_AXI_Top_tb/M_prime_SignVer_len}} {{/MLDSA_AXI_Top_tb/pk_check}} {{/MLDSA_AXI_Top_tb/sk_check}} {{/MLDSA_AXI_Top_tb/pk_golden_data}} {{/MLDSA_AXI_Top_tb/sk_golden_data}} {{/MLDSA_AXI_Top_tb/signature_check}} {{/MLDSA_AXI_Top_tb/signature_golden_data}} {{/MLDSA_AXI_Top_tb/verification_golden_data}} {{/MLDSA_AXI_Top_tb/CLK_PERIOD}} {{/MLDSA_AXI_Top_tb/KeyGen}} {{/MLDSA_AXI_Top_tb/SignGen}} {{/MLDSA_AXI_Top_tb/SignVer}} 
-restart
+relaunch_sim
+relaunch_sim
+run 100 us
 run 100 us
 close_sim

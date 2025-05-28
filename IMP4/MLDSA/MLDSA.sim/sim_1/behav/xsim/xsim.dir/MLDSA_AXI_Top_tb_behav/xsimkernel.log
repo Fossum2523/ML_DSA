@@ -1,7 +1,7 @@
-Running: xsim.dir/MLDSA_AXI_Top_tb_behav/xsimk.exe -simmode gui -wdb MLDSA_AXI_Top_tb_behav.wdb -simrunnum 0 -socket 62821
+Running: xsim.dir/MLDSA_AXI_Top_tb_behav/xsimk.exe -simmode gui -wdb MLDSA_AXI_Top_tb_behav.wdb -simrunnum 0 -socket 65340
 Design successfully loaded
-Design Loading Memory Usage: 10164 KB (Peak: 10164 KB)
-Design Loading CPU Usage: 31 ms
+Design Loading Memory Usage: 10148 KB (Peak: 10148 KB)
+Design Loading CPU Usage: 30 ms
 Simulation completed
-Simulation Memory Usage: 21280 KB (Peak: 21280 KB)
-Simulation CPU Usage: 8546 ms
+Simulation Memory Usage: 20024 KB (Peak: 20024 KB)
+Simulation CPU Usage: 1499 ms

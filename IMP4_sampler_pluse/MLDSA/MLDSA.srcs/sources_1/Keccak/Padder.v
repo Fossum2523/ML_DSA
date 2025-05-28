@@ -73,19 +73,16 @@ module Padder(
       else
         done <= done;
 
-    always @ (*)
-      begin
-        if (state) // @ (posedge clk) is_last == 1
-          begin
-            v1 = 0;
-            v1[63] = v1[63] | i_last; // need update
-          end
-        else if (is_last == 0)
-          v1 = in;
-        else // is_last == 1, but not meet with (posedge clk)
-          begin
-            v1 = v0;
-            v1[63] = v1[63] | i_last; // need update
-          end
+    always @ (*)begin
+      if (state)begin
+        v1 = 0;
+        v1[63] = v1[63] | i_last; // need update
       end
+      else if (is_last == 0)
+        v1 = in;
+      else begin
+        v1 = v0;
+        v1[63] = v1[63] | i_last; // need update
+      end
+    end
 endmodule

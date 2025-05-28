@@ -22,16 +22,6 @@ module Dual_Port_Ram_Single_clk
             ram[i] = {DLEN{1'b0}};
         end
     end
-
-    // Port A
-    // always @ (posedge clk) begin
-    //     if (we_a) begin
-    //         ram[addr_a] <= data_a; // Write to memory
-    //         q_a <= data_a;         // Output the same data being written
-    //     end else begin
-    //         q_a <= ram[addr_a];    // Read from memory
-    //     end
-    // end
     
     always @(posedge clk_a) begin
         if (en_a)begin
@@ -40,16 +30,6 @@ module Dual_Port_Ram_Single_clk
             q_a <= ram[addr_a];
         end
     end
-
-    // Port B
-    // always @ (posedge clk) begin
-    //     if (we_b) begin
-    //         ram[addr_b] <= data_b; // Write to memory
-    //         q_b <= data_b;         // Output the same data being written
-    //     end else begin
-    //         q_b <= ram[addr_b];    // Read from memory
-    //     end
-    // end
 
     always @(posedge clk_b) begin
         if (en_b) begin

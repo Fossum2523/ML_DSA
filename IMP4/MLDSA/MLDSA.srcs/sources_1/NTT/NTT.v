@@ -32,6 +32,7 @@ module NTT#(
 
     /*** stage 0 ***/
     wire                    BU_0_i_valid;
+    wire    [BIT_LEN - 1:0] BU_0_in_zeta;
     wire    [BIT_LEN - 1:0] BU_0_in_data_u;
     wire    [BIT_LEN - 1:0] BU_0_in_data_d;
     wire                    BU_0_o_valid;
@@ -214,6 +215,8 @@ module NTT#(
     assign NTT_addr_d = mode ? cnt_o + 8'd128 : (cnt_o << 1) + 1'b1;
     /*** stage 0 ***/
     assign BU_0_i_valid   = mode ? RU_1_o_valid    : i_valid;
+    assign BU_0_in_zeta   = 23'h495e02;
+    // assign BU_0_in_zeta   = mode ? 23'd8380417 - 23'h495e02 : 23'h495e02;
     assign BU_0_in_data_u = mode ? RU_1_out_data_u : NTT_in_u;
     assign BU_0_in_data_d = mode ? RU_1_out_data_d : NTT_in_d;
 
@@ -225,7 +228,7 @@ module NTT#(
         .i_valid(BU_0_i_valid),
         .a(BU_0_in_data_u),
         .b(BU_0_in_data_d),
-        .zeta(23'h495e02),
+        .zeta(BU_0_in_zeta),
         .o_valid(BU_0_o_valid),
         .out_a(BU_0_out_data_u),
         .out_b(BU_0_out_data_d)
