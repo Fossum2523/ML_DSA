@@ -60,6 +60,7 @@ module PWM
     assign addr_b = cnt_o + 1'b1;
 
     assign done = cnt_o == 11'd1024 ? 1'b1 : 1'b0;
+    
     always @(posedge clk or negedge resetn) begin
         if(!resetn)
             mul_a <= 46'd0;
