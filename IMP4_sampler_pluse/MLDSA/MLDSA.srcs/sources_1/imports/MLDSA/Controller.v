@@ -157,6 +157,7 @@ module Controller
     reg Hint_done_tmp;
     reg clean_done_tmp;
 
+
     reg main_mem_sel_triger;
 
     reg MLDSA_i_ready_A_tmp;
@@ -1608,6 +1609,85 @@ module Controller
             MLDSA_i_ready_B_tmp <= 1'b0;
     end
     /*---AXI Stream input protocol B---*/ //------------------------------------------end
+
+
+    //cnt clk-----------------------
+    reg [31:0]  keccak_cycle_cnt;
+    reg [31:0]  NTT_cycle_cnt;
+    reg [31:0]  PWM_cycle_cnt;
+    reg [31:0]  Encoder_cycle_cnt;
+    reg [31:0]  Decoder_cycle_cnt;
+    reg [31:0]  Decomposer_cycle_cnt;
+    reg [31:0]  Hint_cycle_cnt;
+    reg [31:0]  _cycle_cnt;
+    reg [31:0]  _cycle_cnt;
+    reg [31:0]  _cycle_cnt;
+    reg [31:0]  _cycle_cnt;
+
+
+    always @(posedge clk or negedge resetn) begin 
+        if (!resetn)                                                                                                                                                   
+            keccak_cycle_cnt <= 32'd0;
+        else if(next_state != curr_state)
+            keccak_cycle_cnt <= 32'd0;
+        else if(~keccak_done_tmp)
+            keccak_cycle_cnt <= keccak_cycle_cnt + 1'b1;
+    end
+
+    always @(posedge clk or negedge resetn) begin 
+        if (!resetn)                                                                                                                                                   
+            NTT_cycle_cnt <= 32'd0;
+        else if(next_state != curr_state)
+            NTT_cycle_cnt <= 32'd0;
+        else if(~NTT_done_tmp)
+            NTT_cycle_cnt <= NTT_cycle_cnt + 1'b1;
+    end
+
+    always @(posedge clk or negedge resetn) begin 
+        if (!resetn)                                                                                                                                                   
+            PWM_cycle_cnt <= 32'd0;
+        else if(next_state != curr_state)
+            PWM_cycle_cnt <= 32'd0;
+        else if(~PWM_done_tmp)
+            PWM_cycle_cnt <= PWM_cycle_cnt + 1'b1;
+    end
+
+    always @(posedge clk or negedge resetn) begin 
+        if (!resetn)                                                                                                                                                   
+            Encoder_cycle_cnt <= 32'd0;
+        else if(next_state != curr_state)
+            Encoder_cycle_cnt <= 32'd0;
+        else if(~Encoder_done_tmp)
+            Encoder_cycle_cnt <= Encoder_cycle_cnt + 1'b1;
+    end
+
+    always @(posedge clk or negedge resetn) begin 
+        if (!resetn)                                                                                                                                                   
+            Decoder_cycle_cnt <= 32'd0;
+        else if(next_state != curr_state)
+            Decoder_cycle_cnt <= 32'd0;
+        else if(~Decoder_done_tmp)
+            Decoder_cycle_cnt <= Decoder_cycle_cnt + 1'b1;
+    end
+
+    always @(posedge clk or negedge resetn) begin 
+        if (!resetn)                                                                                                                                                   
+            Decomposer_cycle_cnt <= 32'd0;
+        else if(next_state != curr_state)
+            Decomposer_cycle_cnt <= 32'd0;
+        else if(~Decomposer_done_tmp)
+            Decomposer_cycle_cnt <= Decomposer_cycle_cnt + 1'b1;
+    end
+
+    always @(posedge clk or negedge resetn) begin 
+        if (!resetn)                                                                                                                                                   
+            Hint_cycle_cnt <= 32'd0;
+        else if(next_state != curr_state)
+            Hint_cycle_cnt <= 32'd0;
+        else if(~Hint_done_tmp)
+            Hint_cycle_cnt <= Hint_cycle_cnt + 1'b1;
+    end
+
 endmodule
 
 

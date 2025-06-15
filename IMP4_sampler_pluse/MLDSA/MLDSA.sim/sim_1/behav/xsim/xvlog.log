@@ -18,6 +18,12 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_n
 INFO: [VRFC 10-311] analyzing module CoeffFromHalfByte
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4_sampler_pluse/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Controller.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Controller
+WARNING: [VRFC 10-3248] data object '_cycle_cnt' is already declared [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4_sampler_pluse/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Controller.v:1623]
+WARNING: [VRFC 10-9364] second declaration of '_cycle_cnt' is ignored [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4_sampler_pluse/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Controller.v:1623]
+WARNING: [VRFC 10-3248] data object '_cycle_cnt' is already declared [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4_sampler_pluse/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Controller.v:1624]
+WARNING: [VRFC 10-9364] second declaration of '_cycle_cnt' is ignored [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4_sampler_pluse/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Controller.v:1624]
+WARNING: [VRFC 10-3248] data object '_cycle_cnt' is already declared [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4_sampler_pluse/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Controller.v:1625]
+WARNING: [VRFC 10-9364] second declaration of '_cycle_cnt' is ignored [C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4_sampler_pluse/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Controller.v:1625]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4_sampler_pluse/MLDSA/MLDSA.srcs/sources_1/Data_Mem/Data_Mem.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Data_Mem
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP4_sampler_pluse/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v" into library xil_defaultlib

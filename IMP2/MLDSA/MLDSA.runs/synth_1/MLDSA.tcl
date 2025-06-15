@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.runs/synth_1/MLDSA.tcl"
+  variable script "C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.runs/synth_1/MLDSA.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,37 +70,57 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param checkpoint.writeSynthRtdsInDcp 1
-set_param synth.incrementalSynthesisCache C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/.Xil/Vivado-12828-DESKTOP-5RUADSS/incrSyn
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7k70tfbv676-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.cache/wt [current_project]
-set_property parent.project_path C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.cache/wt [current_project]
+set_property parent.project_path C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.cache/ip [current_project]
+set_property ip_output_repo c:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/CoeffFromHalfByte.v
-  C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Controller.v
-  C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Mem.v
-  C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v
-  C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Dual_Port_Ram_Single_clk.v
-  C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/ExpandS.v
-  C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/F_Permutation_Dilithium.v
-  C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Keccak_dilithium.v
-  C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Sampler.v
-  C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/rconst.v
-  C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/round.v
-  C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/MLDSA.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/Address_generate/Address_generate.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/NTT/BU.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/NTT/CONTR.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/Sampler/CoeffFromHalfByte.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Controller.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/Data_Mem/Data_Mem.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Data_Path.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/Decomposer/Decomposer.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/Data_Mem/Dual_Port_Ram_Single_clk.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/Sampler/ExpandA.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/Sampler/ExpandMASK.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/Sampler/ExpandS.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/Keccak/F_Permutation.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/Keccak/Keccak.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/Keccak_Ctrl.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/NTT/Modular_Reduction.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/NTT/NTT.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/PWM/PWM.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/Keccak/Padder.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/NTT/RU.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/Sampler/SampleInBall.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/Sampler/Sampler.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/Decoder/decoder.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/Encoder/encoder.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/Hint/makehint.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/NTT/mod_add.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/NTT/mod_mul.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/NTT/mod_sub.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/Sampler/mux_generate.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/Keccak/padder1.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/Keccak/rconst.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/NTT/rom.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/Keccak/round.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/Encoder/uncenter_coeff.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/Encoder/zero_strip.v
+  C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.srcs/sources_1/imports/MLDSA/MLDSA.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

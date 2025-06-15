@@ -325,6 +325,6 @@
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="Ture_Dual_Port_RAM_64x16"/>
-  <BlockFileSet Type="BlockSrcs" Name="Ture_Dual_Port_RAM_23x1024"/>
   <BlockFileSet Type="BlockSrcs" Name="Ture_Dual_Port_RAM_23x4096"/>
+  <BlockFileSet Type="BlockSrcs" Name="Ture_Dual_Port_RAM_23x1024"/>
 </GenRun>

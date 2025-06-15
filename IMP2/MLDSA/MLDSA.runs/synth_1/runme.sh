@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.runs/synth_1'
+HD_PWD='C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -3,12 +3,12 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Fri Jan 10 22:40:37 2025
-# Process ID: 15104
-# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.runs/synth_1
+# Start of session at: Sun Jun  8 23:31:18 2025
+# Process ID: 32864
+# Current directory: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.runs/synth_1
 # Command line: vivado.exe -log MLDSA.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MLDSA.tcl
-# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.runs/synth_1/MLDSA.vds
-# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn/IMP/SHA3_imp/MLDSA/MLDSA.runs/synth_1\vivado.jou
+# Log file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.runs/synth_1/MLDSA.vds
+# Journal file: C:/Users/fossu/Desktop/ML_DSA_Syn_new/IMP2/MLDSA/MLDSA.runs/synth_1\vivado.jou
 # Running On: DESKTOP-5RUADSS, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 12, Host memory: 34287 MB
 #-----------------------------------------------------------
 source MLDSA.tcl -notrace

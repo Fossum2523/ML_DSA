@@ -1,0 +1,47 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Sat May 17 01:50:07 2025
+# Process ID: 18104
+# Current directory: C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9096 C:\Users\USER\Desktop\ML_DSA_syn_new\IMP2\MLDSA\MLDSA.xpr
+# Log file: C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/vivado.log
+# Journal file: C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA\vivado.jou
+# Running On: LAPTOP-2P71OMBV, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 16, Host memory: 16542 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/MLDSA.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/MLDSA_tb_behav.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/KeyGen_Stage4.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/KeyGen_Stage5.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/KeyGen_Stage3.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/KeyGen_Stage6.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/KeyGen_Stage8.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/KeyGen_Stage9.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/KeyGen_Stage10.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/test_decoder.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/SignGen_Stage2.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/SignGen_Stage3.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/SignGen_Stage4_1.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/SignGen_Stage6.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/SignGen_Stage7.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/SignGen_Stage8.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/SignGen_Stage9.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/SignGen_Stage10.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/SignGen_Stage11.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/SignGen_Stage12.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/SignGen_Stage13.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/SignGen_Stage14.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/SignGen_Stage15.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/SignGen_Stage16.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/SignGen_Stage17.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/SignGen_Stage18.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/SignGen_rejection.wcfg
+open_wave_config C:/Users/USER/Desktop/ML_DSA_syn_new/IMP2/MLDSA/SignGen_SendOut.wcfg
+source MLDSA_tb.tcl
+run 400 us
+close_sim

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="MLDSA_AXI_Top_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="MLDSA_AXI_Top_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="536.125001 us"></ZoomEndTime>
+      <Cursor1Time time="535.915000 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="220"></NameColumnWidth>
+      <ValueColumnWidth column_width="91"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="18" />
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/ctrl_sign" type="array">
+      <obj_property name="ElementShortName">ctrl_sign[8:0]</obj_property>
+      <obj_property name="ObjectShortName">ctrl_sign[8:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/keccak_cycle_cnt" type="array">
+      <obj_property name="ElementShortName">keccak_cycle_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">keccak_cycle_cnt[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/NTT_cycle_cnt" type="array">
+      <obj_property name="ElementShortName">NTT_cycle_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">NTT_cycle_cnt[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/PWM_cycle_cnt" type="array">
+      <obj_property name="ElementShortName">PWM_cycle_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PWM_cycle_cnt[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/Encoder_cycle_cnt" type="array">
+      <obj_property name="ElementShortName">Encoder_cycle_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Encoder_cycle_cnt[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/Decoder_cycle_cnt" type="array">
+      <obj_property name="ElementShortName">Decoder_cycle_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Decoder_cycle_cnt[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/Decomposer_cycle_cnt" type="array">
+      <obj_property name="ElementShortName">Decomposer_cycle_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Decomposer_cycle_cnt[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/Hint_cycle_cnt" type="array">
+      <obj_property name="ElementShortName">Hint_cycle_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Hint_cycle_cnt[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/send_done_tmp" type="logic">
+      <obj_property name="ElementShortName">send_done_tmp</obj_property>
+      <obj_property name="ObjectShortName">send_done_tmp</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/keccak_done_tmp" type="logic">
+      <obj_property name="ElementShortName">keccak_done_tmp</obj_property>
+      <obj_property name="ObjectShortName">keccak_done_tmp</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/clean_done_tmp" type="logic">
+      <obj_property name="ElementShortName">clean_done_tmp</obj_property>
+      <obj_property name="ObjectShortName">clean_done_tmp</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/PWM_done_tmp" type="logic">
+      <obj_property name="ElementShortName">PWM_done_tmp</obj_property>
+      <obj_property name="ObjectShortName">PWM_done_tmp</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/NTT_done_tmp" type="logic">
+      <obj_property name="ElementShortName">NTT_done_tmp</obj_property>
+      <obj_property name="ObjectShortName">NTT_done_tmp</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/Hint_done_tmp" type="logic">
+      <obj_property name="ElementShortName">Hint_done_tmp</obj_property>
+      <obj_property name="ObjectShortName">Hint_done_tmp</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/Encoder_done_tmp" type="logic">
+      <obj_property name="ElementShortName">Encoder_done_tmp</obj_property>
+      <obj_property name="ObjectShortName">Encoder_done_tmp</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/Decomposer_done_tmp" type="logic">
+      <obj_property name="ElementShortName">Decomposer_done_tmp</obj_property>
+      <obj_property name="ObjectShortName">Decomposer_done_tmp</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLDSA_AXI_Top_tb/DUT/MLDSA_/controller_inst/Decoder_done_tmp" type="logic">
+      <obj_property name="ElementShortName">Decoder_done_tmp</obj_property>
+      <obj_property name="ObjectShortName">Decoder_done_tmp</obj_property>
+   </wvobject>
+</wave_config>
