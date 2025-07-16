@@ -10,11 +10,11 @@ module makehint #(
         output          reject_hint,
         input [OUTPUT_W*COEFF_W-1:0] poly0_ie,
         input [OUTPUT_W*COEFF_W-1:0] poly1_ie,
-        input           poly_valid_ie,
-        output          poly_ready_i,
+        input           poly_valid_ie,//
+        output          poly_ready_i,//
         output reg [W-1:0] hint_o,
-        output          hint_valid_o,
-        input           hint_ready_o
+        output          hint_valid_o,//
+        input           hint_ready_o//
     );
     
     reg [OUTPUT_W*COEFF_W-1:0] poly0_i;
